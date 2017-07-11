@@ -1,4 +1,4 @@
-package graphics;
+package main.graphics;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
-import graphics.battleScreen.BattleScreen;
+import main.graphics.battleScreen.BattleScreen;
 
 public class Screen extends JFrame {
 
@@ -19,47 +19,69 @@ public class Screen extends JFrame {
 	private int screenHeight;
 	private int mainPanelWidth;
 	private int mainPanelHeight;
+	private Dimension mainPanelSize;
+	private JPanel mainPanel;
 	
-	private BattleScreen battleScreen;
+	public static BattleScreen battleScreen;
 
 	
 	public Screen() {
 		
 		super();
+		
+		createScreen();
+		adjustScreenSize();
+		createContentPane();
+		createMainPanel();
+				
+		battleScreen = new BattleScreen(mainPanelWidth, mainPanelHeight);
+		mainPanel.add(battleScreen);
+		
+		
+		setVisible(true);
+				
+	}
+	
+
+	
+	
+	public void createScreen() {
+
 		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+	}
+	
+	public void adjustScreenSize() {
 		
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		screenWidth = (int) screenSize.getWidth();
 		screenHeight = (int) screenSize.getHeight();
 		mainPanelWidth = screenWidth * 9 / 10;
 		mainPanelHeight = screenHeight * 95 / 100;
-		Dimension mainPanelSize = (new Dimension(mainPanelWidth, mainPanelHeight));
+		mainPanelSize = (new Dimension(mainPanelWidth, mainPanelHeight));
 		
+	}
+	
+	public void createContentPane() {
+				
 		JPanel contentPane = new JPanel();
 		contentPane.setPreferredSize(new Dimension (screenWidth, screenHeight));
 		contentPane.setBackground(new Color(20, 20, 20));
 		add(contentPane);
 		setContentPane(contentPane);
 		
-		JPanel mainPanel = new JPanel();
+	}
+	
+	public void createMainPanel() {
+		
+		mainPanel = new JPanel();
 		mainPanel.setPreferredSize(mainPanelSize);
 		mainPanel.setBackground(new Color(100, 100, 100));
 		mainPanel.setBorder(new LineBorder(new Color(120, 70, 200), 1, false));
 		mainPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
 		getContentPane().add(mainPanel);
-		
-		battleScreen = new BattleScreen(mainPanelWidth, mainPanelHeight);
-		mainPanel.add(battleScreen);
-		
-		System.out.println(screenHeight);
-		System.out.println(mainPanelHeight);
-			
-		
-		
-		setVisible(true);
-		
 		
 	}
 

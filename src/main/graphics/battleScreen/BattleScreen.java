@@ -1,4 +1,4 @@
-package graphics.battleScreen;
+package main.graphics.battleScreen;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -14,32 +14,49 @@ public class BattleScreen extends JPanel {
 	private int battleScreenWidth;
 	private int battleScreenHeight;
 	
-	BattleMenu leftBattleMenu;
-	BattleMenu rightBattleMenu;
-	BattleScene battleScene;
-	SpeedSlider speedSlider;
+	public static BattleScene battleScene;
+	public static RightAggregatePanel rightAggregatePanel;
+	public static InformationPanel informationPanel;
+	public static ButtonPanel buttonPanel;
 
-	public BattleScreen(int width, int height) {
+	public BattleScreen(int mainPanelWidth, int mainPanelHeight) {
 		
 		super();
 		
-		battleScreenWidth = width - 11;
-		battleScreenHeight = height - 11;
+		createBattleScreen(mainPanelWidth, mainPanelHeight);
+		
+		battleScene = new BattleScene(battleScreenWidth, battleScreenHeight);
+		rightAggregatePanel = new RightAggregatePanel(battleScreenWidth, battleScreenHeight);
+		informationPanel = new InformationPanel(battleScreenWidth, battleScreenHeight);
+		buttonPanel = new ButtonPanel(battleScreenWidth, battleScreenHeight);
+		
+		addPanels();
+				
+	}
+	
+
+	
+	
+	
+	
+	public void createBattleScreen(int mainPanelWidth, int mainPanelHeight) {
+		
+		battleScreenWidth = mainPanelWidth - 11;
+		battleScreenHeight = mainPanelHeight - 11;
 		
 		setPreferredSize (new Dimension(battleScreenWidth, battleScreenHeight));
 		setBackground (new Color (41, 40, 39));
-		
-		leftBattleMenu = new BattleMenu(battleScreenWidth, battleScreenHeight);
-		battleScene = new BattleScene(battleScreenWidth, battleScreenHeight);
-		speedSlider = new SpeedSlider(battleScreenWidth, battleScreenHeight);
-		rightBattleMenu = new BattleMenu(battleScreenWidth, battleScreenHeight);
-		
+				
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		
-		add(leftBattleMenu);
+	}
+	
+	public void addPanels() {
+		
 		add(battleScene);
-		add(speedSlider);
-		add(rightBattleMenu);
+		add(rightAggregatePanel);
+		add(informationPanel);
+		add(buttonPanel);
 		
 	}
 	

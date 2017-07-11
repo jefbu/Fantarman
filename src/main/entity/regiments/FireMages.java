@@ -1,6 +1,6 @@
-package entity.regiments;
+package main.entity.regiments;
 
-import components.IndexedPanel;
+import main.components.IndexedPanel;
 
 public class FireMages extends Regiment {
 	
@@ -16,7 +16,7 @@ public class FireMages extends Regiment {
 		
 		for (int i = 0; i < rows * columns; i++) {
 			
-			panels.add(new IndexedPanel());
+			panels.add(new IndexedPanel(1, 1));
 			
 		}
 		

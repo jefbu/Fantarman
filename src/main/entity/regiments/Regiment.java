@@ -1,8 +1,8 @@
-package entity.regiments;
+package main.entity.regiments;
 
 import java.util.ArrayList;
 
-import components.IndexedPanel;
+import main.components.IndexedPanel;
 
 public abstract class Regiment {
 	
@@ -10,10 +10,11 @@ public abstract class Regiment {
 	private int defence;
 	private int move;
 	private int charge;
-	private int chargeMove;
+	private int run;
 	private int range;
-	private int rangeAttack;
+	private int ballistic;
 	private int morale;
+	private int speed;
 	
 	public int rows;
 	public int columns;
@@ -36,7 +37,7 @@ public abstract class Regiment {
 			
 			for (int xCoordinate = 0; xCoordinate < columns; xCoordinate++) {
 			
-				panels.get(xCoordinate + yCoordinate * columns).index = upperLeftIndex + xCoordinate + yCoordinate * 32;
+				panels.get(xCoordinate + yCoordinate * columns).index = upperLeftIndex + xCoordinate + yCoordinate * 48;
 				
 			}
 			
