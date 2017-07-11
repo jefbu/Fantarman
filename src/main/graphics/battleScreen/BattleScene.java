@@ -22,25 +22,22 @@ public class BattleScene extends JPanel {
 	public int roundedWidth;
 	public int roundedHeight;
 	public ArrayList<IndexedPanel> indexedPanels = new ArrayList<IndexedPanel>();
+	private int startingPoint;
 	private Border startingBorder;
 	private Direction direction;
+	private int averageWidth;
+	
+	private boolean goOn;
 	
 	public BattleScene(int battleScreenWidth, int battleScreenHeight) {
 		
 		super();
-		
-		createBattleScene(battleScreenWidth, battleScreenHeight);
-			
+		createBattleScene(battleScreenWidth, battleScreenHeight);			
 		for (int i = 0; i < 48 * 32; i++) {
-			
 			indexedPanels.add(new IndexedPanel(roundedWidth, roundedHeight));
-			
 		}
-		
-		for (IndexedPanel panel: indexedPanels) {
-			
+		for (IndexedPanel panel: indexedPanels) {	
 			add(panel);
-			
 		}
 		
 		
@@ -87,7 +84,7 @@ public class BattleScene extends JPanel {
 		
 		Random random = new Random();
 		int roll = random.nextInt(10) + 1;
-		
+
 		switch (terrainType) {
 			
 		case GRASS:
@@ -141,9 +138,20 @@ public class BattleScene extends JPanel {
 	
 	private void createRiver() {
 		
-		int startingPoint = createStartingPoint();
-		int endingPoint = createEndingPoint(startingPoint);
-		int averageWidth = createAverageWidth();
+		goOn = true;
+		startingPoint = createStartingPoint();
+		direction = applyDirection(startingBorder);
+		averageWidth = createAverageWidth();
+
+		while(goOn) {
+			
+			createNextRiverSpot();
+			createWidth();
+			applyNewDirection();
+
+		}
+		//int endingPoint = createEndingPoint(startingPoint);
+		
 		
 		
 		//createFinalRiver(startingPoint);
@@ -154,7 +162,7 @@ public class BattleScene extends JPanel {
 		
 		Random random = new Random();
 		int roll = random.nextInt(4) + 1;
-		int startingPoint = 0;
+		startingPoint = 0;
 		switch(roll) {
 		case 1: startingPoint = random.nextInt(40) + 5; startingBorder = Border.NORTH; break;
 		case 2: startingPoint = random.nextInt(32) * 48; startingBorder = Border.WEST; break;
@@ -168,58 +176,186 @@ public class BattleScene extends JPanel {
 		
 	}
 	
-	private int createEndingPoint(int startingPoint) {
+	private Direction applyDirection(Border startingBorder) {
 		
 		Random random = new Random();
 		int roll = random.nextInt(3) + 1;
-		int endingPoint = 0;
 		
-	switch (startingBorder) {
+		switch(startingBorder) {
+		
+		case NORTH:		
+			switch(roll) {
+			case 1: return Direction.SOUTHEAST;
+			case 2: return Direction.SOUTH;
+			case 3: return Direction.SOUTHWEST;
+				}
+			
+		case EAST:
+			switch(roll) {
+			case 1: return Direction.WEST;
+			case 2: return Direction.NORTHWEST;
+			case 3: return Direction.SOUTHWEST;
+				}
+			
+		case SOUTH:
+			switch(roll) {
+			case 1: return Direction.NORTH;
+			case 2: return Direction.NORTHEAST;
+			case 3: return Direction.NORTHWEST;
+				}
+			
+		case WEST:
+			switch(roll) {
+			case 1: return Direction.EAST;
+			case 2: return Direction.NORTHEAST;
+			case 3: return Direction.SOUTHEAST;
+				}
+		}
+		
+		return Direction.NORTH;
+		
+	}
 	
-	case NORTH:
-		switch(roll) {
-		case 1: direction = Direction.SOUTHEAST; endingPoint = (random.nextInt(32) * 48) + 47; break;
-		case 2: direction = Direction.SOUTH; endingPoint = random.nextInt(40) + indexedPanels.size() - 48 + 5; break;
-		case 3: direction = Direction.SOUTHWEST; endingPoint = random.nextInt(32) * 48; break;
+	private void createNextRiverSpot() {
+		
+		switch(direction) {
+		
+		case NORTH: startingPoint = startingPoint - 48; break;
+		case NORTHEAST: startingPoint = startingPoint - 47; break;
+		case EAST: startingPoint = startingPoint + 1; break;
+		case SOUTHEAST: startingPoint = startingPoint + 49; break;
+		case SOUTH: startingPoint = startingPoint + 48; break;
+		case SOUTHWEST: startingPoint = startingPoint + 47; break;
+		case WEST: startingPoint = startingPoint - 1; break;
+		case NORTHWEST: startingPoint = startingPoint - 49; break;
+		
 		}
-	case EAST:
-		switch(roll) {
-		case 1: direction = Direction.NORTH; endingPoint = random.nextInt(40) + 5; break;
-		case 2: direction = Direction.WEST; endingPoint = random.nextInt(32) * 48; break;
-		case 3: direction = Direction.SOUTH; endingPoint = random.nextInt(40) + indexedPanels.size() - 48 + 5; break;
+		
+		
+		try {
+			indexedPanels.get(startingPoint).applyTerrainType(TerrainType.RIVER);
+			indexedPanels.get(startingPoint).applyColor();
+		} catch (Exception e) {
+			goOn = false;
 		}
-	case SOUTH:
-		switch(roll) {
-		case 1: direction = Direction.NORTHWEST; endingPoint = random.nextInt(32) * 48; break;
-		case 2: direction = Direction.NORTH; endingPoint = random.nextInt(40) + 5; break;
-		case 3: direction = Direction.NORTHEAST; endingPoint = (random.nextInt(32) * 48) + 47; break;
-		}
-	case WEST:
-		switch(roll) {
-		case 1: direction = Direction.NORTH; endingPoint = random.nextInt(40) + 5; break;
-		case 2: direction = Direction.EAST; endingPoint = (random.nextInt(32) * 48) + 47; break;
-		case 3: direction = Direction.SOUTH; endingPoint = random.nextInt(40) + indexedPanels.size() - 48 + 5; break;
-		}
+		
+	}
+	
+	private void createWidth() {
+		
+		Random random = new Random();
 
-	}
-	
-	indexedPanels.get(endingPoint).applyTerrainType(TerrainType.RIVER);
-	indexedPanels.get(endingPoint).applyColor();
-	System.out.println(startingBorder);
-	System.out.println(direction);
-	
-	return endingPoint;
+		for (int i = 0; i < averageWidth; i++) {
+			int roll = random.nextInt(3) + 1;
+			
+			switch(roll) {
+			
+			case 1: 
+			try {
+				indexedPanels.get(startingPoint-1).applyTerrainType(TerrainType.RIVER);
+				indexedPanels.get(startingPoint-1).applyColor();
+			} catch (Exception e) {	}
+			break;
+			
+			case 2:
+			try {
+				indexedPanels.get(startingPoint+1).applyTerrainType(TerrainType.RIVER);
+				indexedPanels.get(startingPoint+1).applyColor();
+			} catch (Exception e) {	}
+			break;
+			
+			case 3: break;
+			}
+			
+		}
 		
 	}
+	
+	private void applyNewDirection() {
+		
+		Random random = new Random();
+		int roll = random.nextInt(4) + 1;
+		
+		switch(direction) {
+		
+		case NORTH:
+			switch(roll) {
+			case 1: direction = Direction.NORTH; break;
+			case 2: direction = Direction.NORTH; break;
+			case 3: direction = Direction.NORTHEAST; break;
+			case 4: direction = Direction.NORTHWEST; break;
+			} 
+			break;
+		case NORTHEAST:
+			switch(roll) {
+			case 1: direction = Direction.NORTHEAST; break;
+			case 2: direction = Direction.NORTHEAST; break;
+			case 3: direction = Direction.NORTH; break;
+			case 4: direction = Direction.EAST; break;
+			} 
+			break;
+		case EAST:
+			switch(roll) {
+			case 1: direction = Direction.EAST; break;
+			case 2: direction = Direction.EAST; break;
+			case 3: direction = Direction.NORTHEAST; break;
+			case 4: direction = Direction.SOUTHEAST; break;
+			} 
+			break;		
+		case SOUTHEAST:
+			switch(roll) {
+			case 1: direction = Direction.SOUTHEAST; break;
+			case 2: direction = Direction.SOUTHEAST; break;
+			case 3: direction = Direction.EAST; break;
+			case 4: direction = Direction.SOUTH; break;
+			} 
+			break;
+		case SOUTH:
+			switch(roll) {
+			case 1: direction = Direction.SOUTH; break;
+			case 2: direction = Direction.SOUTH; break;
+			case 3: direction = Direction.SOUTHEAST; break;
+			case 4: direction = Direction.SOUTHWEST; break;
+			} 
+			break;
+		case SOUTHWEST:
+			switch(roll) {
+			case 1: direction = Direction.SOUTHWEST; break;
+			case 2: direction = Direction.SOUTHWEST; break;
+			case 3: direction = Direction.SOUTH; break;
+			case 4: direction = Direction.WEST; break;
+			} 
+			break;
+		case WEST:
+			switch(roll) {
+			case 1: direction = Direction.WEST; break;
+			case 2: direction = Direction.WEST; break;
+			case 3: direction = Direction.SOUTHWEST; break;
+			case 4: direction = Direction.NORTHWEST; break;
+			} 
+			break;		
+		case NORTHWEST:
+			switch(roll) {
+			case 1: direction = Direction.NORTHWEST; break;
+			case 2: direction = Direction.NORTHWEST; break;
+			case 3: direction = Direction.NORTH; break;
+			case 4: direction = Direction.WEST; break;
+			} 
+			break;
+		
+		}
+		
+	}
+	
 	
 	private int createAverageWidth() {
 		
 		Random random = new Random();
 		int roll = random.nextInt(10) + 1;
 		
-		if (roll< 6) return 2;
+		if (roll< 6) return 4;
 		else if (roll < 9) return 3;
-		else return 1;
+		else return 5;
 		
 	}
 	
