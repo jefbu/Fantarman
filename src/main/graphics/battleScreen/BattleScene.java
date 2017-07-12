@@ -26,6 +26,7 @@ public class BattleScene extends JPanel {
 	private Border startingBorder;
 	private Direction direction;
 	private int averageWidth;
+	private TerrainType baseTerrain;
 	
 	private boolean goOn;
 	
@@ -40,6 +41,21 @@ public class BattleScene extends JPanel {
 			add(panel);
 		}
 		
+		
+	}
+	
+	private void createBattleScene(int battleScreenWidth, int battleScreenHeight) {
+		
+		int unroundedHeight = battleScreenHeight * 8 / 10;
+		int unroundedWidth = battleScreenHeight * 8 * 15 / 100;
+		
+		roundedHeight = unroundedHeight - (unroundedHeight%48);
+		roundedWidth = unroundedWidth - (unroundedWidth%48);
+
+		battleSceneSize = new Dimension(roundedWidth, roundedHeight);
+		setPreferredSize(battleSceneSize);
+		setBackground (new Color(150, 200, 150));
+		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		
 	}
 	
@@ -60,11 +76,30 @@ public class BattleScene extends JPanel {
 		}
 	
 		
-		TerrainType baseTerrain = checkBaseTerrainType();
+		baseTerrain = checkBaseTerrainType();
+		
+		for (IndexedPanel panel: indexedPanels) {
+			switch (baseTerrain) {
+			case GRASS: panel.terrain = TerrainType.GRASS; break;
+			case HILL: panel.terrain = TerrainType.GRASS; break;
+			case MOUNTAIN: panel.terrain = TerrainType.GRASS; break;
+			case FOREST: panel.terrain = TerrainType.GRASS; break;
+			case DESERT: panel.terrain = TerrainType.DESERT; break;
+			case RIVER:	break;
+			case ROAD:	break;
+			}
+
+			panel.applyColor();
+		}
+		
+		
 		boolean hasRiver = checkRiver(baseTerrain);
 			if (hasRiver) createRiver();		
 		boolean hasRoad = checkRoad(baseTerrain);
 			//if (hasRoad) createRoad();
+		createHills();
+		createForests();
+		createMountains();
 		
 	}
 	
@@ -359,20 +394,57 @@ public class BattleScene extends JPanel {
 		
 	}
 	
-
 	
-	private void createBattleScene(int battleScreenWidth, int battleScreenHeight) {
+	private void createForests() {
 		
-		int unroundedHeight = battleScreenHeight * 8 / 10;
-		int unroundedWidth = battleScreenHeight * 8 * 15 / 100;
-		
-		roundedHeight = unroundedHeight - (unroundedHeight%48);
-		roundedWidth = unroundedWidth - (unroundedWidth%48);
+		Random random = new Random();
+		int amountOfForests = random.nextInt(10) + 1;
 
-		battleSceneSize = new Dimension(roundedWidth, roundedHeight);
-		setPreferredSize(battleSceneSize);
-		setBackground (new Color(150, 200, 150));
-		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+		int direction;
+		
+		switch (baseTerrain) {
+		
+		case GRASS:
+			int forests = amountOfForests / 3;
+			for (int i = 0; i < forests; i++) {
+				
+				int forestSize = random.nextInt(30) + 20;
+				int location = random.nextInt(48*32);
+				
+				for (int ii = 0; ii < forestSize; ii++) {
+					try {indexedPanels.get(location).terrain = TerrainType.FOREST;} catch(Exception e) {}
+					direction = random.nextInt(4) + 1;
+					switch(direction) {
+					case 1: location--;
+					case 2: location = location - 48;
+					case 3: location++;
+					case 4: location = location + 48;
+					}
+					
+				}
+
+			}
+			
+		case FOREST:
+		case HILL:
+		case DESERT:
+		case MOUNTAIN:
+		case RIVER:
+		case ROAD:
+		
+		}
+		
+		for (IndexedPanel panel: indexedPanels) {
+			panel.applyColor();			
+		}
+		
+	}
+	
+	private void createHills() {
+		
+	}
+	
+	private void createMountains() {
 		
 	}
 	

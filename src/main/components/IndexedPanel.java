@@ -37,17 +37,31 @@ public class IndexedPanel extends JPanel {
 	public void applyColor() {
 		
 		Random random = new Random();
-		int roll = random.nextInt(100) + 1;
+		int roll;
 		
 		switch (terrain) {
 		
-		case GRASS: setBackground(new Color (140, 160, 60)); break;
-		case FOREST: setBackground(new Color (90, 170, 40)); break;
-		case HILL: setBackground(new Color (180, 190, 100)); break;
-		case MOUNTAIN: setBackground(new Color (60, 40, 40)); break;
-		case RIVER: setBackground(new Color (40, 110 + roll / 2, 140 + roll)); break;
-		case ROAD: setBackground(new Color (120, 125, 30)); break;
-		case DESERT: setBackground(new Color (190, 100, 40)); break;
+		case GRASS: 
+			roll = random.nextInt(20) + 1;
+			setBackground(new Color (100 + roll / 2, 110 + roll, 60)); break;
+		case FOREST: 
+			roll = random.nextInt(20) + 1;
+			setBackground(new Color (40, 70 + roll, 30 + roll / 2)); break;
+		case HILL: 
+			roll = random.nextInt(40) + 1;
+			setBackground(new Color (160 + roll / 2, 140 + roll, 100)); break;
+		case MOUNTAIN:
+			roll = random.nextInt(60) + 1;
+			setBackground(new Color (40 + roll, 40 + roll, 40 + roll)); break;
+		case RIVER:
+			roll = random.nextInt(100) + 1;
+			setBackground(new Color (40, 110 + roll / 2, 140 + roll)); break;
+		case ROAD:
+			roll = random.nextInt(20) + 1;
+			setBackground(new Color (120 + roll * 2, 125 + roll, 30)); break;
+		case DESERT:
+			roll = random.nextInt(20) + 1;
+			setBackground(new Color (170, 110 + roll, 60 + roll)); break;
 		
 		}
 		
