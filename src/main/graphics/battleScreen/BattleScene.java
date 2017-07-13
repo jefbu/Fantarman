@@ -62,17 +62,8 @@ public class BattleScene extends JPanel {
 	
 	public void createMap() {
 		
-
-		
-		
-		for (int i = 0; i < indexedPanels.size(); i++) {
-			
-		}
-		
 		for (IndexedPanel panel: indexedPanels) {
-			
 			panel.setBackground(new Color(30,20,20));
-			
 		}
 	
 		
@@ -82,24 +73,31 @@ public class BattleScene extends JPanel {
 			switch (baseTerrain) {
 			case GRASS: panel.terrain = TerrainType.GRASS; break;
 			case HILL: panel.terrain = TerrainType.GRASS; break;
-			case MOUNTAIN: panel.terrain = TerrainType.GRASS; break;
 			case FOREST: panel.terrain = TerrainType.GRASS; break;
 			case DESERT: panel.terrain = TerrainType.DESERT; break;
+			case MOUNTAIN: break;
 			case RIVER:	break;
 			case ROAD:	break;
 			}
 
 			panel.applyColor();
 		}
-		
-		
+
+		createHills();
+		createForests();
+		createMountains(baseTerrain);
 		boolean hasRiver = checkRiver(baseTerrain);
 			if (hasRiver) createRiver();		
 		boolean hasRoad = checkRoad(baseTerrain);
-			//if (hasRoad) createRoad();
-		createHills();
-		createForests();
-		createMountains();
+			if (hasRoad) createRoad();
+		
+		for (IndexedPanel panel: indexedPanels) {
+			panel.applyColor();
+		}
+		
+		System.out.println(hasRiver);
+		System.out.println(hasRoad);
+
 		
 	}
 	
@@ -174,26 +172,38 @@ public class BattleScene extends JPanel {
 	private void createRiver() {
 		
 		goOn = true;
-		startingPoint = createStartingPoint();
+		startingPoint = createStartingPoint(TerrainType.RIVER);
 		direction = applyDirection(startingBorder);
 		averageWidth = createAverageWidth();
 
 		while(goOn) {
 			
-			createNextRiverSpot();
-			createWidth();
+			createNextSpot(TerrainType.RIVER);
+			createWidth(TerrainType.RIVER);
 			applyNewDirection();
 
 		}
-		//int endingPoint = createEndingPoint(startingPoint);
-		
-		
-		
-		//createFinalRiver(startingPoint);
 		
 	}
 	
-	private int createStartingPoint() {
+	private void createRoad() {
+		
+		goOn = true;
+		startingPoint = createStartingPoint(TerrainType.ROAD);
+		direction = applyDirection(startingBorder);
+		averageWidth = createAverageWidth();
+
+		while(goOn) {
+			
+			createNextSpot(TerrainType.ROAD);
+			createWidth(TerrainType.ROAD);
+			applyNewDirection();
+
+		}
+		
+	}
+	
+	private int createStartingPoint(TerrainType terrain) {
 		
 		Random random = new Random();
 		int roll = random.nextInt(4) + 1;
@@ -204,7 +214,7 @@ public class BattleScene extends JPanel {
 		case 3: startingPoint = random.nextInt(40) + indexedPanels.size() - 48 + 5; startingBorder = Border.SOUTH; break;
 		case 4: startingPoint = (random.nextInt(32) * 48) + 47; startingBorder = Border.EAST; break;
 		}
-		indexedPanels.get(startingPoint).applyTerrainType(TerrainType.RIVER);
+		indexedPanels.get(startingPoint).applyTerrainType(terrain);
 		indexedPanels.get(startingPoint).applyColor();
 		return startingPoint;
 
@@ -251,7 +261,7 @@ public class BattleScene extends JPanel {
 		
 	}
 	
-	private void createNextRiverSpot() {
+	private void createNextSpot(TerrainType terrain) {
 		
 		switch(direction) {
 		
@@ -268,7 +278,7 @@ public class BattleScene extends JPanel {
 		
 		
 		try {
-			indexedPanels.get(startingPoint).applyTerrainType(TerrainType.RIVER);
+			indexedPanels.get(startingPoint).applyTerrainType(terrain);
 			indexedPanels.get(startingPoint).applyColor();
 		} catch (Exception e) {
 			goOn = false;
@@ -276,7 +286,7 @@ public class BattleScene extends JPanel {
 		
 	}
 	
-	private void createWidth() {
+	private void createWidth(TerrainType terrain) {
 		
 		Random random = new Random();
 
@@ -287,14 +297,14 @@ public class BattleScene extends JPanel {
 			
 			case 1: 
 			try {
-				indexedPanels.get(startingPoint-1).applyTerrainType(TerrainType.RIVER);
+				indexedPanels.get(startingPoint-1).applyTerrainType(terrain);
 				indexedPanels.get(startingPoint-1).applyColor();
 			} catch (Exception e) {	}
 			break;
 			
 			case 2:
 			try {
-				indexedPanels.get(startingPoint+1).applyTerrainType(TerrainType.RIVER);
+				indexedPanels.get(startingPoint+1).applyTerrainType(terrain);
 				indexedPanels.get(startingPoint+1).applyColor();
 			} catch (Exception e) {	}
 			break;
@@ -400,39 +410,63 @@ public class BattleScene extends JPanel {
 		Random random = new Random();
 		int amountOfForests = random.nextInt(10) + 1;
 
-		int direction;
+		int forests = 0;
 		
 		switch (baseTerrain) {
 		
 		case GRASS:
-			int forests = amountOfForests / 3;
+			forests = amountOfForests / 3; break;
+		case FOREST:
+			forests = amountOfForests / 2; break;
+		case HILL:
+			forests = amountOfForests / 4; break;
+		case DESERT:
+			forests = amountOfForests / 5; break;
+		case MOUNTAIN: break;
+		case RIVER: break;
+		case ROAD: break;
+		
+		}
+			
 			for (int i = 0; i < forests; i++) {
 				
-				int forestSize = random.nextInt(30) + 20;
+				int forestSize = random.nextInt(10) + 5;
 				int location = random.nextInt(48*32);
 				
 				for (int ii = 0; ii < forestSize; ii++) {
-					try {indexedPanels.get(location).terrain = TerrainType.FOREST;} catch(Exception e) {}
-					direction = random.nextInt(4) + 1;
-					switch(direction) {
-					case 1: location--;
-					case 2: location = location - 48;
-					case 3: location++;
-					case 4: location = location + 48;
+				
+				try{indexedPanels.get(location).terrain = TerrainType.FOREST;} catch (Exception e) {}
+				int heightRoll = random.nextInt(10) + 1;
+				
+					if (heightRoll < 6) {
+						try{indexedPanels.get(location - 48).terrain = TerrainType.FOREST;} catch (Exception e) {}
+						try{indexedPanels.get(location + 48).terrain = TerrainType.FOREST;} catch (Exception e) {}
 					}
 					
+					else if (heightRoll < 9) {
+						try{indexedPanels.get(location - 48).terrain = TerrainType.FOREST;} catch (Exception e) {}
+						try{indexedPanels.get(location + 48).terrain = TerrainType.FOREST;} catch (Exception e) {}
+						try{indexedPanels.get(location + 96).terrain = TerrainType.FOREST;} catch (Exception e) {}
+					}
+					
+					else {
+						try{indexedPanels.get(location - 48).terrain = TerrainType.FOREST;} catch (Exception e) {}
+						try{indexedPanels.get(location - 96).terrain = TerrainType.FOREST;} catch (Exception e) {}
+						try{indexedPanels.get(location + 48).terrain = TerrainType.FOREST;} catch (Exception e) {}
+						try{indexedPanels.get(location + 96).terrain = TerrainType.FOREST;} catch (Exception e) {}
+					}
+					
+					int nextPixel = random.nextInt(4) + 1;
+					switch (nextPixel) {
+					case 1: location++; break;
+					case 2: location++; break;
+					case 3: location = location - 47; break;
+					case 4: location = location + 49; break;
+					}
 				}
 
 			}
-			
-		case FOREST:
-		case HILL:
-		case DESERT:
-		case MOUNTAIN:
-		case RIVER:
-		case ROAD:
-		
-		}
+
 		
 		for (IndexedPanel panel: indexedPanels) {
 			panel.applyColor();			
@@ -442,9 +476,94 @@ public class BattleScene extends JPanel {
 	
 	private void createHills() {
 		
+		Random random = new Random();
+		int amountOfHills = random.nextInt(10) + 1;
+
+		int hills = 0;
+		
+		switch (baseTerrain) {
+		
+		case GRASS:
+			hills = amountOfHills / 3; break;
+		case FOREST:
+			hills = amountOfHills / 4; break;
+		case HILL:
+			hills = amountOfHills / 2 + 1; break;
+		case DESERT:
+			hills = amountOfHills/ 4; break;
+		case MOUNTAIN: break;
+		case RIVER: break;
+		case ROAD: break;
+		
+		}
+			
+			for (int i = 0; i < hills; i++) {
+				
+				int hillSize = random.nextInt(5) + 5;
+				int location = random.nextInt(48*32);
+				
+				for (int ii = 0; ii < hillSize; ii++) {
+				
+				try{indexedPanels.get(location).terrain = TerrainType.HILL;} catch (Exception e) {}
+				int heightRoll = random.nextInt(10) + 1;
+				
+					if (heightRoll < 6) {
+						try{indexedPanels.get(location - 48).terrain = TerrainType.HILL;} catch (Exception e) {}
+						try{indexedPanels.get(location + 48).terrain = TerrainType.HILL;} catch (Exception e) {}
+						try{indexedPanels.get(location + 96).terrain = TerrainType.HILL;} catch (Exception e) {}
+					}
+					
+					else if (heightRoll < 9) {
+						try{indexedPanels.get(location - 48).terrain = TerrainType.HILL;} catch (Exception e) {}
+						try{indexedPanels.get(location + 48).terrain = TerrainType.HILL;} catch (Exception e) {}
+						try{indexedPanels.get(location + 96).terrain = TerrainType.HILL;} catch (Exception e) {}
+						try{indexedPanels.get(location - 96).terrain = TerrainType.HILL;} catch (Exception e) {}
+					}
+					
+					else {
+						try{indexedPanels.get(location - 48).terrain = TerrainType.HILL;} catch (Exception e) {}
+						try{indexedPanels.get(location - 96).terrain = TerrainType.HILL;} catch (Exception e) {}
+						try{indexedPanels.get(location + 48).terrain = TerrainType.HILL;} catch (Exception e) {}
+						try{indexedPanels.get(location + 96).terrain = TerrainType.HILL;} catch (Exception e) {}
+						try{indexedPanels.get(location + 144).terrain = TerrainType.HILL;} catch (Exception e) {}
+					}
+					
+					int nextPixel = random.nextInt(4) + 1;
+					switch (nextPixel) {
+					case 1: location++; break;
+					case 2: location++; break;
+					case 3: location = location - 47; break;
+					case 4: location = location + 49; break;
+					}
+				}
+
+			}
+
+		
+		for (IndexedPanel panel: indexedPanels) {
+			panel.applyColor();			
+		}
+		
 	}
 	
-	private void createMountains() {
+	private void createMountains(TerrainType terrain) {
+		
+		Random random = new Random();
+		int roll = 0;
+		
+		for (IndexedPanel panel: indexedPanels) {
+			
+			if (panel.terrain == TerrainType.HILL) {
+				roll = random.nextInt(10) + 1;
+				if (terrain == TerrainType.HILL) {
+					if (roll < 4) panel.terrain = TerrainType.MOUNTAIN;
+				} else {
+					if (roll < 2) panel.terrain = TerrainType.MOUNTAIN;
+				}
+				
+			}
+			
+		}
 		
 	}
 	
