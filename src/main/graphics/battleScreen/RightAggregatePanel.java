@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 public class RightAggregatePanel extends JPanel {
 	
@@ -12,8 +13,6 @@ public class RightAggregatePanel extends JPanel {
 	public static SpeedButtonPanel speedButtonPanel;
 	Dimension dimension;
 	
-
-
 	private static final long serialVersionUID = 1L;
 	
 	public RightAggregatePanel(int battleScreenWidth, int battleScreenHeight) {

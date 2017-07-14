@@ -1,5 +1,7 @@
 package main;
 
+import java.util.ArrayList;
+
 import main.entity.armies.Army;
 import main.entity.regiments.FireMages;
 import main.graphics.Screen;
@@ -11,6 +13,7 @@ public class Main {
 	public static FireMages fireMages;
 	public static FireMages two;
 	public static Army army;
+	public static ArrayList<Battle> battles;
 	
 	
 
@@ -18,7 +21,10 @@ public class Main {
 	public static void main(String[] args) {
 
 		screen = new Screen();
-		BattleScreen.battleScene.createMap();
+		battles = new ArrayList<Battle>();
+		
+		battles.add(new Battle());
+
 
 		//Screen.battleScreen.battleScene.fillBattleScene();
 
