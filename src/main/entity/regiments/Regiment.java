@@ -1,8 +1,9 @@
 package main.entity.regiments;
 
-import java.util.ArrayList;
+import javax.swing.ImageIcon;
 
-import main.components.IndexedPanel;
+import main.graphics.battleScreen.BattleScreen;
+import main.utility.ImageLoader;
 
 public abstract class Regiment {
 	
@@ -22,12 +23,17 @@ public abstract class Regiment {
 	public int x;
 	public int y;
 	
-	public ArrayList<IndexedPanel> panels = new ArrayList<IndexedPanel>();
+	public int[] panels;
 	
+	protected ImageLoader imageLoader = new ImageLoader();
+	public ImageIcon icon;
+	
+	protected int width = BattleScreen.battleScene.roundedWidth / 48 - 3;
+	protected int height = BattleScreen.battleScene.roundedHeight / 32 - 3;
 	
 	public Regiment() {
 		
-		
+		panels = new int[64];		
 		
 	}
 	
@@ -37,7 +43,7 @@ public abstract class Regiment {
 			
 			for (int xCoordinate = 0; xCoordinate < columns; xCoordinate++) {
 			
-				panels.get(xCoordinate + yCoordinate * columns).index = upperLeftIndex + xCoordinate + yCoordinate * 48;
+				panels[xCoordinate + yCoordinate * columns] = upperLeftIndex + xCoordinate + yCoordinate * 48;
 				
 			}
 			

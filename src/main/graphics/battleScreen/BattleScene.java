@@ -80,7 +80,6 @@ public class BattleScene extends JPanel {
 			case ROAD:	break;
 			}
 
-			panel.applyColor();
 		}
 
 		createHills();
@@ -215,7 +214,6 @@ public class BattleScene extends JPanel {
 		case 4: startingPoint = (random.nextInt(32) * 48) + 47; startingBorder = Border.EAST; break;
 		}
 		indexedPanels.get(startingPoint).applyTerrainType(terrain);
-		indexedPanels.get(startingPoint).applyColor();
 		return startingPoint;
 
 		
@@ -279,7 +277,6 @@ public class BattleScene extends JPanel {
 		
 		try {
 			indexedPanels.get(startingPoint).applyTerrainType(terrain);
-			indexedPanels.get(startingPoint).applyColor();
 		} catch (Exception e) {
 			goOn = false;
 		}
@@ -298,14 +295,12 @@ public class BattleScene extends JPanel {
 			case 1: 
 			try {
 				indexedPanels.get(startingPoint-1).applyTerrainType(terrain);
-				indexedPanels.get(startingPoint-1).applyColor();
 			} catch (Exception e) {	}
 			break;
 			
 			case 2:
 			try {
 				indexedPanels.get(startingPoint+1).applyTerrainType(terrain);
-				indexedPanels.get(startingPoint+1).applyColor();
 			} catch (Exception e) {	}
 			break;
 			
@@ -468,8 +463,7 @@ public class BattleScene extends JPanel {
 			}
 
 		
-		for (IndexedPanel panel: indexedPanels) {
-			panel.applyColor();			
+		for (IndexedPanel panel: indexedPanels) {		
 		}
 		
 	}

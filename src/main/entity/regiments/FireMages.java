@@ -1,9 +1,10 @@
 package main.entity.regiments;
 
-import main.components.IndexedPanel;
+import javax.swing.ImageIcon;
+
+import main.graphics.battleScreen.BattleScreen;
 
 public class FireMages extends Regiment {
-	
 	
 	public FireMages() {
 		
@@ -14,11 +15,7 @@ public class FireMages extends Regiment {
 		this.x = 0;
 		this.y = 0;
 		
-		for (int i = 0; i < rows * columns; i++) {
-			
-			panels.add(new IndexedPanel(1, 1));
-			
-		}
+		icon = imageLoader.loadImageIcon("/regiments/firemages.png", width, height);
 		
 	}
 	

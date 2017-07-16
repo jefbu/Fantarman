@@ -1,5 +1,6 @@
 package main.utility;
 
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
@@ -8,12 +9,12 @@ import javax.swing.ImageIcon;
 
 public class ImageLoader {
 
-	public ImageIcon loadImageIcon(String path) {
+	public ImageIcon loadImageIcon(String path, int width, int height) {
 		
 		java.net.URL imgURL = getClass().getResource(path);
 		
 		if (imgURL != null) {
-			return new ImageIcon(imgURL);
+			return new ImageIcon(((new ImageIcon(imgURL).getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH))));
 		} else {
 			System.err.println("Couldn't find file: " + path);
 			return null;
