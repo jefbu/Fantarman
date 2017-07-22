@@ -1,12 +1,12 @@
 package main.entity.regiments;
 
-import javax.swing.ImageIcon;
-
 public class DoveMasters extends Regiment {
 		
 	public DoveMasters() {
 		
 		super();
+		
+		this.name = "Dovemasters";
 		this.rows = 1;
 		this.columns = 4;
 		

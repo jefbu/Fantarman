@@ -26,6 +26,7 @@ public class IndexedPanel extends JPanel {
 	private static ImageIcon grass1Icon;	
 	private static ImageIcon river1Icon;
 	private static ImageIcon desert1Icon;
+	private static ImageIcon forest1Icon;
 
 	public IndexedPanel(int roundedWidth, int roundedHeight) {
 
@@ -45,7 +46,6 @@ public class IndexedPanel extends JPanel {
 		
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("clicked");
 			}
 		});
 		
@@ -80,8 +80,7 @@ public class IndexedPanel extends JPanel {
 		case GRASS: 
 			button.setIcon(grass1Icon); break;
 		case FOREST: 
-			roll = random.nextInt(5) + 1;
-			setBackground(new Color (90, 100 + roll, 30 + roll)); break;
+			button.setIcon(forest1Icon); break;
 		case HILL: 
 			roll = random.nextInt(5) + 1;
 			setBackground(new Color (100 + roll, 110 + roll * 2, 20)); break;
@@ -91,8 +90,7 @@ public class IndexedPanel extends JPanel {
 		case RIVER:
 			button.setIcon(river1Icon); break;
 		case ROAD:
-			roll = random.nextInt(5) + 1;
-			setBackground(new Color (150 + roll * 2, 125 + roll, 30)); break;
+			button.setIcon(desert1Icon); break;
 		case DESERT:
 			button.setIcon(desert1Icon); break;
 		}
@@ -108,6 +106,7 @@ public class IndexedPanel extends JPanel {
 		grass1Icon = imageLoader.loadImageIcon("/tiles/grass1.png", width, height);
 		river1Icon = imageLoader.loadImageIcon("/tiles/river1.png", width, height);
 		desert1Icon = imageLoader.loadImageIcon("/tiles/desert1.png", width, height);
+		forest1Icon = imageLoader.loadImageIcon("/tiles/forest1.png", width, height);
 		
 	}
 

@@ -1,14 +1,15 @@
 package main.entity.regiments;
 
-import javax.swing.ImageIcon;
-
-import main.graphics.battleScreen.BattleScreen;
-
 public class FireMages extends Regiment {
 	
 	public FireMages() {
 		
 		super();
+		
+		this.name="Firemages";
+		
+		this.attack = 5;
+		
 		this.rows = 2;
 		this.columns = 3;
 		

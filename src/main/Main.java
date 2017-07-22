@@ -12,7 +12,11 @@ public class Main {
 	public static Screen screen;
 	public static FireMages fireMages;
 	public static DoveMasters two;
-	public static Army testArmy;
+	public static DoveMasters enemy;
+	public static DoveMasters enemy2;
+	public static DoveMasters enemy3;
+	public static Army yourArmy;
+	public static Army opponentArmy;
 	public static ArrayList<Battle> battles;
 	
 	
@@ -23,18 +27,22 @@ public class Main {
 		screen = new Screen();
 		battles = new ArrayList<Battle>();
 
-		testArmy = new Army();
+		yourArmy = new Army();
+		opponentArmy = new Army();
 		
-		fireMages = new FireMages();
-		fireMages.setIndices(1362);
-		
+		fireMages = new FireMages();		
 		two = new DoveMasters();
-		two.setIndices(600);
+		enemy = new DoveMasters();
+		enemy2 = new DoveMasters();
+		enemy3 = new DoveMasters();
 		
-		testArmy.roster.add(fireMages);
-		testArmy.roster.add(two);
+		yourArmy.roster.add(fireMages);
+		yourArmy.roster.add(two);
 		
-		
+		opponentArmy.roster.add(enemy);
+		opponentArmy.roster.add(enemy2);
+		opponentArmy.roster.add(enemy3);
+				
 		battles.add(new Battle());
 		
 

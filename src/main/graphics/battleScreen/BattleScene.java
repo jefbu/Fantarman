@@ -62,11 +62,6 @@ public class BattleScene extends JPanel {
 	
 	public void createMap() {
 		
-		for (IndexedPanel panel: indexedPanels) {
-			panel.setBackground(new Color(30,20,20));
-		}
-	
-		
 		baseTerrain = checkBaseTerrainType();
 		
 		for (IndexedPanel panel: indexedPanels) {
@@ -93,9 +88,6 @@ public class BattleScene extends JPanel {
 		for (IndexedPanel panel: indexedPanels) {
 			panel.applyColor();
 		}
-		
-		System.out.println(hasRiver);
-		System.out.println(hasRoad);
 
 		
 	}
@@ -461,10 +453,6 @@ public class BattleScene extends JPanel {
 				}
 
 			}
-
-		
-		for (IndexedPanel panel: indexedPanels) {		
-		}
 		
 	}
 	
