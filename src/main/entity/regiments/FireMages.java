@@ -8,7 +8,7 @@ public class FireMages extends Regiment {
 		
 		this.name="Firemages";
 		
-		this.attack = 5;
+		this.attack = 80;
 		
 		this.rows = 2;
 		this.columns = 3;

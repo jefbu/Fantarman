@@ -27,6 +27,9 @@ public class IndexedPanel extends JPanel {
 	private static ImageIcon river1Icon;
 	private static ImageIcon desert1Icon;
 	private static ImageIcon forest1Icon;
+	private static ImageIcon road1Icon;
+	private static ImageIcon hill1Icon;
+	private static ImageIcon mountain1Icon;
 
 	public IndexedPanel(int roundedWidth, int roundedHeight) {
 
@@ -72,9 +75,6 @@ public class IndexedPanel extends JPanel {
 	
 	public void applyColor() {
 		
-		Random random = new Random();
-		int roll;
-		
 		switch (terrain) {
 		
 		case GRASS: 
@@ -82,15 +82,13 @@ public class IndexedPanel extends JPanel {
 		case FOREST: 
 			button.setIcon(forest1Icon); break;
 		case HILL: 
-			roll = random.nextInt(5) + 1;
-			setBackground(new Color (100 + roll, 110 + roll * 2, 20)); break;
+			button.setIcon(hill1Icon); break;
 		case MOUNTAIN:
-			roll = random.nextInt(5) + 1;
-			setBackground(new Color (60 + roll, 60 + roll * 2, 10)); break;
+			button.setIcon(mountain1Icon); break;
 		case RIVER:
 			button.setIcon(river1Icon); break;
 		case ROAD:
-			button.setIcon(desert1Icon); break;
+			button.setIcon(road1Icon); break;
 		case DESERT:
 			button.setIcon(desert1Icon); break;
 		}
@@ -105,8 +103,11 @@ public class IndexedPanel extends JPanel {
 		
 		grass1Icon = imageLoader.loadImageIcon("/tiles/grass1.png", width, height);
 		river1Icon = imageLoader.loadImageIcon("/tiles/river1.png", width, height);
+		road1Icon = imageLoader.loadImageIcon("/tiles/road1.png", width, height);
 		desert1Icon = imageLoader.loadImageIcon("/tiles/desert1.png", width, height);
 		forest1Icon = imageLoader.loadImageIcon("/tiles/forest1.png", width, height);
+		hill1Icon = imageLoader.loadImageIcon("/tiles/hill1.png", width, height);
+		mountain1Icon = imageLoader.loadImageIcon("/tiles/mountain1.png", width, height);
 		
 	}
 

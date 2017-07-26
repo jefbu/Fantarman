@@ -7,11 +7,12 @@ import java.awt.Insets;
 
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.JTextPane;
 
 public class InfoTextPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	public JTextArea textArea;
+	public JTextPane textArea;
 	
 	public InfoTextPanel(Dimension dimension) {
 		
@@ -23,14 +24,14 @@ public class InfoTextPanel extends JPanel {
 		setPreferredSize(new Dimension(width, height));
 		setBackground(new Color(10, 10, 10));
 		
-		textArea = new JTextArea();
+		textArea = new JTextPane();
+		textArea.setContentType("text/html");
+		textArea.putClientProperty(JTextPane.HONOR_DISPLAY_PROPERTIES, Boolean.TRUE);
+		textArea.setFont(new Font("garamond",Font.BOLD,20));
 		textArea.setPreferredSize(new Dimension(width - 10, height - 10));
 		textArea.setEditable(false);
 		textArea.setBackground(new Color(40,70,50));
-		textArea.setFont(new Font("garamond", Font.BOLD, 20));
-		textArea.setForeground(new Color (240, 230, 230));
 		textArea.setMargin(new Insets(10,10,10,10));
-		textArea.setText("Hello World");
 		add(textArea);
 		
 	}
