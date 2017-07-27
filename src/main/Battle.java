@@ -12,15 +12,30 @@ import main.graphics.battleScreen.RightAggregatePanel;
 
 public class Battle {
 
-	int counter = 0;
+	int playerCounter = 0;
+	int enemyCounter = 0;
 	ArrayList<Who> deployOrder;
-	DeploymentZone zone;
+	DeploymentZone playerDeploymentZone;
+	DeploymentZone enemyDeploymentZone;
+
+	int attackGreen;
+	int attackRed;
+	int defenceGreen;
+	int defenceRed;
+	int chargeGreen;
+	int chargeRed;
+	int ballisticGreen;
+	int ballisticRed;
+	int moraleGreen;
+	int moraleRed;
 
 	public Battle() {
 
 		BattleScreen.battleScene.createMap();
 
-		zone = new DeploymentZone();
+		playerDeploymentZone = new DeploymentZone(24);
+		enemyDeploymentZone = new DeploymentZone(0);
+		
 		deployOrder = new ArrayList<Who>();
 
 		decideDeploymentOrder();
@@ -52,31 +67,31 @@ public class Battle {
 			BattleScreen.battleScene.indexedPanels.get(i).button.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 
-					Main.yourArmy.roster.get(counter).setIndices(index);
+					Main.yourArmy.roster.get(playerCounter).setIndices(index);
 
-					if (checkLegalDeployment(index, zone) == true) {
+					if (checkLegalDeployment(index, playerDeploymentZone) == true) {
 
-						for (int iii = 0; iii < Main.yourArmy.roster.get(counter).panels.length; iii++) {
+						for (int iii = 0; iii < Main.yourArmy.roster.get(playerCounter).panels.length; iii++) {
 
 							BattleScreen.battleScene.indexedPanels
-									.get(Main.yourArmy.roster.get(counter).panels[iii]).button
-											.setIcon(Main.yourArmy.roster.get(counter).icon);
-							BattleScreen.battleScene.indexedPanels.get(Main.yourArmy.roster.get(counter).panels[iii])
+									.get(Main.yourArmy.roster.get(playerCounter).panels[iii]).button
+											.setIcon(Main.yourArmy.roster.get(playerCounter).icon);
+							BattleScreen.battleScene.indexedPanels.get(Main.yourArmy.roster.get(playerCounter).panels[iii])
 									.setBackground(new Color(255, 255, 255));
 						}
 
-						counter++;
+						playerCounter++;
 
 					}
 
-					if (counter >= Main.yourArmy.roster.size()) {
+					if (playerCounter >= Main.yourArmy.roster.size()) {
 
 						for (int i = 0; i < BattleScreen.battleScene.indexedPanels.size(); i++) {
 
 							BattleScreen.battleScene.indexedPanels.get(i).button.removeActionListener(
 									BattleScreen.battleScene.indexedPanels.get(i).button.getActionListeners()[0]);
 
-							zone.removeDeploymentZone();
+							playerDeploymentZone.removeDeploymentZone();
 
 						}
 
@@ -136,10 +151,10 @@ public class Battle {
 		for (int i = 0; i < Main.yourArmy.roster.size(); i++) {
 			tempArmy.add(Main.yourArmy.roster.get(i));
 		}
-		tempArmy.remove(counter);
+		tempArmy.remove(playerCounter);
 
-		for (int rowIndex = 0; rowIndex < ((Main.yourArmy.roster.get(counter).rows)); rowIndex++) {
-			for (int columnIndex = 0; columnIndex < ((Main.yourArmy.roster.get(counter).columns)); columnIndex++) {
+		for (int rowIndex = 0; rowIndex < ((Main.yourArmy.roster.get(playerCounter).rows)); rowIndex++) {
+			for (int columnIndex = 0; columnIndex < ((Main.yourArmy.roster.get(playerCounter).columns)); columnIndex++) {
 
 				for (int i = 0; i < tempArmy.size(); i++) {
 					for (int ii = 0; ii < tempArmy.get(i).panels.length; ii++) {
@@ -165,7 +180,7 @@ public class Battle {
 				}
 				index++;
 			}
-			index = index + 48 - Main.yourArmy.roster.get(counter).columns;
+			index = index + 48 - Main.yourArmy.roster.get(playerCounter).columns;
 
 		}
 
@@ -194,15 +209,43 @@ public class Battle {
 
 	private void fillInfoTextPanel() {
 
-		int attackGreen = 50 + 2 * Main.yourArmy.roster.get(counter).attack;
-		int attackRed = 250 - 2 * Main.yourArmy.roster.get(counter).attack;
+		applyStatColours();
 
-		String intro = "<font color = rgb(220, 220, 220)>" + "Please deploy the following regiment: <br>";
-		String name = "<font color = #EEE000>" + Main.yourArmy.roster.get(counter).name + "<br>";
-		String attack = "<font color = rgb(" + attackRed + "," + attackGreen + ", 30)>"
-				+ Integer.toString(Main.yourArmy.roster.get(counter).attack);
+		String intro = "<font color = 'rgb(220, 220, 220)'>" + "Please deploy the following regiment: <br>";
+		String name = "<font color = #EEE000>" + Main.yourArmy.roster.get(playerCounter).name + "<br>";
+		String attack = "<font color = 'rgb(220, 220, 220)'> Attack: ";
+		String attackStat = "<font color = rgb(" + attackRed + "," + attackGreen + ", 30)>"
+				+ Integer.toString(Main.yourArmy.roster.get(playerCounter).attack) + "<br>";
+		String charge = "<font color = 'rgb(220, 220, 220)'> Charge: ";
+		String chargeStat = "<font color = rgb(" + chargeRed + "," + chargeGreen + ", 30)>"
+				+ Integer.toString(Main.yourArmy.roster.get(playerCounter).charge) + "<br>";
+		String defence = "<font color = 'rgb(220, 220, 220)'> Defence: ";
+		String defenceStat = "<font color = rgb(" + defenceRed + "," + defenceGreen + ", 30)>"
+				+ Integer.toString(Main.yourArmy.roster.get(playerCounter).defence) + "<br>";
+		String ballistic = "<font color = 'rgb(220, 220, 220)'> Ballistic: ";
+		String ballisticStat = "<font color = rgb(" + ballisticRed + "," + ballisticGreen + ", 30)>"
+				+ Integer.toString(Main.yourArmy.roster.get(playerCounter).ballistic) + "<br>";
+		String morale = "<font color = 'rgb(220, 220, 220)'> Morale: ";
+		String moraleStat = "<font color = rgb(" + moraleRed + "," + moraleGreen + ", 30)>"
+				+ Integer.toString(Main.yourArmy.roster.get(playerCounter).morale) + "<br>";
 
-		RightAggregatePanel.infoTextPanel.textArea.setText(intro + "<font color = #EEE000>" + name + attack);
+		RightAggregatePanel.infoTextPanel.textArea.setText(intro + name + attack + attackStat + charge + chargeStat
+				+ defence + defenceStat + ballistic + ballisticStat + morale + moraleStat);
+	}
+
+	private void applyStatColours() {
+
+		attackGreen = 50 + 2 * Main.yourArmy.roster.get(playerCounter).attack;
+		attackRed = 250 - 2 * Main.yourArmy.roster.get(playerCounter).attack;
+		defenceGreen = 50 + 2 * Main.yourArmy.roster.get(playerCounter).defence;
+		defenceRed = 250 - 2 * Main.yourArmy.roster.get(playerCounter).defence;
+		chargeGreen = 50 + 2 * Main.yourArmy.roster.get(playerCounter).charge;
+		chargeRed = 250 - 2 * Main.yourArmy.roster.get(playerCounter).charge;
+		ballisticGreen = 50 + 2 * Main.yourArmy.roster.get(playerCounter).ballistic;
+		ballisticRed = 250 - 2 * Main.yourArmy.roster.get(playerCounter).ballistic;
+		moraleGreen = 50 + 2 * Main.yourArmy.roster.get(playerCounter).morale;
+		moraleRed = 250 - 2 * Main.yourArmy.roster.get(playerCounter).morale;
+
 	}
 
 }

@@ -10,19 +10,19 @@ public class DeploymentZone {
 	
 	public int[] panels;
 	
-	public DeploymentZone() {
+	public DeploymentZone(int startingHeight) {
 		
 		panels = new int[256];
 		
-		for (int height = 24; height < 32; height ++) {
+		for (int height = startingHeight; height < startingHeight + 8; height ++) {
 			for (int width = 8; width < 40; width ++) {
-				panels[((height - 24) * 32) + (width - 8)] = height * 48 + width;				
+				panels[((height - startingHeight) * 32) + (width - 8)] = height * 48 + width;				
 				}			
 		}
 		
 		for (int i = 0; i < panels.length; i++) {
 			BattleScreen.battleScene.indexedPanels.get(panels[i])
-					.setBorder(new LineBorder(new Color(255, 0, 255), 1));
+					.setBorder(new LineBorder(new Color(startingHeight * 10, 0, startingHeight * 10), 1));
 		}
 		
 		

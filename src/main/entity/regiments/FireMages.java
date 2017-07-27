@@ -8,7 +8,11 @@ public class FireMages extends Regiment {
 		
 		this.name="Firemages";
 		
-		this.attack = 80;
+		this.attack = 40;
+		this.charge = 15;
+		this.defence = 45;
+		this.ballistic = 75;
+		this.morale = 55;
 		
 		this.rows = 2;
 		this.columns = 3;
