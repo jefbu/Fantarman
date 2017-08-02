@@ -18,6 +18,8 @@ public class DoveMasters extends Regiment {
 		this.rows = 1;
 		this.columns = 4;
 		
+		panels = new int[rows * columns];
+		
 		this.x = 0;
 		this.y = 0;
 		

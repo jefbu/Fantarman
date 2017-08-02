@@ -34,9 +34,7 @@ public abstract class Regiment {
 	protected int width = BattleScreen.battleScene.roundedWidth / 48 - 8;
 	protected int height = BattleScreen.battleScene.roundedHeight / 32 - 8;
 	
-	public Regiment() {
-		
-		panels = new int[64];		
+	public Regiment() {		
 		
 	}
 	

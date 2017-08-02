@@ -17,6 +17,8 @@ public class FireMages extends Regiment {
 		this.rows = 2;
 		this.columns = 3;
 		
+		panels = new int[rows * columns];
+		
 		this.x = 0;
 		this.y = 0;
 		
