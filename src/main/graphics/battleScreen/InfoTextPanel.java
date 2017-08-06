@@ -6,7 +6,6 @@ import java.awt.Font;
 import java.awt.Insets;
 
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 import javax.swing.JTextPane;
 
 public class InfoTextPanel extends JPanel {

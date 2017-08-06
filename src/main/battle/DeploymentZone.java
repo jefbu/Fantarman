@@ -1,4 +1,4 @@
-package main;
+package main.battle;
 
 import java.awt.Color;
 

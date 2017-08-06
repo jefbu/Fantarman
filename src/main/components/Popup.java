@@ -21,7 +21,7 @@ public class Popup extends JDialog {
 	private JPanel middlePanel;
 	public JPanel mainPanel;
 	
-	private JButton closeButton;
+	public JButton closeButton;
 	
 	
 	public Popup(int width, int height, Colour colour) {
@@ -57,13 +57,9 @@ public class Popup extends JDialog {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 			}
-
-		});
+		});	
 		
-		mainPanel.add(closeButton);
-		
-		setVisible(true);
-		
+		mainPanel.add(closeButton);		
 		
 	}
 	

@@ -1,4 +1,4 @@
-package main;
+package main.battle;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -6,14 +6,18 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
 
+import main.Main;
 import main.components.Colour;
 import main.components.Popup;
 import main.entity.armies.Army;
 import main.entity.regiments.Regiment;
 import main.graphics.battleScreen.BattleScreen;
 import main.graphics.battleScreen.RightAggregatePanel;
+import main.utility.Who;
 
-public class Battle {
+public class Deployment {
+	
+	BattleOrchestrator battleOrchestrator;
 
 	int playerCounter = 0;
 	int enemyCounter = 0;
@@ -32,9 +36,9 @@ public class Battle {
 	int moraleGreen;
 	int moraleRed;
 
-	public Battle() {
-
-		BattleScreen.battleScene.createMap();
+	public Deployment(BattleOrchestrator battleOrchestrator) {
+		
+		this.battleOrchestrator = battleOrchestrator;
 
 		playerDeploymentZone = new DeploymentZone(24);
 		enemyDeploymentZone = new DeploymentZone(0);
@@ -43,15 +47,20 @@ public class Battle {
 
 		decideDeploymentOrder();
 
-		deploy();
-
+		for (int i = 0; i < deployOrder.size(); i++) {
+			deploy();
+		}
+		
 	}
 
 	private void deploy() {
 
 		if (deployOrder.size() == 0) {
 			System.out.println("finished deploying");
-			Popup popup = new Popup(400, 180, Colour.BLUE); }
+			Popup popup = new Popup(400, 180, Colour.BLUE);
+			popup.setVisible(true);
+			battleOrchestrator.orchestrateBattle();
+		}
 		else if (deployOrder.get(0) == Who.ENEMY)
 			deployEnemyRegiment();
 		else
@@ -134,7 +143,6 @@ public class Battle {
 
 		for (int i = 0; i < Main.opponentArmy.roster.get(enemyCounter).panels.length; i++) {
 
-			System.out.println(enemyCounter);
 			BattleScreen.battleScene.indexedPanels.get(Main.opponentArmy.roster.get(enemyCounter).panels[i]).button
 					.setIcon(Main.opponentArmy.roster.get(enemyCounter).icon);
 			BattleScreen.battleScene.indexedPanels.get(Main.opponentArmy.roster.get(enemyCounter).panels[i])
@@ -249,7 +257,7 @@ public class Battle {
 				+ Integer.toString(Main.yourArmy.roster.get(playerCounter).defence) + "<br>";
 		String ballistic = "<font color = 'rgb(220, 220, 220)'> Ballistic: ";
 		String ballisticStat = "<font color = rgb(" + ballisticRed + "," + ballisticGreen + ", 30)>"
-				+ Integer.toString(Main.yourArmy.roster.get(playerCounter).ballistic) + "<br>";
+				+ Integer.toString(Main.yourArmy.roster.get(playerCounter).missile) + "<br>";
 		String morale = "<font color = 'rgb(220, 220, 220)'> Morale: ";
 		String moraleStat = "<font color = rgb(" + moraleRed + "," + moraleGreen + ", 30)>"
 				+ Integer.toString(Main.yourArmy.roster.get(playerCounter).morale) + "<br>";
@@ -266,8 +274,8 @@ public class Battle {
 		defenceRed = 250 - 2 * Main.yourArmy.roster.get(playerCounter).defence;
 		chargeGreen = 50 + 2 * Main.yourArmy.roster.get(playerCounter).charge;
 		chargeRed = 250 - 2 * Main.yourArmy.roster.get(playerCounter).charge;
-		ballisticGreen = 50 + 2 * Main.yourArmy.roster.get(playerCounter).ballistic;
-		ballisticRed = 250 - 2 * Main.yourArmy.roster.get(playerCounter).ballistic;
+		ballisticGreen = 50 + 2 * Main.yourArmy.roster.get(playerCounter).missile;
+		ballisticRed = 250 - 2 * Main.yourArmy.roster.get(playerCounter).missile;
 		moraleGreen = 50 + 2 * Main.yourArmy.roster.get(playerCounter).morale;
 		moraleRed = 250 - 2 * Main.yourArmy.roster.get(playerCounter).morale;
 

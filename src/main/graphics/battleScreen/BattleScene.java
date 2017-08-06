@@ -9,9 +9,9 @@ import java.util.Random;
 import javax.swing.JPanel;
 
 import main.components.IndexedPanel;
-import main.entity.Border;
-import main.entity.Direction;
-import main.entity.TerrainType;
+import main.utility.Border;
+import main.utility.Direction;
+import main.utility.TerrainType;
 
 public class BattleScene extends JPanel {
 

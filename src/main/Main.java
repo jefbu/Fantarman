@@ -2,7 +2,9 @@ package main;
 
 import java.util.ArrayList;
 
+import main.battle.Battle;
 import main.entity.armies.Army;
+import main.entity.captains.Captain;
 import main.entity.regiments.DoveMasters;
 import main.entity.regiments.FireMages;
 import main.graphics.Screen;
@@ -15,10 +17,7 @@ public class Main {
 	public static DoveMasters enemy;
 	public static DoveMasters enemy2;
 	public static DoveMasters enemy3;
-	public static FireMages enemy4;
-	public static FireMages enemy5;
-	public static FireMages enemy6;
-	public static FireMages enemy7;
+
 	public static Army yourArmy;
 	public static Army opponentArmy;
 	public static ArrayList<Battle> battles;
@@ -34,15 +33,12 @@ public class Main {
 		yourArmy = new Army();
 		opponentArmy = new Army();
 		
-		fireMages = new FireMages();		
-		two = new DoveMasters();
-		enemy = new DoveMasters();
-		enemy2 = new DoveMasters();
-		enemy3 = new DoveMasters();
-		enemy4 = new FireMages();
-		enemy5 = new FireMages();
-		enemy6 = new FireMages();
-		enemy7 = new FireMages();
+		fireMages = new FireMages("Infernomen", new Captain("Alec", 0, 2, 0, 100, 2, 0));		
+		two = new DoveMasters("Pigeonpoop", new Captain("Bae", 0, 0, 5, 0, -5, 0));
+		enemy = new DoveMasters("One", new Captain("x", 0, 0, 0, 0, 0, 1));
+		enemy2 = new DoveMasters("Two", new Captain("x", 0, 0, 0, 0, 0, 2));
+		enemy3 = new DoveMasters("Three", new Captain("x", 0, 0, 0, 0, 0, 1));
+
 		
 		yourArmy.roster.add(fireMages);
 		yourArmy.roster.add(two);
@@ -50,11 +46,7 @@ public class Main {
 		opponentArmy.roster.add(enemy);
 		opponentArmy.roster.add(enemy2);
 		opponentArmy.roster.add(enemy3);
-		opponentArmy.roster.add(enemy4);
-		opponentArmy.roster.add(enemy5);
-		opponentArmy.roster.add(enemy6);
-		opponentArmy.roster.add(enemy7);
-				
+						
 		battles.add(new Battle());
 		
 

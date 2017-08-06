@@ -1,4 +1,4 @@
-package main.entity;
+package main.utility;
 
 public enum Border {
 	

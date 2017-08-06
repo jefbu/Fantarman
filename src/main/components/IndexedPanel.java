@@ -1,18 +1,16 @@
 package main.components;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Random;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import main.entity.TerrainType;
 import main.utility.ImageLoader;
+import main.utility.TerrainType;
 
 public class IndexedPanel extends JPanel {
 
