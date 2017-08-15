@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import main.Main;
+import main.battle.BattleOrchestrator;
 
 public class ButtonPanel extends JPanel {
 	
@@ -32,6 +33,7 @@ public class ButtonPanel extends JPanel {
 		exitButton.addActionListener(new ActionListener() {
 			
 			public void actionPerformed (ActionEvent e) {
+				BattleOrchestrator.timer.stop();
 				Main.screen.dispose();
 			}
 			

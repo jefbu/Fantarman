@@ -1,19 +1,28 @@
 package main.battle;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Random;
 
+import javax.swing.Timer;
+
 import main.Main;
 import main.entity.regiments.Regiment;
-import main.graphics.battleScreen.RightAggregatePanel;
 
 public class BattleOrchestrator {
 
 	private ArrayList<Regiment> allRegiments;
+	public static Timer timer;
+	public ActionListener actionListener;
+	private int totalTurns;
+	private int counter;
 
 	public BattleOrchestrator() {
+		
+		counter = 0;
 
 		allRegiments = new ArrayList<Regiment>();
 
@@ -27,43 +36,40 @@ public class BattleOrchestrator {
 		for (Regiment regiment : allRegiments) {
 			regiment.attributeBattleStats();
 		}
+		
+		for (Regiment regiment : allRegiments) {
+			regiment.attributeBattleSpeed();
+		}
+
+		actionListener = new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (counter == totalTurns) { timer.stop(); } else {
+				Regiment activeRegiment = decideActiveRegiment();
+				if (activeRegiment.battleSpeed <= 0) {
+					counter++;
+					for (Regiment regiment : allRegiments) {
+						regiment.attributeBattleSpeed();
+					}
+				} else {
+				activeRegiment.haveTurn();
+				activeRegiment.battleSpeed -= 10;
+				}
+			}
+			}
+		};
+		
+		timer = new Timer(1000, actionListener);
 
 	}
 
 	public void orchestrateBattle() {
-
-		int totalTurns = decideTotalTurns();
-
-		for (int i = 0; i < totalTurns; i++) {
-			for (Regiment regiment : allRegiments) {
-				regiment.attributeBattleSpeed();
-				System.out.println(regiment.name + " " + regiment.battleSpeed);
-			}
-			executeTurn();
-		}
-
+		totalTurns = decideTotalTurns();
+		timer.start();
 	}
 
 	private int decideTotalTurns() {
 		Random random = new Random();
-		return 6 + random.nextInt(3);
-	}
-
-	private void executeTurn() {
-
-		boolean goOn = true;
-		while (goOn) {
-			Regiment activeRegiment = decideActiveRegiment();
-			if (activeRegiment.battleSpeed <= 0) {
-				goOn = false;
-			} else {
-				System.out.println(activeRegiment.name + " is having their turn");
-				System.out.println(activeRegiment.speed + " " + activeRegiment.battleSpeed);
-				activeRegiment.haveTurn(activeRegiment);
-
-				activeRegiment.battleSpeed -= 10;
-			}
-		}
+		return 5 + random.nextInt(2);
 	}
 
 	private Regiment decideActiveRegiment() {
@@ -79,3 +85,4 @@ public class BattleOrchestrator {
 	}
 
 }
+

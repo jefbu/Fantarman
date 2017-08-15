@@ -1,6 +1,5 @@
 package main.battle;
 
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -84,16 +83,7 @@ public class Deployment {
 
 					if (checkLegalDeployment(index, playerDeploymentZone, Main.yourArmy, playerCounter) == true) {
 
-						for (int iii = 0; iii < Main.yourArmy.roster.get(playerCounter).panels.length; iii++) {
-
-							BattleScreen.battleScene.indexedPanels
-									.get(Main.yourArmy.roster.get(playerCounter).panels[iii]).button
-											.setIcon(Main.yourArmy.roster.get(playerCounter).icon);
-							BattleScreen.battleScene.indexedPanels
-									.get(Main.yourArmy.roster.get(playerCounter).panels[iii])
-									.setBackground(new Color(255, 255, 255));
-						}
-
+						BattleScreen.battleScene.refreshMap();
 						playerCounter++;
 
 					}
@@ -142,13 +132,7 @@ public class Deployment {
 		Main.opponentArmy.roster.get(enemyCounter).setIndices(roll * 48 + 12 + roll2);
 
 		for (int i = 0; i < Main.opponentArmy.roster.get(enemyCounter).panels.length; i++) {
-
-			BattleScreen.battleScene.indexedPanels.get(Main.opponentArmy.roster.get(enemyCounter).panels[i]).button
-					.setIcon(Main.opponentArmy.roster.get(enemyCounter).icon);
-			BattleScreen.battleScene.indexedPanels.get(Main.opponentArmy.roster.get(enemyCounter).panels[i])
-					.setBackground(new Color(0, 0, 255));
-						
-		
+			BattleScreen.battleScene.refreshMap();
 		}
 
 		deployOrder.remove(0);

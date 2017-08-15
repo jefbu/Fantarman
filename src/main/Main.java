@@ -33,7 +33,7 @@ public class Main {
 		yourArmy = new Army();
 		opponentArmy = new Army();
 		
-		fireMages = new FireMages("Infernomen", new Captain("Alec", 0, 2, 0, 100, 2, 0));		
+		fireMages = new FireMages("Infernomen", new Captain("Alec", 0, 2, 0, 100, 2, 0));
 		two = new DoveMasters("Pigeonpoop", new Captain("Bae", 0, 0, 5, 0, -5, 0));
 		enemy = new DoveMasters("One", new Captain("x", 0, 0, 0, 0, 0, 1));
 		enemy2 = new DoveMasters("Two", new Captain("x", 0, 0, 0, 0, 0, 2));

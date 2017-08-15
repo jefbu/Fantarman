@@ -37,13 +37,14 @@ public class IndexedPanel extends JPanel {
 		
 		Dimension individualPanelSize = new Dimension(roundedWidth / 48, roundedHeight / 32);
 		setPreferredSize(individualPanelSize);
+		setBorder(null);
 		
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		
 		button = new JButton();
 		button.setPreferredSize(new Dimension((int) individualPanelSize.getWidth(), (int) individualPanelSize.getHeight()));
 		button.setContentAreaFilled(false);
-		button.setBorderPainted(false);
+		button.setBorder(null);
 		
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

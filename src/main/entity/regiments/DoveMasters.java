@@ -1,16 +1,18 @@
 package main.entity.regiments;
 
 import main.entity.captains.Captain;
+import main.entity.tactics.Tactic;
 
 public class DoveMasters extends Regiment {
 		
 	public DoveMasters(String name, Captain captain) {
 		
 		super();
+		instructions.add(Tactic.defaultTactic);
 		
 		this.name = name;
 				
-		this.attack = 30 + captain.attackBonus;
+		this.attack = 90 + captain.attackBonus;
 		this.charge = 10 + captain.chargeBonus;
 		this.defence = 30 + captain.defenceBonus;
 		this.missile = 50 + captain.missileBonus;
@@ -19,7 +21,9 @@ public class DoveMasters extends Regiment {
 		this.speedVariation = 10;
 		this.range = 16;
 		this.move = 4;
+		this.run = 2;
 		this.run = 6;
+		this.life = 25;
 		
 		this.rows = 1;
 		this.columns = 4;
