@@ -14,6 +14,7 @@ public class FireMages extends Regiment {
 		instructions.add(new Tactic(Condition.ALWAYS, Target.ENEMY_NEAREST, Order.CHARGE));
 		
 		this.name = name;
+		this.value = 600;
 		
 		this.attack = 40 + captain.attackBonus;
 		this.charge = 15 + captain.chargeBonus;

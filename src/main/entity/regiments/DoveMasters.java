@@ -11,6 +11,7 @@ public class DoveMasters extends Regiment {
 		instructions.add(Tactic.defaultTactic);
 		
 		this.name = name;
+		this.value = 1000;
 				
 		this.attack = 90 + captain.attackBonus;
 		this.charge = 10 + captain.chargeBonus;

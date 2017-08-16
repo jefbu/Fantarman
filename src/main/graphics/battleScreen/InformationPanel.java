@@ -27,10 +27,10 @@ public class InformationPanel extends JPanel {
 		setBackground(new Color(80, 70, 60));
 		setLayout (new FlowLayout(FlowLayout.LEFT, 5, 5));
 		
-		yourPanel = new BattleOverviewInformationPanel(roundedWidth / 2, roundedHeight, Colour.GREEN, Main.yourArmy);
+		yourPanel = new BattleOverviewInformationPanel(roundedWidth / 2, roundedHeight, Colour.GREEN);
 		add(yourPanel);
 		
-		enemyPanel = new BattleOverviewInformationPanel(roundedWidth / 2, roundedHeight, Colour.RED, Main.opponentArmy);
+		enemyPanel = new BattleOverviewInformationPanel(roundedWidth / 2, roundedHeight, Colour.RED);
 		add(enemyPanel);
 		
 		

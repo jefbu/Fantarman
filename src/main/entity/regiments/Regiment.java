@@ -5,6 +5,7 @@ import java.util.Random;
 
 import javax.swing.ImageIcon;
 
+import main.Main;
 import main.components.IndexedPanel;
 import main.entity.captains.Captain;
 import main.entity.tactics.ConditionChecker;
@@ -20,6 +21,8 @@ public abstract class Regiment {
 
 	public Captain captain;
 	public ArrayList<Tactic> instructions;
+	
+	public int value;
 
 	public int attack;
 	public int defence;
@@ -122,6 +125,8 @@ public abstract class Regiment {
 			writeText(tactic, target);
 			
 			BattleScreen.battleScene.refreshMap();
+			BattleScreen.informationPanel.yourPanel.update(Main.yourArmy);
+			BattleScreen.informationPanel.enemyPanel.update(Main.opponentArmy);
 			for (IndexedPanel indexedPanel: BattleScreen.battleScene.indexedPanels) {
 			indexedPanel.setBorder(null);
 			indexedPanel.button.setBorder(null);
