@@ -54,8 +54,14 @@ public class Deployment {
 
 	private void deploy() {
 
+		System.out.println(deployOrder.size());
 		if (deployOrder.size() == 0) {
-			System.out.println("finished deploying");
+			playerDeploymentZone.removeDeploymentZone();
+			enemyDeploymentZone.removeDeploymentZone();
+				for (int i = 0; i < BattleScreen.battleScene.indexedPanels.size(); i++) {
+					BattleScreen.battleScene.indexedPanels.get(i).button.removeActionListener(
+							BattleScreen.battleScene.indexedPanels.get(i).button.getActionListeners()[0]);
+				}
 			Popup popup = new Popup(400, 180, Colour.BLUE);
 			popup.setVisible(true);
 			battleOrchestrator.orchestrateBattle();
@@ -79,40 +85,19 @@ public class Deployment {
 			BattleScreen.battleScene.indexedPanels.get(i).button.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 
-					Main.yourArmy.roster.get(playerCounter).setIndices(index);
-
+					
 					if (checkLegalDeployment(index, playerDeploymentZone, Main.yourArmy, playerCounter) == true) {
-
+						
+						Main.yourArmy.roster.get(playerCounter).setIndices(index);
 						BattleScreen.battleScene.refreshMap();
 						playerCounter++;
-
+						BattleScreen.battleScene.indexedPanels.get(0).applyColor();
+						deployOrder.remove(0);
+						deploy();
 					}
-
-					if (playerCounter >= Main.yourArmy.roster.size()) {
-
-						for (int i = 0; i < BattleScreen.battleScene.indexedPanels.size(); i++) {
-
-							BattleScreen.battleScene.indexedPanels.get(i).button.removeActionListener(
-									BattleScreen.battleScene.indexedPanels.get(i).button.getActionListeners()[0]);
-
-							playerDeploymentZone.removeDeploymentZone();
-							enemyDeploymentZone.removeDeploymentZone();
-
-						}
-
-					} else {
-						fillInfoTextPanel();
-					}
-					BattleScreen.battleScene.indexedPanels.get(0).applyColor();
-					deployOrder.remove(0);
-					deploy();
-
 				}
-
 			});
-
 		}
-
 	}
 
 	private void deployEnemyRegiment() {
@@ -135,6 +120,7 @@ public class Deployment {
 			BattleScreen.battleScene.refreshMap();
 		}
 
+		BattleScreen.battleScene.indexedPanels.get(0).applyColor();
 		deployOrder.remove(0);
 		enemyCounter++;
 		deploy();

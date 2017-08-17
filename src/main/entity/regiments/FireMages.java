@@ -26,7 +26,6 @@ public class FireMages extends Regiment {
 		this.move = 4;
 		this.run = 2;
 		this.range = 12;
-		this.run = 6;
 		this.life = 25;
 		
 		this.rows = 2;

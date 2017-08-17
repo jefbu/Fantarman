@@ -23,7 +23,6 @@ public class DoveMasters extends Regiment {
 		this.range = 16;
 		this.move = 4;
 		this.run = 2;
-		this.run = 6;
 		this.life = 25;
 		
 		this.rows = 1;
