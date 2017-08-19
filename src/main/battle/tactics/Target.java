@@ -1,4 +1,4 @@
-package main.entity.tactics;
+package main.battle.tactics;
 
 public enum Target {
 	

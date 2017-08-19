@@ -1,4 +1,4 @@
-package main.entity.tactics;
+package main.battle.tactics;
 
 import main.Main;
 import main.entity.regiments.Regiment;

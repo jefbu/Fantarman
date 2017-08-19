@@ -9,7 +9,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import main.utility.ImageLoader;
+import main.graphics.TileImages;
 import main.utility.TerrainType;
 
 public class IndexedPanel extends JPanel {
@@ -19,22 +19,14 @@ public class IndexedPanel extends JPanel {
 	public int index;
 	public JButton button;
 	public TerrainType terrain;
-	private ImageLoader imageLoader;
+	public ImageIcon icon;
 	
-	private static ImageIcon grass1Icon;	
-	private static ImageIcon river1Icon;
-	private static ImageIcon desert1Icon;
-	private static ImageIcon forest1Icon;
-	private static ImageIcon road1Icon;
-	private static ImageIcon hill1Icon;
-	private static ImageIcon mountain1Icon;
+
 
 	public IndexedPanel(int roundedWidth, int roundedHeight) {
 
 		super();
-		
-		loadImages(roundedWidth / 48, roundedHeight / 32);
-		
+				
 		Dimension individualPanelSize = new Dimension(roundedWidth / 48, roundedHeight / 32);
 		setPreferredSize(individualPanelSize);
 		setBorder(null);
@@ -53,17 +45,7 @@ public class IndexedPanel extends JPanel {
 		
 		add(button);
 		
-		
-
-
-	}
-	
-	
-	
-	
-	
-	
-	
+	}	
 	
 	
 	public void applyTerrainType(TerrainType terrainType) {
@@ -73,41 +55,31 @@ public class IndexedPanel extends JPanel {
 	}
 	
 	public void applyColor() {
+		button.setIcon(icon);
+	}
+	
+	/*public void applyColor() {
 		
 		switch (terrain) {
 		
 		case GRASS: 
-			button.setIcon(grass1Icon); break;
+			button.setIcon(TileImages.grass1Icon); break;
 		case FOREST: 
-			button.setIcon(forest1Icon); break;
+			button.setIcon(TileImages.forest1Icon); break;
 		case HILL: 
-			button.setIcon(hill1Icon); break;
+			button.setIcon(TileImages.hill1Icon); break;
 		case MOUNTAIN:
-			button.setIcon(mountain1Icon); break;
+			button.setIcon(TileImages.mountain1Icon); break;
 		case RIVER:
-			button.setIcon(river1Icon); break;
+			button.setIcon(TileImages.river1Icon); break;
 		case ROAD:
-			button.setIcon(road1Icon); break;
+			button.setIcon(TileImages.road1Icon); break;
 		case DESERT:
-			button.setIcon(desert1Icon); break;
+			button.setIcon(TileImages.desert1Icon); break;
 		}
 		
 		
 		
-	}
-	
-	private void loadImages(int width, int height) {
-		
-		imageLoader = new ImageLoader();
-		
-		grass1Icon = imageLoader.loadImageIcon("/tiles/grass1.png", width, height);
-		river1Icon = imageLoader.loadImageIcon("/tiles/river1.png", width, height);
-		road1Icon = imageLoader.loadImageIcon("/tiles/road1.png", width, height);
-		desert1Icon = imageLoader.loadImageIcon("/tiles/desert1.png", width, height);
-		forest1Icon = imageLoader.loadImageIcon("/tiles/forest1.png", width, height);
-		hill1Icon = imageLoader.loadImageIcon("/tiles/hill1.png", width, height);
-		mountain1Icon = imageLoader.loadImageIcon("/tiles/mountain1.png", width, height);
-		
-	}
+	}*/
 
 }

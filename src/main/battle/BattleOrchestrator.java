@@ -14,7 +14,6 @@ import main.entity.regiments.Regiment;
 
 public class BattleOrchestrator {
 
-	private ArrayList<Regiment> allRegiments;
 	public static Timer timer;
 	public ActionListener actionListener;
 	private int totalTurns;
@@ -24,31 +23,36 @@ public class BattleOrchestrator {
 		
 		counter = 0;
 
-		allRegiments = new ArrayList<Regiment>();
 
 		for (Regiment regiment : Main.yourArmy.roster) {
-			allRegiments.add(regiment);
-		}
-		for (Regiment regiment : Main.opponentArmy.roster) {
-			allRegiments.add(regiment);
-		}
-
-		for (Regiment regiment : allRegiments) {
+			regiment.attributeBattleSpeed();
+			regiment.attributeBattleLife();
 			regiment.attributeBattleStats();
 		}
-		
-		for (Regiment regiment : allRegiments) {
+		for (Regiment regiment : Main.opponentArmy.roster) {
 			regiment.attributeBattleSpeed();
+			regiment.attributeBattleLife();
+			regiment.attributeBattleStats();
 		}
+
+
 
 		actionListener = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (counter == totalTurns) { timer.stop(); } else {
+				if (counter == totalTurns) { 
+					timer.stop(); 
+					System.out.println("Battle finished");
+				} else {
 				Regiment activeRegiment = decideActiveRegiment();
 				if (activeRegiment.battleSpeed <= 0) {
 					counter++;
-					for (Regiment regiment : allRegiments) {
+					for (Regiment regiment : Main.yourArmy.roster) {
 						regiment.attributeBattleSpeed();
+						regiment.attributeBattleStats();
+					}
+					for (Regiment regiment : Main.opponentArmy.roster) {
+						regiment.attributeBattleSpeed();
+						regiment.attributeBattleStats();
 					}
 				} else {
 				activeRegiment.haveTurn();
@@ -69,18 +73,28 @@ public class BattleOrchestrator {
 
 	private int decideTotalTurns() {
 		Random random = new Random();
-		return 5 + random.nextInt(2);
+		return 6 + random.nextInt(2);
 	}
 
 	private Regiment decideActiveRegiment() {
 
-		Collections.sort(allRegiments, new Comparator<Regiment>() {
+		Collections.sort(Main.yourArmy.roster, new Comparator<Regiment>() {
 			@Override
 			public int compare(Regiment p1, Regiment p2) {
 				return p2.battleSpeed - p1.battleSpeed;
 			}
 		});
-		return allRegiments.get(0);
+		Collections.sort(Main.opponentArmy.roster, new Comparator<Regiment>() {
+			@Override
+			public int compare(Regiment p1, Regiment p2) {
+				return p2.battleSpeed - p1.battleSpeed;
+			}
+		});
+		if (Main.yourArmy.roster.get(0).battleSpeed >= Main.opponentArmy.roster.get(0).battleSpeed) {
+			return Main.yourArmy.roster.get(0);
+		} else {
+		return Main.opponentArmy.roster.get(0);
+		}
 
 	}
 

@@ -6,13 +6,13 @@ import java.util.Random;
 import javax.swing.ImageIcon;
 
 import main.Main;
+import main.battle.tactics.ConditionChecker;
+import main.battle.tactics.Order;
+import main.battle.tactics.OrderMethods;
+import main.battle.tactics.Tactic;
+import main.battle.tactics.TargetChecker;
 import main.components.IndexedPanel;
 import main.entity.captains.Captain;
-import main.entity.tactics.ConditionChecker;
-import main.entity.tactics.DistanceChecker;
-import main.entity.tactics.Order;
-import main.entity.tactics.Tactic;
-import main.entity.tactics.TargetChecker;
 import main.graphics.battleScreen.BattleScreen;
 import main.graphics.battleScreen.RightAggregatePanel;
 import main.utility.ImageLoader;
@@ -66,12 +66,14 @@ public abstract class Regiment {
 	protected int height = BattleScreen.battleScene.roundedHeight / 32 - 8;
 	
 	public boolean inCombat;
+	public boolean defeated;
 	public Regiment combatOpponent;
 
 	public Regiment() {
 
 		this.instructions = new ArrayList<Tactic>();
 		inCombat = false;
+		defeated = false;
 
 	}
 
@@ -96,6 +98,10 @@ public abstract class Regiment {
 	public void attributeBattleSpeed() {
 		battleSpeed = speed + rollSpeedVariation();
 	}
+	
+	public void attributeBattleLife() {
+		this.battleLife = life;
+	}
 
 	public void attributeBattleStats() {
 
@@ -109,14 +115,17 @@ public abstract class Regiment {
 		this.battleMove = move;
 		this.battleRange = range;
 		this.battleRun = run;
-		this.battleLife = life;
+		this.defeated = false;
 
 	}
 
 	public void haveTurn() {
 		
 		if (inCombat) {
-			combat(combatOpponent, 0);
+			OrderMethods.combat(this, combatOpponent, 0);
+			BattleScreen.battleScene.refreshMap();
+			BattleScreen.battleScene.refreshRegimentColours();
+			RightAggregatePanel.infoTextPanel.textArea.setText(name + " is in combat with " + combatOpponent);
 		} else {
 			Tactic tactic = ConditionChecker.checkConditions(this);
 			Regiment target = TargetChecker.checkTarget(this, tactic.target);
@@ -139,109 +148,24 @@ public abstract class Regiment {
 		switch (order) {
 
 		case CHARGE:
-			chargeTarget(target);
+			OrderMethods.chargeTarget(this, target);
 			break;
 		case RECOVER:
-			recover();
+			OrderMethods.recover(this);
 			break;
 		case FIRE:
-			fire(target);
+			OrderMethods.fire(this, target);
 			break;
 		}
 	}
 
-	private void chargeTarget(Regiment target) {
-		
-		battleDefence -= 5;
-
-		move(battleMove + run, target);
-
-	}
 	
-	private void move(int movement, Regiment target) {
-		
-		
- 		Random random = new Random();
-		int roll;
-		int roll2;
-		for (int i = 0; i < movement; i++) {
-			roll = random.nextInt(10);
-			roll2 = random.nextInt(10);
-			int verticalDistance = DistanceChecker.checkVerticalDistance(this, target);
-			int horizontalDistance = DistanceChecker.checkHorizontalDistance(this, target);
-			
-			if (verticalDistance == 0 && horizontalDistance == 0) { 
-				i = movement;
-				inCombat = true;
-				combatOpponent = target;
-				target.inCombat = true;
-				target.combatOpponent = this;
-				combat(target, battleCharge);
-			} else {			
-				if (Math.abs(verticalDistance) > Math.abs(horizontalDistance)) {
-					if (verticalDistance < 0) { if (roll < (4 + getTerrainBonus(-48))) setIndices(panels[0] - 48); }
-					if (verticalDistance > 0) { if (roll < (4 + getTerrainBonus(48))) setIndices(panels[0] + 48); }
-					if (horizontalDistance < 0) { if (roll2 < (1 + getTerrainBonus(-1))) setIndices(panels[0] - 1); }
-					if (horizontalDistance > 0) { if (roll2 < (1 + getTerrainBonus (1))) setIndices(panels[0] + 1); }
-				} else {
-					if (verticalDistance < 0) { if (roll < (1 + getTerrainBonus(-48))) setIndices(panels[0] - 48); }
-					if (verticalDistance > 0) { if (roll < (1 + getTerrainBonus(48))) setIndices(panels[0] + 48); }
-					if (horizontalDistance < 0) { if (roll2 < (4 + getTerrainBonus(-1))) setIndices(panels[0] - 1); }
-					if (horizontalDistance > 0) { if (roll2 < (4 + getTerrainBonus(1))) setIndices(panels[0] + 1); }				
-				}
-			}		
-		}
-		
-	}
+
 	
-	private int getTerrainBonus(int direction) {
-		switch(BattleScreen.battleScene.indexedPanels.get(panels[0] + direction).terrain) {
-		case DESERT: return 3;
-		case FOREST: return 2;
-		case GRASS: return 4;
-		case HILL: return 2;
-		case MOUNTAIN: return 1;
-		case RIVER: return 1;
-		case ROAD: return 5;		
-		}
-		return 0;
-	}
 
 
-
-	private void recover() {
-		
-		Random random = new Random();
-		int lostLife = life - battleLife;
-		for (int i = 0; i < lostLife; i++) {
-			if (random.nextInt(100) < 10) battleLife++;
-		}
-
-	}
 	
-	private void fire(Regiment target) {
-		Random random = new Random();
-		int hits = 0;
-		for (int i = 0; i < battleLife; i++) {
-			if (random.nextInt(100) < missile) hits++;
-		}
-		for (int ii = 0; ii < hits; ii++) {
-			if (random.nextInt(100) < target.defence) target.battleLife--;
-		}
-	}
-	
-	private void combat(Regiment target, int chargeBonus) {
-		System.out.println(name + " currently has " + battleLife + " battleLife");
-		Random random = new Random();
-		int hits = 0;
-		for (int i = 0; i < battleLife; i ++) {
-			if (random.nextInt(100) < attack + chargeBonus) hits++;
-		}
-		for (int ii = 0; ii < hits; ii++) {
-			if (random.nextInt(100) < target.defence) target.battleLife--;
-		}
-		System.out.println(name + " is in combat with " + target.name + " with chargebonus: " + chargeBonus);
-	}
+
 	
 	
 	

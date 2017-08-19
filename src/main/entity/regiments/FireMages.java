@@ -1,10 +1,10 @@
 package main.entity.regiments;
 
+import main.battle.tactics.Condition;
+import main.battle.tactics.Order;
+import main.battle.tactics.Tactic;
+import main.battle.tactics.Target;
 import main.entity.captains.Captain;
-import main.entity.tactics.Condition;
-import main.entity.tactics.Order;
-import main.entity.tactics.Tactic;
-import main.entity.tactics.Target;
 
 public class FireMages extends Regiment {
 	
@@ -16,17 +16,17 @@ public class FireMages extends Regiment {
 		this.name = name;
 		this.value = 600;
 		
-		this.attack = 40 + captain.attackBonus;
+		this.attack = 80 + captain.attackBonus;
 		this.charge = 15 + captain.chargeBonus;
 		this.defence = 25 + captain.defenceBonus;
 		this.missile = 75 + captain.missileBonus;
 		this.morale = 55 + captain.moraleBonus;
 		this.speed = 5 + captain.speedBonus;
 		this.speedVariation = 8;
-		this.move = 4;
-		this.run = 2;
+		this.move = 9;
+		this.run = 9;
 		this.range = 12;
-		this.life = 25;
+		this.life = 35;
 		
 		this.rows = 2;
 		this.columns = 3;

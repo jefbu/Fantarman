@@ -8,6 +8,8 @@ import main.entity.captains.Captain;
 import main.entity.regiments.DoveMasters;
 import main.entity.regiments.FireMages;
 import main.graphics.Screen;
+import main.graphics.TileImages;
+import main.graphics.battleScreen.BattleScreen;
 
 public class Main {
 
@@ -29,6 +31,8 @@ public class Main {
 
 		screen = new Screen();
 		battles = new ArrayList<Battle>();
+		TileImages.loadImages(BattleScreen.battleScene.roundedWidth / 48, BattleScreen.battleScene.roundedHeight / 32);
+
 
 		yourArmy = new Army();
 		opponentArmy = new Army();
