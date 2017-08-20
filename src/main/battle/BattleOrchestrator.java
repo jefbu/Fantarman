@@ -2,7 +2,6 @@ package main.battle;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Random;
@@ -10,6 +9,7 @@ import java.util.Random;
 import javax.swing.Timer;
 
 import main.Main;
+import main.entity.armies.Army;
 import main.entity.regiments.Regiment;
 
 public class BattleOrchestrator {
@@ -18,10 +18,12 @@ public class BattleOrchestrator {
 	public ActionListener actionListener;
 	private int totalTurns;
 	private int counter;
+	private Army activeArmy;
 
 	public BattleOrchestrator() {
 		
 		counter = 0;
+		activeArmy = Main.yourArmy;
 
 
 		for (Regiment regiment : Main.yourArmy.roster) {
@@ -55,7 +57,7 @@ public class BattleOrchestrator {
 						regiment.attributeBattleStats();
 					}
 				} else {
-				activeRegiment.haveTurn();
+				activeRegiment.haveTurn(activeArmy);
 				activeRegiment.battleSpeed -= 10;
 				}
 			}
@@ -91,9 +93,11 @@ public class BattleOrchestrator {
 			}
 		});
 		if (Main.yourArmy.roster.get(0).battleSpeed >= Main.opponentArmy.roster.get(0).battleSpeed) {
+			activeArmy = Main.yourArmy;
 			return Main.yourArmy.roster.get(0);
 		} else {
-		return Main.opponentArmy.roster.get(0);
+			activeArmy = Main.opponentArmy;
+			return Main.opponentArmy.roster.get(0);
 		}
 
 	}

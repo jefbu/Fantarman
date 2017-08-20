@@ -12,6 +12,7 @@ import main.battle.tactics.OrderMethods;
 import main.battle.tactics.Tactic;
 import main.battle.tactics.TargetChecker;
 import main.components.IndexedPanel;
+import main.entity.armies.Army;
 import main.entity.captains.Captain;
 import main.graphics.battleScreen.BattleScreen;
 import main.graphics.battleScreen.RightAggregatePanel;
@@ -21,7 +22,7 @@ public abstract class Regiment {
 
 	public Captain captain;
 	public ArrayList<Tactic> instructions;
-	
+
 	public int value;
 
 	public int attack;
@@ -64,7 +65,7 @@ public abstract class Regiment {
 
 	protected int width = BattleScreen.battleScene.roundedWidth / 48 - 8;
 	protected int height = BattleScreen.battleScene.roundedHeight / 32 - 8;
-	
+
 	public boolean inCombat;
 	public boolean defeated;
 	public Regiment combatOpponent;
@@ -98,7 +99,7 @@ public abstract class Regiment {
 	public void attributeBattleSpeed() {
 		battleSpeed = speed + rollSpeedVariation();
 	}
-	
+
 	public void attributeBattleLife() {
 		this.battleLife = life;
 	}
@@ -119,30 +120,34 @@ public abstract class Regiment {
 
 	}
 
-	public void haveTurn() {
-		
+	public void haveTurn(Army army) {
+
 		if (inCombat) {
-			OrderMethods.combat(this, combatOpponent, 0);
+
+			int casualties = OrderMethods.combat(this, combatOpponent, 0);
 			BattleScreen.battleScene.refreshMap();
 			BattleScreen.battleScene.refreshRegimentColours();
-			RightAggregatePanel.infoTextPanel.textArea.setText(name + " is in combat with " + combatOpponent);
+			BattleScreen.informationPanel.yourPanel.update(Main.yourArmy);
+			BattleScreen.informationPanel.enemyPanel.update(Main.opponentArmy);
+			writeText(combatOpponent, casualties);
+
 		} else {
+
 			Tactic tactic = ConditionChecker.checkConditions(this);
-			Regiment target = TargetChecker.checkTarget(this, tactic.target);
+			Regiment target = TargetChecker.checkTarget(this, tactic.target, army);
 			executeOrder(tactic.order, target);
-	
+
 			writeText(tactic, target);
-			
+
 			BattleScreen.battleScene.refreshMap();
 			BattleScreen.informationPanel.yourPanel.update(Main.yourArmy);
 			BattleScreen.informationPanel.enemyPanel.update(Main.opponentArmy);
-			for (IndexedPanel indexedPanel: BattleScreen.battleScene.indexedPanels) {
-			indexedPanel.setBorder(null);
-			indexedPanel.button.setBorder(null);
+			for (IndexedPanel indexedPanel : BattleScreen.battleScene.indexedPanels) {
+				indexedPanel.setBorder(null);
+				indexedPanel.button.setBorder(null);
 			}
 		}
 	}
-
 
 	private void executeOrder(Order order, Regiment target) {
 		switch (order) {
@@ -159,22 +164,19 @@ public abstract class Regiment {
 		}
 	}
 
-	
+	private void writeText(Regiment target, int casualties) {
 
-	
+		RightAggregatePanel.infoTextPanel.textArea
+				.setText("<font color = 'rgb(220, 220, 220)'>" + name + " is having their turn and is in combat with "
+						+ target.name + "<br>" + "They manage to inflict " + casualties + " casualties");
 
+	}
 
-	
-
-	
-	
-	
 	private void writeText(Tactic tactic, Regiment target) {
-		
+
 		RightAggregatePanel.infoTextPanel.textArea.setText("<font color = 'rgb(220, 220, 220)'>" + name
 				+ " is having their turn and chooses to " + tactic.order.toString() + " " + target.name);
-		
-		
+
 	}
 
 }

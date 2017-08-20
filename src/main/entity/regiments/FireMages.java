@@ -21,7 +21,7 @@ public class FireMages extends Regiment {
 		this.defence = 25 + captain.defenceBonus;
 		this.missile = 75 + captain.missileBonus;
 		this.morale = 55 + captain.moraleBonus;
-		this.speed = 5 + captain.speedBonus;
+		this.speed = 50 + captain.speedBonus;
 		this.speedVariation = 8;
 		this.move = 9;
 		this.run = 9;

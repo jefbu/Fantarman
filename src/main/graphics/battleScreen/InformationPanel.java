@@ -6,9 +6,7 @@ import java.awt.FlowLayout;
 
 import javax.swing.JPanel;
 
-import main.Main;
 import main.components.Colour;
-import main.components.ContentPanel;
 
 public class InformationPanel extends JPanel {
 

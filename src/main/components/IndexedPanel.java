@@ -9,7 +9,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import main.graphics.TileImages;
 import main.utility.TerrainType;
 
 public class IndexedPanel extends JPanel {

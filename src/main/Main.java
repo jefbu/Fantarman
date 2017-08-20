@@ -15,10 +15,10 @@ public class Main {
 
 	public static Screen screen;
 	public static FireMages fireMages;
-	public static DoveMasters two;
-	public static DoveMasters enemy;
-	public static DoveMasters enemy2;
-	public static DoveMasters enemy3;
+	public static DoveMasters pigeonPoop;
+	public static DoveMasters pidgeotto;
+	public static DoveMasters colombe;
+	public static DoveMasters birdie;
 
 	public static Army yourArmy;
 	public static Army opponentArmy;
@@ -38,18 +38,18 @@ public class Main {
 		opponentArmy = new Army();
 		
 		fireMages = new FireMages("Infernomen", new Captain("Alec", 0, 2, 0, 100, 2, 0));
-		two = new DoveMasters("Pigeonpoop", new Captain("Bae", 0, 0, 5, 0, -5, 0));
-		enemy = new DoveMasters("One", new Captain("x", 0, 0, 0, 0, 0, 1));
-		enemy2 = new DoveMasters("Two", new Captain("x", 0, 0, 0, 0, 0, 2));
-		enemy3 = new DoveMasters("Three", new Captain("x", 0, 0, 0, 0, 0, 1));
+		pigeonPoop = new DoveMasters("Pigeonpoop", new Captain("Bae", 0, 0, 5, 0, -5, 0));
+		pidgeotto = new DoveMasters("Pidgeotto", new Captain("x", 0, 0, 0, 0, 0, 1));
+		colombe = new DoveMasters("Colombe", new Captain("x", 0, 0, 0, 0, 0, 2));
+		birdie = new DoveMasters("Birdie", new Captain("x", 0, 0, 0, 0, 0, 1));
 
 		
-		yourArmy.roster.add(fireMages);
-		yourArmy.roster.add(two);
+		yourArmy.roster.add(pidgeotto);
+		yourArmy.roster.add(pigeonPoop);
 		
-		opponentArmy.roster.add(enemy);
-		opponentArmy.roster.add(enemy2);
-		opponentArmy.roster.add(enemy3);
+		opponentArmy.roster.add(fireMages);
+		opponentArmy.roster.add(colombe);
+		opponentArmy.roster.add(birdie);
 						
 		battles.add(new Battle());
 		

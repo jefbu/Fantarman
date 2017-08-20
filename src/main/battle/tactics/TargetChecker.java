@@ -1,13 +1,14 @@
 package main.battle.tactics;
 
 import main.Main;
+import main.entity.armies.Army;
 import main.entity.regiments.Regiment;
 
 public class TargetChecker {
 	
 	
 	
-	public static Regiment checkTarget(Regiment regiment, Target target) {
+	public static Regiment checkTarget(Regiment regiment, Target target, Army army) {
 
 		switch (target) {
 
@@ -16,7 +17,11 @@ public class TargetChecker {
 		case ENEMY_WEAKEST:
 			return Main.opponentArmy.roster.get(0);
 		case ENEMY_NEAREST:
-			return Main.opponentArmy.roster.get(0);
+			if (army == Main.yourArmy) {
+				return Main.opponentArmy.roster.get(0);
+			} else {
+				return Main.yourArmy.roster.get(0);
+			}
 		case SELF:
 			return regiment;
 

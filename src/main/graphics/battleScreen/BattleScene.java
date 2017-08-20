@@ -63,16 +63,19 @@ public class BattleScene extends JPanel {
 	public void createMap() {
 
 		Random random = new Random();
+		int roll = 0;
 		baseTerrain = checkBaseTerrainType();
 
 		for (IndexedPanel panel : indexedPanels) {
 			switch (baseTerrain) {
 			case GRASS:
 				panel.terrain = TerrainType.GRASS;
-				int roll = random.nextInt(1000) + 1;
-				if (roll <= 3) {
+				roll = random.nextInt(10000) + 1;
+				if (roll <= 5) {
+				panel.icon = TileImages.grass4Icon;
+			    } else if (roll <= 10) {
 				panel.icon = TileImages.grass3Icon;
-				} else if (roll <= 10){
+				} else if (roll <= 20){
 				panel.icon = TileImages.grass2Icon;
 				} else {
 				panel.icon = TileImages.grass1Icon;
@@ -91,7 +94,14 @@ public class BattleScene extends JPanel {
 				break;
 			case DESERT:
 				panel.terrain = TerrainType.DESERT;
+				roll = random.nextInt(1000);
+				if (roll < 3) {
+				panel.icon = TileImages.desert3Icon;	
+				} else if (roll < 10) {
+				panel.icon = TileImages.desert2Icon;
+				} else {
 				panel.icon = TileImages.desert1Icon;
+				}
 				panel.button.setIcon(panel.icon);
 				break;
 			case MOUNTAIN:
@@ -614,8 +624,15 @@ public class BattleScene extends JPanel {
 			for (int ii = 0; ii < forestSize; ii++) {
 
 				try {
+					int roll = random.nextInt(100);
 					indexedPanels.get(location).terrain = TerrainType.FOREST;
+					if (roll < 3) {
+					indexedPanels.get(location).icon = TileImages.forest3Icon;
+					} else if (roll < 10) {
+					indexedPanels.get(location).icon = TileImages.forest2Icon;
+					} else {
 					indexedPanels.get(location).icon = TileImages.forest1Icon;
+					}
 					indexedPanels.get(location).button.setIcon(indexedPanels.get(location).icon);
 				} catch (Exception e) {
 				}
@@ -847,7 +864,11 @@ public class BattleScene extends JPanel {
 				if (terrain == TerrainType.HILL) {
 					if (roll < 4) {
 						panel.terrain = TerrainType.MOUNTAIN;
+						if (roll < 2) {
+							panel.icon = TileImages.mountain2Icon;
+						} else {
 						panel.icon = TileImages.mountain1Icon;
+						}
 						panel.button.setIcon(panel.icon);
 					}
 				} else {
