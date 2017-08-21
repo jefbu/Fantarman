@@ -120,11 +120,11 @@ public abstract class Regiment {
 
 	}
 
-	public void haveTurn(Army army) {
+	public void haveTurn(Army activeArmy) {
 
 		if (inCombat) {
 
-			int casualties = OrderMethods.combat(this, combatOpponent, 0);
+			int casualties = OrderMethods.combat(this, combatOpponent, 0, activeArmy);
 			BattleScreen.battleScene.refreshMap();
 			BattleScreen.battleScene.refreshRegimentColours();
 			BattleScreen.informationPanel.yourPanel.update(Main.yourArmy);
@@ -134,8 +134,8 @@ public abstract class Regiment {
 		} else {
 
 			Tactic tactic = ConditionChecker.checkConditions(this);
-			Regiment target = TargetChecker.checkTarget(this, tactic.target, army);
-			executeOrder(tactic.order, target);
+			Regiment target = TargetChecker.checkTarget(this, tactic.target, activeArmy);
+			executeOrder(tactic.order, target, activeArmy);
 
 			writeText(tactic, target);
 
@@ -149,11 +149,11 @@ public abstract class Regiment {
 		}
 	}
 
-	private void executeOrder(Order order, Regiment target) {
+	private void executeOrder(Order order, Regiment target, Army activeArmy) {
 		switch (order) {
 
 		case CHARGE:
-			OrderMethods.chargeTarget(this, target);
+			OrderMethods.chargeTarget(this, target, activeArmy);
 			break;
 		case RECOVER:
 			OrderMethods.recover(this);

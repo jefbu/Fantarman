@@ -18,7 +18,7 @@ public class Main {
 	public static DoveMasters pigeonPoop;
 	public static DoveMasters pidgeotto;
 	public static DoveMasters colombe;
-	public static DoveMasters birdie;
+	public static FireMages boomBox;
 
 	public static Army yourArmy;
 	public static Army opponentArmy;
@@ -41,15 +41,15 @@ public class Main {
 		pigeonPoop = new DoveMasters("Pigeonpoop", new Captain("Bae", 0, 0, 5, 0, -5, 0));
 		pidgeotto = new DoveMasters("Pidgeotto", new Captain("x", 0, 0, 0, 0, 0, 1));
 		colombe = new DoveMasters("Colombe", new Captain("x", 0, 0, 0, 0, 0, 2));
-		birdie = new DoveMasters("Birdie", new Captain("x", 0, 0, 0, 0, 0, 1));
+		boomBox = new FireMages("BoomBomx", new Captain("x", 0, 0, 0, 0, 0, 1));
 
 		
 		yourArmy.roster.add(pidgeotto);
-		yourArmy.roster.add(pigeonPoop);
+		yourArmy.roster.add(fireMages);
 		
-		opponentArmy.roster.add(fireMages);
+		opponentArmy.roster.add(pigeonPoop);
 		opponentArmy.roster.add(colombe);
-		opponentArmy.roster.add(birdie);
+		opponentArmy.roster.add(boomBox);
 						
 		battles.add(new Battle());
 		

@@ -8,7 +8,7 @@ public class TargetChecker {
 	
 	
 	
-	public static Regiment checkTarget(Regiment regiment, Target target, Army army) {
+	public static Regiment checkTarget(Regiment regiment, Target target, Army activeArmy) {
 
 		switch (target) {
 
@@ -17,7 +17,7 @@ public class TargetChecker {
 		case ENEMY_WEAKEST:
 			return Main.opponentArmy.roster.get(0);
 		case ENEMY_NEAREST:
-			if (army == Main.yourArmy) {
+			if (activeArmy == Main.yourArmy) {
 				return Main.opponentArmy.roster.get(0);
 			} else {
 				return Main.yourArmy.roster.get(0);

@@ -3,26 +3,27 @@ package main.battle.tactics;
 import java.util.Random;
 
 import main.Main;
+import main.entity.armies.Army;
 import main.entity.regiments.Regiment;
 
 public abstract class OrderMethods {
 	
 
-	public static void chargeTarget(Regiment regiment, Regiment target) {		
+	public static void chargeTarget(Regiment regiment, Regiment target, Army activeArmy) {		
 		regiment.battleDefence -= 5;
-		MoveMethod.move(regiment, regiment.battleMove + regiment.run, target);
+		MoveMethod.move(regiment, regiment.battleMove + regiment.run, target, activeArmy);
 	}
 	
-	public static int combat(Regiment regiment, Regiment target, int chargeBonus) {
+	public static int combat(Regiment regiment, Regiment target, int chargeBonus, Army activeArmy) {
 		
 		Random random = new Random();
 		int casualties = 0;
 		int hits = 0;
 		for (int i = 0; i < regiment.battleLife; i ++) {
-			if (random.nextInt(100) < regiment.attack + chargeBonus) hits++;
+			if (random.nextInt(100) < regiment.battleAttack + chargeBonus) hits++;
 		}
 		for (int ii = 0; ii < hits; ii++) {
-			if (random.nextInt(100) < target.defence) {
+			if (random.nextInt(100) + 1 > target.battleDefence) {
 				target.battleLife--;
 				casualties++;
 			}
@@ -31,7 +32,11 @@ public abstract class OrderMethods {
 		if (target.battleLife <= 0) {
 			target.defeated = true;
 			regiment.inCombat = false;
-			Main.opponentArmy.roster.remove(target);			
+			if (activeArmy == Main.yourArmy) {
+			Main.opponentArmy.roster.remove(target);
+			} else {
+			Main.yourArmy.roster.remove(target);
+			}
 		}
 
 		if (regiment.defeated || target.defeated) {

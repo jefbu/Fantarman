@@ -15,7 +15,7 @@ public class DoveMasters extends Regiment {
 				
 		this.attack = 40 + captain.attackBonus;
 		this.charge = 10 + captain.chargeBonus;
-		this.defence = 20 + captain.defenceBonus;
+		this.defence = 25 + captain.defenceBonus;
 		this.missile = 50 + captain.missileBonus;
 		this.morale = 40 + captain.moraleBonus;
 		this.speed = 5 + captain.speedBonus;

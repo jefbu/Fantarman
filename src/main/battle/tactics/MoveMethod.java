@@ -2,12 +2,13 @@ package main.battle.tactics;
 
 import java.util.Random;
 
+import main.entity.armies.Army;
 import main.entity.regiments.Regiment;
 import main.graphics.battleScreen.BattleScreen;
 
 public abstract class MoveMethod {
 
-	public static void move(Regiment regiment, int movement, Regiment target) {
+	public static void move(Regiment regiment, int movement, Regiment target, Army activeArmy) {
 
 		Random random = new Random();
 		int roll;
@@ -24,7 +25,7 @@ public abstract class MoveMethod {
 				regiment.combatOpponent = target;
 				target.inCombat = true;
 				target.combatOpponent = regiment;
-				OrderMethods.combat(regiment, target, regiment.battleCharge);
+				OrderMethods.combat(regiment, target, regiment.battleCharge, activeArmy);
 			} else {
 				if (Math.abs(verticalDistance) > Math.abs(horizontalDistance)) {
 					if (verticalDistance < 0) {
