@@ -7,7 +7,7 @@ public class Battle {
 	
 	public Deployment deployment;
 	public BattleOrchestrator battleOrchestrator;
-	public BattleConclusion battleConclusion;
+	public static BattleConclusion battleConclusion;
 		
 	public Battle() {
 		
@@ -15,7 +15,6 @@ public class Battle {
 		
 		battleOrchestrator = new BattleOrchestrator();
 		deployment = new Deployment(battleOrchestrator);
-		battleConclusion = new BattleConclusion();
 		
 	}
 

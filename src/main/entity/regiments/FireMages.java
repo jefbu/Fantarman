@@ -16,7 +16,7 @@ public class FireMages extends Regiment {
 		this.name = name;
 		this.value = 600;
 		
-		this.attack = 10 + captain.attackBonus;
+		this.attack = 50 + captain.attackBonus;
 		this.charge = 75 + captain.chargeBonus;
 		this.defence = 25 + captain.defenceBonus;
 		this.missile = 75 + captain.missileBonus;

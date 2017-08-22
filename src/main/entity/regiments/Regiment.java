@@ -6,11 +6,13 @@ import java.util.Random;
 import javax.swing.ImageIcon;
 
 import main.Main;
+import main.battle.BattleConclusion;
 import main.battle.tactics.ConditionChecker;
 import main.battle.tactics.Order;
 import main.battle.tactics.OrderMethods;
 import main.battle.tactics.Tactic;
 import main.battle.tactics.TargetChecker;
+import main.components.Colour;
 import main.components.IndexedPanel;
 import main.entity.armies.Army;
 import main.entity.captains.Captain;
@@ -147,6 +149,7 @@ public abstract class Regiment {
 				indexedPanel.button.setBorder(null);
 			}
 		}
+		
 	}
 
 	private void executeOrder(Order order, Regiment target, Army activeArmy) {

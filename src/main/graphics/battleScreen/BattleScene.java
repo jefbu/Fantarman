@@ -347,6 +347,8 @@ public class BattleScene extends JPanel {
 	}
 
 	private void createNextSpot(TerrainType terrain) {
+		
+		Random random = new Random();
 
 		switch (direction) {
 
@@ -380,7 +382,11 @@ public class BattleScene extends JPanel {
 		try {
 			indexedPanels.get(startingPoint).applyTerrainType(terrain);
 			if (terrain == TerrainType.RIVER) {
-				indexedPanels.get(startingPoint).icon = TileImages.river1Icon;
+				if (random.nextInt(100) < 5) {
+					indexedPanels.get(startingPoint).icon = TileImages.river2Icon;
+				} else {
+					indexedPanels.get(startingPoint).icon = TileImages.river1Icon;
+				}
 			} else if (terrain == TerrainType.ROAD) {
 				indexedPanels.get(startingPoint).icon = TileImages.road1Icon;
 			}

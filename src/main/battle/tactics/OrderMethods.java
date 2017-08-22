@@ -3,6 +3,8 @@ package main.battle.tactics;
 import java.util.Random;
 
 import main.Main;
+import main.battle.BattleConclusion;
+import main.components.Colour;
 import main.entity.armies.Army;
 import main.entity.regiments.Regiment;
 

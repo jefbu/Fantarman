@@ -9,6 +9,7 @@ import java.util.Random;
 import javax.swing.Timer;
 
 import main.Main;
+import main.components.Colour;
 import main.entity.armies.Army;
 import main.entity.regiments.Regiment;
 
@@ -41,7 +42,12 @@ public class BattleOrchestrator {
 
 		actionListener = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (counter == totalTurns) { 
+				
+				if (Main.yourArmy.roster.size() == 0 || Main.opponentArmy.roster.size() == 0) {
+					BattleConclusion battleConclusion = new BattleConclusion(Colour.RED);
+					battleConclusion.setVisible(true);	
+					timer.stop();
+				} else if (counter == totalTurns) { 
 					timer.stop(); 
 					System.out.println("Battle finished");
 				} else {

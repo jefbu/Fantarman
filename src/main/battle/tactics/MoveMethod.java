@@ -62,6 +62,7 @@ public abstract class MoveMethod {
 							regiment.setIndices(regiment.panels[0] + 1);
 					}
 				}
+				
 			}
 		}
 
