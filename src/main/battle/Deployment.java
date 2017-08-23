@@ -15,7 +15,7 @@ import main.graphics.battleScreen.RightAggregatePanel;
 import main.utility.Who;
 
 public class Deployment {
-	
+
 	BattleOrchestrator battleOrchestrator;
 
 	int playerCounter = 0;
@@ -36,7 +36,7 @@ public class Deployment {
 	int moraleRed;
 
 	public Deployment(BattleOrchestrator battleOrchestrator) {
-		
+
 		this.battleOrchestrator = battleOrchestrator;
 
 		playerDeploymentZone = new DeploymentZone(24);
@@ -49,24 +49,23 @@ public class Deployment {
 		for (int i = 0; i < deployOrder.size(); i++) {
 			deploy();
 		}
-		
+
 	}
 
 	private void deploy() {
 
-		System.out.println(deployOrder.size());
 		if (deployOrder.size() == 0) {
 			playerDeploymentZone.removeDeploymentZone();
 			enemyDeploymentZone.removeDeploymentZone();
-				for (int i = 0; i < BattleScreen.battleScene.indexedPanels.size(); i++) {
-					BattleScreen.battleScene.indexedPanels.get(i).button.removeActionListener(
-							BattleScreen.battleScene.indexedPanels.get(i).button.getActionListeners()[0]);
-				}
-			Popup popup = new Popup(400, 180, Colour.BLUE);
+			for (int i = 0; i < BattleScreen.battleScene.indexedPanels.size(); i++) {
+				BattleScreen.battleScene.indexedPanels.get(i).button.removeActionListener(
+						BattleScreen.battleScene.indexedPanels.get(i).button.getActionListeners()[0]);
+			}
+			Popup popup = new Popup(BattleScreen.battleScene.roundedWidth / 3,
+					BattleScreen.battleScene.roundedHeight / 4, Colour.GREEN, false);
 			popup.setVisible(true);
 			battleOrchestrator.orchestrateBattle();
-		}
-		else if (deployOrder.get(0) == Who.ENEMY)
+		} else if (deployOrder.get(0) == Who.ENEMY)
 			deployEnemyRegiment();
 		else
 			deployPlayerRegiment();
@@ -85,9 +84,8 @@ public class Deployment {
 			BattleScreen.battleScene.indexedPanels.get(i).button.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 
-					
 					if (checkLegalDeployment(index, playerDeploymentZone, Main.yourArmy, playerCounter) == true) {
-						
+
 						Main.yourArmy.roster.get(playerCounter).setIndices(index);
 						BattleScreen.battleScene.refreshMap();
 						playerCounter++;
@@ -101,17 +99,19 @@ public class Deployment {
 	}
 
 	private void deployEnemyRegiment() {
-		
+
 		Random random = new Random();
 		int roll = 0;
 		int roll2 = 0;
 
 		boolean keepGoing = true;
-		
+
 		while (keepGoing) {
 			roll = random.nextInt(7);
 			roll2 = random.nextInt(20);
-			if (checkNotAdjacent (roll * 48 + 12 + roll2, Main.opponentArmy, enemyCounter)) { keepGoing = false; }
+			if (checkNotAdjacent(roll * 48 + 12 + roll2, Main.opponentArmy, enemyCounter)) {
+				keepGoing = false;
+			}
 		}
 
 		Main.opponentArmy.roster.get(enemyCounter).setIndices(roll * 48 + 12 + roll2);
@@ -156,8 +156,7 @@ public class Deployment {
 		tempArmy.remove(counter);
 
 		for (int rowIndex = 0; rowIndex < ((army.roster.get(counter).rows)); rowIndex++) {
-			for (int columnIndex = 0; columnIndex < ((army.roster
-					.get(counter).columns)); columnIndex++) {
+			for (int columnIndex = 0; columnIndex < ((army.roster.get(counter).columns)); columnIndex++) {
 
 				for (int i = 0; i < tempArmy.size(); i++) {
 					for (int ii = 0; ii < tempArmy.get(i).panels.length; ii++) {

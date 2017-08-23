@@ -3,8 +3,6 @@ package main.battle.tactics;
 import java.util.Random;
 
 import main.Main;
-import main.battle.BattleConclusion;
-import main.components.Colour;
 import main.entity.armies.Army;
 import main.entity.regiments.Regiment;
 
@@ -42,7 +40,6 @@ public abstract class OrderMethods {
 		}
 
 		if (regiment.defeated || target.defeated) {
-			System.out.println("combat is over");
 		}
 		
 		return casualties;

@@ -10,7 +10,7 @@ public class BattleConclusion extends Popup {
 
 	public BattleConclusion(Colour colour) {
 		
-		super(BattleScreen.battleScene.roundedWidth, BattleScreen.battleScene.roundedHeight, colour);		
+		super(BattleScreen.battleScene.roundedWidth / 3, BattleScreen.battleScene.roundedHeight / 4, colour, true);		
 		
 		
 	}

@@ -49,7 +49,6 @@ public class BattleOrchestrator {
 					timer.stop();
 				} else if (counter == totalTurns) { 
 					timer.stop(); 
-					System.out.println("Battle finished");
 				} else {
 				Regiment activeRegiment = decideActiveRegiment();
 				if (activeRegiment.battleSpeed <= 0) {

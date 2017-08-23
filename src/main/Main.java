@@ -7,6 +7,7 @@ import main.entity.armies.Army;
 import main.entity.captains.Captain;
 import main.entity.regiments.DoveMasters;
 import main.entity.regiments.FireMages;
+import main.entity.regiments.Harvesters;
 import main.graphics.Screen;
 import main.graphics.TileImages;
 import main.graphics.battleScreen.BattleScreen;
@@ -19,6 +20,7 @@ public class Main {
 	public static DoveMasters pidgeotto;
 	public static DoveMasters colombe;
 	public static FireMages boomBox;
+	public static Harvesters harvesters;
 
 	public static Army yourArmy;
 	public static Army opponentArmy;
@@ -42,10 +44,12 @@ public class Main {
 		pidgeotto = new DoveMasters("Pidgeotto", new Captain("x", 0, 0, 0, 0, 0, 1));
 		colombe = new DoveMasters("Colombe", new Captain("x", 0, 0, 0, 0, 0, 2));
 		boomBox = new FireMages("BoomBomx", new Captain("x", 0, 0, 0, 0, 0, 1));
+		harvesters = new Harvesters("Harvest Lads", new Captain("x", 2, 1, 1, 0, 0, 0));
 
 		
 		yourArmy.roster.add(pidgeotto);
 		yourArmy.roster.add(fireMages);
+		yourArmy.roster.add(harvesters);
 		
 		opponentArmy.roster.add(pigeonPoop);
 		opponentArmy.roster.add(colombe);

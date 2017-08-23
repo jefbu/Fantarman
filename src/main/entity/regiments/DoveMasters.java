@@ -1,6 +1,9 @@
 package main.entity.regiments;
 
+import main.battle.tactics.Condition;
+import main.battle.tactics.Order;
 import main.battle.tactics.Tactic;
+import main.battle.tactics.Target;
 import main.entity.captains.Captain;
 
 public class DoveMasters extends Regiment {
@@ -8,14 +11,14 @@ public class DoveMasters extends Regiment {
 	public DoveMasters(String name, Captain captain) {
 		
 		super();
-		instructions.add(Tactic.defaultTactic);
+		instructions.add(new Tactic(Condition.ALWAYS, Target.ENEMY_STRONGEST, Order.FIRE));
 		
 		this.name = name;
 		this.value = 1000;
 				
 		this.attack = 40 + captain.attackBonus;
 		this.charge = 10 + captain.chargeBonus;
-		this.defence = 25 + captain.defenceBonus;
+		this.defence = 35 + captain.defenceBonus;
 		this.missile = 50 + captain.missileBonus;
 		this.morale = 40 + captain.moraleBonus;
 		this.speed = 5 + captain.speedBonus;
