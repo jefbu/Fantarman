@@ -51,9 +51,13 @@ public class Main {
 		yourArmy.roster.add(fireMages);
 		yourArmy.roster.add(harvesters);
 		
+		yourArmy.calculateValue();
+		
 		opponentArmy.roster.add(pigeonPoop);
 		opponentArmy.roster.add(colombe);
 		opponentArmy.roster.add(boomBox);
+		
+		opponentArmy.calculateValue();
 						
 		battles.add(new Battle());
 		

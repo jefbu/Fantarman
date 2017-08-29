@@ -24,7 +24,7 @@ public abstract class Regiment {
 	public ArrayList<Tactic> instructions;
 
 	public int value;
-
+	
 	public int attack;
 	public int defence;
 	public int move;

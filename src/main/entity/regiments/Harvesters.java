@@ -16,9 +16,9 @@ public class Harvesters extends Regiment {
 		this.name = name;
 		this.value = 600;
 		
-		this.attack = 50 + captain.attackBonus;
+		this.attack = 60 + captain.attackBonus;
 		this.charge = 15 + captain.chargeBonus;
-		this.defence = 45 + captain.defenceBonus;
+		this.defence = 65 + captain.defenceBonus;
 		this.missile = 75 + captain.missileBonus;
 		this.morale = 55 + captain.moraleBonus;
 		this.speed = 6 + captain.speedBonus;

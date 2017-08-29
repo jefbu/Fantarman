@@ -903,6 +903,7 @@ public class BattleScene extends JPanel {
 			double dred = (yourRegiment.battleLife * 10 / yourRegiment.life);
 			dred = dred / 10;
 			int red = 255 - (int) (dred * 255);
+			if (red > 255) { red = 255; } else if (red < 0) { red = 0; }
 			for (int i = 0; i < yourRegiment.panels.length; i++) {
 				BattleScreen.battleScene.indexedPanels.get(yourRegiment.panels[i]).button.setIcon(yourRegiment.icon);
 				BattleScreen.battleScene.indexedPanels.get(yourRegiment.panels[i]).setBackground(new Color(red, 60, 40));
@@ -913,6 +914,7 @@ public class BattleScene extends JPanel {
 			double dred = (enemyRegiment.battleLife * 10 / enemyRegiment.life);
 			dred = dred / 10;
 			int red = 255 - (int) (dred * 255);
+			if (red > 255) { red = 255; } else if (red < 0) { red = 0; }
 			for (int i = 0; i < enemyRegiment.panels.length; i++) {
 				BattleScreen.battleScene.indexedPanels.get(enemyRegiment.panels[i]).button.setIcon(enemyRegiment.icon);
 				BattleScreen.battleScene.indexedPanels.get(enemyRegiment.panels[i]).setBackground(new Color(red, 40, 60));

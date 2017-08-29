@@ -29,12 +29,18 @@ public abstract class MoveMethod {
 			} else {
 				if (Math.abs(verticalDistance) > Math.abs(horizontalDistance)) {
 					if (verticalDistance < 0) {
-						if (roll < (4 + getTerrainBonus(regiment, -48)))
-							regiment.setIndices(regiment.panels[0] - 48);
+						if (roll < (4 + getTerrainBonus(regiment, -48))) {
+							if (Adjacency.isNotAdjacenctToFriend(regiment, activeArmy)) {
+								regiment.setIndices(regiment.panels[0] - 48);
+							}
+						}
 					}
 					if (verticalDistance > 0) {
-						if (roll < (4 + getTerrainBonus(regiment, 48)))
+						if (roll < (4 + getTerrainBonus(regiment, 48))) {
+							if (Adjacency.isNotAdjacenctToFriend(regiment, activeArmy)) {
 							regiment.setIndices(regiment.panels[0] + 48);
+							}
+						}
 					}
 					if (horizontalDistance < 0) {
 						if (roll2 < (1 + getTerrainBonus(regiment, -1)))

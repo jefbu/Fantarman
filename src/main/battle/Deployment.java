@@ -12,6 +12,7 @@ import main.entity.armies.Army;
 import main.entity.regiments.Regiment;
 import main.graphics.battleScreen.BattleScreen;
 import main.graphics.battleScreen.RightAggregatePanel;
+import main.strings.BattleStartStrings;
 import main.utility.Who;
 
 public class Deployment {
@@ -63,6 +64,7 @@ public class Deployment {
 			}
 			Popup popup = new Popup(BattleScreen.battleScene.roundedWidth / 3,
 					BattleScreen.battleScene.roundedHeight / 4, Colour.GREEN, false);
+			popup.writeText(BattleStartStrings.rollQuote());
 			popup.setVisible(true);
 			battleOrchestrator.orchestrateBattle();
 		} else if (deployOrder.get(0) == Who.ENEMY)
@@ -129,7 +131,8 @@ public class Deployment {
 
 	private boolean checkLegalDeployment(int index, DeploymentZone zone, Army army, int counter) {
 
-		if ((checkWithinDeploymentZone(index, zone)) && (checkNotAdjacent(index, army, counter))) {
+		if ((checkWithinDeploymentZone(index, zone)) && (checkNotAdjacent(index, army, counter))
+				&& (checkNotBorder(index, army, counter))) {
 			return true;
 		} else
 			return false;
@@ -187,6 +190,19 @@ public class Deployment {
 		}
 
 		return notAdjacent;
+	}
+	
+	private boolean checkNotBorder(int index, Army army, int counter) {
+		int bottomLimit = 1582 - army.roster.get(counter).rows * 48;
+		if (index > bottomLimit) { return false; } 
+		else {
+			int rightLimit = 48 - army.roster.get(counter).columns - 8;
+			int check = index%48;
+			if (check > rightLimit) { return false; } 
+			else { 
+				return true;	
+			}
+		}
 	}
 
 	private void decideDeploymentOrder() {

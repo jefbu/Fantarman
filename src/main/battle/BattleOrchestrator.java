@@ -45,9 +45,11 @@ public class BattleOrchestrator {
 				
 				if (Main.yourArmy.roster.size() == 0 || Main.opponentArmy.roster.size() == 0) {
 					BattleConclusion battleConclusion = new BattleConclusion(Colour.RED);
-					battleConclusion.setVisible(true);	
+					battleConclusion.setVisible(true);
 					timer.stop();
 				} else if (counter == totalTurns) { 
+					BattleConclusion battleConclusion = new BattleConclusion(Colour.RED);
+					battleConclusion.setVisible(true);
 					timer.stop(); 
 				} else {
 				Regiment activeRegiment = decideActiveRegiment();
