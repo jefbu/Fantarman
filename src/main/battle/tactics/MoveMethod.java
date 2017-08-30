@@ -8,11 +8,17 @@ import main.graphics.battleScreen.BattleScreen;
 
 public abstract class MoveMethod {
 
-	public static void move(Regiment regiment, int movement, Regiment target, Army activeArmy) {
+	public static void move(Regiment regiment, int movement, Regiment target, Army activeArmy, int activeRegimentIndex) {
 
 		Random random = new Random();
 		int roll;
 		int roll2;
+		Army tempArmy = new Army();
+		for (Regiment tempRegiment: activeArmy.roster) {
+			tempArmy.roster.add(tempRegiment);
+		}
+		tempArmy.roster.remove(activeRegimentIndex);
+
 		for (int i = 0; i < movement; i++) {
 			roll = random.nextInt(10);
 			roll2 = random.nextInt(10);
@@ -30,14 +36,14 @@ public abstract class MoveMethod {
 				if (Math.abs(verticalDistance) > Math.abs(horizontalDistance)) {
 					if (verticalDistance < 0) {
 						if (roll < (4 + getTerrainBonus(regiment, -48))) {
-							if (Adjacency.isNotAdjacenctToFriend(regiment, activeArmy)) {
+							if (Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
 								regiment.setIndices(regiment.panels[0] - 48);
 							}
 						}
 					}
 					if (verticalDistance > 0) {
 						if (roll < (4 + getTerrainBonus(regiment, 48))) {
-							if (Adjacency.isNotAdjacenctToFriend(regiment, activeArmy)) {
+							if (Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
 							regiment.setIndices(regiment.panels[0] + 48);
 							}
 						}

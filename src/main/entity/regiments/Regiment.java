@@ -120,24 +120,22 @@ public abstract class Regiment {
 
 	}
 
-	public void haveTurn(Army activeArmy) {
+	public void haveTurn(Army activeArmy, int activeRegimentIndex) {
 
 		if (inCombat) {
 
-			int casualties = OrderMethods.combat(this, combatOpponent, 0, activeArmy);
+			OrderMethods.combat(this, combatOpponent, 0, activeArmy);
 			BattleScreen.battleScene.refreshMap();
 			BattleScreen.battleScene.refreshRegimentColours();
 			BattleScreen.informationPanel.yourPanel.update(Main.yourArmy);
 			BattleScreen.informationPanel.enemyPanel.update(Main.opponentArmy);
-			writeText(combatOpponent, casualties);
 
+			
 		} else {
 
 			Tactic tactic = ConditionChecker.checkConditions(this);
 			Regiment target = TargetChecker.checkTarget(this, tactic.target, activeArmy);
-			executeOrder(tactic.order, target, activeArmy);
-
-			writeText(tactic, target);
+			executeOrder(tactic.order, target, activeArmy, activeRegimentIndex);
 
 			BattleScreen.battleScene.refreshMap();
 			BattleScreen.informationPanel.yourPanel.update(Main.yourArmy);
@@ -150,11 +148,11 @@ public abstract class Regiment {
 		
 	}
 
-	private void executeOrder(Order order, Regiment target, Army activeArmy) {
+	private void executeOrder(Order order, Regiment target, Army activeArmy, int activeRegimentIndex) {
 		switch (order) {
 
 		case CHARGE:
-			OrderMethods.chargeTarget(this, target, activeArmy);
+			OrderMethods.chargeTarget(this, target, activeArmy, activeRegimentIndex);
 			break;
 		case RECOVER:
 			OrderMethods.recover(this);
@@ -165,19 +163,7 @@ public abstract class Regiment {
 		}
 	}
 
-	private void writeText(Regiment target, int casualties) {
 
-		RightAggregatePanel.infoTextPanel.textArea
-				.setText("<font color = 'rgb(220, 220, 220)'>" + name + " is having their turn and is in combat with "
-						+ target.name + "<br>" + "They manage to inflict " + casualties + " casualties");
 
-	}
-
-	private void writeText(Tactic tactic, Regiment target) {
-
-		RightAggregatePanel.infoTextPanel.textArea.setText("<font color = 'rgb(220, 220, 220)'>" + name
-				+ " is having their turn and chooses to " + tactic.order.toString() + " " + target.name);
-
-	}
 
 }

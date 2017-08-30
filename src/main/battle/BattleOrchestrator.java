@@ -20,6 +20,7 @@ public class BattleOrchestrator {
 	private int totalTurns;
 	private int counter;
 	private Army activeArmy;
+	private int activeRegimentIndex;
 
 	public BattleOrchestrator() {
 		
@@ -64,14 +65,14 @@ public class BattleOrchestrator {
 						regiment.attributeBattleStats();
 					}
 				} else {
-				activeRegiment.haveTurn(activeArmy);
+				activeRegiment.haveTurn(activeArmy, activeRegimentIndex);
 				activeRegiment.battleSpeed -= 10;
 				}
 			}
 			}
 		};
 		
-		timer = new Timer(1000, actionListener);
+		timer = new Timer(3000, actionListener);
 
 	}
 
@@ -101,9 +102,11 @@ public class BattleOrchestrator {
 		});
 		if (Main.yourArmy.roster.get(0).battleSpeed >= Main.opponentArmy.roster.get(0).battleSpeed) {
 			activeArmy = Main.yourArmy;
+			activeRegimentIndex = 0;
 			return Main.yourArmy.roster.get(0);
 		} else {
 			activeArmy = Main.opponentArmy;
+			activeRegimentIndex = 0;
 			return Main.opponentArmy.roster.get(0);
 		}
 
