@@ -49,29 +49,47 @@ public abstract class MoveMethod {
 						}
 					}
 					if (horizontalDistance < 0) {
-						if (roll2 < (1 + getTerrainBonus(regiment, -1)))
+						if (roll2 < (1 + getTerrainBonus(regiment, -1))) {
+							if (Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
 							regiment.setIndices(regiment.panels[0] - 1);
+							}
+						}
 					}
 					if (horizontalDistance > 0) {
-						if (roll2 < (1 + getTerrainBonus(regiment, 1)))
+						if (roll2 < (1 + getTerrainBonus(regiment, 1))) {
+							if (Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
 							regiment.setIndices(regiment.panels[0] + 1);
+							}
+						}
 					}
 				} else {
 					if (verticalDistance < 0) {
-						if (roll < (1 + getTerrainBonus(regiment, -48)))
+						if (roll < (1 + getTerrainBonus(regiment, -48))) {
+							if (Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
 							regiment.setIndices(regiment.panels[0] - 48);
+							}
+						}
 					}
 					if (verticalDistance > 0) {
-						if (roll < (1 + getTerrainBonus(regiment, 48)))
+						if (roll < (1 + getTerrainBonus(regiment, 48))) {
+							if (Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
 							regiment.setIndices(regiment.panels[0] + 48);
+							}
+						}
 					}
 					if (horizontalDistance < 0) {
-						if (roll2 < (4 + getTerrainBonus(regiment, -1)))
+						if (roll2 < (4 + getTerrainBonus(regiment, -1))) {
+							if (Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
 							regiment.setIndices(regiment.panels[0] - 1);
+							}
+						}
 					}
 					if (horizontalDistance > 0) {
-						if (roll2 < (4 + getTerrainBonus(regiment, 1)))
+						if (roll2 < (4 + getTerrainBonus(regiment, 1))) {
+							if (Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
 							regiment.setIndices(regiment.panels[0] + 1);
+							}
+						}
 					}
 				}
 				

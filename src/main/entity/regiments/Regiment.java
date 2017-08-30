@@ -15,7 +15,6 @@ import main.components.IndexedPanel;
 import main.entity.armies.Army;
 import main.entity.captains.Captain;
 import main.graphics.battleScreen.BattleScreen;
-import main.graphics.battleScreen.RightAggregatePanel;
 import main.utility.ImageLoader;
 
 public abstract class Regiment {

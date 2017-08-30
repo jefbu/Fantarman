@@ -12,6 +12,7 @@ public abstract class OrderMethods {
 	public static void chargeTarget(Regiment regiment, Regiment target, Army activeArmy, int activeRegimentIndex) {
 		regiment.battleDefence -= 5;
 		MoveMethod.move(regiment, regiment.battleMove + regiment.run, target, activeArmy, activeRegimentIndex);
+		writeBasicOrderText(Order.CHARGE, regiment, target);
 	}
 
 	public static void combat(Regiment regiment, Regiment target, int chargeBonus, Army activeArmy) {
@@ -49,12 +50,15 @@ public abstract class OrderMethods {
 	public static void recover(Regiment regiment) {
 
 		Random random = new Random();
+		int recoveries = 0;
 		int lostLife = regiment.life - regiment.battleLife;
 		for (int i = 0; i < lostLife; i++) {
-			if (random.nextInt(100) < 10)
+			if (random.nextInt(100) < 10) {
 				regiment.battleLife++;
+				recoveries++;
+			}
 		}
-
+		writeHealText(Order.RECOVER, regiment, recoveries);
 	}
 
 	public static void fire(Regiment regiment, Regiment target) {
@@ -75,23 +79,50 @@ public abstract class OrderMethods {
 				casualties++;
 			}
 		}
-		writeText(Order.FIRE, regiment, target, casualties);
+		writeMissileText(Order.FIRE, regiment, target, casualties);
 	}
 
 	private static void writeCombatText(Regiment regiment, Regiment target, int casualties) {
 
-		RightAggregatePanel.infoTextPanel.textArea.setText(
-				"<font color = 'rgb(220, 220, 220)'>" + regiment.name + " is having their turn and is in combat with "
-						+ target.name + "<br>" + "They manage to inflict " + casualties + " casualties");
+		RightAggregatePanel.infoTextPanel.textArea.setText("<font color = 'rgb(220, 220, 220)'>" + regiment.name
+				+ " is having their turn and is in combat with " + target.name + "<br>" + "They manage to inflict "
+				+ decideColour(casualties, true) + casualties + "<font color = 'rgb(220, 220, 220)'>" + " casualties.");
 
 	}
 
-	private static void writeText(Order order, Regiment regiment, Regiment target, int casualties) {
+	private static void writeMissileText(Order order, Regiment regiment, Regiment target, int casualties) {
 
 		RightAggregatePanel.infoTextPanel.textArea.setText("<font color = 'rgb(220, 220, 220)'>" + regiment.name
 				+ " is having their turn and chooses to " + order.toString() + " " + target.name + ".<br>" + ""
-						+ "They manage to inflict " + casualties + " casualties");
+				+ "They manage to inflict " + decideColour(casualties, true) + casualties
+				+ "<font color = 'rgb(220, 220, 220)'>" + " casualties.");
 
+	}
+
+	private static void writeBasicOrderText(Order order, Regiment regiment, Regiment target) {
+
+		RightAggregatePanel.infoTextPanel.textArea.setText("<font color = 'rgb(220, 220, 220)'>" + regiment.name
+				+ " is having their turn and chooses to " + order.toString() + " " + target.name + ".");
+	}
+
+	private static void writeHealText(Order order, Regiment regiment, int recoveries) {
+
+		RightAggregatePanel.infoTextPanel.textArea.setText("<font color = 'rgb(220, 220, 220)'>" + regiment.name
+				+ " is having their turn and chooses to " + order.toString() + "." + "They manage to recover "
+				+ decideColour(recoveries, false) + recoveries + "<font color = 'rgb(220, 220, 220)'>" + " casualties.");
+		;
+	}
+
+	private static String decideColour(int casualties, boolean red) {
+		int colour = 150 + 15 * casualties;
+		if (colour > 255) {
+			colour = 255;
+		}
+		if (red) {
+		return "<font color = 'rgb(" + colour + ", 120, 80)'>";
+		} else {
+		return "<font color = 'rgb(60, " + colour + ", 80)'>";	
+		}
 	}
 
 }
