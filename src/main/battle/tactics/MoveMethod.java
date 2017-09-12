@@ -8,13 +8,14 @@ import main.graphics.battleScreen.BattleScreen;
 
 public abstract class MoveMethod {
 
-	public static void move(Regiment regiment, int movement, Regiment target, Army activeArmy, int activeRegimentIndex) {
+	public static void move(Regiment regiment, int movement, Regiment target, Army activeArmy, int activeRegimentIndex,
+			Army yourBattleArmy, Army opponentBattleArmy) {
 
 		Random random = new Random();
 		int roll;
 		int roll2;
 		Army tempArmy = new Army();
-		for (Regiment tempRegiment: activeArmy.roster) {
+		for (Regiment tempRegiment : activeArmy.roster) {
 			tempArmy.roster.add(tempRegiment);
 		}
 		tempArmy.roster.remove(activeRegimentIndex);
@@ -31,68 +32,77 @@ public abstract class MoveMethod {
 				regiment.combatOpponent = target;
 				target.inCombat = true;
 				target.combatOpponent = regiment;
-				OrderMethods.combat(regiment, target, regiment.battleCharge, activeArmy);
+				OrderMethods.combat(regiment, target, regiment.battleCharge, activeArmy, yourBattleArmy,
+						opponentBattleArmy);
 			} else {
 				if (Math.abs(verticalDistance) > Math.abs(horizontalDistance)) {
 					if (verticalDistance < 0) {
 						if (roll < (4 + getTerrainBonus(regiment, -48))) {
-							if (Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
-								regiment.setIndices(regiment.panels[0] - 48);
+							regiment.setIndices(regiment.panels[0] - 48);
+							if (!Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
+								regiment.setIndices(regiment.panels[0] + 48);
 							}
 						}
 					}
 					if (verticalDistance > 0) {
 						if (roll < (4 + getTerrainBonus(regiment, 48))) {
-							if (Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
 							regiment.setIndices(regiment.panels[0] + 48);
+							if (!Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
+								regiment.setIndices(regiment.panels[0] - 48);
 							}
 						}
 					}
 					if (horizontalDistance < 0) {
 						if (roll2 < (1 + getTerrainBonus(regiment, -1))) {
-							if (Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
 							regiment.setIndices(regiment.panels[0] - 1);
+							if (!Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
+								regiment.setIndices(regiment.panels[0] + 1);
 							}
 						}
 					}
 					if (horizontalDistance > 0) {
 						if (roll2 < (1 + getTerrainBonus(regiment, 1))) {
-							if (Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
 							regiment.setIndices(regiment.panels[0] + 1);
+							if (!Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
+								regiment.setIndices(regiment.panels[0] - 1);
 							}
 						}
 					}
 				} else {
 					if (verticalDistance < 0) {
 						if (roll < (1 + getTerrainBonus(regiment, -48))) {
-							if (Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
 							regiment.setIndices(regiment.panels[0] - 48);
+							if (!Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
+								regiment.setIndices(regiment.panels[0] + 48);
 							}
 						}
 					}
 					if (verticalDistance > 0) {
 						if (roll < (1 + getTerrainBonus(regiment, 48))) {
-							if (Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
 							regiment.setIndices(regiment.panels[0] + 48);
+							if (!Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
+								regiment.setIndices(regiment.panels[0] - 48);
 							}
 						}
 					}
 					if (horizontalDistance < 0) {
 						if (roll2 < (4 + getTerrainBonus(regiment, -1))) {
-							if (Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
 							regiment.setIndices(regiment.panels[0] - 1);
+							if (!Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
+								regiment.setIndices(regiment.panels[0] + 1);
 							}
 						}
 					}
 					if (horizontalDistance > 0) {
 						if (roll2 < (4 + getTerrainBonus(regiment, 1))) {
-							if (Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
 							regiment.setIndices(regiment.panels[0] + 1);
+							if (!Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
+								regiment.setIndices(regiment.panels[0] - 1);
 							}
 						}
 					}
 				}
-				
+
 			}
 		}
 

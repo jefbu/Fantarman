@@ -23,7 +23,7 @@ public abstract class Regiment {
 	public ArrayList<Tactic> instructions;
 
 	public int value;
-	
+
 	public int attack;
 	public int defence;
 	public int move;
@@ -119,39 +119,34 @@ public abstract class Regiment {
 
 	}
 
-	public void haveTurn(Army activeArmy, int activeRegimentIndex) {
+	public void haveTurn(Army activeArmy, int activeRegimentIndex, Army yourBattleArmy, Army opponentBattleArmy) {
 
 		if (inCombat) {
 
-			OrderMethods.combat(this, combatOpponent, 0, activeArmy);
-			BattleScreen.battleScene.refreshMap();
-			BattleScreen.battleScene.refreshRegimentColours();
-			BattleScreen.informationPanel.yourPanel.update(Main.yourArmy);
-			BattleScreen.informationPanel.enemyPanel.update(Main.opponentArmy);
+			OrderMethods.combat(this, combatOpponent, 0, activeArmy, yourBattleArmy, opponentBattleArmy);
 
-			
 		} else {
 
 			Tactic tactic = ConditionChecker.checkConditions(this);
-			Regiment target = TargetChecker.checkTarget(this, tactic.target, activeArmy);
-			executeOrder(tactic.order, target, activeArmy, activeRegimentIndex);
+			Regiment target = TargetChecker.checkTarget(this, tactic.target, activeArmy, yourBattleArmy,
+					opponentBattleArmy);
+			executeOrder(tactic.order, target, activeArmy, activeRegimentIndex, yourBattleArmy, opponentBattleArmy);
 
-			BattleScreen.battleScene.refreshMap();
-			BattleScreen.informationPanel.yourPanel.update(Main.yourArmy);
-			BattleScreen.informationPanel.enemyPanel.update(Main.opponentArmy);
 			for (IndexedPanel indexedPanel : BattleScreen.battleScene.indexedPanels) {
 				indexedPanel.setBorder(null);
 				indexedPanel.button.setBorder(null);
 			}
 		}
-		
+
 	}
 
-	private void executeOrder(Order order, Regiment target, Army activeArmy, int activeRegimentIndex) {
+	private void executeOrder(Order order, Regiment target, Army activeArmy, int activeRegimentIndex,
+			Army yourBattleArmy, Army opponentBattleArmy) {
 		switch (order) {
 
 		case CHARGE:
-			OrderMethods.chargeTarget(this, target, activeArmy, activeRegimentIndex);
+			OrderMethods.chargeTarget(this, target, activeArmy, activeRegimentIndex, yourBattleArmy,
+					opponentBattleArmy);
 			break;
 		case RECOVER:
 			OrderMethods.recover(this);
@@ -161,8 +156,5 @@ public abstract class Regiment {
 			break;
 		}
 	}
-
-
-
 
 }

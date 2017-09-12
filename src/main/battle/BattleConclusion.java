@@ -3,6 +3,7 @@ package main.battle;
 import main.Main;
 import main.components.Colour;
 import main.components.Popup;
+import main.entity.armies.Army;
 import main.entity.regiments.Regiment;
 import main.graphics.battleScreen.BattleScreen;
 import main.strings.Adjectives;
@@ -11,20 +12,20 @@ public class BattleConclusion extends Popup {
 
 	private static final long serialVersionUID = 1L;
 
-	public BattleConclusion(Colour colour) {
+	public BattleConclusion(Colour colour, Army yourBattleArmy, Army opponentBattleArmy) {
 		
 		super(BattleScreen.battleScene.roundedWidth / 3, BattleScreen.battleScene.roundedHeight / 4, colour, true);
 		
-		int yourInitialValue = Main.yourArmy.value;
-		int enemyInitialValue = Main.opponentArmy.value;
+		int yourInitialValue = yourBattleArmy.value;
+		int enemyInitialValue = opponentBattleArmy.value;
 		
 		int yourFinalValue = 0;
-		for (Regiment regiment: Main.yourArmy.roster) {
+		for (Regiment regiment: yourBattleArmy.roster) {
 			yourFinalValue = yourFinalValue + regiment.value;
 		}
 		
 		int enemyFinalValue = 0;
-		for (Regiment regiment: Main.opponentArmy.roster) {
+		for (Regiment regiment: opponentBattleArmy.roster) {
 			enemyFinalValue = enemyFinalValue + regiment.value;
 		}
 		
@@ -40,7 +41,14 @@ public class BattleConclusion extends Popup {
 		else if (yourPercentage > enemyPercentage * 6 / 10) { writeText ("minor loss"); }
 		else { writeText ("major loss"); }
 
+		yourBattleArmy.roster.clear();
+		opponentBattleArmy.roster.clear();
 		
+		for (Regiment regiment: Main.yourArmy.roster) {
+			for (int i = 0; i < regiment.panels.length; i++) {
+				regiment.panels[i] = 0;  
+			}
+		}
 		
 	}
 	

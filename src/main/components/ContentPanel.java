@@ -21,12 +21,12 @@ public class ContentPanel extends JPanel {
 		setPreferredSize (new Dimension(width - 10, height - 10));
 		setBorder(null);
 		setLayout (new FlowLayout(FlowLayout.LEADING, 0, 0));
-		setBackground(applyColour(colour, 0));
+		setBackground(applyColour(colour, 90));
 		
 		insidePanel = new JPanel();
 		insidePanel.setPreferredSize(new Dimension (width - 15, height - 15));
 		insidePanel.setBorder(null);
-		insidePanel.setBackground(applyColour(colour, 100));
+		insidePanel.setBackground(applyColour(colour, 140));
 		insidePanel.setLayout(flowLayout);
 		
 		contentLabel = new JLabel();
@@ -42,9 +42,9 @@ public class ContentPanel extends JPanel {
 	private Color applyColour(Colour colour, int highlight) {
 		
 		switch (colour) {
-		case RED: return new Color(highlight * 2 / 3, highlight / 2, highlight / 2);
-		case GREEN: return new Color (highlight / 2, highlight * 2 / 3, highlight / 2);
-		case BLUE: return new Color (highlight / 2, highlight / 2, highlight * 2 / 3);
+		case RED: return new Color(highlight * 3 / 2, highlight, highlight / 2);
+		case GREEN: return new Color (highlight, highlight * 3 / 2, highlight / 2);
+		case BLUE: return new Color (highlight / 2, highlight, highlight * 3 / 2 );
 		}
 		return new Color(0,0,0);
 	}

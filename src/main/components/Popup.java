@@ -15,6 +15,7 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
+import main.graphics.Screen;
 import main.graphics.battleScreen.BattleScreen;
 import main.utility.ImageLoader;
 
@@ -113,6 +114,8 @@ public class Popup extends JDialog {
 			confirmButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					dispose();
+					Screen.battleScreen.setVisible(false);
+					Screen.gameScreen.setVisible(true);
 				}
 			});
 			mainPanelBottomRightPanel.add(confirmButton);

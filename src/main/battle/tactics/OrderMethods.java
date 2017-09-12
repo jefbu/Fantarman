@@ -9,13 +9,16 @@ import main.graphics.battleScreen.RightAggregatePanel;
 
 public abstract class OrderMethods {
 
-	public static void chargeTarget(Regiment regiment, Regiment target, Army activeArmy, int activeRegimentIndex) {
+	public static void chargeTarget(Regiment regiment, Regiment target, Army activeArmy, int activeRegimentIndex,
+			Army yourBattleArmy, Army opponentBattleArmy) {
 		regiment.battleDefence -= 5;
-		MoveMethod.move(regiment, regiment.battleMove + regiment.run, target, activeArmy, activeRegimentIndex);
+		MoveMethod.move(regiment, regiment.battleMove + regiment.run, target, activeArmy, activeRegimentIndex,
+				yourBattleArmy, opponentBattleArmy);
 		writeBasicOrderText(Order.CHARGE, regiment, target);
 	}
 
-	public static void combat(Regiment regiment, Regiment target, int chargeBonus, Army activeArmy) {
+	public static void combat(Regiment regiment, Regiment target, int chargeBonus, Army activeArmy, Army yourBattleArmy,
+			Army opponentBattleArmy) {
 
 		Random random = new Random();
 		int casualties = 0;
@@ -34,10 +37,10 @@ public abstract class OrderMethods {
 		if (target.battleLife <= 0) {
 			target.defeated = true;
 			regiment.inCombat = false;
-			if (activeArmy == Main.yourArmy) {
-				Main.opponentArmy.roster.remove(target);
+			if (activeArmy == yourBattleArmy) {
+				opponentBattleArmy.roster.remove(target);
 			} else {
-				Main.yourArmy.roster.remove(target);
+				yourBattleArmy.roster.remove(target);
 			}
 		}
 
@@ -107,9 +110,10 @@ public abstract class OrderMethods {
 
 	private static void writeHealText(Order order, Regiment regiment, int recoveries) {
 
-		RightAggregatePanel.infoTextPanel.textArea.setText("<font color = 'rgb(220, 220, 220)'>" + regiment.name
-				+ " is having their turn and chooses to " + order.toString() + "." + "They manage to recover "
-				+ decideColour(recoveries, false) + recoveries + "<font color = 'rgb(220, 220, 220)'>" + " casualties.");
+		RightAggregatePanel.infoTextPanel.textArea
+				.setText("<font color = 'rgb(220, 220, 220)'>" + regiment.name + " is having their turn and chooses to "
+						+ order.toString() + "." + "They manage to recover " + decideColour(recoveries, false)
+						+ recoveries + "<font color = 'rgb(220, 220, 220)'>" + " casualties.");
 		;
 	}
 
@@ -119,9 +123,9 @@ public abstract class OrderMethods {
 			colour = 255;
 		}
 		if (red) {
-		return "<font color = 'rgb(" + colour + ", 120, 80)'>";
+			return "<font color = 'rgb(" + colour + ", 120, 80)'>";
 		} else {
-		return "<font color = 'rgb(60, " + colour + ", 80)'>";	
+			return "<font color = 'rgb(60, " + colour + ", 80)'>";
 		}
 	}
 

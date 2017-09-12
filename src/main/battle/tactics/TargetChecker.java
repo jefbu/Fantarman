@@ -8,54 +8,54 @@ import main.entity.armies.Army;
 import main.entity.regiments.Regiment;
 
 public class TargetChecker {
-	
-	
-	
-	public static Regiment checkTarget(Regiment regiment, Target target, Army activeArmy) {
+
+	public static Regiment checkTarget(Regiment regiment, Target target, Army activeArmy, Army yourBattleArmy,
+			Army opponentBattleArmy) {
 
 		switch (target) {
 
 		case ENEMY_STRONGEST:
-			if (activeArmy == Main.yourArmy) {
-			Collections.sort(Main.opponentArmy.roster, new Comparator<Regiment>() {
-				@Override
-				public int compare(Regiment p1, Regiment p2) {
-					return p2.battleLife - p1.battleLife;
-				}
-			});
-			return Main.opponentArmy.roster.get(0);
+			if (activeArmy == yourBattleArmy) {
+				Collections.sort(opponentBattleArmy.roster, new Comparator<Regiment>() {
+					@Override
+					public int compare(Regiment p1, Regiment p2) {
+						return p2.battleLife - p1.battleLife;
+					}
+				});
+				return opponentBattleArmy.roster.get(0);
 			} else {
-			Collections.sort(Main.yourArmy.roster, new Comparator<Regiment>() {
-				@Override
-				public int compare(Regiment p1, Regiment p2) {
-					return p2.battleLife - p1.battleLife;
-				}
-			});
-			return Main.yourArmy.roster.get(0);
+				Collections.sort(yourBattleArmy.roster, new Comparator<Regiment>() {
+					@Override
+					public int compare(Regiment p1, Regiment p2) {
+						return p2.battleLife - p1.battleLife;
+					}
+				});
+				return yourBattleArmy.roster.get(0);
 			}
-			
+
 		case ENEMY_WEAKEST:
-			if (activeArmy == Main.yourArmy) {
-			Collections.sort(Main.opponentArmy.roster, new Comparator<Regiment>() {
-				@Override
-				public int compare(Regiment p1, Regiment p2) {
-					return p1.battleLife - p2.battleLife;
-				}
-			});
-			return Main.opponentArmy.roster.get(0);
+			if (activeArmy == yourBattleArmy) {
+				Collections.sort(opponentBattleArmy.roster, new Comparator<Regiment>() {
+					@Override
+					public int compare(Regiment p1, Regiment p2) {
+						return p1.battleLife - p2.battleLife;
+					}
+				});
+				return opponentBattleArmy.roster.get(0);
 			} else {
-			Collections.sort(Main.yourArmy.roster, new Comparator<Regiment>() {
-				@Override
-				public int compare(Regiment p1, Regiment p2) {
-					return p1.battleLife - p2.battleLife;
-				}
-			});
-			return Main.yourArmy.roster.get(0);
-			}		case ENEMY_NEAREST:
-			if (activeArmy == Main.yourArmy) {
-				return Main.opponentArmy.roster.get(0);
+				Collections.sort(yourBattleArmy.roster, new Comparator<Regiment>() {
+					@Override
+					public int compare(Regiment p1, Regiment p2) {
+						return p1.battleLife - p2.battleLife;
+					}
+				});
+				return yourBattleArmy.roster.get(0);
+			}
+		case ENEMY_NEAREST:
+			if (activeArmy == yourBattleArmy) {
+				return opponentBattleArmy.roster.get(0);
 			} else {
-				return Main.yourArmy.roster.get(0);
+				return yourBattleArmy.roster.get(0);
 			}
 		case SELF:
 			return regiment;

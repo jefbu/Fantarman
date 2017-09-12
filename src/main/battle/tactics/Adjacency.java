@@ -13,8 +13,6 @@ public abstract class Adjacency {
 		for (int i = 0; i < regimentPanelLength; i++) {
 			for (int ii = 0; ii < armyRosterSize; ii++) {
 				for (int iii = 0; iii < army.roster.get(ii).panels.length; iii++) {
-					System.out.println(regiment.panels[i]);
-					System.out.println(army.roster.get(ii).panels[iii]);
 					if (regiment.panels[i] == army.roster.get(ii).panels[iii] - 1) { return false; }
 					else if (regiment.panels[i] == army.roster.get(ii).panels[iii] + 1) { return false; }
 					else if (regiment.panels[i] == army.roster.get(ii).panels[iii] - 48) { return false; }
