@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import main.components.Colour;
 import main.components.ContentPanel;
 import main.graphics.gameScreen.armyView.ArmyViewViewPanel;
+import main.graphics.gameScreen.armyView.RoleSelectionPanel;
 
 public class ArmyView extends JPanel {
 
@@ -61,7 +62,7 @@ public class ArmyView extends JPanel {
 		titlePanel.setPreferredSize(new Dimension(roundedWidth * 60 / 100 - 5, unroundedHeight / 20));
 		titlePanel.setBackground(new Color(45, 90, 135));
 		add(titlePanel);
-		
+
 		JPanel topEmptyRightPanel2 = new JPanel();
 		topEmptyRightPanel2.setPreferredSize(new Dimension(roundedWidth * 5 / 100 + 5, unroundedHeight / 20));
 		topEmptyRightPanel2.setBackground(backgroundColor);
@@ -72,8 +73,8 @@ public class ArmyView extends JPanel {
 		leftEmptyPanel.setBackground(backgroundColor);
 		add(leftEmptyPanel);
 
-		ContentPanel leftPanel = new ContentPanel(roundedWidth * 2 / 10 + 10, unroundedHeight * 75 / 100 + 10,
-				Colour.BLUE, new FlowLayout(FlowLayout.LEADING, 0, 0));
+		RoleSelectionPanel leftPanel = new RoleSelectionPanel(roundedWidth * 2 / 10 + 10,
+				unroundedHeight * 75 / 100 + 10, Colour.BLUE, new FlowLayout(FlowLayout.LEADING, 0, 0));
 		add(leftPanel);
 
 		JPanel centreEmptyPanel = new JPanel();
@@ -84,12 +85,12 @@ public class ArmyView extends JPanel {
 		ContentPanel rightPanel = new ContentPanel(roundedWidth * 6 / 10 + 10, unroundedHeight * 75 / 100 + 10,
 				Colour.BLUE, new FlowLayout(FlowLayout.LEADING, 0, 0));
 		add(rightPanel);
-		
+
 		JPanel rightEmptyPanel = new JPanel();
 		rightEmptyPanel.setPreferredSize(new Dimension(roundedWidth / 20, unroundedHeight * 75 / 100));
 		rightEmptyPanel.setBackground(backgroundColor);
 		add(rightEmptyPanel);
-		
+
 		JPanel bottomEmptyPanel = new JPanel();
 		bottomEmptyPanel.setPreferredSize(new Dimension(roundedWidth, unroundedHeight * 12 / 100));
 		bottomEmptyPanel.setBackground(backgroundColor);
