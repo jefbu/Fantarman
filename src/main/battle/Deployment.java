@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
 
-import main.Main;
 import main.components.Colour;
 import main.components.Popup;
 import main.entity.armies.Army;

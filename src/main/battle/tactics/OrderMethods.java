@@ -2,7 +2,6 @@ package main.battle.tactics;
 
 import java.util.Random;
 
-import main.Main;
 import main.entity.armies.Army;
 import main.entity.regiments.Regiment;
 import main.graphics.battleScreen.RightAggregatePanel;

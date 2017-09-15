@@ -27,27 +27,27 @@ public class BattleOverviewInformationPanel extends ContentPanel {
 
 		super(width, height, colour, new FlowLayout(FlowLayout.LEFT, 2, 2));
 
-		armyLogoPanel = new ContentPanel(width / 3, height - 10, Colour.BLUE, new FlowLayout(FlowLayout.LEFT, 2, 2));
+		armyLogoPanel = new ContentPanel(width / 3, height - 10, Colour.DBLUE, new FlowLayout(FlowLayout.LEFT, 2, 2));
 		insidePanel.add(armyLogoPanel);
-		infoPanel = new ContentPanel(width * 2 / 3, height - 10, Colour.BLUE, new FlowLayout(FlowLayout.LEFT, 2, 2));
+		infoPanel = new ContentPanel(width * 2 / 3, height - 10, Colour.DBLUE, new FlowLayout(FlowLayout.LEFT, 2, 2));
 		insidePanel.add(infoPanel);
 		totalLifePanel = new ContentPanel(width * 2 / 3 - 10, height / 3 - 1, colour,
 				new FlowLayout(FlowLayout.LEFT, 2, 2));
-		totalLifeTitlePanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colour.BLUE,
+		totalLifeTitlePanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colour.DBLUE,
 				new FlowLayout(FlowLayout.CENTER, 0, 15));
-		totalLifeContentPanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colour.BLUE,
+		totalLifeContentPanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colour.DBLUE,
 				new FlowLayout(FlowLayout.CENTER, 0, 15));
 		totalValuePanel = new ContentPanel(width * 2 / 3 - 10, height / 3 - 1, colour,
 				new FlowLayout(FlowLayout.LEFT, 2, 2));
-		totalValueTitlePanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colour.BLUE,
+		totalValueTitlePanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colour.DBLUE,
 				new FlowLayout(FlowLayout.CENTER, 0, 15));
-		totalValueContentPanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colour.BLUE,
+		totalValueContentPanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colour.DBLUE,
 				new FlowLayout(FlowLayout.CENTER, 0, 15));
 		totalMoralePanel = new ContentPanel(width * 2 / 3 - 10, height / 3 - 1, colour,
 				new FlowLayout(FlowLayout.LEFT, 2, 2));
-		totalMoraleTitlePanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colour.BLUE,
+		totalMoraleTitlePanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colour.DBLUE,
 				new FlowLayout(FlowLayout.CENTER, 0, 15));
-		totalMoraleContentPanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colour.BLUE,
+		totalMoraleContentPanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colour.DBLUE,
 				new FlowLayout(FlowLayout.CENTER, 0, 15));
 		infoPanel.insidePanel.add(totalLifePanel);
 		totalLifePanel.insidePanel.add(totalLifeTitlePanel);

@@ -9,7 +9,6 @@ import java.util.Random;
 
 import javax.swing.Timer;
 
-import main.Main;
 import main.components.Colour;
 import main.components.IndexedPanel;
 import main.entity.armies.Army;

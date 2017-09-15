@@ -8,9 +8,7 @@ import java.util.Random;
 
 import javax.swing.JPanel;
 
-import main.Main;
 import main.components.IndexedPanel;
-import main.entity.regiments.Regiment;
 import main.graphics.TileImages;
 import main.utility.Border;
 import main.utility.Direction;

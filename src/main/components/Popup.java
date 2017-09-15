@@ -161,7 +161,11 @@ public class Popup extends JDialog {
 		case BLUE:
 			return new Color(60 + modifier / 2, 120 + modifier, 160 + modifier);
 		case DBLUE:
-			return new Color(40 + modifier / 3, 50 + modifier / 2, 60 + modifier);
+			return new Color(20 + modifier / 3, 40 + modifier / 2, 60 + modifier);
+		case DRED:
+			return new Color(20 + modifier, 10 + modifier / 2, modifier / 3);
+		case DGREEN:
+			return new Color(modifier / 3, 20 + modifier, 10 + modifier / 2);
 		}
 		return new Color(0, 0, 0);
 

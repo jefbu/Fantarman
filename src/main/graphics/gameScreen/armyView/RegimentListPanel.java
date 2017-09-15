@@ -13,19 +13,17 @@ import main.components.Colour;
 import main.components.ContentPanel;
 import main.components.IndexedButton;
 
-public class RoleSelectionPanel extends ContentPanel {
+public class RegimentListPanel extends ContentPanel {
 	
 	private static final long serialVersionUID = 1L;
-	
-	Color backgroundColor;
 
-	public RoleSelectionPanel(int width, int height, Colour colour, FlowLayout flowLayout) {
+	public RegimentListPanel(int width, int height, Colour colour, FlowLayout flowLayout) {
 		
 		super(width, height, colour, flowLayout);
-		backgroundColor = new Color (70, 140, 210);
+		Color backgroundColor = new Color(70, 140, 210);
 		
 		for (int i = 0; i < 15; i++) {
-		
+			
 		int index = i;	
 			
 		JPanel linePanel = new JPanel();
@@ -49,6 +47,7 @@ public class RoleSelectionPanel extends ContentPanel {
 		linePanel.add(lineButton);
 		
 		}
+		
 		
 	}
 

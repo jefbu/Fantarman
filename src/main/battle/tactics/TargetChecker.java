@@ -3,7 +3,6 @@ package main.battle.tactics;
 import java.util.Collections;
 import java.util.Comparator;
 
-import main.Main;
 import main.entity.armies.Army;
 import main.entity.regiments.Regiment;
 

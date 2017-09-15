@@ -6,9 +6,6 @@ import java.awt.FlowLayout;
 
 import javax.swing.JPanel;
 
-import main.components.Colour;
-import main.components.ContentPanel;
-
 public class MainPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;

@@ -35,14 +35,14 @@ public class ButtonPanel extends JPanel {
 			
 			public void actionPerformed (ActionEvent e) {
 
-				//Screen.gameScreen.setVisible(false);
-				//Screen.battleScreen.setVisible(true);
-				//Main.battles.add(new Battle());
+				Screen.gameScreen.setVisible(false);
+				Screen.battleScreen.setVisible(true);
+				Main.battles.add(new Battle());
 				//Main.screen.dispose();
-				if (Screen.gameScreen.mainPanel.armyView.isVisible()) {
-				Screen.gameScreen.mainPanel.armyView.setVisible(false);
-				}
-				else Main.screen.dispose();
+				//if (Screen.gameScreen.mainPanel.armyView.isVisible()) {
+				//Screen.gameScreen.mainPanel.armyView.setVisible(false);
+				//}
+				//else Main.screen.dispose();
 			}
 			
 		});

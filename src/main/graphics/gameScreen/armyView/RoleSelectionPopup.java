@@ -9,7 +9,7 @@ public class RoleSelectionPopup extends Popup {
 
 	public RoleSelectionPopup(int width, int height, int index) {
 		
-		super(width / 2, height / 2, Colour.DBLUE, false);
+		super(width, height, Colour.DRED, false);
 		
 		
 	}

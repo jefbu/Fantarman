@@ -7,9 +7,10 @@ import java.awt.FlowLayout;
 import javax.swing.JPanel;
 
 import main.components.Colour;
-import main.components.ContentPanel;
 import main.graphics.gameScreen.armyView.ArmyViewViewPanel;
+import main.graphics.gameScreen.armyView.RegimentListPanel;
 import main.graphics.gameScreen.armyView.RoleSelectionPanel;
+import main.graphics.gameScreen.armyView.TitlePanel;
 
 public class ArmyView extends JPanel {
 
@@ -58,10 +59,9 @@ public class ArmyView extends JPanel {
 		topEmptyLeftPanel2.setBackground(backgroundColor);
 		add(topEmptyLeftPanel2);
 
-		JPanel titlePanel = new JPanel();
-		titlePanel.setPreferredSize(new Dimension(roundedWidth * 60 / 100 - 5, unroundedHeight / 20));
-		titlePanel.setBackground(new Color(45, 90, 135));
+		TitlePanel titlePanel = new TitlePanel(roundedWidth * 60 / 100 - 5, unroundedHeight / 20);
 		add(titlePanel);
+		titlePanel.applyView(TitlePanel.statview);
 
 		JPanel topEmptyRightPanel2 = new JPanel();
 		topEmptyRightPanel2.setPreferredSize(new Dimension(roundedWidth * 5 / 100 + 5, unroundedHeight / 20));
@@ -82,7 +82,7 @@ public class ArmyView extends JPanel {
 		centreEmptyPanel.setBackground(backgroundColor);
 		add(centreEmptyPanel);
 
-		ContentPanel rightPanel = new ContentPanel(roundedWidth * 6 / 10 + 10, unroundedHeight * 75 / 100 + 10,
+		RegimentListPanel rightPanel = new RegimentListPanel(roundedWidth * 6 / 10 + 10, unroundedHeight * 75 / 100 + 10,
 				Colour.BLUE, new FlowLayout(FlowLayout.LEADING, 0, 0));
 		add(rightPanel);
 

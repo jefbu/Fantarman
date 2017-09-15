@@ -5,7 +5,6 @@ import java.util.Random;
 
 import javax.swing.ImageIcon;
 
-import main.Main;
 import main.battle.tactics.ConditionChecker;
 import main.battle.tactics.Order;
 import main.battle.tactics.OrderMethods;
