@@ -27,6 +27,8 @@ public class Main {
 						
 		yourArmy = new TestArmy();
 		
+		Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
+		
 	}
 
 }

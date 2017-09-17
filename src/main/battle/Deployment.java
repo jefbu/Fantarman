@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import main.components.Colour;
-import main.components.Popup;
+import main.components.TextPopup;
 import main.entity.armies.Army;
 import main.entity.regiments.Regiment;
 import main.graphics.battleScreen.BattleScreen;
@@ -70,7 +70,7 @@ public class Deployment {
 				} catch (Exception e) {	}
 				
 			}
-			Popup popup = new Popup(BattleScreen.battleScene.roundedWidth / 3,
+			TextPopup popup = new TextPopup(BattleScreen.battleScene.roundedWidth / 3,
 					BattleScreen.battleScene.roundedHeight / 4, Colour.GREEN, false);
 			popup.writeText(BattleStartStrings.rollQuote());
 			popup.setVisible(true);

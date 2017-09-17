@@ -2,11 +2,17 @@ package main.graphics.gameScreen.armyView;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.MouseInfo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
+
+import main.components.Colour;
+import main.components.TextPopup;
+import main.graphics.Screen;
 
 public class ArmyViewViewPanel extends JPanel {
 	
@@ -21,9 +27,12 @@ public class ArmyViewViewPanel extends JPanel {
 		sortButton = new JButton();
 		sortButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				ViewChoicePopup viewChoicePopup = new ViewChoicePopup(width, height * 4 + 10, Colour.DGREEN, false);
+				viewChoicePopup.setLocation(MouseInfo.getPointerInfo().getLocation());
+				viewChoicePopup.setVisible(true);				
 			}
 		});
+		add(sortButton);
 
 		
 		

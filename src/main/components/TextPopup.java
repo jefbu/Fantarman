@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Dialog;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -17,14 +19,15 @@ import main.graphics.Screen;
 import main.graphics.battleScreen.BattleScreen;
 import main.utility.ImageLoader;
 
-public class Popup extends JDialog {
-	
+public class TextPopup extends Popup {
+
 	private static final long serialVersionUID = 1L;
-	
-	public JPanel bottomPanel;
-	public JPanel middlePanel;
-	public JPanel mainPanel;
+
+	private JPanel bottomPanel;
+	private JPanel middlePanel;
+	private JPanel mainPanel;
 	public JPanel mainPanelTopPanel;
+	private JTextPane textArea;
 	private JPanel mainPanelBottomLeftPanel;
 	private JPanel mainPanelBottomRightPanel;
 
@@ -37,9 +40,10 @@ public class Popup extends JDialog {
 	ImageIcon confirmIcon;
 	ImageIcon cancelIcon;
 	
-	public Popup(int width, int height, Colour colour, boolean dichotomy) {
-		
-		super(null, Dialog.ModalityType.APPLICATION_MODAL);
+
+	public TextPopup(int width, int height, Colour colour, boolean dichotomy) {
+
+		super(width, height, colour, dichotomy);
 		
 		setSize(new Dimension(width, height));
 		setLocationRelativeTo(BattleScreen.battleScene);
@@ -62,7 +66,7 @@ public class Popup extends JDialog {
 		mainPanel.setPreferredSize(new Dimension(width - 12, height - 12));
 		mainPanel.setBackground(applyColour(colour, 80));
 		mainPanel.setLayout(new FlowLayout(FlowLayout.LEADING, 0, 0));
-		
+
 		add(bottomPanel);
 		bottomPanel.add(middlePanel);
 		middlePanel.add(mainPanel);
@@ -71,7 +75,18 @@ public class Popup extends JDialog {
 		mainPanelTopPanel.setPreferredSize(new Dimension(width - 12, (height - 12) * 3 / 4));
 		mainPanelTopPanel.setBackground(applyColour(colour, 80));
 		mainPanelTopPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 8, 8));
-		
+
+		textArea = new JTextPane();
+		textArea.setContentType("text/html");
+		textArea.putClientProperty(JTextPane.HONOR_DISPLAY_PROPERTIES, Boolean.TRUE);
+		textArea.setFont(new Font("garamond", Font.BOLD, 20));
+		textArea.setPreferredSize(new Dimension((width - 12) - 16, ((height - 12) * 3 / 4) - 16));
+		textArea.setEditable(false);
+		textArea.setBackground(applyColour(colour, 80));
+		textArea.setMargin(new Insets(10, 10, 10, 10));
+
+		mainPanelTopPanel.add(textArea);
+
 		mainPanel.add(mainPanelTopPanel);
 
 		mainPanelBottomLeftPanel = new JPanel();
@@ -86,7 +101,7 @@ public class Popup extends JDialog {
 		mainPanelBottomRightPanel.setLayout(new FlowLayout(FlowLayout.LEADING, 0, 2));
 
 		mainPanel.add(mainPanelBottomRightPanel);
-		
+
 		if (dichotomy) {
 			confirmButton = new JButton();
 			confirmButton.setPreferredSize(new Dimension((width - 12) / 6, (height - 12) / 4 - 4));
@@ -134,7 +149,6 @@ public class Popup extends JDialog {
 			});
 			mainPanelBottomRightPanel.add(acceptButton);
 		}
-		
 	}
 
 	private Color applyColour(Colour colour, int modifier) {
@@ -154,6 +168,12 @@ public class Popup extends JDialog {
 			return new Color(modifier / 3, 20 + modifier, 10 + modifier / 2);
 		}
 		return new Color(0, 0, 0);
+
+	}
+
+	public void writeText(String input) {
+
+		textArea.setText(input);
 
 	}
 

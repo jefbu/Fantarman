@@ -1,9 +1,9 @@
 package main.graphics.gameScreen.armyView;
 
 import main.components.Colour;
-import main.components.Popup;
+import main.components.TextPopup;
 
-public class RoleSelectionPopup extends Popup {
+public class RoleSelectionPopup extends TextPopup {
 
 	private static final long serialVersionUID = 1L;
 

@@ -10,8 +10,8 @@ public class GameScreen extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	
-	MenuPanel menuPanel;
-	MainPanel mainPanel;
+	public MenuPanel menuPanel;
+	public MainPanel mainPanel;
 	RightAggregatePanel rightAggregatePanel;
 	
 	int gameScreenWidth;

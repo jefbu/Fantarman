@@ -2,13 +2,13 @@ package main.battle;
 
 import main.Main;
 import main.components.Colour;
-import main.components.Popup;
+import main.components.TextPopup;
 import main.entity.armies.Army;
 import main.entity.regiments.Regiment;
 import main.graphics.battleScreen.BattleScreen;
 import main.strings.Adjectives;
 
-public class BattleConclusion extends Popup {
+public class BattleConclusion extends TextPopup {
 
 	private static final long serialVersionUID = 1L;
 
