@@ -13,7 +13,10 @@ public class TitlePanel extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
 	public static ArrayList<String> statview;
+	public static ArrayList<String> generalView;
+	public static ArrayList<String> historyView;
 	ArrayList<JPanel> panelList;
+	
 
 	public TitlePanel(int width, int height) {
 		
@@ -23,6 +26,8 @@ public class TitlePanel extends JPanel {
 		setLayout(new FlowLayout(FlowLayout.LEADING, 0, 0));
 		
 		statview = new ArrayList<String>();
+		generalView = new ArrayList<String>();
+		historyView = new ArrayList<String>();
 		panelList = new ArrayList<JPanel>();
 		createArrayLists();
 		
