@@ -15,6 +15,7 @@ public class Harvesters extends Regiment {
 		
 		this.name = name;
 		this.value = 600;
+		this.captain = captain;
 		
 		this.attack = 60 + captain.attackBonus;
 		this.charge = 15 + captain.chargeBonus;

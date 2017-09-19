@@ -33,5 +33,7 @@ public class Captain {
 		this.name = name;
 
 	}
+	
+	public static Captain boris = new Captain("Boris", 3, 2, 5, 2, 6, 0);
 
 }

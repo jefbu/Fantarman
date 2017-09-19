@@ -10,7 +10,7 @@ public class TestArmy extends Army {
 	public TestArmy() {
 		super();
 		
-		roster.add(new FireMages("Flammekuche", new Captain("Boris", 0, 0, 0, 1, 3, 0)));
+		roster.add(new FireMages("Flammekuche", Captain.boris));
 		roster.add(new FireMages("HotPots", new Captain("Julio", 0, 0, 0, 1, 1, 1)));
 		roster.add(new FireMages("Explotions", new Captain("Anna", 0, 0, 0, 2, 1, 2)));
 		roster.add(new FireMages("Bombers", new Captain("Burt", 0, 0, 0, 0, 1, 3)));

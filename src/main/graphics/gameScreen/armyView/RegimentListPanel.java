@@ -50,7 +50,7 @@ public class RegimentListPanel extends ContentPanel {
 		
 		for (int i = 0; i < Main.yourArmy.roster.size(); i++) {
 			panelList.get(i).panelList.get(0).label.setText(Main.yourArmy.roster.get(i).name);
-			panelList.get(i).panelList.get(1).label.setText("1");
+			panelList.get(i).panelList.get(1).label.setText(Main.yourArmy.roster.get(i).captain.name);
 			panelList.get(i).panelList.get(2).label.setText("0");
 			panelList.get(i).panelList.get(3).label.setText(Integer.toString(Main.yourArmy.roster.get(i).run));
 			panelList.get(i).panelList.get(4).label.setText(Integer.toString(Main.yourArmy.roster.get(i).speed));

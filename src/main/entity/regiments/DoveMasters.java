@@ -15,6 +15,7 @@ public class DoveMasters extends Regiment {
 		
 		this.name = name;
 		this.value = 1000;
+		this.captain = captain;
 				
 		this.attack = 40 + captain.attackBonus;
 		this.charge = 10 + captain.chargeBonus;
