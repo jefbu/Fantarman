@@ -22,6 +22,8 @@ public abstract class Regiment {
 	public ArrayList<Tactic> instructions;
 
 	public int value;
+	
+	public Role role;
 
 	public int attack;
 	public int defence;
@@ -73,6 +75,7 @@ public abstract class Regiment {
 		this.instructions = new ArrayList<Tactic>();
 		inCombat = false;
 		defeated = false;
+		role = Role.TRAINING;
 
 	}
 

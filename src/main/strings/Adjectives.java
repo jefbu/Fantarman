@@ -9,8 +9,8 @@ public class Adjectives {
 	
 	public Adjectives() {
 	
-	positiveAdjectives = new String[7];
-	negativeAdjectives = new String[7];
+	positiveAdjectives = new String[10];
+	negativeAdjectives = new String[10];
 	
 	positiveAdjectives[0] = "crushing";
 	positiveAdjectives[1] = "spectacular";
@@ -19,6 +19,9 @@ public class Adjectives {
 	positiveAdjectives[4] = "memorable";
 	positiveAdjectives[5] = "fantastic";
 	positiveAdjectives[6] = "titanic";
+	positiveAdjectives[7] = "unbelievable";
+	positiveAdjectives[8] = "top-notch";
+	positiveAdjectives[9] = "majestic";
 	
 	negativeAdjectives[0] = "disastrous";
 	negativeAdjectives[1] = "terrible";
@@ -26,7 +29,10 @@ public class Adjectives {
 	negativeAdjectives[3] = "depressing";
 	negativeAdjectives[4] = "lamentable";
 	negativeAdjectives[5] = "tearful";
-	negativeAdjectives[6] = "awful";
+	negativeAdjectives[6] = "n awful";
+	negativeAdjectives[7] = "blistering";
+	negativeAdjectives[8] = "pitiful";
+	negativeAdjectives[9] = "shocking";
 	
 	}
 	
