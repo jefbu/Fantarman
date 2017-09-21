@@ -9,12 +9,12 @@ import javax.swing.JPanel;
 import main.components.Colour;
 import main.components.ContentPanel;
 
-public class BaseInfoPanel extends ContentPanel {
+public class RegimentBaseInfoPanel extends ContentPanel {
 
 	private static final long serialVersionUID = 1L;
 	ArrayList<JPanel> panelList;
 	
-	public BaseInfoPanel(int width, int height, Colour colour, FlowLayout flowLayout) {
+	public RegimentBaseInfoPanel(int width, int height, Colour colour, FlowLayout flowLayout) {
 		
 		super(width, height, colour, flowLayout);
 		panelList = new ArrayList<JPanel>();

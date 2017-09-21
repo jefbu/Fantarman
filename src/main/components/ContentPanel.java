@@ -45,7 +45,7 @@ public class ContentPanel extends JPanel {
 		case RED: return new Color(highlight * 3 / 2, highlight, highlight / 2);
 		case GREEN: return new Color (highlight, highlight * 3 / 2, highlight / 2);
 		case BLUE: return new Color (highlight / 2, highlight, highlight * 3 / 2 );
-		case DBLUE: return new Color (highlight / 4, highlight / 2, highlight * 2 / 3);
+		case DBLUE: return new Color (highlight / 3, highlight * 2 / 3, highlight);
 		case DRED: return new Color (highlight * 2 / 3, highlight / 2, highlight / 4);
 		case DGREEN: return new Color (highlight / 4, highlight * 2 / 3, highlight / 2);
 		case LRED: return new Color(highlight * 3 / 2 + 30, highlight + 30, highlight / 2 + 30);
