@@ -9,8 +9,6 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import main.Main;
-import main.battle.Battle;
-import main.graphics.Screen;
 
 public class ButtonPanel extends JPanel {
 	

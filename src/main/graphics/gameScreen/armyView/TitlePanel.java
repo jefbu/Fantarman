@@ -3,7 +3,6 @@ package main.graphics.gameScreen.armyView;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.Font;
 import java.util.ArrayList;
 
 import javax.swing.JLabel;

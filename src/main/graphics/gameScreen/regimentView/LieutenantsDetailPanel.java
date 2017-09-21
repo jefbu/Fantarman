@@ -6,7 +6,9 @@ import java.awt.Dimension;
 import javax.swing.JPanel;
 
 public class LieutenantsDetailPanel extends JPanel {
-	
+
+	private static final long serialVersionUID = 1L;
+
 	public LieutenantsDetailPanel(int width, int height) {
 				
 		super();

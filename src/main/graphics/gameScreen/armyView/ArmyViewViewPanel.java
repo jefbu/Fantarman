@@ -2,7 +2,6 @@ package main.graphics.gameScreen.armyView;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.MouseInfo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,8 +10,6 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import main.components.Colour;
-import main.components.TextPopup;
-import main.graphics.Screen;
 
 public class ArmyViewViewPanel extends JPanel {
 	

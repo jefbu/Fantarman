@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 
 import main.components.Colour;
 import main.components.ContentPanel;
+import main.graphics.gameScreen.regimentView.regimentDetail.BaseInfoPanel;
 import main.graphics.gameScreen.regimentView.regimentDetail.BattleStatsPanel;
 import main.graphics.gameScreen.regimentView.regimentDetail.EquipPanel;
 import main.graphics.gameScreen.regimentView.regimentDetail.HistoryStatsPanel;
@@ -33,6 +34,9 @@ public class RegimentDetailPanel extends JPanel {
 			regimentIconLabel.setIcon(imageLoader.loadImageIcon("/tiles/grass1.png", width / 8, height / 3));
 			regimentIconPanel.insidePanel.add(regimentIconLabel);
 		add(regimentIconPanel);
+		
+		BaseInfoPanel baseInfoPanel= new BaseInfoPanel(width / 6, height / 2 - 20, Colour.LBLUE, new FlowLayout(FlowLayout.LEFT, 0, 0));
+		add(baseInfoPanel);
 		
 		BattleStatsPanel battleStatsPanel = new BattleStatsPanel(width / 3, height / 2 - 20, Colour.BLUE, new FlowLayout(FlowLayout.LEFT, 3, 3));
 		add(battleStatsPanel);
