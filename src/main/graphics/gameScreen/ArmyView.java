@@ -16,7 +16,7 @@ public class ArmyView extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	Color backgroundColor;
-	public RoleSelectionPanel leftPanel;
+	public RoleSelectionPanel roleSelectionPanel;
 	public RegimentListPanel  regimentListPanel;
 
 	public ArmyView(int gameScreenWidth, int gameScreenHeight) {
@@ -75,9 +75,9 @@ public class ArmyView extends JPanel {
 		leftEmptyPanel.setBackground(backgroundColor);
 		add(leftEmptyPanel);
 
-		leftPanel = new RoleSelectionPanel(roundedWidth * 2 / 10 + 10,
+		roleSelectionPanel = new RoleSelectionPanel(roundedWidth * 2 / 10 + 10,
 				unroundedHeight * 75 / 100 + 10, Colour.BLUE, new FlowLayout(FlowLayout.LEADING, 0, 0));
-		add(leftPanel);
+		add(roleSelectionPanel);
 
 		JPanel centreEmptyPanel = new JPanel();
 		centreEmptyPanel.setPreferredSize(new Dimension(roundedWidth / 20, unroundedHeight * 75 / 100));

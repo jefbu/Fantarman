@@ -23,7 +23,7 @@ public class TitlePanel extends JPanel {
 		super();
 		setPreferredSize(new Dimension(width, height));
 		setBackground(new Color(45, 90, 135));
-		setLayout(new FlowLayout(FlowLayout.LEADING, 0, 0));
+		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		
 		statview = new ArrayList<String>();
 		generalView = new ArrayList<String>();
@@ -32,7 +32,7 @@ public class TitlePanel extends JPanel {
 		createArrayLists();
 		
 		JPanel namePanel = new JPanel();
-		namePanel.setPreferredSize(new Dimension(width / 6, height));
+		namePanel.setPreferredSize(new Dimension(width / 6 + 6, height));
 		namePanel.setBackground(new Color(45, 90, 135));
 		panelList.add(namePanel);
 		

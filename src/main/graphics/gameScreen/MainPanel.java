@@ -12,6 +12,7 @@ public class MainPanel extends JPanel {
 	private Color backgroundColor;
 	
 	public ArmyView armyView;
+	public RegimentView regimentView;
 
 
 
@@ -30,6 +31,9 @@ public class MainPanel extends JPanel {
 		
 		armyView = new ArmyView(gameScreenWidth, gameScreenHeight);
 		add(armyView);
+		
+		regimentView = new RegimentView(gameScreenWidth, gameScreenHeight);
+		add(regimentView);
 
 	}
 

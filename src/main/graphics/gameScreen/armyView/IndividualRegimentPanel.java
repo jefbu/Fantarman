@@ -3,42 +3,51 @@ package main.graphics.gameScreen.armyView;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import main.components.LabeledPanel;
+import main.components.ButtonedPanel;
+import main.graphics.Screen;
 
 public class IndividualRegimentPanel extends JPanel {
 	
 
 	private static final long serialVersionUID = 1L;
 	Color backgroundColor = new Color(70, 140, 210);
-	ArrayList<LabeledPanel> panelList;
+	ArrayList<ButtonedPanel> panelList;
 
 	public IndividualRegimentPanel(int width, int height) {
 		
 		super();
-		panelList = new ArrayList<LabeledPanel>();
+		panelList = new ArrayList<ButtonedPanel>();
 		
 		setPreferredSize(new Dimension(width, height));
 		setBackground(backgroundColor);
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		
-		LabeledPanel namePanel = new LabeledPanel(width / 6, height);
-		namePanel.setBackground(new Color(80, 160, 240));
+		ButtonedPanel namePanel = new ButtonedPanel(width / 6, height);
+		namePanel.setBackground(new Color(80, 155, 240));
 		panelList.add(namePanel);
 		
 		for (int i = 0; i < 10; i++) {
-			LabeledPanel panel = new LabeledPanel(width / 12, height);
-			panel.setBackground(new Color(80, 160, 240));
+			ButtonedPanel panel = new ButtonedPanel(width / 12, height);
+			panel.setBackground(new Color(80, 160 + i * 5, 240));
+			panel.button.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent e) {
+					Screen.gameScreen.mainPanel.armyView.setVisible(false);
+					Screen.gameScreen.mainPanel.regimentView.setVisible(true);
+				}
+			});
 			panelList.add(panel);
 		}
 		
-		for (JPanel panel: panelList) {
+		for (ButtonedPanel panel: panelList) {
 			add(panel);
 		}
+		
 		
 	}
 
