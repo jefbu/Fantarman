@@ -9,10 +9,11 @@ import javax.swing.JPanel;
 
 import main.components.Colour;
 import main.components.ContentPanel;
-import main.graphics.gameScreen.regimentView.regimentDetail.RegimentBaseInfoPanel;
+import main.entity.regiments.Regiment;
 import main.graphics.gameScreen.regimentView.regimentDetail.BattleStatsPanel;
 import main.graphics.gameScreen.regimentView.regimentDetail.EquipPanel;
 import main.graphics.gameScreen.regimentView.regimentDetail.HistoryStatsPanel;
+import main.graphics.gameScreen.regimentView.regimentDetail.RegimentBaseInfoPanel;
 import main.utility.ImageLoader;
 
 public class RegimentDetailPanel extends JPanel {
@@ -45,7 +46,11 @@ public class RegimentDetailPanel extends JPanel {
 		add(historyStatsPanel);
 		
 		EquipPanel equipPanel = new EquipPanel(width / 2, height / 2 + 10, Colour.DBLUE, new FlowLayout(FlowLayout.LEFT, 3, 3));
-		add(equipPanel);
+		add(equipPanel);		
+		
+	}
+	
+	public void fillRegimentDetailPanel(Regiment regiment) {
 		
 		
 		

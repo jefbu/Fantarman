@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 
 import main.components.Colour;
 import main.components.ContentPanel;
+import main.entity.regiments.Regiment;
 import main.graphics.gameScreen.regimentView.captainDetail.CaptainBaseInfoPanel;
 import main.graphics.gameScreen.regimentView.captainDetail.OrderPanel;
 import main.graphics.gameScreen.regimentView.captainDetail.StatsBonusPanel;
@@ -45,6 +46,12 @@ public class CaptainDetailPanel extends JPanel {
 		OrderPanel orderPanel = new OrderPanel(width / 2, height / 2 + 10, Colour.DBLUE, new FlowLayout(FlowLayout.LEFT, 3, 3));
 		add(orderPanel);
 
+	}
+	
+	public void fillCaptainDetailPanel(Regiment regiment) {
+		
+		
+		
 	}
 
 }

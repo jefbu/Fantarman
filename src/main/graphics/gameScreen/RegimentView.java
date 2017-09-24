@@ -6,6 +6,7 @@ import java.awt.FlowLayout;
 
 import javax.swing.JPanel;
 
+import main.entity.regiments.Regiment;
 import main.graphics.gameScreen.armyView.RegimentListPanel;
 import main.graphics.gameScreen.armyView.RoleSelectionPanel;
 import main.graphics.gameScreen.regimentView.CaptainDetailPanel;
@@ -18,6 +19,10 @@ public class RegimentView extends JPanel {
 	Color backgroundColor;
 	public RoleSelectionPanel roleSelectionPanel;
 	public RegimentListPanel  regimentListPanel;
+	
+	RegimentDetailPanel regimentDetailPanel;
+	CaptainDetailPanel captainDetailPanel;
+	LieutenantsDetailPanel lieutenantsDetailPanel;
 
 	public RegimentView(int gameScreenWidth, int gameScreenHeight) {
 
@@ -33,15 +38,23 @@ public class RegimentView extends JPanel {
 
 		setLayout(new FlowLayout(FlowLayout.LEADING, 0, 0));
 		
-		RegimentDetailPanel regimentDetailPanel = new RegimentDetailPanel(roundedWidth, unroundedHeight * 45 / 100);
+		regimentDetailPanel = new RegimentDetailPanel(roundedWidth, unroundedHeight * 45 / 100);
 		add(regimentDetailPanel);
 		
-		CaptainDetailPanel captainDetailPanel = new CaptainDetailPanel(roundedWidth, unroundedHeight * 45 / 100);
+		captainDetailPanel = new CaptainDetailPanel(roundedWidth, unroundedHeight * 45 / 100);
 		add(captainDetailPanel);
 		
-		LieutenantsDetailPanel lieutenantsDetailPanel = new LieutenantsDetailPanel(roundedWidth, unroundedHeight / 10);
+		lieutenantsDetailPanel = new LieutenantsDetailPanel(roundedWidth, unroundedHeight / 10);
 		add(lieutenantsDetailPanel);
 
+	}
+	
+	public void fillRegimentView(Regiment regiment) {
+		
+		regimentDetailPanel.fillRegimentDetailPanel(regiment);
+		captainDetailPanel.fillCaptainDetailPanel(regiment);
+		lieutenantsDetailPanel.fillLieutenantsDetailPanel(regiment);		
+		
 	}
 	
 }
