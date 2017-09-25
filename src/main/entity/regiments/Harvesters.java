@@ -15,7 +15,10 @@ public class Harvesters extends Regiment {
 		
 		this.name = name;
 		this.value = 600;
+		this.upkeep = value / 10;
+		this.lieutenantsSize = 3;
 		this.captain = captain;
+		this.type = RegimentType.LIGHT_INFANTRY;
 		
 		this.attack = 60 + captain.attackBonus;
 		this.charge = 15 + captain.chargeBonus;

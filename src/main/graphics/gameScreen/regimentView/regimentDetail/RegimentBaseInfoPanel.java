@@ -8,6 +8,8 @@ import javax.swing.JPanel;
 import main.components.Colour;
 import main.components.ContentPanel;
 import main.components.LabeledPanel;
+import main.entity.regiments.Regiment;
+import main.entity.regiments.RegimentType;
 
 public class RegimentBaseInfoPanel extends ContentPanel {
 
@@ -24,27 +26,42 @@ public class RegimentBaseInfoPanel extends ContentPanel {
 		
 		super(width, height, colour, flowLayout);
 		
-		namePanel = new LabeledPanel(width - 10, (height - 18) / 6, 50, Colour.LBLUE);
-		namePanel.titleLabel.setText("name");
-		namePanel.contentLabel.setText("John");
+		namePanel = new LabeledPanel(width - 10, (height - 18) / 6, 40, Colour.LBLUE);
+		namePanel.titleLabel.setText("Name");
 		insidePanel.add(namePanel);
 		
-		typePanel = new LabeledPanel(width - 10, (height - 18) / 6, 50, Colour.LBLUE);
+		typePanel = new LabeledPanel(width - 10, (height - 18) / 6, 40, Colour.LBLUE);
+		typePanel.titleLabel.setText("Type");
 		insidePanel.add(typePanel);
 		
 		levelPanel = new LabeledPanel(width - 10, (height - 18) / 6, 70, Colour.LBLUE);
+		levelPanel.titleLabel.setText("Level");
 		insidePanel.add(levelPanel);
 		
 		valuePanel = new LabeledPanel(width - 10, (height - 18) / 6, 60, Colour.LBLUE);
+		valuePanel.titleLabel.setText("Value");
 		insidePanel.add(valuePanel);
 		
-		upkeepPanel = new LabeledPanel(width - 10, (height - 18) / 6, 60, Colour.LBLUE);
+		upkeepPanel = new LabeledPanel(width - 10, (height - 18) / 6, 50, Colour.LBLUE);
+		upkeepPanel.titleLabel.setText("Upkeep");
 		insidePanel.add(upkeepPanel);
 		
 		lieutenantsPanel = new LabeledPanel(width - 10, (height - 18) / 6, 70, Colour.LBLUE);
+		lieutenantsPanel.titleLabel.setText("Lieutenants");
 		insidePanel.add(lieutenantsPanel);
-		
-		
+			
+	}
 	
+	public void fillRegimentBaseInfoPanel(Regiment regiment) {
+		
+		namePanel.contentLabel.setText(regiment.name);
+		typePanel.contentLabel.setText(regiment.type.toString());
+		levelPanel.contentLabel.setText(Integer.toString(regiment.level));
+		valuePanel.contentLabel.setText(Integer.toString(regiment.value));
+		upkeepPanel.contentLabel.setText(Integer.toString(regiment.upkeep));
+		lieutenantsPanel.contentLabel.setText(Integer.toString(regiment.lieutenantsSize));
+		
+		
+		
 	}
 }

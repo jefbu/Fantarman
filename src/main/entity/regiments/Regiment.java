@@ -13,6 +13,7 @@ import main.battle.tactics.TargetChecker;
 import main.components.IndexedPanel;
 import main.entity.armies.Army;
 import main.entity.captains.Captain;
+import main.entity.captains.Lieutenant;
 import main.graphics.battleScreen.BattleScreen;
 import main.utility.ImageLoader;
 
@@ -20,8 +21,12 @@ public abstract class Regiment {
 
 	public Captain captain;
 	public ArrayList<Tactic> instructions;
+	public ArrayList<Lieutenant> lieutenants;
+	public int lieutenantsSize;
 
 	public int value;
+	public int upkeep;
+	public int level;
 	
 	public Role role;
 
@@ -73,6 +78,8 @@ public abstract class Regiment {
 	public Regiment() {
 
 		this.instructions = new ArrayList<Tactic>();
+		this.lieutenants = new ArrayList<Lieutenant>();
+		level = 1;
 		inCombat = false;
 		defeated = false;
 		role = Role.TRAINING;

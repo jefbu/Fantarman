@@ -41,7 +41,7 @@ public class ContentPanel extends JPanel {
 		
 	}
 	
-	private Color applyColours(Colour colour) {
+	private void applyColours(Colour colour) {
 		
 		switch (colour) {
 		case LRED:
@@ -84,7 +84,6 @@ public class ContentPanel extends JPanel {
 			break;
 
 		}
-		return new Color(0,0,0);
 	}
 
 }

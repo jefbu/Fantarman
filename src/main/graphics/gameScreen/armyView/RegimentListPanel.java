@@ -19,7 +19,8 @@ public class RegimentListPanel extends ContentPanel {
 		panelList = new ArrayList<IndividualRegimentPanel>();
 		
 		for (int i = 0; i < 15; i++) {
-			panelList.add(new IndividualRegimentPanel(width, height / 15));	
+			int index = i;
+			panelList.add(new IndividualRegimentPanel(width, height / 15, index));	
 			}
 		
 		for (IndividualRegimentPanel panel: panelList) {

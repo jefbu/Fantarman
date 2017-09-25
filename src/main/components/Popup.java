@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 
 import main.graphics.Screen;
 import main.graphics.battleScreen.BattleScreen;
+import main.utility.Colors;
 import main.utility.ImageLoader;
 
 public class Popup extends JDialog {
@@ -49,17 +50,14 @@ public class Popup extends JDialog {
 		
 		bottomPanel = new JPanel();
 		bottomPanel.setPreferredSize(new Dimension(width, height));
-		bottomPanel.setBackground(applyColour(colour, 0));
 		bottomPanel.setLayout(new FlowLayout(FlowLayout.LEADING, 3, 3));
 
 		middlePanel = new JPanel();
 		middlePanel.setPreferredSize(new Dimension(width - 6, height - 6));
-		middlePanel.setBackground(applyColour(colour, 40));
 		middlePanel.setLayout(new FlowLayout(FlowLayout.LEADING, 3, 3));
 
 		mainPanel = new JPanel();
 		mainPanel.setPreferredSize(new Dimension(width - 12, height - 12));
-		mainPanel.setBackground(applyColour(colour, 80));
 		mainPanel.setLayout(new FlowLayout(FlowLayout.LEADING, 0, 0));
 		
 		add(bottomPanel);
@@ -68,20 +66,17 @@ public class Popup extends JDialog {
 
 		mainPanelTopPanel = new JPanel();
 		mainPanelTopPanel.setPreferredSize(new Dimension(width - 12, (height - 12) * 3 / 4));
-		mainPanelTopPanel.setBackground(applyColour(colour, 80));
 		mainPanelTopPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 8, 8));
 		
 		mainPanel.add(mainPanelTopPanel);
 
 		mainPanelBottomLeftPanel = new JPanel();
 		mainPanelBottomLeftPanel.setPreferredSize(new Dimension((width - 12) * 2 / 3, (height - 12) / 4));
-		mainPanelBottomLeftPanel.setBackground(applyColour(colour, 80));
 
 		mainPanel.add(mainPanelBottomLeftPanel);
 
 		mainPanelBottomRightPanel = new JPanel();
 		mainPanelBottomRightPanel.setPreferredSize(new Dimension((width - 12) / 3, (height - 12) / 4));
-		mainPanelBottomRightPanel.setBackground(applyColour(colour, 80));
 		mainPanelBottomRightPanel.setLayout(new FlowLayout(FlowLayout.LEADING, 0, 2));
 
 		mainPanel.add(mainPanelBottomRightPanel);
@@ -134,29 +129,79 @@ public class Popup extends JDialog {
 			mainPanelBottomRightPanel.add(acceptButton);
 		}
 		
+		applyColours(colour);
+		
 	}
 
-	private Color applyColour(Colour colour, int modifier) {
+	private Color applyColours(Colour colour) {
 
 		switch (colour) {
-		case RED:
-			return new Color(160 + modifier, 60 + modifier, 40 + modifier / 2);
-		case GREEN:
-			return new Color(100 + modifier, 160 + modifier, 60 + modifier / 2);
-		case BLUE:
-			return new Color(60 + modifier / 2, 120 + modifier, 160 + modifier);
-		case DBLUE:
-			return new Color(20 + modifier / 3, 40 + modifier / 2, 60 + modifier);
-		case DRED:
-			return new Color(20 + modifier, 10 + modifier / 2, modifier / 3);
-		case DGREEN:
-			return new Color(modifier / 3, 20 + modifier, 10 + modifier / 2);
 		case LRED:
-			return new Color(180 + modifier, 60 + modifier, 40 + modifier / 2);
+			bottomPanel.setBackground(Colors.red);
+			middlePanel.setBackground(Colors.lred);
+			mainPanelTopPanel.setBackground(Colors.vlred);
+			mainPanelBottomLeftPanel.setBackground(Colors.vlred);
+			mainPanelBottomRightPanel.setBackground(Colors.vlred);
+			break;
+		case RED:
+			bottomPanel.setBackground(Colors.dred);
+			middlePanel.setBackground(Colors.red);
+			mainPanelTopPanel.setBackground(Colors.lred);
+			mainPanelBottomLeftPanel.setBackground(Colors.lred);
+			mainPanelBottomRightPanel.setBackground(Colors.lred);
+			break;
+		case DRED:
+			bottomPanel.setBackground(Colors.vdred);
+			middlePanel.setBackground(Colors.dred);
+			mainPanelTopPanel.setBackground(Colors.red);
+			mainPanelBottomLeftPanel.setBackground(Colors.red);
+			mainPanelBottomRightPanel.setBackground(Colors.red);
+			break;
 		case LGREEN:
-			return new Color(100 + modifier, 180 + modifier, 60 + modifier / 2);
+			bottomPanel.setBackground(Colors.green);
+			middlePanel.setBackground(Colors.lgreen);
+			mainPanelTopPanel.setBackground(Colors.vlgreen);
+			mainPanelBottomLeftPanel.setBackground(Colors.vlgreen);
+			mainPanelBottomRightPanel.setBackground(Colors.vlgreen);
+			break;
+		case GREEN:
+			bottomPanel.setBackground(Colors.dgreen);
+			middlePanel.setBackground(Colors.green);
+			mainPanelTopPanel.setBackground(Colors.lgreen);
+			mainPanelBottomLeftPanel.setBackground(Colors.lgreen);
+			mainPanelBottomRightPanel.setBackground(Colors.lgreen);
+			break;
+		case DGREEN:
+			bottomPanel.setBackground(Colors.vdgreen);
+			middlePanel.setBackground(Colors.dgreen);
+			mainPanelTopPanel.setBackground(Colors.green);
+			mainPanelBottomLeftPanel.setBackground(Colors.green);
+			mainPanelBottomRightPanel.setBackground(Colors.green);
+			break;
 		case LBLUE:
-			return new Color(60 + modifier / 2, 120 + modifier, 180 + modifier);
+			bottomPanel.setBackground(Colors.blue);
+			middlePanel.setBackground(Colors.lblue);
+			mainPanelTopPanel.setBackground(Colors.vlblue);
+			mainPanelBottomLeftPanel.setBackground(Colors.vlblue);
+			mainPanelBottomRightPanel.setBackground(Colors.vlblue);
+			break;
+		case BLUE:
+			bottomPanel.setBackground(Colors.dblue);
+			middlePanel.setBackground(Colors.blue);
+			mainPanelTopPanel.setBackground(Colors.lblue);
+			mainPanelBottomLeftPanel.setBackground(Colors.lblue);
+			mainPanelBottomRightPanel.setBackground(Colors.lblue);
+			break;
+		case DBLUE:
+			bottomPanel.setBackground(Colors.vdblue);
+			middlePanel.setBackground(Colors.dblue);
+			mainPanelTopPanel.setBackground(Colors.blue);
+			mainPanelBottomLeftPanel.setBackground(Colors.blue);
+			mainPanelBottomRightPanel.setBackground(Colors.blue);
+			break;
+		default:
+			break;
+
 		}
 		return new Color(0, 0, 0);
 

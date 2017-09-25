@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
+import main.Main;
 import main.components.ButtonedPanel;
 import main.graphics.Screen;
 
@@ -19,7 +20,7 @@ public class IndividualRegimentPanel extends JPanel {
 	Color backgroundColor = new Color(70, 140, 210);
 	ArrayList<ButtonedPanel> panelList;
 
-	public IndividualRegimentPanel(int width, int height) {
+	public IndividualRegimentPanel(int width, int height, int index) {
 		
 		super();
 		panelList = new ArrayList<ButtonedPanel>();
@@ -38,6 +39,7 @@ public class IndividualRegimentPanel extends JPanel {
 			panel.button.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e) {
 					Screen.gameScreen.mainPanel.armyView.setVisible(false);
+					Screen.gameScreen.mainPanel.regimentView.fillRegimentView(Main.yourArmy.roster.get(index));
 					Screen.gameScreen.mainPanel.regimentView.setVisible(true);
 				}
 			});

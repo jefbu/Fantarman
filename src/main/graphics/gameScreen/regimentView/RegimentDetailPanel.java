@@ -21,6 +21,14 @@ public class RegimentDetailPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	ImageLoader imageLoader;
+	
+	ContentPanel regimentIconPanel;
+	JLabel regimentIconLabel;
+	RegimentBaseInfoPanel regimentBaseInfoPanel;
+	BattleStatsPanel battleStatsPanel;
+	HistoryStatsPanel historyStatsPanel;
+	EquipPanel equipPanel;
+	
 
 	public RegimentDetailPanel(int width, int height) {
 
@@ -31,32 +39,37 @@ public class RegimentDetailPanel extends JPanel {
 		setBackground(Colors.vlblue);
 		setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
 
-		ContentPanel regimentIconPanel = new ContentPanel(width / 7, height / 2 - 20, Colour.BLUE,
+		regimentIconPanel = new ContentPanel(width / 7, height / 2 - 20, Colour.BLUE,
 				new FlowLayout(FlowLayout.CENTER, 0, 15));
-		JLabel regimentIconLabel = new JLabel();
-		regimentIconLabel.setIcon(imageLoader.loadImageIcon("/tiles/grass1.png", width / 8, height / 3));
+		regimentIconLabel = new JLabel();
 		regimentIconPanel.insidePanel.add(regimentIconLabel);
 		add(regimentIconPanel);
 
-		RegimentBaseInfoPanel regimentBaseInfoPanel = new RegimentBaseInfoPanel(width / 6, height / 2 - 20,
+		regimentBaseInfoPanel = new RegimentBaseInfoPanel(width / 6, height / 2 - 20,
 				Colour.DBLUE, new FlowLayout(FlowLayout.LEFT, 0, 1));
 		add(regimentBaseInfoPanel);
 
-		BattleStatsPanel battleStatsPanel = new BattleStatsPanel(width / 3, height / 2 - 20, Colour.BLUE,
+		battleStatsPanel = new BattleStatsPanel(width / 3, height / 2 - 20, Colour.BLUE,
 				new FlowLayout(FlowLayout.LEFT, 3, 3));
 		add(battleStatsPanel);
 
-		HistoryStatsPanel historyStatsPanel = new HistoryStatsPanel(width / 3, height / 2 - 20, Colour.BLUE,
+		historyStatsPanel = new HistoryStatsPanel(width / 3, height / 2 - 20, Colour.BLUE,
 				new FlowLayout(FlowLayout.LEFT, 3, 3));
 		add(historyStatsPanel);
 
-		EquipPanel equipPanel = new EquipPanel(width / 2, height / 2 + 10, Colour.DBLUE,
+		equipPanel = new EquipPanel(width / 2, height / 2 + 10, Colour.DBLUE,
 				new FlowLayout(FlowLayout.LEFT, 3, 3));
 		add(equipPanel);
-
+		
 	}
 
 	public void fillRegimentDetailPanel(Regiment regiment) {
+		
+		regimentIconLabel.setIcon(imageLoader.loadImageIcon("/tiles/grass1.png", 128, 156));
+		regimentBaseInfoPanel.fillRegimentBaseInfoPanel(regiment);
+		battleStatsPanel.fillBattleStatsPanel(regiment);
+		historyStatsPanel.fillHistoryStatsPanel(regiment);
+		equipPanel.fillEquipPanel(regiment);
 
 	}
 

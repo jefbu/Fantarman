@@ -52,12 +52,20 @@ public class LabeledPanel extends JPanel {
 		switch(colour) {
 
 		case LRED:
+			titlePanel.setBackground(Colors.lred);
+			titleLabel.setForeground(Colors.dred);
+			contentPanel.setBackground(Colors.red);
+			contentLabel.setForeground(Colors.vlred);
 			break;
 		case RED:
 			break;
 		case DRED:
 			break;
 		case LGREEN:
+			titlePanel.setBackground(Colors.lgreen);
+			titleLabel.setForeground(Colors.dgreen);
+			contentPanel.setBackground(Colors.green);
+			contentLabel.setForeground(Colors.vlgreen);
 			break;
 		case GREEN:
 			break;

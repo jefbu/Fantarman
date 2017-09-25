@@ -4,6 +4,7 @@ import java.awt.FlowLayout;
 
 import main.components.Colour;
 import main.components.ContentPanel;
+import main.entity.regiments.Regiment;
 
 public class EquipPanel extends ContentPanel {
 
@@ -15,4 +16,8 @@ public class EquipPanel extends ContentPanel {
 		
 	}
 
+	public void fillEquipPanel(Regiment regiment) {
+		
+	}
+	
 }
