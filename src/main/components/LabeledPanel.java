@@ -74,6 +74,10 @@ public class LabeledPanel extends JPanel {
 		case BLUE:
 			break;
 		case DBLUE:
+			titlePanel.setBackground(Colors.dblue);
+			titleLabel.setForeground(Colors.vlblue);
+			contentPanel.setBackground(Colors.vlblue);
+			contentLabel.setForeground(Colors.blue);
 			break;
 		case LBLUE:
 			titlePanel.setBackground(Colors.lblue);

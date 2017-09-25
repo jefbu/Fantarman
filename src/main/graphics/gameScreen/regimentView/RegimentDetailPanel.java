@@ -50,7 +50,7 @@ public class RegimentDetailPanel extends JPanel {
 		add(regimentBaseInfoPanel);
 
 		battleStatsPanel = new BattleStatsPanel(width / 3, height / 2 - 20, Colour.BLUE,
-				new FlowLayout(FlowLayout.LEFT, 3, 3));
+				new FlowLayout(FlowLayout.LEFT, 0, 1));
 		add(battleStatsPanel);
 
 		historyStatsPanel = new HistoryStatsPanel(width / 3, height / 2 - 20, Colour.BLUE,
