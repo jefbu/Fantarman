@@ -54,11 +54,11 @@ public class RegimentDetailPanel extends JPanel {
 		add(battleStatsPanel);
 
 		historyStatsPanel = new HistoryStatsPanel(width / 3, height / 2 - 20, Colour.BLUE,
-				new FlowLayout(FlowLayout.LEFT, 3, 3));
+				new FlowLayout(FlowLayout.LEFT, 0, 1));
 		add(historyStatsPanel);
 
 		equipPanel = new EquipPanel(width / 2, height / 2 + 10, Colour.DBLUE,
-				new FlowLayout(FlowLayout.LEFT, 3, 3));
+				new FlowLayout(FlowLayout.LEFT, 0, 1));
 		add(equipPanel);
 		
 	}
