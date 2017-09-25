@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import main.utility.Colors;
+
 public class MenuPanel extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
@@ -21,7 +23,7 @@ public class MenuPanel extends JPanel {
 		
 		super();
 		
-		backgroundColor = new Color(45, 90, 135);
+		backgroundColor = Colors.dblue;
 		labelDimension = new Dimension(gameScreenWidth / 20, gameScreenHeight / 50);
 		
 		setPreferredSize(new Dimension(gameScreenWidth, gameScreenHeight / 50));
@@ -43,7 +45,7 @@ public class MenuPanel extends JPanel {
 			});
 			savePanel.add(saveButton);
 				JLabel saveLabel = new JLabel();
-				saveLabel.setForeground(new Color (255, 255, 225));
+				saveLabel.setForeground(Colors.textyellow);
 				saveLabel.setText("save");
 				saveButton.add(saveLabel);
 		add(savePanel);
@@ -63,7 +65,7 @@ public class MenuPanel extends JPanel {
 			});
 			loadPanel.add(loadButton);
 				JLabel loadLabel = new JLabel();
-				loadLabel.setForeground(new Color (255, 255, 225));
+				loadLabel.setForeground(Colors.textyellow);
 				loadLabel.setText("load");
 				loadButton.add(loadLabel);
 		add(loadPanel);
@@ -83,7 +85,7 @@ public class MenuPanel extends JPanel {
 			});
 			creditsPanel.add(creditsButton);
 				JLabel creditsLabel = new JLabel();
-				creditsLabel.setForeground(new Color (255, 255, 225));
+				creditsLabel.setForeground(Colors.textyellow);
 				creditsLabel.setText("credits");
 				creditsButton.add(creditsLabel);
 		add(creditsPanel);
@@ -103,7 +105,7 @@ public class MenuPanel extends JPanel {
 			});
 			helpPanel.add(helpButton);
 				JLabel helpLabel = new JLabel();
-				helpLabel.setForeground(new Color (255, 255, 225));
+				helpLabel.setForeground(Colors.textyellow);
 				helpLabel.setText("help");
 				helpButton.add(helpLabel);
 		add(helpPanel);
@@ -123,7 +125,7 @@ public class MenuPanel extends JPanel {
 			});
 			exitPanel.add(exitButton);
 				JLabel exitLabel = new JLabel();
-				exitLabel.setForeground(new Color (255, 255, 225));
+				exitLabel.setForeground(Colors.textyellow);
 				exitLabel.setText("exit");
 				exitButton.add(exitLabel);
 		add(exitPanel);

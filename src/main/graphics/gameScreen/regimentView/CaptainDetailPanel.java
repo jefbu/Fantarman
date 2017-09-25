@@ -13,6 +13,7 @@ import main.entity.regiments.Regiment;
 import main.graphics.gameScreen.regimentView.captainDetail.CaptainBaseInfoPanel;
 import main.graphics.gameScreen.regimentView.captainDetail.OrderPanel;
 import main.graphics.gameScreen.regimentView.captainDetail.StatsBonusPanel;
+import main.utility.Colors;
 import main.utility.ImageLoader;
 
 public class CaptainDetailPanel extends JPanel {
@@ -25,7 +26,7 @@ public class CaptainDetailPanel extends JPanel {
 		super();
 		imageLoader = new ImageLoader();
 		setPreferredSize(new Dimension(width, height));
-		setBackground(new Color(170, 195, 255));
+		setBackground(Colors.vlblue);
 		setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
 
 		ContentPanel captainIconPanel = new ContentPanel(width / 7, height / 2 - 20, Colour.BLUE,

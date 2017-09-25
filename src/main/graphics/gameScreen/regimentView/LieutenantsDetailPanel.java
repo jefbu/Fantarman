@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import main.components.Colour;
 import main.entity.regiments.Regiment;
 import main.graphics.gameScreen.regimentView.lieutenantDetail.LieutenantDetailPanel;
+import main.utility.Colors;
 
 public class LieutenantsDetailPanel extends JPanel {
 
@@ -18,7 +19,7 @@ public class LieutenantsDetailPanel extends JPanel {
 
 		super();
 		setPreferredSize(new Dimension(width, height));
-		setBackground(new Color(170, 190, 255));
+		setBackground(Colors.vlblue);
 		setLayout(new FlowLayout(FlowLayout.LEFT, 10, 5));
 
 		LieutenantDetailPanel lieutenantDetailPanel1 = new LieutenantDetailPanel(width / 4 - 5, height - 10, Colour.LBLUE,
