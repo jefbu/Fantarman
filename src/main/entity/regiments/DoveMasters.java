@@ -5,6 +5,8 @@ import main.battle.tactics.Order;
 import main.battle.tactics.Tactic;
 import main.battle.tactics.Target;
 import main.entity.captains.Captain;
+import main.entity.equipment.Armour;
+import main.entity.equipment.Weapons;
 
 public class DoveMasters extends Regiment {
 		
@@ -41,6 +43,12 @@ public class DoveMasters extends Regiment {
 		this.y = 0;
 		
 		icon = imageLoader.loadImageIcon("/regiments/dovemasters.png", width, height);
+		
+		weapons.add(Weapons.elitePigeons);
+		weapons.add(Weapons.thoroughbredPigeons);
+		
+		armours.add(Armour.halfLeather);
+		armours.add(Armour.leather);
 		
 	}
 

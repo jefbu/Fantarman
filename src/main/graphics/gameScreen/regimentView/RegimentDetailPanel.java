@@ -57,7 +57,7 @@ public class RegimentDetailPanel extends JPanel {
 				new FlowLayout(FlowLayout.LEFT, 0, 1));
 		add(historyStatsPanel);
 
-		equipPanel = new EquipPanel(width / 2, height / 2 + 10, Colour.DBLUE,
+		equipPanel = new EquipPanel(width / 2, height / 2 + 10, Colour.LGREEN,
 				new FlowLayout(FlowLayout.LEFT, 0, 1));
 		add(equipPanel);
 		

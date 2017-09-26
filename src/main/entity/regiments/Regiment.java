@@ -14,6 +14,8 @@ import main.components.IndexedPanel;
 import main.entity.armies.Army;
 import main.entity.captains.Captain;
 import main.entity.captains.Lieutenant;
+import main.entity.equipment.Armour;
+import main.entity.equipment.Weapons;
 import main.graphics.battleScreen.BattleScreen;
 import main.utility.ImageLoader;
 
@@ -22,6 +24,10 @@ public abstract class Regiment {
 	public Captain captain;
 	public ArrayList<Tactic> instructions;
 	public ArrayList<Lieutenant> lieutenants;
+	public ArrayList<Weapons> weapons;
+	public ArrayList<Armour> armours;
+	public Weapons weapon;
+	public Armour armour;
 	public int lieutenantsSize;
 
 	public int value;
@@ -79,6 +85,8 @@ public abstract class Regiment {
 
 		this.instructions = new ArrayList<Tactic>();
 		this.lieutenants = new ArrayList<Lieutenant>();
+		this.weapons = new ArrayList<Weapons>();
+		this.armours = new ArrayList<Armour>();
 		level = 1;
 		inCombat = false;
 		defeated = false;
