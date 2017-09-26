@@ -27,9 +27,9 @@ public class ArmourPanel extends JButton {
 		setPreferredSize(new Dimension(width, height));
 		setBackground(Colors.vlgreen);
 		setBorder(null);
-		setLayout(new FlowLayout(FlowLayout.LEFT, 1, 1));
+		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 1));
 		
-		int individualWidth = (width / 8) - 1;
+		int individualWidth = (width / 8);
 		int individualHeight = height - 1;
 		
 		namePanel = new JPanel();

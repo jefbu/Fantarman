@@ -40,7 +40,7 @@ public class EquipPanel extends ContentPanel {
 		armourPanel = new JPanel();
 		armourPanel.setPreferredSize(new Dimension(eqpWidth, eqpHeight));
 		armourPanel.setBackground(Colors.lgreen);
-		armourPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 2, 2));
+		armourPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 1));
 		insidePanel.add(armourPanel);
 		
 		for (int i = 0; i < 5; i++) {
