@@ -2,15 +2,15 @@ package main.entity.equipment;
 
 public class Armour {
 
-	String name;
+	public String name;
 
-	int movPenalty;
-	int spdPenalty;
-	int defenceBonus;
-	int moraleBonus;
+	public int movPenalty;
+	public int spdPenalty;
+	public int defenceBonus;
+	public int moraleBonus;
 
-	int equipCost;
-	int upkeep;
+	public int equipCost;
+	public int upkeep;
 
 	public Armour(String name, int movPenalty, int spdPenalty, int defenceBonus, int moraleBonus,
 			int equipCost, int upkeep) {

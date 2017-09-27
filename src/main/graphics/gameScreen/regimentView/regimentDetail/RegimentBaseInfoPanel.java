@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 
 import main.components.Colour;
 import main.components.ContentPanel;
-import main.components.LabeledPanel;
+import main.components.DoubleLabeledPanel;
 import main.entity.regiments.Regiment;
 import main.entity.regiments.RegimentType;
 
@@ -15,38 +15,38 @@ public class RegimentBaseInfoPanel extends ContentPanel {
 
 	private static final long serialVersionUID = 1L;
 	ArrayList<JPanel> panelList;
-	LabeledPanel namePanel;
-	LabeledPanel typePanel;
-	LabeledPanel levelPanel;
-	LabeledPanel valuePanel;
-	LabeledPanel upkeepPanel;
-	LabeledPanel lieutenantsPanel;
+	DoubleLabeledPanel namePanel;
+	DoubleLabeledPanel typePanel;
+	DoubleLabeledPanel levelPanel;
+	DoubleLabeledPanel valuePanel;
+	DoubleLabeledPanel upkeepPanel;
+	DoubleLabeledPanel lieutenantsPanel;
 	
 	public RegimentBaseInfoPanel(int width, int height, Colour colour, FlowLayout flowLayout) {
 		
 		super(width, height, colour, flowLayout);
 		
-		namePanel = new LabeledPanel(width - 10, (height - 18) / 6, 40, Colour.LBLUE);
+		namePanel = new DoubleLabeledPanel(width - 10, (height - 18) / 6, 40, Colour.LBLUE);
 		namePanel.titleLabel.setText("Name");
 		insidePanel.add(namePanel);
 		
-		typePanel = new LabeledPanel(width - 10, (height - 18) / 6, 40, Colour.LBLUE);
+		typePanel = new DoubleLabeledPanel(width - 10, (height - 18) / 6, 40, Colour.LBLUE);
 		typePanel.titleLabel.setText("Type");
 		insidePanel.add(typePanel);
 		
-		levelPanel = new LabeledPanel(width - 10, (height - 18) / 6, 70, Colour.LBLUE);
+		levelPanel = new DoubleLabeledPanel(width - 10, (height - 18) / 6, 70, Colour.LBLUE);
 		levelPanel.titleLabel.setText("Level");
 		insidePanel.add(levelPanel);
 		
-		valuePanel = new LabeledPanel(width - 10, (height - 18) / 6, 60, Colour.LBLUE);
+		valuePanel = new DoubleLabeledPanel(width - 10, (height - 18) / 6, 60, Colour.LBLUE);
 		valuePanel.titleLabel.setText("Value");
 		insidePanel.add(valuePanel);
 		
-		upkeepPanel = new LabeledPanel(width - 10, (height - 18) / 6, 50, Colour.LBLUE);
+		upkeepPanel = new DoubleLabeledPanel(width - 10, (height - 18) / 6, 50, Colour.LBLUE);
 		upkeepPanel.titleLabel.setText("Upkeep");
 		insidePanel.add(upkeepPanel);
 		
-		lieutenantsPanel = new LabeledPanel(width - 10, (height - 18) / 6, 70, Colour.LBLUE);
+		lieutenantsPanel = new DoubleLabeledPanel(width - 10, (height - 18) / 6, 70, Colour.LBLUE);
 		lieutenantsPanel.titleLabel.setText("Lieutenants");
 		insidePanel.add(lieutenantsPanel);
 			

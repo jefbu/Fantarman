@@ -5,38 +5,38 @@ import java.awt.FlowLayout;
 
 import main.components.Colour;
 import main.components.ContentPanel;
-import main.components.LabeledPanel;
+import main.components.DoubleLabeledPanel;
 import main.entity.regiments.Regiment;
 
 public class BattleStatsPanel extends ContentPanel {
 
 	private static final long serialVersionUID = 1L;
 
-	LabeledPanel lifePanel;
-	LabeledPanel movePanel;
-	LabeledPanel runPanel;
-	LabeledPanel speedPanel;
-	LabeledPanel moralePanel;
-	LabeledPanel attackPanel;
-	LabeledPanel chargePanel;
-	LabeledPanel defencePanel;
-	LabeledPanel rangePanel;
-	LabeledPanel missilePanel;
+	DoubleLabeledPanel lifePanel;
+	DoubleLabeledPanel movePanel;
+	DoubleLabeledPanel runPanel;
+	DoubleLabeledPanel speedPanel;
+	DoubleLabeledPanel moralePanel;
+	DoubleLabeledPanel attackPanel;
+	DoubleLabeledPanel chargePanel;
+	DoubleLabeledPanel defencePanel;
+	DoubleLabeledPanel rangePanel;
+	DoubleLabeledPanel missilePanel;
 
 	public BattleStatsPanel(int width, int height, Colour colour, FlowLayout flowLayout) {
 
 		super(width, height, colour, flowLayout);
 
-		lifePanel = new LabeledPanel((width - 20) / 2, (height - 20) / 5, 50, Colour.DBLUE);
-		movePanel = new LabeledPanel((width - 20) / 2, (height - 20) / 5, 50, Colour.DBLUE);
-		runPanel = new LabeledPanel((width - 20) / 2, (height - 20) / 5, 50, Colour.DBLUE);
-		speedPanel = new LabeledPanel((width - 20) / 2, (height - 20) / 5, 50, Colour.DBLUE);
-		moralePanel = new LabeledPanel((width - 20) / 2, (height - 20) / 5, 50, Colour.DBLUE);
-		attackPanel = new LabeledPanel((width - 20) / 2, (height - 20) / 5, 50, Colour.DBLUE);
-		chargePanel = new LabeledPanel((width - 20) / 2, (height - 20) / 5, 50, Colour.DBLUE);
-		defencePanel = new LabeledPanel((width - 20) / 2, (height - 20) / 5, 50, Colour.DBLUE);
-		rangePanel = new LabeledPanel((width - 20) / 2, (height - 20) / 5, 50, Colour.DBLUE);
-		missilePanel = new LabeledPanel((width - 20) / 2, (height - 20) / 5, 50, Colour.DBLUE);
+		lifePanel = new DoubleLabeledPanel((width - 20) / 2, (height - 20) / 5, 50, Colour.DBLUE);
+		movePanel = new DoubleLabeledPanel((width - 20) / 2, (height - 20) / 5, 50, Colour.DBLUE);
+		runPanel = new DoubleLabeledPanel((width - 20) / 2, (height - 20) / 5, 50, Colour.DBLUE);
+		speedPanel = new DoubleLabeledPanel((width - 20) / 2, (height - 20) / 5, 50, Colour.DBLUE);
+		moralePanel = new DoubleLabeledPanel((width - 20) / 2, (height - 20) / 5, 50, Colour.DBLUE);
+		attackPanel = new DoubleLabeledPanel((width - 20) / 2, (height - 20) / 5, 50, Colour.DBLUE);
+		chargePanel = new DoubleLabeledPanel((width - 20) / 2, (height - 20) / 5, 50, Colour.DBLUE);
+		defencePanel = new DoubleLabeledPanel((width - 20) / 2, (height - 20) / 5, 50, Colour.DBLUE);
+		rangePanel = new DoubleLabeledPanel((width - 20) / 2, (height - 20) / 5, 50, Colour.DBLUE);
+		missilePanel = new DoubleLabeledPanel((width - 20) / 2, (height - 20) / 5, 50, Colour.DBLUE);
 
 		insidePanel.add(lifePanel);
 		insidePanel.add(moralePanel);
