@@ -9,7 +9,6 @@ import main.components.Colour;
 import main.components.ContentPanel;
 import main.components.DoubleLabeledPanel;
 import main.entity.regiments.Regiment;
-import main.entity.regiments.RegimentType;
 
 public class RegimentBaseInfoPanel extends ContentPanel {
 

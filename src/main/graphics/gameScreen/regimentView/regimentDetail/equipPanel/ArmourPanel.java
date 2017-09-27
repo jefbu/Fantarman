@@ -4,7 +4,6 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 
 import javax.swing.JButton;
-import javax.swing.JLabel;
 
 import main.components.LabeledPanel;
 import main.utility.Colors;
@@ -26,7 +25,7 @@ public class ArmourPanel extends JButton {
 		super();
 		
 		setPreferredSize(new Dimension(width, height));
-		setBackground(Colors.vlgreen);
+		setBackground(Colors.lgreen);
 		setBorder(null);
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 1));
 		
@@ -35,34 +34,38 @@ public class ArmourPanel extends JButton {
 		
 		namePanel = new LabeledPanel(individualWidth * 2, individualHeight);
 		namePanel.setBackground(Colors.lred);
+		namePanel.label.setForeground(Colors.dred);
 		add(namePanel);
 		
 		defencePanel = new LabeledPanel(individualWidth, individualHeight);
 		defencePanel.setBackground(Colors.lred);
+		defencePanel.label.setForeground(Colors.dred);
 		add(defencePanel);
 		
 		moralePanel = new LabeledPanel(individualWidth, individualHeight);
 		moralePanel.setBackground(Colors.lred);
+		moralePanel.label.setForeground(Colors.dred);
 		add(moralePanel);
 		
 		movePanel = new LabeledPanel(individualWidth, individualHeight);
 		movePanel.setBackground(Colors.lred);
+		movePanel.label.setForeground(Colors.dred);
 		add(movePanel);
 		
 		speedPanel = new LabeledPanel(individualWidth, individualHeight);
 		speedPanel.setBackground(Colors.lred);
+		speedPanel.label.setForeground(Colors.dred);
 		add(speedPanel);
 		
 		costPanel = new LabeledPanel(individualWidth, individualHeight);
 		costPanel.setBackground(Colors.lred);
+		costPanel.label.setForeground(Colors.dred);
 		add(costPanel);
 		
 		upkeepPanel = new LabeledPanel(individualWidth, individualHeight);
 		upkeepPanel.setBackground(Colors.lred);
-		add(upkeepPanel);
-		
-		
-		
+		upkeepPanel.label.setForeground(Colors.dred);
+		add(upkeepPanel);		
 		
 	}
 
