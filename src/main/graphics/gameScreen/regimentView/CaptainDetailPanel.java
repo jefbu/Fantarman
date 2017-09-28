@@ -26,7 +26,7 @@ public class CaptainDetailPanel extends JPanel {
 		super();
 		imageLoader = new ImageLoader();
 		setPreferredSize(new Dimension(width, height));
-		setBackground(Colors.vlblue);
+		setBackground(Colors.white);
 		setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
 
 		ContentPanel captainIconPanel = new ContentPanel(width / 7, height / 2 - 20, Colour.BLUE,
@@ -36,8 +36,8 @@ public class CaptainDetailPanel extends JPanel {
 		captainIconPanel.insidePanel.add(regimentIconLabel);
 		add(captainIconPanel);
 
-		CaptainBaseInfoPanel captainBaseInfoPanel = new CaptainBaseInfoPanel(width / 6, height / 2 - 20, Colour.BLUE,
-				null);
+		CaptainBaseInfoPanel captainBaseInfoPanel = new CaptainBaseInfoPanel(width / 6, height / 2 - 20, Colour.DBLUE,
+				new FlowLayout(FlowLayout.LEFT, 0, 1));
 		add(captainBaseInfoPanel);
 
 		CaptainBiographyPanel captainBiographyPanel = new CaptainBiographyPanel(width / 2, height / 2 - 20,

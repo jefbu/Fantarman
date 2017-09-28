@@ -18,7 +18,7 @@ public class LieutenantsDetailPanel extends JPanel {
 
 		super();
 		setPreferredSize(new Dimension(width, height));
-		setBackground(Colors.vlblue);
+		setBackground(Colors.white);
 		setLayout(new FlowLayout(FlowLayout.LEFT, 10, 5));
 
 		LieutenantDetailPanel lieutenantDetailPanel1 = new LieutenantDetailPanel(width / 4 - 5, height - 10, Colour.LBLUE,

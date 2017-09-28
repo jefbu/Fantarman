@@ -11,6 +11,7 @@ import main.graphics.gameScreen.armyView.ArmyViewViewPanel;
 import main.graphics.gameScreen.armyView.RegimentListPanel;
 import main.graphics.gameScreen.armyView.RoleSelectionPanel;
 import main.graphics.gameScreen.armyView.TitlePanel;
+import main.utility.Colors;
 
 public class ArmyView extends JPanel {
 
@@ -23,7 +24,7 @@ public class ArmyView extends JPanel {
 
 		super();
 
-		backgroundColor = new Color(170, 190, 255);
+		backgroundColor = Colors.white;
 		int unroundedHeight = gameScreenHeight * 98 / 100;
 		int unroundedWidth = gameScreenHeight * 8 * 15 / 100;
 		int roundedWidth = unroundedWidth - (unroundedWidth % 48);

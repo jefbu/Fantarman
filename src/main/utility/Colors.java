@@ -20,5 +20,6 @@ public abstract class Colors {
 	public static Color dblue = new Color(45, 90, 135);
 	public static Color vdblue = new Color(20, 40, 80);
 	public static Color textyellow = new Color(255, 255, 210);
+	public static Color white = new Color(210, 230, 255);
 
 	}

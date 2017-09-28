@@ -1,6 +1,5 @@
 package main.graphics.gameScreen;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 
@@ -16,7 +15,6 @@ import main.graphics.gameScreen.regimentView.RegimentDetailPanel;
 public class RegimentView extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
-	Color backgroundColor;
 	public RoleSelectionPanel roleSelectionPanel;
 	public RegimentListPanel  regimentListPanel;
 	
@@ -28,7 +26,6 @@ public class RegimentView extends JPanel {
 
 		super();
 
-		backgroundColor = new Color(170, 190, 255);
 		int unroundedHeight = gameScreenHeight * 98 / 100;
 		int unroundedWidth = gameScreenHeight * 8 * 15 / 100;
 		int roundedWidth = unroundedWidth - (unroundedWidth % 48);

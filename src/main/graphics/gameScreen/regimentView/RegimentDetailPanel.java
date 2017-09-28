@@ -35,7 +35,7 @@ public class RegimentDetailPanel extends JPanel {
 		imageLoader = new ImageLoader();
 
 		setPreferredSize(new Dimension(width, height));
-		setBackground(Colors.vlblue);
+		setBackground(Colors.white);
 		setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
 
 		regimentIconPanel = new ContentPanel(width / 7, height / 2 - 20, Colour.BLUE,

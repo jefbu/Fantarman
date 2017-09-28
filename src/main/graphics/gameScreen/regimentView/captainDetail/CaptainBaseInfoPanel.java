@@ -1,39 +1,52 @@
 package main.graphics.gameScreen.regimentView.captainDetail;
 
-import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.util.ArrayList;
-
-import javax.swing.JPanel;
 
 import main.components.Colour;
 import main.components.ContentPanel;
+import main.components.DoubleLabeledPanel;
+import main.components.LabeledPanel;
 
 public class CaptainBaseInfoPanel extends ContentPanel {
 
 		private static final long serialVersionUID = 1L;
-		ArrayList<JPanel> panelList;
+		
+		public DoubleLabeledPanel namePanel;
+		public DoubleLabeledPanel genderPanel;
+		public DoubleLabeledPanel prestigePanel;
+		public DoubleLabeledPanel ordersPanel;
+		public DoubleLabeledPanel skill1Panel;
+		public DoubleLabeledPanel skill2Panel;
 		
 		public CaptainBaseInfoPanel(int width, int height, Colour colour, FlowLayout flowLayout) {
 			
 			super(width, height, colour, flowLayout);
-			panelList = new ArrayList<JPanel>();
 			
-			for (int i = 0; i < 5; i++) {
-				JPanel panel = new JPanel();
-				panel.setPreferredSize(new Dimension(width, height / 5 - 1));
-				panel.setOpaque(false);
-				panelList.add(panel);
-			}
+			namePanel = new DoubleLabeledPanel(width - 10, (height - 18) / 6, 40, Colour.LBLUE);
+			namePanel.titleLabel.setText("Name");
+			insidePanel.add(namePanel);
 			
-			addPanels();		
+			genderPanel = new DoubleLabeledPanel(width - 10, (height - 18) / 6, 70, Colour.LBLUE);
+			genderPanel.titleLabel.setText("Gender");
+			insidePanel.add(genderPanel);
 			
-		}
-		
-		private void addPanels() {
-			for (int i = 0; i < panelList.size(); i++) {
-				insidePanel.add(panelList.get(i));
-			}
+			prestigePanel = new DoubleLabeledPanel(width - 10, (height - 18) / 6, 60, Colour.LBLUE);
+			prestigePanel.titleLabel.setText("Prestige");
+			insidePanel.add(prestigePanel);
+			
+			ordersPanel = new DoubleLabeledPanel(width - 10, (height - 18) / 6, 70, Colour.LBLUE);
+			ordersPanel.titleLabel.setText("Orders");
+			insidePanel.add(ordersPanel);
+			
+			skill1Panel = new DoubleLabeledPanel(width - 10, (height - 18) / 6, 30, Colour.LBLUE);
+			skill1Panel.titleLabel.setText("Skill 1");
+			insidePanel.add(skill1Panel);
+			
+			skill2Panel = new DoubleLabeledPanel(width - 10, (height - 18) / 6, 30, Colour.LBLUE);
+			skill2Panel.titleLabel.setText("Skill 2");
+			insidePanel.add(skill2Panel);
+			
+	
 		}
 	
 }
