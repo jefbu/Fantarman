@@ -46,6 +46,7 @@ public class DoveMasters extends Regiment {
 		
 		weapons.add(Weapons.elitePigeons);
 		weapons.add(Weapons.thoroughbredPigeons);
+		weapons.add(Weapons.turtledoves);
 		
 		armours.add(Armour.halfLeather);
 		armours.add(Armour.leather);

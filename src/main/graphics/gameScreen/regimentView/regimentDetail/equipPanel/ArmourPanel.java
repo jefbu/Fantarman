@@ -25,7 +25,7 @@ public class ArmourPanel extends JButton {
 		super();
 		
 		setPreferredSize(new Dimension(width, height));
-		setBackground(Colors.lgreen);
+		setBackground(Colors.green);
 		setBorder(null);
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 1));
 		
@@ -37,7 +37,7 @@ public class ArmourPanel extends JButton {
 		namePanel.label.setForeground(Colors.dred);
 		add(namePanel);
 		
-		defencePanel = new LabeledPanel(individualWidth, individualHeight);
+		defencePanel = new LabeledPanel(individualWidth + 1, individualHeight);
 		defencePanel.setBackground(Colors.lred);
 		defencePanel.label.setForeground(Colors.dred);
 		add(defencePanel);
@@ -62,7 +62,7 @@ public class ArmourPanel extends JButton {
 		costPanel.label.setForeground(Colors.dred);
 		add(costPanel);
 		
-		upkeepPanel = new LabeledPanel(individualWidth, individualHeight);
+		upkeepPanel = new LabeledPanel(individualWidth + 1, individualHeight);
 		upkeepPanel.setBackground(Colors.lred);
 		upkeepPanel.label.setForeground(Colors.dred);
 		add(upkeepPanel);		
