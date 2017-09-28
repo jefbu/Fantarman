@@ -10,6 +10,7 @@ import main.components.Colour;
 import main.components.ContentPanel;
 import main.entity.regiments.Regiment;
 import main.graphics.gameScreen.regimentView.captainDetail.CaptainBaseInfoPanel;
+import main.graphics.gameScreen.regimentView.captainDetail.CaptainBiographyPanel;
 import main.graphics.gameScreen.regimentView.captainDetail.OrderPanel;
 import main.graphics.gameScreen.regimentView.captainDetail.StatsBonusPanel;
 import main.utility.Colors;
@@ -39,19 +40,22 @@ public class CaptainDetailPanel extends JPanel {
 				null);
 		add(captainBaseInfoPanel);
 
-		StatsBonusPanel statsBonusPanel = new StatsBonusPanel(width / 3, height / 2 - 20, Colour.BLUE,
+		CaptainBiographyPanel captainBiographyPanel = new CaptainBiographyPanel(width / 2, height / 2 - 20,
+				Colour.LBLUE, new FlowLayout(FlowLayout.CENTER, 0, 0));
+		add(captainBiographyPanel);
+
+		OrderPanel orderPanel = new OrderPanel(width / 2, height / 2 + 10, Colour.DBLUE,
 				new FlowLayout(FlowLayout.LEFT, 3, 3));
-		add(statsBonusPanel);
-		
-		OrderPanel orderPanel = new OrderPanel(width / 2, height / 2 + 10, Colour.DBLUE, new FlowLayout(FlowLayout.LEFT, 3, 3));
 		add(orderPanel);
 
+		StatsBonusPanel statsBonusPanel = new StatsBonusPanel(width / 3, height / 2 + 10, Colour.BLUE,
+				new FlowLayout(FlowLayout.LEFT, 3, 3));
+		add(statsBonusPanel);
+
 	}
-	
+
 	public void fillCaptainDetailPanel(Regiment regiment) {
-		
-		
-		
+
 	}
 
 }
