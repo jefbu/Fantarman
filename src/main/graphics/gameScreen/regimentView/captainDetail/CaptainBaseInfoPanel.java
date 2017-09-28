@@ -6,6 +6,7 @@ import main.components.Colour;
 import main.components.ContentPanel;
 import main.components.DoubleLabeledPanel;
 import main.components.LabeledPanel;
+import main.entity.regiments.Regiment;
 
 public class CaptainBaseInfoPanel extends ContentPanel {
 
@@ -49,4 +50,24 @@ public class CaptainBaseInfoPanel extends ContentPanel {
 	
 		}
 	
+		public void fillCaptainBaseInfoPanel(Regiment regiment) {
+			
+			namePanel.contentLabel.setText(regiment.captain.name);
+			genderPanel.contentLabel.setText(regiment.captain.gender);
+			prestigePanel.contentLabel.setText(Integer.toString(regiment.captain.prestige));
+			ordersPanel.contentLabel.setText(Integer.toString(regiment.captain.orders));
+			try {
+				skill1Panel.contentLabel.setText(regiment.captain.skill1.toString());
+			} catch (Exception e) {
+				skill1Panel.contentLabel.setText("---");
+			}
+			try {
+				skill2Panel.contentLabel.setText(regiment.captain.skill2.toString());
+			} catch (Exception e) {
+				skill2Panel.contentLabel.setText("---");
+			}
+			
+		}
+		
+		
 }

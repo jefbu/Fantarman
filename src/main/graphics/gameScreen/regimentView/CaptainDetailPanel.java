@@ -20,6 +20,8 @@ public class CaptainDetailPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	ImageLoader imageLoader;
+	
+	CaptainBaseInfoPanel captainBaseInfoPanel;
 
 	public CaptainDetailPanel(int width, int height) {
 
@@ -36,7 +38,7 @@ public class CaptainDetailPanel extends JPanel {
 		captainIconPanel.insidePanel.add(regimentIconLabel);
 		add(captainIconPanel);
 
-		CaptainBaseInfoPanel captainBaseInfoPanel = new CaptainBaseInfoPanel(width / 6, height / 2 - 20, Colour.DBLUE,
+		captainBaseInfoPanel = new CaptainBaseInfoPanel(width / 6, height / 2 - 20, Colour.DBLUE,
 				new FlowLayout(FlowLayout.LEFT, 0, 1));
 		add(captainBaseInfoPanel);
 
@@ -56,6 +58,8 @@ public class CaptainDetailPanel extends JPanel {
 
 	public void fillCaptainDetailPanel(Regiment regiment) {
 
+		captainBaseInfoPanel.fillCaptainBaseInfoPanel(regiment);
+		
 	}
 
 }

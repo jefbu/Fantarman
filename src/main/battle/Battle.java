@@ -8,6 +8,7 @@ import main.entity.captains.Captain;
 import main.entity.regiments.DoveMasters;
 import main.entity.regiments.FireMages;
 import main.entity.regiments.Harvesters;
+import main.entity.skills.Skills;
 import main.graphics.battleScreen.BattleScreen;
 
 public class Battle {
@@ -28,7 +29,7 @@ public class Battle {
 		opponentBattleArmy.calculateValue();
 
 		BattleScreen.battleScene.createMap();
-		
+
 		System.out.println(Main.yourArmy.roster.get(0).panels[0]);
 		System.out.println(yourBattleArmy.roster.get(0).panels[0]);
 
@@ -36,9 +37,9 @@ public class Battle {
 		deployment = new Deployment(battleOrchestrator, yourBattleArmy, opponentBattleArmy);
 
 	}
-	
+
 	private void makeYourArmy() {
-		
+
 		for (int i = 0; i < Main.yourArmy.roster.size(); i++) {
 			yourBattleArmy.roster.add(Main.yourArmy.roster.get(i));
 		}
@@ -55,13 +56,16 @@ public class Battle {
 			roll2 = random.nextInt(3);
 			switch (roll2) {
 			case 0:
-				opponents.roster.add(new FireMages("FireMages" + i, new Captain("Blofeld", 0, 0, 0, 0, 0, 0)));
+				opponents.roster.add(new FireMages("FireMages" + i,
+						new Captain("Blofeld", "Male", 0, 0, 0, 0, 0, 0, 1, 40, null, null)));
 				break;
 			case 1:
-				opponents.roster.add(new DoveMasters("DoveMasters" + i, new Captain("Spectre", 0, 0, 0, 0, 0, 0)));
+				opponents.roster.add(new DoveMasters("DoveMasters" + i,
+						new Captain("Spectre", "Female", 0, 0, 0, 0, 0, 0, 3, 35, null, null)));
 				break;
 			case 2:
-				opponents.roster.add(new Harvesters("Harvesters" + i, new Captain("Goldfinger", 0, 0, 0, 0, 0, 0)));
+				opponents.roster.add(new Harvesters("Harvesters" + i,
+						new Captain("Goldfinger", "Male", 0, 0, 0, 0, 0, 0, 2, 45, Skills.Deployer, null)));
 				break;
 			}
 		}
