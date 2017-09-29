@@ -156,7 +156,7 @@ public class EquipPanel extends ContentPanel {
 			armourTotalPanel.add(armourUpkeepPanel);
 
 	
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 4; i++) {
 			weaponsList.add(new WeaponPanel(weaponWidth, weaponHeight / 5));
 			weaponsPanel.add(weaponsList.get(i));
 		}

@@ -5,7 +5,6 @@ import java.awt.FlowLayout;
 import main.components.Colour;
 import main.components.ContentPanel;
 import main.components.DoubleLabeledPanel;
-import main.components.LabeledPanel;
 import main.entity.regiments.Regiment;
 
 public class CaptainBaseInfoPanel extends ContentPanel {
@@ -27,7 +26,7 @@ public class CaptainBaseInfoPanel extends ContentPanel {
 			namePanel.titleLabel.setText("Name");
 			insidePanel.add(namePanel);
 			
-			genderPanel = new DoubleLabeledPanel(width - 10, (height - 18) / 6, 70, Colour.LBLUE);
+			genderPanel = new DoubleLabeledPanel(width - 10, (height - 18) / 6, 60, Colour.LBLUE);
 			genderPanel.titleLabel.setText("Gender");
 			insidePanel.add(genderPanel);
 			
