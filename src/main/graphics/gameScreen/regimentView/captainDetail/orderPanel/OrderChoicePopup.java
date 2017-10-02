@@ -1,6 +1,5 @@
 package main.graphics.gameScreen.regimentView.captainDetail.orderPanel;
 
-import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -30,8 +29,7 @@ public class OrderChoicePopup extends Popup {
 		orderChoicePopupTargetPanel = new OrderChoicePopupTargetPanel(width - 10, height - 10);
 		orderChoicePopupTargetPanel.setBackground(Colors.red);
 		
-		orderChoicePopupOrderPanel = new OrderChoicePopupOrderPanel();
-		orderChoicePopupOrderPanel.setPreferredSize(new Dimension(width - 10, height - 10));
+		orderChoicePopupOrderPanel = new OrderChoicePopupOrderPanel(width - 10, height - 10);
 		orderChoicePopupOrderPanel.setBackground(Colors.red);
 		
 		mainPanelTopPanel.add(orderChoicePopupConditionPanel);

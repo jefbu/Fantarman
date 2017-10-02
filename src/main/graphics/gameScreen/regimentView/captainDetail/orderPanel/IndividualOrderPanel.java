@@ -1,18 +1,24 @@
 package main.graphics.gameScreen.regimentView.captainDetail.orderPanel;
 
 import java.awt.Dimension;
-import java.awt.MouseInfo;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.FlowLayout;
 
 import javax.swing.JButton;
 
-import main.components.Colour;
+import main.components.LabeledPanel;
 import main.utility.Colors;
 
 public class IndividualOrderPanel extends JButton {
 
 	private static final long serialVersionUID = 1L;
+	public LabeledPanel numberPanel;
+	public LabeledPanel conditionPanel;
+	public LabeledPanel conditionXPPanel;
+	public LabeledPanel targetPanel;
+	public LabeledPanel targetXPPanel;
+	public LabeledPanel orderPanel;
+	public LabeledPanel orderXPPanel;
+	public LabeledPanel totalXPPanel;
 
 	public IndividualOrderPanel(int width, int height) {
 		
@@ -20,19 +26,31 @@ public class IndividualOrderPanel extends JButton {
 		setPreferredSize(new Dimension(width, height));
 		setBorder(null);
 		setBackground(Colors.lred);
+		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 1));
 		
-		addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				OrderChoicePopup orderChoicePopup = new OrderChoicePopup(width * 2, height * 10, Colour.DRED, false);
-				orderChoicePopup.setLocation(MouseInfo.getPointerInfo().getLocation());
-				int x = orderChoicePopup.getX();
-				int y = orderChoicePopup.getY() - height * 10;
-				orderChoicePopup.setLocation(x, y);
-				orderChoicePopup.setVisible(true);
-			}
-		});
+		numberPanel = new LabeledPanel(width * 8 / 100, height - 2);
+		add(numberPanel);
 		
+		conditionPanel = new LabeledPanel(width * 20 / 100, height - 2);
+		add(conditionPanel);
 		
+		conditionXPPanel = new LabeledPanel(width * 8 / 100, height - 2);
+		add(conditionXPPanel);
+		
+		targetPanel = new LabeledPanel(width * 20 / 100, height - 2);
+		add(targetPanel);
+		
+		targetXPPanel = new LabeledPanel(width * 8 / 100, height - 2);
+		add(targetXPPanel);
+		
+		orderPanel = new LabeledPanel(width * 20 / 100, height - 2);
+		add(orderPanel);
+		
+		orderXPPanel = new LabeledPanel(width * 8 / 100, height - 2);
+		add(orderXPPanel);
+		
+		totalXPPanel = new LabeledPanel(width * 8 / 100, height - 2);
+		add(totalXPPanel);
 		
 	}
 	
