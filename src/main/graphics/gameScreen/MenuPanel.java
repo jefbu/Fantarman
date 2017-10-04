@@ -40,7 +40,6 @@ public class MenuPanel extends JPanel {
 			saveButton.setBorderPainted(false);
 			saveButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					System.out.println("saved");
 				}
 			});
 			savePanel.add(saveButton);

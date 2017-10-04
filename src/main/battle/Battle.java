@@ -30,9 +30,6 @@ public class Battle {
 
 		BattleScreen.battleScene.createMap();
 
-		System.out.println(Main.yourArmy.roster.get(0).panels[0]);
-		System.out.println(yourBattleArmy.roster.get(0).panels[0]);
-
 		battleOrchestrator = new BattleOrchestrator(yourBattleArmy, opponentBattleArmy);
 		deployment = new Deployment(battleOrchestrator, yourBattleArmy, opponentBattleArmy);
 

@@ -292,7 +292,6 @@ public class EquipPanel extends ContentPanel {
 						armoursList.get(index).upkeepPanel.label.setForeground(Colors.vlblue);
 						
 						regiment.armour = regiment.armours.get(index);
-						System.out.println(regiment.armour.name);
 						
 					}
 				});
