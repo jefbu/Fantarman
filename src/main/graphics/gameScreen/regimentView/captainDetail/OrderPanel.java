@@ -1,6 +1,9 @@
 package main.graphics.gameScreen.regimentView.captainDetail;
 
 import java.awt.FlowLayout;
+import java.awt.MouseInfo;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.JPanel;
@@ -9,6 +12,7 @@ import main.components.Colour;
 import main.components.ContentPanel;
 import main.entity.regiments.Regiment;
 import main.graphics.gameScreen.regimentView.captainDetail.orderPanel.IndividualOrderPanel;
+import main.graphics.gameScreen.regimentView.captainDetail.orderPanel.OrderChoicePopup;
 import main.graphics.gameScreen.regimentView.captainDetail.orderPanel.OrderTitlePanel;
 
 public class OrderPanel extends ContentPanel {
@@ -28,7 +32,18 @@ public class OrderPanel extends ContentPanel {
 		insidePanel.add(orderTitlePanel);
 				
 		for (int i = 0; i < 5; i++) {
-			orderList.add(new IndividualOrderPanel(width - 11, height / 6 - 4));		
+
+			orderList.add(new IndividualOrderPanel(width - 11, height / 6 - 3));
+			orderList.get(i).addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					OrderChoicePopup orderChoicePopup = new OrderChoicePopup(width * 2, height * 2, Colour.DRED, false);
+					orderChoicePopup.setLocation(MouseInfo.getPointerInfo().getLocation());
+					int x = orderChoicePopup.getX();
+					int y = orderChoicePopup.getY() - height * 2;
+					orderChoicePopup.setLocation(x, y);
+					orderChoicePopup.setVisible(true);
+				}
+			});
 			insidePanel.add(orderList.get(i));
 		}
 		

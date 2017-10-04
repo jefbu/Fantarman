@@ -11,7 +11,7 @@ import main.utility.Colors;
 public class IndividualOrderPanel extends JButton {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	public LabeledPanel numberPanel;
 	public LabeledPanel conditionPanel;
 	public LabeledPanel conditionXPPanel;
@@ -28,6 +28,7 @@ public class IndividualOrderPanel extends JButton {
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		setBorder(null);
 		setBackground(Colors.lred);
+		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 1));
 		
 		numberPanel = new LabeledPanel(width * 8 / 100, height - 2);
 		numberPanel.setBackground(Colors.lred);
@@ -74,7 +75,6 @@ public class IndividualOrderPanel extends JButton {
 		totalXPPanel.label.setForeground(Colors.dred);
 		totalXPPanel.label.setText("TotXP");
 		add(totalXPPanel);
-		
 		
 		
 	}
