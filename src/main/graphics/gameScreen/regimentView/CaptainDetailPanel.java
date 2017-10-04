@@ -61,7 +61,9 @@ public class CaptainDetailPanel extends JPanel {
 	public void fillCaptainDetailPanel(Regiment regiment) {
 
 		captainBaseInfoPanel.fillCaptainBaseInfoPanel(regiment);
+		orderPanel.fillOrderPanel(regiment);
 		statsBonusPanel.fillStatsBonusPanel(regiment);
+		
 		
 	}
 
