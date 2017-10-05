@@ -2,6 +2,8 @@ package main.graphics.gameScreen.regimentView.captainDetail.orderPanel;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -10,15 +12,21 @@ public class OrderChoicePopupOrderPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
-	public OrderChoicePopupOrderPanel(int width, int height) {
+	public OrderChoicePopupOrderPanel(int width, int height, OrderChoicePopup orderChoicePopup) {
 		
 		super();
 		setLayout(new FlowLayout(FlowLayout.LEFT, 7, 7));
 		setPreferredSize(new Dimension(width - 10, height - 10));
 		
 		ConditionButton chargeButton = new ConditionButton(width / 6, height / 6, "Charge");
+			chargeButton.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent e) {
+					orderChoicePopup.dispose();
+				}
+			});
 		add(chargeButton);
 		
+		/*
 		ConditionButton moveToButton = new ConditionButton(width / 6, height / 6, "Move Towards");
 		add(moveToButton);
 		
@@ -27,7 +35,7 @@ public class OrderChoicePopupOrderPanel extends JPanel {
 		
 		ConditionButton recoverButton = new ConditionButton(width / 6, height / 6, "Recover");
 		add(recoverButton);
-		
+		*/
 		
 	}
 	
