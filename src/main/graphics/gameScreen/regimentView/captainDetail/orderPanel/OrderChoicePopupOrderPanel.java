@@ -8,20 +8,26 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import main.battle.tactics.Order;
+import main.entity.regiments.Regiment;
+import main.graphics.Screen;
+
 public class OrderChoicePopupOrderPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
+	int index;
 
-	public OrderChoicePopupOrderPanel(int width, int height, OrderChoicePopup orderChoicePopup) {
+	public OrderChoicePopupOrderPanel(int width, int height, OrderChoicePopup orderChoicePopup, Regiment regiment, int index) {
 		
 		super();
+		this.index = index;
 		setLayout(new FlowLayout(FlowLayout.LEFT, 7, 7));
 		setPreferredSize(new Dimension(width - 10, height - 10));
 		
 		ConditionButton chargeButton = new ConditionButton(width / 6, height / 6, "Charge");
 			chargeButton.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e) {
-					orderChoicePopup.dispose();
+					attributeOrder(regiment, Order.CHARGE, orderChoicePopup);
 				}
 			});
 		add(chargeButton);
@@ -37,6 +43,12 @@ public class OrderChoicePopupOrderPanel extends JPanel {
 		add(recoverButton);
 		*/
 		
+	}
+	
+	private void attributeOrder(Regiment regiment, Order order, OrderChoicePopup orderChoicePopup) {
+		regiment.instructions.get(index).order = order;
+		Screen.gameScreen.mainPanel.regimentView.fillRegimentView(regiment);
+		orderChoicePopup.dispose();
 	}
 	
 	

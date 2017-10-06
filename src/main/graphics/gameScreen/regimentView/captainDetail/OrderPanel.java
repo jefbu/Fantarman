@@ -16,44 +16,50 @@ import main.graphics.gameScreen.regimentView.captainDetail.orderPanel.OrderChoic
 import main.graphics.gameScreen.regimentView.captainDetail.orderPanel.OrderTitlePanel;
 
 public class OrderPanel extends ContentPanel {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	public OrderTitlePanel orderTitlePanel;
 	public JPanel ordersPanel;
 	public ArrayList<IndividualOrderPanel> orderList;
+	int width;
+	int height;
 
 	public OrderPanel(int width, int height, Colour colour, FlowLayout flowLayout) {
-		
+
 		super(width - 1, height - 1, colour, flowLayout);
+		this.width = width - 1;
+		this.height = height - 1;
 		orderList = new ArrayList<IndividualOrderPanel>();
-		
+
 		orderTitlePanel = new OrderTitlePanel(width - 11, height / 6 - 4);
 		insidePanel.add(orderTitlePanel);
-				
-		for (int i = 0; i < 5; i++) {
 
+		for (int i = 0; i < 5; i++) {
 			orderList.add(new IndividualOrderPanel(width - 11, height / 6 - 3));
-			orderList.get(i).addActionListener(new ActionListener() {
+			insidePanel.add(orderList.get(i));
+		}
+
+	}
+
+	public void fillOrderPanel(Regiment regiment) {
+		
+		for (int ii = 0; ii < 5; ii++) {
+			int index = ii;
+			orderList.get(index).addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					OrderChoicePopup orderChoicePopup = new OrderChoicePopup(width * 2, height * 2, Colour.DRED, false);
+					OrderChoicePopup orderChoicePopup = new OrderChoicePopup(width * 2, height * 2, Colour.DRED, false,
+							regiment, index);
 					orderChoicePopup.setLocation(MouseInfo.getPointerInfo().getLocation());
 					int x = orderChoicePopup.getX();
 					int y = orderChoicePopup.getY() - height * 2;
 					orderChoicePopup.setLocation(x, y);
-					orderChoicePopup.setVisible(true);
+					orderChoicePopup.setVisible(true);			
 				}
-			});
-			insidePanel.add(orderList.get(i));
-		}
+		});
 		
-		for (int ii = 0; ii < orderList.size(); ii++) {
-		}
 		
-	}
-	
-	public void fillOrderPanel(Regiment regiment) {
-		
+
 		for (int i = 0; i < regiment.instructions.size(); i++) {
 			orderList.get(i).numberPanel.label.setText(Integer.toString(i + 1));
 			orderList.get(i).conditionPanel.label.setText(regiment.instructions.get(i).condition.name());
@@ -64,6 +70,8 @@ public class OrderPanel extends ContentPanel {
 			orderList.get(i).orderXPPanel.label.setText("XP");
 			orderList.get(i).totalXPPanel.label.setText("XP");
 
+			}
+		
 		}
 		
 	}

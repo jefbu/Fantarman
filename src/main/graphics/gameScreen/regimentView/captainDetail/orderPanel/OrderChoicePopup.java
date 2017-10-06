@@ -4,6 +4,7 @@ import java.awt.FlowLayout;
 
 import main.components.Colour;
 import main.components.Popup;
+import main.entity.regiments.Regiment;
 import main.utility.Colors;
 
 public class OrderChoicePopup extends Popup {
@@ -15,22 +16,23 @@ public class OrderChoicePopup extends Popup {
 
 	int state;
 
-	public OrderChoicePopup(int width, int height, Colour colour, Boolean dichotomy) {
+	public OrderChoicePopup(int width, int height, Colour colour, Boolean dichotomy, Regiment regiment, int index) {
 
 		super(width, height, colour, dichotomy);
 		OrderChoicePopup orderChoicePopup = this;
 		mainPanelTopPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		state = 0;
 
-		orderChoicePopupOrderPanel = new OrderChoicePopupOrderPanel(width - 10, height - 10, orderChoicePopup);
+		orderChoicePopupOrderPanel = new OrderChoicePopupOrderPanel(width - 10, height - 10, orderChoicePopup, regiment,
+				index);
 		orderChoicePopupOrderPanel.setBackground(Colors.red);
 
 		orderChoicePopupTargetPanel = new OrderChoicePopupTargetPanel(width - 10, height - 10,
-				orderChoicePopupOrderPanel);
+				orderChoicePopupOrderPanel, regiment, index);
 		orderChoicePopupTargetPanel.setBackground(Colors.red);
 
 		orderChoicePopupConditionPanel = new OrderChoicePopupConditionPanel(width - 10, height - 10,
-				orderChoicePopupTargetPanel);
+				orderChoicePopupTargetPanel, regiment, index);
 		orderChoicePopupConditionPanel.setBackground(Colors.red);
 
 		mainPanelTopPanel.add(orderChoicePopupConditionPanel);
