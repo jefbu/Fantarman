@@ -1,8 +1,6 @@
 package main.graphics.gameScreen.regimentView.captainDetail.orderPanel;
 
 import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import main.components.Colour;
 import main.components.Popup;

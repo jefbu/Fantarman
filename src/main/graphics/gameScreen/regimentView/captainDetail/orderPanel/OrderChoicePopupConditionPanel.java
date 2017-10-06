@@ -8,9 +8,14 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import main.battle.tactics.Condition;
+
 public class OrderChoicePopupConditionPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
+	OrderChoicePopupConditionPanel conditionPanel;
+	OrderChoicePopupTargetPanel  targetPanel;
+	Condition storedCondition;
 
 	public OrderChoicePopupConditionPanel(int width, int height,
 			OrderChoicePopupTargetPanel orderChoicePopupTargetPanel) {
@@ -18,13 +23,13 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 		super();
 		setLayout(new FlowLayout(FlowLayout.LEFT, 7, 7));
 		setPreferredSize(new Dimension(width - 10, height - 10));
-		OrderChoicePopupConditionPanel panel = this;
+		conditionPanel = this;
+		targetPanel = orderChoicePopupTargetPanel;
 
 		ConditionButton life100Button = new ConditionButton(width / 6, height / 6, "Life < 100%");
 		life100Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				panel.setVisible(false);
-				orderChoicePopupTargetPanel.setVisible(true);
+				attributeCondition(Condition.Life_under_100);
 			}
 		});
 		add(life100Button);
@@ -45,6 +50,13 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 		 */
 
 	}
+	
+	private void attributeCondition(Condition condition) {
+		conditionPanel.setVisible(false);
+		targetPanel.setVisible(true);
+		storedCondition = condition;
+	}
+	
 
 	private class ConditionButton extends JButton {
 
