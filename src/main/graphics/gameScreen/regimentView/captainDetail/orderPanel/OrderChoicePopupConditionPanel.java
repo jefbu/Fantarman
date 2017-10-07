@@ -8,7 +8,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import main.Main;
 import main.battle.tactics.Condition;
 import main.entity.regiments.Regiment;
 

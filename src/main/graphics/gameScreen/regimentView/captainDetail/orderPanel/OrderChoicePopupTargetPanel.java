@@ -28,7 +28,6 @@ public class OrderChoicePopupTargetPanel extends JPanel {
 		orderPanel = orderChoicePopupOrderPanel;
 		setLayout(new FlowLayout(FlowLayout.LEFT, 7, 7));
 		setPreferredSize(new Dimension(width - 10, height - 10));
-		OrderChoicePopupTargetPanel panel = this;
 
 		ConditionButton strongestButton = new ConditionButton(width / 6, height / 6, "Strongest Enemy");
 		strongestButton.addActionListener(new ActionListener() {

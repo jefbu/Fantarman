@@ -13,7 +13,9 @@ public class DoveMasters extends Regiment {
 	public DoveMasters(String name, Captain captain) {
 		
 		super();
+		for (int i = 0; i < captain.orders; i++) {
 		instructions.add(new Tactic(Condition.ALWAYS, Target.ENEMY_STRONGEST, Order.FIRE));
+		}
 		
 		this.name = name;
 		this.value = 1000;

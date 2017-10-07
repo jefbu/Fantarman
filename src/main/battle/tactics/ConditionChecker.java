@@ -9,6 +9,9 @@ public class ConditionChecker {
 		for (Tactic tactic : regiment.instructions) {
 			switch (tactic.condition) {
 
+			case Life_under_100:
+				if (regiment.battleLife < regiment.life)
+					return tactic;
 			case FULL_HEALTH:
 				if (regiment.battleLife == regiment.life)
 					return tactic;

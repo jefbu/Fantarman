@@ -9,12 +9,15 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import main.Main;
+import main.battle.Battle;
+import main.graphics.Screen;
 
 public class ButtonPanel extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
 	
 	JButton exitButton;
+	JButton battleButton;
 
 	public ButtonPanel(int roundedWidth, int unroundedHeight) {
 		
@@ -28,24 +31,28 @@ public class ButtonPanel extends JPanel {
 		
 		
 		exitButton = new JButton();
-		exitButton.setPreferredSize(new Dimension(50, 50));
+		exitButton.setPreferredSize(new Dimension(100, 50));
+		exitButton.setText("Quit");
 		exitButton.addActionListener(new ActionListener() {
 			
 			public void actionPerformed (ActionEvent e) {
-
-				//Screen.gameScreen.setVisible(false);
-				//Screen.battleScreen.setVisible(true);
-				//Main.battles.add(new Battle());
 				Main.screen.dispose();
-				//if (Screen.gameScreen.mainPanel.armyView.isVisible()) {
-				//Screen.gameScreen.mainPanel.armyView.setVisible(false);
-				//}
-				//else Main.screen.dispose();
 			}
-			
+		});
+		
+		battleButton = new JButton();
+		battleButton.setPreferredSize(new Dimension(100, 50));
+		battleButton.setText("Battle");
+		battleButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Screen.gameScreen.setVisible(false);
+				Screen.battleScreen.setVisible(true);
+				Main.battles.add(new Battle());
+			}
 		});
 		
 		add(exitButton);
+		add(battleButton);
 		
 	}
 
