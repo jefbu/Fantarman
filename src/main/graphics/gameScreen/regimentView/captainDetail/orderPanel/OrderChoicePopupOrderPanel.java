@@ -16,20 +16,18 @@ public class OrderChoicePopupOrderPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	int index;
+	ConditionButton chargeButton;
+	OrderChoicePopup orderChoicePopup;
 
-	public OrderChoicePopupOrderPanel(int width, int height, OrderChoicePopup orderChoicePopup, Regiment regiment, int index) {
+	public OrderChoicePopupOrderPanel(int width, int height, OrderChoicePopup orderChoicePopup) {
 		
 		super();
-		this.index = index;
 		setLayout(new FlowLayout(FlowLayout.LEFT, 7, 7));
 		setPreferredSize(new Dimension(width - 10, height - 10));
 		
-		ConditionButton chargeButton = new ConditionButton(width / 6, height / 6, "Charge");
-			chargeButton.addActionListener(new ActionListener(){
-				public void actionPerformed(ActionEvent e) {
-					attributeOrder(regiment, Order.CHARGE, orderChoicePopup);
-				}
-			});
+		this.orderChoicePopup = orderChoicePopup;
+		
+		chargeButton = new ConditionButton(width / 6, height / 6, "Charge");
 		add(chargeButton);
 		
 		/*
@@ -48,7 +46,7 @@ public class OrderChoicePopupOrderPanel extends JPanel {
 	private void attributeOrder(Regiment regiment, Order order, OrderChoicePopup orderChoicePopup) {
 		regiment.instructions.get(index).order = order;
 		Screen.gameScreen.mainPanel.regimentView.fillRegimentView(regiment);
-		orderChoicePopup.dispose();
+		orderChoicePopup.setVisible(false);
 	}
 	
 	
@@ -62,6 +60,17 @@ public class OrderChoicePopupOrderPanel extends JPanel {
 			setText(title);
 		}
 		
+	}
+
+
+	public void fillOrderPanel(int index, Regiment regiment) {
+		this.index = index;
+		chargeButton.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				attributeOrder(regiment, Order.CHARGE, orderChoicePopup);
+				chargeButton.removeActionListener(chargeButton.getActionListeners()[0]);
+			}
+		});		
 	}
 
 }

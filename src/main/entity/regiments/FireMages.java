@@ -11,7 +11,9 @@ public class FireMages extends Regiment {
 	public FireMages(String name, Captain captain) {
 		
 		super();
+		for (int i = 0; i < captain.orders; i++) {
 		instructions.add(new Tactic(Condition.ALWAYS, Target.ENEMY_WEAKEST, Order.CHARGE));
+		}
 		
 		this.name = name;
 		this.value = 600;

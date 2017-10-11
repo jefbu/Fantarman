@@ -18,23 +18,17 @@ public class OrderChoicePopupTargetPanel extends JPanel {
 	OrderChoicePopupOrderPanel orderPanel;
 	Target storedTarget;
 	int index;
-
-	public OrderChoicePopupTargetPanel(int width, int height, OrderChoicePopupOrderPanel orderChoicePopupOrderPanel,
-			Regiment regiment, int index) {
+	ConditionButton strongestButton;
+	
+	public OrderChoicePopupTargetPanel(int width, int height, OrderChoicePopupOrderPanel orderChoicePopupOrderPanel) {
 
 		super();
-		this.index = index;
 		targetPanel = this;
 		orderPanel = orderChoicePopupOrderPanel;
 		setLayout(new FlowLayout(FlowLayout.LEFT, 7, 7));
 		setPreferredSize(new Dimension(width - 10, height - 10));
 
-		ConditionButton strongestButton = new ConditionButton(width / 6, height / 6, "Strongest Enemy");
-		strongestButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				attributeTarget(regiment, Target.ENEMY_STRONGEST);
-			}
-		});
+		strongestButton = new ConditionButton(width / 6, height / 6, "Strongest Enemy");
 		add(strongestButton);
 
 		/*
@@ -66,6 +60,16 @@ public class OrderChoicePopupTargetPanel extends JPanel {
 			setText(title);
 		}
 
+	}
+
+	public void fillTargetPanel(int index, Regiment regiment) {
+		this.index = index;
+		strongestButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				attributeTarget(regiment, Target.ENEMY_STRONGEST);
+				strongestButton.removeActionListener(strongestButton.getActionListeners()[0]);
+			}
+		});		
 	}
 
 }

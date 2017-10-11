@@ -18,23 +18,18 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 	OrderChoicePopupTargetPanel  targetPanel;
 	Condition storedCondition;
 	private int index;
+	ConditionButton life100Button;
 
-	public OrderChoicePopupConditionPanel(int width, int height,
-			OrderChoicePopupTargetPanel orderChoicePopupTargetPanel, Regiment regiment, int index) {
+	public OrderChoicePopupConditionPanel(int width, int height, OrderChoicePopupTargetPanel orderChoicePopupTargetPanel) {
 
 		super();
-		this.index = index;
+
 		setLayout(new FlowLayout(FlowLayout.LEFT, 7, 7));
 		setPreferredSize(new Dimension(width - 10, height - 10));
 		conditionPanel = this;
 		targetPanel = orderChoicePopupTargetPanel;
 
-		ConditionButton life100Button = new ConditionButton(width / 6, height / 6, "Life < 100%");
-		life100Button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				attributeCondition(regiment, Condition.Life_under_100);
-			}
-		});
+		life100Button = new ConditionButton(width / 6, height / 6, "Life < 100%");
 		add(life100Button);
 		/*
 		 * ConditionButton life75Button = new ConditionButton(width / 6, height
@@ -71,6 +66,17 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 			setText(title);
 		}
 
+	}
+
+
+	public void fillConditionPanel(int index, Regiment regiment) {
+		this.index = index;
+		life100Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				attributeCondition(regiment, Condition.Life_under_100);
+				life100Button.removeActionListener(life100Button.getActionListeners()[0]);
+			}
+		});		
 	}
 
 }

@@ -24,6 +24,7 @@ public class OrderPanel extends ContentPanel {
 	public ArrayList<IndividualOrderPanel> orderList;
 	int width;
 	int height;
+	OrderChoicePopup orderChoicePopup;
 
 	public OrderPanel(int width, int height, Colour colour, FlowLayout flowLayout) {
 
@@ -34,6 +35,8 @@ public class OrderPanel extends ContentPanel {
 
 		orderTitlePanel = new OrderTitlePanel(width - 11, height / 6 - 4);
 		insidePanel.add(orderTitlePanel);
+		
+		orderChoicePopup = new OrderChoicePopup(width * 2, height * 2, Colour.DRED, false);
 
 		for (int i = 0; i < 5; i++) {
 			orderList.add(new IndividualOrderPanel(width - 11, height / 6 - 3));
@@ -44,17 +47,17 @@ public class OrderPanel extends ContentPanel {
 
 	public void fillOrderPanel(Regiment regiment) {
 		
-		for (int ii = 0; ii < 5; ii++) {
+		for (int ii = 0; ii < regiment.captain.orders; ii++) {
 			int index = ii;
 			orderList.get(index).addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					OrderChoicePopup orderChoicePopup = new OrderChoicePopup(width * 2, height * 2, Colour.DRED, false,
-							regiment, index);
+					orderChoicePopup.fillPopup(index, regiment);
 					orderChoicePopup.setLocation(MouseInfo.getPointerInfo().getLocation());
 					int x = orderChoicePopup.getX();
 					int y = orderChoicePopup.getY() - height * 2;
 					orderChoicePopup.setLocation(x, y);
-					orderChoicePopup.setVisible(true);			
+					orderChoicePopup.setVisible(true);
+					orderList.get(index).removeActionListener(orderList.get(index).getActionListeners()[0]);
 				}
 		});
 		
