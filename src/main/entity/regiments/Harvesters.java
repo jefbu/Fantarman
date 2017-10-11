@@ -11,7 +11,9 @@ public class Harvesters extends Regiment {
 	public Harvesters(String name, Captain captain) {
 		
 		super();
+		for (int i = 0; i < captain.orders; i++) {
 		instructions.add(new Tactic(Condition.ALWAYS, Target.SELF, Order.RECOVER));
+		}
 		
 		this.name = name;
 		this.value = 600;

@@ -44,7 +44,7 @@ public class OrderPanel extends ContentPanel {
 
 	public void fillOrderPanel(Regiment regiment) {
 		
-		for (int ii = 0; ii < 5; ii++) {
+		for (int ii = 0; ii < regiment.captain.orders; ii++) {
 			int index = ii;
 			orderList.get(index).addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {

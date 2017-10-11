@@ -10,19 +10,31 @@ public class ConditionChecker {
 			switch (tactic.condition) {
 
 			case Life_under_100:
-				if (regiment.battleLife < regiment.life)
+				if (regiment.battleLife < regiment.life) {
 					return tactic;
+				} else { 
+					break; 
+				}
+					
 			case FULL_HEALTH:
-				if (regiment.battleLife == regiment.life)
+				if (regiment.battleLife == regiment.life) {
 					return tactic;
+				} else {
+					break;
+				}
+				
 			case HALF_HEALTH:
-				if (regiment.battleLife > regiment.life / 2)
+				if (regiment.battleLife > regiment.life / 2) {
 					return tactic;
+				} else {
+					break;
+				}
+				
 			case ALWAYS:
 				return tactic;
 			}
 		}
-		return regiment.instructions.get(0);
+		return new Tactic(Condition.ALWAYS, Target.SELF, Order.RECOVER);
 		
 	}
 
