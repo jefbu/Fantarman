@@ -49,6 +49,9 @@ public class OrderPanel extends ContentPanel {
 		
 		for (int ii = 0; ii < regiment.captain.orders; ii++) {
 			int index = ii;
+			try {
+				orderList.get(index).removeActionListener(orderList.get(index).getActionListeners()[0]);
+			} catch (Exception e1) {}
 			orderList.get(index).addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					orderChoicePopup.fillPopup(index, regiment);
@@ -57,7 +60,6 @@ public class OrderPanel extends ContentPanel {
 					int y = orderChoicePopup.getY() - height * 2;
 					orderChoicePopup.setLocation(x, y);
 					orderChoicePopup.setVisible(true);
-					orderList.get(index).removeActionListener(orderList.get(index).getActionListeners()[0]);
 				}
 		});
 		
