@@ -19,6 +19,9 @@ public class OrderChoicePopupTargetPanel extends JPanel {
 	Target storedTarget;
 	int index;
 	ConditionButton strongestButton;
+	ConditionButton nearestButton;
+	ConditionButton weakestButton;
+	ConditionButton selfButton;
 	
 	public OrderChoicePopupTargetPanel(int width, int height, OrderChoicePopupOrderPanel orderChoicePopupOrderPanel) {
 
@@ -31,16 +34,15 @@ public class OrderChoicePopupTargetPanel extends JPanel {
 		strongestButton = new ConditionButton(width / 6, height / 6, "Strongest Enemy");
 		add(strongestButton);
 
-		/*
-		 * ConditionButton nearestButton = new ConditionButton(width / 6, height
-		 * / 6, "Nearest Enemy"); add(nearestButton);
-		 * 
-		 * ConditionButton weakestButton = new ConditionButton(width / 6, height
-		 * / 6, "Weakest Enemy"); add(weakestButton);
-		 * 
-		 * ConditionButton selfButton = new ConditionButton(width / 6, height /
-		 * 6, "Self"); add(selfButton);
-		 */
+		nearestButton = new ConditionButton(width / 6, height / 6, "Nearest Enemy"); 
+		add(nearestButton);
+		
+		weakestButton = new ConditionButton(width / 6, height / 6, "Weakest Enemy"); 
+		add(weakestButton);
+		 
+		selfButton = new ConditionButton(width / 6, height / 6, "Self"); 
+		add(selfButton);
+		
 
 	}
 	
@@ -64,12 +66,36 @@ public class OrderChoicePopupTargetPanel extends JPanel {
 
 	public void fillTargetPanel(int index, Regiment regiment) {
 		this.index = index;
+		
 		strongestButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				attributeTarget(regiment, Target.ENEMY_STRONGEST);
 				strongestButton.removeActionListener(strongestButton.getActionListeners()[0]);
 			}
-		});		
+		});
+		
+		nearestButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				attributeTarget(regiment, Target.ENEMY_NEAREST);
+				nearestButton.removeActionListener(nearestButton.getActionListeners()[0]);
+			}
+		});	
+		
+		weakestButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				attributeTarget(regiment, Target.ENEMY_WEAKEST);
+				weakestButton.removeActionListener(weakestButton.getActionListeners()[0]);
+			}
+		});	
+		
+		selfButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				attributeTarget(regiment, Target.SELF);
+				selfButton.removeActionListener(selfButton.getActionListeners()[0]);
+			}
+		});	
+		
+		
 	}
 
 }
