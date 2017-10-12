@@ -19,6 +19,11 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 	Condition storedCondition;
 	private int index;
 	ConditionButton life100Button;
+	ConditionButton life75Button;
+	ConditionButton life50Button;
+	ConditionButton life25Button;
+	
+	ConditionButton alwaysButton;
 
 	public OrderChoicePopupConditionPanel(int width, int height, OrderChoicePopupTargetPanel orderChoicePopupTargetPanel) {
 
@@ -31,21 +36,21 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 
 		life100Button = new ConditionButton(width / 6, height / 6, "Life < 100%");
 		add(life100Button);
-		/*
-		 * ConditionButton life75Button = new ConditionButton(width / 6, height
-		 * / 6, "Life < 75%"); add(life75Button);
-		 * 
-		 * ConditionButton life50Button = new ConditionButton(width / 6, height
-		 * / 6, "Life < 50%"); add(life50Button);
-		 * 
-		 * ConditionButton life25Button = new ConditionButton(width / 6, height
-		 * / 6, "Life < 25%"); add(life25Button);
-		 * 
-		 * 
-		 * 
-		 * ConditionButton alwaysButton = new ConditionButton(width / 6, height
-		 * / 6, "Always"); add(alwaysButton);
-		 */
+		
+		life75Button = new ConditionButton(width / 6, height / 6, "Life < 75%"); 
+		add(life75Button);
+		
+		life50Button = new ConditionButton(width / 6, height / 6, "Life < 50%"); 
+		add(life50Button);
+		 
+		life25Button = new ConditionButton(width / 6, height / 6, "Life < 25%"); 
+		add(life25Button);
+		 	 
+		
+		
+		alwaysButton = new ConditionButton(width / 6, height / 6, "Always"); 
+		add(alwaysButton);
+		
 
 	}
 	
@@ -71,12 +76,44 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 
 	public void fillConditionPanel(int index, Regiment regiment) {
 		this.index = index;
+		
 		life100Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				attributeCondition(regiment, Condition.Life_under_100);
 				life100Button.removeActionListener(life100Button.getActionListeners()[0]);
 			}
 		});		
+		
+		life75Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				attributeCondition(regiment, Condition.Life_under_75);
+				life75Button.removeActionListener(life75Button.getActionListeners()[0]);
+			}
+		});	
+		
+		life50Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				attributeCondition(regiment, Condition.Life_under_50);
+				life50Button.removeActionListener(life50Button.getActionListeners()[0]);
+			}
+		});	
+		
+		life25Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				attributeCondition(regiment, Condition.Life_under_25);
+				life25Button.removeActionListener(life25Button.getActionListeners()[0]);
+			}
+		});	
+		
+		alwaysButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				attributeCondition(regiment, Condition.ALWAYS);
+				alwaysButton.removeActionListener(alwaysButton.getActionListeners()[0]);
+			}
+		});	
+		
+		
+		
 	}
 
 }

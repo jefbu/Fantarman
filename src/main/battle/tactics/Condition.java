@@ -2,9 +2,11 @@ package main.battle.tactics;
 
 public enum Condition {
 	
-	FULL_HEALTH,
+	Life_full,
 	Life_under_100,
-	HALF_HEALTH,
+	Life_under_75,
+	Life_under_50,
+	Life_under_25,
 	ALWAYS,
 
 }

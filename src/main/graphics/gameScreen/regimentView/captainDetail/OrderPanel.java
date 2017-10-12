@@ -58,7 +58,6 @@ public class OrderPanel extends ContentPanel {
 					orderChoicePopup.setLocation(x, y);
 					orderChoicePopup.setVisible(true);
 					orderList.get(index).removeActionListener(orderList.get(index).getActionListeners()[0]);
-					System.out.println("commit fix");
 				}
 		});
 		
