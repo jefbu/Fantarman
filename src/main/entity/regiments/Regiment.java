@@ -162,8 +162,10 @@ public abstract class Regiment {
 		switch (order) {
 
 		case CHARGE:
-			OrderMethods.chargeTarget(this, target, activeArmy, activeRegimentIndex, yourBattleArmy,
-					opponentBattleArmy);
+			OrderMethods.chargeTarget(this, target, activeArmy, activeRegimentIndex, yourBattleArmy, opponentBattleArmy);
+			break;
+		case Move_to:
+			OrderMethods.moveTo(this, target, activeArmy, activeRegimentIndex, yourBattleArmy, opponentBattleArmy);
 			break;
 		case RECOVER:
 			OrderMethods.recover(this);

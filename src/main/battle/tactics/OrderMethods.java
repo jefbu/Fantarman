@@ -15,6 +15,13 @@ public abstract class OrderMethods {
 				yourBattleArmy, opponentBattleArmy);
 		writeBasicOrderText(Order.CHARGE, regiment, target);
 	}
+	
+	public static void moveTo(Regiment regiment, Regiment target, Army activeArmy, int activeRegimentIndex,
+			Army yourBattleArmy, Army opponentBattleArmy) {
+		MoveMethod.move(regiment, regiment.battleMove, target, activeArmy, activeRegimentIndex,
+				yourBattleArmy, opponentBattleArmy);
+		writeBasicOrderText(Order.Move_to, regiment, target);
+	}
 
 	public static void combat(Regiment regiment, Regiment target, int chargeBonus, Army activeArmy, Army yourBattleArmy,
 			Army opponentBattleArmy) {
