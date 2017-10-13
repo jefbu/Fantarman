@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import main.Main;
 import main.components.Colour;
 import main.components.Popup;
+import main.entity.regiments.Regiment;
 import main.entity.regiments.Role;
 
 public class RoleSelectionPopup extends Popup {
@@ -20,47 +21,47 @@ public class RoleSelectionPopup extends Popup {
 	Dimension panelDimension;
 	Color panelColour;
 	JButton roleSelectionButton;
-
-	public RoleSelectionPopup(int width, int height, int index) {
+	int index;
+	public RoleSelectionPopup(int width, int height) {
 		
 		super(width, height, Colour.DRED, false);
 		panelDimension = new Dimension(width / 3 - 16, height / 10);
 		panelColour = new Color(160, 120, 30);
 		
-		RolePanel combat1Panel = new RolePanel("Combat 1", 1, index, this);
+		RolePanel combat1Panel = new RolePanel("Combat 1", 1, this);
 		mainPanelTopPanel.add(combat1Panel);
 		
-		RolePanel combat2Panel = new RolePanel("Combat 2", 2, index, this);
+		RolePanel combat2Panel = new RolePanel("Combat 2", 2, this);
 		mainPanelTopPanel.add(combat2Panel);
 		
-		RolePanel combat3Panel = new RolePanel("Combat 3", 3, index, this);
+		RolePanel combat3Panel = new RolePanel("Combat 3", 3, this);
 		mainPanelTopPanel.add(combat3Panel);
 		
-		RolePanel combat4Panel = new RolePanel("Combat 4", 4, index, this);
+		RolePanel combat4Panel = new RolePanel("Combat 4", 4, this);
 		mainPanelTopPanel.add(combat4Panel);
 		
-		RolePanel combat5Panel = new RolePanel("Combat 5", 5, index, this);
+		RolePanel combat5Panel = new RolePanel("Combat 5", 5, this);
 		mainPanelTopPanel.add(combat5Panel);
 		
-		RolePanel combat6Panel = new RolePanel("Combat 6", 6, index, this);
+		RolePanel combat6Panel = new RolePanel("Combat 6", 6, this);
 		mainPanelTopPanel.add(combat6Panel);
 		
-		RolePanel combat7Panel = new RolePanel("Combat 7", 7, index, this);
+		RolePanel combat7Panel = new RolePanel("Combat 7", 7, this);
 		mainPanelTopPanel.add(combat7Panel);
 		
-		RolePanel combat8Panel = new RolePanel("Combat 8", 8, index, this);
+		RolePanel combat8Panel = new RolePanel("Combat 8", 8, this);
 		mainPanelTopPanel.add(combat8Panel);
 		
-		RolePanel combat9Panel = new RolePanel("Combat 9", 9, index, this);
+		RolePanel combat9Panel = new RolePanel("Combat 9", 9, this);
 		mainPanelTopPanel.add(combat9Panel);
 		
-		RolePanel combat10Panel = new RolePanel("Combat 10", 10, index, this);
+		RolePanel combat10Panel = new RolePanel("Combat 10", 10, this);
 		mainPanelTopPanel.add(combat10Panel);
 		
-		RolePanel questPanel = new RolePanel("Training", 11, index, this);
+		RolePanel questPanel = new RolePanel("Training", 11, this);
 		mainPanelTopPanel.add(questPanel);
 		
-		RolePanel trainPanel = new RolePanel("Questing", 12, index, this);
+		RolePanel trainPanel = new RolePanel("Questing", 12, this);
 		mainPanelTopPanel.add(trainPanel);
 			
 	}
@@ -69,7 +70,7 @@ public class RoleSelectionPopup extends Popup {
 
 		private static final long serialVersionUID = 1L;
 
-		private RolePanel(String title, int role, int index, RoleSelectionPopup roleSelectionPopup) {
+		private RolePanel(String title, int role, RoleSelectionPopup roleSelectionPopup) {
 			
 			super();
 			setPreferredSize(panelDimension);
@@ -82,7 +83,12 @@ public class RoleSelectionPopup extends Popup {
 			
 			roleSelectionButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					Main.yourArmy.roster.get(index).role = decideRole(role);
+					Role tempRole = decideRole(role);
+					boolean roleFree = true;
+					for (Regiment regiment: Main.yourArmy.roster) {
+						if (regiment.role == tempRole) roleFree = false;
+					}
+					if (roleFree) Main.yourArmy.roster.get(index).role = decideRole(role);
 					roleSelectionPopup.dispose();
 				}
 			});
@@ -111,6 +117,10 @@ public class RoleSelectionPopup extends Popup {
 		
 		return Role.TRAINING;
 		
+	}
+	
+	public void fillIndex(int index) {
+		this.index= index;		
 	}
 
 }
