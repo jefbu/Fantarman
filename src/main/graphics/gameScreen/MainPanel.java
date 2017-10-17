@@ -13,7 +13,7 @@ public class MainPanel extends JPanel {
 	
 	public ArmyView armyView;
 	public RegimentView regimentView;
-
+	public HomeView homeView;
 
 
 	public MainPanel(int gameScreenWidth, int gameScreenHeight) {
@@ -34,6 +34,9 @@ public class MainPanel extends JPanel {
 		
 		regimentView = new RegimentView(gameScreenWidth, gameScreenHeight);
 		add(regimentView);
+		
+		homeView = new HomeView(gameScreenWidth, gameScreenHeight);
+		add(homeView);
 
 	}
 

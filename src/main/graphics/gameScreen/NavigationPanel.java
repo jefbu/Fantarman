@@ -16,7 +16,7 @@ import main.utility.Colors;
 public class NavigationPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	IconLabelPanel homeScreenPanel;
+	IconLabelPanel homeViewPanel;
 	IconLabelPanel armyViewPanel;
 
 
@@ -31,8 +31,17 @@ public class NavigationPanel extends JPanel {
 		setBackground(Colors.vlblue);
 		setLayout(new FlowLayout(FlowLayout.LEFT, 5, 10));
 		
-		homeScreenPanel = new IconLabelPanel(width - 10, height / 6 - 10, Colour.GREEN);
-		add(homeScreenPanel);
+		homeViewPanel = new IconLabelPanel(width - 10, height / 6 - 10, Colour.GREEN);
+			homeViewPanel.buttonedPanel.button.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent e) {
+					Screen.gameScreen.setScreensInvisible();
+					Screen.gameScreen.mainPanel.homeView.setVisible(true);
+				}
+			});
+			homeViewPanel.buttonedPanel.label.setForeground(Colors.textyellow);
+			homeViewPanel.buttonedPanel.label.setFont(new Font("garamond", Font.BOLD, 42));
+			homeViewPanel.buttonedPanel.label.setText("Home View");
+		add(homeViewPanel);
 		
 		armyViewPanel = new IconLabelPanel(width - 10, height / 6 - 10, Colour.GREEN);
 			armyViewPanel.buttonedPanel.button.addActionListener(new ActionListener(){
@@ -42,7 +51,7 @@ public class NavigationPanel extends JPanel {
 				}
 			});
 			armyViewPanel.buttonedPanel.label.setForeground(Colors.textyellow);
-			armyViewPanel.buttonedPanel.label.setFont(new Font("garamond", Font.BOLD, 48));
+			armyViewPanel.buttonedPanel.label.setFont(new Font("garamond", Font.BOLD, 42));
 			armyViewPanel.buttonedPanel.label.setText("Army View");
 		add(armyViewPanel);
 		
