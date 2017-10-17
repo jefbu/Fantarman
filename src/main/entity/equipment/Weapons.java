@@ -29,6 +29,7 @@ public class Weapons {
 
 	}
 	
+	public static Weapons pigeons = new Weapons("Squab Pigeons", 0, 0, 0, 0, 0, 0, 0, 0);
 	public static Weapons elitePigeons = new Weapons("Elite Pigeons", 0, 0, 0, 0, 0, 5, 100, 20);
 	public static Weapons thoroughbredPigeons = new Weapons("Thoroughbred", 0, 0, 0, 0, 1, 0, 120, 25);
 	public static Weapons turtledoves = new Weapons("Turtle Doves", 0, 0, 0, 0, 2, -10, 125, 25);

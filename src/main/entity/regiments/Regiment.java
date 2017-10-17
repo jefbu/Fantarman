@@ -16,6 +16,7 @@ import main.entity.captains.Captain;
 import main.entity.captains.Lieutenant;
 import main.entity.equipment.Armour;
 import main.entity.equipment.Weapons;
+import main.entity.races.Race;
 import main.graphics.battleScreen.BattleScreen;
 import main.utility.ImageLoader;
 
@@ -35,6 +36,7 @@ public abstract class Regiment {
 	public int level;
 	
 	public Role role;
+	public Race race;
 
 	public int attack;
 	public int defence;

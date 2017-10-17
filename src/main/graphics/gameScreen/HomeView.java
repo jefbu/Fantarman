@@ -4,6 +4,8 @@ import java.awt.Dimension;
 
 import javax.swing.JPanel;
 
+import main.utility.Colors;
+
 public class HomeView extends JPanel {
 
 	private static final long serialVersionUID = 1L;
@@ -16,6 +18,7 @@ public class HomeView extends JPanel {
 		int unroundedWidth = height * 8 * 15 / 100;
 		int roundedWidth = unroundedWidth - (unroundedWidth % 48);
 		setPreferredSize(new Dimension(roundedWidth, unroundedHeight));
+		setBackground(Colors.vlblue);
 		
 	}
 

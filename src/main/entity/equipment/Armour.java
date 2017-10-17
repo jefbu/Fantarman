@@ -25,6 +25,7 @@ public class Armour {
 
 	}
 	
+	public static Armour quilt = new Armour("Quilt Tunic", 0, 0, 0, 0, 0, 0);
 	public static Armour halfLeather = new Armour("Half-Leather", 0, 0, 3, 0, 100, 20);
 	public static Armour leather = new Armour("Leather", 0, 0, 5, 0, 120, 25);
 	

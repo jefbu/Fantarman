@@ -7,6 +7,7 @@ import main.battle.tactics.Target;
 import main.entity.captains.Captain;
 import main.entity.equipment.Armour;
 import main.entity.equipment.Weapons;
+import main.entity.races.Race;
 
 public class DoveMasters extends Regiment {
 		
@@ -18,6 +19,7 @@ public class DoveMasters extends Regiment {
 		}
 		
 		this.name = name;
+		this.race = Race.Piknin;
 		this.value = 1000;
 		this.upkeep = value / 10;
 		this.lieutenantsSize = 1;
@@ -46,10 +48,12 @@ public class DoveMasters extends Regiment {
 		
 		icon = imageLoader.loadImageIcon("/regiments/dovemasters.png", width, height);
 		
+		weapons.add(Weapons.pigeons);
 		weapons.add(Weapons.elitePigeons);
 		weapons.add(Weapons.thoroughbredPigeons);
 		weapons.add(Weapons.turtledoves);
 		
+		armours.add(Armour.quilt);
 		armours.add(Armour.halfLeather);
 		armours.add(Armour.leather);
 		

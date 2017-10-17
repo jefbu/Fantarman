@@ -5,6 +5,7 @@ import main.battle.tactics.Order;
 import main.battle.tactics.Tactic;
 import main.battle.tactics.Target;
 import main.entity.captains.Captain;
+import main.entity.races.Race;
 
 public class FireMages extends Regiment {
 	
@@ -16,6 +17,7 @@ public class FireMages extends Regiment {
 		}
 		
 		this.name = name;
+		this.race = Race.Wanmen;
 		this.value = 600;
 		this.upkeep = value / 10;
 		this.lieutenantsSize = 1;
