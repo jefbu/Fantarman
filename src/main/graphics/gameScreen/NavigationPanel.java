@@ -1,13 +1,16 @@
 package main.graphics.gameScreen;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
 
 import main.components.Colour;
 import main.components.IconLabelPanel;
+import main.graphics.Screen;
 import main.utility.Colors;
 
 public class NavigationPanel extends JPanel {
@@ -32,6 +35,15 @@ public class NavigationPanel extends JPanel {
 		add(homeScreenPanel);
 		
 		armyViewPanel = new IconLabelPanel(width - 10, height / 6 - 10, Colour.GREEN);
+			armyViewPanel.buttonedPanel.button.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent e) {
+					Screen.gameScreen.setScreensInvisible();
+					Screen.gameScreen.mainPanel.armyView.setVisible(true);
+				}
+			});
+			armyViewPanel.buttonedPanel.label.setForeground(Colors.textyellow);
+			armyViewPanel.buttonedPanel.label.setFont(new Font("garamond", Font.BOLD, 48));
+			armyViewPanel.buttonedPanel.label.setText("Army View");
 		add(armyViewPanel);
 		
 	}

@@ -53,4 +53,10 @@ public class GameScreen extends JPanel {
 		
 	}
 
+
+	public void setScreensInvisible() {
+		mainPanel.armyView.setVisible(false);
+		mainPanel.regimentView.setVisible(false);
+	}
+
 }
