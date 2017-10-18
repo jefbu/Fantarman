@@ -32,4 +32,12 @@ public class Armour {
 	public static Armour shell = new Armour("Hard Shell", 0, 0, 0, 0, 0, 0);
 	public static Armour metalshell = new Armour("Metal-Reinforced", 0, 1, 5, 0, 75, 15);
 	
+	public static Armour weatheredleather = new Armour("Weathered Leather", 0, 0, 0, 0, 0, 0);
+	public static Armour fullleather = new Armour("Full Leather", 0, 0, 8, 0, 125, 40);
+	
+	public static Armour woven = new Armour("Woven Basket", 0, 0, 0, 0, 0, 0);
+	public static Armour mythrilenvelope = new Armour("Mythril Envelope", 1, 0, 20, 0, 150, 20);
+	
+	public static Armour chainvest = new Armour("Chain Vest", 0, 0, 10, 0, 125, 50);
+	
 }

@@ -46,6 +46,17 @@ public class Weapons {
 	public static Weapons staves = new Weapons("Oaken Staves", 0, 5, 0, 5, 0, 0, 75, 15);
 	public static Weapons sceptres = new Weapons("Royal Sceptres", 0, 0, 0, 0, 0, 5, 75, 25);
 	
+	public static Weapons spears = new Weapons("Spears", 0, 0, 0, 0, 0, 0, 0, 0);
+	public static Weapons slingshots = new Weapons("Slingshots", 0, 0, 0, 0, 5, 30, 100, 15);
+	public static Weapons shields = new Weapons("Shields", 0, 0, 0, 10, 0, 0, 75, 20);
+	
+	public static Weapons bombs = new Weapons("Bombs", 0, 0, 0, 0, 0, 0, 0, 0);
+	public static Weapons skunkbombs = new Weapons("Skunk Bombs", 0, 0, 0, 0, 0, 5, 50, 25);
+	
+	public static Weapons polearms = new Weapons("Polearms", 0, 5, 5, 5, 0, 0, 125, 25);
+	
+	
+	
 	
 	
 	

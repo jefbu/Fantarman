@@ -11,9 +11,9 @@ import main.entity.races.Race;
 import main.entity.regiments.Regiment;
 import main.entity.regiments.RegimentType;
 
-public class Harvesters extends Regiment {
+public class Auxiliaries extends Regiment {
 	
-	public Harvesters(String name, Captain captain) {
+	public Auxiliaries(String name, Captain captain) {
 		
 		super();
 		for (int i = 0; i < captain.orders; i++) {
@@ -22,23 +22,23 @@ public class Harvesters extends Regiment {
 		
 		this.name = name;
 		this.race = Race.Piknin;
-		this.lieutenantsSize = 2;
+		this.lieutenantsSize = 1;
 		this.captain = captain;
 		this.type = RegimentType.LIGHT_INFANTRY;
 		
-		this.baseAttack = 35;
-		this.baseCharge = 5;
-		this.baseDefence = 40;
+		this.baseAttack = 40;
+		this.baseCharge = 10;
+		this.baseDefence = 45;
 		this.baseMissile = 0;
-		this.baseMorale = 40;
+		this.baseMorale = 45;
 		this.baseSpeed = 12;
-		this.baseSpeedVariation = 3;
+		this.baseSpeedVariation = 4;
 		this.baseRange = 0;
 		this.baseMove = 5;
 		this.baseRun = 3;
-		this.baseLife = 30;
+		this.baseLife = 15;
 		
-		this.rows = 4;
+		this.rows = 2;
 		this.columns = 3;
 		
 		panels = new int[rows * columns];
@@ -46,17 +46,17 @@ public class Harvesters extends Regiment {
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/harvesters.png", width, height);
+		icon = imageLoader.loadImageIcon("/regiments/auxiliaries.png", width, height);
 		
-		weapons.add(Weapons.sickles);
-		weapons.add(Weapons.scythes);
-		weapons.add(Weapons.flails);
+		weapons.add(Weapons.spears);
+		weapons.add(Weapons.shields);
 		
-		armours.add(Armour.quilt);
-		armours.add(Armour.halfLeather);
+		armours.add(Armour.weatheredleather);
+		armours.add(Armour.leather);
+		armours.add(Armour.fullleather);
 		
-		this.weapon = Weapons.sickles;
-		this.armour = Armour.quilt;
+		this.weapon = Weapons.spears;
+		this.armour = Armour.weatheredleather;
 		
 		calculateTotalStats();
 		calculateValue();
