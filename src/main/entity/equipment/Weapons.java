@@ -34,6 +34,18 @@ public class Weapons {
 	public static Weapons thoroughbredPigeons = new Weapons("Thoroughbred", 0, 0, 0, 0, 1, 0, 120, 25);
 	public static Weapons turtledoves = new Weapons("Turtle Doves", 0, 0, 0, 0, 2, -10, 125, 25);
 	
+	public static Weapons claws = new Weapons("Claws", 0, 0, 0, 0, 0, 0, 0, 0);
+	public static Weapons spikes = new Weapons("Extra Spikes", 0, 0, 10, 0, 0, 0, 75, 10);
+	public static Weapons razorclaws = new Weapons("Sharpened Claws", 0, 5, 0, 0, 0, 0, 100, 20);
+	
+	public static Weapons sickles = new Weapons("Sickles", 0, 0, 0, 0, 0, 0, 0, 0);
+	public static Weapons scythes = new Weapons("Scythes", 0, 5, 0, 5, 0, 0, 50, 20);
+	public static Weapons flails = new Weapons("Flails", 0, 5, 5, 0, 0, 0, 50, 15);
+	
+	public static Weapons wands = new Weapons("Magic Wands", 0, 0, 0, 0, 0, 0, 0, 0);
+	public static Weapons staves = new Weapons("Oaken Staves", 0, 5, 0, 5, 0, 0, 75, 15);
+	public static Weapons sceptres = new Weapons("Royal Sceptres", 0, 0, 0, 0, 0, 5, 75, 25);
+	
 	
 	
 	

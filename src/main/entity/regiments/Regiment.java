@@ -34,21 +34,33 @@ public abstract class Regiment {
 	public int value;
 	public int upkeep;
 	public int level;
-	
+
 	public Role role;
 	public Race race;
 
-	public int attack;
-	public int defence;
-	public int move;
-	public int charge;
-	public int run;
-	public int range;
-	public int missile;
-	public int morale;
-	public int speed;
-	public int speedVariation;
-	public int life;
+	public int baseAttack;
+	public int baseDefence;
+	public int baseMove;
+	public int baseCharge;
+	public int baseRun;
+	public int baseRange;
+	public int baseMissile;
+	public int baseMorale;
+	public int baseSpeed;
+	public int baseSpeedVariation;
+	public int baseLife;
+
+	public int totalAttack;
+	public int totalDefence;
+	public int totalMove;
+	public int totalCharge;
+	public int totalRun;
+	public int totalRange;
+	public int totalMissile;
+	public int totalMorale;
+	public int totalSpeed;
+	public int totalSpeedVariation;
+	public int totalLife;
 
 	public int battleAttack;
 	public int battleDefence;
@@ -110,31 +122,54 @@ public abstract class Regiment {
 	public int rollSpeedVariation() {
 
 		Random random = new Random();
-		return random.nextInt(speedVariation);
+		return random.nextInt(totalSpeedVariation);
 
 	}
 
 	public void attributeBattleSpeed() {
-		battleSpeed = speed + rollSpeedVariation();
+		battleSpeed = totalSpeed + rollSpeedVariation();
 	}
 
 	public void attributeBattleLife() {
-		this.battleLife = life;
+		this.battleLife = totalLife;
 	}
 
 	public void attributeBattleStats() {
 
-		this.battleAttack = attack;
-		this.battleCharge = charge;
-		this.battleDefence = defence;
-		this.battleMissile = missile;
-		this.battleMorale = morale;
-		this.battleSpeed = speed;
-		this.battleSpeedVariation = speedVariation;
-		this.battleMove = move;
-		this.battleRange = range;
-		this.battleRun = run;
+		this.battleAttack = totalAttack;
+		this.battleCharge = totalCharge;
+		this.battleDefence = totalDefence;
+		this.battleMissile = totalMissile;
+		this.battleMorale = totalMorale;
+		this.battleSpeed = totalSpeed;
+		this.battleSpeedVariation = totalSpeedVariation;
+		this.battleMove = totalMove;
+		this.battleRange = totalRange;
+		this.battleRun = totalRun;
 		this.defeated = false;
+
+	}
+
+	public void calculateValue() {
+		this.value = totalAttack + totalDefence + totalMissile + totalMorale + totalCharge / 2 + totalLife * 3
+				+ totalSpeed * 10 + totalSpeedVariation * 5 + totalRun * 20 + totalMove * 30 + totalRange * 30
+				+ lieutenantsSize * 40;
+		this.upkeep = value / 10 + weapon.upkeep + armour.upkeep;
+	}
+
+	public void calculateTotalStats() {
+
+		totalAttack = baseAttack + captain.attackBonus + weapon.attackBonus;
+		totalDefence = baseDefence + captain.defenceBonus + armour.defenceBonus;
+		totalMove = baseMove - armour.movPenalty;
+		totalCharge = baseCharge + captain.chargeBonus + weapon.chargeBonus;
+		totalRun = baseRun;
+		totalRange = baseRange + weapon.rangeBonus;
+		totalMissile = baseMissile + captain.missileBonus + weapon.missileBonus;
+		totalMorale = baseMorale + captain.moraleBonus + armour.moraleBonus;
+		totalSpeed = baseSpeed + captain.speedBonus - weapon.spdPenalty - armour.spdPenalty;
+		totalSpeedVariation = baseSpeedVariation;
+		totalLife = baseLife;
 
 	}
 
@@ -164,7 +199,8 @@ public abstract class Regiment {
 		switch (order) {
 
 		case CHARGE:
-			OrderMethods.chargeTarget(this, target, activeArmy, activeRegimentIndex, yourBattleArmy, opponentBattleArmy);
+			OrderMethods.chargeTarget(this, target, activeArmy, activeRegimentIndex, yourBattleArmy,
+					opponentBattleArmy);
 			break;
 		case Move_to:
 			OrderMethods.moveTo(this, target, activeArmy, activeRegimentIndex, yourBattleArmy, opponentBattleArmy);

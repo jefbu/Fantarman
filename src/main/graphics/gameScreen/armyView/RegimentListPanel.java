@@ -33,16 +33,16 @@ public class RegimentListPanel extends ContentPanel {
 		
 		for (int i = 0; i < Main.yourArmy.roster.size(); i++) {
 			panelList.get(i).panelList.get(0).label.setText(Main.yourArmy.roster.get(i).name);
-			panelList.get(i).panelList.get(1).label.setText(Integer.toString(Main.yourArmy.roster.get(i).life));
-			panelList.get(i).panelList.get(2).label.setText(Integer.toString(Main.yourArmy.roster.get(i).move));
-			panelList.get(i).panelList.get(3).label.setText(Integer.toString(Main.yourArmy.roster.get(i).run));
-			panelList.get(i).panelList.get(4).label.setText(Integer.toString(Main.yourArmy.roster.get(i).speed));
-			panelList.get(i).panelList.get(5).label.setText(Integer.toString(Main.yourArmy.roster.get(i).attack));
-			panelList.get(i).panelList.get(6).label.setText(Integer.toString(Main.yourArmy.roster.get(i).charge));
-			panelList.get(i).panelList.get(7).label.setText(Integer.toString(Main.yourArmy.roster.get(i).defence));
-			panelList.get(i).panelList.get(8).label.setText(Integer.toString(Main.yourArmy.roster.get(i).range));
-			panelList.get(i).panelList.get(9).label.setText(Integer.toString(Main.yourArmy.roster.get(i).missile));
-			panelList.get(i).panelList.get(10).label.setText(Integer.toString(Main.yourArmy.roster.get(i).morale));
+			panelList.get(i).panelList.get(1).label.setText(Integer.toString(Main.yourArmy.roster.get(i).totalLife));
+			panelList.get(i).panelList.get(2).label.setText(Integer.toString(Main.yourArmy.roster.get(i).totalMove));
+			panelList.get(i).panelList.get(3).label.setText(Integer.toString(Main.yourArmy.roster.get(i).totalRun));
+			panelList.get(i).panelList.get(4).label.setText(Integer.toString(Main.yourArmy.roster.get(i).totalSpeed));
+			panelList.get(i).panelList.get(5).label.setText(Integer.toString(Main.yourArmy.roster.get(i).totalAttack));
+			panelList.get(i).panelList.get(6).label.setText(Integer.toString(Main.yourArmy.roster.get(i).totalCharge));
+			panelList.get(i).panelList.get(7).label.setText(Integer.toString(Main.yourArmy.roster.get(i).totalDefence));
+			panelList.get(i).panelList.get(8).label.setText(Integer.toString(Main.yourArmy.roster.get(i).totalRange));
+			panelList.get(i).panelList.get(9).label.setText(Integer.toString(Main.yourArmy.roster.get(i).totalMissile));
+			panelList.get(i).panelList.get(10).label.setText(Integer.toString(Main.yourArmy.roster.get(i).totalMorale));
 			}
 		
 	}
@@ -53,14 +53,14 @@ public class RegimentListPanel extends ContentPanel {
 			panelList.get(i).panelList.get(0).label.setText(Main.yourArmy.roster.get(i).name);
 			panelList.get(i).panelList.get(1).label.setText(Main.yourArmy.roster.get(i).captain.name);
 			panelList.get(i).panelList.get(2).label.setText("0");
-			panelList.get(i).panelList.get(3).label.setText(Integer.toString(Main.yourArmy.roster.get(i).run));
-			panelList.get(i).panelList.get(4).label.setText(Integer.toString(Main.yourArmy.roster.get(i).speed));
-			panelList.get(i).panelList.get(5).label.setText(Integer.toString(Main.yourArmy.roster.get(i).attack));
-			panelList.get(i).panelList.get(6).label.setText(Integer.toString(Main.yourArmy.roster.get(i).charge));
-			panelList.get(i).panelList.get(7).label.setText(Integer.toString(Main.yourArmy.roster.get(i).defence));
-			panelList.get(i).panelList.get(8).label.setText(Integer.toString(Main.yourArmy.roster.get(i).range));
-			panelList.get(i).panelList.get(9).label.setText(Integer.toString(Main.yourArmy.roster.get(i).missile));
-			panelList.get(i).panelList.get(10).label.setText(Integer.toString(Main.yourArmy.roster.get(i).morale));
+			panelList.get(i).panelList.get(3).label.setText(Integer.toString(Main.yourArmy.roster.get(i).totalRun));
+			panelList.get(i).panelList.get(4).label.setText(Integer.toString(Main.yourArmy.roster.get(i).totalSpeed));
+			panelList.get(i).panelList.get(5).label.setText(Integer.toString(Main.yourArmy.roster.get(i).totalAttack));
+			panelList.get(i).panelList.get(6).label.setText(Integer.toString(Main.yourArmy.roster.get(i).totalCharge));
+			panelList.get(i).panelList.get(7).label.setText(Integer.toString(Main.yourArmy.roster.get(i).totalDefence));
+			panelList.get(i).panelList.get(8).label.setText(Integer.toString(Main.yourArmy.roster.get(i).totalRange));
+			panelList.get(i).panelList.get(9).label.setText(Integer.toString(Main.yourArmy.roster.get(i).totalMissile));
+			panelList.get(i).panelList.get(10).label.setText(Integer.toString(Main.yourArmy.roster.get(i).totalMorale));
 			}
 		
 	}
@@ -70,15 +70,15 @@ public class RegimentListPanel extends ContentPanel {
 		for (int i = 0; i < Main.yourArmy.roster.size(); i++) {
 			panelList.get(i).panelList.get(0).label.setText(Main.yourArmy.roster.get(i).name);
 			panelList.get(i).panelList.get(1).label.setText(Integer.toString(Main.yourArmy.roster.get(i).value));
-			panelList.get(i).panelList.get(2).label.setText(Integer.toString(Main.yourArmy.roster.get(i).move));
-			panelList.get(i).panelList.get(3).label.setText(Integer.toString(Main.yourArmy.roster.get(i).run));
-			panelList.get(i).panelList.get(4).label.setText(Integer.toString(Main.yourArmy.roster.get(i).speed));
-			panelList.get(i).panelList.get(5).label.setText(Integer.toString(Main.yourArmy.roster.get(i).attack));
-			panelList.get(i).panelList.get(6).label.setText(Integer.toString(Main.yourArmy.roster.get(i).charge));
-			panelList.get(i).panelList.get(7).label.setText(Integer.toString(Main.yourArmy.roster.get(i).defence));
-			panelList.get(i).panelList.get(8).label.setText(Integer.toString(Main.yourArmy.roster.get(i).range));
-			panelList.get(i).panelList.get(9).label.setText(Integer.toString(Main.yourArmy.roster.get(i).missile));
-			panelList.get(i).panelList.get(10).label.setText(Integer.toString(Main.yourArmy.roster.get(i).morale));
+			panelList.get(i).panelList.get(2).label.setText(Integer.toString(Main.yourArmy.roster.get(i).totalMove));
+			panelList.get(i).panelList.get(3).label.setText(Integer.toString(Main.yourArmy.roster.get(i).totalRun));
+			panelList.get(i).panelList.get(4).label.setText(Integer.toString(Main.yourArmy.roster.get(i).totalSpeed));
+			panelList.get(i).panelList.get(5).label.setText(Integer.toString(Main.yourArmy.roster.get(i).totalAttack));
+			panelList.get(i).panelList.get(6).label.setText(Integer.toString(Main.yourArmy.roster.get(i).totalCharge));
+			panelList.get(i).panelList.get(7).label.setText(Integer.toString(Main.yourArmy.roster.get(i).totalDefence));
+			panelList.get(i).panelList.get(8).label.setText(Integer.toString(Main.yourArmy.roster.get(i).totalRange));
+			panelList.get(i).panelList.get(9).label.setText(Integer.toString(Main.yourArmy.roster.get(i).totalMissile));
+			panelList.get(i).panelList.get(10).label.setText(Integer.toString(Main.yourArmy.roster.get(i).totalMorale));
 			}
 		
 	}

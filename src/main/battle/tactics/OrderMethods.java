@@ -11,7 +11,7 @@ public abstract class OrderMethods {
 	public static void chargeTarget(Regiment regiment, Regiment target, Army activeArmy, int activeRegimentIndex,
 			Army yourBattleArmy, Army opponentBattleArmy) {
 		regiment.battleDefence -= 5;
-		MoveMethod.move(regiment, regiment.battleMove + regiment.run, target, activeArmy, activeRegimentIndex,
+		MoveMethod.move(regiment, regiment.battleMove + regiment.battleRun, target, activeArmy, activeRegimentIndex,
 				yourBattleArmy, opponentBattleArmy);
 		writeBasicOrderText(Order.CHARGE, regiment, target);
 	}
@@ -60,7 +60,7 @@ public abstract class OrderMethods {
 
 		Random random = new Random();
 		int recoveries = 0;
-		int lostLife = regiment.life - regiment.battleLife;
+		int lostLife = regiment.totalLife - regiment.battleLife;
 		for (int i = 0; i < lostLife; i++) {
 			if (random.nextInt(100) < 10) {
 				regiment.battleLife++;

@@ -133,7 +133,7 @@ public class BattleOrchestrator {
 	public void	refreshRegimentColours() {
 			
 		for (Regiment yourRegiment : yourBattleArmy.roster) {
-			double dred = (yourRegiment.battleLife * 10 / yourRegiment.life);
+			double dred = (yourRegiment.battleLife * 10 / yourRegiment.totalLife);
 			dred = dred / 10;
 			int red = 255 - (int) (dred * 255);
 			if (red > 255) { red = 255; } else if (red < 0) { red = 0; }
@@ -144,7 +144,7 @@ public class BattleOrchestrator {
 		}
 
 		for (Regiment enemyRegiment : opponentBattleArmy.roster) {
-			double dred = (enemyRegiment.battleLife * 10 / enemyRegiment.life);
+			double dred = (enemyRegiment.battleLife * 10 / enemyRegiment.totalLife);
 			dred = dred / 10;
 			int red = 255 - (int) (dred * 255);
 			if (red > 255) { red = 255; } else if (red < 0) { red = 0; }

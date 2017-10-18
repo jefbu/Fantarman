@@ -54,74 +54,74 @@ public class BattleStatsPanel extends ContentPanel {
 	public void fillBattleStatsPanel(Regiment regiment) {
 
 		lifePanel.titlePanel.setPreferredSize(
-				new Dimension(lifePanel.getWidth() * (regiment.life * 2) / 100, lifePanel.getHeight()));
-		lifePanel.contentPanel.setPreferredSize(new Dimension(lifePanel.getWidth() * (100 - regiment.life * 2) / 100,
+				new Dimension(lifePanel.getWidth() * (regiment.totalLife * 2) / 100, lifePanel.getHeight()));
+		lifePanel.contentPanel.setPreferredSize(new Dimension(lifePanel.getWidth() * (100 - regiment.totalLife * 2) / 100,
 				lifePanel.contentPanel.getHeight()));
 		lifePanel.titleLabel.setText("Life");
-		lifePanel.contentLabel.setText(Integer.toString(regiment.life));
+		lifePanel.contentLabel.setText(Integer.toString(regiment.totalLife));
 		
 		moralePanel.titlePanel.setPreferredSize(
-				new Dimension(moralePanel.getWidth() * (regiment.morale) / 100, moralePanel.getHeight()));
+				new Dimension(moralePanel.getWidth() * (regiment.totalMorale) / 100, moralePanel.getHeight()));
 		moralePanel.contentPanel.setPreferredSize(
-				new Dimension(moralePanel.getWidth() * (100 - regiment.morale) / 100, moralePanel.getHeight()));
+				new Dimension(moralePanel.getWidth() * (100 - regiment.totalMorale) / 100, moralePanel.getHeight()));
 		moralePanel.titleLabel.setText("Morale");
-		moralePanel.contentLabel.setText(Integer.toString(regiment.morale));
+		moralePanel.contentLabel.setText(Integer.toString(regiment.totalMorale));
 		
 		movePanel.titlePanel.setPreferredSize(
-				new Dimension(movePanel.getWidth() * (regiment.move) / 10, movePanel.getHeight()));
+				new Dimension(movePanel.getWidth() * (regiment.totalMove) / 10, movePanel.getHeight()));
 		movePanel.contentPanel.setPreferredSize(
-				new Dimension(movePanel.getWidth() * (10 - regiment.move) / 10, movePanel.getHeight()));
+				new Dimension(movePanel.getWidth() * (10 - regiment.totalMove) / 10, movePanel.getHeight()));
 		movePanel.titleLabel.setText("Move");
-		movePanel.contentLabel.setText(Integer.toString(regiment.move));
+		movePanel.contentLabel.setText(Integer.toString(regiment.totalMove));
 		
 		runPanel.titlePanel.setPreferredSize(
-				new Dimension(runPanel.getWidth() * (regiment.run) / 10, runPanel.getHeight()));
+				new Dimension(runPanel.getWidth() * (regiment.totalRun) / 10, runPanel.getHeight()));
 		runPanel.contentPanel.setPreferredSize(
-				new Dimension(runPanel.getWidth() * (10 - regiment.run) / 10, runPanel.getHeight()));
+				new Dimension(runPanel.getWidth() * (10 - regiment.totalRun) / 10, runPanel.getHeight()));
 		runPanel.titleLabel.setText("Run");
-		runPanel.contentLabel.setText(Integer.toString(regiment.run));
+		runPanel.contentLabel.setText(Integer.toString(regiment.totalRun));
 		
 		attackPanel.titlePanel.setPreferredSize(
-				new Dimension(attackPanel.getWidth() * (regiment.attack) / 100, attackPanel.getHeight()));
+				new Dimension(attackPanel.getWidth() * (regiment.totalAttack) / 100, attackPanel.getHeight()));
 		attackPanel.contentPanel.setPreferredSize(
-				new Dimension(attackPanel.getWidth() * (100 - regiment.attack) / 100, attackPanel.getHeight()));
+				new Dimension(attackPanel.getWidth() * (100 - regiment.totalAttack) / 100, attackPanel.getHeight()));
 		attackPanel.titleLabel.setText("Attack");
-		attackPanel.contentLabel.setText(Integer.toString(regiment.attack));
+		attackPanel.contentLabel.setText(Integer.toString(regiment.totalAttack));
 		
 		defencePanel.titlePanel.setPreferredSize(
-				new Dimension(defencePanel.getWidth() * (regiment.defence) / 100, defencePanel.getHeight()));
+				new Dimension(defencePanel.getWidth() * (regiment.totalDefence) / 100, defencePanel.getHeight()));
 		defencePanel.contentPanel.setPreferredSize(
-				new Dimension(defencePanel.getWidth() * (100 - regiment.defence) / 100, defencePanel.getHeight()));
+				new Dimension(defencePanel.getWidth() * (100 - regiment.totalDefence) / 100, defencePanel.getHeight()));
 		defencePanel.titleLabel.setText("Defence");
-		defencePanel.contentLabel.setText(Integer.toString(regiment.defence));
+		defencePanel.contentLabel.setText(Integer.toString(regiment.totalDefence));
 		
 		chargePanel.titlePanel.setPreferredSize(
-				new Dimension(chargePanel.getWidth() * (regiment.charge * 2) / 100, chargePanel.getHeight()));
-		chargePanel.contentPanel.setPreferredSize(new Dimension(chargePanel.getWidth() * (100 - regiment.charge * 2) / 100,
+				new Dimension(chargePanel.getWidth() * (regiment.totalCharge * 2) / 100, chargePanel.getHeight()));
+		chargePanel.contentPanel.setPreferredSize(new Dimension(chargePanel.getWidth() * (100 - regiment.totalCharge * 2) / 100,
 				chargePanel.contentPanel.getHeight()));
 		chargePanel.titleLabel.setText("Charge");
-		chargePanel.contentLabel.setText(Integer.toString(regiment.charge));
+		chargePanel.contentLabel.setText(Integer.toString(regiment.totalCharge));
 		
 		speedPanel.titlePanel.setPreferredSize(
-				new Dimension(speedPanel.getWidth() * (regiment.speed * 4) / 100, speedPanel.getHeight()));
-		speedPanel.contentPanel.setPreferredSize(new Dimension(speedPanel.getWidth() * (100 - regiment.speed * 4) / 100,
+				new Dimension(speedPanel.getWidth() * (regiment.totalSpeed * 4) / 100, speedPanel.getHeight()));
+		speedPanel.contentPanel.setPreferredSize(new Dimension(speedPanel.getWidth() * (100 - regiment.totalSpeed * 4) / 100,
 				speedPanel.contentPanel.getHeight()));
 		speedPanel.titleLabel.setText("Speed");
-		speedPanel.contentLabel.setText(Integer.toString(regiment.speed));
+		speedPanel.contentLabel.setText(Integer.toString(regiment.totalSpeed));
 		
 		rangePanel.titlePanel.setPreferredSize(
-				new Dimension(rangePanel.getWidth() * (regiment.range * 4) / 100, rangePanel.getHeight()));
-		rangePanel.contentPanel.setPreferredSize(new Dimension(rangePanel.getWidth() * (100 - regiment.range * 4) / 100,
+				new Dimension(rangePanel.getWidth() * (regiment.totalRange * 4) / 100, rangePanel.getHeight()));
+		rangePanel.contentPanel.setPreferredSize(new Dimension(rangePanel.getWidth() * (100 - regiment.totalRange * 4) / 100,
 				rangePanel.contentPanel.getHeight()));
 		rangePanel.titleLabel.setText("Range");
-		rangePanel.contentLabel.setText(Integer.toString(regiment.range));
+		rangePanel.contentLabel.setText(Integer.toString(regiment.totalRange));
 				
 		missilePanel.titlePanel.setPreferredSize(
-				new Dimension(missilePanel.getWidth() * (regiment.missile) / 100, missilePanel.getHeight()));
+				new Dimension(missilePanel.getWidth() * (regiment.totalMissile) / 100, missilePanel.getHeight()));
 		missilePanel.contentPanel.setPreferredSize(
-				new Dimension(missilePanel.getWidth() * (100 - regiment.missile) / 100, missilePanel.getHeight()));
+				new Dimension(missilePanel.getWidth() * (100 - regiment.totalMissile) / 100, missilePanel.getHeight()));
 		missilePanel.titleLabel.setText("Missile");
-		missilePanel.contentLabel.setText(Integer.toString(regiment.missile));
+		missilePanel.contentLabel.setText(Integer.toString(regiment.totalMissile));
 				
 		
 		

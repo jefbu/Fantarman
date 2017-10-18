@@ -10,35 +10,35 @@ public class ConditionChecker {
 			switch (tactic.condition) {
 
 			case Life_full:
-				if (regiment.battleLife == regiment.life) {
+				if (regiment.battleLife == regiment.totalLife) {
 					return tactic;
 				} else {
 					break;
 				}
 			
 			case Life_under_100:
-				if (regiment.battleLife < regiment.life) {
+				if (regiment.battleLife < regiment.totalLife) {
 					return tactic;
 				} else { 
 					break; 
 				}
 				
 			case Life_under_75:
-				if (regiment.battleLife < regiment.life * 3 / 4) {
+				if (regiment.battleLife < regiment.totalLife * 3 / 4) {
 					return tactic;
 				} else { 
 					break; 
 				}
 				
 			case Life_under_50:
-				if (regiment.battleLife < regiment.life / 2) {
+				if (regiment.battleLife < regiment.totalLife / 2) {
 					return tactic;
 				} else { 
 					break; 
 				}
 				
 			case Life_under_25:
-				if (regiment.battleLife < regiment.life / 4) {
+				if (regiment.battleLife < regiment.totalLife / 4) {
 					return tactic;
 				} else { 
 					break; 

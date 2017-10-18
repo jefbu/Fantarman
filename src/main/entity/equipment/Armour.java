@@ -29,4 +29,7 @@ public class Armour {
 	public static Armour halfLeather = new Armour("Half-Leather", 0, 0, 3, 0, 100, 20);
 	public static Armour leather = new Armour("Leather", 0, 0, 5, 0, 120, 25);
 	
+	public static Armour shell = new Armour("Hard Shell", 0, 0, 0, 0, 0, 0);
+	public static Armour metalshell = new Armour("Metal-Reinforced", 0, 1, 5, 0, 75, 15);
+	
 }

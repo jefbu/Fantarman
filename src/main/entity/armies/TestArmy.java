@@ -1,9 +1,9 @@
 package main.entity.armies;
 
 import main.entity.captains.Captain;
-import main.entity.regiments.DoveMasters;
 import main.entity.regiments.FireMages;
-import main.entity.regiments.Harvesters;
+import main.entity.regiments.piknin.DoveMasters;
+import main.entity.regiments.piknin.Harvesters;
 import main.entity.skills.Skills;
 
 public class TestArmy extends Army {

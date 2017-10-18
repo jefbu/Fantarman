@@ -244,19 +244,19 @@ public class Deployment {
 		String name = "<font color = #EEE000>" + yourBattleArmy.roster.get(playerCounter).name + "<br>";
 		String attack = "<font color = 'rgb(220, 220, 220)'> Attack: ";
 		String attackStat = "<font color = rgb(" + attackRed + "," + attackGreen + ", 30)>"
-				+ Integer.toString(yourBattleArmy.roster.get(playerCounter).attack) + "<br>";
+				+ Integer.toString(yourBattleArmy.roster.get(playerCounter).totalAttack) + "<br>";
 		String charge = "<font color = 'rgb(220, 220, 220)'> Charge: ";
 		String chargeStat = "<font color = rgb(" + chargeRed + "," + chargeGreen + ", 30)>"
-				+ Integer.toString(yourBattleArmy.roster.get(playerCounter).charge) + "<br>";
+				+ Integer.toString(yourBattleArmy.roster.get(playerCounter).totalCharge) + "<br>";
 		String defence = "<font color = 'rgb(220, 220, 220)'> Defence: ";
 		String defenceStat = "<font color = rgb(" + defenceRed + "," + defenceGreen + ", 30)>"
-				+ Integer.toString(yourBattleArmy.roster.get(playerCounter).defence) + "<br>";
+				+ Integer.toString(yourBattleArmy.roster.get(playerCounter).totalDefence) + "<br>";
 		String ballistic = "<font color = 'rgb(220, 220, 220)'> Ballistic: ";
 		String ballisticStat = "<font color = rgb(" + ballisticRed + "," + ballisticGreen + ", 30)>"
-				+ Integer.toString(yourBattleArmy.roster.get(playerCounter).missile) + "<br>";
+				+ Integer.toString(yourBattleArmy.roster.get(playerCounter).totalMissile) + "<br>";
 		String morale = "<font color = 'rgb(220, 220, 220)'> Morale: ";
 		String moraleStat = "<font color = rgb(" + moraleRed + "," + moraleGreen + ", 30)>"
-				+ Integer.toString(yourBattleArmy.roster.get(playerCounter).morale) + "<br>";
+				+ Integer.toString(yourBattleArmy.roster.get(playerCounter).totalMorale) + "<br>";
 
 		RightAggregatePanel.infoTextPanel.textArea.setText(intro + name + attack + attackStat + charge + chargeStat
 				+ defence + defenceStat + ballistic + ballisticStat + morale + moraleStat);
@@ -264,16 +264,16 @@ public class Deployment {
 
 	private void applyStatColours() {
 
-		attackGreen = 50 + 2 * yourBattleArmy.roster.get(playerCounter).attack;
-		attackRed = 250 - 2 * yourBattleArmy.roster.get(playerCounter).attack;
-		defenceGreen = 50 + 2 * yourBattleArmy.roster.get(playerCounter).defence;
-		defenceRed = 250 - 2 * yourBattleArmy.roster.get(playerCounter).defence;
-		chargeGreen = 50 + 2 * yourBattleArmy.roster.get(playerCounter).charge;
-		chargeRed = 250 - 2 * yourBattleArmy.roster.get(playerCounter).charge;
-		ballisticGreen = 50 + 2 * yourBattleArmy.roster.get(playerCounter).missile;
-		ballisticRed = 250 - 2 * yourBattleArmy.roster.get(playerCounter).missile;
-		moraleGreen = 50 + 2 * yourBattleArmy.roster.get(playerCounter).morale;
-		moraleRed = 250 - 2 * yourBattleArmy.roster.get(playerCounter).morale;
+		attackGreen = 50 + 2 * yourBattleArmy.roster.get(playerCounter).totalAttack;
+		attackRed = 250 - 2 * yourBattleArmy.roster.get(playerCounter).totalAttack;
+		defenceGreen = 50 + 2 * yourBattleArmy.roster.get(playerCounter).totalDefence;
+		defenceRed = 250 - 2 * yourBattleArmy.roster.get(playerCounter).totalDefence;
+		chargeGreen = 50 + 2 * yourBattleArmy.roster.get(playerCounter).totalCharge;
+		chargeRed = 250 - 2 * yourBattleArmy.roster.get(playerCounter).totalCharge;
+		ballisticGreen = 50 + 2 * yourBattleArmy.roster.get(playerCounter).totalMissile;
+		ballisticRed = 250 - 2 * yourBattleArmy.roster.get(playerCounter).totalMissile;
+		moraleGreen = 50 + 2 * yourBattleArmy.roster.get(playerCounter).totalMorale;
+		moraleRed = 250 - 2 * yourBattleArmy.roster.get(playerCounter).totalMorale;
 
 	}
 
