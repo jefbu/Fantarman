@@ -11,7 +11,7 @@ import main.utility.ImageLoader;
 public class IconLabelPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	JLabel iconLabel;
+	public JLabel iconLabel;
 	public ButtonedPanel buttonedPanel;
 	ImageLoader imageLoader;
 	
