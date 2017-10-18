@@ -1,8 +1,11 @@
 package main.graphics.gameScreen;
 
 import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
-import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import main.components.Colour;
@@ -12,6 +15,9 @@ import main.utility.ImageLoader;
 public class TitleScreen extends JPanel {
 
 	private static final long serialVersionUID = 1L;
+	JLabel background;
+	JPanel panel;
+	BufferedImage image;
 
 	public TitleScreen(int width, int height) {
 		
@@ -19,13 +25,26 @@ public class TitleScreen extends JPanel {
 		setPreferredSize(new Dimension(width, height));
 		
 		ImageLoader imageLoader = new ImageLoader();
-		IconLabelPanel background = new IconLabelPanel(width, height, Colour.LBLUE);
-		background.iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelTeal.png", width, height));
-		add(background);
-		
-		JButton button = new JButton("Hello");
-		button.setPreferredSize(new Dimension(300, 500));
-		background.buttonedPanel.label.add(button);
+		try {
+			image = imageLoader.loadBufferedImage("/components/IconLabelPanelRed.png");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+        JPanel panel = new JPanel() {
+			private static final long serialVersionUID = 1L;
+			@Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                g.drawImage(image, 0, 0, width, height, null);
+            }
+        };
+        panel.setPreferredSize(new Dimension(width, height));
+        add(panel);
+        
+        IconLabelPanel startPanel = new IconLabelPanel(width / 3, height / 5, Colour.BLUE);
+        panel.add(startPanel);
+
 		
 	}
 
