@@ -47,7 +47,7 @@ public class Captain {
 
 	}
 
-	public static Captain boris = new Captain("Boris", "N.B.", 5, 2, 5, 2, 3, 3, 2, 24, Skills.Healer1,
-			Skills.Deployer);
+	public static Captain boris = new Captain("Boris", "N.B.", 5, 2, 5, 2, 3, 3, 2, 24, Skills.Healer1, Skills.Deployer);
+	public static Captain ole_racecar = new Captain("Ole Racecar", "female", 3, 2, 1, 5, 0, 0, 3, 40, Skills.Healer2, Skills.Deployer);
 
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import main.battle.Battle;
 import main.entity.armies.Army;
-import main.entity.armies.TestArmy;
+import main.entity.armies.Pickles;
 import main.graphics.Screen;
 import main.graphics.TileImages;
 import main.graphics.battleScreen.BattleScreen;
@@ -25,7 +25,7 @@ public class Main {
 		battles = new ArrayList<Battle>();
 		TileImages.loadImages(BattleScreen.battleScene.roundedWidth / 48, BattleScreen.battleScene.roundedHeight / 32);
 						
-		yourArmy = new TestArmy();
+		yourArmy = new Pickles();
 		
 		Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
 		
