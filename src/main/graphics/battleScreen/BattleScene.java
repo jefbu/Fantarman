@@ -70,13 +70,13 @@ public class BattleScene extends JPanel {
 				panel.terrain = TerrainType.GRASS;
 				roll = random.nextInt(10000) + 1;
 				if (roll <= 5) {
-				panel.icon = TileImages.grass4Icon;
-			    } else if (roll <= 10) {
-				panel.icon = TileImages.grass3Icon;
-				} else if (roll <= 20){
-				panel.icon = TileImages.grass2Icon;
+					panel.icon = TileImages.grass4Icon;
+				} else if (roll <= 10) {
+					panel.icon = TileImages.grass3Icon;
+				} else if (roll <= 20) {
+					panel.icon = TileImages.grass2Icon;
 				} else {
-				panel.icon = TileImages.grass1Icon;
+					panel.icon = TileImages.grass1Icon;
 				}
 				panel.button.setIcon(panel.icon);
 				break;
@@ -94,11 +94,11 @@ public class BattleScene extends JPanel {
 				panel.terrain = TerrainType.DESERT;
 				roll = random.nextInt(1000);
 				if (roll < 3) {
-				panel.icon = TileImages.desert3Icon;	
+					panel.icon = TileImages.desert3Icon;
 				} else if (roll < 10) {
-				panel.icon = TileImages.desert2Icon;
+					panel.icon = TileImages.desert2Icon;
 				} else {
-				panel.icon = TileImages.desert1Icon;
+					panel.icon = TileImages.desert1Icon;
 				}
 				panel.button.setIcon(panel.icon);
 				break;
@@ -118,6 +118,7 @@ public class BattleScene extends JPanel {
 		boolean hasRiver = checkRiver(baseTerrain);
 		if (hasRiver)
 			createRiver();
+		drawRiver();
 		boolean hasRoad = checkRoad(baseTerrain);
 		if (hasRoad)
 			createRoad();
@@ -283,9 +284,9 @@ public class BattleScene extends JPanel {
 		}
 		indexedPanels.get(startingPoint).applyTerrainType(terrain);
 		if (terrain == TerrainType.RIVER) {
-		indexedPanels.get(startingPoint).icon = TileImages.river1Icon;
+			indexedPanels.get(startingPoint).icon = TileImages.river1Icon;
 		} else if (terrain == TerrainType.ROAD) {
-		indexedPanels.get(startingPoint).icon = TileImages.road1Icon;
+			indexedPanels.get(startingPoint).icon = TileImages.road1Icon;
 		}
 		indexedPanels.get(startingPoint).button.setIcon(indexedPanels.get(startingPoint).icon);
 		return startingPoint;
@@ -345,7 +346,7 @@ public class BattleScene extends JPanel {
 	}
 
 	private void createNextSpot(TerrainType terrain) {
-		
+
 		Random random = new Random();
 
 		switch (direction) {
@@ -423,7 +424,7 @@ public class BattleScene extends JPanel {
 						indexedPanels.get(startingPoint + 1).icon = TileImages.river1Icon;
 					} else if (indexedPanels.get(startingPoint + 1).terrain == TerrainType.ROAD) {
 						indexedPanels.get(startingPoint + 1).icon = TileImages.road1Icon;
-					}				
+					}
 				} catch (Exception e) {
 				}
 				break;
@@ -631,11 +632,11 @@ public class BattleScene extends JPanel {
 					int roll = random.nextInt(100);
 					indexedPanels.get(location).terrain = TerrainType.FOREST;
 					if (roll < 3) {
-					indexedPanels.get(location).icon = TileImages.forest3Icon;
+						indexedPanels.get(location).icon = TileImages.forest3Icon;
 					} else if (roll < 10) {
-					indexedPanels.get(location).icon = TileImages.forest2Icon;
+						indexedPanels.get(location).icon = TileImages.forest2Icon;
 					} else {
-					indexedPanels.get(location).icon = TileImages.forest1Icon;
+						indexedPanels.get(location).icon = TileImages.forest1Icon;
 					}
 					indexedPanels.get(location).button.setIcon(indexedPanels.get(location).icon);
 				} catch (Exception e) {
@@ -646,12 +647,14 @@ public class BattleScene extends JPanel {
 					try {
 						indexedPanels.get(location - 48).terrain = TerrainType.FOREST;
 						indexedPanels.get(location - 48).icon = TileImages.forest1Icon;
-						indexedPanels.get(location - 48).button.setIcon(indexedPanels.get(location).icon);					} catch (Exception e) {
+						indexedPanels.get(location - 48).button.setIcon(indexedPanels.get(location).icon);
+					} catch (Exception e) {
 					}
 					try {
 						indexedPanels.get(location + 48).terrain = TerrainType.FOREST;
 						indexedPanels.get(location + 48).icon = TileImages.forest1Icon;
-						indexedPanels.get(location + 48).button.setIcon(indexedPanels.get(location).icon);					} catch (Exception e) {
+						indexedPanels.get(location + 48).button.setIcon(indexedPanels.get(location).icon);
+					} catch (Exception e) {
 					}
 				}
 
@@ -659,17 +662,20 @@ public class BattleScene extends JPanel {
 					try {
 						indexedPanels.get(location - 48).terrain = TerrainType.FOREST;
 						indexedPanels.get(location - 48).icon = TileImages.forest1Icon;
-						indexedPanels.get(location - 48).button.setIcon(indexedPanels.get(location).icon);					} catch (Exception e) {
+						indexedPanels.get(location - 48).button.setIcon(indexedPanels.get(location).icon);
+					} catch (Exception e) {
 					}
 					try {
 						indexedPanels.get(location + 48).terrain = TerrainType.FOREST;
 						indexedPanels.get(location + 48).icon = TileImages.forest1Icon;
-						indexedPanels.get(location + 48).button.setIcon(indexedPanels.get(location).icon);					} catch (Exception e) {
+						indexedPanels.get(location + 48).button.setIcon(indexedPanels.get(location).icon);
+					} catch (Exception e) {
 					}
 					try {
 						indexedPanels.get(location + 96).terrain = TerrainType.FOREST;
 						indexedPanels.get(location + 96).icon = TileImages.forest1Icon;
-						indexedPanels.get(location + 96).button.setIcon(indexedPanels.get(location).icon);					} catch (Exception e) {
+						indexedPanels.get(location + 96).button.setIcon(indexedPanels.get(location).icon);
+					} catch (Exception e) {
 					}
 				}
 
@@ -677,22 +683,26 @@ public class BattleScene extends JPanel {
 					try {
 						indexedPanels.get(location - 48).terrain = TerrainType.FOREST;
 						indexedPanels.get(location - 48).icon = TileImages.forest1Icon;
-						indexedPanels.get(location - 48).button.setIcon(indexedPanels.get(location).icon);						} catch (Exception e) {
+						indexedPanels.get(location - 48).button.setIcon(indexedPanels.get(location).icon);
+					} catch (Exception e) {
 					}
 					try {
 						indexedPanels.get(location - 96).terrain = TerrainType.FOREST;
 						indexedPanels.get(location - 96).icon = TileImages.forest1Icon;
-						indexedPanels.get(location - 96).button.setIcon(indexedPanels.get(location).icon);						} catch (Exception e) {
+						indexedPanels.get(location - 96).button.setIcon(indexedPanels.get(location).icon);
+					} catch (Exception e) {
 					}
 					try {
 						indexedPanels.get(location + 48).terrain = TerrainType.FOREST;
 						indexedPanels.get(location + 48).icon = TileImages.forest1Icon;
-						indexedPanels.get(location + 48).button.setIcon(indexedPanels.get(location).icon);						} catch (Exception e) {
+						indexedPanels.get(location + 48).button.setIcon(indexedPanels.get(location).icon);
+					} catch (Exception e) {
 					}
 					try {
 						indexedPanels.get(location + 96).terrain = TerrainType.FOREST;
 						indexedPanels.get(location + 96).icon = TileImages.forest1Icon;
-						indexedPanels.get(location + 96).button.setIcon(indexedPanels.get(location).icon);						} catch (Exception e) {
+						indexedPanels.get(location + 96).button.setIcon(indexedPanels.get(location).icon);
+					} catch (Exception e) {
 					}
 				}
 
@@ -766,17 +776,20 @@ public class BattleScene extends JPanel {
 					try {
 						indexedPanels.get(location - 48).terrain = TerrainType.HILL;
 						indexedPanels.get(location - 48).icon = TileImages.hill1Icon;
-						indexedPanels.get(location - 48).button.setIcon(indexedPanels.get(location).icon);					} catch (Exception e) {
+						indexedPanels.get(location - 48).button.setIcon(indexedPanels.get(location).icon);
+					} catch (Exception e) {
 					}
 					try {
 						indexedPanels.get(location + 48).terrain = TerrainType.HILL;
 						indexedPanels.get(location + 48).icon = TileImages.hill1Icon;
-						indexedPanels.get(location + 48).button.setIcon(indexedPanels.get(location).icon);					} catch (Exception e) {
+						indexedPanels.get(location + 48).button.setIcon(indexedPanels.get(location).icon);
+					} catch (Exception e) {
 					}
 					try {
 						indexedPanels.get(location + 96).terrain = TerrainType.HILL;
 						indexedPanels.get(location + 96).icon = TileImages.hill1Icon;
-						indexedPanels.get(location + 96).button.setIcon(indexedPanels.get(location).icon);					} catch (Exception e) {
+						indexedPanels.get(location + 96).button.setIcon(indexedPanels.get(location).icon);
+					} catch (Exception e) {
 					}
 				}
 
@@ -784,22 +797,26 @@ public class BattleScene extends JPanel {
 					try {
 						indexedPanels.get(location - 48).terrain = TerrainType.HILL;
 						indexedPanels.get(location - 48).icon = TileImages.hill1Icon;
-						indexedPanels.get(location - 48).button.setIcon(indexedPanels.get(location).icon);						} catch (Exception e) {
+						indexedPanels.get(location - 48).button.setIcon(indexedPanels.get(location).icon);
+					} catch (Exception e) {
 					}
 					try {
 						indexedPanels.get(location + 48).terrain = TerrainType.HILL;
 						indexedPanels.get(location + 48).icon = TileImages.hill1Icon;
-						indexedPanels.get(location + 48).button.setIcon(indexedPanels.get(location).icon);						} catch (Exception e) {
+						indexedPanels.get(location + 48).button.setIcon(indexedPanels.get(location).icon);
+					} catch (Exception e) {
 					}
 					try {
 						indexedPanels.get(location + 96).terrain = TerrainType.HILL;
 						indexedPanels.get(location + 96).icon = TileImages.hill1Icon;
-						indexedPanels.get(location + 96).button.setIcon(indexedPanels.get(location).icon);					} catch (Exception e) {
+						indexedPanels.get(location + 96).button.setIcon(indexedPanels.get(location).icon);
+					} catch (Exception e) {
 					}
 					try {
 						indexedPanels.get(location - 96).terrain = TerrainType.HILL;
 						indexedPanels.get(location - 96).icon = TileImages.hill1Icon;
-						indexedPanels.get(location - 96).button.setIcon(indexedPanels.get(location).icon);					} catch (Exception e) {
+						indexedPanels.get(location - 96).button.setIcon(indexedPanels.get(location).icon);
+					} catch (Exception e) {
 					}
 				}
 
@@ -807,27 +824,32 @@ public class BattleScene extends JPanel {
 					try {
 						indexedPanels.get(location - 48).terrain = TerrainType.HILL;
 						indexedPanels.get(location - 48).icon = TileImages.hill1Icon;
-						indexedPanels.get(location - 48).button.setIcon(indexedPanels.get(location).icon);						} catch (Exception e) {
+						indexedPanels.get(location - 48).button.setIcon(indexedPanels.get(location).icon);
+					} catch (Exception e) {
 					}
 					try {
 						indexedPanels.get(location - 96).terrain = TerrainType.HILL;
 						indexedPanels.get(location - 96).icon = TileImages.hill1Icon;
-						indexedPanels.get(location - 96).button.setIcon(indexedPanels.get(location).icon);						} catch (Exception e) {
+						indexedPanels.get(location - 96).button.setIcon(indexedPanels.get(location).icon);
+					} catch (Exception e) {
 					}
 					try {
 						indexedPanels.get(location + 48).terrain = TerrainType.HILL;
 						indexedPanels.get(location + 48).icon = TileImages.hill1Icon;
-						indexedPanels.get(location + 48).button.setIcon(indexedPanels.get(location).icon);					} catch (Exception e) {
+						indexedPanels.get(location + 48).button.setIcon(indexedPanels.get(location).icon);
+					} catch (Exception e) {
 					}
 					try {
 						indexedPanels.get(location + 96).terrain = TerrainType.HILL;
 						indexedPanels.get(location + 96).icon = TileImages.hill1Icon;
-						indexedPanels.get(location + 96).button.setIcon(indexedPanels.get(location).icon);					} catch (Exception e) {
+						indexedPanels.get(location + 96).button.setIcon(indexedPanels.get(location).icon);
+					} catch (Exception e) {
 					}
 					try {
 						indexedPanels.get(location + 144).terrain = TerrainType.HILL;
 						indexedPanels.get(location + 144).icon = TileImages.hill1Icon;
-						indexedPanels.get(location + 144).button.setIcon(indexedPanels.get(location).icon);					} catch (Exception e) {
+						indexedPanels.get(location + 144).button.setIcon(indexedPanels.get(location).icon);
+					} catch (Exception e) {
 					}
 				}
 
@@ -864,14 +886,14 @@ public class BattleScene extends JPanel {
 		for (IndexedPanel panel : indexedPanels) {
 
 			if (panel.terrain == TerrainType.HILL) {
-			roll = random.nextInt(10) + 1;
+				roll = random.nextInt(10) + 1;
 				if (terrain == TerrainType.HILL) {
 					if (roll < 4) {
 						panel.terrain = TerrainType.MOUNTAIN;
 						if (roll < 2) {
 							panel.icon = TileImages.mountain2Icon;
 						} else {
-						panel.icon = TileImages.mountain1Icon;
+							panel.icon = TileImages.mountain1Icon;
 						}
 						panel.button.setIcon(panel.icon);
 					}
@@ -879,13 +901,143 @@ public class BattleScene extends JPanel {
 					if (roll < 2) {
 						panel.terrain = TerrainType.MOUNTAIN;
 						panel.icon = TileImages.mountain1Icon;
-						panel.button.setIcon(panel.icon);					}
+						panel.button.setIcon(panel.icon);
+					}
 				}
 
 			}
 
 		}
 
+	}
+
+	private void drawRiver() {
+		for (int i = 0; i < indexedPanels.size(); i++) {
+			int index = i;
+			boolean leftLand = false;
+			boolean upLand = false;
+			boolean rightLand = false;
+			boolean downLand = false;
+			if (indexedPanels.get(i).terrain == TerrainType.RIVER) {
+				if (index > 0) {
+					switch (indexedPanels.get(i - 1).terrain) {
+					case DESERT:
+						leftLand = true;
+						break;
+					case FOREST:
+						leftLand = true;
+						break;
+					case GRASS:
+						leftLand = true;
+						break;
+					case HILL:
+						leftLand = true;
+						break;
+					case MOUNTAIN:
+						leftLand = true;
+						break;
+					case RIVER:
+						break;
+					case ROAD:
+						break;
+					default:
+						break;
+					}
+				}
+				if (index < 1536) {
+					switch (indexedPanels.get(i + 1).terrain) {
+					case DESERT:
+						rightLand = true;
+						break;
+					case FOREST:
+						rightLand = true;
+						break;
+					case GRASS:
+						rightLand = true;
+						break;
+					case HILL:
+						rightLand = true;
+						break;
+					case MOUNTAIN:
+						rightLand = true;
+						break;
+					case RIVER:
+						break;
+					case ROAD:
+						break;
+					default:
+						break;
+					}
+				}
+				if (index > 48) {
+					switch (indexedPanels.get(i - 48).terrain) {
+					case DESERT:
+						upLand = true;
+						break;
+					case FOREST:
+						upLand = true;
+						break;
+					case GRASS:
+						upLand = true;
+						break;
+					case HILL:
+						upLand = true;
+						break;
+					case MOUNTAIN:
+						upLand = true;
+						break;
+					case RIVER:
+						break;
+					case ROAD:
+						break;
+					default:
+						break;
+					}
+				}
+				if (index < 1488) {
+					switch (indexedPanels.get(i + 48).terrain) {
+					case DESERT:
+						downLand = true;
+						break;
+					case FOREST:
+						downLand = true;
+						break;
+					case GRASS:
+						downLand = true;
+						break;
+					case HILL:
+						downLand = true;
+						break;
+					case MOUNTAIN:
+						downLand = true;
+						break;
+					case RIVER:
+						break;
+					case ROAD:
+						break;
+					default:
+						break;
+					}
+				}
+				if (leftLand == true && rightLand == false && upLand == false && downLand == false)
+					indexedPanels.get(i).icon = TileImages.riverGrassLeftIcon;
+				if (leftLand == false && rightLand == true && upLand == false && downLand == false)
+					indexedPanels.get(i).icon = TileImages.riverGrassRightIcon;
+				if (leftLand == false && rightLand == false && upLand == true && downLand == false)
+					indexedPanels.get(i).icon = TileImages.riverGrassTopIcon;
+				if (leftLand == false && rightLand == false && upLand == false && downLand == true)
+					indexedPanels.get(i).icon = TileImages.riverGrassBottomIcon;
+				if (leftLand == true && rightLand == false && upLand == true && downLand == false)
+					indexedPanels.get(i).icon = TileImages.riverGrassLeftTopIcon;
+				if (leftLand == true && rightLand == false && upLand == false && downLand == true)
+					indexedPanels.get(i).icon = TileImages.riverGrassLeftBottomIcon;
+				if (leftLand == false && rightLand == true && upLand == true && downLand == false)
+					indexedPanels.get(i).icon = TileImages.riverGrassRightTopIcon;
+				if (leftLand == false && rightLand == true && upLand == false && downLand == true)
+					indexedPanels.get(i).icon = TileImages.riverGrassRightBottomIcon;
+
+			}
+		}
 	}
 
 }
