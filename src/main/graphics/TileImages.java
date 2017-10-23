@@ -20,6 +20,8 @@ public class TileImages {
 	public static ImageIcon riverGrassLeftBottomIcon;
 	public static ImageIcon riverGrassRightTopIcon;
 	public static ImageIcon riverGrassRightBottomIcon;
+	public static ImageIcon riverGrassLeftRightIcon;
+	public static ImageIcon riverGrassTopBottomIcon;
 	public static ImageIcon desert1Icon;
 	public static ImageIcon desert2Icon;
 	public static ImageIcon desert3Icon;
@@ -52,6 +54,8 @@ public class TileImages {
 		riverGrassLeftBottomIcon = imageLoader.loadImageIcon("/tiles/water/grassleftbottom.png", width, height);
 		riverGrassRightTopIcon = imageLoader.loadImageIcon("/tiles/water/grassrighttop.png", width, height);
 		riverGrassRightBottomIcon = imageLoader.loadImageIcon("/tiles/water/grassrightbottom.png", width, height);
+		riverGrassLeftRightIcon = imageLoader.loadImageIcon("/tiles/water/grassleftright.png", width, height);
+		riverGrassTopBottomIcon = imageLoader.loadImageIcon("/tiles/water/grasstopbottom.png", width, height);
 		road1Icon = imageLoader.loadImageIcon("/tiles/road1.png", width, height);
 		desert1Icon = imageLoader.loadImageIcon("/tiles/desert1.png", width, height);
 		desert2Icon = imageLoader.loadImageIcon("/tiles/desert2.png", width, height);
