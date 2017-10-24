@@ -1039,6 +1039,8 @@ public class BattleScene extends JPanel {
 					indexedPanels.get(i).icon = TileImages.riverGrassTopBottomIcon;
 				if (leftLand == false && rightLand == false && upLand == true && downLand == true)
 					indexedPanels.get(i).icon = TileImages.riverGrassLeftRightIcon;
+				if (leftLand == false && rightLand == false && upLand == false && downLand == false)
+					indexedPanels.get(i).icon = TileImages.waterAllSidesIcon;
 
 			}
 		}
