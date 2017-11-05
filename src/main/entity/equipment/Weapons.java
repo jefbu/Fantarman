@@ -1,7 +1,11 @@
 package main.entity.equipment;
 
-public class Weapons {
-	
+import java.io.Serializable;
+
+public class Weapons implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
 	public String name;
 
 	public int spdPenalty;

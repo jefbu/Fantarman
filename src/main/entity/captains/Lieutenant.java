@@ -1,10 +1,14 @@
 package main.entity.captains;
 
+import java.io.Serializable;
+
 import javax.swing.ImageIcon;
 
 import main.utility.ImageLoader;
 
-public class Lieutenant {
+public class Lieutenant implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	public String name;
 

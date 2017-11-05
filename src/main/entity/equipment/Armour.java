@@ -1,6 +1,10 @@
 package main.entity.equipment;
 
-public class Armour {
+import java.io.Serializable;
+
+public class Armour implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	public String name;
 

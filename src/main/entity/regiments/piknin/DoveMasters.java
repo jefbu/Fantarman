@@ -12,7 +12,9 @@ import main.entity.regiments.Regiment;
 import main.entity.regiments.RegimentType;
 
 public class DoveMasters extends Regiment {
-		
+
+	private static final long serialVersionUID = 1L;
+
 	public DoveMasters(String name, Captain captain) {
 		
 		super();

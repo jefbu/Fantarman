@@ -1,4 +1,4 @@
-package main.entity.regiments.piknin;
+package main.entity.regiments.terribleTerquits;
 
 import main.battle.tactics.Condition;
 import main.battle.tactics.Order;
@@ -11,11 +11,11 @@ import main.entity.races.Race;
 import main.entity.regiments.Regiment;
 import main.entity.regiments.RegimentType;
 
-public class PonyRiders extends Regiment {
+public class Kinshiwang extends Regiment {
 
 	private static final long serialVersionUID = 1L;
-
-	public PonyRiders(String name, Captain captain) {
+	
+	public Kinshiwang(String name, Captain captain) {
 		
 		super();
 		for (int i = 0; i < captain.orders; i++) {
@@ -23,24 +23,24 @@ public class PonyRiders extends Regiment {
 		}
 		
 		this.name = name;
-		this.race = Race.Piknin;
-		this.lieutenantsSize = 1;
+		this.race = Race.Terquit;
+		this.lieutenantsSize = 2;
 		this.captain = captain;
-		this.type = RegimentType.LIGHT_CAVALRY;
+		this.type = RegimentType.HEAVY_INFANTRY;
 		
-		this.baseAttack = 40;
-		this.baseCharge = 15;
-		this.baseDefence = 40;
+		this.baseAttack = 55;
+		this.baseCharge = 10;
+		this.baseDefence = 65;
 		this.baseMissile = 0;
-		this.baseMorale = 45;
-		this.baseSpeed = 13;
-		this.baseSpeedVariation = 4;
+		this.baseMorale = 80;
+		this.baseSpeed = 11;
+		this.baseSpeedVariation = 3;
 		this.baseRange = 0;
-		this.baseMove = 6;
-		this.baseRun = 6;
-		this.baseLife = 10;
+		this.baseMove = 5;
+		this.baseRun = 1;
+		this.baseLife = 30;
 		
-		this.rows = 1;
+		this.rows = 3;
 		this.columns = 4;
 		
 		panels = new int[rows * columns];
@@ -48,18 +48,13 @@ public class PonyRiders extends Regiment {
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/pony_riders.png", width, height);
+		icon = imageLoader.loadImageIcon("/regiments/stout_of_heart.png", width, height);
 		
 		weapons.add(Weapons.spears);
-		weapons.add(Weapons.slingshots);
-		weapons.add(Weapons.shields);
-		
-		armours.add(Armour.quilt);
-		armours.add(Armour.halfLeather);
-		armours.add(Armour.leather);
+		armours.add(Armour.weatheredleather);
 		
 		this.weapon = Weapons.spears;
-		this.armour = Armour.quilt;
+		this.armour = Armour.weatheredleather;
 		
 		calculateTotalStats();
 		calculateValue();

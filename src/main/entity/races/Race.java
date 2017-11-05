@@ -6,6 +6,7 @@ public enum Race {
 	Feods,
 	Piknin,
 	Qoonfu,
+	Terquit,
 	Wanmen
 
 }

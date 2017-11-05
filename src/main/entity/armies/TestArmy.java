@@ -8,6 +8,8 @@ import main.entity.skills.Skills;
 
 public class TestArmy extends Army {
 
+	private static final long serialVersionUID = 1L;
+
 	public TestArmy() {
 		super();
 

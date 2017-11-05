@@ -57,7 +57,7 @@ public class TileImages {
 		riverGrassRightBottomIcon = imageLoader.loadImageIcon("/tiles/water/grassrightbottom.png", width, height);
 		riverGrassLeftRightIcon = imageLoader.loadImageIcon("/tiles/water/grassleftright.png", width, height);
 		riverGrassTopBottomIcon = imageLoader.loadImageIcon("/tiles/water/grasstopbottom.png", width, height);
-		waterAllSidesIcon = imageLoader.loadImageIcon("tiles/water/waterallsides.png", width, height);
+		waterAllSidesIcon = imageLoader.loadImageIcon("/tiles/water/waterallsides.png", width, height);
 		road1Icon = imageLoader.loadImageIcon("/tiles/road1.png", width, height);
 		desert1Icon = imageLoader.loadImageIcon("/tiles/desert1.png", width, height);
 		desert2Icon = imageLoader.loadImageIcon("/tiles/desert2.png", width, height);

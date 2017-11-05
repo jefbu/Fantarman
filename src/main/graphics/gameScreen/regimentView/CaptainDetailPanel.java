@@ -36,7 +36,7 @@ public class CaptainDetailPanel extends JPanel {
 		ContentPanel captainIconPanel = new ContentPanel(width / 7, height / 2 - 20, Colour.BLUE,
 				new FlowLayout(FlowLayout.CENTER, 0, 15));
 		JLabel regimentIconLabel = new JLabel();
-		regimentIconLabel.setIcon(imageLoader.loadImageIcon("/tiles/grass2.png", width / 8, height / 3));
+		regimentIconLabel.setIcon(imageLoader.loadImageIcon("/portraits/test2.png", width / 8, height / 3));
 		captainIconPanel.insidePanel.add(regimentIconLabel);
 		add(captainIconPanel);
 

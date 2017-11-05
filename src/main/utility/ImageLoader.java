@@ -3,11 +3,14 @@ package main.utility;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.io.Serializable;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
-public class ImageLoader {
+public class ImageLoader implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	public ImageIcon loadImageIcon(String path, int width, int height) {
 		

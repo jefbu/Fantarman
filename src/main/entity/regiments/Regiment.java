@@ -1,5 +1,6 @@
 package main.entity.regiments;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -20,8 +21,10 @@ import main.entity.races.Race;
 import main.graphics.battleScreen.BattleScreen;
 import main.utility.ImageLoader;
 
-public abstract class Regiment {
+public abstract class Regiment implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
 	public Captain captain;
 	public ArrayList<Tactic> instructions;
 	public ArrayList<Lieutenant> lieutenants;

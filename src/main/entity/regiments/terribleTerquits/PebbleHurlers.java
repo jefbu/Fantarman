@@ -1,4 +1,4 @@
-package main.entity.regiments;
+package main.entity.regiments.terribleTerquits;
 
 import main.battle.tactics.Condition;
 import main.battle.tactics.Order;
@@ -8,12 +8,14 @@ import main.entity.captains.Captain;
 import main.entity.equipment.Armour;
 import main.entity.equipment.Weapons;
 import main.entity.races.Race;
+import main.entity.regiments.Regiment;
+import main.entity.regiments.RegimentType;
 
-public class FireMages extends Regiment {
+public class PebbleHurlers extends Regiment {
 
 	private static final long serialVersionUID = 1L;
 
-	public FireMages(String name, Captain captain) {
+	public PebbleHurlers(String name, Captain captain) {
 		
 		super();
 		for (int i = 0; i < captain.orders; i++) {
@@ -21,47 +23,42 @@ public class FireMages extends Regiment {
 		}
 		
 		this.name = name;
-		this.race = Race.Wanmen;
+		this.race = Race.Terquit;
 		this.lieutenantsSize = 1;
 		this.captain = captain;
 		this.type = RegimentType.ARCHERS;
 		
 		this.baseAttack = 30;
-		this.baseCharge = 10;
-		this.baseDefence = 40;
-		this.baseMissile = 40;
-		this.baseMorale = 45;
-		this.baseSpeed = 17;
-		this.baseSpeedVariation = 5;
-		this.baseRange = 10;
-		this.baseMove = 6;
-		this.baseRun = 4;
-		this.baseLife = 10;
+		this.baseCharge = 5;
+		this.baseDefence = 45;
+		this.baseMissile = 45;
+		this.baseMorale = 75;
+		this.baseSpeed = 12;
+		this.baseSpeedVariation = 4;
+		this.baseRange = 7;
+		this.baseMove = 5;
+		this.baseRun = 2;
+		this.baseLife = 15;
 		
-		this.rows = 3;
-		this.columns = 2;
+		this.rows = 2;
+		this.columns = 3;
 		
 		panels = new int[rows * columns];
 		
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/firemages.png", width, height);
+		icon = imageLoader.loadImageIcon("/regiments/stout_of_heart.png", width, height);
 		
-		weapons.add(Weapons.wands);
-		weapons.add(Weapons.staves);
-		weapons.add(Weapons.sceptres);
+		weapons.add(Weapons.pigeons);
+		armours.add(Armour.weatheredleather);
 		
-		armours.add(Armour.quilt);
-		armours.add(Armour.halfLeather);
-		
-		this.weapon = Weapons.wands;
-		this.armour = Armour.quilt;
+		this.weapon = Weapons.pigeons;
+		this.armour = Armour.weatheredleather;
 		
 		calculateTotalStats();
 		calculateValue();
 		
 	}
-	
 
 }

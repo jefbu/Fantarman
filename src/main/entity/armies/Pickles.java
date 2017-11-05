@@ -10,7 +10,9 @@ import main.entity.regiments.piknin.PonyRiders;
 import main.entity.regiments.piknin.StoutOfHeart;
 
 public class Pickles extends Army {
-	
+
+	private static final long serialVersionUID = 1L;
+
 	public Pickles() {
 		
 		super();

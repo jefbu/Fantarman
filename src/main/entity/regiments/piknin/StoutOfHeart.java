@@ -13,6 +13,8 @@ import main.entity.regiments.RegimentType;
 
 public class StoutOfHeart extends Regiment {
 
+	private static final long serialVersionUID = 1L;
+
 	public StoutOfHeart(String name, Captain captain) {
 		
 		super();

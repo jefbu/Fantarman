@@ -12,7 +12,9 @@ import main.entity.regiments.Regiment;
 import main.entity.regiments.RegimentType;
 
 public class Auxiliaries extends Regiment {
-	
+
+	private static final long serialVersionUID = 1L;
+
 	public Auxiliaries(String name, Captain captain) {
 		
 		super();

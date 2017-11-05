@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import main.utility.Colors;
+import main.utility.SaveGame;
 
 public class MenuPanel extends JPanel {
 	
@@ -40,6 +41,7 @@ public class MenuPanel extends JPanel {
 			saveButton.setBorderPainted(false);
 			saveButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
+					SaveGame.save();
 				}
 			});
 			savePanel.add(saveButton);

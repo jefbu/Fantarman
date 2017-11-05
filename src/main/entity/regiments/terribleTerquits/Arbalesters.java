@@ -1,4 +1,4 @@
-package main.entity.regiments.piknin;
+package main.entity.regiments.terribleTerquits;
 
 import main.battle.tactics.Condition;
 import main.battle.tactics.Order;
@@ -11,11 +11,11 @@ import main.entity.races.Race;
 import main.entity.regiments.Regiment;
 import main.entity.regiments.RegimentType;
 
-public class LightBalloons extends Regiment {
+public class Arbalesters extends Regiment {
 
 	private static final long serialVersionUID = 1L;
 
-	public LightBalloons(String name, Captain captain) {
+	public Arbalesters(String name, Captain captain) {
 		
 		super();
 		for (int i = 0; i < captain.orders; i++) {
@@ -23,24 +23,24 @@ public class LightBalloons extends Regiment {
 		}
 		
 		this.name = name;
-		this.race = Race.Piknin;
-		this.lieutenantsSize = 0;
+		this.race = Race.Terquit;
+		this.lieutenantsSize = 2;
 		this.captain = captain;
-		this.type = RegimentType.FLYING;
+		this.type = RegimentType.COMBINED_ARMS;
 		
-		this.baseAttack = 25;
-		this.baseCharge = 10;
-		this.baseDefence = 45;
-		this.baseMissile = 30;
-		this.baseMorale = 45;
-		this.baseSpeed = 13;
+		this.baseAttack = 50;
+		this.baseCharge = 5;
+		this.baseDefence = 60;
+		this.baseMissile = 45;
+		this.baseMorale = 80;
+		this.baseSpeed = 12;
 		this.baseSpeedVariation = 4;
-		this.baseRange = 5;
-		this.baseMove = 9;
-		this.baseRun = 3;
-		this.baseLife = 10;
+		this.baseRange = 6;
+		this.baseMove = 5;
+		this.baseRun = 2;
+		this.baseLife = 30;
 		
-		this.rows = 2;
+		this.rows = 4;
 		this.columns = 3;
 		
 		panels = new int[rows * columns];
@@ -48,20 +48,17 @@ public class LightBalloons extends Regiment {
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/light_balloons.png", width, height);
+		icon = imageLoader.loadImageIcon("/regiments/stout_of_heart.png", width, height);
 		
-		weapons.add(Weapons.bombs);
-		weapons.add(Weapons.skunkbombs);
+		weapons.add(Weapons.pigeons);
+		armours.add(Armour.weatheredleather);
 		
-		armours.add(Armour.woven);
-		armours.add(Armour.mythrilenvelope);
-		
-		this.weapon = Weapons.bombs;
-		this.armour = Armour.woven;
+		this.weapon = Weapons.pigeons;
+		this.armour = Armour.weatheredleather;
 		
 		calculateTotalStats();
 		calculateValue();
 		
 	}
-	
+
 }

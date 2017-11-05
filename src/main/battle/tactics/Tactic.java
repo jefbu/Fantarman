@@ -1,6 +1,10 @@
 package main.battle.tactics;
 
-public class Tactic {
+import java.io.Serializable;
+
+public class Tactic implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	
 	public Condition condition;
 	public Target target;

@@ -1,12 +1,16 @@
 package main.entity.captains;
 
+import java.io.Serializable;
+
 import javax.swing.ImageIcon;
 
 import main.entity.skills.Skills;
 import main.utility.ImageLoader;
 
-public class Captain {
+public class Captain implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
 	public String name;
 	public String gender;
 
