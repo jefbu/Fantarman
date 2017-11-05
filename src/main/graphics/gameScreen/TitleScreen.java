@@ -68,7 +68,7 @@ public class TitleScreen extends JPanel {
         startPanel.buttonedPanel.button.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		Screen.titleScreen.setVisible(false);
-        		Screen.gameScreen.setVisible(true);
+        		Screen.gameStartScreen.setVisible(true);
         	}
         });
         middlePanel.add(startPanel);

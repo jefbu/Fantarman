@@ -11,6 +11,7 @@ import javax.swing.border.LineBorder;
 
 import main.graphics.battleScreen.BattleScreen;
 import main.graphics.gameScreen.GameScreen;
+import main.graphics.gameScreen.GameStartScreen;
 import main.graphics.gameScreen.TitleScreen;
 
 public class Screen extends JFrame {
@@ -27,6 +28,7 @@ public class Screen extends JFrame {
 	public static TitleScreen titleScreen;
 	public static BattleScreen battleScreen;
 	public static GameScreen gameScreen;
+	public static GameStartScreen gameStartScreen;
 
 	
 	public Screen() {
@@ -41,6 +43,10 @@ public class Screen extends JFrame {
 		titleScreen = new TitleScreen(mainPanelWidth, mainPanelHeight);
 		titleScreen.setVisible(true);
 		mainPanel.add(titleScreen);
+		
+		gameStartScreen = new GameStartScreen(mainPanelWidth, mainPanelHeight);
+		gameStartScreen.setVisible(false);
+		mainPanel.add(gameStartScreen);
 		
 		battleScreen = new BattleScreen(mainPanelWidth, mainPanelHeight);
 		battleScreen.setVisible(false);
