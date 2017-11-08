@@ -50,11 +50,11 @@ public class PebbleHurlers extends Regiment {
 		
 		icon = imageLoader.loadImageIcon("/regiments/stout_of_heart.png", width, height);
 		
-		weapons.add(Weapons.pigeons);
-		armours.add(Armour.weatheredleather);
+		weapons.add(Weapons.fists);
+		armours.add(Armour.clay);
 		
-		this.weapon = Weapons.pigeons;
-		this.armour = Armour.weatheredleather;
+		this.weapon = Weapons.fists;
+		this.armour = Armour.clay;
 		
 		calculateTotalStats();
 		calculateValue();

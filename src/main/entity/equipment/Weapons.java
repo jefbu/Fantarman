@@ -59,6 +59,8 @@ public class Weapons implements Serializable {
 	
 	public static Weapons polearms = new Weapons("Polearms", 0, 5, 5, 5, 0, 0, 125, 25);
 	
+	public static Weapons fists = new Weapons("Fists", 0, 0, 0, 0, 0, 0, 0, 0);
+	
 	
 	
 	

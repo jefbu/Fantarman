@@ -10,8 +10,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import main.utility.Colors;
-
 public class ButtonedPanel extends JPanel {
 	
 	private static final long serialVersionUID = 1L;

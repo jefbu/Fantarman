@@ -44,4 +44,7 @@ public class Armour implements Serializable {
 	
 	public static Armour chainvest = new Armour("Chain Vest", 0, 0, 10, 0, 125, 50);
 	
+	public static Armour clay = new Armour("Clay", 0, 0, 0, 0, 0, 0);
+	public static Armour porcelain = new Armour("Porcelain", 0, 0, 0, 3, 50, 25);
+	
 }
