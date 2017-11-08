@@ -2,10 +2,13 @@ package main.components;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import main.utility.Colors;
 import main.utility.ImageLoader;
 
 public class IconLabelPanel extends JPanel {
@@ -24,15 +27,15 @@ public class IconLabelPanel extends JPanel {
 		this.height = height;
 		setPreferredSize(new Dimension(width, height));
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-		
+        
 		imageLoader = new ImageLoader();
 		
 		iconLabel = new JLabel();
 		iconLabel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-		decideIcon(colour);		
+		decideIcon(colour);	
 		add(iconLabel);
 		
-		buttonedPanel = new ButtonedPanel(width, height);
+		buttonedPanel = new ButtonedPanel(width, height, Colors.textyellow);
 		buttonedPanel.setOpaque(false);
 		buttonedPanel.button.setBorder(null);
 		buttonedPanel.button.setContentAreaFilled(false);
@@ -44,28 +47,29 @@ public class IconLabelPanel extends JPanel {
 	
 	private void decideIcon(Colour colour) {
 		switch(colour) {
-		case BLUE: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelBlue.png", width, height));
+		case BLUE: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelBlue2.png", width, height));
 			break;
-		case DBLUE: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelBlue.png", width, height));
+		case DBLUE: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelBlue2.png", width, height));
 			break;
-		case DGREEN: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelGreen.png", width, height));
+		case DGREEN: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelGreen2.png", width, height));
 			break;
-		case DRED: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelRed.png", width, height));
+		case DRED: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelRed2.png", width, height));
 			break;
-		case GREEN: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelGreen.png", width, height));
+		case GREEN: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelGreen2.png", width, height));
 			break;
-		case LBLUE: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelBlue.png", width, height));
+		case LBLUE: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelBlue2.png", width, height));
 			break;
-		case LGREEN: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelGreen.png", width, height));
+		case LGREEN: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelGreen2.png", width, height));
 			break;
-		case LRED: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelRed.png", width, height));
+		case LRED: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelRed2.png", width, height));
 			break;
-		case RED: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelRed.png", width, height));
+		case RED: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelRed2.png", width, height));
 			break;
 		default:
 			break;	
 		}
 		
 	}
+	
 
 }

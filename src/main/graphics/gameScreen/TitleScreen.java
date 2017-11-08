@@ -18,6 +18,7 @@ import main.components.IconLabelPanel;
 import main.graphics.Screen;
 import main.utility.Colors;
 import main.utility.ImageLoader;
+import main.utility.LoadGame;
 
 public class TitleScreen extends JPanel {
 
@@ -77,6 +78,12 @@ public class TitleScreen extends JPanel {
         loadPanel.buttonedPanel.label.setForeground(Colors.textyellow);
         loadPanel.buttonedPanel.label.setFont(new Font("garamond", Font.BOLD, 48));
         loadPanel.buttonedPanel.label.setText("Load");
+        loadPanel.buttonedPanel.button.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		Screen.titleScreen.setVisible(false);
+        		LoadGame.load();
+        	}
+        });
         middlePanel.add(loadPanel);
         
         IconLabelPanel exitPanel = new IconLabelPanel(width / 2, height / 5, Colour.RED);

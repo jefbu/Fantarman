@@ -100,5 +100,11 @@ public class ArmyView extends JPanel {
 		add(bottomEmptyPanel);
 
 	}
+	
+	public void fillArmyView() {
+		
+		roleSelectionPanel.fillRoleSelectionPanel();
+		regimentListPanel.fillRegimentListPanelCombatStats();
+	}
 
 }

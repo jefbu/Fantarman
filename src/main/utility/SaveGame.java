@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 
 import main.Main;
+import main.entity.armies.Army;
 
 public abstract class SaveGame {
 	
@@ -15,7 +16,9 @@ public abstract class SaveGame {
 			FileOutputStream saveFile = new FileOutputStream("saveTest.sav");
 			ObjectOutputStream save = new ObjectOutputStream(saveFile);
 
-			save.writeObject(Main.yourArmy);
+			Army savedArmy = Main.yourArmy;
+			
+			save.writeObject(savedArmy);
 			
 			save.close();
 			

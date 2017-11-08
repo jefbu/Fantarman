@@ -10,7 +10,9 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import main.Main;
 import main.utility.Colors;
+import main.utility.LoadGame;
 import main.utility.SaveGame;
 
 public class MenuPanel extends JPanel {
@@ -61,7 +63,7 @@ public class MenuPanel extends JPanel {
 			loadButton.setBorderPainted(false);
 			loadButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					System.out.println("load");
+					LoadGame.load();
 				}
 			});
 			loadPanel.add(loadButton);
@@ -121,7 +123,7 @@ public class MenuPanel extends JPanel {
 			exitButton.setBorderPainted(false);
 			exitButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					System.out.println("exitd");
+					Main.screen.dispose();
 				}
 			});
 			exitPanel.add(exitButton);

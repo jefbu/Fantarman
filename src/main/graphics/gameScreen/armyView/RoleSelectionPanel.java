@@ -31,7 +31,7 @@ public class RoleSelectionPanel extends ContentPanel {
 		int index = i;		
 		roleSelectionPopup = new RoleSelectionPopup(width * 2, height / 2);
 
-		ButtonedPanel linePanel = new ButtonedPanel(width, height / 15);
+		ButtonedPanel linePanel = new ButtonedPanel(width, height / 15, Color.black);
 		linePanel.setBackground(backgroundColor);
 		linePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		

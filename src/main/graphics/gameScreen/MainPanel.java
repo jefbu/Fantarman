@@ -39,5 +39,6 @@ public class MainPanel extends JPanel {
 		add(homeView);
 
 	}
+	
 
 }
