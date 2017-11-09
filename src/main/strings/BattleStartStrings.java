@@ -7,7 +7,7 @@ public abstract class BattleStartStrings {
 	public static String rollQuote() {
 
 		Random random = new Random();
-		int roll = random.nextInt(3);
+		int roll = random.nextInt(4);
 
 		switch (roll) {
 
@@ -25,6 +25,12 @@ public abstract class BattleStartStrings {
 			return "<font color = 'rgb(20, 20, 30)', size = 4>Oh, I am slain. <br> <i> "
 					+ "<font color = 'rgb(80, 70, 70)', size=3> <p align = 'right'> "
 					+ "William Shakespeare <br> Hamlet, act 3, scene 4";
+			
+		case 3:
+			return "<font color = 'rgb(20, 20, 30)', size = 4>Vae victis. <br> <i> "
+					+ "<font color = 'rgb(80, 70, 70)', size=3> <p align = 'right'> "
+					+ "Brennus the Gaul, after defeating Rome in 390BC <br> "
+					+ "It means 'Woe to the Vanquished'";
 
 		}
 
