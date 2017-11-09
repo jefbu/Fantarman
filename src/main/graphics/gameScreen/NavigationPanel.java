@@ -18,6 +18,9 @@ public class NavigationPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	IconLabelPanel homeViewPanel;
 	IconLabelPanel armyViewPanel;
+	IconLabelPanel leagueViewPanel;
+	IconLabelPanel infoViewPanel;
+	IconLabelPanel wikiViewPanel;
 
 
 	public NavigationPanel(int roundedWidth, int unroundedHeight) {
@@ -54,6 +57,42 @@ public class NavigationPanel extends JPanel {
 			armyViewPanel.buttonedPanel.label.setFont(new Font("garamond", Font.BOLD, 42));
 			armyViewPanel.buttonedPanel.label.setText("Army View");
 		add(armyViewPanel);
+		
+		leagueViewPanel = new IconLabelPanel(width - 10, height / 6 - 10, Colour.GREEN);
+		leagueViewPanel.buttonedPanel.button.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				Screen.gameScreen.setScreensInvisible();
+				Screen.gameScreen.mainPanel.leagueView.setVisible(true);
+			}
+		});
+		leagueViewPanel.buttonedPanel.label.setForeground(Colors.textyellow);
+		leagueViewPanel.buttonedPanel.label.setFont(new Font("garamond", Font.BOLD, 42));
+		leagueViewPanel.buttonedPanel.label.setText("League View");
+	add(leagueViewPanel);
+	
+		infoViewPanel = new IconLabelPanel(width - 10, height / 6 - 10, Colour.GREEN);
+		infoViewPanel.buttonedPanel.button.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				Screen.gameScreen.setScreensInvisible();
+				Screen.gameScreen.mainPanel.infoView.setVisible(true);
+			}
+		});
+		infoViewPanel.buttonedPanel.label.setForeground(Colors.textyellow);
+		infoViewPanel.buttonedPanel.label.setFont(new Font("garamond", Font.BOLD, 42));
+		infoViewPanel.buttonedPanel.label.setText("Information View");
+	add(infoViewPanel);
+	
+		wikiViewPanel = new IconLabelPanel(width - 10, height / 6 - 10, Colour.GREEN);
+		wikiViewPanel.buttonedPanel.button.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				Screen.gameScreen.setScreensInvisible();
+				Screen.gameScreen.mainPanel.wikiView.setVisible(true);
+			}
+		});
+		wikiViewPanel.buttonedPanel.label.setForeground(Colors.textyellow);
+		wikiViewPanel.buttonedPanel.label.setFont(new Font("garamond", Font.BOLD, 42));
+		wikiViewPanel.buttonedPanel.label.setText("Encyclopedia View");
+	add(wikiViewPanel);
 		
 	}
 	

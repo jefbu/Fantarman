@@ -14,6 +14,9 @@ public class MainPanel extends JPanel {
 	public ArmyView armyView;
 	public RegimentView regimentView;
 	public HomeView homeView;
+	public InfoView infoView;
+	public LeagueView leagueView;
+	public WikiView wikiView;
 
 
 	public MainPanel(int gameScreenWidth, int gameScreenHeight) {
@@ -37,6 +40,15 @@ public class MainPanel extends JPanel {
 		
 		homeView = new HomeView(gameScreenWidth, gameScreenHeight);
 		add(homeView);
+		
+		leagueView = new LeagueView();
+		add(leagueView);
+		
+		infoView = new InfoView();
+		add(infoView);
+		
+		wikiView = new WikiView();
+		add(wikiView);
 
 	}
 	
