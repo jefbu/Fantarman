@@ -54,15 +54,15 @@ public class Battle {
 			switch (roll2) {
 			case 0:
 				opponents.roster.add(new FireMages("FireMages" + i,
-						new Captain("Blofeld", "Male", 0, 0, 0, 0, 0, 0, 1, 40, null, null)));
+						new Captain("Blofeld", "Male", 0, 0, 0, 0, 0, 0, 1, 40, null, null, "text")));
 				break;
 			case 1:
 				opponents.roster.add(new DoveMasters("DoveMasters" + i,
-						new Captain("Spectre", "Female", 0, 0, 0, 0, 0, 0, 3, 35, null, null)));
+						new Captain("Spectre", "Female", 0, 0, 0, 0, 0, 0, 3, 35, null, null, "text")));
 				break;
 			case 2:
 				opponents.roster.add(new Harvesters("Harvesters" + i,
-						new Captain("Goldfinger", "Male", 0, 0, 0, 0, 0, 0, 2, 45, Skills.Deployer, null)));
+						new Captain("Goldfinger", "Male", 0, 0, 0, 0, 0, 0, 2, 45, Skills.Deployer, null, "text")));
 				break;
 			}
 		}

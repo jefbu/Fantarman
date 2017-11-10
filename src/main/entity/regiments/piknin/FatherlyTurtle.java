@@ -49,6 +49,7 @@ public class FatherlyTurtle extends Regiment {
 			this.y = 0;
 			
 			icon = imageLoader.loadImageIcon("/regiments/fatherly_turtle.png", width, height);
+			largeIcon = imageLoader.loadImageIcon("/regiments/fatherly_turtle.png", width * 8, height * 8);
 			
 			weapons.add(Weapons.claws);
 			weapons.add(Weapons.spikes);

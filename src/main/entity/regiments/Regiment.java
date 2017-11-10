@@ -90,6 +90,7 @@ public abstract class Regiment implements Serializable {
 
 	protected ImageLoader imageLoader = new ImageLoader();
 	public ImageIcon icon;
+	public ImageIcon largeIcon;
 
 	protected int width = BattleScreen.battleScene.roundedWidth / 48 - 8;
 	protected int height = BattleScreen.battleScene.roundedHeight / 32 - 8;

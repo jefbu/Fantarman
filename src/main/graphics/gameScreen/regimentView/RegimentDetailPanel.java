@@ -64,7 +64,7 @@ public class RegimentDetailPanel extends JPanel {
 
 	public void fillRegimentDetailPanel(Regiment regiment) {
 		
-		regimentIconLabel.setIcon(imageLoader.loadImageIcon("/tiles/grass1.png", 128, 156));
+		regimentIconLabel.setIcon(regiment.largeIcon);
 		regimentBaseInfoPanel.fillRegimentBaseInfoPanel(regiment);
 		battleStatsPanel.fillBattleStatsPanel(regiment);
 		historyStatsPanel.fillHistoryStatsPanel(regiment);

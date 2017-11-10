@@ -7,6 +7,7 @@ import javax.swing.JTextPane;
 
 import main.components.Colour;
 import main.components.ContentPanel;
+import main.entity.captains.Captain;
 import main.utility.Colors;
 
 public class CaptainBiographyPanel extends ContentPanel {
@@ -26,6 +27,13 @@ public class CaptainBiographyPanel extends ContentPanel {
 		biographyTextPane.setContentType("text/html");
 		biographyTextPane.setText("<font color = 'rgb(20, 40, 80)' size = 5>" + "How does this work? <br>");
 		insidePanel.add(biographyTextPane);
+		
+	}
+	
+	public void fillCaptainBiography(Captain captain) {
+		
+		biographyTextPane.setText("<font color = 'rgb(20, 40, 60)' size = 5>" + 
+		captain.bio + "<br>");
 		
 	}
 

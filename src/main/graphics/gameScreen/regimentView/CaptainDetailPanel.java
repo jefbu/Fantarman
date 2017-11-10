@@ -24,6 +24,7 @@ public class CaptainDetailPanel extends JPanel {
 	public CaptainBaseInfoPanel captainBaseInfoPanel;
 	public OrderPanel orderPanel;
 	public StatsBonusPanel statsBonusPanel;
+	public CaptainBiographyPanel captainBiographyPanel;
 
 	public CaptainDetailPanel(int width, int height) {
 
@@ -44,7 +45,7 @@ public class CaptainDetailPanel extends JPanel {
 				new FlowLayout(FlowLayout.LEFT, 0, 1));
 		add(captainBaseInfoPanel);
 
-		CaptainBiographyPanel captainBiographyPanel = new CaptainBiographyPanel(width / 2, height / 2 - 20,
+		captainBiographyPanel = new CaptainBiographyPanel(width / 2, height / 2 - 20,
 				Colour.LBLUE, new FlowLayout(FlowLayout.CENTER, 0, 0));
 		add(captainBiographyPanel);
 
@@ -61,6 +62,7 @@ public class CaptainDetailPanel extends JPanel {
 	public void fillCaptainDetailPanel(Regiment regiment) {
 
 		captainBaseInfoPanel.fillCaptainBaseInfoPanel(regiment);
+		captainBiographyPanel.fillCaptainBiography(regiment.captain);
 		orderPanel.fillOrderPanel(regiment);
 		statsBonusPanel.fillStatsBonusPanel(regiment);
 		
