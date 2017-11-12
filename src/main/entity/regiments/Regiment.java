@@ -78,6 +78,7 @@ public abstract class Regiment implements Serializable {
 	public int battleLife;
 
 	public String name;
+	public String regiment;
 	public RegimentType type;
 
 	public int rows;

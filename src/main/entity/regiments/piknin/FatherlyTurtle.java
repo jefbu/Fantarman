@@ -23,6 +23,7 @@ public class FatherlyTurtle extends Regiment {
 			}
 			
 			this.name = name;
+			this.regiment = "Fatherly Turtle";
 			this.race = Race.Piknin;
 			this.lieutenantsSize = 0;
 			this.captain = captain;

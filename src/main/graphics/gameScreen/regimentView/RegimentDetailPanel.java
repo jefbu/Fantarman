@@ -23,6 +23,8 @@ public class RegimentDetailPanel extends JPanel {
 	
 	ContentPanel regimentIconPanel;
 	JLabel regimentIconLabel;
+	JPanel regimentIconNamePanel;
+	JLabel regimentIconNameLabel;
 	RegimentBaseInfoPanel regimentBaseInfoPanel;
 	BattleStatsPanel battleStatsPanel;
 	HistoryStatsPanel historyStatsPanel;
@@ -42,6 +44,9 @@ public class RegimentDetailPanel extends JPanel {
 				new FlowLayout(FlowLayout.CENTER, 0, 15));
 		regimentIconLabel = new JLabel();
 		regimentIconPanel.insidePanel.add(regimentIconLabel);
+		regimentIconNameLabel = new JLabel();
+		regimentIconNameLabel.setForeground(Colors.vlblue);
+		regimentIconPanel.insidePanel.add(regimentIconNameLabel);
 		add(regimentIconPanel);
 
 		regimentBaseInfoPanel = new RegimentBaseInfoPanel(width / 6, height / 2 - 20,
@@ -65,6 +70,7 @@ public class RegimentDetailPanel extends JPanel {
 	public void fillRegimentDetailPanel(Regiment regiment) {
 		
 		regimentIconLabel.setIcon(regiment.largeIcon);
+		regimentIconNameLabel.setText(regiment.regiment);
 		regimentBaseInfoPanel.fillRegimentBaseInfoPanel(regiment);
 		battleStatsPanel.fillBattleStatsPanel(regiment);
 		historyStatsPanel.fillHistoryStatsPanel(regiment);
