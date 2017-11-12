@@ -25,7 +25,7 @@ public class Pickles extends Army {
 		roster.add(new Auxiliaries("2nd Line", Captain.boris));
 		roster.add(new Harvesters("Pitchforks", Captain.boris));
 		roster.add(new Harvesters("Tractors", Captain.boris));
-		roster.add(new LightBalloons("PRS Dreadnought", Captain.boris));
+		roster.add(new LightBalloons("PRS Dreadnought", Captain.professor));
 		roster.add(new PonyRiders("Rock Horses", Captain.boris));
 		roster.add(new PonyRiders("Mules with Mullets", Captain.boris));
 		roster.add(new DoveMasters("Doves de la Paz", Captain.boris));
