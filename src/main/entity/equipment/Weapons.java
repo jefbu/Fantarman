@@ -61,6 +61,13 @@ public class Weapons implements Serializable {
 	
 	public static Weapons fists = new Weapons("Fists", 0, 0, 0, 0, 0, 0, 0, 0);
 	
+	public static Weapons kukris = new Weapons("Kukris", 0, 10, 0, 0, 0, 0, 50, 25);
+	
+	public static Weapons slings = new Weapons("Slings", 0, 0, 0, 0, 0, 0, 0, 0);
+	public static Weapons kestros = new Weapons("Kestros", 0, 0, 0, 0, 1, 0, 100, 25);
+	
+	public static Weapons glaives = new Weapons("Glaives", 0, 0, 0, 0, 0, 0, 0, 0);
+	
 	
 	
 	

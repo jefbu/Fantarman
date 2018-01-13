@@ -6,6 +6,7 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 
 import main.components.LabeledPanel;
+import main.entity.regiments.Regiment;
 import main.utility.Colors;
 
 public class ArmourPanel extends JButton {
@@ -66,6 +67,10 @@ public class ArmourPanel extends JButton {
 		upkeepPanel.setBackground(Colors.lred);
 		upkeepPanel.label.setForeground(Colors.dred);
 		add(upkeepPanel);		
+		
+	}
+	
+	public void fillArmourPanel(Regiment regiment) {
 		
 	}
 

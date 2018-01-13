@@ -6,6 +6,7 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 
 import main.components.LabeledPanel;
+import main.entity.regiments.Regiment;
 import main.utility.Colors;
 
 public class WeaponPanel extends JButton {
@@ -79,7 +80,32 @@ public class WeaponPanel extends JButton {
 		upkeepPanel.label.setForeground(Colors.dred);
 		add(upkeepPanel);
 		
+	}
+	
+	public void fillWeaponPanel(Regiment regiment, int index) {
 		
+		if(index < regiment.weapons.size()) {
+		namePanel.label.setText(regiment.weapons.get(index).name);
+		attackPanel.label.setText(Integer.toString(regiment.weapons.get(index).attackBonus));
+		chargePanel.label.setText(Integer.toString(regiment.weapons.get(index).chargeBonus));
+		rangePanel.label.setText(Integer.toString(regiment.weapons.get(index).rangeBonus));
+		missilePanel.label.setText(Integer.toString(regiment.weapons.get(index).missileBonus));
+		defencePanel.label.setText(Integer.toString(regiment.weapons.get(index).defenceBonus));
+		speedPanel.label.setText(Integer.toString(regiment.weapons.get(index).spdPenalty));
+		costPanel.label.setText(Integer.toString(regiment.weapons.get(index).equipCost));
+		upkeepPanel.label.setText(Integer.toString(regiment.weapons.get(index).upkeep));
+		}
+		else {
+		namePanel.label.setText("");
+		attackPanel.label.setText("");
+		chargePanel.label.setText("");
+		rangePanel.label.setText("");
+		missilePanel.label.setText("");
+		defencePanel.label.setText("");
+		speedPanel.label.setText("");
+		costPanel.label.setText("");
+		upkeepPanel.label.setText("");			
+		}
 	}
 
 }

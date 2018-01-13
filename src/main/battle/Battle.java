@@ -5,9 +5,9 @@ import java.util.Random;
 import main.Main;
 import main.entity.armies.Army;
 import main.entity.captains.Captain;
-import main.entity.regiments.FireMages;
 import main.entity.regiments.piknin.DoveMasters;
 import main.entity.regiments.piknin.Harvesters;
+import main.entity.regiments.wanmen.FireMages;
 import main.entity.skills.Skills;
 import main.graphics.battleScreen.BattleScreen;
 
