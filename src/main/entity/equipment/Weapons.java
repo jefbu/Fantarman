@@ -49,6 +49,7 @@ public class Weapons implements Serializable {
 	public static Weapons wands = new Weapons("Magic Wands", 0, 0, 0, 0, 0, 0, 0, 0);
 	public static Weapons staves = new Weapons("Oaken Staves", 0, 5, 0, 5, 0, 0, 75, 15);
 	public static Weapons sceptres = new Weapons("Royal Sceptres", 0, 0, 0, 0, 0, 5, 75, 25);
+	public static Weapons crosiers = new Weapons("Crosiers", 0, 0, 0, 0, -1, 10, 100, 30);
 	
 	public static Weapons spears = new Weapons("Spears", 0, 0, 0, 0, 0, 0, 0, 0);
 	public static Weapons slingshots = new Weapons("Slingshots", 0, 0, 0, 0, 5, 30, 100, 15);
@@ -70,6 +71,17 @@ public class Weapons implements Serializable {
 	
 	public static Weapons talons = new Weapons("Talons", 0, 0, 0, 0, 0, 0, 0, 0);
 	public static Weapons sharpenedTalons = new Weapons("Sharpened", 0, 5, 0, 0, 0, 0, 50, 15);
+	
+	public static Weapons bows = new Weapons("Bows", 0, 0, 0, 0, 0, 0, 0, 0);
+	public static Weapons longbows = new Weapons("Longbows", 1, 0, 0, 0, 1, 5, 100, 30);
+	public static Weapons recurve = new Weapons("Recurve Bows", 0, 0, 0, 0, 0, 5, 75, 35);
+	
+	public static Weapons lances = new Weapons("Lances", 0, 0, 0, 0, 0, 0, 0, 0);
+	
+	public static Weapons swords = new Weapons("Swords", 0, 0, 0, 0, 0, 0, 0, 0);
+	public static Weapons halberds = new Weapons("Halberds", 0, 0, 0, -5, 5, 0, 50, 20);
+	
+	public static Weapons twohanders = new Weapons("Two Handed", 0, 5, -10, 0, 0, 0, 50, 30);
 	
 	
 	

@@ -53,4 +53,12 @@ public class Armour implements Serializable {
 	public static Armour feathered = new Armour("Feathered", 0, 0, 0, 0, 0, 0);
 	public static Armour crested = new Armour("Crested", 0, 0, 2, 5, 100, 40);
 	
+	public static Armour robes = new Armour("Robes", 0, 0, 0, 0, 0, 0);
+	public static Armour vestments = new Armour("Vestments", 0, 0, 0, 5, 50, 20);
+	
+	public static Armour halfPlate = new Armour("Half Plate", 0, 0, 0, 0, 0, 0);
+	public static Armour plate = new Armour("Plate", 1, 1, 10, 5, 75, 50);
+	public static Armour chainMail = new Armour("Chain Mail", 0, 0, 0, 0, 50, -5);
+	
+	
 }
