@@ -50,4 +50,7 @@ public class Armour implements Serializable {
 	public static Armour chitin = new Armour("Chitin", 0, 0, 0, 0, 0, 0);
 	public static Armour moult = new Armour("Moult", 0, 1, 5, 0, 50, 15);
 	
+	public static Armour feathered = new Armour("Feathered", 0, 0, 0, 0, 0, 0);
+	public static Armour crested = new Armour("Crested", 0, 0, 2, 5, 100, 40);
+	
 }

@@ -10,7 +10,9 @@ import javax.swing.JPanel;
 
 import main.Main;
 import main.entity.armies.Pickles;
+import main.entity.armies.Skylords;
 import main.entity.armies.TerribleTerquits;
+import main.entity.armies.Wanmen;
 import main.graphics.Screen;
 import main.utility.Colors;
 
@@ -50,6 +52,30 @@ public class GameStartScreen extends JPanel {
 				}
 			});
 		add(terquitButton);
+		
+		JButton wanmenButton = new JButton("Wanted Wanmen");
+		wanmenButton.setPreferredSize(new Dimension(300, 150));
+		wanmenButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Main.yourArmy = new Wanmen();
+				setVisible(false);
+				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
+				Screen.gameScreen.setVisible(true);
+			}
+		});
+		add(wanmenButton);	
+	
+		JButton skylordsButton = new JButton("Skylords");
+		skylordsButton.setPreferredSize(new Dimension(300, 150));
+		skylordsButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Main.yourArmy = new Skylords();
+				setVisible(false);
+				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
+				Screen.gameScreen.setVisible(true);
+			}
+		});
+		add(skylordsButton);
 		
 		
 	}
