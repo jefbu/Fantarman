@@ -1,13 +1,13 @@
 package main.entity.armies;
 
 import main.entity.captains.Captain;
-import main.entity.regiments.sacredCrux.BlazingLight;
-import main.entity.regiments.sacredCrux.BlessedGarland;
-import main.entity.regiments.sacredCrux.Cardinal;
-import main.entity.regiments.sacredCrux.PristineShield;
-import main.entity.regiments.sacredCrux.RedemptionSpirit;
-import main.entity.regiments.sacredCrux.RepentantMany;
-import main.entity.regiments.sacredCrux.ShiningFaithful;
+import main.entity.regiments.feods.BlazingLight;
+import main.entity.regiments.feods.BlessedGarland;
+import main.entity.regiments.feods.Cardinal;
+import main.entity.regiments.feods.PristineShield;
+import main.entity.regiments.feods.RedemptionSpirit;
+import main.entity.regiments.feods.RepentantMany;
+import main.entity.regiments.feods.ShiningFaithful;
 
 public class SacredCrux extends Army {
 	

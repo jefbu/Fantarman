@@ -1,4 +1,4 @@
-package main.entity.regiments.terribleTerquits;
+package main.entity.regiments.qoonfu;
 
 import main.battle.tactics.Condition;
 import main.battle.tactics.Order;
@@ -11,11 +11,9 @@ import main.entity.races.Race;
 import main.entity.regiments.Regiment;
 import main.entity.regiments.RegimentType;
 
-public class Kinshiwang extends Regiment {
-
-	private static final long serialVersionUID = 1L;
+public class MonkeyPaw extends Regiment {
 	
-	public Kinshiwang(String name, Captain captain) {
+	public MonkeyPaw(String name, Captain captain) {
 		
 		super();
 		for (int i = 0; i < captain.orders; i++) {
@@ -23,25 +21,25 @@ public class Kinshiwang extends Regiment {
 		}
 		
 		this.name = name;
-		this.race = Race.Terquit;
-		this.lieutenantsSize = 2;
+		this.race = Race.Qoonfu;
+		this.lieutenantsSize = 1;
 		this.captain = captain;
-		this.type = RegimentType.HEAVY_INFANTRY;
+		this.type = RegimentType.LIGHT_INFANTRY;
 		
-		this.baseAttack = 55;
+		this.baseAttack = 50;
 		this.baseCharge = 10;
-		this.baseDefence = 65;
+		this.baseDefence = 50;
 		this.baseMissile = 0;
-		this.baseMorale = 80;
-		this.baseSpeed = 11;
-		this.baseSpeedVariation = 3;
+		this.baseMorale = 60;
+		this.baseSpeed = 15;
+		this.baseSpeedVariation = 4;
 		this.baseRange = 0;
-		this.baseMove = 5;
-		this.baseRun = 1;
-		this.baseLife = 30;
+		this.baseMove = 6;
+		this.baseRun = 4;
+		this.baseLife = 15;
 		
 		this.rows = 3;
-		this.columns = 4;
+		this.columns = 3;
 		
 		panels = new int[rows * columns];
 		
@@ -51,10 +49,12 @@ public class Kinshiwang extends Regiment {
 		icon = imageLoader.loadImageIcon("/regiments/stout_of_heart.png", width, height);
 		
 		weapons.add(Weapons.fists);
-		armours.add(Armour.clay);
+		
+		armours.add(Armour.quilt);
+
 		
 		this.weapon = Weapons.fists;
-		this.armour = Armour.clay;
+		this.armour = Armour.quilt;
 		
 		calculateTotalStats();
 		calculateValue();

@@ -1,4 +1,4 @@
-package main.entity.regiments.sacredCrux;
+package main.entity.regiments.qoonfu;
 
 import main.battle.tactics.Condition;
 import main.battle.tactics.Order;
@@ -11,52 +11,53 @@ import main.entity.races.Race;
 import main.entity.regiments.Regiment;
 import main.entity.regiments.RegimentType;
 
-public class BlessedGarland extends Regiment {
+public class DrunkenMaster extends Regiment {
 	
-	private static final long serialVersionUID = 1L;
-
-	public BlessedGarland(String name, Captain captain) {
+	public DrunkenMaster(String name, Captain captain) {
 		
 		super();
 		for (int i = 0; i < captain.orders; i++) {
-		instructions.add(new Tactic(Condition.ALWAYS, Target.ENEMY_STRONGEST, Order.FIRE));
+		instructions.add(new Tactic(Condition.ALWAYS, Target.ENEMY_WEAKEST, Order.CHARGE));
 		}
 		
 		this.name = name;
-		this.race = Race.Feods;
-		this.lieutenantsSize = 3;
+		this.race = Race.Qoonfu;
+		this.lieutenantsSize = 0;
 		this.captain = captain;
-		this.type = RegimentType.HEAVY_CAVALRY;
-				
+		this.type = RegimentType.MONSTER;
+		
 		this.baseAttack = 50;
-		this.baseCharge = 30;
-		this.baseDefence = 50;
+		this.baseCharge = 20;
+		this.baseDefence = 75;
 		this.baseMissile = 0;
-		this.baseMorale = 60;
-		this.baseSpeed = 14;
+		this.baseMorale = 80;
+		this.baseSpeed = 16;
 		this.baseSpeedVariation = 5;
 		this.baseRange = 0;
 		this.baseMove = 6;
-		this.baseRun = 6;
-		this.baseLife = 15;
+		this.baseRun = 5;
+		this.baseLife = 5;
 		
 		this.rows = 2;
-		this.columns = 4;
+		this.columns = 2;
 		
 		panels = new int[rows * columns];
 		
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/dovemasters.png", width, height);
+		icon = imageLoader.loadImageIcon("/regiments/stout_of_heart.png", width, height);
 		
-		weapons.add(Weapons.lances);
+		weapons.add(Weapons.fists);
+		weapons.add(Weapons.bamboo);
+		weapons.add(Weapons.dao);
+		weapons.add(Weapons.chain);
 		
-		armours.add(Armour.halfPlate);
-		armours.add(Armour.plate);
+		armours.add(Armour.quilt);
+
 		
-		this.weapon = Weapons.lances;
-		this.armour = Armour.halfPlate;
+		this.weapon = Weapons.fists;
+		this.armour = Armour.quilt;
 		
 		calculateTotalStats();
 		calculateValue();

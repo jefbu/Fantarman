@@ -1,4 +1,4 @@
-package main.entity.regiments.terribleTerquits;
+package main.entity.regiments.qoonfu;
 
 import main.battle.tactics.Condition;
 import main.battle.tactics.Order;
@@ -11,11 +11,11 @@ import main.entity.races.Race;
 import main.entity.regiments.Regiment;
 import main.entity.regiments.RegimentType;
 
-public class PebbleHurlers extends Regiment {
+public class HairpinThrower extends Regiment {
 
 	private static final long serialVersionUID = 1L;
 
-	public PebbleHurlers(String name, Captain captain) {
+	public HairpinThrower(String name, Captain captain) {
 		
 		super();
 		for (int i = 0; i < captain.orders; i++) {
@@ -23,24 +23,24 @@ public class PebbleHurlers extends Regiment {
 		}
 		
 		this.name = name;
-		this.race = Race.Terquit;
-		this.lieutenantsSize = 1;
+		this.race = Race.Qoonfu;
+		this.lieutenantsSize = 2;
 		this.captain = captain;
-		this.type = RegimentType.ARCHERS;
+		this.type = RegimentType.COMBINED_ARMS;
 		
-		this.baseAttack = 30;
-		this.baseCharge = 5;
+		this.baseAttack = 45;
+		this.baseCharge = 10;
 		this.baseDefence = 45;
-		this.baseMissile = 45;
-		this.baseMorale = 75;
-		this.baseSpeed = 12;
+		this.baseMissile = 40;
+		this.baseMorale = 50;
+		this.baseSpeed = 15;
 		this.baseSpeedVariation = 4;
-		this.baseRange = 7;
-		this.baseMove = 5;
-		this.baseRun = 2;
+		this.baseRange = 6;
+		this.baseMove = 6;
+		this.baseRun = 3;
 		this.baseLife = 15;
 		
-		this.rows = 2;
+		this.rows = 3;
 		this.columns = 3;
 		
 		panels = new int[rows * columns];
@@ -50,11 +50,14 @@ public class PebbleHurlers extends Regiment {
 		
 		icon = imageLoader.loadImageIcon("/regiments/stout_of_heart.png", width, height);
 		
-		weapons.add(Weapons.fists);
-		armours.add(Armour.clay);
+		weapons.add(Weapons.hairpins);
+		weapons.add(Weapons.tiffanys);
 		
-		this.weapon = Weapons.fists;
-		this.armour = Armour.clay;
+		armours.add(Armour.quilt);
+
+		
+		this.weapon = Weapons.hairpins;
+		this.armour = Armour.quilt;
 		
 		calculateTotalStats();
 		calculateValue();

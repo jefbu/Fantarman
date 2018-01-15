@@ -1,20 +1,21 @@
-package main.entity.regiments.sacredCrux;
-
-import main.entity.captains.Captain;
-import main.entity.regiments.Regiment;
+package main.entity.regiments.feods;
 
 import main.battle.tactics.Condition;
 import main.battle.tactics.Order;
 import main.battle.tactics.Tactic;
 import main.battle.tactics.Target;
+import main.entity.captains.Captain;
 import main.entity.equipment.Armour;
 import main.entity.equipment.Weapons;
 import main.entity.races.Race;
+import main.entity.regiments.Regiment;
 import main.entity.regiments.RegimentType;
 
-public class PristineShield extends Regiment {
+public class BlessedGarland extends Regiment {
 	
-	public PristineShield(String name, Captain captain) {
+	private static final long serialVersionUID = 1L;
+
+	public BlessedGarland(String name, Captain captain) {
 		
 		super();
 		for (int i = 0; i < captain.orders; i++) {
@@ -27,20 +28,20 @@ public class PristineShield extends Regiment {
 		this.captain = captain;
 		this.type = RegimentType.HEAVY_CAVALRY;
 				
-		this.baseAttack = 45;
-		this.baseCharge = 25;
-		this.baseDefence = 55;
+		this.baseAttack = 50;
+		this.baseCharge = 30;
+		this.baseDefence = 50;
 		this.baseMissile = 0;
-		this.baseMorale = 55;
+		this.baseMorale = 60;
 		this.baseSpeed = 14;
-		this.baseSpeedVariation = 4;
+		this.baseSpeedVariation = 5;
 		this.baseRange = 0;
 		this.baseMove = 6;
-		this.baseRun = 5;
+		this.baseRun = 6;
 		this.baseLife = 15;
 		
-		this.rows = 4;
-		this.columns = 2;
+		this.rows = 2;
+		this.columns = 4;
 		
 		panels = new int[rows * columns];
 		
@@ -49,16 +50,17 @@ public class PristineShield extends Regiment {
 		
 		icon = imageLoader.loadImageIcon("/regiments/dovemasters.png", width, height);
 		
-		weapons.add(Weapons.swords);
+		weapons.add(Weapons.lances);
 		
 		armours.add(Armour.halfPlate);
 		armours.add(Armour.plate);
 		
-		this.weapon = Weapons.swords;
+		this.weapon = Weapons.lances;
 		this.armour = Armour.halfPlate;
 		
 		calculateTotalStats();
 		calculateValue();
+		
 	}
 
 }

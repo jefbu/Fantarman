@@ -83,6 +83,13 @@ public class Weapons implements Serializable {
 	
 	public static Weapons twohanders = new Weapons("Two Handed", 0, 5, -10, 0, 0, 0, 50, 30);
 	
+	public static Weapons hairpins = new Weapons("Hairpins", 0, 0, 0, 0, 0, 0, 0, 0);
+	public static Weapons tiffanys = new Weapons("Tiffanys", 0, 0, 0, 0, 0, 5, 150, 10);
+	
+	public static Weapons bamboo = new Weapons("Bamboo", 0, 2, 2, 2, 0, 0, 50, 25);
+	public static Weapons dao = new Weapons("Dao Sword", 0, 5, 0, 0, 0, 0, 50, 30);
+	public static Weapons chain = new Weapons("Chain Whip", 0, 0, 0, 0, 3, 40, 75, 25);
+	
 	
 	
 	

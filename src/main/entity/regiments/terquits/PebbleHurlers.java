@@ -1,4 +1,4 @@
-package main.entity.regiments.terribleTerquits;
+package main.entity.regiments.terquits;
 
 import main.battle.tactics.Condition;
 import main.battle.tactics.Order;
@@ -11,11 +11,11 @@ import main.entity.races.Race;
 import main.entity.regiments.Regiment;
 import main.entity.regiments.RegimentType;
 
-public class Arbalesters extends Regiment {
+public class PebbleHurlers extends Regiment {
 
 	private static final long serialVersionUID = 1L;
 
-	public Arbalesters(String name, Captain captain) {
+	public PebbleHurlers(String name, Captain captain) {
 		
 		super();
 		for (int i = 0; i < captain.orders; i++) {
@@ -24,23 +24,23 @@ public class Arbalesters extends Regiment {
 		
 		this.name = name;
 		this.race = Race.Terquit;
-		this.lieutenantsSize = 2;
+		this.lieutenantsSize = 1;
 		this.captain = captain;
-		this.type = RegimentType.COMBINED_ARMS;
+		this.type = RegimentType.ARCHERS;
 		
-		this.baseAttack = 50;
+		this.baseAttack = 30;
 		this.baseCharge = 5;
-		this.baseDefence = 60;
+		this.baseDefence = 45;
 		this.baseMissile = 45;
-		this.baseMorale = 80;
+		this.baseMorale = 75;
 		this.baseSpeed = 12;
 		this.baseSpeedVariation = 4;
-		this.baseRange = 6;
+		this.baseRange = 7;
 		this.baseMove = 5;
 		this.baseRun = 2;
-		this.baseLife = 30;
+		this.baseLife = 15;
 		
-		this.rows = 4;
+		this.rows = 2;
 		this.columns = 3;
 		
 		panels = new int[rows * columns];
@@ -52,7 +52,6 @@ public class Arbalesters extends Regiment {
 		
 		weapons.add(Weapons.fists);
 		armours.add(Armour.clay);
-		armours.add(Armour.porcelain);
 		
 		this.weapon = Weapons.fists;
 		this.armour = Armour.clay;

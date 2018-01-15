@@ -1,4 +1,4 @@
-package main.entity.regiments.sacredCrux;
+package main.entity.regiments.feods;
 
 import main.battle.tactics.Condition;
 import main.battle.tactics.Order;
@@ -11,12 +11,12 @@ import main.entity.races.Race;
 import main.entity.regiments.Regiment;
 import main.entity.regiments.RegimentType;
 
-public class RedemptionSpirit extends Regiment {
-
+public class RepentantMany extends Regiment {
+	
 	private static final long serialVersionUID = 1L;
 
-	public RedemptionSpirit(String name, Captain captain) {
-		
+	public RepentantMany(String name, Captain captain) {
+				
 		super();
 		for (int i = 0; i < captain.orders; i++) {
 		instructions.add(new Tactic(Condition.ALWAYS, Target.ENEMY_STRONGEST, Order.FIRE));
@@ -26,21 +26,21 @@ public class RedemptionSpirit extends Regiment {
 		this.race = Race.Feods;
 		this.lieutenantsSize = 2;
 		this.captain = captain;
-		this.type = RegimentType.ARCHERS;
+		this.type = RegimentType.LIGHT_INFANTRY;
 				
-		this.baseAttack = 35;
-		this.baseCharge = 5;
-		this.baseDefence = 45;
-		this.baseMissile = 40;
-		this.baseMorale = 50;
-		this.baseSpeed = 15;
+		this.baseAttack = 40;
+		this.baseCharge = 10;
+		this.baseDefence = 40;
+		this.baseMissile = 0;
+		this.baseMorale = 40;
+		this.baseSpeed = 14;
 		this.baseSpeedVariation = 4;
-		this.baseRange = 9;
-		this.baseMove = 5;
-		this.baseRun = 4;
-		this.baseLife = 25;
+		this.baseRange = 0;
+		this.baseMove = 6;
+		this.baseRun = 3;
+		this.baseLife = 30;
 		
-		this.rows = 2;
+		this.rows = 3;
 		this.columns = 4;
 		
 		panels = new int[rows * columns];
@@ -50,14 +50,13 @@ public class RedemptionSpirit extends Regiment {
 		
 		icon = imageLoader.loadImageIcon("/regiments/dovemasters.png", width, height);
 		
-		weapons.add(Weapons.bows);
-		weapons.add(Weapons.longbows);
-		weapons.add(Weapons.recurve);
+		weapons.add(Weapons.spears);
+		weapons.add(Weapons.slingshots);
 		
 		armours.add(Armour.quilt);
 		armours.add(Armour.halfLeather);
 		
-		this.weapon = Weapons.bows;
+		this.weapon = Weapons.spears;
 		this.armour = Armour.halfLeather;
 		
 		calculateTotalStats();

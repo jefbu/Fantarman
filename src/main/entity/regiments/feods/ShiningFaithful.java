@@ -1,4 +1,4 @@
-package main.entity.regiments.sacredCrux;
+package main.entity.regiments.feods;
 
 import main.battle.tactics.Condition;
 import main.battle.tactics.Order;

@@ -1,4 +1,4 @@
-package main.entity.regiments.sacredCrux;
+package main.entity.regiments.feods;
 
 import main.battle.tactics.Condition;
 import main.battle.tactics.Order;
@@ -11,11 +11,11 @@ import main.entity.races.Race;
 import main.entity.regiments.Regiment;
 import main.entity.regiments.RegimentType;
 
-public class Cardinal extends Regiment {
+public class BlazingLight extends Regiment {
 
 	private static final long serialVersionUID = 1L;
 
-	public Cardinal(String name, Captain captain) {
+	public BlazingLight(String name, Captain captain) {
 		
 		super();
 		for (int i = 0; i < captain.orders; i++) {
@@ -24,24 +24,24 @@ public class Cardinal extends Regiment {
 		
 		this.name = name;
 		this.race = Race.Feods;
-		this.lieutenantsSize = 0;
+		this.lieutenantsSize = 2;
 		this.captain = captain;
-		this.type = RegimentType.MONSTER;
+		this.type = RegimentType.HEAVY_CAVALRY;
 				
-		this.baseAttack = 40;
-		this.baseCharge = 5;
+		this.baseAttack = 55;
+		this.baseCharge = 30;
 		this.baseDefence = 50;
-		this.baseMissile = 25;
-		this.baseMorale = 65;
-		this.baseSpeed = 14;
-		this.baseSpeedVariation = 4;
-		this.baseRange = 12;
+		this.baseMissile = 0;
+		this.baseMorale = 55;
+		this.baseSpeed = 15;
+		this.baseSpeedVariation = 5;
+		this.baseRange = 0;
 		this.baseMove = 6;
-		this.baseRun = 3;
-		this.baseLife = 5;
+		this.baseRun = 7;
+		this.baseLife = 10;
 		
 		this.rows = 2;
-		this.columns = 2;
+		this.columns = 3;
 		
 		panels = new int[rows * columns];
 		
@@ -50,16 +50,15 @@ public class Cardinal extends Regiment {
 		
 		icon = imageLoader.loadImageIcon("/regiments/dovemasters.png", width, height);
 		
-		weapons.add(Weapons.wands);
-		weapons.add(Weapons.staves);
-		weapons.add(Weapons.sceptres);
-		weapons.add(Weapons.crosiers);
+		weapons.add(Weapons.lances);
+		weapons.add(Weapons.twohanders);
 		
-		armours.add(Armour.robes);
-		armours.add(Armour.vestments);
+		armours.add(Armour.halfPlate);
+		armours.add(Armour.plate);
+		armours.add(Armour.chainMail);
 		
-		this.weapon = Weapons.wands;
-		this.armour = Armour.robes;
+		this.weapon = Weapons.spears;
+		this.armour = Armour.halfLeather;
 		
 		calculateTotalStats();
 		calculateValue();

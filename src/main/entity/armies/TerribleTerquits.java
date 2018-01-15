@@ -1,9 +1,9 @@
 package main.entity.armies;
 
 import main.entity.captains.Captain;
-import main.entity.regiments.terribleTerquits.Arbalesters;
-import main.entity.regiments.terribleTerquits.Kinshiwang;
-import main.entity.regiments.terribleTerquits.PebbleHurlers;
+import main.entity.regiments.terquits.Arbalesters;
+import main.entity.regiments.terquits.Kinshiwang;
+import main.entity.regiments.terquits.PebbleHurlers;
 
 public class TerribleTerquits extends Army {
 

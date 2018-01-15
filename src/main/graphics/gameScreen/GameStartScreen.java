@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import main.Main;
+import main.entity.armies.ChiDestroyers;
 import main.entity.armies.Pickles;
 import main.entity.armies.SacredCrux;
 import main.entity.armies.Skylords;
@@ -78,7 +79,7 @@ public class GameStartScreen extends JPanel {
 		});
 		add(skylordsButton);
 		
-		JButton sacredCruxButton = new JButton("Skylords");
+		JButton sacredCruxButton = new JButton("Sacred Crux");
 		sacredCruxButton.setPreferredSize(new Dimension(300, 150));
 		sacredCruxButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -89,6 +90,19 @@ public class GameStartScreen extends JPanel {
 			}
 		});
 		add(sacredCruxButton);
+		
+		
+		JButton chiDestroyersButton = new JButton("Chi Destroyers");
+		chiDestroyersButton.setPreferredSize(new Dimension(300, 150));
+		chiDestroyersButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Main.yourArmy = new ChiDestroyers();
+				setVisible(false);
+				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
+				Screen.gameScreen.setVisible(true);
+			}
+		});
+		add(chiDestroyersButton);
 		
 		
 	}
