@@ -1,4 +1,4 @@
-package main.graphics.gameScreen;
+package main.graphics;
 
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -10,12 +10,13 @@ import javax.swing.JPanel;
 
 import main.Main;
 import main.entity.armies.ChiDestroyers;
+import main.entity.armies.Metropolitans;
+import main.entity.armies.MulticulturalSociety;
 import main.entity.armies.Pickles;
 import main.entity.armies.SacredCrux;
 import main.entity.armies.Skylords;
 import main.entity.armies.TerribleTerquits;
 import main.entity.armies.Wanmen;
-import main.graphics.Screen;
 import main.utility.Colors;
 
 public class GameStartScreen extends JPanel {
@@ -103,6 +104,30 @@ public class GameStartScreen extends JPanel {
 			}
 		});
 		add(chiDestroyersButton);
+		
+		JButton metropolitansButton = new JButton("Metropolitans");
+		metropolitansButton.setPreferredSize(new Dimension(300, 150));
+		metropolitansButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Main.yourArmy = new Metropolitans();
+				setVisible(false);
+				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
+				Screen.gameScreen.setVisible(true);
+			}
+		});
+		add(metropolitansButton);
+		
+		JButton multiculturalSocietyButton = new JButton("Multicultural Society");
+		multiculturalSocietyButton.setPreferredSize(new Dimension(300, 150));
+		multiculturalSocietyButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Main.yourArmy = new MulticulturalSociety();
+				setVisible(false);
+				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
+				Screen.gameScreen.setVisible(true);
+			}
+		});
+		add(multiculturalSocietyButton);
 		
 		
 	}

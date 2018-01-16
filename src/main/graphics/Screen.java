@@ -11,7 +11,6 @@ import javax.swing.border.LineBorder;
 
 import main.graphics.battleScreen.BattleScreen;
 import main.graphics.gameScreen.GameScreen;
-import main.graphics.gameScreen.GameStartScreen;
 import main.graphics.gameScreen.TitleScreen;
 
 public class Screen extends JFrame {
