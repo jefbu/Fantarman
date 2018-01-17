@@ -15,6 +15,8 @@ public class SacredCrux extends Army {
 
 	public SacredCrux() {
 		
+		name = "Order of the Sacred Crux";
+		
 		roster.add(new RepentantMany("Chastity", Captain.boris));
 		roster.add(new RepentantMany("Temperance", Captain.boris));
 		roster.add(new ShiningFaithful("Charity", Captain.boris));

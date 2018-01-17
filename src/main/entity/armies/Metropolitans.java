@@ -18,6 +18,7 @@ public class Metropolitans extends Army {
 	public Metropolitans() {
 		
 		super();
+		name = "Metropolitans";
 		
 		roster.add(new DoveMasters("Leswasohs", Captain.boris));
 		roster.add(new PonyRiders("Shevau", Captain.boris));

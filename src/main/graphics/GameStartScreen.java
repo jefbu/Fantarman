@@ -3,12 +3,14 @@ package main.graphics;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import main.Main;
+import main.entity.armies.Army;
 import main.entity.armies.ChiDestroyers;
 import main.entity.armies.Metropolitans;
 import main.entity.armies.MulticulturalSociety;
@@ -37,6 +39,7 @@ public class GameStartScreen extends JPanel {
 			pikninButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					Main.yourArmy = new Pickles();
+					createLeague(Main.yourArmy);
 					setVisible(false);
 					Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
 					Screen.gameScreen.setVisible(true);
@@ -49,6 +52,7 @@ public class GameStartScreen extends JPanel {
 			terquitButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					Main.yourArmy = new TerribleTerquits();
+					createLeague(Main.yourArmy);
 					setVisible(false);
 					Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
 					Screen.gameScreen.setVisible(true);
@@ -61,6 +65,7 @@ public class GameStartScreen extends JPanel {
 		wanmenButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main.yourArmy = new Wanmen();
+				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
 				Screen.gameScreen.setVisible(true);
@@ -73,6 +78,7 @@ public class GameStartScreen extends JPanel {
 		skylordsButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main.yourArmy = new Skylords();
+				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
 				Screen.gameScreen.setVisible(true);
@@ -85,6 +91,7 @@ public class GameStartScreen extends JPanel {
 		sacredCruxButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main.yourArmy = new SacredCrux();
+				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
 				Screen.gameScreen.setVisible(true);
@@ -98,6 +105,7 @@ public class GameStartScreen extends JPanel {
 		chiDestroyersButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main.yourArmy = new ChiDestroyers();
+				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
 				Screen.gameScreen.setVisible(true);
@@ -110,6 +118,7 @@ public class GameStartScreen extends JPanel {
 		metropolitansButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main.yourArmy = new Metropolitans();
+				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
 				Screen.gameScreen.setVisible(true);
@@ -122,13 +131,33 @@ public class GameStartScreen extends JPanel {
 		multiculturalSocietyButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main.yourArmy = new MulticulturalSociety();
+				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
 				Screen.gameScreen.setVisible(true);
 			}
 		});
 		add(multiculturalSocietyButton);
+				
 		
+	}
+	
+	public void createLeague(Army army) {
+		
+		ArrayList<Army> armies = new ArrayList<Army>();
+		
+		armies.add(Main.yourArmy);
+		
+		if (Main.yourArmy.name != "Chi Destroyers") armies.add(new ChiDestroyers());
+		if (Main.yourArmy.name != "Metropolitans") armies.add(new Metropolitans());
+		if (Main.yourArmy.name != "Multicultural Society") armies.add(new MulticulturalSociety());
+		if (Main.yourArmy.name != "Piknin Pickles") armies.add(new Pickles());
+		if (Main.yourArmy.name != "Order of the Sacred Crux") armies.add(new SacredCrux());
+		if (Main.yourArmy.name != "Skylords") armies.add(new Skylords());
+		if (Main.yourArmy.name != "Terrible Terquits") armies.add(new TerribleTerquits());
+		if (Main.yourArmy.name != "Wanted Wanmen") armies.add(new Wanmen());
+		
+		Main.league.populateLeague(armies);
 		
 	}
 

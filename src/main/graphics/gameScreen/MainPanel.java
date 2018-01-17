@@ -41,7 +41,7 @@ public class MainPanel extends JPanel {
 		homeView = new HomeView(gameScreenWidth, gameScreenHeight);
 		add(homeView);
 		
-		leagueView = new LeagueView();
+		leagueView = new LeagueView(gameScreenWidth, gameScreenHeight);
 		add(leagueView);
 		
 		infoView = new InfoView();

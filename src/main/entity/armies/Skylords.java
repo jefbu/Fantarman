@@ -15,6 +15,9 @@ public class Skylords extends Army {
 
 	public Skylords() {
 		
+		super();
+		name = "Skylords";
+		
 		roster.add(new Corpus("Royal Crest", Captain.boris));
 		roster.add(new Jackdaws("Fledglings", Captain.boris));
 		roster.add(new Jackdaws("Down Feathers", Captain.boris));

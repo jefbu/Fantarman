@@ -16,6 +16,7 @@ public class Pickles extends Army {
 	public Pickles() {
 		
 		super();
+		name = "Piknin Pickles";
 
 		roster.add(new StoutOfHeart("Valiant Lads", Captain.boris));
 		roster.add(new StoutOfHeart("Noble Chums", Captain.boris));

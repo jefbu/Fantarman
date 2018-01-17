@@ -14,6 +14,7 @@ public class Wanmen extends Army {
 	public Wanmen() {
 		
 		super();
+		name = "Wanted Wanmen";
 		
 		roster.add(new Stiltleg("Ashri", Captain.boris));
 		roster.add(new Stiltleg("Ashrini", Captain.boris));
