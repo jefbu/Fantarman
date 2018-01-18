@@ -1,14 +1,21 @@
 package main.graphics.gameScreen;
 
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 
 import javax.swing.JPanel;
 
+import main.graphics.gameScreen.leagueView.LeagueFilterPanel;
+import main.graphics.gameScreen.leagueView.LeagueFixturesPanel;
+import main.graphics.gameScreen.leagueView.LeagueRankingPanel;
 import main.utility.Colors;
 
 public class LeagueView extends JPanel {
 
 	private static final long serialVersionUID = 1L;
+	private LeagueFilterPanel filterPanel;
+	private LeagueRankingPanel rankingPanel;
+	private LeagueFixturesPanel fixturesPanel;
 
 	public LeagueView(int width, int height) {
 		
@@ -20,8 +27,17 @@ public class LeagueView extends JPanel {
 		setPreferredSize(new Dimension(roundedWidth, unroundedHeight));
 		setBackground(Colors.vlblue);
 		
+		setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 		
+		filterPanel = new LeagueFilterPanel(roundedWidth, unroundedHeight / 10);
 		
+		rankingPanel = new LeagueRankingPanel(roundedWidth, unroundedHeight * 55 / 100);
+		
+		fixturesPanel = new LeagueFixturesPanel(roundedWidth, unroundedHeight * 35 / 100);
+		
+		add(filterPanel);
+		add(rankingPanel);
+		add(fixturesPanel);
 	}
 
 }
