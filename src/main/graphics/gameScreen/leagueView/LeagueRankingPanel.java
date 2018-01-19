@@ -21,9 +21,9 @@ public class LeagueRankingPanel extends JPanel {
 		setPreferredSize(new Dimension(width, height));
 		setBackground(Color.GRAY);
 		
-		setLayout(new FlowLayout(FlowLayout.LEADING, width * 15 / 100, height * 15 / 100));
+		setLayout(new FlowLayout(FlowLayout.LEADING, width / 10, height / 10));
 		
-		leagueRankingTable = new LeagueRankingTable(width * 7 / 10, height * 7 / 10);
+		leagueRankingTable = new LeagueRankingTable(width * 8 / 10, height * 8 / 10);
 		add(leagueRankingTable);
 		
 	}

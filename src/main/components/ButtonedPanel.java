@@ -26,6 +26,7 @@ public class ButtonedPanel extends JPanel {
 		this.color = color;
 		
 		setPreferredSize(new Dimension(width, height));
+		setOpaque(false);
 		setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 		
 		button = new JButton();
