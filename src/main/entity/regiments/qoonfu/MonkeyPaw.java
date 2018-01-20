@@ -12,7 +12,9 @@ import main.entity.regiments.Regiment;
 import main.entity.regiments.RegimentType;
 
 public class MonkeyPaw extends Regiment {
-	
+
+	private static final long serialVersionUID = 1L;
+
 	public MonkeyPaw(String name, Captain captain) {
 		
 		super();

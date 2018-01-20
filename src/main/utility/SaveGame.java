@@ -6,6 +6,7 @@ import java.io.ObjectOutputStream;
 
 import main.Main;
 import main.entity.armies.Army;
+import main.entity.leagues.League;
 
 public abstract class SaveGame {
 	
@@ -17,8 +18,10 @@ public abstract class SaveGame {
 			ObjectOutputStream save = new ObjectOutputStream(saveFile);
 
 			Army savedArmy = Main.yourArmy;
+			League savedLeague = Main.league;
 			
 			save.writeObject(savedArmy);
+			save.writeObject(savedLeague);
 			
 			save.close();
 			

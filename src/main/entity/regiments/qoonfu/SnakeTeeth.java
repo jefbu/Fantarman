@@ -13,6 +13,8 @@ import main.entity.regiments.RegimentType;
 
 public class SnakeTeeth extends Regiment {
 	
+	private static final long serialVersionUID = 1L;
+
 	public SnakeTeeth(String name, Captain captain) {
 		
 		super();

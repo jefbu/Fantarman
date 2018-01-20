@@ -2,27 +2,36 @@ package main.graphics.gameScreen.leagueView;
 
 import java.awt.FlowLayout;
 
-import javax.swing.JPanel;
-
 import main.components.Colour;
 import main.components.ContentPanel;
+import main.utility.Colors;
 
 public class LeagueRankingTable extends ContentPanel {
 	
 	private static final long serialVersionUID = 1L;
+	
+	RowPanel army0Panel;
+	RowPanel army1Panel;
+	RowPanel army2Panel;
+	RowPanel army3Panel;
+	RowPanel army4Panel;
+	RowPanel army5Panel;
+	RowPanel army6Panel;
+	RowPanel army7Panel;
 
 	public LeagueRankingTable(int width, int height) {
 		
 		super(width, height, Colour.DGREEN, new FlowLayout(FlowLayout.LEFT, 0, 0));
-		RowPanel army1Panel = new RowPanel(width, height / 8 + 10, Colour.BLUE, new FlowLayout(FlowLayout.LEFT, 1, 1));
-		ContentPanel army2Panel = new ContentPanel(width, height / 8 + 10, Colour.DBLUE, new FlowLayout(FlowLayout.LEFT, 0, 0));
-		ContentPanel army3Panel = new ContentPanel(width, height / 8 + 10, Colour.BLUE, new FlowLayout(FlowLayout.LEFT, 0, 0));
-		ContentPanel army4Panel = new ContentPanel(width, height / 8 + 10, Colour.DBLUE, new FlowLayout(FlowLayout.LEFT, 0, 0));
-		ContentPanel army5Panel = new ContentPanel(width, height / 8 + 10, Colour.BLUE, new FlowLayout(FlowLayout.LEFT, 0, 0));
-		ContentPanel army6Panel = new ContentPanel(width, height / 8 + 10, Colour.DBLUE, new FlowLayout(FlowLayout.LEFT, 0, 0));
-		ContentPanel army7Panel = new ContentPanel(width, height / 8 + 10, Colour.BLUE, new FlowLayout(FlowLayout.LEFT, 0, 0));
-		ContentPanel army8Panel = new ContentPanel(width, height / 8 + 10, Colour.DBLUE, new FlowLayout(FlowLayout.LEFT, 0, 0));
-
+		army0Panel = new RowPanel(width, height / 8 + 10, Colors.lblue);
+		army1Panel = new RowPanel(width, height / 8 + 10, Colors.vlblue);
+		army2Panel = new RowPanel(width, height / 8 + 10, Colors.lblue);
+		army3Panel = new RowPanel(width, height / 8 + 10, Colors.vlblue);
+		army4Panel = new RowPanel(width, height / 8 + 10, Colors.lblue);
+		army5Panel = new RowPanel(width, height / 8 + 10, Colors.vlblue);
+		army6Panel = new RowPanel(width, height / 8 + 10, Colors.lblue);
+		army7Panel = new RowPanel(width, height / 8 + 10, Colors.vlblue);
+	
+		insidePanel.add(army0Panel);
 		insidePanel.add(army1Panel);
 		insidePanel.add(army2Panel);
 		insidePanel.add(army3Panel);
@@ -30,7 +39,13 @@ public class LeagueRankingTable extends ContentPanel {
 		insidePanel.add(army5Panel);
 		insidePanel.add(army6Panel);
 		insidePanel.add(army7Panel);
-		insidePanel.add(army8Panel);
+				
+	}
+	
+	public void fillRankingTable() {
+		
+		army0Panel.fillRow(0);
+		army1Panel.fillRow(1);
 		
 	}
 

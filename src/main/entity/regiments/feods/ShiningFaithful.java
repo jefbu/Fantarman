@@ -13,6 +13,8 @@ import main.entity.regiments.RegimentType;
 
 public class ShiningFaithful extends Regiment {
 	
+	private static final long serialVersionUID = 1L;
+	
 	public ShiningFaithful(String name, Captain captain) {
 		
 		super();

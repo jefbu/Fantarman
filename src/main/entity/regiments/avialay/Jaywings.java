@@ -12,7 +12,9 @@ import main.entity.regiments.Regiment;
 import main.entity.regiments.RegimentType;
 
 public class Jaywings extends Regiment {
-	
+
+	private static final long serialVersionUID = 1L;
+
 	public Jaywings(String name, Captain captain) {
 		
 		super();

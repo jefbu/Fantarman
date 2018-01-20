@@ -1,7 +1,11 @@
 package main.entity.leagues;
 
-public class ScoreSheet {
-	
+import java.io.Serializable;
+
+public class ScoreSheet implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
 	public int bigWins;
 	public int smallWins;
 	public int draws;

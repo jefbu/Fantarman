@@ -13,7 +13,9 @@ import main.entity.races.Race;
 import main.entity.regiments.RegimentType;
 
 public class PristineShield extends Regiment {
-	
+
+	private static final long serialVersionUID = 1L;
+
 	public PristineShield(String name, Captain captain) {
 		
 		super();

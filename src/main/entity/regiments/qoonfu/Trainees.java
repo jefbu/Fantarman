@@ -13,6 +13,8 @@ import main.entity.regiments.RegimentType;
 
 public class Trainees extends Regiment {
 	
+	private static final long serialVersionUID = 1L;
+
 	public Trainees(String name, Captain captain) {
 		
 		super();

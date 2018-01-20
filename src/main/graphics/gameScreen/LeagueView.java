@@ -13,9 +13,9 @@ import main.utility.Colors;
 public class LeagueView extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	private LeagueFilterPanel filterPanel;
-	private LeagueRankingPanel rankingPanel;
-	private LeagueFixturesPanel fixturesPanel;
+	public LeagueFilterPanel filterPanel;
+	public LeagueRankingPanel rankingPanel;
+	public LeagueFixturesPanel fixturesPanel;
 
 	public LeagueView(int width, int height) {
 		
