@@ -29,11 +29,11 @@ public class LeagueView extends JPanel {
 		
 		setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 		
-		filterPanel = new LeagueFilterPanel(roundedWidth, unroundedHeight / 10);
+		filterPanel = new LeagueFilterPanel(roundedWidth, unroundedHeight * 7 / 100);
 		
-		rankingPanel = new LeagueRankingPanel(roundedWidth, unroundedHeight * 55 / 100);
-		
-		fixturesPanel = new LeagueFixturesPanel(roundedWidth, unroundedHeight * 35 / 100);
+		rankingPanel = new LeagueRankingPanel(roundedWidth, unroundedHeight * 68 / 100);
+	
+		fixturesPanel = new LeagueFixturesPanel(roundedWidth, unroundedHeight * 25 / 100);
 		
 		add(filterPanel);
 		add(rankingPanel);

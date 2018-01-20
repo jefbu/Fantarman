@@ -22,14 +22,14 @@ public class LeagueRankingTable extends ContentPanel {
 	public LeagueRankingTable(int width, int height) {
 		
 		super(width, height, Colour.DGREEN, new FlowLayout(FlowLayout.LEFT, 0, 0));
-		army0Panel = new RowPanel(width, height / 8 + 10, Colors.lblue);
-		army1Panel = new RowPanel(width, height / 8 + 10, Colors.vlblue);
-		army2Panel = new RowPanel(width, height / 8 + 10, Colors.lblue);
-		army3Panel = new RowPanel(width, height / 8 + 10, Colors.vlblue);
-		army4Panel = new RowPanel(width, height / 8 + 10, Colors.lblue);
-		army5Panel = new RowPanel(width, height / 8 + 10, Colors.vlblue);
-		army6Panel = new RowPanel(width, height / 8 + 10, Colors.lblue);
-		army7Panel = new RowPanel(width, height / 8 + 10, Colors.vlblue);
+		army0Panel = new RowPanel(width, height / 8 + 3, Colors.lblue);
+		army1Panel = new RowPanel(width, height / 8 + 3, Colors.vlblue);
+		army2Panel = new RowPanel(width, height / 8 + 3, Colors.lblue);
+		army3Panel = new RowPanel(width, height / 8 + 3, Colors.vlblue);
+		army4Panel = new RowPanel(width, height / 8 + 3, Colors.lblue);
+		army5Panel = new RowPanel(width, height / 8 + 3, Colors.vlblue);
+		army6Panel = new RowPanel(width, height / 8 + 3, Colors.lblue);
+		army7Panel = new RowPanel(width, height / 8 + 3, Colors.vlblue);
 	
 		insidePanel.add(army0Panel);
 		insidePanel.add(army1Panel);
