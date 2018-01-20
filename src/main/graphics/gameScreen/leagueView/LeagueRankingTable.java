@@ -46,6 +46,13 @@ public class LeagueRankingTable extends ContentPanel {
 		
 		army0Panel.fillRow(0);
 		army1Panel.fillRow(1);
+		army2Panel.fillRow(2);
+		army3Panel.fillRow(3);
+		army4Panel.fillRow(4);
+		army5Panel.fillRow(5);
+		army6Panel.fillRow(6);
+		army7Panel.fillRow(7);
+		
 		
 	}
 

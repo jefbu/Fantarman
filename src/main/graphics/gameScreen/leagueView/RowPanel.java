@@ -56,6 +56,11 @@ public class RowPanel extends JPanel {
 		
 		namePanel.label.setText(Main.league.armies.get(index).name);
 		bigWinPanel.label.setText(Integer.toString(Main.league.armies.get(index).scoreSheet.bigWins));
+		smallWinPanel.label.setText(Integer.toString(Main.league.armies.get(index).scoreSheet.smallWins));
+		drawPanel.label.setText(Integer.toString(Main.league.armies.get(index).scoreSheet.draws));
+		smallLossPanel.label.setText(Integer.toString(Main.league.armies.get(index).scoreSheet.smallLosses));
+		bigLossPanel.label.setText(Integer.toString(Main.league.armies.get(index).scoreSheet.bigLosses));
+		totalPointsPanel.label.setText(Integer.toString(Main.league.armies.get(index).scoreSheet.totalPoints));
 		
 	}
 
