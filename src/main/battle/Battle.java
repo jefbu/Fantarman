@@ -1,14 +1,8 @@
 package main.battle;
 
-import java.util.Random;
-
 import main.Main;
 import main.entity.armies.Army;
-import main.entity.captains.Captain;
-import main.entity.regiments.piknin.DoveMasters;
-import main.entity.regiments.piknin.Harvesters;
-import main.entity.regiments.wanmen.FireMages;
-import main.entity.skills.Skills;
+import main.entity.leagues.Matchup;
 import main.graphics.battleScreen.BattleScreen;
 
 public class Battle {
@@ -25,7 +19,7 @@ public class Battle {
 		yourBattleArmy = new Army();
 		makeYourArmy();
 		yourBattleArmy.calculateValue();
-		opponentBattleArmy = makeRandomArmy();
+		opponentBattleArmy = chooseOpponentArmy();
 		opponentBattleArmy.calculateValue();
 
 		BattleScreen.battleScene.createMap();
@@ -42,32 +36,14 @@ public class Battle {
 		}
 	}
 
-	private Army makeRandomArmy() {
+	private Army chooseOpponentArmy() {
 
-		Random random = new Random();
-		int roll = random.nextInt(4) + 4;
-		int roll2 = 0;
-		Army opponents = new Army();
-
-		for (int i = 0; i < roll; i++) {
-			roll2 = random.nextInt(3);
-			switch (roll2) {
-			case 0:
-				opponents.roster.add(new FireMages("FireMages" + i,
-						new Captain("Blofeld", "Male", 0, 0, 0, 0, 0, 0, 1, 40, null, null, "text")));
-				break;
-			case 1:
-				opponents.roster.add(new DoveMasters("DoveMasters" + i,
-						new Captain("Spectre", "Female", 0, 0, 0, 0, 0, 0, 3, 35, null, null, "text")));
-				break;
-			case 2:
-				opponents.roster.add(new Harvesters("Harvesters" + i,
-						new Captain("Goldfinger", "Male", 0, 0, 0, 0, 0, 0, 2, 45, Skills.Deployer, null, "text")));
-				break;
-			}
+		for (Matchup matchup: Main.league.calendar.calendarDays.get(Main.league.calendarDay).matchups) {
+			if (matchup.army1 == Main.yourArmy) { return matchup.army2; }
+			else if (matchup.army2 == Main.yourArmy) { return matchup.army1; }
 		}
-
-		return opponents;
+		
+		return null;
 
 	}
 

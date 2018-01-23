@@ -158,6 +158,7 @@ public class GameStartScreen extends JPanel {
 		if (Main.yourArmy.name != "Wanted Wanmen") armies.add(new Wanmen());
 		
 		Main.league.populateLeague(armies);
+		Main.league.createCalendar();
 		
 	}
 
