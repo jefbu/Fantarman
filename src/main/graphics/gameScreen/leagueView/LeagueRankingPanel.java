@@ -30,5 +30,11 @@ public class LeagueRankingPanel extends JPanel {
 		add(leagueRankingTable);
 
 	}
+	
+	public void fillRankingPanel(){
+		
+		leagueRankingTable.fillLeagueRankingTable();
+		
+	}
 
 }

@@ -16,5 +16,9 @@ public class LeagueFixturesPanel extends JPanel {
 		setBackground(Color.BLUE);
 		
 	}
+	
+	public void fillFixturesPanel() {
+		
+	}
 
 }

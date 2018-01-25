@@ -42,7 +42,7 @@ public class LeagueRankingTable extends ContentPanel {
 				
 	}
 	
-	public void fillRankingTable() {
+	public void fillLeagueRankingTable() {
 		
 		army0Panel.fillRow(0);
 		army1Panel.fillRow(1);

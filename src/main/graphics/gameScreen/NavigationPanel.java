@@ -62,7 +62,7 @@ public class NavigationPanel extends JPanel {
 		leagueViewPanel.buttonedPanel.button.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				Screen.gameScreen.setScreensInvisible();
-				Screen.gameScreen.mainPanel.leagueView.rankingPanel.leagueRankingTable.fillRankingTable();
+				Screen.gameScreen.mainPanel.leagueView.rankingPanel.leagueRankingTable.fillLeagueRankingTable();
 				Screen.gameScreen.mainPanel.leagueView.setVisible(true);
 			}
 		});

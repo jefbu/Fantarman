@@ -14,7 +14,7 @@ public class BattleConclusion extends TextPopup {
 
 	public BattleConclusion(Colour colour, Army yourBattleArmy, Army opponentBattleArmy) {
 		
-		super(BattleScreen.battleScene.roundedWidth / 3, BattleScreen.battleScene.roundedHeight / 4, colour, true);
+		super(BattleScreen.battleScene.roundedWidth / 2, BattleScreen.battleScene.roundedHeight / 2, colour, true);
 		
 		int yourInitialValue = yourBattleArmy.value;
 		int enemyInitialValue = opponentBattleArmy.value;
@@ -35,7 +35,12 @@ public class BattleConclusion extends TextPopup {
 		if (yourPercentage > enemyPercentage * 15 / 10) {
 			Adjectives adjectives = new Adjectives();
 			String adjective = adjectives.choosePositiveAdjective();
-			writeText (adjective + " victory"); }
+			writeText (adjective + " victory"); 
+			Main.yourArmy.scoreSheet.bigWins++;
+			Main.yourArmy.scoreSheet.calculatePoints();
+			opponentBattleArmy.scoreSheet.bigLosses++;
+			opponentBattleArmy.scoreSheet.calculatePoints();
+		}
 		else if (yourPercentage > enemyPercentage * 12 / 10) { writeText ("minor victory"); }
 		else if (yourPercentage > enemyPercentage * 8 / 10) { writeText ("draw"); }
 		else if (yourPercentage > enemyPercentage * 6 / 10) { writeText ("minor loss"); }

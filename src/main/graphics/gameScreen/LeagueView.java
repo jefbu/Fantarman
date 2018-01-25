@@ -39,5 +39,10 @@ public class LeagueView extends JPanel {
 		add(rankingPanel);
 		add(fixturesPanel);
 	}
+	
+	public void fillLeagueView() {
+		rankingPanel.fillRankingPanel();
+		fixturesPanel.fillFixturesPanel();
+	}
 
 }
