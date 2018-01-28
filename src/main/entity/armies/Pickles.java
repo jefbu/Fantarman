@@ -32,7 +32,7 @@ public class Pickles extends Army {
 		roster.add(new DoveMasters("Doves de la Paz", Captain.boris));
 		roster.add(new Harvesters("Trowels", Captain.boris));
 		
-		
+		calculateValue();
 
 		
 	}

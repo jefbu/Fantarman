@@ -29,6 +29,7 @@ public class ChiDestroyers extends Army {
 		roster.add(new Trainees("Wolf Cubs", Captain.boris));
 		roster.add(new Trainees("Tadpoles", Captain.professor));
 
+		calculateValue();
 		
 	}
 

@@ -30,6 +30,8 @@ public class Metropolitans extends Army {
 		roster.add(new CraneWing("Azure Wings", Captain.boris));
 		roster.add(new TigerFist("Act of Strength", Captain.professor));
 		
+		calculateValue();
+		
 	}
 
 }

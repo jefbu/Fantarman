@@ -23,6 +23,8 @@ public class TerribleTerquits extends Army {
 		roster.add(new Arbalesters("Pearl Arrows", Captain.boris));
 		roster.add(new Arbalesters("Heaven's Ruby", Captain.boris));
 		
+		calculateValue();
+		
 	}
 	
 }

@@ -27,6 +27,8 @@ public class SacredCrux extends Army {
 		roster.add(new RedemptionSpirit("Humility", Captain.boris));
 		roster.add(new RedemptionSpirit("Kindness", Captain.boris));
 		
+		calculateValue();
+		
 	}
 
 }

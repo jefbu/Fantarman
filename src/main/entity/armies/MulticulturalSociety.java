@@ -32,6 +32,8 @@ public class MulticulturalSociety extends Army {
 		roster.add(new HairpinThrower("Qoonfu Archers", Captain.professor));
 		roster.add(new Trainees("Qoonfu Reserves", Captain.boris));
 		
+		calculateValue();
+		
 	}
 
 }

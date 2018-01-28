@@ -29,6 +29,7 @@ public class Skylords extends Army {
 		roster.add(new Magpies("Swallowtails", Captain.boris));
 		roster.add(new Gralyas("Hunting Stoops", Captain.boris));
 		
+		calculateValue();
 		
 	}
 

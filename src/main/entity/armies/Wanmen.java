@@ -27,6 +27,7 @@ public class Wanmen extends Army {
 		roster.add(new Glasscannon("Sek Skra", Captain.professor));
 		roster.add(new Glasscannon("Sekni Skrani", Captain.boris));
 
+		calculateValue();
 		
 	}
 

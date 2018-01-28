@@ -17,9 +17,7 @@ public class Army implements Serializable {
 	
 	public Army() {
 		
-		roster = new ArrayList<Regiment>();
-		calculateValue();
-		
+		roster = new ArrayList<Regiment>();		
 		scoreSheet = new ScoreSheet();
 		
 		
