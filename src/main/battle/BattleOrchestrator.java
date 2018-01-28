@@ -122,24 +122,29 @@ public class BattleOrchestrator {
 		}
 
 	}
-	
+
 	public void refreshMap() {
 		for (IndexedPanel panel : BattleScreen.battleScene.indexedPanels) {
 			panel.applyColor();
 		}
 		refreshRegimentColours();
 	}
-		
-	public void	refreshRegimentColours() {
-			
+
+	public void refreshRegimentColours() {
+
 		for (Regiment yourRegiment : yourBattleArmy.roster) {
 			double dred = (yourRegiment.battleLife * 10 / yourRegiment.totalLife);
 			dred = dred / 10;
 			int red = 255 - (int) (dred * 255);
-			if (red > 255) { red = 255; } else if (red < 0) { red = 0; }
+			if (red > 255) {
+				red = 255;
+			} else if (red < 0) {
+				red = 0;
+			}
 			for (int i = 0; i < yourRegiment.panels.length; i++) {
 				BattleScreen.battleScene.indexedPanels.get(yourRegiment.panels[i]).button.setIcon(yourRegiment.icon);
-				BattleScreen.battleScene.indexedPanels.get(yourRegiment.panels[i]).setBackground(new Color(red, 60, 40));
+				BattleScreen.battleScene.indexedPanels.get(yourRegiment.panels[i])
+						.setBackground(new Color(200, 255 - red, 255 - red));
 			}
 		}
 
@@ -147,10 +152,14 @@ public class BattleOrchestrator {
 			double dred = (enemyRegiment.battleLife * 10 / enemyRegiment.totalLife);
 			dred = dred / 10;
 			int red = 255 - (int) (dred * 255);
-			if (red > 255) { red = 255; } else if (red < 0) { red = 0; }
+			if (red > 255) {
+				red = 255;
+			} else if (red < 0) {
+				red = 0;
+			}
 			for (int i = 0; i < enemyRegiment.panels.length; i++) {
 				BattleScreen.battleScene.indexedPanels.get(enemyRegiment.panels[i]).button.setIcon(enemyRegiment.icon);
-				BattleScreen.battleScene.indexedPanels.get(enemyRegiment.panels[i]).setBackground(new Color(red, 40, 60));
+				BattleScreen.battleScene.indexedPanels.get(enemyRegiment.panels[i]).setBackground(new Color(red, 0, 0));
 			}
 		}
 	}
