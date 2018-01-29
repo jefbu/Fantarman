@@ -3,6 +3,8 @@ package main.battle;
 import main.Main;
 import main.entity.armies.Army;
 import main.entity.leagues.Matchup;
+import main.entity.regiments.Regiment;
+import main.entity.regiments.Role;
 import main.graphics.battleScreen.BattleScreen;
 
 public class Battle {
@@ -31,19 +33,37 @@ public class Battle {
 
 	private void makeYourArmy() {
 
-		for (int i = 0; i < Main.yourArmy.roster.size(); i++) {
-			yourBattleArmy.roster.add(Main.yourArmy.roster.get(i));
+		for (Regiment regiment: Main.yourArmy.roster) {
+			if(regiment.role == Role.COMBAT1) { yourBattleArmy.roster.add(regiment); }
+			if(regiment.role == Role.COMBAT2) { yourBattleArmy.roster.add(regiment); }
+			if(regiment.role == Role.COMBAT3) { yourBattleArmy.roster.add(regiment); }
+			if(regiment.role == Role.COMBAT4) { yourBattleArmy.roster.add(regiment); }
+			if(regiment.role == Role.COMBAT5) { yourBattleArmy.roster.add(regiment); }
+			if(regiment.role == Role.COMBAT6) { yourBattleArmy.roster.add(regiment); }
+			if(regiment.role == Role.COMBAT7) { yourBattleArmy.roster.add(regiment); }
+			if(regiment.role == Role.COMBAT8) { yourBattleArmy.roster.add(regiment); }
 		}
 	}
 
 	private Army chooseOpponentArmy() {
-
+		
+		Army tempArmy = new Army();
+		
 		for (Matchup matchup: Main.league.calendar.calendarDays.get(Main.league.calendarDay).matchups) {
-			if (matchup.army1 == Main.yourArmy) { return matchup.army2; }
-			else if (matchup.army2 == Main.yourArmy) { return matchup.army1; }
+			if (matchup.army1 == Main.yourArmy) { 
+				for (Regiment regiment: matchup.army2.roster) {
+					tempArmy.roster.add(regiment);
+					}
+			}
+			
+			else if (matchup.army2 == Main.yourArmy) { 
+				for (Regiment regiment: matchup.army1.roster) {
+					tempArmy.roster.add(regiment);
+					}
+			}
 		}
 		
-		return null;
+		return tempArmy;
 
 	}
 

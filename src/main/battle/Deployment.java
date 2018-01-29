@@ -37,9 +37,13 @@ public class Deployment {
 	int ballisticRed;
 	int moraleGreen;
 	int moraleRed;
+	
+	int errorCheck;
 
 	public Deployment(BattleOrchestrator battleOrchestrator, Army yourBattleArmy, Army opponentBattleArmy) {
-
+		
+		errorCheck = 0;
+		
 		this.battleOrchestrator = battleOrchestrator;
 		this.yourBattleArmy = yourBattleArmy;
 		this.opponentBattleArmy = opponentBattleArmy;
@@ -98,7 +102,9 @@ public class Deployment {
 			BattleScreen.battleScene.indexedPanels.get(i).button.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					if (checkLegalDeployment(index, playerDeploymentZone, yourBattleArmy, playerCounter) == true) {
-
+						
+						errorCheck++;
+						System.out.println("your deployment error check passed: " + errorCheck );
 						yourBattleArmy.roster.get(playerCounter).setIndices(index);
 						battleOrchestrator.refreshMap();
 						playerCounter++;
@@ -120,6 +126,9 @@ public class Deployment {
 		boolean keepGoing = true;
 
 		while (keepGoing) {
+			
+			errorCheck++;
+			System.out.println("Enemy deployment error check " + errorCheck);
 			roll = random.nextInt(7);
 			roll2 = random.nextInt(20);
 			if (checkNotAdjacent(roll * 48 + 12 + roll2, opponentBattleArmy, enemyCounter)) {
