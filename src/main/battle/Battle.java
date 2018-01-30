@@ -1,5 +1,8 @@
 package main.battle;
 
+import java.util.Collections;
+import java.util.Comparator;
+
 import main.Main;
 import main.entity.armies.Army;
 import main.entity.leagues.Matchup;
@@ -63,7 +66,20 @@ public class Battle {
 			}
 		}
 		
-		return tempArmy;
+		Army returnArmy = new Army();
+		
+		Collections.sort(tempArmy.roster, new Comparator<Regiment>() {
+			@Override
+			public int compare(Regiment p1, Regiment p2) {
+				return p2.value - p1.value;
+			}
+		});
+		
+		for (int i = 0; i < 8; i++) {
+			returnArmy.roster.add(tempArmy.roster.get(i));
+		}
+
+		return returnArmy;
 
 	}
 
