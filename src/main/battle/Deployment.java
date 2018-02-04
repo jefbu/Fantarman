@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
 
+import main.AI.DeployAI;
 import main.components.Colour;
 import main.components.TextPopup;
 import main.entity.armies.Army;
@@ -54,6 +55,7 @@ public class Deployment {
 		deployOrder = new ArrayList<Who>();
 
 		decideDeploymentOrder();
+		DeployAI.orderOpponentArmy(this.opponentBattleArmy);
 
 		for (int i = 0; i < deployOrder.size(); i++) {
 			deploy();
@@ -104,7 +106,6 @@ public class Deployment {
 					if (checkLegalDeployment(index, playerDeploymentZone, yourBattleArmy, playerCounter) == true) {
 						
 						errorCheck++;
-						System.out.println("your deployment error check passed: " + errorCheck );
 						yourBattleArmy.roster.get(playerCounter).setIndices(index);
 						battleOrchestrator.refreshMap();
 						playerCounter++;
@@ -117,8 +118,8 @@ public class Deployment {
 		}
 	}
 
-	private void deployEnemyRegiment() {
-
+	private void deployEnemyRegiment() {		
+		
 		Random random = new Random();
 		int roll = 0;
 		int roll2 = 0;
@@ -127,8 +128,6 @@ public class Deployment {
 
 		while (keepGoing) {
 			
-			errorCheck++;
-			System.out.println("Enemy deployment error check " + errorCheck);
 			roll = random.nextInt(7);
 			roll2 = random.nextInt(20);
 			if (checkNotAdjacent(roll * 48 + 12 + roll2, opponentBattleArmy, enemyCounter)) {
