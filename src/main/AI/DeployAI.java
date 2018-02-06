@@ -1,9 +1,5 @@
 package main.AI;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-
 import main.entity.armies.Army;
 import main.entity.regiments.Regiment;
 import main.entity.regiments.RegimentType;

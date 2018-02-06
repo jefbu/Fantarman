@@ -89,6 +89,7 @@ public abstract class OrderMethods {
 			}
 		}
 		writeMissileText(Order.FIRE, regiment, target, casualties);
+		System.out.println("Target has " + target.battleLife + " HP left");
 	}
 
 	private static void writeCombatText(Regiment regiment, Regiment target, int casualties) {
