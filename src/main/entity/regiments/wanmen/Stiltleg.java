@@ -48,7 +48,7 @@ public class Stiltleg extends Regiment {
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/firemages.png", width, height);
+		icon = imageLoader.loadImageIcon("/regiments/wanmen/stiltleg.png", width, height);
 		
 		weapons.add(Weapons.sickles);
 		weapons.add(Weapons.scythes);

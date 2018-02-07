@@ -48,7 +48,7 @@ public class Cardinal extends Regiment {
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/dovemasters.png", width, height);
+		icon = imageLoader.loadImageIcon("/regiments/feods/cardinal.png", width, height);
 		
 		weapons.add(Weapons.wands);
 		weapons.add(Weapons.staves);

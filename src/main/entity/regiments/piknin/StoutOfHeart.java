@@ -48,7 +48,7 @@ public class StoutOfHeart extends Regiment {
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/stout_of_heart.png", width, height);
+		icon = imageLoader.loadImageIcon("/regiments/piknin/stout_of_heart.png", width, height);
 		
 		weapons.add(Weapons.spears);
 		weapons.add(Weapons.polearms);

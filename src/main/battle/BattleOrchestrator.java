@@ -146,7 +146,7 @@ public class BattleOrchestrator {
 			for (int i = 0; i < yourRegiment.panels.length; i++) {
 				BattleScreen.battleScene.indexedPanels.get(yourRegiment.panels[i]).button.setIcon(yourRegiment.icon);
 				BattleScreen.battleScene.indexedPanels.get(yourRegiment.panels[i])
-						.setBackground(new Color(200, 255 - red, 255 - red));
+						.setBackground(new Color(130, 130 - red / 2, 130 - red / 2));
 			}
 		}
 

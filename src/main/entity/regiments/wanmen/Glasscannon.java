@@ -49,7 +49,7 @@ public class Glasscannon extends Regiment {
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/firemages.png", width, height);
+		icon = imageLoader.loadImageIcon("/regiments/wanmen/glasscannon.png", width, height);
 		
 		weapons.add(Weapons.glaives);
 		weapons.add(Weapons.scythes);

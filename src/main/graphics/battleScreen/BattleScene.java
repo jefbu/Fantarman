@@ -944,7 +944,7 @@ public class BattleScene extends JPanel {
 						break;
 					}
 				}
-				if (index < 1536) {
+				if (index < 1535) {
 					switch (indexedPanels.get(i + 1).terrain) {
 					case DESERT:
 						rightLand = true;
