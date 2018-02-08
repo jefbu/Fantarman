@@ -48,7 +48,8 @@ public class RepentantMany extends Regiment {
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/dovemasters.png", width, height);
+		icon = imageLoader.loadImageIcon("/regiments/feods/many_battle.png", width, height);
+		largeIcon = imageLoader.loadImageIcon("/regiments/feods/many.png", width * 8, height * 8);
 		
 		weapons.add(Weapons.spears);
 		weapons.add(Weapons.slingshots);

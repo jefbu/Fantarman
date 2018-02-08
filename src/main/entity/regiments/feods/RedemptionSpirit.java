@@ -48,7 +48,8 @@ public class RedemptionSpirit extends Regiment {
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/dovemasters.png", width, height);
+		icon = imageLoader.loadImageIcon("/regiments/feods/spirit_battle.png", width, height);
+		largeIcon = imageLoader.loadImageIcon("/regiments/feods/spirit.png", width * 8, height * 8);
 		
 		weapons.add(Weapons.bows);
 		weapons.add(Weapons.longbows);
