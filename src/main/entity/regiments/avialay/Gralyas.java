@@ -48,7 +48,8 @@ public class Gralyas extends Regiment {
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/firemages.png", width, height);
+		icon = imageLoader.loadImageIcon("/regiments/Avialay/gralhas.png", width, height);
+		largeIcon = imageLoader.loadImageIcon("/regiments/Avialay/gralhas.png", width * 8, height * 8);
 		
 		weapons.add(Weapons.talons);
 		weapons.add(Weapons.sharpenedTalons);
