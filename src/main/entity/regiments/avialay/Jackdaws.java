@@ -48,7 +48,7 @@ public class Jackdaws extends Regiment {
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/Avialay/jackdaw.png", width, height);
+		icon = imageLoader.loadImageIcon("/regiments/Avialay/jackdaw_battle.png", width, height);
 		largeIcon = imageLoader.loadImageIcon("/regiments/Avialay/jackdaw.png", width * 8, height * 8);
 		
 		weapons.add(Weapons.talons);

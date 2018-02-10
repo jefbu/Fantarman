@@ -49,7 +49,7 @@ public class Rooks extends Regiment {
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/Avialay/rook.png", width, height);
+		icon = imageLoader.loadImageIcon("/regiments/Avialay/rook_battle.png", width, height);
 		largeIcon = imageLoader.loadImageIcon("/regiments/Avialay/rook.png", width * 8, height * 8);
 		
 		weapons.add(Weapons.talons);

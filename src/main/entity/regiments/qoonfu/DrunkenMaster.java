@@ -48,7 +48,8 @@ public class DrunkenMaster extends Regiment {
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/stout_of_heart.png", width, height);
+		icon = imageLoader.loadImageIcon("/regiments/Qoonfu/drunk_battle.png", width, height);
+		largeIcon = imageLoader.loadImageIcon("/regiments/Qoonfu/drunk.png", width * 8, height * 8);
 		
 		weapons.add(Weapons.fists);
 		weapons.add(Weapons.bamboo);

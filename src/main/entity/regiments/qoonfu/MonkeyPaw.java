@@ -48,7 +48,8 @@ public class MonkeyPaw extends Regiment {
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/stout_of_heart.png", width, height);
+		icon = imageLoader.loadImageIcon("/regiments/Qoonfu/monkey_battle.png", width, height);
+		largeIcon = imageLoader.loadImageIcon("/regiments/Qoonfu/monkey.png", width * 8, height * 8);
 		
 		weapons.add(Weapons.fists);
 		

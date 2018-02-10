@@ -48,7 +48,8 @@ public class HairpinThrower extends Regiment {
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/stout_of_heart.png", width, height);
+		icon = imageLoader.loadImageIcon("/regiments/Qoonfu/hairpin_battle.png", width, height);
+		largeIcon = imageLoader.loadImageIcon("/regiments/Qoonfu/hairpin.png", width * 8, height * 8);
 		
 		weapons.add(Weapons.hairpins);
 		weapons.add(Weapons.tiffanys);
