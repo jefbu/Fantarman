@@ -48,7 +48,8 @@ public class Arbalesters extends Regiment {
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/stout_of_heart.png", width, height);
+		icon = imageLoader.loadImageIcon("/regiments/Terquit/arbalesters_battle.png", width, height);
+		largeIcon = imageLoader.loadImageIcon("/regiments/Terquit/arbalesters.png", width * 8, height * 8);
 		
 		weapons.add(Weapons.fists);
 		armours.add(Armour.clay);
