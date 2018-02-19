@@ -175,6 +175,9 @@ public class EquipPanel extends ContentPanel {
 		for (int i = 0; i < weaponsList.size(); i++) {
 			int index = i;
 			weaponsList.get(i).fillWeaponPanel(regiment, index);
+			try {
+				weaponsList.get(i).removeActionListener(weaponsList.get(i).getActionListeners()[0]);
+			} catch(Exception e) {}
 			weaponsList.get(i).addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					for (WeaponPanel panel: weaponsList) {
@@ -218,6 +221,7 @@ public class EquipPanel extends ContentPanel {
 					weaponsList.get(index).upkeepPanel.label.setForeground(Colors.vlblue);
 					
 					regiment.weapon = regiment.weapons.get(index);
+					fillEquipPanel(regiment);
 				}
 			});
 		}
