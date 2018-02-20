@@ -1,5 +1,6 @@
 package main.graphics.gameScreen.regimentView.regimentDetail;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -173,58 +174,54 @@ public class EquipPanel extends ContentPanel {
 	public void fillEquipPanel(Regiment regiment) {
 		
 		for (int i = 0; i < weaponsList.size(); i++) {
+			
+			Color bgColor = new Color(70, 65, 55);
+			Color txtColor = new Color(0, 0, 0);
+			
+			if(i < regiment.weapons.size()) {
+			if(regiment.weapon == regiment.weapons.get(i)) { 
+				bgColor = Colors.lblue;
+				txtColor = Colors.blue;
+			} else {
+				bgColor = Colors.lred;
+				txtColor = Colors.dred;
+			}
+			}
 			int index = i;
 			weaponsList.get(i).fillWeaponPanel(regiment, index);
+			if(i < regiment.weapons.size()) {
 			try {
 				weaponsList.get(i).removeActionListener(weaponsList.get(i).getActionListeners()[0]);
 			} catch(Exception e) {}
 			weaponsList.get(i).addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					for (WeaponPanel panel: weaponsList) {
-						panel.namePanel.setBackground(Colors.lred);
-						panel.namePanel.label.setForeground(Colors.dred);
-						panel.attackPanel.setBackground(Colors.lred);
-						panel.attackPanel.label.setForeground(Colors.dred);
-						panel.chargePanel.setBackground(Colors.lred);
-						panel.chargePanel.label.setForeground(Colors.dred);
-						panel.rangePanel.setBackground(Colors.lred);
-						panel.rangePanel.label.setForeground(Colors.dred);
-						panel.missilePanel.setBackground(Colors.lred);
-						panel.missilePanel.label.setForeground(Colors.dred);
-						panel.defencePanel.setBackground(Colors.lred);
-						panel.defencePanel.label.setForeground(Colors.dred);
-						panel.speedPanel.setBackground(Colors.lred);
-						panel.speedPanel.label.setForeground(Colors.dred);
-						panel.costPanel.setBackground(Colors.lred);
-						panel.costPanel.label.setForeground(Colors.dred);
-						panel.upkeepPanel.setBackground(Colors.lred);
-						panel.upkeepPanel.label.setForeground(Colors.dred);
-					}
-
-					weaponsList.get(index).namePanel.setBackground(Colors.dblue);
-					weaponsList.get(index).namePanel.label.setForeground(Colors.vlblue);
-					weaponsList.get(index).attackPanel.setBackground(Colors.dblue);
-					weaponsList.get(index).attackPanel.label.setForeground(Colors.vlblue);
-					weaponsList.get(index).chargePanel.setBackground(Colors.dblue);
-					weaponsList.get(index).chargePanel.label.setForeground(Colors.vlblue);
-					weaponsList.get(index).rangePanel.setBackground(Colors.dblue);
-					weaponsList.get(index).rangePanel.label.setForeground(Colors.vlblue);
-					weaponsList.get(index).missilePanel.setBackground(Colors.dblue);
-					weaponsList.get(index).missilePanel.label.setForeground(Colors.vlblue);
-					weaponsList.get(index).defencePanel.setBackground(Colors.dblue);
-					weaponsList.get(index).defencePanel.label.setForeground(Colors.vlblue);
-					weaponsList.get(index).speedPanel.setBackground(Colors.dblue);
-					weaponsList.get(index).speedPanel.label.setForeground(Colors.vlblue);
-					weaponsList.get(index).costPanel.setBackground(Colors.dblue);
-					weaponsList.get(index).costPanel.label.setForeground(Colors.vlblue);
-					weaponsList.get(index).upkeepPanel.setBackground(Colors.dblue);
-					weaponsList.get(index).upkeepPanel.label.setForeground(Colors.vlblue);
-					
 					regiment.weapon = regiment.weapons.get(index);
 					fillEquipPanel(regiment);
 				}
 			});
+			}
+			
+			weaponsList.get(i).namePanel.setBackground(bgColor);
+			weaponsList.get(i).namePanel.label.setForeground(txtColor);
+			weaponsList.get(i).attackPanel.setBackground(bgColor);
+			weaponsList.get(i).attackPanel.label.setForeground(txtColor);
+			weaponsList.get(i).chargePanel.setBackground(bgColor);
+			weaponsList.get(i).chargePanel.label.setForeground(txtColor);
+			weaponsList.get(i).rangePanel.setBackground(bgColor);
+			weaponsList.get(i).rangePanel.label.setForeground(txtColor);
+			weaponsList.get(i).missilePanel.setBackground(bgColor);
+			weaponsList.get(i).missilePanel.label.setForeground(txtColor);
+			weaponsList.get(i).defencePanel.setBackground(bgColor);
+			weaponsList.get(i).defencePanel.label.setForeground(txtColor);
+			weaponsList.get(i).speedPanel.setBackground(bgColor);
+			weaponsList.get(i).speedPanel.label.setForeground(txtColor);
+			weaponsList.get(i).costPanel.setBackground(bgColor);
+			weaponsList.get(i).costPanel.label.setForeground(txtColor);
+			weaponsList.get(i).upkeepPanel.setBackground(bgColor);
+			weaponsList.get(i).upkeepPanel.label.setForeground(txtColor);
+			
 		}
+		
 		for (int ii = 0; ii < armoursList.size(); ii++) {
 			int index = ii;
 			//armoursList.get(ii).fillArmourPanel(regiment, index);

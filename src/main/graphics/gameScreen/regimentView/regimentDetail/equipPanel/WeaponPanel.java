@@ -85,6 +85,7 @@ public class WeaponPanel extends JButton {
 	public void fillWeaponPanel(Regiment regiment, int index) {
 		
 		if(index < regiment.weapons.size()) {
+			
 		namePanel.label.setText(regiment.weapons.get(index).name);
 		attackPanel.label.setText(Integer.toString(regiment.weapons.get(index).attackBonus));
 		chargePanel.label.setText(Integer.toString(regiment.weapons.get(index).chargeBonus));
@@ -96,6 +97,7 @@ public class WeaponPanel extends JButton {
 		upkeepPanel.label.setText(Integer.toString(regiment.weapons.get(index).upkeep));
 		}
 		else {
+	
 		namePanel.label.setText("");
 		attackPanel.label.setText("");
 		chargePanel.label.setText("");
