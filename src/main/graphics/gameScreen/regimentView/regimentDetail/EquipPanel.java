@@ -180,8 +180,8 @@ public class EquipPanel extends ContentPanel {
 			
 			if(i < regiment.weapons.size()) {
 			if(regiment.weapon == regiment.weapons.get(i)) { 
-				bgColor = Colors.lblue;
-				txtColor = Colors.blue;
+				bgColor = Colors.dblue;
+				txtColor = Colors.vlblue;
 			} else {
 				bgColor = Colors.lred;
 				txtColor = Colors.dred;
@@ -223,9 +223,50 @@ public class EquipPanel extends ContentPanel {
 		}
 		
 		for (int ii = 0; ii < armoursList.size(); ii++) {
+			
+			Color bgColor = new Color(70, 65, 55);
+			Color txtColor = new Color(0, 0, 0);
+			
+			if(ii < regiment.armours.size()) {
+			if(regiment.armour == regiment.armours.get(ii)) { 
+				bgColor = Colors.dblue;
+				txtColor = Colors.vlblue;
+			} else {
+				bgColor = Colors.lred;
+				txtColor = Colors.dred;
+			}
+			}
 			int index = ii;
-			//armoursList.get(ii).fillArmourPanel(regiment, index);
+			armoursList.get(ii).fillArmourPanel(regiment, index);
+			if(ii < regiment.armours.size()) {
+			try {
+				armoursList.get(ii).removeActionListener(armoursList.get(ii).getActionListeners()[0]);
+			} catch(Exception e) {}
+			armoursList.get(ii).addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					regiment.armour = regiment.armours.get(index);
+					fillEquipPanel(regiment);
+				}
+			});
+			}
+			
+			armoursList.get(ii).namePanel.setBackground(bgColor);
+			armoursList.get(ii).namePanel.label.setForeground(txtColor);
+			armoursList.get(ii).defencePanel.setBackground(bgColor);
+			armoursList.get(ii).defencePanel.label.setForeground(txtColor);
+			armoursList.get(ii).moralePanel.setBackground(bgColor);
+			armoursList.get(ii).moralePanel.label.setForeground(txtColor);
+			armoursList.get(ii).movePanel.setBackground(bgColor);
+			armoursList.get(ii).movePanel.label.setForeground(txtColor);
+			armoursList.get(ii).speedPanel.setBackground(bgColor);
+			armoursList.get(ii).speedPanel.label.setForeground(txtColor);
+			armoursList.get(ii).costPanel.setBackground(bgColor);
+			armoursList.get(ii).costPanel.label.setForeground(txtColor);
+			armoursList.get(ii).upkeepPanel.setBackground(bgColor);
+			armoursList.get(ii).upkeepPanel.label.setForeground(txtColor);
+			
 		}
+	
 		
 	}
 	

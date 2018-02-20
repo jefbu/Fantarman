@@ -23,6 +23,7 @@ public class Harvesters extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Harvesters";
 		this.race = Race.Piknin;
 		this.lieutenantsSize = 2;
 		this.captain = captain;
@@ -49,6 +50,7 @@ public class Harvesters extends Regiment {
 		this.y = 0;
 		
 		icon = imageLoader.loadImageIcon("/regiments/piknin/harvesters.png", width, height);
+		largeIcon = imageLoader.loadImageIcon("/regiments/piknin/harvesters.png", width * 8, height * 8);
 		
 		weapons.add(Weapons.sickles);
 		weapons.add(Weapons.scythes);

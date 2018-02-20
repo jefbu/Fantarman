@@ -23,6 +23,7 @@ public class DoveMasters extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Dove Masters";
 		this.race = Race.Piknin;
 		this.lieutenantsSize = 1;
 		this.captain = captain;
@@ -49,6 +50,7 @@ public class DoveMasters extends Regiment {
 		this.y = 0;
 		
 		icon = imageLoader.loadImageIcon("/regiments/piknin/dovemasters.png", width, height);
+		largeIcon = imageLoader.loadImageIcon("/regiments/piknin/dovemasters.png", width * 8, height * 8);
 		
 		weapons.add(Weapons.pigeons);
 		weapons.add(Weapons.elitePigeons);

@@ -23,6 +23,7 @@ public class PonyRiders extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Pony Riders";
 		this.race = Race.Piknin;
 		this.lieutenantsSize = 1;
 		this.captain = captain;
@@ -49,6 +50,7 @@ public class PonyRiders extends Regiment {
 		this.y = 0;
 		
 		icon = imageLoader.loadImageIcon("/regiments/piknin/pony_riders.png", width, height);
+		largeIcon = imageLoader.loadImageIcon("/regiments/piknin/pony_riders.png", width * 8, height * 8);
 		
 		weapons.add(Weapons.spears);
 		weapons.add(Weapons.slingshots);

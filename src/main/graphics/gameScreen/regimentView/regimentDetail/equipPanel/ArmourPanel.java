@@ -70,8 +70,28 @@ public class ArmourPanel extends JButton {
 		
 	}
 	
-	public void fillArmourPanel(Regiment regiment) {
+	public void fillArmourPanel(Regiment regiment, int index) {
+					
+			if(index < regiment.armours.size()) {
+				
+			namePanel.label.setText(regiment.armours.get(index).name);
+			defencePanel.label.setText(Integer.toString(regiment.armours.get(index).defenceBonus));
+			moralePanel.label.setText(Integer.toString(regiment.armours.get(index).moraleBonus));
+			movePanel.label.setText(Integer.toString(regiment.armours.get(index).movPenalty));
+			speedPanel.label.setText(Integer.toString(regiment.armours.get(index).spdPenalty));
+			costPanel.label.setText(Integer.toString(regiment.armours.get(index).equipCost));
+			upkeepPanel.label.setText(Integer.toString(regiment.armours.get(index).upkeep));
+			}
+			else {
 		
-	}
+			namePanel.label.setText("");
+			defencePanel.label.setText("");
+			moralePanel.label.setText("");
+			movePanel.label.setText("");
+			speedPanel.label.setText("");
+			costPanel.label.setText("");
+			upkeepPanel.label.setText("");			
+			}
+		}
 
 }

@@ -23,6 +23,7 @@ public class StoutOfHeart extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Stout of Heart";
 		this.race = Race.Piknin;
 		this.lieutenantsSize = 2;
 		this.captain = captain;
@@ -49,6 +50,7 @@ public class StoutOfHeart extends Regiment {
 		this.y = 0;
 		
 		icon = imageLoader.loadImageIcon("/regiments/piknin/stout_of_heart.png", width, height);
+		largeIcon = imageLoader.loadImageIcon("/regiments/piknin/stout_of_heart.png", width * 8, height * 8);
 		
 		weapons.add(Weapons.spears);
 		weapons.add(Weapons.polearms);

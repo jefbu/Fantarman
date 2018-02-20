@@ -23,6 +23,7 @@ public class Auxiliaries extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Auxiliaries";
 		this.race = Race.Piknin;
 		this.lieutenantsSize = 1;
 		this.captain = captain;
@@ -49,6 +50,7 @@ public class Auxiliaries extends Regiment {
 		this.y = 0;
 		
 		icon = imageLoader.loadImageIcon("/regiments/piknin/auxiliaries.png", width, height);
+		largeIcon = imageLoader.loadImageIcon("/regiments/piknin/auxiliaries.png", width * 8, height * 8);
 		
 		weapons.add(Weapons.spears);
 		weapons.add(Weapons.shields);
