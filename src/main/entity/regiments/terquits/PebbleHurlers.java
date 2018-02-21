@@ -23,6 +23,7 @@ public class PebbleHurlers extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Pebble Hurlers";
 		this.race = Race.Terquit;
 		this.lieutenantsSize = 1;
 		this.captain = captain;

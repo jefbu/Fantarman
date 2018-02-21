@@ -23,6 +23,7 @@ public class Jaywings extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Jaywings";
 		this.race = Race.Avialay;
 		this.lieutenantsSize = 1;
 		this.captain = captain;

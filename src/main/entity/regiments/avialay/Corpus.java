@@ -23,6 +23,7 @@ public class Corpus extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Corpus";
 		this.race = Race.Avialay;
 		this.lieutenantsSize = 1;
 		this.captain = captain;

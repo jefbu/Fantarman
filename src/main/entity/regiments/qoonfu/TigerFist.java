@@ -23,6 +23,7 @@ public class TigerFist extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Tiger Fist";
 		this.race = Race.Qoonfu;
 		this.lieutenantsSize = 2;
 		this.captain = captain;

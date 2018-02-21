@@ -23,6 +23,7 @@ public class BlessedGarland extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Blessed Garland";
 		this.race = Race.Feods;
 		this.lieutenantsSize = 3;
 		this.captain = captain;

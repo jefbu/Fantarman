@@ -23,6 +23,7 @@ public class FireMages extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Fire Mages";
 		this.race = Race.Wanmen;
 		this.lieutenantsSize = 1;
 		this.captain = captain;

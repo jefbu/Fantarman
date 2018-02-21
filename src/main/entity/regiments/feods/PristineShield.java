@@ -24,6 +24,7 @@ public class PristineShield extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Pristine Shield";
 		this.race = Race.Feods;
 		this.lieutenantsSize = 3;
 		this.captain = captain;

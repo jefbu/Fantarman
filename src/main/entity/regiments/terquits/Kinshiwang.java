@@ -23,6 +23,7 @@ public class Kinshiwang extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Kinshiwang";
 		this.race = Race.Terquit;
 		this.lieutenantsSize = 2;
 		this.captain = captain;

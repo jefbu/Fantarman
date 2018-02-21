@@ -23,6 +23,7 @@ public class Stiltleg extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Stiltleg Troop";
 		this.race = Race.Wanmen;
 		this.lieutenantsSize = 3;
 		this.captain = captain;

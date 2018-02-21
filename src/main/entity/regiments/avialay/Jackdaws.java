@@ -23,6 +23,7 @@ public class Jackdaws extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Jackdaws";
 		this.race = Race.Avialay;
 		this.lieutenantsSize = 1;
 		this.captain = captain;

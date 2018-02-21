@@ -23,6 +23,7 @@ public class Cardinal extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Cardinal";
 		this.race = Race.Feods;
 		this.lieutenantsSize = 0;
 		this.captain = captain;

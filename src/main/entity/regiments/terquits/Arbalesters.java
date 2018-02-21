@@ -23,6 +23,7 @@ public class Arbalesters extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Arbalesters";
 		this.race = Race.Terquit;
 		this.lieutenantsSize = 2;
 		this.captain = captain;

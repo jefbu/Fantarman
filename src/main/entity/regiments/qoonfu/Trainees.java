@@ -23,6 +23,7 @@ public class Trainees extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Trainees";
 		this.race = Race.Qoonfu;
 		this.lieutenantsSize = 2;
 		this.captain = captain;

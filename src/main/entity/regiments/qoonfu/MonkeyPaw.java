@@ -23,6 +23,7 @@ public class MonkeyPaw extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Monkey Paw";
 		this.race = Race.Qoonfu;
 		this.lieutenantsSize = 1;
 		this.captain = captain;

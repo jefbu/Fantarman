@@ -23,6 +23,7 @@ public class HairpinThrower extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Hairpin Thrower";
 		this.race = Race.Qoonfu;
 		this.lieutenantsSize = 2;
 		this.captain = captain;

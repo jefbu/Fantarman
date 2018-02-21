@@ -24,6 +24,7 @@ public class Metralyadora extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Metralyadora";
 		this.race = Race.Wanmen;
 		this.lieutenantsSize = 2;
 		this.captain = captain;

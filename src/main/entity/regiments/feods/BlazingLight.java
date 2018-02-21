@@ -23,6 +23,7 @@ public class BlazingLight extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Blazing Light";
 		this.race = Race.Feods;
 		this.lieutenantsSize = 2;
 		this.captain = captain;

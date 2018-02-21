@@ -23,6 +23,7 @@ public class Nucifrags extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Nucifrags";
 		this.race = Race.Avialay;
 		this.lieutenantsSize = 0;
 		this.captain = captain;

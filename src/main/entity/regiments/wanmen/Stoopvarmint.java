@@ -23,6 +23,7 @@ public class Stoopvarmint extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Stoopvarmint Rider";
 		this.race = Race.Wanmen;
 		this.lieutenantsSize = 2;
 		this.captain = captain;

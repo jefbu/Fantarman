@@ -24,6 +24,7 @@ public class Glasscannon extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Glasscannon Cavalry";
 		this.race = Race.Wanmen;
 		this.lieutenantsSize = 2;
 		this.captain = captain;

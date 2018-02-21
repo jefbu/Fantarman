@@ -23,6 +23,7 @@ public class RepentantMany extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Repentant Many";
 		this.race = Race.Feods;
 		this.lieutenantsSize = 2;
 		this.captain = captain;

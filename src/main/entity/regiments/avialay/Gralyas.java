@@ -23,6 +23,7 @@ public class Gralyas extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Gralyas";
 		this.race = Race.Avialay;
 		this.lieutenantsSize = 0;
 		this.captain = captain;

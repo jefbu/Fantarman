@@ -23,6 +23,7 @@ public class CraneWing extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Crane Wing";
 		this.race = Race.Qoonfu;
 		this.lieutenantsSize = 2;
 		this.captain = captain;

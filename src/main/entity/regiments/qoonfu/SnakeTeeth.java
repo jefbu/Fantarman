@@ -23,6 +23,7 @@ public class SnakeTeeth extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Snake Teeth";
 		this.race = Race.Qoonfu;
 		this.lieutenantsSize = 1;
 		this.captain = captain;

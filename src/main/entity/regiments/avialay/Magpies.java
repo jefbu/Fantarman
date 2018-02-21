@@ -23,6 +23,7 @@ public class Magpies extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Magpies";
 		this.race = Race.Avialay;
 		this.lieutenantsSize = 1;
 		this.captain = captain;

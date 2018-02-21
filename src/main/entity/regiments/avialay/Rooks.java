@@ -24,6 +24,7 @@ public class Rooks extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Rooks";
 		this.race = Race.Avialay;
 		this.lieutenantsSize = 1;
 		this.captain = captain;

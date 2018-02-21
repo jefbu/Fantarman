@@ -23,6 +23,7 @@ public class RedemptionSpirit extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Redemption Spirit";
 		this.race = Race.Feods;
 		this.lieutenantsSize = 2;
 		this.captain = captain;

@@ -23,6 +23,7 @@ public class ShiningFaithful extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Shining Faithful";
 		this.race = Race.Feods;
 		this.lieutenantsSize = 3;
 		this.captain = captain;

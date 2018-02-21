@@ -23,6 +23,7 @@ public class MantisClaw extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Mantis Claw";
 		this.race = Race.Qoonfu;
 		this.lieutenantsSize = 1;
 		this.captain = captain;

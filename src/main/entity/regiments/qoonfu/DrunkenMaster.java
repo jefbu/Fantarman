@@ -23,6 +23,7 @@ public class DrunkenMaster extends Regiment {
 		}
 		
 		this.name = name;
+		this.regiment = "Drunken Master";
 		this.race = Race.Qoonfu;
 		this.lieutenantsSize = 0;
 		this.captain = captain;
