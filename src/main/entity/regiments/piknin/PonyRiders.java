@@ -49,7 +49,7 @@ public class PonyRiders extends Regiment {
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/piknin/pony_riders.png", width, height);
+		icon = imageLoader.loadImageIcon("/regiments/piknin/pony_riders_battle.png", width, height);
 		largeIcon = imageLoader.loadImageIcon("/regiments/piknin/pony_riders.png", width * 8, height * 8);
 		
 		weapons.add(Weapons.spears);
