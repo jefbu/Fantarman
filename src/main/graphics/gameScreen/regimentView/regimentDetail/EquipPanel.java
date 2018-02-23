@@ -246,7 +246,7 @@ public class EquipPanel extends ContentPanel {
 			armoursList.get(ii).addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					regiment.armour = regiment.armours.get(index);
-					fillEquipPanel(regiment);
+					Screen.gameScreen.mainPanel.regimentView.fillRegimentView(regiment);
 				}
 			});
 			}
