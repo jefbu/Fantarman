@@ -52,6 +52,8 @@ public class BattleStatsPanel extends ContentPanel {
 	}
 
 	public void fillBattleStatsPanel(Regiment regiment) {
+		
+		regiment.calculateTotalStats();
 
 		lifePanel.titlePanel.setPreferredSize(
 				new Dimension(lifePanel.getWidth() * (regiment.totalLife * 2) / 100, lifePanel.getHeight()));

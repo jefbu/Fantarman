@@ -13,6 +13,7 @@ import main.components.Colour;
 import main.components.ContentPanel;
 import main.components.LabeledPanel;
 import main.entity.regiments.Regiment;
+import main.graphics.Screen;
 import main.graphics.gameScreen.regimentView.regimentDetail.equipPanel.ArmourPanel;
 import main.graphics.gameScreen.regimentView.regimentDetail.equipPanel.WeaponPanel;
 import main.utility.Colors;
@@ -196,7 +197,7 @@ public class EquipPanel extends ContentPanel {
 			weaponsList.get(i).addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					regiment.weapon = regiment.weapons.get(index);
-					fillEquipPanel(regiment);
+					Screen.gameScreen.mainPanel.regimentView.fillRegimentView(regiment);
 				}
 			});
 			}
