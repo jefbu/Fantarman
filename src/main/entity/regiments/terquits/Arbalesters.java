@@ -7,6 +7,7 @@ import main.battle.tactics.Target;
 import main.entity.captains.Captain;
 import main.entity.equipment.Armour;
 import main.entity.equipment.Weapons;
+import main.entity.lieutenants.Lieutenant;
 import main.entity.races.Race;
 import main.entity.regiments.Regiment;
 import main.entity.regiments.RegimentType;
@@ -15,7 +16,7 @@ public class Arbalesters extends Regiment {
 
 	private static final long serialVersionUID = 1L;
 
-	public Arbalesters(String name, Captain captain) {
+	public Arbalesters(String name, Captain captain, Lieutenant lt1, Lieutenant lt2) {
 		
 		super();
 		for (int i = 0; i < captain.orders; i++) {
@@ -27,6 +28,8 @@ public class Arbalesters extends Regiment {
 		this.race = Race.Terquit;
 		this.lieutenantsSize = 2;
 		this.captain = captain;
+		lieutenants.add(lt1);
+		lieutenants.add(lt2);
 		this.type = RegimentType.COMBINED_ARMS;
 		
 		this.baseAttack = 50;

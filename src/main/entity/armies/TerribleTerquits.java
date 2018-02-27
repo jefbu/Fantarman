@@ -1,6 +1,7 @@
 package main.entity.armies;
 
 import main.entity.captains.Captain;
+import main.entity.lieutenants.Lieutenant;
 import main.entity.regiments.terquits.Arbalesters;
 import main.entity.regiments.terquits.Kinshiwang;
 import main.entity.regiments.terquits.PebbleHurlers;
@@ -20,8 +21,8 @@ public class TerribleTerquits extends Army {
 		roster.add(new Kinshiwang("Massive Soil", Captain.boris));
 		roster.add(new PebbleHurlers("Stone Debris", Captain.boris));
 		roster.add(new PebbleHurlers("Diamond Jets", Captain.boris));
-		roster.add(new Arbalesters("Pearl Arrows", Captain.boris));
-		roster.add(new Arbalesters("Heaven's Ruby", Captain.boris));
+		roster.add(new Arbalesters("Pearl Arrows", Captain.boris, Lieutenant.Tenkai, Lieutenant.champion));
+		roster.add(new Arbalesters("Heaven's Ruby", Captain.boris, Lieutenant.champion, Lieutenant.Tenkai));
 		
 		calculateValue();
 		
