@@ -69,6 +69,9 @@ public class OrderChoicePopupOrderPanel extends JPanel {
 	public void fillOrderPanel(int index, Regiment regiment) {
 		this.index = index;
 		
+		try {
+			chargeButton.removeActionListener(chargeButton.getActionListeners()[0]);
+		} catch (Exception e) {}
 		chargeButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				attributeOrder(regiment, Order.CHARGE, orderChoicePopup);
@@ -76,6 +79,9 @@ public class OrderChoicePopupOrderPanel extends JPanel {
 			}
 		});
 		
+		try {
+			moveToButton.removeActionListener(moveToButton.getActionListeners()[0]);
+		} catch (Exception e) {}
 		moveToButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				attributeOrder(regiment, Order.Move_to, orderChoicePopup);
@@ -83,6 +89,9 @@ public class OrderChoicePopupOrderPanel extends JPanel {
 			}
 		});	
 		
+		try {
+			missileButton.removeActionListener(missileButton.getActionListeners()[0]);
+		} catch (Exception e) {}
 		missileButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				attributeOrder(regiment, Order.FIRE, orderChoicePopup);
@@ -90,6 +99,9 @@ public class OrderChoicePopupOrderPanel extends JPanel {
 			}
 		});	
 		
+		try {
+			recoverButton.removeActionListener(recoverButton.getActionListeners()[0]);
+		} catch (Exception e) {}
 		recoverButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				attributeOrder(regiment, Order.RECOVER, orderChoicePopup);

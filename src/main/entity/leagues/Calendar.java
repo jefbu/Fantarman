@@ -1,9 +1,10 @@
 package main.entity.leagues;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Calendar {
+public class Calendar implements Serializable {
 	
 	public ArrayList<CalendarDay> calendarDays;
 	public ArrayList<Matchup> matchups;

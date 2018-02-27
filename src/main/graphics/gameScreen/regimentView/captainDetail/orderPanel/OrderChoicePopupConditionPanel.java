@@ -77,6 +77,9 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 	public void fillConditionPanel(int index, Regiment regiment) {
 		this.index = index;
 		
+		try {
+			life100Button.removeActionListener(life100Button.getActionListeners()[0]);
+		} catch (Exception e) {}
 		life100Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				attributeCondition(regiment, Condition.Life_under_100);
@@ -84,6 +87,9 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 			}
 		});		
 		
+		try {
+			life75Button.removeActionListener(life75Button.getActionListeners()[0]);
+		} catch (Exception e) {}
 		life75Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				attributeCondition(regiment, Condition.Life_under_75);
@@ -91,6 +97,9 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 			}
 		});	
 		
+		try {
+			life50Button.removeActionListener(life50Button.getActionListeners()[0]);
+		} catch (Exception e) {}
 		life50Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				attributeCondition(regiment, Condition.Life_under_50);
@@ -98,6 +107,9 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 			}
 		});	
 		
+		try {
+			life25Button.removeActionListener(life25Button.getActionListeners()[0]);
+		} catch (Exception e) {}
 		life25Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				attributeCondition(regiment, Condition.Life_under_25);
@@ -105,6 +117,9 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 			}
 		});	
 		
+		try {
+			alwaysButton.removeActionListener(alwaysButton.getActionListeners()[0]);
+		} catch (Exception e) {}
 		alwaysButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				attributeCondition(regiment, Condition.ALWAYS);

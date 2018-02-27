@@ -67,6 +67,9 @@ public class OrderChoicePopupTargetPanel extends JPanel {
 	public void fillTargetPanel(int index, Regiment regiment) {
 		this.index = index;
 		
+		try {
+			strongestButton.removeActionListener(strongestButton.getActionListeners()[0]);
+		} catch (Exception e) {}
 		strongestButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				attributeTarget(regiment, Target.ENEMY_STRONGEST);
@@ -74,6 +77,9 @@ public class OrderChoicePopupTargetPanel extends JPanel {
 			}
 		});
 		
+		try {
+			nearestButton.removeActionListener(nearestButton.getActionListeners()[0]);
+		} catch (Exception e) {}
 		nearestButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				attributeTarget(regiment, Target.ENEMY_NEAREST);
@@ -81,6 +87,9 @@ public class OrderChoicePopupTargetPanel extends JPanel {
 			}
 		});	
 		
+		try {
+			weakestButton.removeActionListener(weakestButton.getActionListeners()[0]);
+		} catch (Exception e) {}
 		weakestButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				attributeTarget(regiment, Target.ENEMY_WEAKEST);
@@ -88,6 +97,9 @@ public class OrderChoicePopupTargetPanel extends JPanel {
 			}
 		});	
 		
+		try {
+			selfButton.removeActionListener(selfButton.getActionListeners()[0]);
+		} catch (Exception e) {}
 		selfButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				attributeTarget(regiment, Target.SELF);

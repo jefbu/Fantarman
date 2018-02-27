@@ -1,9 +1,12 @@
 package main.entity.leagues;
 
+import java.io.Serializable;
+
 import main.entity.armies.Army;
 
-public class Matchup {
+public class Matchup implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	public Army army1;
 	public Army army2;
 	
