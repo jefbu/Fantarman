@@ -1,6 +1,7 @@
 package main.entity.armies;
 
 import main.entity.captains.Captain;
+import main.entity.lieutenants.Lieutenant;
 import main.entity.regiments.avialay.Jaywings;
 import main.entity.regiments.avialay.Rooks;
 import main.entity.regiments.feods.PristineShield;
@@ -25,7 +26,7 @@ public class MulticulturalSociety extends Army {
 		roster.add(new FireMages("Piknin Supports", Captain.boris));
 		roster.add(new Stoopvarmint("Wanmen Cavalry", Captain.ole_racecar));
 		roster.add(new Kinshiwang("Terquit Anvils", Captain.boris));
-		roster.add(new PebbleHurlers("Terquit Archers", Captain.boris));
+		roster.add(new PebbleHurlers("Terquit Archers", Captain.boris, Lieutenant.sergeant));
 		roster.add(new PristineShield("Feod Cavalry", Captain.boris));
 		roster.add(new Rooks("Avialay Tanks", Captain.boris));
 		roster.add(new Jaywings("Avialay Fliers", Captain.boris));
