@@ -1,9 +1,12 @@
 package main.entity.lieutenants;
 
+import java.io.Serializable;
+
 import main.entity.skills.Skills;
 
-public class Lieutenant {
+public class Lieutenant implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	public String name;
 	public String bonus;
 	

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class CalendarDay implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
 	public ArrayList<Matchup> matchups;
 	
 	public CalendarDay(Matchup matchup1, Matchup matchup2, Matchup matchup3, Matchup matchup4) {
