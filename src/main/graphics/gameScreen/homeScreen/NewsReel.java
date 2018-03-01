@@ -17,6 +17,7 @@ public class NewsReel extends JPanel {
 
 	private ContentPanel titlePanel;
 	private ContentPanel contentPanel;
+	private RandomNews randomNews;
 
 	public NewsReel(int width, int height) {
 
@@ -24,6 +25,8 @@ public class NewsReel extends JPanel {
 		setPreferredSize(new Dimension(width, height));
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		setBackground(Colors.vlblue);
+		
+		randomNews = new RandomNews();
 
 		JPanel upperVoidPanel = new JPanel();
 		upperVoidPanel.setPreferredSize(new Dimension(width, height * 5 / 100));
@@ -56,6 +59,10 @@ public class NewsReel extends JPanel {
 	}
 
 	public void fillNewsReel() {
+		
+		Random random = new Random();
+		int roll = random.nextInt(1);
+		contentPanel.contentLabel.setText(randomNews.newsItems[roll]);
 
 	}
 
