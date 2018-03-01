@@ -45,12 +45,12 @@ public class ButtonedPanel extends JPanel {
 
 		public void mouseEntered(MouseEvent e) {
 
-			int red = color.getRed() + 80;
+			int red = color.getRed() + 40;
 			if(red > 255) red = 255;
-			int green = color.getGreen() + 80;
+			int green = color.getGreen() + 40;
 			if(green > 255) green = 255;
-			int blue = color.getBlue() + 80;
-			if(blue > 255) blue = 255;
+			int blue = color.getBlue() - 50;
+			if(blue < 0) blue = 0;
 			
 			label.setForeground(new Color(red, green, blue));
 		}

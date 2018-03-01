@@ -42,6 +42,7 @@ public class GameStartScreen extends JPanel {
 					createLeague(Main.yourArmy);
 					setVisible(false);
 					Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
+					Screen.gameScreen.mainPanel.armyView.roleSelectionPanel.fillRoleSelectionPanel();
 					Screen.gameScreen.setVisible(true);
 				}
 			});
@@ -55,6 +56,7 @@ public class GameStartScreen extends JPanel {
 					createLeague(Main.yourArmy);
 					setVisible(false);
 					Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
+					Screen.gameScreen.mainPanel.armyView.roleSelectionPanel.fillRoleSelectionPanel();
 					Screen.gameScreen.setVisible(true);
 				}
 			});
@@ -68,6 +70,7 @@ public class GameStartScreen extends JPanel {
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
+				Screen.gameScreen.mainPanel.armyView.roleSelectionPanel.fillRoleSelectionPanel();
 				Screen.gameScreen.setVisible(true);
 			}
 		});
@@ -81,6 +84,7 @@ public class GameStartScreen extends JPanel {
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
+				Screen.gameScreen.mainPanel.armyView.roleSelectionPanel.fillRoleSelectionPanel();
 				Screen.gameScreen.setVisible(true);
 			}
 		});
@@ -94,6 +98,7 @@ public class GameStartScreen extends JPanel {
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
+				Screen.gameScreen.mainPanel.armyView.roleSelectionPanel.fillRoleSelectionPanel();
 				Screen.gameScreen.setVisible(true);
 			}
 		});
@@ -108,6 +113,7 @@ public class GameStartScreen extends JPanel {
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
+				Screen.gameScreen.mainPanel.armyView.roleSelectionPanel.fillRoleSelectionPanel();
 				Screen.gameScreen.setVisible(true);
 			}
 		});
@@ -121,6 +127,7 @@ public class GameStartScreen extends JPanel {
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
+				Screen.gameScreen.mainPanel.armyView.roleSelectionPanel.fillRoleSelectionPanel();
 				Screen.gameScreen.setVisible(true);
 			}
 		});
@@ -134,6 +141,7 @@ public class GameStartScreen extends JPanel {
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
+				Screen.gameScreen.mainPanel.armyView.roleSelectionPanel.fillRoleSelectionPanel();
 				Screen.gameScreen.setVisible(true);
 			}
 		});

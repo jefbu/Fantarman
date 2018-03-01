@@ -38,6 +38,7 @@ public class NavigationPanel extends JPanel {
 			homeViewPanel.buttonedPanel.button.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e) {
 					Screen.gameScreen.setScreensInvisible();
+					Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
 					Screen.gameScreen.mainPanel.homeView.setVisible(true);
 				}
 			});
@@ -50,6 +51,7 @@ public class NavigationPanel extends JPanel {
 			armyViewPanel.buttonedPanel.button.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e) {
 					Screen.gameScreen.setScreensInvisible();
+					Screen.gameScreen.mainPanel.armyView.fillArmyView();
 					Screen.gameScreen.mainPanel.armyView.setVisible(true);
 				}
 			});
