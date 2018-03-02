@@ -1,6 +1,11 @@
 package main.graphics.gameScreen.homeScreen;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Random;
+
+import main.Main;
+import main.entity.regiments.Regiment;
 
 public class RandomNews {
 
@@ -14,8 +19,12 @@ public class RandomNews {
 	}
 
 	public String getNews() {
-		int roll = random.nextInt(2);
-		switch (roll) {
+		
+		int roll = random.nextInt(100);
+			if(roll < 80) { return getCalendarEventNews(); }
+		else {
+		int roll2 = random.nextInt(2);
+		switch (roll2) {
 		case 0:
 			return "<font color = 'rgb(20, 40, 80)'>"
 					+ "After a period of political turmoil, the Board of Direction of the CSA" + "<br>"
@@ -29,6 +38,33 @@ public class RandomNews {
 					+ " The long term impact of these new rules remains to be seen.";
 		}
 		return "error";
+		}
+	}
+	
+	private String getCalendarEventNews() {
+		int roll = random.nextInt(Main.league.armies.size());
+		return getNewsRelatedToArmy(roll);		
+	}
+	
+	private String getNewsRelatedToArmy(int army) {
+		int roll = random.nextInt(10);
+		if (roll > 6) { return getNewsRelatedToRegiment(army); }
+		else { return getNewsRelatedToWholeArmy(army); }
+	}
+	
+	private String getNewsRelatedToRegiment(int army) {
+		Collections.sort(Main.league.armies.get(army).roster, new Comparator<Regiment>() {
+			@Override
+			public int compare(Regiment p1, Regiment p2) {
+				return p2.captain.prestige - p1.captain.prestige;
+			}
+			
+		});
+		return Main.league.armies.get(army).roster.get(0).captain.name + " complained";
+	}
+	
+	private String getNewsRelatedToWholeArmy(int army) {
+		return "this army is doing well";
 	}
 
 	private String chooseRandomName() {
