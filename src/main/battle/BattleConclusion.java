@@ -85,15 +85,16 @@ public class BattleConclusion extends TextPopup {
 		
 	}
 	
+	
 	public void calculateOpponentResults() {
 		
+		Random random = new Random();
+		
 		for (Matchup matchup: Main.league.calendar.calendarDays.get(Main.league.calendarDay).matchups) {
-			
+					
 			if(matchup.army1 == Main.yourArmy || matchup.army2 == Main.yourArmy) {}
 			else {
 				int army1Bonus = matchup.army1.value * 100 / matchup.army2.value;
-				System.out.println(army1Bonus);
-				Random random = new Random();
 				int roll = random.nextInt(100) + 1;
 				if((roll + army1Bonus) > 180) {
 					matchup.army1.scoreSheet.bigWins++;
@@ -129,7 +130,7 @@ public class BattleConclusion extends TextPopup {
 			
 		}
 		
-		
 	}
+	
 	
 }

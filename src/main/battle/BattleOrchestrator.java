@@ -85,7 +85,7 @@ public class BattleOrchestrator {
 			}
 		};
 
-		timer = new Timer(3000, actionListener);
+		timer = new Timer(2000, actionListener);
 
 	}
 
