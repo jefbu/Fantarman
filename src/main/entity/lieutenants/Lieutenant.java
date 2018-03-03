@@ -33,5 +33,6 @@ public class Lieutenant implements Serializable {
 	public static Lieutenant veteran = new Lieutenant("Veteran", "Leader 2", Skills.Leader2, null, 0);
 	public static Lieutenant lord = new Lieutenant("Lord", "Leader 3", Skills.Leader3, null, 0);
 	public static Lieutenant marksman = new Lieutenant("Marskman", "+2 MIS", null, "MIS", 2);
+	public static Lieutenant bully = new Lieutenant("Bully", "+1 MOV", null, "MOV", 1);
 	
 }

@@ -60,6 +60,8 @@ public class LieutenantDetailPanel extends ContentPanel {
 		
 		if (order > regiment.lieutenantsSize) {
 		portrait.setIcon(imageLoader.loadImageIcon("/lieutenants/none.png", width / 4, height - 25));
+		namePanel.label.setText("");
+		bonusPanel.label.setText("");
 		}
 		else {
 		portrait.setIcon(imageLoader.loadImageIcon("/lieutenants/mendicant.png", width / 4, height - 25));	

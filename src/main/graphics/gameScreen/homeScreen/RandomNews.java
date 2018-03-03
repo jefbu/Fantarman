@@ -5,6 +5,7 @@ import java.util.Comparator;
 import java.util.Random;
 
 import main.Main;
+import main.entity.captains.Captain;
 import main.entity.regiments.Regiment;
 
 public class RandomNews {
@@ -23,7 +24,7 @@ public class RandomNews {
 		int roll = random.nextInt(100);
 			if(roll < 80) { return getCalendarEventNews(); }
 		else {
-		int roll2 = random.nextInt(2);
+		int roll2 = random.nextInt(3);
 		switch (roll2) {
 		case 0:
 			return "<font color = 'rgb(20, 40, 80)'>"
@@ -36,9 +37,20 @@ public class RandomNews {
 					+ "At the recent press conference, the CSA has announced it will be updating the injury rules"
 					+ "<br>" + " the new rules state that " + newExtremeRule() + "<br>"
 					+ " The long term impact of these new rules remains to be seen.";
+		case 2:
+			return "<font color = 'rgb(20, 40, 80)'>"
+					+ "A rumour is currently going round that " + getRandomArmy() + "<br>"
+					+ " is being targeted for a foreign capital injection. It is as of yet unclear where the money"
+					+ "would be coming from, " + "<br>"
+					+ "nor how much the investor would want to take an active part in the daily management.";
 		}
 		return "error";
 		}
+	}
+	
+	private String getRandomArmy() {
+		int roll = random.nextInt(Main.league.armies.size());
+		return (Main.league.armies.get(roll).name);
 	}
 	
 	private String getCalendarEventNews() {
@@ -57,10 +69,18 @@ public class RandomNews {
 			@Override
 			public int compare(Regiment p1, Regiment p2) {
 				return p2.captain.prestige - p1.captain.prestige;
-			}
-			
+			}			
 		});
-		return Main.league.armies.get(army).roster.get(0).captain.name + " complained";
+		int roll = random.nextInt(10);
+		if (roll > 3) { return getCaptainNews(Main.league.armies.get(army).roster.get(0).captain); } 
+		else if (roll > 0) { return getCaptainNews(Main.league.armies.get(army).roster.get(1).captain); } 
+		else { return getCaptainNews(Main.league.armies.get(army).roster.get(2).captain); }		
+	}
+	
+	private String getCaptainNews(Captain captain) {
+		int roll = random.nextInt(10);
+		if (roll > 4) {	return captain.name + " complained"; }
+		else { return captain.name + " is thinking of retiring"; }
 	}
 	
 	private String getNewsRelatedToWholeArmy(int army) {

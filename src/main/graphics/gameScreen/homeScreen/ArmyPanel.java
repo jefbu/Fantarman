@@ -1,9 +1,7 @@
 package main.graphics.gameScreen.homeScreen;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.util.Random;
 
 import javax.swing.JPanel;
 

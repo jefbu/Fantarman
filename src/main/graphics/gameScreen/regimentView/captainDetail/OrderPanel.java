@@ -51,7 +51,6 @@ public class OrderPanel extends ContentPanel {
 			int index = ii;
 			try {
 				orderList.get(index).removeActionListener(orderList.get(index).getActionListeners()[0]);
-				System.out.println("actionListener removed");
 			} catch (Exception e1) {}
 			orderList.get(index).addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -63,7 +62,6 @@ public class OrderPanel extends ContentPanel {
 					orderChoicePopup.setVisible(true);
 				}
 			});
-			System.out.println("actionListener added");
 		}
 		
 		

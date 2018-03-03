@@ -55,19 +55,6 @@ public class Calendar implements Serializable {
 		calendarDays.add(new CalendarDay(matchups.get(20), matchups.get(21), matchups.get(22), matchups.get(23)));
 		calendarDays.add(new CalendarDay(matchups.get(24), matchups.get(25), matchups.get(26), matchups.get(27)));
 		
-		int counter1 = 1;
-		for (CalendarDay calendarDay: calendarDays) {
-			System.out.println("Calendarday: " + counter1);
-			
-			for (Matchup matchup: calendarDay.matchups) {
-				System.out.println(matchup.army1.name + " versus " + matchup.army2.name);
-			}
-			counter1++;
-		}
-		
 	}
-	
-	
-		
 		
 }

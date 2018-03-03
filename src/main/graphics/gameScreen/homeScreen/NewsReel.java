@@ -1,11 +1,9 @@
 package main.graphics.gameScreen.homeScreen;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.Insets;
-import java.util.Random;
 
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
@@ -44,6 +42,7 @@ public class NewsReel extends JPanel {
 
 		titlePanel = new ContentPanel(width * 30 / 100, height * 25 / 100, Colour.BLUE,
 				new FlowLayout(FlowLayout.CENTER, 0, 0));
+		titlePanel.contentLabel.setText("Breaking News");
 		add(titlePanel);
 
 		JPanel upperRightVoidPanel = new JPanel();
@@ -73,11 +72,7 @@ public class NewsReel extends JPanel {
 	}
 
 	public void fillNewsReel() {
-		
-		Random random = new Random();
-		int roll = random.nextInt(2);
 		textArea.setText(randomNews.getNews());
-
 	}
 
 }
