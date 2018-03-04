@@ -21,5 +21,6 @@ public abstract class Colors {
 	public static Color vdblue = new Color(20, 40, 80);
 	public static Color textyellow = new Color(235, 235, 180);
 	public static Color white = new Color(170, 210, 255);
+	public static Color emptyPanelColor = new Color(70, 65, 55);
 
 	}

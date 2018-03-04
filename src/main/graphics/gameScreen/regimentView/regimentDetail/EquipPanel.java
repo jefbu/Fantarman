@@ -176,7 +176,7 @@ public class EquipPanel extends ContentPanel {
 		
 		for (int i = 0; i < weaponsList.size(); i++) {
 			
-			Color bgColor = new Color(70, 65, 55);
+			Color bgColor = Colors.emptyPanelColor;
 			Color txtColor = new Color(0, 0, 0);
 			
 			if(i < regiment.weapons.size()) {

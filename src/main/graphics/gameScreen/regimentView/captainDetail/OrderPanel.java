@@ -14,6 +14,7 @@ import main.entity.regiments.Regiment;
 import main.graphics.gameScreen.regimentView.captainDetail.orderPanel.IndividualOrderPanel;
 import main.graphics.gameScreen.regimentView.captainDetail.orderPanel.OrderChoicePopup;
 import main.graphics.gameScreen.regimentView.captainDetail.orderPanel.OrderTitlePanel;
+import main.utility.Colors;
 
 public class OrderPanel extends ContentPanel {
 
@@ -47,37 +48,71 @@ public class OrderPanel extends ContentPanel {
 
 	public void fillOrderPanel(Regiment regiment) {
 		
-		for (int ii = 0; ii < regiment.captain.orders; ii++) {
-			int index = ii;
-			try {
-				orderList.get(index).removeActionListener(orderList.get(index).getActionListeners()[0]);
-			} catch (Exception e1) {}
-			orderList.get(index).addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					orderChoicePopup.fillPopup(index, regiment);
-					orderChoicePopup.setLocation(MouseInfo.getPointerInfo().getLocation());
-					int x = orderChoicePopup.getX();
-					int y = orderChoicePopup.getY() - height * 2;
-					orderChoicePopup.setLocation(x, y);
-					orderChoicePopup.setVisible(true);
-				}
-			});
-		}
+		int sequence = 0;
 		
-		
-
-		for (int i = 0; i < regiment.instructions.size(); i++) {
-			orderList.get(i).numberPanel.label.setText(Integer.toString(i + 1));
-			orderList.get(i).conditionPanel.label.setText(regiment.instructions.get(i).condition.name());
-			orderList.get(i).conditionXPPanel.label.setText("XP");
-			orderList.get(i).targetPanel.label.setText(regiment.instructions.get(i).target.name());
-			orderList.get(i).targetXPPanel.label.setText("XP");
-			orderList.get(i).orderPanel.label.setText(regiment.instructions.get(i).order.name());
-			orderList.get(i).orderXPPanel.label.setText("XP");
-			orderList.get(i).totalXPPanel.label.setText("XP");
-
+		for (IndividualOrderPanel orderPanel: orderList) {
+			
+			int index = sequence;
+			if (sequence < regiment.captain.orders) {
+				try {
+					orderPanel.removeActionListener(orderPanel.getActionListeners()[0]);
+				} catch (Exception e1) {}
+				
+				orderPanel.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						orderChoicePopup.fillPopup(index, regiment);
+						orderChoicePopup.setLocation(MouseInfo.getPointerInfo().getLocation());
+						int x = orderChoicePopup.getX();
+						int y = orderChoicePopup.getY() - height * 2;
+						orderChoicePopup.setLocation(x, y);
+						orderChoicePopup.setVisible(true);
+					}
+				});
+				
+					orderPanel.setBackground(Colors.lred);
+					orderPanel.numberPanel.label.setText(Integer.toString(sequence + 1));
+					orderPanel.numberPanel.setBackground(Colors.lred);
+					orderPanel.conditionPanel.label.setText(regiment.instructions.get(sequence).condition.name());
+					orderPanel.conditionPanel.setBackground(Colors.lred);
+					orderPanel.conditionXPPanel.label.setText("XP");
+					orderPanel.conditionXPPanel.setBackground(Colors.lred);
+					orderPanel.targetPanel.label.setText(regiment.instructions.get(sequence).target.name());
+					orderPanel.targetPanel.setBackground(Colors.lred);
+					orderPanel.targetXPPanel.label.setText("XP");
+					orderPanel.targetXPPanel.setBackground(Colors.lred);
+					orderPanel.orderPanel.label.setText(regiment.instructions.get(sequence).order.name());
+					orderPanel.orderPanel.setBackground(Colors.lred);
+					orderPanel.orderXPPanel.label.setText("XP");
+					orderPanel.orderXPPanel.setBackground(Colors.lred);
+					orderPanel.totalXPPanel.label.setText("XP");
+					orderPanel.totalXPPanel.setBackground(Colors.lred);
+	
+			} else {
+				try {
+					orderList.get(sequence).removeActionListener(orderList.get(sequence).getActionListeners()[0]);
+				} catch (Exception e1) {}
+				
+					orderPanel.setBackground(Colors.emptyPanelColor);
+					orderPanel.numberPanel.label.setText("");
+					orderPanel.numberPanel.setBackground(Colors.emptyPanelColor);
+					orderPanel.conditionPanel.label.setText("");
+					orderPanel.conditionPanel.setBackground(Colors.emptyPanelColor);
+					orderPanel.conditionXPPanel.label.setText("");
+					orderPanel.conditionXPPanel.setBackground(Colors.emptyPanelColor);
+					orderPanel.targetPanel.label.setText("");
+					orderPanel.targetPanel.setBackground(Colors.emptyPanelColor);
+					orderPanel.targetXPPanel.label.setText("");
+					orderPanel.targetXPPanel.setBackground(Colors.emptyPanelColor);
+					orderPanel.orderPanel.label.setText("");
+					orderPanel.orderPanel.setBackground(Colors.emptyPanelColor);
+					orderPanel.orderXPPanel.label.setText("");
+					orderPanel.orderXPPanel.setBackground(Colors.emptyPanelColor);
+					orderPanel.totalXPPanel.label.setText("");
+					orderPanel.totalXPPanel.setBackground(Colors.emptyPanelColor);
 			}
-		
-		}
+			
+			sequence++;
 
+		}
+	}
 }
