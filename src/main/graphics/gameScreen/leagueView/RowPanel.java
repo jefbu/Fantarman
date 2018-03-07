@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import main.Main;
 import main.components.ButtonedPanel;
 import main.components.LabeledPanel;
+import main.utility.Colors;
 
 public class RowPanel extends JPanel {
 
@@ -27,7 +28,8 @@ public class RowPanel extends JPanel {
 		setPreferredSize(new Dimension(width, rowHeight));
 		setBackground(color);
 		
-		namePanel = new ButtonedPanel(width * 4 / 10 - 6, height, Color.red);
+		namePanel = new ButtonedPanel(width * 4 / 10 - 6, height, Colors.vdblue);
+		namePanel.label.setForeground(Colors.vdblue);
 		bigWinPanel = new LabeledPanel(width / 10 - 6, height);
 		bigWinPanel.setOpaque(false);
 		smallWinPanel = new LabeledPanel(width / 10 - 6, height);

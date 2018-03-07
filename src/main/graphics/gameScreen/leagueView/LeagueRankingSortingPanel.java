@@ -15,25 +15,32 @@ public class LeagueRankingSortingPanel extends ContentPanel {
 		
 		super(width, height, colour, flowLayout);
 		
-		ButtonedPanel namePanel = new ButtonedPanel(width * 4 / 10, height, Colors.lblue);
+		ButtonedPanel namePanel = new ButtonedPanel(width * 4 / 10, height, Colors.vlblue);
+		namePanel.label.setForeground(Colors.vlblue);
 		namePanel.label.setText("NAME");
 		
-		ButtonedPanel bigWinPanel = new ButtonedPanel(width / 10, height, Colors.lblue);
+		ButtonedPanel bigWinPanel = new ButtonedPanel(width / 10, height, Colors.vlblue);
+		bigWinPanel.label.setForeground(Colors.vlblue);
 		bigWinPanel.label.setText("W");
 		
-		ButtonedPanel smallWinPanel = new ButtonedPanel(width / 10, height, Colors.lblue);
+		ButtonedPanel smallWinPanel = new ButtonedPanel(width / 10, height, Colors.vlblue);
+		smallWinPanel.label.setForeground(Colors.vlblue);
 		smallWinPanel.label.setText("w");
 		
-		ButtonedPanel drawPanel = new ButtonedPanel(width / 10, height, Colors.lblue);
+		ButtonedPanel drawPanel = new ButtonedPanel(width / 10, height, Colors.vlblue);
+		drawPanel.label.setForeground(Colors.vlblue);
 		drawPanel.label.setText("D");
 		
-		ButtonedPanel smallLossPanel = new ButtonedPanel(width / 10, height, Colors.lblue);
+		ButtonedPanel smallLossPanel = new ButtonedPanel(width / 10, height, Colors.vlblue);
+		smallLossPanel.label.setForeground(Colors.vlblue);
 		smallLossPanel.label.setText("l");
 		
-		ButtonedPanel bigLossPanel = new ButtonedPanel(width / 10, height, Colors.lblue);
+		ButtonedPanel bigLossPanel = new ButtonedPanel(width / 10, height, Colors.vlblue);
+		bigLossPanel.label.setForeground(Colors.vlblue);
 		bigLossPanel.label.setText("L");
 		
-		ButtonedPanel totalPointsPanel = new ButtonedPanel(width / 15, height, Colors.lblue);
+		ButtonedPanel totalPointsPanel = new ButtonedPanel(width / 15, height, Colors.vlblue);
+		totalPointsPanel.label.setForeground(Colors.vlblue);
 		totalPointsPanel.label.setText("Tot");
 		
 		insidePanel.add(namePanel);

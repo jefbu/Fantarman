@@ -7,6 +7,7 @@ import java.awt.FlowLayout;
 import javax.swing.JPanel;
 
 import main.components.Colour;
+import main.utility.Colors;
 
 public class LeagueRankingPanel extends JPanel {
 
@@ -18,7 +19,7 @@ public class LeagueRankingPanel extends JPanel {
 
 		super();
 		setPreferredSize(new Dimension(width, height));
-		setBackground(Color.GRAY);
+		setBackground(Colors.vlblue);
 
 		setLayout(new FlowLayout(FlowLayout.LEADING, width / 10, height / 20));
 
