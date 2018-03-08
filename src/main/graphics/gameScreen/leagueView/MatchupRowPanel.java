@@ -26,26 +26,36 @@ public class MatchupRowPanel extends JPanel {
 		setLayout(new FlowLayout(FlowLayout.LEADING, 0, 0));
 
 		firstArmyPanel = new LabeledPanel(width * 4 / 10, height);
-		firstArmyPanel.setBackground(Colors.blue);
+		firstArmyPanel.setBackground(Colors.dblue);
+		firstArmyPanel.label.setForeground(Colors.vlgreen);
 		add(firstArmyPanel);
+		
+		LabeledPanel versusPanel = new LabeledPanel(width * 1 / 10, height);
+		versusPanel.setBackground(Colors.dblue);
+		versusPanel.label.setForeground(Colors.vlred);
+		versusPanel.label.setText("Vs");
+		add(versusPanel);
+		
 
 		secondArmyPanel = new LabeledPanel(width * 4 / 10, height);
-		secondArmyPanel.setBackground(Colors.dgreen);
+		secondArmyPanel.setBackground(Colors.dblue);
+		secondArmyPanel.label.setForeground(Colors.vlgreen);
 		add(secondArmyPanel);
 
-		resultPanel = new LabeledPanel(width * 2 / 10, height);
-		resultPanel.setBackground(Colors.emptyPanelColor);
+		resultPanel = new LabeledPanel(width * 1 / 10, height);
+		resultPanel.setBackground(Colors.dblue);
+		resultPanel.label.setForeground(Colors.vlblue);
 		add(resultPanel);
 
 	}
 
-	public void fillMatchupRowPanel() {
+	public void fillMatchupRowPanel(int calendarDay) {
 		
 		firstArmyPanel.label
-				.setText(Main.league.calendar.calendarDays.get(Main.league.calendarDay).matchups.get(index).army1.name);
+				.setText(Main.league.calendar.calendarDays.get(calendarDay).matchups.get(index).army1.name);
 		
 		secondArmyPanel.label
-		.setText(Main.league.calendar.calendarDays.get(Main.league.calendarDay).matchups.get(index).army2.name);
+		.setText(Main.league.calendar.calendarDays.get(calendarDay).matchups.get(index).army2.name);
 
 		
 	}
