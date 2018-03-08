@@ -9,6 +9,7 @@ public class Matchup implements Serializable {
 	private static final long serialVersionUID = 1L;
 	public Army army1;
 	public Army army2;
+	public Result result;
 	
 	public Matchup(Army army1, Army army2) {
 		
