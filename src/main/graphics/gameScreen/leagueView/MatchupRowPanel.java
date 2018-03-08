@@ -7,7 +7,6 @@ import javax.swing.JPanel;
 
 import main.Main;
 import main.components.LabeledPanel;
-import main.entity.leagues.Result;
 import main.utility.Colors;
 
 public class MatchupRowPanel extends JPanel {

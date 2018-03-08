@@ -5,7 +5,6 @@ import java.awt.FlowLayout;
 import java.util.ArrayList;
 import java.util.Random;
 
-import main.Main;
 import main.components.Colour;
 import main.components.ContentPanel;
 import main.components.LabeledPanel;
