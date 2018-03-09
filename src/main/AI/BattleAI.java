@@ -1,5 +1,6 @@
 package main.AI;
 
+import main.Main;
 import main.battle.tactics.Condition;
 import main.battle.tactics.Order;
 import main.battle.tactics.Target;
@@ -8,27 +9,29 @@ import main.entity.regiments.Regiment;
 
 public abstract class BattleAI {
 	
-	public static GlobalBattleStrategy decideGlobalBattleStrategy(Army army) {
-		int cautiousCount = 0;
-		int aggressiveCount = 0;
+	public static GlobalBattleStrategy decideGlobalBattleStrategy(Army opponentArmy, Army yourBattleArmy) {
 		
-		for(Regiment regiment: army.roster) {
-			
-			switch(regiment.type) {
-			case ARCHERS: cautiousCount++; break;
-			case ARTILLERY: cautiousCount++; break;
-			case COMBINED_ARMS: break;
-			case FLYING: break;
-			case HEAVY_CAVALRY: aggressiveCount++; break;
-			case HEAVY_INFANTRY: aggressiveCount++; break;
-			case LIGHT_CAVALRY: break;
-			case LIGHT_INFANTRY: break;
-			case MONSTER: break;			
-			}
+		int attack = 0;
+		int missile = 0;
+		int yourAttack = 0;
+		int yourMissile = 0;
+		
+		for (Regiment regiment: opponentArmy.roster) {
+			attack += regiment.totalAttack;
+			missile += regiment.totalMissile;
+		}
+		for (Regiment regiment: yourBattleArmy.roster) {
+			yourAttack += regiment.totalAttack;
+			yourMissile += regiment.totalMissile;
 		}
 		
-		if (aggressiveCount > cautiousCount) { return GlobalBattleStrategy.AGGRESSIVE; }
-		else return GlobalBattleStrategy.CAUTIOUS;
+		int attackRatio = attack * 100 / yourAttack;
+		int missileRatio = missile * 100 / yourMissile;
+		
+		if (attackRatio > missileRatio) { return GlobalBattleStrategy.AGGRESSIVE; }
+		else { return GlobalBattleStrategy.CAUTIOUS; }
+		
+		
 	}
 	
 	

@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 import main.Main;
+import main.AI.BattleAI;
 import main.entity.armies.Army;
 import main.entity.leagues.Matchup;
 import main.entity.regiments.Regiment;
@@ -26,7 +27,9 @@ public class Battle {
 		yourBattleArmy.calculateValue();
 		opponentBattleArmy = chooseOpponentArmy();
 		opponentBattleArmy.calculateValue();
-
+		
+		opponentBattleArmy.battleStrategy = BattleAI.decideGlobalBattleStrategy(opponentBattleArmy, yourBattleArmy);
+		
 		BattleScreen.battleScene.createMap();
 
 		battleOrchestrator = new BattleOrchestrator(yourBattleArmy, opponentBattleArmy);
