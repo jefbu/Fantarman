@@ -99,6 +99,8 @@ public abstract class Regiment implements Serializable {
 	public boolean inCombat;
 	public boolean defeated;
 	public Regiment combatOpponent;
+	
+	public int hiddenIndex;
 
 	public Regiment() {
 

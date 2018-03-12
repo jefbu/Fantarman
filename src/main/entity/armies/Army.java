@@ -3,6 +3,7 @@ package main.entity.armies;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import main.AI.DeploymentStrategy;
 import main.AI.GlobalBattleStrategy;
 import main.entity.leagues.ScoreSheet;
 import main.entity.regiments.Regiment;
@@ -14,6 +15,7 @@ public class Army implements Serializable {
 	public int value;
 	public String name;
 	public GlobalBattleStrategy battleStrategy;
+	public DeploymentStrategy deploymentStrategy;
 	
 	public ScoreSheet scoreSheet;
 	

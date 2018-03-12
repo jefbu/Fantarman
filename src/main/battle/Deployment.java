@@ -3,7 +3,6 @@ package main.battle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Random;
 
 import main.AI.DeployAI;
 import main.components.Colour;
@@ -24,7 +23,7 @@ public class Deployment {
 	ArrayList<Who> deployOrder;
 	DeploymentZone playerDeploymentZone;
 	DeploymentZone enemyDeploymentZone;
-	
+
 	Army yourBattleArmy;
 	Army opponentBattleArmy;
 
@@ -38,24 +37,25 @@ public class Deployment {
 	int ballisticRed;
 	int moraleGreen;
 	int moraleRed;
-	
+
 	int errorCheck;
 
 	public Deployment(BattleOrchestrator battleOrchestrator, Army yourBattleArmy, Army opponentBattleArmy) {
-		
+
 		errorCheck = 0;
-		
+
 		this.battleOrchestrator = battleOrchestrator;
 		this.yourBattleArmy = yourBattleArmy;
 		this.opponentBattleArmy = opponentBattleArmy;
 
 		playerDeploymentZone = new DeploymentZone(24);
 		enemyDeploymentZone = new DeploymentZone(0);
+		
+		DeployAI.setOpponentDeploymentIndices(opponentBattleArmy);
 
 		deployOrder = new ArrayList<Who>();
 
 		decideDeploymentOrder();
-		DeployAI.orderOpponentArmy(this.opponentBattleArmy);
 
 		for (int i = 0; i < deployOrder.size(); i++) {
 			deploy();
@@ -69,12 +69,13 @@ public class Deployment {
 			playerDeploymentZone.removeDeploymentZone();
 			enemyDeploymentZone.removeDeploymentZone();
 			for (int i = 0; i < BattleScreen.battleScene.indexedPanels.size(); i++) {
-				
+
 				try {
 					BattleScreen.battleScene.indexedPanels.get(i).button.removeActionListener(
 							BattleScreen.battleScene.indexedPanels.get(i).button.getActionListeners()[0]);
-				} catch (Exception e) {	}
-				
+				} catch (Exception e) {
+				}
+
 			}
 			TextPopup popup = new TextPopup(BattleScreen.battleScene.roundedWidth / 3,
 					BattleScreen.battleScene.roundedHeight / 4, Colour.GREEN, false);
@@ -97,14 +98,15 @@ public class Deployment {
 			int index = i;
 
 			try {
-				BattleScreen.battleScene.indexedPanels.get(i).button
-						.removeActionListener(BattleScreen.battleScene.indexedPanels.get(i).button.getActionListeners()[0]);
-			} catch (Exception e1) {}
-			
+				BattleScreen.battleScene.indexedPanels.get(i).button.removeActionListener(
+						BattleScreen.battleScene.indexedPanels.get(i).button.getActionListeners()[0]);
+			} catch (Exception e1) {
+			}
+
 			BattleScreen.battleScene.indexedPanels.get(i).button.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					if (checkLegalDeployment(index, playerDeploymentZone, yourBattleArmy, playerCounter) == true) {
-						
+
 						errorCheck++;
 						yourBattleArmy.roster.get(playerCounter).setIndices(index);
 						battleOrchestrator.refreshMap();
@@ -118,28 +120,11 @@ public class Deployment {
 		}
 	}
 
-	private void deployEnemyRegiment() {		
-		
-		Random random = new Random();
-		int roll = 0;
-		int roll2 = 0;
+	private void deployEnemyRegiment() {
 
-		boolean keepGoing = true;
+		opponentBattleArmy.roster.get(enemyCounter).setIndices(opponentBattleArmy.roster.get(enemyCounter).hiddenIndex);
 
-		while (keepGoing) {
-			
-			roll = random.nextInt(7);
-			roll2 = random.nextInt(20);
-			if (checkNotAdjacent(roll * 48 + 12 + roll2, opponentBattleArmy, enemyCounter)) {
-				keepGoing = false;
-			}
-		}
-
-		opponentBattleArmy.roster.get(enemyCounter).setIndices(roll * 48 + 12 + roll2);
-
-		for (int i = 0; i < opponentBattleArmy.roster.get(enemyCounter).panels.length; i++) {
-			battleOrchestrator.refreshMap();
-		}
+		battleOrchestrator.refreshMap();
 
 		BattleScreen.battleScene.indexedPanels.get(0).applyColor();
 		deployOrder.remove(0);
@@ -210,16 +195,18 @@ public class Deployment {
 
 		return notAdjacent;
 	}
-	
+
 	private boolean checkNotBorder(int index, Army army, int counter) {
 		int bottomLimit = 1582 - army.roster.get(counter).rows * 48;
-		if (index > bottomLimit) { return false; } 
-		else {
+		if (index > bottomLimit) {
+			return false;
+		} else {
 			int rightLimit = 48 - army.roster.get(counter).columns - 8;
-			int check = index%48;
-			if (check > rightLimit) { return false; } 
-			else { 
-				return true;	
+			int check = index % 48;
+			if (check > rightLimit) {
+				return false;
+			} else {
+				return true;
 			}
 		}
 	}

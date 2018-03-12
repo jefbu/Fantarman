@@ -1,6 +1,5 @@
 package main.AI;
 
-import main.Main;
 import main.battle.tactics.Condition;
 import main.battle.tactics.Order;
 import main.battle.tactics.Target;
