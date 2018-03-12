@@ -101,6 +101,7 @@ public abstract class Regiment implements Serializable {
 	public Regiment combatOpponent;
 	
 	public int hiddenIndex;
+	public int randomNumber;
 
 	public Regiment() {
 

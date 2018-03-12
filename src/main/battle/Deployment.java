@@ -3,6 +3,9 @@ package main.battle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Random;
 
 import main.AI.DeployAI;
 import main.components.Colour;
@@ -52,6 +55,18 @@ public class Deployment {
 		enemyDeploymentZone = new DeploymentZone(0);
 		
 		DeployAI.setOpponentDeploymentIndices(opponentBattleArmy);
+		
+		for (Regiment regiment: opponentBattleArmy.roster) {
+			Random random = new Random();
+			regiment.randomNumber = random.nextInt(1000);
+		}
+		
+		Collections.sort(opponentBattleArmy.roster, new Comparator<Regiment>() {
+			@Override
+			public int compare(Regiment o1, Regiment o2) {
+				return o2.randomNumber - o1.randomNumber; 
+			}
+		});
 
 		deployOrder = new ArrayList<Who>();
 
