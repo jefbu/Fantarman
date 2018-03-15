@@ -28,7 +28,7 @@ public class MulticulturalSociety extends Army {
 		roster.add(new Kinshiwang("Terquit Anvils", Captain.boris));
 		roster.add(new PebbleHurlers("Terquit Archers", Captain.boris, Lieutenant.sergeant));
 		roster.add(new PristineShield("Feod Cavalry", Captain.boris));
-		roster.add(new Rooks("Avialay Tanks", Captain.boris, Lieutenant.mendicant));
+		roster.add(new Rooks("Avialay Tanks", Captain.boris, Lieutenant.corporal));
 		roster.add(new Jaywings("Avialay Fliers", Captain.boris, Lieutenant.sergeant));
 		roster.add(new HairpinThrower("Qoonfu Archers", Captain.professor));
 		roster.add(new Trainees("Qoonfu Reserves", Captain.boris));
