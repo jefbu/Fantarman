@@ -1,8 +1,5 @@
 package main.AI;
 
-import main.battle.tactics.Condition;
-import main.battle.tactics.Order;
-import main.battle.tactics.Target;
 import main.entity.armies.Army;
 import main.entity.regiments.Regiment;
 
