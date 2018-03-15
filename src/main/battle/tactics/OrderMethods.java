@@ -15,11 +15,11 @@ public abstract class OrderMethods {
 				yourBattleArmy, opponentBattleArmy);
 		writeBasicOrderText(Order.CHARGE, regiment, target);
 	}
-	
+
 	public static void moveTo(Regiment regiment, Regiment target, Army activeArmy, int activeRegimentIndex,
 			Army yourBattleArmy, Army opponentBattleArmy) {
-		MoveMethod.move(regiment, regiment.battleMove, target, activeArmy, activeRegimentIndex,
-				yourBattleArmy, opponentBattleArmy);
+		MoveMethod.move(regiment, regiment.battleMove, target, activeArmy, activeRegimentIndex, yourBattleArmy,
+				opponentBattleArmy);
 		writeBasicOrderText(Order.Move_to, regiment, target);
 	}
 
@@ -70,7 +70,9 @@ public abstract class OrderMethods {
 		writeHealText(Order.RECOVER, regiment, recoveries);
 	}
 
-	public static void fire(Regiment regiment, Regiment target) {
+	public static void fire(Regiment regiment, Regiment target, Army activeArmy, Army yourBattleArmy,
+			Army opponentBattleArmy) {
+		
 		Random random = new Random();
 		int hits = 0;
 		int casualties = 0;
@@ -88,8 +90,19 @@ public abstract class OrderMethods {
 				casualties++;
 			}
 		}
+
+		if (target.battleLife <= 0) {
+			target.defeated = true;
+			regiment.inCombat = false;
+			if (activeArmy == yourBattleArmy) {
+				opponentBattleArmy.roster.remove(target);
+			} else {
+				yourBattleArmy.roster.remove(target);
+			}
+		}
+
 		writeMissileText(Order.FIRE, regiment, target, casualties);
-		System.out.println("Target has " + target.battleLife + " HP left");
+
 	}
 
 	private static void writeCombatText(Regiment regiment, Regiment target, int casualties) {

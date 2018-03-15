@@ -2,7 +2,8 @@ package main.battle.tactics;
 
 import main.entity.regiments.Regiment;
 
-public class DistanceChecker {
+public abstract class DistanceChecker {
+	
 	
 	public static int checkVerticalDistance(Regiment regiment, Regiment target) {
 		int distanceUp = checkDistanceUp(regiment, target);
@@ -18,10 +19,16 @@ public class DistanceChecker {
 	
 	public static int checkDistanceUp(Regiment regiment, Regiment target) {
 		int distanceUp = 0;
+		System.out.println(regiment.name);
+		System.out.println(regiment.panels[0]);
+		System.out.println(target.name);
+		System.out.println(target.panels[0]);
 		if (regiment.panels[0] / 48 > target.panels[0] / 48) {
 			distanceUp = (target.panels[0] / 48) - (regiment.panels[0] / 48) ;
 		}
+
 		if (distanceUp != 0) distanceUp = distanceUp + target.rows;
+		System.out.println("distance up = " + distanceUp);
 		return distanceUp;
 	}
 

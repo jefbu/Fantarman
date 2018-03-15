@@ -43,7 +43,6 @@ public class BattleOrchestrator {
 			regiment.attributeBattleSpeed();
 			regiment.attributeBattleLife();
 			regiment.attributeBattleStats();
-			BattleAI.decideRegimentBattleStrategy(regiment);
 		}
 
 		actionListener = new ActionListener() {

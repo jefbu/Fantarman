@@ -4,6 +4,9 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Random;
 
+import main.battle.tactics.Condition;
+import main.battle.tactics.Order;
+import main.battle.tactics.Target;
 import main.entity.armies.Army;
 import main.entity.regiments.Regiment;
 
@@ -122,40 +125,160 @@ public abstract class DeployAI {
 		
 		for (int i = 0; i < archers; i++) {
 			switch(i) {
-			case 0: opponentBattleArmy.roster.get(0).hiddenIndex = 36;
-			case 1: opponentBattleArmy.roster.get(1).hiddenIndex = 26;
-			case 2: opponentBattleArmy.roster.get(2).hiddenIndex = 16;
-			case 3: opponentBattleArmy.roster.get(3).hiddenIndex = 11;
-			case 4: opponentBattleArmy.roster.get(4).hiddenIndex = 21;
-			case 5: opponentBattleArmy.roster.get(5).hiddenIndex = 31;
-			case 6: opponentBattleArmy.roster.get(6).hiddenIndex = 248;
-			case 7: opponentBattleArmy.roster.get(7).hiddenIndex = 277;
+			case 0: 
+				opponentBattleArmy.roster.get(0).hiddenIndex = 36;
+				opponentBattleArmy.roster.get(0).instructions.get(0).condition = Condition.ALWAYS;
+				opponentBattleArmy.roster.get(0).instructions.get(0).target = Target.ENEMY_WEAKEST;
+				opponentBattleArmy.roster.get(0).instructions.get(0).order = Order.FIRE;
+				break;
+			case 1: 
+				opponentBattleArmy.roster.get(1).hiddenIndex = 26;
+				opponentBattleArmy.roster.get(1).instructions.get(0).condition = Condition.ALWAYS;
+				opponentBattleArmy.roster.get(1).instructions.get(0).target = Target.ENEMY_WEAKEST;
+				opponentBattleArmy.roster.get(1).instructions.get(0).order = Order.FIRE;
+				break;
+			case 2: 
+				opponentBattleArmy.roster.get(2).hiddenIndex = 16;
+				opponentBattleArmy.roster.get(2).instructions.get(0).condition = Condition.ALWAYS;
+				opponentBattleArmy.roster.get(2).instructions.get(0).target = Target.ENEMY_WEAKEST;
+				opponentBattleArmy.roster.get(2).instructions.get(0).order = Order.FIRE;
+				break;
+			case 3: 
+				opponentBattleArmy.roster.get(3).hiddenIndex = 11;
+				opponentBattleArmy.roster.get(3).instructions.get(0).condition = Condition.ALWAYS;
+				opponentBattleArmy.roster.get(3).instructions.get(0).target = Target.ENEMY_WEAKEST;
+				opponentBattleArmy.roster.get(3).instructions.get(0).order = Order.FIRE;
+				break;
+			case 4: 
+				opponentBattleArmy.roster.get(4).hiddenIndex = 21;
+				opponentBattleArmy.roster.get(4).instructions.get(0).condition = Condition.ALWAYS;
+				opponentBattleArmy.roster.get(4).instructions.get(0).target = Target.ENEMY_WEAKEST;
+				opponentBattleArmy.roster.get(4).instructions.get(0).order = Order.FIRE;
+				break;
+			case 5: 
+				opponentBattleArmy.roster.get(5).hiddenIndex = 31;
+				opponentBattleArmy.roster.get(5).instructions.get(0).condition = Condition.ALWAYS;
+				opponentBattleArmy.roster.get(5).instructions.get(0).target = Target.ENEMY_WEAKEST;
+				opponentBattleArmy.roster.get(5).instructions.get(0).order = Order.FIRE;
+				break;
+			case 6: 
+				opponentBattleArmy.roster.get(6).hiddenIndex = 248;
+				opponentBattleArmy.roster.get(6).instructions.get(0).condition = Condition.ALWAYS;
+				opponentBattleArmy.roster.get(6).instructions.get(0).target = Target.ENEMY_WEAKEST;
+				opponentBattleArmy.roster.get(6).instructions.get(0).order = Order.FIRE;
+				break;
+			case 7: 
+				opponentBattleArmy.roster.get(7).hiddenIndex = 277;
+				opponentBattleArmy.roster.get(7).instructions.get(0).condition = Condition.ALWAYS;
+				opponentBattleArmy.roster.get(7).instructions.get(0).target = Target.ENEMY_WEAKEST;
+				opponentBattleArmy.roster.get(7).instructions.get(0).order = Order.FIRE;
+				break;
 			}
 		}
 		
 		for (int i = 0 + archers; i < defenders + archers; i++) {
 			switch(i) {
-			case 0: opponentBattleArmy.roster.get(0).hiddenIndex = 36;
-			case 1: opponentBattleArmy.roster.get(1).hiddenIndex = 26;
-			case 2: opponentBattleArmy.roster.get(2).hiddenIndex = 16;
-			case 3: opponentBattleArmy.roster.get(3).hiddenIndex = 11;
-			case 4: opponentBattleArmy.roster.get(4).hiddenIndex = 21;
-			case 5: opponentBattleArmy.roster.get(5).hiddenIndex = 31;
-			case 6: opponentBattleArmy.roster.get(6).hiddenIndex = 248;
-			case 7: opponentBattleArmy.roster.get(7).hiddenIndex = 277;
+			case 0: 
+				opponentBattleArmy.roster.get(0).hiddenIndex = 36;
+				opponentBattleArmy.roster.get(0).instructions.get(0).condition = Condition.ALWAYS;
+				opponentBattleArmy.roster.get(0).instructions.get(0).target = Target.ENEMY_NEAREST;
+				opponentBattleArmy.roster.get(0).instructions.get(0).order = Order.CHARGE;
+				break;
+			case 1: 
+				opponentBattleArmy.roster.get(1).hiddenIndex = 26;
+				opponentBattleArmy.roster.get(1).instructions.get(0).condition = Condition.ALWAYS;
+				opponentBattleArmy.roster.get(1).instructions.get(0).target = Target.ENEMY_NEAREST;
+				opponentBattleArmy.roster.get(1).instructions.get(0).order = Order.CHARGE;
+				break;
+			case 2: 
+				opponentBattleArmy.roster.get(2).hiddenIndex = 16;
+				opponentBattleArmy.roster.get(2).instructions.get(0).condition = Condition.ALWAYS;
+				opponentBattleArmy.roster.get(2).instructions.get(0).target = Target.ENEMY_NEAREST;
+				opponentBattleArmy.roster.get(2).instructions.get(0).order = Order.CHARGE;
+				break;
+			case 3: 
+				opponentBattleArmy.roster.get(3).hiddenIndex = 11;
+				opponentBattleArmy.roster.get(3).instructions.get(0).condition = Condition.ALWAYS;
+				opponentBattleArmy.roster.get(3).instructions.get(0).target = Target.ENEMY_NEAREST;
+				opponentBattleArmy.roster.get(3).instructions.get(0).order = Order.CHARGE;
+				break;
+			case 4: 
+				opponentBattleArmy.roster.get(4).hiddenIndex = 21;
+				opponentBattleArmy.roster.get(4).instructions.get(0).condition = Condition.ALWAYS;
+				opponentBattleArmy.roster.get(4).instructions.get(0).target = Target.ENEMY_NEAREST;
+				opponentBattleArmy.roster.get(4).instructions.get(0).order = Order.CHARGE;
+				break;
+			case 5: 
+				opponentBattleArmy.roster.get(5).hiddenIndex = 31;
+				opponentBattleArmy.roster.get(5).instructions.get(0).condition = Condition.ALWAYS;
+				opponentBattleArmy.roster.get(5).instructions.get(0).target = Target.ENEMY_NEAREST;
+				opponentBattleArmy.roster.get(5).instructions.get(0).order = Order.CHARGE;
+				break;
+			case 6: 
+				opponentBattleArmy.roster.get(6).hiddenIndex = 248;
+				opponentBattleArmy.roster.get(6).instructions.get(0).condition = Condition.ALWAYS;
+				opponentBattleArmy.roster.get(6).instructions.get(0).target = Target.ENEMY_NEAREST;
+				opponentBattleArmy.roster.get(6).instructions.get(0).order = Order.CHARGE;
+				break;
+			case 7: 
+				opponentBattleArmy.roster.get(7).hiddenIndex = 277;
+				opponentBattleArmy.roster.get(7).instructions.get(0).condition = Condition.ALWAYS;
+				opponentBattleArmy.roster.get(7).instructions.get(0).target = Target.ENEMY_NEAREST;
+				opponentBattleArmy.roster.get(7).instructions.get(0).order = Order.CHARGE;
+				break;
 			}
 		}
 		
 		for (int i = 0 + archers + defenders; i < others + archers + defenders; i++) {
 			switch(i) {
-			case 0: opponentBattleArmy.roster.get(0).hiddenIndex = 36;
-			case 1: opponentBattleArmy.roster.get(1).hiddenIndex = 26;
-			case 2: opponentBattleArmy.roster.get(2).hiddenIndex = 16;
-			case 3: opponentBattleArmy.roster.get(3).hiddenIndex = 11;
-			case 4: opponentBattleArmy.roster.get(4).hiddenIndex = 21;
-			case 5: opponentBattleArmy.roster.get(5).hiddenIndex = 31;
-			case 6: opponentBattleArmy.roster.get(6).hiddenIndex = 248;
-			case 7: opponentBattleArmy.roster.get(7).hiddenIndex = 277;
+			case 0: 
+				opponentBattleArmy.roster.get(0).hiddenIndex = 36;
+				opponentBattleArmy.roster.get(0).instructions.get(0).condition = Condition.ALWAYS;
+				opponentBattleArmy.roster.get(0).instructions.get(0).target = Target.ENEMY_NEAREST;
+				opponentBattleArmy.roster.get(0).instructions.get(0).order = Order.CHARGE;
+				break;
+			case 1: 
+				opponentBattleArmy.roster.get(1).hiddenIndex = 26;
+				opponentBattleArmy.roster.get(1).instructions.get(0).condition = Condition.ALWAYS;
+				opponentBattleArmy.roster.get(1).instructions.get(0).target = Target.ENEMY_NEAREST;
+				opponentBattleArmy.roster.get(1).instructions.get(0).order = Order.CHARGE;
+				break;
+			case 2: 
+				opponentBattleArmy.roster.get(2).hiddenIndex = 16;
+				opponentBattleArmy.roster.get(2).instructions.get(0).condition = Condition.ALWAYS;
+				opponentBattleArmy.roster.get(2).instructions.get(0).target = Target.ENEMY_NEAREST;
+				opponentBattleArmy.roster.get(2).instructions.get(0).order = Order.CHARGE;
+				break;
+			case 3: 
+				opponentBattleArmy.roster.get(3).hiddenIndex = 11;
+				opponentBattleArmy.roster.get(3).instructions.get(0).condition = Condition.ALWAYS;
+				opponentBattleArmy.roster.get(3).instructions.get(0).target = Target.ENEMY_NEAREST;
+				opponentBattleArmy.roster.get(3).instructions.get(0).order = Order.CHARGE;
+				break;
+			case 4: 
+				opponentBattleArmy.roster.get(4).hiddenIndex = 21;
+				opponentBattleArmy.roster.get(4).instructions.get(0).condition = Condition.ALWAYS;
+				opponentBattleArmy.roster.get(4).instructions.get(0).target = Target.ENEMY_NEAREST;
+				opponentBattleArmy.roster.get(4).instructions.get(0).order = Order.CHARGE;
+				break;
+			case 5: 
+				opponentBattleArmy.roster.get(5).hiddenIndex = 31;
+				opponentBattleArmy.roster.get(5).instructions.get(0).condition = Condition.ALWAYS;
+				opponentBattleArmy.roster.get(5).instructions.get(0).target = Target.ENEMY_NEAREST;
+				opponentBattleArmy.roster.get(5).instructions.get(0).order = Order.CHARGE;
+				break;
+			case 6: 
+				opponentBattleArmy.roster.get(6).hiddenIndex = 248;
+				opponentBattleArmy.roster.get(6).instructions.get(0).condition = Condition.ALWAYS;
+				opponentBattleArmy.roster.get(6).instructions.get(0).target = Target.ENEMY_NEAREST;
+				opponentBattleArmy.roster.get(6).instructions.get(0).order = Order.CHARGE;
+				break;
+			case 7: 
+				opponentBattleArmy.roster.get(7).hiddenIndex = 277;
+				opponentBattleArmy.roster.get(7).instructions.get(0).condition = Condition.ALWAYS;
+				opponentBattleArmy.roster.get(7).instructions.get(0).target = Target.ENEMY_NEAREST;
+				opponentBattleArmy.roster.get(7).instructions.get(0).order = Order.CHARGE;
+				break;
 			}
 		}	
 	}

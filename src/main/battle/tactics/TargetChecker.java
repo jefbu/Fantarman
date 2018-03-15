@@ -52,10 +52,31 @@ public class TargetChecker {
 			}
 		case ENEMY_NEAREST:
 			if (activeArmy == yourBattleArmy) {
-				return opponentBattleArmy.roster.get(0);
-			} else {
-				return yourBattleArmy.roster.get(0);
+				int totalDistance = 0;
+				Regiment finalTarget = null;
+			for (Regiment opponentRegiment: opponentBattleArmy.roster) {
+				int horizontalDistance = DistanceChecker.checkHorizontalDistance(regiment, opponentRegiment);
+				int verticalDistance = DistanceChecker.checkVerticalDistance(regiment, opponentRegiment);
+				if (Math.abs(verticalDistance) + Math.abs(horizontalDistance) > totalDistance) {
+				totalDistance = horizontalDistance + verticalDistance;
+				finalTarget = opponentRegiment;
+				}
 			}
+			return finalTarget;
+		} else {
+				int totalDistance = 0;
+				Regiment finalTarget = null;
+			for (Regiment yourRegiment: yourBattleArmy.roster) {
+				int horizontalDistance = DistanceChecker.checkHorizontalDistance(regiment, yourRegiment);
+				int verticalDistance = DistanceChecker.checkVerticalDistance(regiment, yourRegiment);
+				if (Math.abs(verticalDistance) + Math.abs(horizontalDistance) > totalDistance) {
+				totalDistance = horizontalDistance + verticalDistance;
+				System.out.println("total distance updated: " + totalDistance);
+				finalTarget = yourRegiment;
+				}
+			}
+			return finalTarget;
+		}
 		case SELF:
 			return regiment;
 

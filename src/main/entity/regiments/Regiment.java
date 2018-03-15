@@ -217,7 +217,7 @@ public abstract class Regiment implements Serializable {
 			OrderMethods.recover(this);
 			break;
 		case FIRE:
-			OrderMethods.fire(this, target);
+			OrderMethods.fire(this, target, activeArmy, yourBattleArmy, opponentBattleArmy);
 			break;
 		}
 	}
