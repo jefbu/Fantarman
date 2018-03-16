@@ -3,7 +3,9 @@ package main.battle.tactics;
 import java.util.Random;
 
 import main.entity.armies.Army;
+import main.entity.lieutenants.Lieutenant;
 import main.entity.regiments.Regiment;
+import main.entity.skills.Skills;
 import main.graphics.battleScreen.RightAggregatePanel;
 
 public abstract class OrderMethods {
@@ -57,12 +59,14 @@ public abstract class OrderMethods {
 	}
 
 	public static void recover(Regiment regiment) {
+		
+		int healers = countSkill(regiment, "Healer");
 
 		Random random = new Random();
 		int recoveries = 0;
 		int lostLife = regiment.totalLife - regiment.battleLife;
 		for (int i = 0; i < lostLife; i++) {
-			if (random.nextInt(100) < 10) {
+			if (random.nextInt(100) < (10 + healers * 10)) {
 				regiment.battleLife++;
 				recoveries++;
 			}
@@ -147,6 +151,27 @@ public abstract class OrderMethods {
 		} else {
 			return "<font color = 'rgb(60, " + colour + ", 80)'>";
 		}
+	}
+	
+	private static int countSkill(Regiment regiment, String skill) {
+		
+		int skillAmount = 0;
+		switch(skill) {
+		case "Healer": for (Lieutenant lieutenant: regiment.lieutenants) {
+			if (lieutenant.bonusSkill == Skills.Healer1) { skillAmount++;}
+			else if (lieutenant.bonusSkill == Skills.Healer2) { skillAmount = skillAmount + 2; }
+			else if (lieutenant.bonusSkill == Skills.Healer3) { skillAmount = skillAmount + 3; }
+			}
+			if (regiment.captain.skill1 == Skills.Healer1) { skillAmount++; }
+			else if (regiment.captain.skill1 == Skills.Healer2) { skillAmount = skillAmount + 2; }
+			else if (regiment.captain.skill1 == Skills.Healer3) { skillAmount = skillAmount + 3; }
+			if (regiment.captain.skill2 == Skills.Healer1) { skillAmount++; }
+			else if (regiment.captain.skill2 == Skills.Healer2) { skillAmount = skillAmount + 2; }
+			else if (regiment.captain.skill2 == Skills.Healer3) { skillAmount = skillAmount + 3; }
+			break;
+		}
+		return skillAmount;
+		
 	}
 
 }

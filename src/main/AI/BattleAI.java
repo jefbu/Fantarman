@@ -21,8 +21,8 @@ public abstract class BattleAI {
 			yourMissile += regiment.totalMissile;
 		}
 		
-		int attackRatio = attack * 100 / yourAttack;
-		int missileRatio = missile * 100 / yourMissile;
+		int attackRatio = attack * 100 / (yourAttack + 1);
+		int missileRatio = missile * 100 / (yourMissile + 1);
 		
 		if (attackRatio > missileRatio) { return GlobalBattleStrategy.AGGRESSIVE; }
 		else { return GlobalBattleStrategy.CAUTIOUS; }

@@ -19,10 +19,6 @@ public abstract class DistanceChecker {
 	
 	public static int checkDistanceUp(Regiment regiment, Regiment target) {
 		int distanceUp = 0;
-		System.out.println(regiment.name);
-		System.out.println(regiment.panels[0]);
-		System.out.println(target.name);
-		System.out.println(target.panels[0]);
 		if (regiment.panels[0] / 48 > target.panels[0] / 48) {
 			distanceUp = (target.panels[0] / 48) - (regiment.panels[0] / 48) ;
 		}

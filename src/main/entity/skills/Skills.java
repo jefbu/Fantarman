@@ -17,13 +17,16 @@ public enum Skills {
 	Pathfinder1,
 	Pathfinder2,
 	Pathfinder3,
-	
-	
+	Charger1,
+	Charger2,
+	Charger3,
+	Terrifying1,
+	Terrifying2,
+	Terrifying3,
 	
 	Charismatic,
 	Flammable,
-	DoubleShot,
-	Ambusher,
+	DoubleShot, 
 	
 	
 
