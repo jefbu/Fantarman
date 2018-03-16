@@ -64,7 +64,7 @@ public class LieutenantDetailPanel extends ContentPanel {
 		bonusPanel.label.setText("");
 		}
 		else {
-		portrait.setIcon(imageLoader.loadImageIcon("/lieutenants/mendicant.png", width / 4, height - 25));	
+		portrait.setIcon(imageLoader.loadImageIcon(regiment.lieutenants.get(order - 1).imagePath, width / 4, height - 25));	
 		namePanel.label.setText(regiment.lieutenants.get(order - 1).name);
 		bonusPanel.label.setText(regiment.lieutenants.get(order - 1).bonus);
 		}
