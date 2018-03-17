@@ -44,11 +44,15 @@ public class MainPanel extends JPanel {
 		leagueView = new LeagueView(gameScreenWidth, gameScreenHeight);
 		add(leagueView);
 		
-		infoView = new InfoView();
+		infoView = new InfoView(gameScreenWidth, gameScreenHeight);
 		add(infoView);
 		
-		wikiView = new WikiView();
+		wikiView = new WikiView(gameScreenWidth, gameScreenHeight);
 		add(wikiView);
+		
+
+		
+
 
 	}
 	

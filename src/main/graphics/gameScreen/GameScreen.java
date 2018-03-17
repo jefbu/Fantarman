@@ -59,6 +59,8 @@ public class GameScreen extends JPanel {
 		mainPanel.regimentView.setVisible(false);
 		mainPanel.homeView.setVisible(false);
 		mainPanel.leagueView.setVisible(false);
+		mainPanel.infoView.setVisible(false);
+		mainPanel.wikiView.setVisible(false);
 	}
 
 }
