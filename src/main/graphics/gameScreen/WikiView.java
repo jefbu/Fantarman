@@ -13,6 +13,7 @@ import javax.swing.JTextPane;
 import javax.swing.ScrollPaneConstants;
 
 import main.components.ButtonedPanel;
+import main.strings.Wiki;
 import main.utility.Colors;
 
 public class WikiView extends JPanel {
@@ -38,7 +39,7 @@ public class WikiView extends JPanel {
 
 		Dimension gameSceneSize = new Dimension(roundedWidth, unroundedHeight);
 		setPreferredSize(gameSceneSize);
-		setBackground(Colors.vlblue);
+		setBackground(Colors.dgreen);
 
 		setLayout(new FlowLayout(FlowLayout.LEADING, 0, 0));
 
@@ -51,12 +52,12 @@ public class WikiView extends JPanel {
 		combatPanel.label.setForeground(Colors.vdblue);
 		combatPanel.label.setText("Combat");
 		combatPanel.button.setOpaque(true);
-		combatPanel.button.setBackground(Colors.lblue);
+		combatPanel.button.setBackground(Colors.green);
 		combatPanel.button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setAllPanelsColour();
-				combatPanel.button.setBackground(Colors.vlred);
-				mainPanel.setBackground(Colors.vlred);
+				combatPanel.button.setBackground(Colors.green);
+				textArea.setText(Wiki.combatString);
 			}
 		});
 		add(combatPanel);
@@ -69,8 +70,8 @@ public class WikiView extends JPanel {
 		managementPanel.button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setAllPanelsColour();
-				managementPanel.button.setBackground(Colors.vlred);
-				mainPanel.setBackground(Colors.vlred);
+				managementPanel.button.setBackground(Colors.green);
+				textArea.setText(Wiki.managementString);
 			}
 		});
 		add(managementPanel);
@@ -83,8 +84,8 @@ public class WikiView extends JPanel {
 		conceptsPanel.button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setAllPanelsColour();
-				conceptsPanel.button.setBackground(Colors.vlred);
-				mainPanel.setBackground(Colors.vlred);
+				conceptsPanel.button.setBackground(Colors.green);
+				textArea.setText(Wiki.conceptsString);
 			}
 		});
 		add(conceptsPanel);
@@ -97,8 +98,8 @@ public class WikiView extends JPanel {
 		fluffPanel.button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setAllPanelsColour();
-				fluffPanel.button.setBackground(Colors.vlred);
-				mainPanel.setBackground(Colors.vlred);
+				fluffPanel.button.setBackground(Colors.green);
+				textArea.setText(Wiki.fluffString);
 			}
 		});
 		add(fluffPanel);
@@ -112,7 +113,7 @@ public class WikiView extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				setAllPanelsColour();
 				creditsPanel.button.setBackground(Colors.green);
-				mainPanel.setBackground(Colors.dgreen);
+				textArea.setText(Wiki.creditsString);
 			}
 		});
 		add(creditsPanel);
