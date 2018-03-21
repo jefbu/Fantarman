@@ -2,10 +2,7 @@ package main.entity.lieutenants;
 
 import java.io.Serializable;
 
-import javax.swing.ImageIcon;
-
 import main.entity.skills.Skills;
-import main.utility.ImageLoader;
 
 public class Lieutenant implements Serializable {
 
