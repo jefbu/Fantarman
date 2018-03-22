@@ -54,6 +54,7 @@ public class BattleOrchestrator {
 					timer.stop();
 					refreshMap();
 				} else if (counter == totalTurns) {
+					System.out.println("Total turns in this battle: " + counter);
 					BattleConclusion battleConclusion = new BattleConclusion(Colour.RED, yourBattleArmy,
 							opponentBattleArmy);
 					battleConclusion.setVisible(true);
@@ -72,7 +73,8 @@ public class BattleOrchestrator {
 							regiment.attributeBattleStats();
 						}
 					} else {
-						activeRegiment.haveTurn(activeArmy, activeRegimentIndex, yourBattleArmy, opponentBattleArmy);
+						activeRegiment.haveTurn(activeArmy, activeRegimentIndex, yourBattleArmy, opponentBattleArmy,
+								counter);
 						activeRegiment.battleSpeed -= 10;
 						BattleScreen.informationPanel.yourPanel.update(yourBattleArmy);
 						BattleScreen.informationPanel.enemyPanel.update(opponentBattleArmy);

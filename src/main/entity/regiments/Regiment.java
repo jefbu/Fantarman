@@ -24,7 +24,7 @@ import main.utility.ImageLoader;
 public abstract class Regiment implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	public Captain captain;
 	public ArrayList<Tactic> instructions;
 	public ArrayList<Lieutenant> lieutenants;
@@ -99,7 +99,7 @@ public abstract class Regiment implements Serializable {
 	public boolean inCombat;
 	public boolean defeated;
 	public Regiment combatOpponent;
-	
+
 	public int hiddenIndex;
 	public int randomNumber;
 
@@ -181,7 +181,8 @@ public abstract class Regiment implements Serializable {
 
 	}
 
-	public void haveTurn(Army activeArmy, int activeRegimentIndex, Army yourBattleArmy, Army opponentBattleArmy) {
+	public void haveTurn(Army activeArmy, int activeRegimentIndex, Army yourBattleArmy, Army opponentBattleArmy,
+			int turn) {
 
 		if (inCombat) {
 
@@ -189,7 +190,7 @@ public abstract class Regiment implements Serializable {
 
 		} else {
 
-			Tactic tactic = ConditionChecker.checkConditions(this);
+			Tactic tactic = ConditionChecker.checkConditions(this, turn);
 			Regiment target = TargetChecker.checkTarget(this, tactic.target, activeArmy, yourBattleArmy,
 					opponentBattleArmy);
 			executeOrder(tactic.order, target, activeArmy, activeRegimentIndex, yourBattleArmy, opponentBattleArmy);
