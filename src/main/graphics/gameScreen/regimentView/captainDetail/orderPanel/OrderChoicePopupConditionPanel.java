@@ -18,10 +18,19 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 	OrderChoicePopupTargetPanel  targetPanel;
 	Condition storedCondition;
 	private int index;
+	ConditionButton lifeUnder100Button;
+	ConditionButton lifeUnder75Button;
+	ConditionButton lifeUnder50Button;
+	ConditionButton lifeUnder25Button;
+	ConditionButton lifeOver25Button;
+	ConditionButton lifeOver50Button;
+	ConditionButton lifeOver75Button;
 	ConditionButton life100Button;
-	ConditionButton life75Button;
-	ConditionButton life50Button;
-	ConditionButton life25Button;
+	ConditionButton after1TurnButton;
+	ConditionButton after2TurnButton;
+	ConditionButton after3TurnButton;
+	ConditionButton after4TurnButton;
+	ConditionButton after5TurnButton;
 	
 	ConditionButton alwaysButton;
 
@@ -34,17 +43,46 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 		conditionPanel = this;
 		targetPanel = orderChoicePopupTargetPanel;
 
-		life100Button = new ConditionButton(width / 6, height / 6, "Life < 100%");
+		lifeUnder100Button = new ConditionButton(width / 6, height / 6, "Life < 100%");
+		add(lifeUnder100Button);
+		
+		lifeUnder75Button = new ConditionButton(width / 6, height / 6, "Life < 75%"); 
+		add(lifeUnder75Button);
+		
+		lifeUnder50Button = new ConditionButton(width / 6, height / 6, "Life < 50%"); 
+		add(lifeUnder50Button);
+		 
+		lifeUnder25Button = new ConditionButton(width / 6, height / 6, "Life < 25%"); 
+		add(lifeUnder25Button);
+		
+		lifeOver25Button = new ConditionButton(width / 6, height / 6, "Life > 25%");
+		add(lifeOver25Button);
+		
+		lifeOver50Button = new ConditionButton(width / 6, height / 6, "Life > 50%");
+		add(lifeOver50Button);
+		
+		lifeOver75Button = new ConditionButton(width / 6, height / 6, "Life > 75%");
+		add(lifeOver75Button);
+		
+		life100Button = new ConditionButton(width / 6, height / 6, "Life = 100%");
 		add(life100Button);
 		
-		life75Button = new ConditionButton(width / 6, height / 6, "Life < 75%"); 
-		add(life75Button);
+		after1TurnButton = new ConditionButton(width / 6, height / 6, "After 1 Turn");
+		add(after1TurnButton);
 		
-		life50Button = new ConditionButton(width / 6, height / 6, "Life < 50%"); 
-		add(life50Button);
-		 
-		life25Button = new ConditionButton(width / 6, height / 6, "Life < 25%"); 
-		add(life25Button);
+		after2TurnButton = new ConditionButton(width / 6, height / 6, "After 2 Turns");
+		add(after2TurnButton);
+		
+		after3TurnButton = new ConditionButton(width / 6, height / 6, "After 3 Turns");
+		add(after3TurnButton);
+		
+		after4TurnButton = new ConditionButton(width / 6, height / 6, "After 4 Turns");
+		add(after4TurnButton);
+		
+		after5TurnButton = new ConditionButton(width / 6, height / 6, "After 5 Turns");
+		add(after5TurnButton);
+		
+		
 		 	 
 		
 		
@@ -78,44 +116,138 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 		this.index = index;
 		
 		try {
-			life100Button.removeActionListener(life100Button.getActionListeners()[0]);
+			lifeUnder100Button.removeActionListener(lifeUnder100Button.getActionListeners()[0]);
 		} catch (Exception e) {}
-		life100Button.addActionListener(new ActionListener() {
+		lifeUnder100Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				attributeCondition(regiment, Condition.Life_under_100);
-				life100Button.removeActionListener(life100Button.getActionListeners()[0]);
+				lifeUnder100Button.removeActionListener(lifeUnder100Button.getActionListeners()[0]);
 			}
 		});		
 		
 		try {
-			life75Button.removeActionListener(life75Button.getActionListeners()[0]);
+			lifeUnder75Button.removeActionListener(lifeUnder75Button.getActionListeners()[0]);
 		} catch (Exception e) {}
-		life75Button.addActionListener(new ActionListener() {
+		lifeUnder75Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				attributeCondition(regiment, Condition.Life_under_75);
-				life75Button.removeActionListener(life75Button.getActionListeners()[0]);
+				lifeUnder75Button.removeActionListener(lifeUnder75Button.getActionListeners()[0]);
 			}
 		});	
 		
 		try {
-			life50Button.removeActionListener(life50Button.getActionListeners()[0]);
+			lifeUnder50Button.removeActionListener(lifeUnder50Button.getActionListeners()[0]);
 		} catch (Exception e) {}
-		life50Button.addActionListener(new ActionListener() {
+		lifeUnder50Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				attributeCondition(regiment, Condition.Life_under_50);
-				life50Button.removeActionListener(life50Button.getActionListeners()[0]);
+				lifeUnder50Button.removeActionListener(lifeUnder50Button.getActionListeners()[0]);
 			}
 		});	
 		
 		try {
-			life25Button.removeActionListener(life25Button.getActionListeners()[0]);
+			lifeUnder25Button.removeActionListener(lifeUnder25Button.getActionListeners()[0]);
 		} catch (Exception e) {}
-		life25Button.addActionListener(new ActionListener() {
+		lifeUnder25Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				attributeCondition(regiment, Condition.Life_under_25);
-				life25Button.removeActionListener(life25Button.getActionListeners()[0]);
+				lifeUnder25Button.removeActionListener(lifeUnder25Button.getActionListeners()[0]);
 			}
 		});	
+		
+		try {
+			lifeOver25Button.removeActionListener(lifeOver25Button.getActionListeners()[0]);
+		} catch (Exception e) {}
+		lifeOver25Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				attributeCondition(regiment, Condition.Life_above_25);
+				lifeOver25Button.removeActionListener(lifeOver25Button.getActionListeners()[0]);
+			}
+		});	
+		
+		try {
+			lifeOver50Button.removeActionListener(lifeOver50Button.getActionListeners()[0]);
+		} catch (Exception e) {}
+		lifeOver50Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				attributeCondition(regiment, Condition.Life_above_50);
+				lifeOver50Button.removeActionListener(lifeOver50Button.getActionListeners()[0]);
+			}
+		});	
+		
+		try {
+			lifeOver75Button.removeActionListener(lifeOver75Button.getActionListeners()[0]);
+		} catch (Exception e) {}
+		lifeOver75Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				attributeCondition(regiment, Condition.Life_above_75);
+				lifeOver75Button.removeActionListener(lifeOver75Button.getActionListeners()[0]);
+			}
+		});	
+		
+		try {
+			life100Button.removeActionListener(life100Button.getActionListeners()[0]);
+		} catch (Exception e) {}
+		life100Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				attributeCondition(regiment, Condition.Life_full);
+				life100Button.removeActionListener(life100Button.getActionListeners()[0]);
+			}
+		});	
+		
+		try {
+			after1TurnButton.removeActionListener(after1TurnButton.getActionListeners()[0]);
+		} catch (Exception e) {}
+		after1TurnButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				attributeCondition(regiment, Condition.After_1_Turn);
+				after1TurnButton.removeActionListener(after1TurnButton.getActionListeners()[0]);
+			}
+		});	
+		
+		try {
+			after2TurnButton.removeActionListener(after2TurnButton.getActionListeners()[0]);
+		} catch (Exception e) {}
+		after2TurnButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				attributeCondition(regiment, Condition.After_2_Turns);
+				after2TurnButton.removeActionListener(after2TurnButton.getActionListeners()[0]);
+			}
+		});	
+		
+		try {
+			after3TurnButton.removeActionListener(after3TurnButton.getActionListeners()[0]);
+		} catch (Exception e) {}
+		after3TurnButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				attributeCondition(regiment, Condition.After_3_Turns);
+				after3TurnButton.removeActionListener(after3TurnButton.getActionListeners()[0]);
+			}
+		});	
+		
+		try {
+			after4TurnButton.removeActionListener(after4TurnButton.getActionListeners()[0]);
+		} catch (Exception e) {}
+		after4TurnButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				attributeCondition(regiment, Condition.After_4_Turns);
+				after4TurnButton.removeActionListener(after4TurnButton.getActionListeners()[0]);
+			}
+		});	
+		
+		try {
+			after5TurnButton.removeActionListener(after5TurnButton.getActionListeners()[0]);
+		} catch (Exception e) {}
+		after5TurnButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				attributeCondition(regiment, Condition.After_5_Turns);
+				after5TurnButton.removeActionListener(after5TurnButton.getActionListeners()[0]);
+			}
+		});	
+		
+		
+		
+		
 		
 		try {
 			alwaysButton.removeActionListener(alwaysButton.getActionListeners()[0]);
