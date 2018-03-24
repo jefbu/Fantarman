@@ -31,6 +31,13 @@ public class IndividualRegimentPanel extends JPanel {
 		
 		ButtonedPanel namePanel = new ButtonedPanel(width / 6, height, new Color(40, 40, 40));
 		namePanel.setBackground(new Color(80, 155, 240));
+		namePanel.button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Screen.gameScreen.mainPanel.armyView.setVisible(false);
+				Screen.gameScreen.mainPanel.regimentView.fillRegimentView(Main.yourArmy.roster.get(index));
+				Screen.gameScreen.mainPanel.regimentView.setVisible(true);
+			}
+		});
 		panelList.add(namePanel);
 		
 		for (int i = 0; i < 10; i++) {
