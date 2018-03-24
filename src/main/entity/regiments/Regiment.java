@@ -190,7 +190,7 @@ public abstract class Regiment implements Serializable {
 
 		} else {
 
-			Tactic tactic = ConditionChecker.checkConditions(this, turn);
+			Tactic tactic = ConditionChecker.checkConditions(this, turn, activeArmy, opponentBattleArmy, yourBattleArmy);
 			Regiment target = TargetChecker.checkTarget(this, tactic.target, activeArmy, yourBattleArmy,
 					opponentBattleArmy);
 			executeOrder(tactic.order, target, activeArmy, activeRegimentIndex, yourBattleArmy, opponentBattleArmy);

@@ -31,6 +31,8 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 	ConditionButton after3TurnButton;
 	ConditionButton after4TurnButton;
 	ConditionButton after5TurnButton;
+	ConditionButton anyInRangeButton;
+	ConditionButton targetInRangeButton;
 	
 	ConditionButton alwaysButton;
 
@@ -82,9 +84,12 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 		after5TurnButton = new ConditionButton(width / 6, height / 6, "After 5 Turns");
 		add(after5TurnButton);
 		
+		anyInRangeButton = new ConditionButton(width / 6, height / 6, "Any In Range");
+		add(anyInRangeButton);
 		
+		targetInRangeButton = new ConditionButton(width / 6, height / 6, "Target In Range");
+		add(targetInRangeButton);		
 		 	 
-		
 		
 		alwaysButton = new ConditionButton(width / 6, height / 6, "Always"); 
 		add(alwaysButton);
@@ -245,6 +250,25 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 			}
 		});	
 		
+		try {
+			anyInRangeButton.removeActionListener(anyInRangeButton.getActionListeners()[0]);
+		} catch (Exception e) {}
+		anyInRangeButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				attributeCondition(regiment, Condition.Any_in_Range);
+				anyInRangeButton.removeActionListener(anyInRangeButton.getActionListeners()[0]);
+			}
+		});	
+		
+		try {
+			targetInRangeButton.removeActionListener(targetInRangeButton.getActionListeners()[0]);
+		} catch (Exception e) {}
+		targetInRangeButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				attributeCondition(regiment, Condition.Target_in_Range);
+				targetInRangeButton.removeActionListener(targetInRangeButton.getActionListeners()[0]);
+			}
+		});	
 		
 		
 		

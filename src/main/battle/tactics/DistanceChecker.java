@@ -24,7 +24,6 @@ public abstract class DistanceChecker {
 		}
 
 		if (distanceUp != 0) distanceUp = distanceUp + target.rows;
-		System.out.println("distance up = " + distanceUp);
 		return distanceUp;
 	}
 
