@@ -44,7 +44,10 @@ public abstract class OrderMethods {
 
 		if (target.battleLife <= 0) {
 			target.defeated = true;
+			target.inCombat = false;
+			target.timesDefeated++;
 			regiment.inCombat = false;
+			regiment.enemiesDefeated++;
 			if (activeArmy == yourBattleArmy) {
 				opponentBattleArmy.roster.remove(target);
 			} else {
@@ -97,6 +100,8 @@ public abstract class OrderMethods {
 
 		if (target.battleLife <= 0) {
 			target.defeated = true;
+			target.timesDefeated++;
+			regiment.enemiesDefeated++;
 			regiment.inCombat = false;
 			if (activeArmy == yourBattleArmy) {
 				opponentBattleArmy.roster.remove(target);

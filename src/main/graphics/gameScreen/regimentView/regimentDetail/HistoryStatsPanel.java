@@ -37,7 +37,9 @@ public class HistoryStatsPanel extends ContentPanel {
 	
 	public void fillHistoryStatsPanel(Regiment regiment) {
 		foughtPanel.contentLabel.setText(Integer.toString(regiment.battlesFought));
-		
+		mvpPanel.contentLabel.setText(Integer.toString(regiment.timesMVP));
+		killsPanel.contentLabel.setText(Integer.toString(regiment.enemiesDefeated));
+		deathsPanel.contentLabel.setText(Integer.toString(regiment.timesDefeated));
 	}
 
 }
