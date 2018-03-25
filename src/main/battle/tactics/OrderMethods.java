@@ -80,38 +80,45 @@ public abstract class OrderMethods {
 	public static void fire(Regiment regiment, Regiment target, Army activeArmy, Army yourBattleArmy,
 			Army opponentBattleArmy) {
 		
-		Random random = new Random();
-		int hits = 0;
-		int casualties = 0;
-		int roll;
-		int roll2;
-		for (int i = 0; i < regiment.battleLife; i++) {
-			roll = random.nextInt(100);
-			if (roll < regiment.battleMissile)
-				hits++;
-		}
-		for (int ii = 0; ii < hits; ii++) {
-			roll2 = random.nextInt(100);
-			if (roll2 < target.battleDefence) {
-				target.battleLife--;
-				casualties++;
+		int horizontalDistance = DistanceChecker.checkHorizontalDistance(regiment, target);
+		if (Math.abs(horizontalDistance) <= regiment.battleRange) {
+		int verticalDistance = DistanceChecker.checkVerticalDistance(regiment, target);
+		if (Math.abs(verticalDistance) <= regiment.battleRange) {
+						
+			Random random = new Random();
+			int hits = 0;
+			int casualties = 0;
+			int roll;
+			int roll2;
+			for (int i = 0; i < regiment.battleLife; i++) {
+				roll = random.nextInt(100);
+				if (roll < regiment.battleMissile)
+					hits++;
 			}
-		}
-
-		if (target.battleLife <= 0) {
-			target.defeated = true;
-			target.timesDefeated++;
-			regiment.enemiesDefeated++;
-			regiment.inCombat = false;
-			if (activeArmy == yourBattleArmy) {
-				opponentBattleArmy.roster.remove(target);
-			} else {
-				yourBattleArmy.roster.remove(target);
+			for (int ii = 0; ii < hits; ii++) {
+				roll2 = random.nextInt(100);
+				if (roll2 < target.battleDefence) {
+					target.battleLife--;
+					casualties++;
+				}
 			}
-		}
 
-		writeMissileText(Order.FIRE, regiment, target, casualties);
+			if (target.battleLife <= 0) {
+				target.defeated = true;
+				target.timesDefeated++;
+				regiment.enemiesDefeated++;
+				regiment.inCombat = false;
+				if (activeArmy == yourBattleArmy) {
+					opponentBattleArmy.roster.remove(target);
+				} else {
+					yourBattleArmy.roster.remove(target);
+				}
+			}
 
+			writeMissileText(Order.FIRE, regiment, target, casualties);
+				
+		} else { writeFailedMissileText(Order.FIRE, regiment, target); }
+		} else { writeFailedMissileText(Order.FIRE, regiment, target); }
 	}
 
 	private static void writeCombatText(Regiment regiment, Regiment target, int casualties) {
@@ -128,7 +135,13 @@ public abstract class OrderMethods {
 				+ " is having their turn and chooses to " + order.toString() + " " + target.name + ".<br>" + ""
 				+ "They manage to inflict " + decideColour(casualties, true) + casualties
 				+ "<font color = 'rgb(220, 220, 220)'>" + " casualties.");
-
+	}
+	
+	private static void writeFailedMissileText(Order order, Regiment regiment, Regiment target) {
+		
+		RightAggregatePanel.infoTextPanel.textArea.setText("<font color = 'rgb(220, 220, 220)'>" + regiment.name
+				+ " is having their turn and chooses to " + order.toString() + " " + target.name + ".<br>" + ""
+				+ "However, the distance is too large and the projectiles fall short, like a disappointing dud.");
 	}
 
 	private static void writeBasicOrderText(Order order, Regiment regiment, Regiment target) {

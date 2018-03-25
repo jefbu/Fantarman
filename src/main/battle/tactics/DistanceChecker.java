@@ -17,7 +17,7 @@ public abstract class DistanceChecker {
 		return distanceLeft + distanceRight;		
 	}
 	
-	public static int checkDistanceUp(Regiment regiment, Regiment target) {
+	private static int checkDistanceUp(Regiment regiment, Regiment target) {
 		int distanceUp = 0;
 		if (regiment.panels[0] / 48 > target.panels[0] / 48) {
 			distanceUp = (target.panels[0] / 48) - (regiment.panels[0] / 48) ;
@@ -27,7 +27,7 @@ public abstract class DistanceChecker {
 		return distanceUp;
 	}
 
-	public static int checkDistanceDown(Regiment regiment, Regiment target) {
+	private static int checkDistanceDown(Regiment regiment, Regiment target) {
 		int distanceDown = 0;
 		if (regiment.panels[0] / 48 < target.panels[0] / 48) {
 			distanceDown = (target.panels[0] / 48) - (regiment.panels[0] / 48);
@@ -36,7 +36,7 @@ public abstract class DistanceChecker {
 		return distanceDown;
 	}
 
-	public static int checkDistanceLeft(Regiment regiment, Regiment target) {
+	private static int checkDistanceLeft(Regiment regiment, Regiment target) {
 		int distanceLeft = 0;
 		if (regiment.panels[0] % 48 > target.panels[0] % 48) {
 			distanceLeft = (target.panels[0] % 48) - (regiment.panels[0] % 48);
@@ -44,7 +44,7 @@ public abstract class DistanceChecker {
 		return distanceLeft;
 	}
 
-	public static int checkDistanceRight(Regiment regiment, Regiment target) {
+	private static int checkDistanceRight(Regiment regiment, Regiment target) {
 		int distanceRight = 0;
 		if (regiment.panels[0] % 48 < target.panels[0] % 48) {
 			distanceRight = (target.panels[0] % 48) - (regiment.panels[0] % 48);
