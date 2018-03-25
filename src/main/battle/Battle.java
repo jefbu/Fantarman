@@ -42,14 +42,38 @@ public class Battle {
 	private void makeYourArmy() {
 
 		for (Regiment regiment: Main.yourArmy.roster) {
-			if(regiment.role == Role.COMBAT1) { yourBattleArmy.roster.add(regiment); }
-			if(regiment.role == Role.COMBAT2) { yourBattleArmy.roster.add(regiment); }
-			if(regiment.role == Role.COMBAT3) { yourBattleArmy.roster.add(regiment); }
-			if(regiment.role == Role.COMBAT4) { yourBattleArmy.roster.add(regiment); }
-			if(regiment.role == Role.COMBAT5) { yourBattleArmy.roster.add(regiment); }
-			if(regiment.role == Role.COMBAT6) { yourBattleArmy.roster.add(regiment); }
-			if(regiment.role == Role.COMBAT7) { yourBattleArmy.roster.add(regiment); }
-			if(regiment.role == Role.COMBAT8) { yourBattleArmy.roster.add(regiment); }
+			if(regiment.role == Role.COMBAT1) { 
+				yourBattleArmy.roster.add(regiment);
+				regiment.battlesFought++;
+				}
+			if(regiment.role == Role.COMBAT2) { 
+				yourBattleArmy.roster.add(regiment); 
+				regiment.battlesFought++;
+				}
+			if(regiment.role == Role.COMBAT3) { 
+				yourBattleArmy.roster.add(regiment);
+				regiment.battlesFought++;
+				}
+			if(regiment.role == Role.COMBAT4) { 
+				yourBattleArmy.roster.add(regiment); 
+				regiment.battlesFought++;
+				}
+			if(regiment.role == Role.COMBAT5) { 
+				yourBattleArmy.roster.add(regiment); 
+				regiment.battlesFought++;
+				}
+			if(regiment.role == Role.COMBAT6) { 
+				yourBattleArmy.roster.add(regiment); 
+				regiment.battlesFought++;
+				}
+			if(regiment.role == Role.COMBAT7) { 
+				yourBattleArmy.roster.add(regiment); 
+				regiment.battlesFought++;
+				}
+			if(regiment.role == Role.COMBAT8) { 
+				yourBattleArmy.roster.add(regiment); 
+				regiment.battlesFought++;
+				}
 		}
 	}
 

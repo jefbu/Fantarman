@@ -102,6 +102,11 @@ public abstract class Regiment implements Serializable {
 
 	public int hiddenIndex;
 	public int randomNumber;
+	
+	public int battlesFought;
+	public int enemiesDefeated;
+	public int timesDefeated;
+	public int timesMVP;
 
 	public Regiment() {
 
@@ -113,6 +118,11 @@ public abstract class Regiment implements Serializable {
 		inCombat = false;
 		defeated = false;
 		role = Role.TRAINING;
+		
+		battlesFought = 0;
+		enemiesDefeated = 0;
+		timesDefeated = 0;
+		timesMVP = 0;
 
 	}
 
