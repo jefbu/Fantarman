@@ -2,12 +2,15 @@ package main.graphics.gameScreen.leagueView;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
 
 import main.Main;
 import main.components.ButtonedPanel;
 import main.components.LabeledPanel;
+import main.graphics.Screen;
 import main.utility.Colors;
 
 public class RowPanel extends JPanel {
@@ -63,6 +66,18 @@ public class RowPanel extends JPanel {
 		smallLossPanel.label.setText(Integer.toString(Main.league.armies.get(index).scoreSheet.smallLosses));
 		bigLossPanel.label.setText(Integer.toString(Main.league.armies.get(index).scoreSheet.bigLosses));
 		totalPointsPanel.label.setText(Integer.toString(Main.league.armies.get(index).scoreSheet.totalPoints));
+		
+		try {
+			namePanel.button.removeActionListener(namePanel.button.getActionListeners()[0]);
+		} catch (Exception e){ }
+		
+		namePanel.button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Screen.gameScreen.mainPanel.armyView.fillArmyView(Main.league.armies.get(index));
+				Screen.gameScreen.setScreensInvisible();
+				Screen.gameScreen.mainPanel.armyView.setVisible(true);
+			}
+		});
 		
 	}
 
