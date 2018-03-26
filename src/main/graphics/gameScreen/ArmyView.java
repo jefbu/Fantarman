@@ -74,7 +74,7 @@ public class ArmyView extends JPanel {
 		add(topEmptyRightPanel2);
 
 		JPanel leftEmptyPanel = new JPanel();
-		leftEmptyPanel.setPreferredSize(new Dimension(roundedWidth / 10, unroundedHeight * 75 / 100));
+		leftEmptyPanel.setPreferredSize(new Dimension(roundedWidth * 13 / 100, unroundedHeight * 75 / 100));
 		leftEmptyPanel.setBackground(backgroundColor);
 		add(leftEmptyPanel);
 
@@ -83,7 +83,7 @@ public class ArmyView extends JPanel {
 		add(roleSelectionPanel);
 
 		JPanel centreEmptyPanel = new JPanel();
-		centreEmptyPanel.setPreferredSize(new Dimension(roundedWidth / 20, unroundedHeight * 75 / 100));
+		centreEmptyPanel.setPreferredSize(new Dimension(roundedWidth * 2 / 100, unroundedHeight * 75 / 100));
 		centreEmptyPanel.setBackground(backgroundColor);
 		add(centreEmptyPanel);
 
