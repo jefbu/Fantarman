@@ -25,10 +25,16 @@ public class CaptainDetailPanel extends JPanel {
 	public OrderPanel orderPanel;
 	public StatsBonusPanel statsBonusPanel;
 	public CaptainBiographyPanel captainBiographyPanel;
+	public JLabel regimentIconLabel;
+	
+	private int width;
+	private int height;
 
 	public CaptainDetailPanel(int width, int height) {
 
 		super();
+		this.width = width;
+		this.height = height;
 		imageLoader = new ImageLoader();
 		setPreferredSize(new Dimension(width, height));
 		setBackground(Colors.white);
@@ -36,7 +42,7 @@ public class CaptainDetailPanel extends JPanel {
 
 		ContentPanel captainIconPanel = new ContentPanel(width / 7, height / 2 - 20, Colour.BLUE,
 				new FlowLayout(FlowLayout.CENTER, 0, 15));
-		JLabel regimentIconLabel = new JLabel();
+		regimentIconLabel = new JLabel();
 		regimentIconLabel.setIcon(imageLoader.loadImageIcon("/portraits/test2.png", width / 8, height / 3));
 		captainIconPanel.insidePanel.add(regimentIconLabel);
 		add(captainIconPanel);
@@ -61,6 +67,7 @@ public class CaptainDetailPanel extends JPanel {
 
 	public void fillCaptainDetailPanel(Regiment regiment) {
 
+		regimentIconLabel.setIcon(imageLoader.loadImageIcon(regiment.captain.iconPath, width / 8, height / 3));
 		captainBaseInfoPanel.fillCaptainBaseInfoPanel(regiment);
 		captainBiographyPanel.fillCaptainBiography(regiment.captain);
 		orderPanel.fillOrderPanel(regiment);

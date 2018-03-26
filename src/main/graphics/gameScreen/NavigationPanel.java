@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
 
+import main.Main;
 import main.components.Colour;
 import main.components.IconLabelPanel;
 import main.graphics.Screen;
@@ -51,7 +52,7 @@ public class NavigationPanel extends JPanel {
 			armyViewPanel.buttonedPanel.button.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e) {
 					Screen.gameScreen.setScreensInvisible();
-					Screen.gameScreen.mainPanel.armyView.fillArmyView();
+					Screen.gameScreen.mainPanel.armyView.fillArmyView(Main.yourArmy);
 					Screen.gameScreen.mainPanel.armyView.setVisible(true);
 				}
 			});

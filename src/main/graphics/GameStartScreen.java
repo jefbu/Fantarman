@@ -41,7 +41,7 @@ public class GameStartScreen extends JPanel {
 					Main.yourArmy = new Pickles();
 					createLeague(Main.yourArmy);
 					setVisible(false);
-					Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
+					Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats(Main.yourArmy);
 					Screen.gameScreen.mainPanel.armyView.roleSelectionPanel.fillRoleSelectionPanel();
 					Screen.gameScreen.setVisible(true);
 				}
@@ -55,7 +55,7 @@ public class GameStartScreen extends JPanel {
 					Main.yourArmy = new TerribleTerquits();
 					createLeague(Main.yourArmy);
 					setVisible(false);
-					Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
+					Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats(Main.yourArmy);
 					Screen.gameScreen.mainPanel.armyView.roleSelectionPanel.fillRoleSelectionPanel();
 					Screen.gameScreen.setVisible(true);
 				}
@@ -69,7 +69,7 @@ public class GameStartScreen extends JPanel {
 				Main.yourArmy = new Wanmen();
 				createLeague(Main.yourArmy);
 				setVisible(false);
-				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
+				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats(Main.yourArmy);
 				Screen.gameScreen.mainPanel.armyView.roleSelectionPanel.fillRoleSelectionPanel();
 				Screen.gameScreen.setVisible(true);
 			}
@@ -83,7 +83,7 @@ public class GameStartScreen extends JPanel {
 				Main.yourArmy = new Skylords();
 				createLeague(Main.yourArmy);
 				setVisible(false);
-				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
+				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats(Main.yourArmy);
 				Screen.gameScreen.mainPanel.armyView.roleSelectionPanel.fillRoleSelectionPanel();
 				Screen.gameScreen.setVisible(true);
 			}
@@ -97,7 +97,7 @@ public class GameStartScreen extends JPanel {
 				Main.yourArmy = new SacredCrux();
 				createLeague(Main.yourArmy);
 				setVisible(false);
-				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
+				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats(Main.yourArmy);
 				Screen.gameScreen.mainPanel.armyView.roleSelectionPanel.fillRoleSelectionPanel();
 				Screen.gameScreen.setVisible(true);
 			}
@@ -112,7 +112,7 @@ public class GameStartScreen extends JPanel {
 				Main.yourArmy = new ChiDestroyers();
 				createLeague(Main.yourArmy);
 				setVisible(false);
-				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
+				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats(Main.yourArmy);
 				Screen.gameScreen.mainPanel.armyView.roleSelectionPanel.fillRoleSelectionPanel();
 				Screen.gameScreen.setVisible(true);
 			}
@@ -126,7 +126,7 @@ public class GameStartScreen extends JPanel {
 				Main.yourArmy = new Metropolitans();
 				createLeague(Main.yourArmy);
 				setVisible(false);
-				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
+				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats(Main.yourArmy);
 				Screen.gameScreen.mainPanel.armyView.roleSelectionPanel.fillRoleSelectionPanel();
 				Screen.gameScreen.setVisible(true);
 			}
@@ -140,7 +140,7 @@ public class GameStartScreen extends JPanel {
 				Main.yourArmy = new MulticulturalSociety();
 				createLeague(Main.yourArmy);
 				setVisible(false);
-				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
+				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats(Main.yourArmy);
 				Screen.gameScreen.mainPanel.armyView.roleSelectionPanel.fillRoleSelectionPanel();
 				Screen.gameScreen.setVisible(true);
 			}

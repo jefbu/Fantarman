@@ -2,14 +2,16 @@ package main.graphics.gameScreen.homeScreen;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-
-import javax.swing.JPanel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import main.Main;
+import main.components.ButtonedPanel;
 import main.components.LabeledPanel;
+import main.graphics.Screen;
 import main.utility.Colors;
 
-public class ArmyPanel extends JPanel {
+public class ArmyPanel extends ButtonedPanel {
 
 	private static final long serialVersionUID = 1L;
 	private LabeledPanel namePanel;
@@ -17,22 +19,22 @@ public class ArmyPanel extends JPanel {
 
 	public ArmyPanel(int width, int height) {
 		
-		super();
+		super(width, height, Colors.green);
 		setPreferredSize(new Dimension(width, height));
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-		setBackground(Colors.green);
+		//setBackground(Colors.green);
 		
 		namePanel = new LabeledPanel(width * 7 / 10, height);
 		namePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
 		namePanel.setBackground(Colors.lgreen);
 		namePanel.label.setForeground(Colors.vdred);
-		add(namePanel);
+		button.add(namePanel);
 		
 		pointsPanel = new LabeledPanel(width * 3 / 10, height);
 		pointsPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
 		pointsPanel.setBackground(Colors.lgreen);
 		pointsPanel.label.setForeground(Colors.vdred);
-		add(pointsPanel);
+		button.add(pointsPanel);
 		
 	}
 	
@@ -40,6 +42,17 @@ public class ArmyPanel extends JPanel {
 		
 		namePanel.label.setText(Main.league.armies.get(i).name);
 		pointsPanel.label.setText(Integer.toString(Main.league.armies.get(i).scoreSheet.totalPoints));
+		
+		try {
+			button.removeActionListener(button.getActionListeners()[0]);
+		} catch(Exception e) {}
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Screen.gameScreen.setScreensInvisible();
+				Screen.gameScreen.mainPanel.armyView.fillArmyView(Main.league.armies.get(i));
+				Screen.gameScreen.mainPanel.armyView.setVisible(true);
+			}
+		});
 		
 	}
 

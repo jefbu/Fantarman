@@ -7,6 +7,7 @@ import java.awt.FlowLayout;
 import javax.swing.JPanel;
 
 import main.components.Colour;
+import main.entity.armies.Army;
 import main.graphics.gameScreen.armyView.ArmyViewViewPanel;
 import main.graphics.gameScreen.armyView.RegimentListPanel;
 import main.graphics.gameScreen.armyView.RoleSelectionPanel;
@@ -101,10 +102,10 @@ public class ArmyView extends JPanel {
 
 	}
 	
-	public void fillArmyView() {
+	public void fillArmyView(Army army) {
 		
 		roleSelectionPanel.fillRoleSelectionPanel();
-		regimentListPanel.fillRegimentListPanelCombatStats();
+		regimentListPanel.fillRegimentListPanelCombatStats(army);
 	}
 
 }

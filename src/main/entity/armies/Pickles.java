@@ -23,7 +23,7 @@ public class Pickles extends Army {
 		roster.add(new FatherlyTurtle("Ole Racecar", Captain.ole_racecar));
 		roster.add(new DoveMasters("Palomas", Captain.boris));
 		roster.add(new DoveMasters("Coocoos", Captain.boris));
-		roster.add(new Auxiliaries("2nd Line", Captain.boris));
+		roster.add(new Auxiliaries("2nd Line", Captain.hans_flogl));
 		roster.add(new Harvesters("Pitchforks", Captain.boris));
 		roster.add(new Harvesters("Tractors", Captain.boris));
 		roster.add(new LightBalloons("PRS Dreadnought", Captain.professor));

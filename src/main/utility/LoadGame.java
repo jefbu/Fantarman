@@ -25,7 +25,7 @@ public abstract class LoadGame {
 			savedLeague = (League) save.readObject();
 			Main.yourArmy = savedArmy;
 			Main.league = savedLeague;
-			Screen.gameScreen.mainPanel.armyView.fillArmyView();
+			Screen.gameScreen.mainPanel.armyView.fillArmyView(Main.yourArmy);
 			Screen.gameScreen.setVisible(true);
 
 			save.close(); 

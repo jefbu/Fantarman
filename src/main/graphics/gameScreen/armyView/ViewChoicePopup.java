@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
+import main.Main;
 import main.components.Colour;
 import main.components.Popup;
 import main.graphics.Screen;
@@ -24,7 +25,7 @@ public class ViewChoicePopup extends Popup {
 		combatStatsButton.setPreferredSize(new Dimension(width - 4, height / 5));
 		combatStatsButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats();
+				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats(Main.yourArmy);
 				dispose();
 			}
 		});
