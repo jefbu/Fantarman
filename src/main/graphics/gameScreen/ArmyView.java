@@ -20,6 +20,7 @@ public class ArmyView extends JPanel {
 	Color backgroundColor;
 	public RoleSelectionPanel roleSelectionPanel;
 	public RegimentListPanel  regimentListPanel;
+	public ArmyViewViewPanel viewPanel;
 
 	public ArmyView(int gameScreenWidth, int gameScreenHeight) {
 
@@ -45,7 +46,7 @@ public class ArmyView extends JPanel {
 		topEmptyLeftPanel.setBackground(backgroundColor);
 		add(topEmptyLeftPanel);
 
-		ArmyViewViewPanel viewPanel = new ArmyViewViewPanel(roundedWidth * 15 / 100, unroundedHeight / 20);
+		viewPanel = new ArmyViewViewPanel(roundedWidth * 15 / 100, unroundedHeight / 20);
 		add(viewPanel);
 
 		JPanel topEmptyRightPanel = new JPanel();
@@ -104,6 +105,7 @@ public class ArmyView extends JPanel {
 	
 	public void fillArmyView(Army army) {
 		
+		viewPanel.fillArmyViewViewPanel(army);
 		roleSelectionPanel.fillRoleSelectionPanel();
 		regimentListPanel.fillRegimentListPanelCombatStats(army);
 	}

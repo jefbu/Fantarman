@@ -11,13 +11,15 @@ import javax.swing.JPanel;
 
 import main.Main;
 import main.components.ButtonedPanel;
+import main.entity.armies.Army;
 import main.graphics.Screen;
 
 public class IndividualRegimentPanel extends JPanel {
 	
 
 	private static final long serialVersionUID = 1L;
-	Color backgroundColor = new Color(70, 140, 210);
+	Color backgroundColorOwnArmy = new Color(70, 140, 210);
+	Color backgroundColorOpponentArmy = new Color(255, 240, 220);
 	ArrayList<ButtonedPanel> panelList;
 
 	public IndividualRegimentPanel(int width, int height, int index) {
@@ -26,7 +28,7 @@ public class IndividualRegimentPanel extends JPanel {
 		panelList = new ArrayList<ButtonedPanel>();
 		
 		setPreferredSize(new Dimension(width, height));
-		setBackground(backgroundColor);
+		setBackground(backgroundColorOwnArmy);
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		
 		ButtonedPanel namePanel = new ButtonedPanel(width / 6, height, new Color(40, 40, 40));
@@ -55,9 +57,12 @@ public class IndividualRegimentPanel extends JPanel {
 		
 		for (ButtonedPanel panel: panelList) {
 			add(panel);
-		}
-		
-		
+		}		
+	}
+	
+	public void fillIndividualRegimentPanel(Army army) {
+		if (army == Main.yourArmy) { setBackground(backgroundColorOwnArmy); }
+		else { setBackground(backgroundColorOpponentArmy); }
 	}
 
 }
