@@ -106,7 +106,7 @@ public class ArmyView extends JPanel {
 	public void fillArmyView(Army army) {
 		
 		viewPanel.fillArmyViewViewPanel(army);
-		roleSelectionPanel.fillRoleSelectionPanel();
+		roleSelectionPanel.fillRoleSelectionPanel(army);
 		regimentListPanel.fillRegimentListPanelCombatStats(army);
 	}
 
