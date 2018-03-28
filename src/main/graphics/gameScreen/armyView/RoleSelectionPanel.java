@@ -38,16 +38,6 @@ public class RoleSelectionPanel extends ContentPanel {
 			ButtonedPanel linePanel = new ButtonedPanel(width, height / 15, Color.black);
 			linePanel.setBackground(backgroundColorOpponentArmy);
 			linePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-			
-			linePanel.button.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					roleSelectionPopup.setLocation(MouseInfo.getPointerInfo().getLocation());
-					roleSelectionPopup.fillIndex(index);
-					roleSelectionPopup.setVisible(true);
-					fillRoleSelectionPanel(Main.yourArmy);
-				}
-			});
-			
 			linePanels.add(linePanel);
 					
 		}
@@ -59,6 +49,29 @@ public class RoleSelectionPanel extends ContentPanel {
 	}
 	
 	public void fillRoleSelectionPanel(Army army) {
+		
+		boolean editable;
+		if (army == Main.yourArmy) { editable = true; }
+		else { editable = false; }
+		
+		for (int i = 0; i < 15; i++) {
+			int index = i;
+			
+			try {
+				linePanels.get(i).button.removeActionListener(linePanels.get(i).button.getActionListeners()[0]);
+			} catch (Exception e) {}
+			if(editable) {
+			linePanels.get(i).button.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					roleSelectionPopup.setLocation(MouseInfo.getPointerInfo().getLocation());
+					roleSelectionPopup.fillIndex(index);
+					roleSelectionPopup.setVisible(true);
+					fillRoleSelectionPanel(army);
+				}
+			});
+			}
+			
+		}
 		
 		if(army == Main.yourArmy) {
 			insidePanel.setBackground(backgroundColorOwnArmy);
