@@ -19,8 +19,7 @@ public class RegimentListPanel extends ContentPanel {
 		panelList = new ArrayList<IndividualRegimentPanel>();
 		
 		for (int i = 0; i < 15; i++) {
-			int index = i;
-			panelList.add(new IndividualRegimentPanel(width, height / 15, index));	
+			panelList.add(new IndividualRegimentPanel(width, height / 15));	
 			}
 		
 		for (IndividualRegimentPanel panel: panelList) {
@@ -31,8 +30,9 @@ public class RegimentListPanel extends ContentPanel {
 	
 	public void fillRegimentListPanelCombatStats(Army army) {
 		
+		int index = 0;
 		for (IndividualRegimentPanel panel: panelList) {
-			panel.fillIndividualRegimentPanel(army);
+			panel.fillIndividualRegimentPanel(army, index);
 			panel.panelList.get(0).label.setText("");
 			panel.panelList.get(1).label.setText("");
 			panel.panelList.get(2).label.setText("");
@@ -44,6 +44,7 @@ public class RegimentListPanel extends ContentPanel {
 			panel.panelList.get(8).label.setText("");
 			panel.panelList.get(9).label.setText("");
 			panel.panelList.get(10).label.setText("");
+			index++;
 		}
 		
 		for (int i = 0; i < army.roster.size(); i++) {
@@ -64,8 +65,9 @@ public class RegimentListPanel extends ContentPanel {
 	
 	public void fillRegimentListPanelGeneralStats(Army army) {
 		
+		int index = 0;
 		for (IndividualRegimentPanel panel: panelList) {
-			panel.fillIndividualRegimentPanel(army);
+			panel.fillIndividualRegimentPanel(army, index);
 			panel.panelList.get(0).label.setText("");
 			panel.panelList.get(1).label.setText("");
 			panel.panelList.get(2).label.setText("");
@@ -77,6 +79,7 @@ public class RegimentListPanel extends ContentPanel {
 			panel.panelList.get(8).label.setText("");
 			panel.panelList.get(9).label.setText("");
 			panel.panelList.get(10).label.setText("");
+			index++;
 		}
 		
 		for (int i = 0; i < army.roster.size(); i++) {
@@ -97,8 +100,9 @@ public class RegimentListPanel extends ContentPanel {
 	
 	public void fillRegimentListPanelHistoryStats(Army army) {
 		
+		int index = 0;
 		for (IndividualRegimentPanel panel: panelList) {
-			panel.fillIndividualRegimentPanel(army);
+			panel.fillIndividualRegimentPanel(army, index);
 			panel.panelList.get(0).label.setText("");
 			panel.panelList.get(1).label.setText("");
 			panel.panelList.get(2).label.setText("");
@@ -110,6 +114,7 @@ public class RegimentListPanel extends ContentPanel {
 			panel.panelList.get(8).label.setText("");
 			panel.panelList.get(9).label.setText("");
 			panel.panelList.get(10).label.setText("");
+			index++;
 		}
 		
 		for (int i = 0; i < army.roster.size(); i++) {

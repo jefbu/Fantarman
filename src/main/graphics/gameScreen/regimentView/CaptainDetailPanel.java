@@ -65,7 +65,7 @@ public class CaptainDetailPanel extends JPanel {
 
 	}
 
-	public void fillCaptainDetailPanel(Regiment regiment) {
+	public void fillCaptainDetailPanel(Regiment regiment, boolean editable) {
 
 		regimentIconLabel.setIcon(imageLoader.loadImageIcon(regiment.captain.iconPath, width / 8, height / 3));
 		captainBaseInfoPanel.fillCaptainBaseInfoPanel(regiment);

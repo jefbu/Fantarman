@@ -48,7 +48,7 @@ public class OrderChoicePopupOrderPanel extends JPanel {
 	
 	private void attributeOrder(Regiment regiment, Order order, OrderChoicePopup orderChoicePopup) {
 		regiment.instructions.get(index).order = order;
-		Screen.gameScreen.mainPanel.regimentView.fillRegimentView(regiment);
+		Screen.gameScreen.mainPanel.regimentView.fillRegimentView(regiment, true);
 		orderChoicePopup.setVisible(false);
 	}
 	

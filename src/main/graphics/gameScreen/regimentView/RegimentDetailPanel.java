@@ -67,14 +67,14 @@ public class RegimentDetailPanel extends JPanel {
 		
 	}
 
-	public void fillRegimentDetailPanel(Regiment regiment) {
+	public void fillRegimentDetailPanel(Regiment regiment, boolean editable) {
 		
 		regimentIconLabel.setIcon(regiment.largeIcon);
 		regimentIconNameLabel.setText(regiment.regiment);
 		regimentBaseInfoPanel.fillRegimentBaseInfoPanel(regiment);
 		battleStatsPanel.fillBattleStatsPanel(regiment);
 		historyStatsPanel.fillHistoryStatsPanel(regiment);
-		equipPanel.fillEquipPanel(regiment);
+		equipPanel.fillEquipPanel(regiment, editable);
 
 	}
 

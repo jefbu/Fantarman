@@ -46,11 +46,11 @@ public class RegimentView extends JPanel {
 
 	}
 	
-	public void fillRegimentView(Regiment regiment) {
+	public void fillRegimentView(Regiment regiment, boolean editable) {
 		
-		regimentDetailPanel.fillRegimentDetailPanel(regiment);
-		captainDetailPanel.fillCaptainDetailPanel(regiment);
-		lieutenantsDetailPanel.fillLieutenantsDetailPanel(regiment);		
+		regimentDetailPanel.fillRegimentDetailPanel(regiment, editable);
+		captainDetailPanel.fillCaptainDetailPanel(regiment, editable);
+		lieutenantsDetailPanel.fillLieutenantsDetailPanel(regiment, editable);		
 		
 	}
 	

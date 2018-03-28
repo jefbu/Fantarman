@@ -38,7 +38,7 @@ public class LieutenantsDetailPanel extends JPanel {
 
 	}
 	
-	public void fillLieutenantsDetailPanel(Regiment regiment) {
+	public void fillLieutenantsDetailPanel(Regiment regiment, boolean editable) {
 		
 		lieutenantDetailPanel1.fillLieutenantDetailPanel(1, regiment);
 		lieutenantDetailPanel2.fillLieutenantDetailPanel(2, regiment);
