@@ -7,7 +7,7 @@ public abstract class BattleStartStrings {
 	public static String rollQuote() {
 
 		Random random = new Random();
-		int roll = random.nextInt(4);
+		int roll = random.nextInt(8);
 
 		switch (roll) {
 
@@ -25,12 +25,32 @@ public abstract class BattleStartStrings {
 			return "<font color = 'rgb(20, 20, 30)', size = 4>Oh, I am slain. <br> <i> "
 					+ "<font color = 'rgb(80, 70, 70)', size=3> <p align = 'right'> "
 					+ "William Shakespeare <br> Hamlet, act 3, scene 4";
-			
+
 		case 3:
 			return "<font color = 'rgb(20, 20, 30)', size = 4>Vae victis. <br> <i> "
 					+ "<font color = 'rgb(80, 70, 70)', size=3> <p align = 'right'> "
-					+ "Brennus the Gaul, after defeating Rome in 390BC <br> "
-					+ "It means 'Woe to the Vanquished'";
+					+ "Brennus the Gaul, after defeating Rome in 390BC <br> " + "It means 'Woe to the Vanquished'";
+		case 4:
+			return "<font color = 'rgb(20, 20, 30)', size = 4>They couldn't even hit an elephant at this dis... . <br> <i> "
+					+ "<font color = 'rgb(80, 70, 70)', size=3> <p align = 'right'> "
+					+ "Union General John Sedgwick, 1864. <br> " + "Dramatised and likely incorrect famous last words";
+
+		case 5:
+			return "<font color = 'rgb(20, 20, 30)', size = 4>You cannot simultaneously prevent and prepare for war. <br> <i> "
+					+ "<font color = 'rgb(80, 70, 70)', size=3> <p align = 'right'> " + "Albert Einstein, 1946<br> "
+					+ "In a letter to a congressman";
+
+		case 6:
+			return "<font color = 'rgb(20, 20, 30)', size = 4>I dunno, but in the war after the next one; they'll be using spears <br> <i> "
+					+ "<font color = 'rgb(80, 70, 70)', size=3> <p align = 'right'> "
+					+ "Lt Walter Winchell (earliest recording, 1946)<br> "
+					+ "Einstein also used variations on it.";
+			
+		case 7:
+			return "<font color = 'rgb(20, 20, 30)', size = 4>What's past is prologue. <br> <i> "
+					+ "<font color = 'rgb(80, 70, 70)', size=3> <p align = 'right'> "
+					+ "William Shakespeare <br> "
+					+ "The Tempest, act 2, scene 1";
 
 		}
 

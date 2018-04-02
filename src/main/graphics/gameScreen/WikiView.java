@@ -133,23 +133,7 @@ public class WikiView extends JPanel {
 		textArea.setContentType("text/html");
 		textArea.putClientProperty(JTextPane.HONOR_DISPLAY_PROPERTIES, Boolean.TRUE);
 		textArea.setFont(new Font("garamond",Font.BOLD,18));
-		textArea.setText(
-				"<font face = 'arial' color = 'rgb(200, 150, 255)'>" + "blablablablba abla blblbla  blablabla blablabla blablablablablabablabl bla blbla blablabla "
-				+ "blablablablablablablablablba abla blblbla  blablabla blablabla blablablablablabablabl bla blbla "
-				+ "blablabla blablablablablablablablablba abla blblbla  blablabla blablabla blablablablablabablabl"
-				+ " bla blbla blablabla blablablablablablablablablba abla blblbla  blablabla blablabla "
-				+ "blablablablablabablabl bla blbla blablabla blablablablablablablablablba abla blblbla  "
-				+ "blablabla blablabla blablablablablabablabl bla blbla blablabla "
-				+ "blablablablablablablablablba abla blblbla  blablabla blablabla blablablablablabablabl "
-				+ "bla blbla blablabla blablablablablablablablablba abla blblbla  blablabla blablabla "
-				+ "blablablablablabablabl bla blbla blablabla blablablablablablablablablba abla blblbla  blablabla "
-				+ "blablabla blablablablablabablabl bla blbla blablabla blablablablablablablablablba abla blblbla  "
-				+ "blablabla blablabla blablablablablabablabl bla blbla blablabla blablablablablablablablablba abla "
-				+ "blblbla  blablabla blablabla blablablablablabablabl bla blbla blablabla blablablablablablablablablba "
-				+ "abla blblbla  blablabla jou-ji blablablablablabablabl bla blbla blablabla "
-				+ "blablablablablablablablablba abla blblbla  blablabla blablabla blablablablablabablabl bla blbla "
-				+ "blablabla blablablablablablablablablba abla blblbla  blablabla blablabla blablablablablabablabl bla "
-				+ "blbla blablabla blablablablablablablablablba abla blblbla  blablabla blablabla blablablablablabablabl bla blbla blablabla blablablablablablablablablba abla blblbla  blablabla blablabla blablablablablabablabl bla blbla blablabla blablablablablablablablablba abla blblbla  blablabla blablabla blablablablablabablabl bla blbla blablabla blablablablablablablablablba abla blblbla  blablabla blablabla blablablablablabablabl bla blbla blablabla blablablablablablablablablba abla blblbla  blablabla blablabla blablablablablabablabl bla blbla blablabla blablablablablablablablablba abla blblbla  blablabla blablabla blablablablablabablabl bla blbla blablabla blablablablablablablablablba abla blblbla  blablabla blablabla blablablablablabablabl bla blbla blablabla blablablablablablablablablba abla blblbla  blablabla blablabla blablablablablabablabl bla blbla blablabla blablablablablablablablablba abla blblbla  blablabla blablabla blablablablablabablabl bla blbla blablabla blablablablablablablablablba abla blblbla  blablabla blablabla blablablablablabablabl bla blbla blablabla blablablablablablablablablba abla blblbla  blablabla blablabla blablablablablabablabl bla blbla blablabla blablablablablablablablablba abla blblbla  blablabla blablabla blablablablablabablabl bla blbla blablabla blablablablablablablablablba abla blblbla  blablabla blablabla blablablablablabablabl bla blbla blablabla blablablablablablablablablba abla blblbla  blablabla blablabla blablablablablabablabl bla blbla blablabla blablablablablablablablablba abla blblbla  blablabla blablabla blablablablablabablabl bla blbla blablabla blablablablablablablablablba abla blblbla  blablabla blablabla blablablablablabablabl bla blbla blablabla blablablablabla");
+		textArea.setText(Wiki.combatString);
 		
 		JScrollPane scrollPane = new JScrollPane(textArea);
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);

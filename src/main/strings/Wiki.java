@@ -20,7 +20,12 @@ public abstract class Wiki {
 	"orders accordingly. In a later version, minor interventions during the battle will be added to the game." +
 	"<br> <br> <font color = 'rgb(250, 250, 175)'>" +
 	"Part 2: The Map <br>" + 
-	"The Map is ";
+	"<font color = 'rgb(250, 230, 230)'> The Map is randomly generated for every battle. Exciting landscapes full of hills"
+	+ ", deserts, rivers and forests keep every battle a unique challenge of its own. Apart from the aesthetics; "
+	+ "the map does actually serves its purpose. Every tile is designated a certain type of terrain. And every"
+	+ "type of terrain has an impact on how easy it is to move over it. The map itself contains 48 by 32 tiles."
+	+ "<br> In a later stage, terrain will also affect defensive capacities of <font color = 'rgb(200, 200, 250)'>"
+	+ " regiments <font color  = 'rgb(250, 230, 230)'>, and will have a height that will impact lines of sight. <br>";
 	
 	
 	
