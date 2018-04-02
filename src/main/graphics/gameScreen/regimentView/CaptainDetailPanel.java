@@ -70,7 +70,7 @@ public class CaptainDetailPanel extends JPanel {
 		regimentIconLabel.setIcon(imageLoader.loadImageIcon(regiment.captain.iconPath, width / 8, height / 3));
 		captainBaseInfoPanel.fillCaptainBaseInfoPanel(regiment);
 		captainBiographyPanel.fillCaptainBiography(regiment.captain);
-		orderPanel.fillOrderPanel(regiment);
+		orderPanel.fillOrderPanel(regiment, editable);
 		statsBonusPanel.fillStatsBonusPanel(regiment);
 		
 		

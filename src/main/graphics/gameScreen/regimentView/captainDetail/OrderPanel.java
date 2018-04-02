@@ -46,7 +46,9 @@ public class OrderPanel extends ContentPanel {
 
 	}
 
-	public void fillOrderPanel(Regiment regiment) {
+	public void fillOrderPanel(Regiment regiment, boolean editable) {
+		
+		if (editable) {
 		
 		int sequence = 0;
 		
@@ -114,5 +116,34 @@ public class OrderPanel extends ContentPanel {
 			sequence++;
 
 		}
+	} else {
+		
+		for (IndividualOrderPanel orderPanel: orderList) {
+
+				try {
+					orderPanel.removeActionListener(orderPanel.getActionListeners()[0]);
+				} catch (Exception e1) {}
+				
+				orderPanel.setBackground(Colors.emptyPanelColor);
+				orderPanel.numberPanel.label.setText("");
+				orderPanel.numberPanel.setBackground(Colors.emptyPanelColor);
+				orderPanel.conditionPanel.label.setText("");
+				orderPanel.conditionPanel.setBackground(Colors.emptyPanelColor);
+				orderPanel.conditionXPPanel.label.setText("");
+				orderPanel.conditionXPPanel.setBackground(Colors.emptyPanelColor);
+				orderPanel.targetPanel.label.setText("");
+				orderPanel.targetPanel.setBackground(Colors.emptyPanelColor);
+				orderPanel.targetXPPanel.label.setText("");
+				orderPanel.targetXPPanel.setBackground(Colors.emptyPanelColor);
+				orderPanel.orderPanel.label.setText("");
+				orderPanel.orderPanel.setBackground(Colors.emptyPanelColor);
+				orderPanel.orderXPPanel.label.setText("");
+				orderPanel.orderXPPanel.setBackground(Colors.emptyPanelColor);
+				orderPanel.totalXPPanel.label.setText("");
+				orderPanel.totalXPPanel.setBackground(Colors.emptyPanelColor);
+				
+		}
+		
+	}
 	}
 }
