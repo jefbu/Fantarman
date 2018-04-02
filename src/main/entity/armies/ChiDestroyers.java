@@ -32,6 +32,8 @@ public class ChiDestroyers extends Army {
 
 		calculateValue();
 		
+		money = 12230;
+		
 	}
 
 }

@@ -32,6 +32,8 @@ public class Skylords extends Army {
 		
 		calculateValue();
 		
+		money = 1257;
+		
 	}
 
 }

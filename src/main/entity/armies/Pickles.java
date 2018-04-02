@@ -35,7 +35,7 @@ public class Pickles extends Army {
 		
 		calculateValue();
 
-		
+		money = 135001;
 	}
 
 }

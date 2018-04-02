@@ -34,6 +34,8 @@ public class Metropolitans extends Army {
 		roster.add(new TigerFist("Act of Strength", Captain.professor, Lieutenant.monstrosity, Lieutenant.medic));
 
 		calculateValue();
+		
+		money = 578;
 
 	}
 

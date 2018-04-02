@@ -34,6 +34,8 @@ public class SacredCrux extends Army {
 				Lieutenant.musician));
 
 		calculateValue();
+		
+		money = 57230;
 
 	}
 

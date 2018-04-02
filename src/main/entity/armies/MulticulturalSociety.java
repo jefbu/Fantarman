@@ -35,6 +35,8 @@ public class MulticulturalSociety extends Army {
 		roster.add(new Trainees("Qoonfu Reserves", Captain.boris, Lieutenant.abomination, Lieutenant.surgeon));
 
 		calculateValue();
+		
+		money = 88762;
 
 	}
 

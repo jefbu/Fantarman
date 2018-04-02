@@ -14,6 +14,7 @@ public class Army implements Serializable {
 	public ArrayList<Regiment> roster;
 	public int value;
 	public String name;
+	public int money;
 	public GlobalBattleStrategy battleStrategy;
 	public DeploymentStrategy deploymentStrategy;
 	

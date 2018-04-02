@@ -30,6 +30,8 @@ public class Wanmen extends Army {
 
 		calculateValue();
 		
+		money = 32150;
+		
 	}
 
 }

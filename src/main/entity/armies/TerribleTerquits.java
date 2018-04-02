@@ -26,6 +26,7 @@ public class TerribleTerquits extends Army {
 		
 		calculateValue();
 		
+		money = 8712;
 	}
 	
 }

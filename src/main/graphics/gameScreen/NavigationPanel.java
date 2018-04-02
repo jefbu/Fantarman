@@ -78,6 +78,7 @@ public class NavigationPanel extends JPanel {
 		infoViewPanel.buttonedPanel.button.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				Screen.gameScreen.setScreensInvisible();
+				Screen.gameScreen.mainPanel.infoView.fillInfoView(Main.yourArmy);
 				Screen.gameScreen.mainPanel.infoView.setVisible(true);
 			}
 		});
