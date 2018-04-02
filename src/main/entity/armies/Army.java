@@ -51,7 +51,8 @@ public class Army implements Serializable {
 		
 		income = 0;
 		for(Regiment regiment: roster) {
-		income = income + regiment.captain.prestige;
+		income = income + regiment.captain.prestige * 2;
+		income = income + (regiment.enemiesDefeated * 10) - (regiment.timesDefeated * 5);
 		}
 		switch (Main.league.armies.indexOf(this)) {
 		case 0: income = income * 15 / 10; break;

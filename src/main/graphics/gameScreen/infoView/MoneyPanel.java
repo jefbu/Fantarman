@@ -11,7 +11,6 @@ import main.components.ContentPanel;
 import main.components.DoubleLabeledPanel;
 import main.components.LabeledPanel;
 import main.entity.armies.Army;
-import main.entity.regiments.Regiment;
 import main.utility.Colors;
 
 public class MoneyPanel extends JPanel {
