@@ -1,5 +1,7 @@
 package main.battle;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Random;
 
 import main.Main;
@@ -9,6 +11,7 @@ import main.entity.armies.Army;
 import main.entity.leagues.Matchup;
 import main.entity.leagues.Result;
 import main.entity.regiments.Regiment;
+import main.graphics.Screen;
 import main.graphics.battleScreen.BattleScreen;
 import main.strings.Adjectives;
 
@@ -103,8 +106,21 @@ public class BattleConclusion extends TextPopup {
 		for (Regiment regiment: Main.yourArmy.roster) {
 			for (int i = 0; i < regiment.panels.length; i++) {
 				regiment.panels[i] = 0;  
+				regiment.inCombat = false;
 			}
 		}
+		
+		Collections.sort(Main.league.armies, new Comparator<Army>() {
+			@Override
+			public int compare(Army p1, Army p2) {
+				return p2.scoreSheet.totalPoints - p1.scoreSheet.totalPoints;
+			}
+		});
+		
+		Screen.gameScreen.mainPanel.armyView.fillArmyView(Main.yourArmy);
+		Screen.gameScreen.mainPanel.homeView.fillHomeScreen();;
+		Screen.gameScreen.mainPanel.infoView.fillInfoView(Main.yourArmy);
+		Screen.gameScreen.mainPanel.leagueView.fillLeagueView();
 		
 		Main.league.calendarDay++;
 		

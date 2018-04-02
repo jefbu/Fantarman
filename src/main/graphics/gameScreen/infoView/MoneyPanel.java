@@ -97,19 +97,17 @@ public class MoneyPanel extends JPanel {
 		else { currentAmount.contentLabel.setForeground(Colors.vlgreen); }
 		currentAmount.contentLabel.setText(Integer.toString(army.money));
 		
-		income.contentLabel.setText("0");
+		army.calculateIncome();
+		income.contentLabel.setText(Integer.toString(army.income));
 		
-		int wage = 0;
-		for (Regiment regiment: army.roster) {
-			wage = wage + regiment.upkeep;
-		}
-		wages.contentLabel.setText(Integer.toString(wage));
+		army.calculateUpkeep();
+		wages.contentLabel.setText(Integer.toString(army.upkeep));
 		
 		otherExpenses.contentLabel.setText("0");
 		
 		intrest.contentLabel.setText("0");
 		
-		int newMoney = army.money - wage;
+		int newMoney = army.money - army.upkeep;
 		if(newMoney < army.money) {projection.contentLabel.setForeground(Colors.vdred); }
 		else { projection.contentLabel.setForeground(Colors.vlgreen); }
 		projection.contentLabel.setText(Integer.toString(newMoney));

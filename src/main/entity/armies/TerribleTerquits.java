@@ -15,10 +15,10 @@ public class TerribleTerquits extends Army {
 		super();
 		name = "Terrible Terquits";
 		
-		roster.add(new Kinshiwang("Lacquered Doom", Captain.boris));
-		roster.add(new Kinshiwang("Clay Guards", Captain.boris));
-		roster.add(new Kinshiwang("Earthen Vigil", Captain.boris));
-		roster.add(new Kinshiwang("Massive Soil", Captain.boris));
+		roster.add(new Kinshiwang("Lacquered Doom", Captain.boris, Lieutenant.flagbearer, Lieutenant.monstrosity));
+		roster.add(new Kinshiwang("Clay Guards", Captain.boris, Lieutenant.musician, Lieutenant.errant));
+		roster.add(new Kinshiwang("Earthen Vigil", Captain.boris, Lieutenant.flagbearer, Lieutenant.musician));
+		roster.add(new Kinshiwang("Massive Soil", Captain.boris, Lieutenant.flagbearer, Lieutenant.abomination));
 		roster.add(new PebbleHurlers("Stone Debris", Captain.boris, Lieutenant.emperor));
 		roster.add(new PebbleHurlers("Diamond Jets", Captain.boris, Lieutenant.flagbearer));
 		roster.add(new Arbalesters("Pearl Arrows", Captain.boris, Lieutenant.flagbearer, Lieutenant.musician));

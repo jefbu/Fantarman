@@ -2,9 +2,13 @@ package main.graphics.gameScreen;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.util.Collections;
+import java.util.Comparator;
 
 import javax.swing.JPanel;
 
+import main.Main;
+import main.entity.armies.Army;
 import main.graphics.gameScreen.leagueView.LeagueFilterPanel;
 import main.graphics.gameScreen.leagueView.LeagueFixturesPanel;
 import main.graphics.gameScreen.leagueView.LeagueRankingPanel;
@@ -41,6 +45,14 @@ public class LeagueView extends JPanel {
 	}
 	
 	public void fillLeagueView() {
+		
+		Collections.sort(Main.league.armies, new Comparator<Army>() {
+			@Override
+			public int compare(Army p1, Army p2) {
+				return p2.scoreSheet.totalPoints - p1.scoreSheet.totalPoints;
+			}
+		});
+		
 		rankingPanel.fillRankingPanel();
 		fixturesPanel.fillFixturesPanel();
 	}

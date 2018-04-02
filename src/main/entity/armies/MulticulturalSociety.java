@@ -25,7 +25,7 @@ public class MulticulturalSociety extends Army {
 		roster.add(new StoutOfHeart("Piknin Heavies", Captain.boris, Lieutenant.surgeon, Lieutenant.medic));
 		roster.add(new FireMages("Piknin Supports", Captain.boris, Lieutenant.errant));
 		roster.add(new Stoopvarmint("Wanmen Cavalry", Captain.ole_racecar, Lieutenant.paladin, Lieutenant.monstrosity));
-		roster.add(new Kinshiwang("Terquit Anvils", Captain.boris));
+		roster.add(new Kinshiwang("Terquit Anvils", Captain.boris, Lieutenant.flagbearer, Lieutenant.musician));
 		roster.add(new PebbleHurlers("Terquit Archers", Captain.boris, Lieutenant.sergeant));
 		roster.add(new PristineShield("Feod Cavalry", Captain.boris, Lieutenant.sergeant, Lieutenant.ambusher,
 				Lieutenant.medic));
