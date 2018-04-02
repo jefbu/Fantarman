@@ -7,6 +7,7 @@ import main.battle.tactics.Target;
 import main.entity.captains.Captain;
 import main.entity.equipment.Armour;
 import main.entity.equipment.Weapons;
+import main.entity.lieutenants.Lieutenant;
 import main.entity.races.Race;
 import main.entity.regiments.Regiment;
 import main.entity.regiments.RegimentType;
@@ -15,7 +16,7 @@ public class Metralyadora extends Regiment {
 
 	private static final long serialVersionUID = 1L;
 
-	public Metralyadora(String name, Captain captain) {
+	public Metralyadora(String name, Captain captain, Lieutenant lt1, Lieutenant lt2) {
 		
 		super();
 		
@@ -29,6 +30,9 @@ public class Metralyadora extends Regiment {
 		this.lieutenantsSize = 2;
 		this.captain = captain;
 		this.type = RegimentType.ARCHERS;
+		
+		lieutenants.add(lt1);
+		lieutenants.add(lt2);
 		
 		this.baseAttack = 30;
 		this.baseCharge = 5;

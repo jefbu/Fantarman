@@ -18,23 +18,24 @@ public class MulticulturalSociety extends Army {
 	private static final long serialVersionUID = 1L;
 
 	public MulticulturalSociety() {
-		
+
 		super();
 		name = "Multicultural Society";
-		
-		roster.add(new StoutOfHeart("Piknin Heavies", Captain.boris));
-		roster.add(new FireMages("Piknin Supports", Captain.boris));
-		roster.add(new Stoopvarmint("Wanmen Cavalry", Captain.ole_racecar));
+
+		roster.add(new StoutOfHeart("Piknin Heavies", Captain.boris, Lieutenant.surgeon, Lieutenant.medic));
+		roster.add(new FireMages("Piknin Supports", Captain.boris, Lieutenant.errant));
+		roster.add(new Stoopvarmint("Wanmen Cavalry", Captain.ole_racecar, Lieutenant.paladin, Lieutenant.monstrosity));
 		roster.add(new Kinshiwang("Terquit Anvils", Captain.boris));
 		roster.add(new PebbleHurlers("Terquit Archers", Captain.boris, Lieutenant.sergeant));
-		roster.add(new PristineShield("Feod Cavalry", Captain.boris));
-		roster.add(new Rooks("Avialay Tanks", Captain.boris, Lieutenant.corporal));
-		roster.add(new Jaywings("Avialay Fliers", Captain.boris, Lieutenant.sergeant));
-		roster.add(new HairpinThrower("Qoonfu Archers", Captain.professor));
-		roster.add(new Trainees("Qoonfu Reserves", Captain.boris));
-		
+		roster.add(new PristineShield("Feod Cavalry", Captain.boris, Lieutenant.sergeant, Lieutenant.ambusher,
+				Lieutenant.medic));
+		roster.add(new Rooks("Avialay Tanks", Captain.boris, Lieutenant.ambusher));
+		roster.add(new Jaywings("Avialay Fliers", Captain.boris, Lieutenant.scout));
+		roster.add(new HairpinThrower("Qoonfu Archers", Captain.professor, Lieutenant.monstrosity, Lieutenant.medic));
+		roster.add(new Trainees("Qoonfu Reserves", Captain.boris, Lieutenant.abomination, Lieutenant.surgeon));
+
 		calculateValue();
-		
+
 	}
 
 }

@@ -19,10 +19,10 @@ public class TerribleTerquits extends Army {
 		roster.add(new Kinshiwang("Clay Guards", Captain.boris));
 		roster.add(new Kinshiwang("Earthen Vigil", Captain.boris));
 		roster.add(new Kinshiwang("Massive Soil", Captain.boris));
-		roster.add(new PebbleHurlers("Stone Debris", Captain.boris, Lieutenant.medic));
-		roster.add(new PebbleHurlers("Diamond Jets", Captain.boris, Lieutenant.corporal));
-		roster.add(new Arbalesters("Pearl Arrows", Captain.boris, Lieutenant.Tenkai, Lieutenant.corporal));
-		roster.add(new Arbalesters("Heaven's Ruby", Captain.boris, Lieutenant.corporal, Lieutenant.Tenkai));
+		roster.add(new PebbleHurlers("Stone Debris", Captain.boris, Lieutenant.emperor));
+		roster.add(new PebbleHurlers("Diamond Jets", Captain.boris, Lieutenant.flagbearer));
+		roster.add(new Arbalesters("Pearl Arrows", Captain.boris, Lieutenant.flagbearer, Lieutenant.musician));
+		roster.add(new Arbalesters("Heaven's Ruby", Captain.boris, Lieutenant.flagbearer, Lieutenant.musician));
 		
 		calculateValue();
 		

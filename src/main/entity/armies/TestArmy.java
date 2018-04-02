@@ -1,10 +1,5 @@
 package main.entity.armies;
 
-import main.entity.captains.Captain;
-import main.entity.regiments.piknin.DoveMasters;
-import main.entity.regiments.piknin.Harvesters;
-import main.entity.regiments.wanmen.FireMages;
-
 public class TestArmy extends Army {
 
 	private static final long serialVersionUID = 1L;
@@ -12,6 +7,7 @@ public class TestArmy extends Army {
 	public TestArmy() {
 		super();
 
+		/*
 		roster.add(new FireMages("Flammekuche", Captain.boris));
 		roster.add(new FireMages("HotPots", Captain.boris));
 		roster.add(new FireMages("Explotions", Captain.boris));
@@ -24,6 +20,7 @@ public class TestArmy extends Army {
 		roster.add(new Harvesters("Trowels", Captain.boris));
 		roster.add(new Harvesters("Pitchforks",Captain.boris));
 		roster.add(new Harvesters("Tractors", Captain.boris));
+		*/
 
 	}
 

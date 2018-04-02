@@ -7,6 +7,7 @@ import main.battle.tactics.Target;
 import main.entity.captains.Captain;
 import main.entity.equipment.Armour;
 import main.entity.equipment.Weapons;
+import main.entity.lieutenants.Lieutenant;
 import main.entity.races.Race;
 import main.entity.regiments.Regiment;
 import main.entity.regiments.RegimentType;
@@ -15,7 +16,7 @@ public class BlessedGarland extends Regiment {
 	
 	private static final long serialVersionUID = 1L;
 
-	public BlessedGarland(String name, Captain captain) {
+	public BlessedGarland(String name, Captain captain, Lieutenant lt1, Lieutenant lt2, Lieutenant lt3) {
 		
 		super();
 		for (int i = 0; i < captain.orders; i++) {
@@ -28,6 +29,10 @@ public class BlessedGarland extends Regiment {
 		this.lieutenantsSize = 3;
 		this.captain = captain;
 		this.type = RegimentType.HEAVY_CAVALRY;
+		
+		lieutenants.add(lt1);
+		lieutenants.add(lt2);
+		lieutenants.add(lt3);
 				
 		this.baseAttack = 50;
 		this.baseCharge = 30;

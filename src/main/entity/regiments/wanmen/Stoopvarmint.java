@@ -7,6 +7,7 @@ import main.battle.tactics.Target;
 import main.entity.captains.Captain;
 import main.entity.equipment.Armour;
 import main.entity.equipment.Weapons;
+import main.entity.lieutenants.Lieutenant;
 import main.entity.races.Race;
 import main.entity.regiments.Regiment;
 import main.entity.regiments.RegimentType;
@@ -15,7 +16,7 @@ public class Stoopvarmint extends Regiment {
 	
 	private static final long serialVersionUID = 1L;
 
-	public Stoopvarmint(String name, Captain captain) {
+	public Stoopvarmint(String name, Captain captain, Lieutenant lt1, Lieutenant lt2) {
 		
 		super();
 		for (int i = 0; i < captain.orders; i++) {
@@ -28,6 +29,9 @@ public class Stoopvarmint extends Regiment {
 		this.lieutenantsSize = 2;
 		this.captain = captain;
 		this.type = RegimentType.LIGHT_CAVALRY;
+		
+		lieutenants.add(lt1);
+		lieutenants.add(lt2);
 		
 		this.baseAttack = 40;
 		this.baseCharge = 15;

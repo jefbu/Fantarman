@@ -178,6 +178,31 @@ public class EquipPanel extends ContentPanel {
 			
 			Color bgColor = Colors.emptyPanelColor;
 			Color txtColor = new Color(0, 0, 0);
+						
+			try {
+				weaponsList.get(i).removeActionListener(weaponsList.get(i).getActionListeners()[0]);
+			} catch(Exception e) {}
+			
+			weaponsList.get(i).namePanel.label.setText("");
+			weaponsList.get(i).namePanel.setBackground(bgColor);
+			weaponsList.get(i).attackPanel.label.setText("");
+			weaponsList.get(i).attackPanel.setBackground(bgColor);
+			weaponsList.get(i).chargePanel.label.setText("");
+			weaponsList.get(i).chargePanel.setBackground(bgColor);
+			weaponsList.get(i).rangePanel.label.setText("");
+			weaponsList.get(i).rangePanel.setBackground(bgColor);
+			weaponsList.get(i).missilePanel.label.setText("");
+			weaponsList.get(i).missilePanel.setBackground(bgColor);
+			weaponsList.get(i).defencePanel.label.setText("");
+			weaponsList.get(i).defencePanel.setBackground(bgColor);
+			weaponsList.get(i).speedPanel.label.setText("");
+			weaponsList.get(i).speedPanel.setBackground(bgColor);
+			weaponsList.get(i).costPanel.label.setText("");
+			weaponsList.get(i).costPanel.setBackground(bgColor);
+			weaponsList.get(i).upkeepPanel.label.setText("");
+			weaponsList.get(i).upkeepPanel.setBackground(bgColor);
+			
+		if (editable) {
 			
 			if(i < regiment.weapons.size()) {
 			if(regiment.weapon == regiment.weapons.get(i)) { 
@@ -190,10 +215,9 @@ public class EquipPanel extends ContentPanel {
 			}
 			int index = i;
 			weaponsList.get(i).fillWeaponPanel(regiment, index);
+			
 			if(i < regiment.weapons.size()) {
-			try {
-				weaponsList.get(i).removeActionListener(weaponsList.get(i).getActionListeners()[0]);
-			} catch(Exception e) {}
+
 			weaponsList.get(i).addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					regiment.weapon = regiment.weapons.get(index);
@@ -222,11 +246,33 @@ public class EquipPanel extends ContentPanel {
 			weaponsList.get(i).upkeepPanel.label.setForeground(txtColor);
 			
 		}
+		}
 		
 		for (int ii = 0; ii < armoursList.size(); ii++) {
 			
 			Color bgColor = new Color(70, 65, 55);
 			Color txtColor = new Color(0, 0, 0);
+			
+			try {
+				armoursList.get(ii).removeActionListener(armoursList.get(ii).getActionListeners()[0]);
+			} catch(Exception e) {}
+			
+			armoursList.get(ii).namePanel.label.setText("");
+			armoursList.get(ii).namePanel.setBackground(bgColor);
+			armoursList.get(ii).defencePanel.label.setText("");
+			armoursList.get(ii).defencePanel.setBackground(bgColor);
+			armoursList.get(ii).moralePanel.label.setText("");
+			armoursList.get(ii).moralePanel.setBackground(bgColor);
+			armoursList.get(ii).movePanel.label.setText("");
+			armoursList.get(ii).movePanel.setBackground(bgColor);
+			armoursList.get(ii).speedPanel.label.setText("");
+			armoursList.get(ii).speedPanel.setBackground(bgColor);
+			armoursList.get(ii).costPanel.label.setText("");
+			armoursList.get(ii).costPanel.setBackground(bgColor);
+			armoursList.get(ii).upkeepPanel.label.setText("");
+			armoursList.get(ii).upkeepPanel.setBackground(bgColor);
+			
+		if (editable) {
 			
 			if(ii < regiment.armours.size()) {
 			if(regiment.armour == regiment.armours.get(ii)) { 
@@ -237,12 +283,12 @@ public class EquipPanel extends ContentPanel {
 				txtColor = Colors.dred;
 			}
 			}
+				
 			int index = ii;
 			armoursList.get(ii).fillArmourPanel(regiment, index);
+			
 			if(ii < regiment.armours.size()) {
-			try {
-				armoursList.get(ii).removeActionListener(armoursList.get(ii).getActionListeners()[0]);
-			} catch(Exception e) {}
+
 			armoursList.get(ii).addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					regiment.armour = regiment.armours.get(index);
@@ -266,64 +312,9 @@ public class EquipPanel extends ContentPanel {
 			armoursList.get(ii).upkeepPanel.setBackground(bgColor);
 			armoursList.get(ii).upkeepPanel.label.setForeground(txtColor);
 			
+			}
 		}
 	
-		
-	}
-	
-	
-	public void fillArmourPanel(Regiment regiment) {
-		
-		for (int i = 0; i < regiment.armours.size(); i++) {
-			int index = i;
-				armoursList.get(i).namePanel.label.setText(regiment.armours.get(i).name);
-				armoursList.get(i).defencePanel.label.setText(Integer.toString(regiment.armours.get(i).defenceBonus));
-				armoursList.get(i).moralePanel.label.setText(Integer.toString(regiment.armours.get(i).moraleBonus));
-				armoursList.get(i).movePanel.label.setText(Integer.toString(regiment.armours.get(i).movPenalty));
-				armoursList.get(i).speedPanel.label.setText(Integer.toString(regiment.armours.get(i).spdPenalty));
-				armoursList.get(i).costPanel.label.setText(Integer.toString(regiment.armours.get(i).equipCost));
-				armoursList.get(i).upkeepPanel.label.setText(Integer.toString(regiment.armours.get(i).upkeep));
-				
-				armoursList.get(i).addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						
-						for (ArmourPanel panel: armoursList) {
-							panel.namePanel.setBackground(Colors.lred);
-							panel.namePanel.label.setForeground(Colors.dred);
-							panel.defencePanel.setBackground(Colors.lred);
-							panel.defencePanel.label.setForeground(Colors.dred);
-							panel.moralePanel.setBackground(Colors.lred);
-							panel.moralePanel.label.setForeground(Colors.dred);
-							panel.movePanel.setBackground(Colors.lred);
-							panel.movePanel.label.setForeground(Colors.dred);
-							panel.speedPanel.setBackground(Colors.lred);
-							panel.speedPanel.label.setForeground(Colors.dred);
-							panel.costPanel.setBackground(Colors.lred);
-							panel.costPanel.label.setForeground(Colors.dred);
-							panel.upkeepPanel.setBackground(Colors.lred);
-							panel.upkeepPanel.label.setForeground(Colors.dred);
-						}
-
-						armoursList.get(index).namePanel.setBackground(Colors.dblue);
-						armoursList.get(index).namePanel.label.setForeground(Colors.vlblue);
-						armoursList.get(index).defencePanel.setBackground(Colors.dblue);
-						armoursList.get(index).defencePanel.label.setForeground(Colors.vlblue);
-						armoursList.get(index).moralePanel.setBackground(Colors.dblue);
-						armoursList.get(index).moralePanel.label.setForeground(Colors.vlblue);
-						armoursList.get(index).movePanel.setBackground(Colors.dblue);
-						armoursList.get(index).movePanel.label.setForeground(Colors.vlblue);
-						armoursList.get(index).speedPanel.setBackground(Colors.dblue);
-						armoursList.get(index).speedPanel.label.setForeground(Colors.vlblue);
-						armoursList.get(index).costPanel.setBackground(Colors.dblue);
-						armoursList.get(index).costPanel.label.setForeground(Colors.vlblue);
-						armoursList.get(index).upkeepPanel.setBackground(Colors.dblue);
-						armoursList.get(index).upkeepPanel.label.setForeground(Colors.vlblue);
-						
-						regiment.armour = regiment.armours.get(index);
-						
-					}
-				});
-		}
 		
 	}
 	

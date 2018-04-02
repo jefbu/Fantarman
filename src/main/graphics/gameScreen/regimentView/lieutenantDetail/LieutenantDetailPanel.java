@@ -58,6 +58,8 @@ public class LieutenantDetailPanel extends ContentPanel {
 	
 	public void fillLieutenantDetailPanel(int order, Regiment regiment) {
 		
+		setVisible(false);
+		
 		if (order > regiment.lieutenantsSize) {
 		portrait.setIcon(imageLoader.loadImageIcon("/lieutenants/none.png", width / 4, height - 25));
 		namePanel.label.setText("");
@@ -67,6 +69,7 @@ public class LieutenantDetailPanel extends ContentPanel {
 		portrait.setIcon(imageLoader.loadImageIcon(regiment.lieutenants.get(order - 1).imagePath, width / 4, height - 25));	
 		namePanel.label.setText(regiment.lieutenants.get(order - 1).name);
 		bonusPanel.label.setText(regiment.lieutenants.get(order - 1).bonus);
+		setVisible(true);
 		}
 		
 	}
