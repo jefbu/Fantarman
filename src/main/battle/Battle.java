@@ -33,6 +33,8 @@ public class Battle {
 		opponentBattleArmy.deploymentStrategy = DeployAI.decideGlobalDeployStrategy(opponentBattleArmy);
 		
 		BattleScreen.battleScene.createMap();
+		
+		Skit skit = new Skit(yourBattleArmy, opponentBattleArmy);
 
 		battleOrchestrator = new BattleOrchestrator(yourBattleArmy, opponentBattleArmy);
 		deployment = new Deployment(battleOrchestrator, yourBattleArmy, opponentBattleArmy);
