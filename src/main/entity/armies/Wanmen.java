@@ -1,6 +1,6 @@
 package main.entity.armies;
 
-import main.entity.captains.Captain;
+import main.entity.captains.Boris;
 import main.entity.lieutenants.Lieutenant;
 import main.entity.regiments.wanmen.FireMages;
 import main.entity.regiments.wanmen.Glasscannon;
@@ -17,16 +17,16 @@ public class Wanmen extends Army {
 		super();
 		name = "Wanted Wanmen";
 		
-		roster.add(new Stiltleg("Ashri", Captain.boris, Lieutenant.paladin, Lieutenant.monstrosity, Lieutenant.scout));
-		roster.add(new Stiltleg("Ashrini", Captain.boris, Lieutenant.roland, Lieutenant.scout, Lieutenant.medic));
-		roster.add(new FireMages("Skari", Captain.ole_racecar, Lieutenant.errant));
-		roster.add(new FireMages("Skarini", Captain.boris, Lieutenant.errant));
-		roster.add(new FireMages("Skarisin", Captain.boris, Lieutenant.paladin));
-		roster.add(new Metralyadora("Rushi", Captain.boris, Lieutenant.errant, Lieutenant.ambusher));
-		roster.add(new Stoopvarmint("Siszar", Captain.boris, Lieutenant.errant, Lieutenant.surgeon));
-		roster.add(new Stoopvarmint("Siszarni", Captain.boris, Lieutenant.paladin, Lieutenant.scout));
-		roster.add(new Glasscannon("Sek Skra", Captain.professor, Lieutenant.errant, Lieutenant.musician));
-		roster.add(new Glasscannon("Sekni Skrani", Captain.boris, Lieutenant.paladin, Lieutenant.monstrosity));
+		roster.add(new Stiltleg("Ashri", new Boris(), Lieutenant.paladin, Lieutenant.monstrosity, Lieutenant.scout));
+		roster.add(new Stiltleg("Ashrini", new Boris(), Lieutenant.roland, Lieutenant.scout, Lieutenant.medic));
+		roster.add(new FireMages("Skari", new Boris(), Lieutenant.errant));
+		roster.add(new FireMages("Skarini", new Boris(), Lieutenant.errant));
+		roster.add(new FireMages("Skarisin", new Boris(), Lieutenant.paladin));
+		roster.add(new Metralyadora("Rushi", new Boris(), Lieutenant.errant, Lieutenant.ambusher));
+		roster.add(new Stoopvarmint("Siszar", new Boris(), Lieutenant.errant, Lieutenant.surgeon));
+		roster.add(new Stoopvarmint("Siszarni", new Boris(), Lieutenant.paladin, Lieutenant.scout));
+		roster.add(new Glasscannon("Sek Skra", new Boris(), Lieutenant.errant, Lieutenant.musician));
+		roster.add(new Glasscannon("Sekni Skrani", new Boris(), Lieutenant.paladin, Lieutenant.monstrosity));
 
 		calculateValue();
 		

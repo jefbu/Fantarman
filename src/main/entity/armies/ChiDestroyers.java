@@ -1,6 +1,6 @@
 package main.entity.armies;
 
-import main.entity.captains.Captain;
+import main.entity.captains.Boris;
 import main.entity.lieutenants.Lieutenant;
 import main.entity.regiments.qoonfu.CraneWing;
 import main.entity.regiments.qoonfu.DrunkenMaster;
@@ -20,15 +20,15 @@ public class ChiDestroyers extends Army {
 		super();
 		name = "Chi Destroyers";
 		
-		roster.add(new SnakeTeeth("Cobras", Captain.boris, Lieutenant.monstrosity));
-		roster.add(new MonkeyPaw("Baboons", Captain.boris, Lieutenant.monstrosity));
-		roster.add(new TigerFist("Jaguars", Captain.boris, Lieutenant.abomination, Lieutenant.corporal));
-		roster.add(new CraneWing("Herons", Captain.boris, Lieutenant.hugo, Lieutenant.medic));
-		roster.add(new DrunkenMaster("Jackie", Captain.boris));
-		roster.add(new MantisClaw("Crickets", Captain.boris, Lieutenant.abomination));
-		roster.add(new HairpinThrower("Diadems", Captain.boris, Lieutenant.monstrosity, Lieutenant.surgeon));
-		roster.add(new Trainees("Wolf Cubs", Captain.boris, Lieutenant.monstrosity, Lieutenant.corporal));
-		roster.add(new Trainees("Tadpoles", Captain.boris, Lieutenant.abomination, Lieutenant.monstrosity));
+		roster.add(new SnakeTeeth("Cobras", new Boris(), Lieutenant.monstrosity));
+		roster.add(new MonkeyPaw("Baboons", new Boris(), Lieutenant.monstrosity));
+		roster.add(new TigerFist("Jaguars", new Boris(), Lieutenant.abomination, Lieutenant.corporal));
+		roster.add(new CraneWing("Herons", new Boris(), Lieutenant.hugo, Lieutenant.medic));
+		roster.add(new DrunkenMaster("Jackie", new Boris()));
+		roster.add(new MantisClaw("Crickets", new Boris(), Lieutenant.abomination));
+		roster.add(new HairpinThrower("Diadems", new Boris(), Lieutenant.monstrosity, Lieutenant.surgeon));
+		roster.add(new Trainees("Wolf Cubs", new Boris(), Lieutenant.monstrosity, Lieutenant.corporal));
+		roster.add(new Trainees("Tadpoles", new Boris(), Lieutenant.abomination, Lieutenant.monstrosity));
 
 		calculateValue();
 		

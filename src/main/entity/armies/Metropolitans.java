@@ -1,6 +1,6 @@
 package main.entity.armies;
 
-import main.entity.captains.Captain;
+import main.entity.captains.Boris;
 import main.entity.lieutenants.Lieutenant;
 import main.entity.regiments.feods.BlessedGarland;
 import main.entity.regiments.feods.Cardinal;
@@ -21,17 +21,17 @@ public class Metropolitans extends Army {
 		super();
 		name = "Metropolitans";
 
-		roster.add(new DoveMasters("Leswasohs", Captain.boris, Lieutenant.medic));
-		roster.add(new PonyRiders("Shevau", Captain.boris, Lieutenant.surgeon));
-		roster.add(new FatherlyTurtle("Obi", Captain.ole_racecar));
-		roster.add(new Cardinal("St Danny", Captain.boris));
-		roster.add(new BlessedGarland("Grass Crowns", Captain.boris, Lieutenant.sergeant, Lieutenant.medic,
+		roster.add(new DoveMasters("Leswasohs", new Boris(), Lieutenant.medic));
+		roster.add(new PonyRiders("Shevau", new Boris(), Lieutenant.surgeon));
+		roster.add(new FatherlyTurtle("Obi", new Boris()));
+		roster.add(new Cardinal("St Danny", new Boris()));
+		roster.add(new BlessedGarland("Grass Crowns", new Boris(), Lieutenant.sergeant, Lieutenant.medic,
 				Lieutenant.scout));
-		roster.add(new RedemptionSpirit("Burning Belief", Captain.boris, Lieutenant.sergeant, Lieutenant.errant,
+		roster.add(new RedemptionSpirit("Burning Belief", new Boris(), Lieutenant.sergeant, Lieutenant.errant,
 				Lieutenant.medic));
-		roster.add(new DrunkenMaster("Huiyin", Captain.boris));
-		roster.add(new CraneWing("Azure Wings", Captain.boris, Lieutenant.abomination, Lieutenant.corporal));
-		roster.add(new TigerFist("Act of Strength", Captain.professor, Lieutenant.monstrosity, Lieutenant.medic));
+		roster.add(new DrunkenMaster("Huiyin", new Boris()));
+		roster.add(new CraneWing("Azure Wings", new Boris(), Lieutenant.abomination, Lieutenant.corporal));
+		roster.add(new TigerFist("Act of Strength", new Boris(), Lieutenant.monstrosity, Lieutenant.medic));
 
 		calculateValue();
 		

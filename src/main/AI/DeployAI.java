@@ -51,7 +51,7 @@ public abstract class DeployAI {
 			case HEAVY_INFANTRY: defenders++; break;
 			case LIGHT_CAVALRY: others++; break;
 			case LIGHT_INFANTRY: defenders++; break;
-			case MONSTER: defenders++; break;			
+			case HERO: defenders++; break;			
 			}
 		}
 		
@@ -119,7 +119,7 @@ public abstract class DeployAI {
 			case HEAVY_INFANTRY: defenders++; break;
 			case LIGHT_CAVALRY: others++; break;
 			case LIGHT_INFANTRY: defenders++; break;
-			case MONSTER: defenders++; break;			
+			case HERO: defenders++; break;			
 			}
 		}
 		

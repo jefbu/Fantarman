@@ -1,6 +1,6 @@
 package main.entity.armies;
 
-import main.entity.captains.Captain;
+import main.entity.captains.Boris;
 import main.entity.lieutenants.Lieutenant;
 import main.entity.regiments.avialay.Jaywings;
 import main.entity.regiments.avialay.Rooks;
@@ -22,17 +22,17 @@ public class MulticulturalSociety extends Army {
 		super();
 		name = "Multicultural Society";
 
-		roster.add(new StoutOfHeart("Piknin Heavies", Captain.boris, Lieutenant.surgeon, Lieutenant.medic));
-		roster.add(new FireMages("Piknin Supports", Captain.boris, Lieutenant.errant));
-		roster.add(new Stoopvarmint("Wanmen Cavalry", Captain.ole_racecar, Lieutenant.paladin, Lieutenant.monstrosity));
-		roster.add(new Kinshiwang("Terquit Anvils", Captain.boris, Lieutenant.flagbearer, Lieutenant.musician));
-		roster.add(new PebbleHurlers("Terquit Archers", Captain.boris, Lieutenant.sergeant));
-		roster.add(new PristineShield("Feod Cavalry", Captain.boris, Lieutenant.sergeant, Lieutenant.ambusher,
+		roster.add(new StoutOfHeart("Piknin Heavies", new Boris(), Lieutenant.surgeon, Lieutenant.medic));
+		roster.add(new FireMages("Piknin Supports", new Boris(), Lieutenant.errant));
+		roster.add(new Stoopvarmint("Wanmen Cavalry", new Boris(), Lieutenant.paladin, Lieutenant.monstrosity));
+		roster.add(new Kinshiwang("Terquit Anvils", new Boris(), Lieutenant.flagbearer, Lieutenant.musician));
+		roster.add(new PebbleHurlers("Terquit Archers", new Boris(), Lieutenant.sergeant));
+		roster.add(new PristineShield("Feod Cavalry", new Boris(), Lieutenant.sergeant, Lieutenant.ambusher,
 				Lieutenant.medic));
-		roster.add(new Rooks("Avialay Tanks", Captain.boris, Lieutenant.ambusher));
-		roster.add(new Jaywings("Avialay Fliers", Captain.boris, Lieutenant.scout));
-		roster.add(new HairpinThrower("Qoonfu Archers", Captain.professor, Lieutenant.monstrosity, Lieutenant.medic));
-		roster.add(new Trainees("Qoonfu Reserves", Captain.boris, Lieutenant.abomination, Lieutenant.surgeon));
+		roster.add(new Rooks("Avialay Tanks", new Boris(), Lieutenant.ambusher));
+		roster.add(new Jaywings("Avialay Fliers", new Boris(), Lieutenant.scout));
+		roster.add(new HairpinThrower("Qoonfu Archers", new Boris(), Lieutenant.monstrosity, Lieutenant.medic));
+		roster.add(new Trainees("Qoonfu Reserves", new Boris(), Lieutenant.abomination, Lieutenant.surgeon));
 
 		calculateValue();
 		

@@ -10,6 +10,6 @@ public enum RegimentType {
 	ARCHERS,
 	FLYING,
 	ARTILLERY,
-	MONSTER
+	HERO
 
 }

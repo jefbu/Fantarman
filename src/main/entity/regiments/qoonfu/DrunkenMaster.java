@@ -27,7 +27,7 @@ public class DrunkenMaster extends Regiment {
 		this.race = Race.Qoonfu;
 		this.lieutenantsSize = 0;
 		this.captain = captain;
-		this.type = RegimentType.MONSTER;
+		this.type = RegimentType.HERO;
 		
 		this.baseAttack = 50;
 		this.baseCharge = 20;

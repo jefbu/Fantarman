@@ -1,6 +1,6 @@
 package main.entity.armies;
 
-import main.entity.captains.Captain;
+import main.entity.captains.Boris;
 import main.entity.lieutenants.Lieutenant;
 import main.entity.regiments.avialay.Corpus;
 import main.entity.regiments.avialay.Gralyas;
@@ -19,16 +19,16 @@ public class Skylords extends Army {
 		super();
 		name = "Skylords";
 		
-		roster.add(new Corpus("Royal Crest", Captain.boris, Lieutenant.scout));
-		roster.add(new Jackdaws("Fledglings", Captain.boris, Lieutenant.scout));
-		roster.add(new Jackdaws("Down Feathers", Captain.boris, Lieutenant.ambusher));
-		roster.add(new Rooks("Mighty Talon", Captain.boris, Lieutenant.peregrine));
-		roster.add(new Gralyas("Preyers", Captain.boris));
-		roster.add(new Jaywings("Cloudshakers", Captain.boris, Lieutenant.scout));
-		roster.add(new Jaywings("Skyward Arrows", Captain.boris, Lieutenant.scout));
-		roster.add(new Nucifrags("Lost Beaks", Captain.boris));
-		roster.add(new Magpies("Swallowtails", Captain.boris, Lieutenant.medic));
-		roster.add(new Gralyas("Hunting Stoops", Captain.boris));
+		roster.add(new Corpus("Royal Crest", new Boris(), Lieutenant.scout));
+		roster.add(new Jackdaws("Fledglings", new Boris(), Lieutenant.scout));
+		roster.add(new Jackdaws("Down Feathers", new Boris(), Lieutenant.ambusher));
+		roster.add(new Rooks("Mighty Talon", new Boris(), Lieutenant.peregrine));
+		roster.add(new Gralyas("Preyers", new Boris()));
+		roster.add(new Jaywings("Cloudshakers", new Boris(), Lieutenant.scout));
+		roster.add(new Jaywings("Skyward Arrows", new Boris(), Lieutenant.scout));
+		roster.add(new Nucifrags("Lost Beaks", new Boris()));
+		roster.add(new Magpies("Swallowtails", new Boris(), Lieutenant.medic));
+		roster.add(new Gralyas("Hunting Stoops", new Boris()));
 		
 		calculateValue();
 		

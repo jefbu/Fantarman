@@ -1,6 +1,11 @@
 package main.entity.armies;
 
-import main.entity.captains.Captain;
+import main.entity.captains.AnitaStrum;
+import main.entity.captains.Backface;
+import main.entity.captains.Boris;
+import main.entity.captains.HansFlogl;
+import main.entity.captains.OleRacecar;
+import main.entity.captains.Professor;
 import main.entity.lieutenants.Lieutenant;
 import main.entity.regiments.piknin.Auxiliaries;
 import main.entity.regiments.piknin.DoveMasters;
@@ -19,19 +24,19 @@ public class Pickles extends Army {
 		super();
 		name = "Piknin Pickles";
 
-		roster.add(new StoutOfHeart("Valiant Lads", Captain.boris, Lieutenant.Tenkai, Lieutenant.corporal));
-		roster.add(new StoutOfHeart("Noble Chums", Captain.boris, Lieutenant.sergeant, Lieutenant.musician));
-		roster.add(new FatherlyTurtle("Ole Racecar", Captain.ole_racecar));
-		roster.add(new DoveMasters("Palomas", Captain.boris, Lieutenant.medic));
-		roster.add(new DoveMasters("Coocoos", Captain.boris, Lieutenant.medic));
-		roster.add(new Auxiliaries("2nd Line", Captain.hans_flogl, Lieutenant.surgeon));
-		roster.add(new Harvesters("Pitchforks", Captain.boris, Lieutenant.medic, Lieutenant.musician));
-		roster.add(new Harvesters("Tractors", Captain.boris, Lieutenant.surgeon, Lieutenant.scout));
-		roster.add(new LightBalloons("PRS Dreadnought", Captain.professor));
-		roster.add(new PonyRiders("Rock Horses", Captain.backface, Lieutenant.medic));
-		roster.add(new PonyRiders("Mules with Mullets", Captain.anita_strum, Lieutenant.surgeon));
-		roster.add(new DoveMasters("Doves de la Paz", Captain.boris, Lieutenant.medic));
-		roster.add(new Harvesters("Trowels", Captain.boris, Lieutenant.surgeon, Lieutenant.medic));
+		roster.add(new StoutOfHeart("Valiant Lads", new Boris(), Lieutenant.Tenkai, Lieutenant.corporal));
+		roster.add(new StoutOfHeart("Noble Chums", new Boris(), Lieutenant.sergeant, Lieutenant.musician));
+		roster.add(new FatherlyTurtle("Ole Racecar", new OleRacecar()));
+		roster.add(new DoveMasters("Palomas", new Boris(), Lieutenant.medic));
+		roster.add(new DoveMasters("Coocoos", new Boris(), Lieutenant.medic));
+		roster.add(new Auxiliaries("2nd Line", new HansFlogl(), Lieutenant.surgeon));
+		roster.add(new Harvesters("Pitchforks", new Boris(), Lieutenant.medic, Lieutenant.musician));
+		roster.add(new Harvesters("Tractors", new Boris(), Lieutenant.surgeon, Lieutenant.scout));
+		roster.add(new LightBalloons("PRS Dreadnought", new Professor()));
+		roster.add(new PonyRiders("Rock Horses", new Backface(), Lieutenant.medic));
+		roster.add(new PonyRiders("Mules with Mullets", new AnitaStrum(), Lieutenant.surgeon));
+		roster.add(new DoveMasters("Doves de la Paz", new Boris(), Lieutenant.medic));
+		roster.add(new Harvesters("Trowels", new Boris(), Lieutenant.surgeon, Lieutenant.medic));
 		
 		calculateValue();
 

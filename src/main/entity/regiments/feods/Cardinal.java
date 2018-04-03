@@ -27,7 +27,7 @@ public class Cardinal extends Regiment {
 		this.race = Race.Feods;
 		this.lieutenantsSize = 0;
 		this.captain = captain;
-		this.type = RegimentType.MONSTER;
+		this.type = RegimentType.HERO;
 				
 		this.baseAttack = 40;
 		this.baseCharge = 5;

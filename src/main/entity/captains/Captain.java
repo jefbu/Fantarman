@@ -1,9 +1,9 @@
 package main.entity.captains;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 import main.entity.skills.Skills;
-import main.strings.CaptainBio;
 
 public class Captain implements Serializable {
 
@@ -28,63 +28,13 @@ public class Captain implements Serializable {
 	public String bio;
 
 	public String iconPath;
+	
+	public ArrayList<Conversation> conversations;
 
-	public Captain(String name, String gender, int attackBonus, int defenceBonus, int chargeBonus, int moraleBonus,
-			int missileBonus, int speedBonus, int orders, int prestige, Skills skill1, Skills skill2, String bio,
-			String iconPath) {
-
-		this.attackBonus = attackBonus;
-		this.defenceBonus = defenceBonus;
-		this.chargeBonus = chargeBonus;
-		this.moraleBonus = moraleBonus;
-		this.missileBonus = missileBonus;
-		this.speedBonus = speedBonus;
-
-		this.name = name;
-		this.gender = gender;
-
-		this.orders = orders;
-		this.prestige = prestige;
-
-		this.skill1 = skill1;
-		this.skill2 = skill2;
-
-		this.bio = bio;
+	public Captain() { 
 		
-		this.iconPath = iconPath;
-
+		conversations = new ArrayList<Conversation>();
+		
 	}
 
-	public static Captain boris = new Captain("Boris", "N.B.", 5, 2, 5, 2, 3, 3, 2, 24, Skills.Healer1,
-			Skills.Deployer1, "just some text", "/portraits/terquit.png");
-	
-	public static Captain ole_racecar = new Captain("Ole Racecar", "female", 3, 2, 1, 5, 0, 0, 3, 40, Skills.Healer2,
-			Skills.Deployer1, CaptainBio.ole_racecar, "/portraits/turtle3.png");
-	
-	public static Captain nicole_schumi = new Captain("Nicole Schumi", "female", 6, 5, 6, 8, 0, 1, 3, 40,
-			Skills.Deployer1, Skills.Healer1, "just some text", "/portraits/test2.png");
-	
-	public static Captain mme_sauce = new Captain("Mme Sauce", "female", 3, 3, 2, -1, 0, 3, 2, 25, Skills.Deployer1,
-			Skills.Healer1, "just some text", "/portraits/test2.png");
-	
-	public static Captain maitre_oiseau = new Captain("Maitre Oiseau", "male", 2, 2, 0, 5, 4, 3, 2, 30,
-			Skills.Deployer1, Skills.Healer1, "just some text", "/portraits/test2.png");
-	
-	public static Captain galaxychaser = new Captain("Galaxychaser", "male", 3, 2, 1, 2, 3, 1, 1, 20, Skills.Deployer1,
-			Skills.Healer1, "just some text", "/portraits/test2.png");
-	
-	public static Captain hans_flogl = new Captain("Hans Flogl", "male", 2, 1, 1, 0, 1, 1, 2, 15, Skills.Deployer1,
-			Skills.Healer1, "just some text", "/portraits/HansFlogl2.png");
-	
-	public static Captain anita_strum = new Captain("Anita Strum", "female", 2, 5, 1, 0, 5, 2, 2, 20, Skills.Deployer1,
-			Skills.Healer1, "just some text", "/portraits/anita.png");
-	
-	public static Captain claudia = new Captain("Claudia", "female", 0, 3, 1, 0, 5, 1, 3, 20, Skills.Deployer1,
-			Skills.Healer1, "just some text", "/portraits/test2.png");
-	
-	public static Captain professor = new Captain("Professor", "N.B.", 1, 2, 2, 3, 2, 3, 3, 30, Skills.Deployer1,
-			Skills.Healer1, CaptainBio.PRS_Dreadnought, "/portraits/professor.png");
-	
-	public static Captain backface = new Captain("Backface", "male", 1, 2, 2, 3, 2, 3, 3, 30, Skills.Deployer1,
-			Skills.Healer1, "Just some text", "/portraits/backface.png");
 }

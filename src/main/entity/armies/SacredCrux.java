@@ -1,6 +1,6 @@
 package main.entity.armies;
 
-import main.entity.captains.Captain;
+import main.entity.captains.Boris;
 import main.entity.lieutenants.Lieutenant;
 import main.entity.regiments.feods.BlazingLight;
 import main.entity.regiments.feods.BlessedGarland;
@@ -18,19 +18,19 @@ public class SacredCrux extends Army {
 
 		name = "Order of the Sacred Crux";
 
-		roster.add(new RepentantMany("Chastity", Captain.boris, Lieutenant.sergeant, Lieutenant.corporal));
-		roster.add(new RepentantMany("Temperance", Captain.boris, Lieutenant.sergeant, Lieutenant.corporal));
-		roster.add(new ShiningFaithful("Charity", Captain.boris, Lieutenant.sergeant, Lieutenant.corporal,
+		roster.add(new RepentantMany("Chastity", new Boris(), Lieutenant.sergeant, Lieutenant.corporal));
+		roster.add(new RepentantMany("Temperance", new Boris(), Lieutenant.sergeant, Lieutenant.corporal));
+		roster.add(new ShiningFaithful("Charity", new Boris(), Lieutenant.sergeant, Lieutenant.corporal,
 				Lieutenant.surgeon));
-		roster.add(new PristineShield("Diligence", Captain.boris, Lieutenant.zealot, Lieutenant.sergeant,
+		roster.add(new PristineShield("Diligence", new Boris(), Lieutenant.zealot, Lieutenant.sergeant,
 				Lieutenant.surgeon));
-		roster.add(new BlessedGarland("Patience", Captain.boris, Lieutenant.sergeant, Lieutenant.corporal,
+		roster.add(new BlessedGarland("Patience", new Boris(), Lieutenant.sergeant, Lieutenant.corporal,
 				Lieutenant.flagbearer));
-		roster.add(new BlazingLight("Virtue", Captain.boris, Lieutenant.sergeant, Lieutenant.corporal));
-		roster.add(new Cardinal("Benedictus", Captain.boris));
-		roster.add(new RedemptionSpirit("Humility", Captain.boris, Lieutenant.sergeant, Lieutenant.corporal,
+		roster.add(new BlazingLight("Virtue", new Boris(), Lieutenant.sergeant, Lieutenant.corporal));
+		roster.add(new Cardinal("Benedictus", new Boris()));
+		roster.add(new RedemptionSpirit("Humility", new Boris(), Lieutenant.sergeant, Lieutenant.corporal,
 				Lieutenant.scout));
-		roster.add(new RedemptionSpirit("Kindness", Captain.boris, Lieutenant.sergeant, Lieutenant.flagbearer,
+		roster.add(new RedemptionSpirit("Kindness", new Boris(), Lieutenant.sergeant, Lieutenant.flagbearer,
 				Lieutenant.musician));
 
 		calculateValue();
