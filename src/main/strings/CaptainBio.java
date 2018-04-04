@@ -22,5 +22,22 @@ public abstract class CaptainBio {
 			+ "they witnessed the birth of the Order of the Sacred Crux, the Wanmen invasion from the Outer Dimension, "
 			+ "and much more. <br>"
 			+ "If they ever die, all these memories will be lost, like tears in the rain.";
+	
+	public static String morushi = "Being granted life only three hundred years ago, "
+			+ "Morushi is considered very young for a Terquit. "
+			+ "It is a testemony to their skill that they are already leading others in battle.";
+	
+	public static String ryoushi = "Ryoushi was the primary Terquit to the court of the Alabaster Emperor. "
+			+ "However, they fell out of grace after a supposed romantic scandal "
+			+ "and were demoted to fight mockbattles as a punishment";
+	
+	public static String tsumiko = "A Terquit with a fashionista streak. "
+			+ "They adorn their armour with bows and ribbons, favouring soft pastel tones. "
+			+ "This has the added effect of being noticeably easier to target by enemy archers, "
+			+ "but Tsumiko is so hardy that they usually just shrug off the enemy projectiles.";
+	
+	
+	
+	
 
 }
