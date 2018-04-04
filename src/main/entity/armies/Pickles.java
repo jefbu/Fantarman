@@ -1,11 +1,11 @@
 package main.entity.armies;
 
-import main.entity.captains.AnitaStrum;
-import main.entity.captains.Backface;
 import main.entity.captains.Boris;
-import main.entity.captains.HansFlogl;
-import main.entity.captains.OleRacecar;
-import main.entity.captains.Professor;
+import main.entity.captains.pickles.AnitaStrum;
+import main.entity.captains.pickles.Backface;
+import main.entity.captains.pickles.HansFlogl;
+import main.entity.captains.pickles.OleRacecar;
+import main.entity.captains.pickles.Professor;
 import main.entity.lieutenants.Lieutenant;
 import main.entity.regiments.piknin.Auxiliaries;
 import main.entity.regiments.piknin.DoveMasters;

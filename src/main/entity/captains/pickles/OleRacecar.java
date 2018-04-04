@@ -1,7 +1,9 @@
-package main.entity.captains;
+package main.entity.captains.pickles;
 
 import java.io.Serializable;
 
+import main.entity.captains.Captain;
+import main.entity.captains.Conversation;
 import main.entity.skills.Skills;
 import main.strings.CaptainBio;
 import main.strings.Conversations;

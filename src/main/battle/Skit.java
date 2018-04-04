@@ -1,20 +1,24 @@
 package main.battle;
 
+import java.awt.Color;
 import java.awt.Dialog;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextPane;
+import javax.swing.border.LineBorder;
 
 import main.entity.armies.Army;
-import main.entity.captains.Captain;
 import main.entity.captains.Conversation;
 import main.entity.regiments.Regiment;
 import main.graphics.battleScreen.BattleScreen;
@@ -26,11 +30,11 @@ public class Skit extends JDialog {
 	private static final long serialVersionUID = 1L;
 
 	JLabel yourIconLabel;
-	JLabel yourTextLabel;
+	JTextPane yourTextLabel;
 	JLabel opponentIconLabel;
-	JLabel opponentTextLabel;
+	JTextPane opponentTextLabel;
 	JButton button;
-	
+
 	int counter;
 
 	ImageLoader imageLoader;
@@ -78,8 +82,17 @@ public class Skit extends JDialog {
 
 		JPanel topTextPanel = new JPanel();
 		topTextPanel.setPreferredSize(new Dimension(width * 5 / 10, height * 3 / 10));
-		topTextPanel.setBackground(Colors.dgreen);
-		yourTextLabel = new JLabel();
+		topTextPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+		topTextPanel.setBackground(Colors.blue);
+		yourTextLabel = new JTextPane();
+		yourTextLabel.setPreferredSize(new Dimension(width * 5 / 10, height * 3 / 10));
+		// yourTextLabel.setLineWrap(true);
+		// yourTextLabel.setWrapStyleWord(true);
+		yourTextLabel.setOpaque(false);
+		yourTextLabel.setBorder(BorderFactory.createEmptyBorder(10, 10, 0, 0));
+		yourTextLabel.setContentType("text/html");
+		yourTextLabel.putClientProperty(JTextPane.HONOR_DISPLAY_PROPERTIES, Boolean.TRUE);
+		yourTextLabel.setFont(new Font("garamond", Font.BOLD, 18));
 		topTextPanel.add(yourTextLabel);
 		panel.add(topTextPanel);
 
@@ -100,8 +113,17 @@ public class Skit extends JDialog {
 
 		JPanel bottomTextPanel = new JPanel();
 		bottomTextPanel.setPreferredSize(new Dimension(width * 5 / 10, height * 3 / 10));
-		bottomTextPanel.setBackground(Colors.dgreen);
-		opponentTextLabel = new JLabel();
+		bottomTextPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+		bottomTextPanel.setBackground(Colors.blue);
+		opponentTextLabel = new JTextPane();
+		opponentTextLabel.setPreferredSize(new Dimension(width * 5 / 10, height * 3 / 10));
+		// opponentTextLabel.setLineWrap(true);
+		// opponentTextLabel.setWrapStyleWord(true);
+		opponentTextLabel.setOpaque(false);
+		opponentTextLabel.setBorder(BorderFactory.createEmptyBorder(10, 10, 0, 0));
+		opponentTextLabel.setContentType("text/html");
+		opponentTextLabel.putClientProperty(JTextPane.HONOR_DISPLAY_PROPERTIES, Boolean.TRUE);
+		opponentTextLabel.setFont(new Font("garamond", Font.BOLD, 18));
 		bottomTextPanel.add(opponentTextLabel);
 		panel.add(bottomTextPanel);
 
@@ -129,8 +151,6 @@ public class Skit extends JDialog {
 
 		panel.add(bottomEmptyPanel);
 
-		fillSkit(yourBattleArmy, opponentBattleArmy);
-
 	}
 
 	public void fillSkit(Army yourBattleArmy, Army opponentBattleArmy) {
@@ -139,14 +159,16 @@ public class Skit extends JDialog {
 
 		for (Regiment regiment : yourBattleArmy.roster) {
 			for (Conversation conversation : regiment.captain.conversations) {
-				for (Regiment opponentRegiment : opponentBattleArmy.roster) {
-					if (conversation.partner.name == opponentRegiment.captain.name) {
-						possibleConversations.add(conversation);
+				if (!conversation.alreadyDone) {
+					for (Regiment opponentRegiment : opponentBattleArmy.roster) {
+						if (conversation.partner.name == opponentRegiment.captain.name) {
+							possibleConversations.add(conversation);
+						}
 					}
-				}
-				for (Regiment playerRegiment : yourBattleArmy.roster) {
-					if (conversation.partner.name == playerRegiment.captain.name) {
-						possibleConversations.add(conversation);
+					for (Regiment playerRegiment : yourBattleArmy.roster) {
+						if (conversation.partner.name == playerRegiment.captain.name) {
+							possibleConversations.add(conversation);
+						}
 					}
 				}
 			}
@@ -155,45 +177,46 @@ public class Skit extends JDialog {
 		if (possibleConversations.size() > 0) {
 
 			Conversation conversation = chooseConversation(possibleConversations);
+
 			counter = 0;
-			
-			yourIconLabel.setIcon(
-					imageLoader.loadImageIcon(conversation.owner.iconPath, width * 2 / 10, height * 3 / 10));
-			opponentIconLabel.setIcon(
-					imageLoader.loadImageIcon(conversation.partner.iconPath, width * 2 / 10, height * 3 / 10));
-			
+
+			yourIconLabel
+					.setIcon(imageLoader.loadImageIcon(conversation.owner.iconPath, width * 2 / 10, height * 3 / 10));
+			opponentIconLabel
+					.setIcon(imageLoader.loadImageIcon(conversation.partner.iconPath, width * 2 / 10, height * 3 / 10));
+
 			setText(conversation, counter);
-				
-				button.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						if (counter + 1 == conversation.texts.length) {
-							button.removeActionListener(button.getActionListeners()[0]);
-							dispose();
-						} else {
+
+			button.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					if (counter + 1 == conversation.texts.length) {
+						button.removeActionListener(button.getActionListeners()[0]);
+						conversation.alreadyDone = true;
+						dispose();
+					} else {
 						counter++;
 						setText(conversation, counter);
-						}
 					}
-				});
-				
-			}
-			
-			setVisible(true);
+				}
+			});
 
+			setVisible(true);
 		}
 
+	}
 
 	private Conversation chooseConversation(ArrayList<Conversation> possibleConversations) {
 		Random random = new Random();
 		int roll = random.nextInt(possibleConversations.size());
 		return possibleConversations.get(roll);
 	}
-	
+
 	private void setText(Conversation conversation, int counter) {
 		if (conversation.ownVoice[counter]) {
-			yourTextLabel.setText(conversation.texts[counter]);
+			yourTextLabel.setText("<font color = 'rgb(210, 210, 250)'>" + conversation.texts[counter]);
 		} else {
-			opponentTextLabel.setText(conversation.texts[counter]);
+			opponentTextLabel.setText(
+					"<font color = 'rgb(210, 210, 250)'>" + "<p align = 'right'> " + conversation.texts[counter]);
 		}
 	}
 

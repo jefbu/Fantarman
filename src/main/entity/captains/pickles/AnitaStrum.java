@@ -1,41 +1,39 @@
-package main.entity.captains;
+package main.entity.captains.pickles;
 
 import java.io.Serializable;
 
+import main.entity.captains.Captain;
 import main.entity.skills.Skills;
 import main.strings.CaptainBio;
 
-public class HansFlogl extends Captain implements Serializable {
+public class AnitaStrum extends Captain implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	public HansFlogl() {
+	public AnitaStrum() {
 		
 		super();
 		
-		name = "Hans Flogl";
-		gender = "male";
+		name = "Anita Strum";
+		gender = "female";
 		
 		attackBonus = 2;
-		defenceBonus = 1;
+		defenceBonus = 5;
 		chargeBonus = 1;
 		moraleBonus = 0;
-		missileBonus = 1;
-		speedBonus = 1;
+		missileBonus = 0;
+		speedBonus = 2;
 		
 		orders = 2;
-		prestige = 15;
+		prestige = 20;
 		
 		skill1 = Skills.Deployer1;
 		skill2 = Skills.Healer1;
 		
 		bio = CaptainBio.ole_racecar;
 		
-		iconPath = "/portraits/HansFlogl2.png";
+		iconPath = "/portraits/anita.png";
 		
 	}
 	
 }
-
-
-

@@ -1,7 +1,8 @@
-package main.entity.captains;
+package main.entity.captains.pickles;
 
 import java.io.Serializable;
 
+import main.entity.captains.Captain;
 import main.entity.skills.Skills;
 import main.strings.CaptainBio;
 
@@ -29,7 +30,7 @@ public class Professor extends Captain implements Serializable {
 		skill1 = Skills.Deployer1;
 		skill2 = Skills.Healer1;
 		
-		bio = CaptainBio.PRS_Dreadnought;
+		bio = CaptainBio.The_Professor;
 		
 		iconPath = "/portraits/professor.png";
 	
