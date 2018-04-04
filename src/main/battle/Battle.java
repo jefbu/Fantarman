@@ -35,6 +35,7 @@ public class Battle {
 		BattleScreen.battleScene.createMap();
 		
 		Skit skit = new Skit(yourBattleArmy, opponentBattleArmy);
+		skit.fillSkit(yourBattleArmy, opponentBattleArmy);
 
 		battleOrchestrator = new BattleOrchestrator(yourBattleArmy, opponentBattleArmy);
 		deployment = new Deployment(battleOrchestrator, yourBattleArmy, opponentBattleArmy);
