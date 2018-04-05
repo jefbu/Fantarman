@@ -36,6 +36,14 @@ public abstract class CaptainBio {
 			+ "This has the added effect of being noticeably easier to target by enemy archers, "
 			+ "but Tsumiko is so hardy that they usually just shrug off the enemy projectiles.";
 	
+	public static String claudia = "Levelheaded, quiet, intelligent and witty. "
+			+ "Claudia was born with paralysis and so joins the Mockbattles in a wheelchair. "
+			+ "Nobody minds though and people respect her capacities and skills exactly the same anyhow.";
+	
+	public static String mmeSauce = "A professional Business Coach, "
+			+ "she participates in Mockbattles as a teamevent with her bemused trainees, "
+			+ "who would rather just spend the day working so they can get rid of their piling up To-Do lists."
+			+ " She starts every battle with a 'Scrum', which nobody really understands.";
 	
 	
 	
