@@ -32,6 +32,7 @@ public class Battle {
 		opponentBattleArmy.battleStrategy = BattleAI.decideGlobalBattleStrategy(opponentBattleArmy, yourBattleArmy);
 		opponentBattleArmy.deploymentStrategy = DeployAI.decideGlobalDeployStrategy(opponentBattleArmy);
 		
+
 		BattleScreen.battleScene.createMap();
 		
 		Skit skit = new Skit(yourBattleArmy, opponentBattleArmy);

@@ -43,6 +43,9 @@ public class BattleOrchestrator {
 			regiment.attributeBattleLife();
 			regiment.attributeBattleStats();
 		}
+		
+		BattleScreen.informationPanel.yourPanel.update(yourBattleArmy);
+		BattleScreen.informationPanel.enemyPanel.update(opponentBattleArmy);
 
 		actionListener = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
