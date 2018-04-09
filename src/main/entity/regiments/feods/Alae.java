@@ -12,11 +12,11 @@ import main.entity.races.Race;
 import main.entity.regiments.Regiment;
 import main.entity.regiments.RegimentType;
 
-public class RedemptionSpirit extends Regiment {
+public class Alae extends Regiment {
 
 	private static final long serialVersionUID = 1L;
 
-	public RedemptionSpirit(String name, Captain captain, Lieutenant lt1, Lieutenant lt2, Lieutenant lt3) {
+	public Alae(String name, Captain captain, Lieutenant lt1, Lieutenant lt2) {
 		
 		super();
 		for (int i = 0; i < captain.orders; i++) {
@@ -24,47 +24,46 @@ public class RedemptionSpirit extends Regiment {
 		}
 		
 		this.name = name;
-		this.regiment = "Redemption Spirit";
+		this.regiment = "Alae";
 		this.race = Race.Feods;
 		this.lieutenantsSize = 2;
 		this.captain = captain;
-		this.type = RegimentType.ARCHERS;
+		this.type = RegimentType.LIGHT_CAVALRY;
 		
 		lieutenants.add(lt1);
 		lieutenants.add(lt2);
-		lieutenants.add(lt3);
 				
-		this.baseAttack = 35;
-		this.baseCharge = 5;
-		this.baseDefence = 45;
-		this.baseMissile = 40;
-		this.baseMorale = 50;
+		this.baseAttack = 50;
+		this.baseCharge = 25;
+		this.baseDefence = 40;
+		this.baseMissile = 0;
+		this.baseMorale = 55;
 		this.baseSpeed = 15;
-		this.baseSpeedVariation = 4;
-		this.baseRange = 9;
-		this.baseMove = 5;
-		this.baseRun = 4;
-		this.baseLife = 25;
+		this.baseSpeedVariation = 5;
+		this.baseRange = 0;
+		this.baseMove = 6;
+		this.baseRun = 7;
+		this.baseLife = 10;
 		
 		this.rows = 2;
-		this.columns = 4;
+		this.columns = 3;
 		
 		panels = new int[rows * columns];
 		
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/feods/spirit_battle.png", width, height);
-		largeIcon = imageLoader.loadImageIcon("/regiments/feods/spirit.png", width * 8, height * 8);
+		icon = imageLoader.loadImageIcon("/regiments/feods/light_battle.png", width, height);
+		largeIcon = imageLoader.loadImageIcon("/regiments/feods/light.png", width * 8, height * 8);
 		
-		weapons.add(Weapons.bows);
-		weapons.add(Weapons.longbows);
-		weapons.add(Weapons.recurve);
+		weapons.add(Weapons.lances);
+		weapons.add(Weapons.twohanders);
 		
-		armours.add(Armour.quilt);
-		armours.add(Armour.halfLeather);
+		armours.add(Armour.halfPlate);
+		armours.add(Armour.plate);
+		armours.add(Armour.chainMail);
 		
-		this.weapon = Weapons.bows;
+		this.weapon = Weapons.spears;
 		this.armour = Armour.halfLeather;
 		
 		calculateTotalStats();

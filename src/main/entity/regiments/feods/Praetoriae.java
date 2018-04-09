@@ -12,11 +12,11 @@ import main.entity.races.Race;
 import main.entity.regiments.Regiment;
 import main.entity.regiments.RegimentType;
 
-public class PristineShield extends Regiment {
+public class Praetoriae extends Regiment {
 
 	private static final long serialVersionUID = 1L;
 
-	public PristineShield(String name, Captain captain, Lieutenant lt1, Lieutenant lt2, Lieutenant lt3) {
+	public Praetoriae(String name, Captain captain, Lieutenant lt1, Lieutenant lt2, Lieutenant lt3) {
 		
 		super();
 		for (int i = 0; i < captain.orders; i++) {
@@ -24,7 +24,7 @@ public class PristineShield extends Regiment {
 		}
 		
 		this.name = name;
-		this.regiment = "Pristine Shield";
+		this.regiment = "Praetoriae";
 		this.race = Race.Feods;
 		this.lieutenantsSize = 3;
 		this.captain = captain;

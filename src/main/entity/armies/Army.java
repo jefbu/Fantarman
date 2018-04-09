@@ -23,6 +23,10 @@ public class Army implements Serializable {
 	
 	public ScoreSheet scoreSheet;
 	
+	public int boardSatisfaction;
+	public int expectation;
+	public int fanSatisfaction;
+	
 	public Army() {
 		
 		roster = new ArrayList<Regiment>();		
@@ -62,6 +66,14 @@ public class Army implements Serializable {
 		case 7: income = income * 8 / 10; break;
 		default: break;
 		}
+	}
+	
+	public void calculateBoardSatisfaction() {
+		
+	}
+	
+	public void calculateFanSatisfaction() {
+		
 	}
 
 }

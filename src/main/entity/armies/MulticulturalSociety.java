@@ -4,7 +4,7 @@ import main.entity.captains.Boris;
 import main.entity.lieutenants.Lieutenant;
 import main.entity.regiments.avialay.Jaywings;
 import main.entity.regiments.avialay.Rooks;
-import main.entity.regiments.feods.PristineShield;
+import main.entity.regiments.feods.Praetoriae;
 import main.entity.regiments.piknin.StoutOfHeart;
 import main.entity.regiments.qoonfu.HairpinThrower;
 import main.entity.regiments.qoonfu.Trainees;
@@ -27,7 +27,7 @@ public class MulticulturalSociety extends Army {
 		roster.add(new Stoopvarmint("Wanmen Cavalry", new Boris(), Lieutenant.paladin, Lieutenant.monstrosity));
 		roster.add(new Kinshiwang("Terquit Anvils", new Boris(), Lieutenant.flagbearer, Lieutenant.musician));
 		roster.add(new PebbleHurlers("Terquit Archers", new Boris(), Lieutenant.sergeant));
-		roster.add(new PristineShield("Feod Cavalry", new Boris(), Lieutenant.sergeant, Lieutenant.ambusher,
+		roster.add(new Praetoriae("Feod Cavalry", new Boris(), Lieutenant.sergeant, Lieutenant.ambusher,
 				Lieutenant.medic));
 		roster.add(new Rooks("Avialay Tanks", new Boris(), Lieutenant.ambusher));
 		roster.add(new Jaywings("Avialay Fliers", new Boris(), Lieutenant.scout));

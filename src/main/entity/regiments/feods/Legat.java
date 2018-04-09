@@ -7,16 +7,15 @@ import main.battle.tactics.Target;
 import main.entity.captains.Captain;
 import main.entity.equipment.Armour;
 import main.entity.equipment.Weapons;
-import main.entity.lieutenants.Lieutenant;
 import main.entity.races.Race;
 import main.entity.regiments.Regiment;
 import main.entity.regiments.RegimentType;
 
-public class BlessedGarland extends Regiment {
-	
+public class Legat extends Regiment {
+
 	private static final long serialVersionUID = 1L;
 
-	public BlessedGarland(String name, Captain captain, Lieutenant lt1, Lieutenant lt2, Lieutenant lt3) {
+	public Legat(String name, Captain captain) {
 		
 		super();
 		for (int i = 0; i < captain.orders; i++) {
@@ -24,46 +23,45 @@ public class BlessedGarland extends Regiment {
 		}
 		
 		this.name = name;
-		this.regiment = "Blessed Garland";
+		this.regiment = "Legat";
 		this.race = Race.Feods;
-		this.lieutenantsSize = 3;
+		this.lieutenantsSize = 0;
 		this.captain = captain;
-		this.type = RegimentType.HEAVY_CAVALRY;
-		
-		lieutenants.add(lt1);
-		lieutenants.add(lt2);
-		lieutenants.add(lt3);
+		this.type = RegimentType.HERO;
 				
-		this.baseAttack = 50;
-		this.baseCharge = 30;
+		this.baseAttack = 40;
+		this.baseCharge = 5;
 		this.baseDefence = 50;
-		this.baseMissile = 0;
-		this.baseMorale = 60;
+		this.baseMissile = 25;
+		this.baseMorale = 65;
 		this.baseSpeed = 14;
-		this.baseSpeedVariation = 5;
-		this.baseRange = 0;
+		this.baseSpeedVariation = 4;
+		this.baseRange = 12;
 		this.baseMove = 6;
-		this.baseRun = 6;
-		this.baseLife = 15;
+		this.baseRun = 3;
+		this.baseLife = 5;
 		
 		this.rows = 2;
-		this.columns = 4;
+		this.columns = 2;
 		
 		panels = new int[rows * columns];
 		
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/feods/garland_battle.png", width, height);
-		largeIcon = imageLoader.loadImageIcon("/regiments/feods/garland.png", width * 8, height * 8);
+		icon = imageLoader.loadImageIcon("/regiments/feods/cardinal_battle.png", width, height);
+		largeIcon = imageLoader.loadImageIcon("/regiments/feods/cardinal.png", width * 8, height * 8);
 		
-		weapons.add(Weapons.lances);
+		weapons.add(Weapons.wands);
+		weapons.add(Weapons.staves);
+		weapons.add(Weapons.sceptres);
+		weapons.add(Weapons.crosiers);
 		
-		armours.add(Armour.halfPlate);
-		armours.add(Armour.plate);
+		armours.add(Armour.robes);
+		armours.add(Armour.vestments);
 		
-		this.weapon = Weapons.lances;
-		this.armour = Armour.halfPlate;
+		this.weapon = Weapons.wands;
+		this.armour = Armour.robes;
 		
 		calculateTotalStats();
 		calculateValue();

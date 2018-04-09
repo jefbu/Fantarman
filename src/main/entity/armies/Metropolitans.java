@@ -2,9 +2,9 @@ package main.entity.armies;
 
 import main.entity.captains.Boris;
 import main.entity.lieutenants.Lieutenant;
-import main.entity.regiments.feods.BlessedGarland;
-import main.entity.regiments.feods.Cardinal;
-import main.entity.regiments.feods.RedemptionSpirit;
+import main.entity.regiments.feods.Equitae;
+import main.entity.regiments.feods.Legat;
+import main.entity.regiments.feods.Triarae;
 import main.entity.regiments.piknin.DoveMasters;
 import main.entity.regiments.piknin.FatherlyTurtle;
 import main.entity.regiments.piknin.PonyRiders;
@@ -24,10 +24,10 @@ public class Metropolitans extends Army {
 		roster.add(new DoveMasters("Leswasohs", new Boris(), Lieutenant.medic));
 		roster.add(new PonyRiders("Shevau", new Boris(), Lieutenant.surgeon));
 		roster.add(new FatherlyTurtle("Obi", new Boris()));
-		roster.add(new Cardinal("St Danny", new Boris()));
-		roster.add(new BlessedGarland("Grass Crowns", new Boris(), Lieutenant.sergeant, Lieutenant.medic,
+		roster.add(new Legat("St Danny", new Boris()));
+		roster.add(new Equitae("Grass Crowns", new Boris(), Lieutenant.sergeant, Lieutenant.medic,
 				Lieutenant.scout));
-		roster.add(new RedemptionSpirit("Burning Belief", new Boris(), Lieutenant.sergeant, Lieutenant.errant,
+		roster.add(new Triarae("Burning Belief", new Boris(), Lieutenant.sergeant, Lieutenant.errant,
 				Lieutenant.medic));
 		roster.add(new DrunkenMaster("Huiyin", new Boris()));
 		roster.add(new CraneWing("Azure Wings", new Boris(), Lieutenant.abomination, Lieutenant.corporal));

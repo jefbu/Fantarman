@@ -1,6 +1,7 @@
 package main.entity.armies;
 
 import main.entity.captains.Boris;
+import main.entity.captains.wanmen.Yiss;
 import main.entity.lieutenants.Lieutenant;
 import main.entity.regiments.wanmen.FireMages;
 import main.entity.regiments.wanmen.Glasscannon;
@@ -24,7 +25,7 @@ public class Wanmen extends Army {
 		roster.add(new FireMages("Skarisin", new Boris(), Lieutenant.paladin));
 		roster.add(new Metralyadora("Rushi", new Boris(), Lieutenant.errant, Lieutenant.ambusher));
 		roster.add(new Stoopvarmint("Siszar", new Boris(), Lieutenant.errant, Lieutenant.surgeon));
-		roster.add(new Stoopvarmint("Siszarni", new Boris(), Lieutenant.paladin, Lieutenant.scout));
+		roster.add(new Stoopvarmint("Siszarni", new Yiss(), Lieutenant.paladin, Lieutenant.scout));
 		roster.add(new Glasscannon("Sek Skra", new Boris(), Lieutenant.errant, Lieutenant.musician));
 		roster.add(new Glasscannon("Sekni Skrani", new Boris(), Lieutenant.paladin, Lieutenant.monstrosity));
 

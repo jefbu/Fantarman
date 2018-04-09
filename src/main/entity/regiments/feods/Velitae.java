@@ -12,11 +12,11 @@ import main.entity.races.Race;
 import main.entity.regiments.Regiment;
 import main.entity.regiments.RegimentType;
 
-public class ShiningFaithful extends Regiment {
-	
+public class Velitae extends Regiment {
+
 	private static final long serialVersionUID = 1L;
-	
-	public ShiningFaithful(String name, Captain captain, Lieutenant lt1, Lieutenant lt2, Lieutenant lt3) {
+
+	public Velitae(String name, Captain captain, Lieutenant lt1, Lieutenant lt2, Lieutenant lt3) {
 		
 		super();
 		for (int i = 0; i < captain.orders; i++) {
@@ -24,29 +24,29 @@ public class ShiningFaithful extends Regiment {
 		}
 		
 		this.name = name;
-		this.regiment = "Shining Faithful";
+		this.regiment = "Velitae";
 		this.race = Race.Feods;
-		this.lieutenantsSize = 3;
+		this.lieutenantsSize = 2;
 		this.captain = captain;
-		this.type = RegimentType.HEAVY_INFANTRY;
+		this.type = RegimentType.ARCHERS;
 		
 		lieutenants.add(lt1);
 		lieutenants.add(lt2);
 		lieutenants.add(lt3);
 				
-		this.baseAttack = 55;
-		this.baseCharge = 20;
-		this.baseDefence = 60;
-		this.baseMissile = 0;
-		this.baseMorale = 70;
-		this.baseSpeed = 14;
+		this.baseAttack = 35;
+		this.baseCharge = 5;
+		this.baseDefence = 45;
+		this.baseMissile = 40;
+		this.baseMorale = 50;
+		this.baseSpeed = 15;
 		this.baseSpeedVariation = 4;
-		this.baseRange = 0;
+		this.baseRange = 9;
 		this.baseMove = 5;
-		this.baseRun = 3;
-		this.baseLife = 30;
+		this.baseRun = 4;
+		this.baseLife = 25;
 		
-		this.rows = 4;
+		this.rows = 2;
 		this.columns = 4;
 		
 		panels = new int[rows * columns];
@@ -54,17 +54,18 @@ public class ShiningFaithful extends Regiment {
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/feods/faithful_battle.png", width, height);
-		largeIcon = imageLoader.loadImageIcon("/regiments/feods/faithful.png", width * 8, height * 8);
+		icon = imageLoader.loadImageIcon("/regiments/feods/spirit_battle.png", width, height);
+		largeIcon = imageLoader.loadImageIcon("/regiments/feods/spirit.png", width * 8, height * 8);
 		
-		weapons.add(Weapons.swords);
-		weapons.add(Weapons.halberds);
+		weapons.add(Weapons.bows);
+		weapons.add(Weapons.longbows);
+		weapons.add(Weapons.recurve);
 		
-		armours.add(Armour.halfPlate);
-		armours.add(Armour.plate);
+		armours.add(Armour.quilt);
+		armours.add(Armour.halfLeather);
 		
-		this.weapon = Weapons.swords;
-		this.armour = Armour.halfPlate;
+		this.weapon = Weapons.bows;
+		this.armour = Armour.halfLeather;
 		
 		calculateTotalStats();
 		calculateValue();

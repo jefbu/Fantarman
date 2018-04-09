@@ -913,137 +913,29 @@ public class BattleScene extends JPanel {
 
 	private void drawRiver() {
 		for (int i = 0; i < indexedPanels.size(); i++) {
-			int index = i;
-			boolean leftLand = false;
-			boolean upLand = false;
-			boolean rightLand = false;
-			boolean downLand = false;
+
+			Random random = new Random();
+			int roll;
+			
 			if (indexedPanels.get(i).terrain == TerrainType.RIVER) {
-				if (index > 0) {
-					switch (indexedPanels.get(i - 1).terrain) {
-					case DESERT:
-						leftLand = true;
-						break;
-					case FOREST:
-						leftLand = true;
-						break;
-					case GRASS:
-						leftLand = true;
-						break;
-					case HILL:
-						leftLand = true;
-						break;
-					case MOUNTAIN:
-						leftLand = true;
-						break;
-					case RIVER:
-						break;
-					case ROAD:
-						break;
-					default:
-						break;
-					}
+				roll = random.nextInt(7);
+				switch (roll) {
+				case 0: indexedPanels.get(i).icon = TileImages.water1Icon; break;
+				case 1: indexedPanels.get(i).icon = TileImages.water2Icon; break;
+				case 2: indexedPanels.get(i).icon = TileImages.water3Icon; break;
+				case 3: indexedPanels.get(i).icon = TileImages.water4Icon; break;
+				case 4: indexedPanels.get(i).icon = TileImages.water5Icon; break;
+				case 5: indexedPanels.get(i).icon = TileImages.water6Icon; break;
+				case 6: indexedPanels.get(i).icon = TileImages.water7Icon; break;
+
 				}
-				if (index < 1535) {
-					switch (indexedPanels.get(i + 1).terrain) {
-					case DESERT:
-						rightLand = true;
-						break;
-					case FOREST:
-						rightLand = true;
-						break;
-					case GRASS:
-						rightLand = true;
-						break;
-					case HILL:
-						rightLand = true;
-						break;
-					case MOUNTAIN:
-						rightLand = true;
-						break;
-					case RIVER:
-						break;
-					case ROAD:
-						break;
-					default:
-						break;
+				
+
+	
 					}
-				}
-				if (index > 48) {
-					switch (indexedPanels.get(i - 48).terrain) {
-					case DESERT:
-						upLand = true;
-						break;
-					case FOREST:
-						upLand = true;
-						break;
-					case GRASS:
-						upLand = true;
-						break;
-					case HILL:
-						upLand = true;
-						break;
-					case MOUNTAIN:
-						upLand = true;
-						break;
-					case RIVER:
-						break;
-					case ROAD:
-						break;
-					default:
-						break;
-					}
-				}
-				if (index < 1488) {
-					switch (indexedPanels.get(i + 48).terrain) {
-					case DESERT:
-						downLand = true;
-						break;
-					case FOREST:
-						downLand = true;
-						break;
-					case GRASS:
-						downLand = true;
-						break;
-					case HILL:
-						downLand = true;
-						break;
-					case MOUNTAIN:
-						downLand = true;
-						break;
-					case RIVER:
-						break;
-					case ROAD:
-						break;
-					default:
-						break;
-					}
-				}
-				if (leftLand == true && rightLand == false && upLand == false && downLand == false)
-					indexedPanels.get(i).icon = TileImages.riverGrassLeftIcon;
-				if (leftLand == false && rightLand == true && upLand == false && downLand == false)
-					indexedPanels.get(i).icon = TileImages.riverGrassRightIcon;
-				if (leftLand == false && rightLand == false && upLand == true && downLand == false)
-					indexedPanels.get(i).icon = TileImages.riverGrassTopIcon;
-				if (leftLand == false && rightLand == false && upLand == false && downLand == true)
-					indexedPanels.get(i).icon = TileImages.riverGrassBottomIcon;
-				if (leftLand == true && rightLand == false && upLand == true && downLand == false)
-					indexedPanels.get(i).icon = TileImages.riverGrassLeftTopIcon;
-				if (leftLand == true && rightLand == false && upLand == false && downLand == true)
-					indexedPanels.get(i).icon = TileImages.riverGrassLeftBottomIcon;
-				if (leftLand == false && rightLand == true && upLand == true && downLand == false)
-					indexedPanels.get(i).icon = TileImages.riverGrassRightTopIcon;
-				if (leftLand == false && rightLand == true && upLand == false && downLand == true)
-					indexedPanels.get(i).icon = TileImages.riverGrassRightBottomIcon;
-				if (leftLand == true && rightLand == true && upLand == false && downLand == false)
-					indexedPanels.get(i).icon = TileImages.riverGrassTopBottomIcon;
-				if (leftLand == false && rightLand == false && upLand == true && downLand == true)
-					indexedPanels.get(i).icon = TileImages.riverGrassLeftRightIcon;
-				if (leftLand == false && rightLand == false && upLand == false && downLand == false)
-					indexedPanels.get(i).icon = TileImages.waterAllSidesIcon;
+
 
 			}
 		}
-	}
 
 }

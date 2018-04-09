@@ -12,10 +12,10 @@ import javax.swing.JPanel;
 import main.Main;
 import main.entity.armies.Army;
 import main.entity.armies.ChiDestroyers;
+import main.entity.armies.Espequr;
 import main.entity.armies.Metropolitans;
 import main.entity.armies.MulticulturalSociety;
 import main.entity.armies.Pickles;
-import main.entity.armies.SacredCrux;
 import main.entity.armies.Skylords;
 import main.entity.armies.TerribleTerquits;
 import main.entity.armies.Wanmen;
@@ -90,11 +90,11 @@ public class GameStartScreen extends JPanel {
 		});
 		add(skylordsButton);
 		
-		JButton sacredCruxButton = new JButton("Sacred Crux");
+		JButton sacredCruxButton = new JButton("Espequr");
 		sacredCruxButton.setPreferredSize(new Dimension(300, 150));
 		sacredCruxButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Main.yourArmy = new SacredCrux();
+				Main.yourArmy = new Espequr();
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.mainPanel.armyView.regimentListPanel.fillRegimentListPanelCombatStats(Main.yourArmy);
@@ -160,7 +160,7 @@ public class GameStartScreen extends JPanel {
 		if (Main.yourArmy.name != "Metropolitans") armies.add(new Metropolitans());
 		if (Main.yourArmy.name != "Multicultural Society") armies.add(new MulticulturalSociety());
 		if (Main.yourArmy.name != "Piknin Pickles") armies.add(new Pickles());
-		if (Main.yourArmy.name != "Order of the Sacred Crux") armies.add(new SacredCrux());
+		if (Main.yourArmy.name != "Espequr") armies.add(new Espequr());
 		if (Main.yourArmy.name != "Skylords") armies.add(new Skylords());
 		if (Main.yourArmy.name != "Terrible Terquits") armies.add(new TerribleTerquits());
 		if (Main.yourArmy.name != "Wanted Wanmen") armies.add(new Wanmen());

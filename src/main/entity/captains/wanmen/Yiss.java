@@ -1,4 +1,4 @@
-package main.entity.captains.terribleTerquits;
+package main.entity.captains.wanmen;
 
 import java.io.Serializable;
 
@@ -6,33 +6,33 @@ import main.entity.captains.Captain;
 import main.entity.skills.Skills;
 import main.strings.CaptainBio;
 
-public class Zuba extends Captain implements Serializable {
+public class Yiss extends Captain implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	public Zuba() {
+	public Yiss() {
 		
 		super();
 		
-		name = "Zuba";
-		gender = "N.B.";
+		name = "Yiss";
+		gender = "female";
 		
 		attackBonus = 2;
-		defenceBonus = 4;
-		chargeBonus = 2;
+		defenceBonus = 2;
+		chargeBonus = 1;
 		moraleBonus = 1;
 		missileBonus = 0;
 		speedBonus = 0;
 		
 		orders = 2;
-		prestige = 50;
+		prestige = 25;
 		
 		skill1 = Skills.Healer2;
 		skill2 = Skills.Deployer1;
 		
-		bio = CaptainBio.zuba;
+		bio = CaptainBio.yiss;
 		
-		iconPath = "/portraits/Zuba.png";
+		iconPath = "/portraits/terquit.png";
 		
 		
 	}

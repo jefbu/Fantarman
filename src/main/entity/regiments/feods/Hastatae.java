@@ -7,61 +7,63 @@ import main.battle.tactics.Target;
 import main.entity.captains.Captain;
 import main.entity.equipment.Armour;
 import main.entity.equipment.Weapons;
+import main.entity.lieutenants.Lieutenant;
 import main.entity.races.Race;
 import main.entity.regiments.Regiment;
 import main.entity.regiments.RegimentType;
 
-public class Cardinal extends Regiment {
-
+public class Hastatae extends Regiment {
+	
 	private static final long serialVersionUID = 1L;
 
-	public Cardinal(String name, Captain captain) {
-		
+	public Hastatae(String name, Captain captain, Lieutenant lt1, Lieutenant lt2) {
+				
 		super();
 		for (int i = 0; i < captain.orders; i++) {
 		instructions.add(new Tactic(Condition.ALWAYS, Target.ENEMY_STRONGEST, Order.FIRE));
 		}
 		
 		this.name = name;
-		this.regiment = "Cardinal";
+		this.regiment = "Hastatae";
 		this.race = Race.Feods;
-		this.lieutenantsSize = 0;
+		this.lieutenantsSize = 2;
 		this.captain = captain;
-		this.type = RegimentType.HERO;
+		this.type = RegimentType.LIGHT_INFANTRY;
+		
+		lieutenants.add(lt1);
+		lieutenants.add(lt2);
 				
 		this.baseAttack = 40;
-		this.baseCharge = 5;
-		this.baseDefence = 50;
-		this.baseMissile = 25;
-		this.baseMorale = 65;
+		this.baseCharge = 10;
+		this.baseDefence = 40;
+		this.baseMissile = 0;
+		this.baseMorale = 40;
 		this.baseSpeed = 14;
 		this.baseSpeedVariation = 4;
-		this.baseRange = 12;
+		this.baseRange = 0;
 		this.baseMove = 6;
 		this.baseRun = 3;
-		this.baseLife = 5;
+		this.baseLife = 30;
 		
-		this.rows = 2;
-		this.columns = 2;
+		this.rows = 3;
+		this.columns = 4;
 		
 		panels = new int[rows * columns];
 		
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/feods/cardinal_battle.png", width, height);
-		largeIcon = imageLoader.loadImageIcon("/regiments/feods/cardinal.png", width * 8, height * 8);
+		icon = imageLoader.loadImageIcon("/regiments/feods/many_battle.png", width, height);
+		largeIcon = imageLoader.loadImageIcon("/regiments/feods/many.png", width * 8, height * 8);
 		
-		weapons.add(Weapons.wands);
-		weapons.add(Weapons.staves);
-		weapons.add(Weapons.sceptres);
-		weapons.add(Weapons.crosiers);
+		weapons.add(Weapons.spears);
+		weapons.add(Weapons.slingshots);
 		
-		armours.add(Armour.robes);
-		armours.add(Armour.vestments);
+		armours.add(Armour.quilt);
+		armours.add(Armour.halfLeather);
 		
-		this.weapon = Weapons.wands;
-		this.armour = Armour.robes;
+		this.weapon = Weapons.spears;
+		this.armour = Armour.halfLeather;
 		
 		calculateTotalStats();
 		calculateValue();
