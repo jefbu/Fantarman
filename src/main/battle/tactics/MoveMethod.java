@@ -42,6 +42,14 @@ public abstract class MoveMethod {
 							if (Adjacency.isAdjacenctToFriend(regiment, tempArmy)) {
 								regiment.setIndices(regiment.panels[0] + 48);
 							}
+							Regiment opponent = Adjacency.isAdjacentToEnemy(regiment, activeArmy, yourBattleArmy,
+									opponentBattleArmy);
+							if (opponent != null) {
+								regiment.inCombat = true;
+								regiment.combatOpponent = opponent;
+								opponent.inCombat = true;
+								opponent.combatOpponent = regiment;
+							}
 						}
 					}
 					if (verticalDistance > 0) {
@@ -49,6 +57,14 @@ public abstract class MoveMethod {
 							regiment.setIndices(regiment.panels[0] + 48);
 							if (Adjacency.isAdjacenctToFriend(regiment, tempArmy)) {
 								regiment.setIndices(regiment.panels[0] - 48);
+							}
+							Regiment opponent = Adjacency.isAdjacentToEnemy(regiment, activeArmy, yourBattleArmy,
+									opponentBattleArmy);
+							if (opponent != null) {
+								regiment.inCombat = true;
+								regiment.combatOpponent = opponent;
+								opponent.inCombat = true;
+								opponent.combatOpponent = regiment;
 							}
 						}
 					}
@@ -58,6 +74,14 @@ public abstract class MoveMethod {
 							if (Adjacency.isAdjacenctToFriend(regiment, tempArmy)) {
 								regiment.setIndices(regiment.panels[0] + 1);
 							}
+							Regiment opponent = Adjacency.isAdjacentToEnemy(regiment, activeArmy, yourBattleArmy,
+									opponentBattleArmy);
+							if (opponent != null) {
+								regiment.inCombat = true;
+								regiment.combatOpponent = opponent;
+								opponent.inCombat = true;
+								opponent.combatOpponent = regiment;
+							}
 						}
 					}
 					if (horizontalDistance > 0) {
@@ -65,6 +89,14 @@ public abstract class MoveMethod {
 							regiment.setIndices(regiment.panels[0] + 1);
 							if (Adjacency.isAdjacenctToFriend(regiment, tempArmy)) {
 								regiment.setIndices(regiment.panels[0] - 1);
+							}
+							Regiment opponent = Adjacency.isAdjacentToEnemy(regiment, activeArmy, yourBattleArmy,
+									opponentBattleArmy);
+							if (opponent != null) {
+								regiment.inCombat = true;
+								regiment.combatOpponent = opponent;
+								opponent.inCombat = true;
+								opponent.combatOpponent = regiment;
 							}
 						}
 					}
@@ -75,6 +107,14 @@ public abstract class MoveMethod {
 							if (Adjacency.isAdjacenctToFriend(regiment, tempArmy)) {
 								regiment.setIndices(regiment.panels[0] + 48);
 							}
+							Regiment opponent = Adjacency.isAdjacentToEnemy(regiment, activeArmy, yourBattleArmy,
+									opponentBattleArmy);
+							if (opponent != null) {
+								regiment.inCombat = true;
+								regiment.combatOpponent = opponent;
+								opponent.inCombat = true;
+								opponent.combatOpponent = regiment;
+							}
 						}
 					}
 					if (verticalDistance > 0) {
@@ -82,6 +122,14 @@ public abstract class MoveMethod {
 							regiment.setIndices(regiment.panels[0] + 48);
 							if (Adjacency.isAdjacenctToFriend(regiment, tempArmy)) {
 								regiment.setIndices(regiment.panels[0] - 48);
+							}
+							Regiment opponent = Adjacency.isAdjacentToEnemy(regiment, activeArmy, yourBattleArmy,
+									opponentBattleArmy);
+							if (opponent != null) {
+								regiment.inCombat = true;
+								regiment.combatOpponent = opponent;
+								opponent.inCombat = true;
+								opponent.combatOpponent = regiment;
 							}
 						}
 					}
@@ -91,6 +139,14 @@ public abstract class MoveMethod {
 							if (Adjacency.isAdjacenctToFriend(regiment, tempArmy)) {
 								regiment.setIndices(regiment.panels[0] + 1);
 							}
+							Regiment opponent = Adjacency.isAdjacentToEnemy(regiment, activeArmy, yourBattleArmy,
+									opponentBattleArmy);
+							if (opponent != null) {
+								regiment.inCombat = true;
+								regiment.combatOpponent = opponent;
+								opponent.inCombat = true;
+								opponent.combatOpponent = regiment;
+							}
 						}
 					}
 					if (horizontalDistance > 0) {
@@ -98,6 +154,14 @@ public abstract class MoveMethod {
 							regiment.setIndices(regiment.panels[0] + 1);
 							if (Adjacency.isAdjacenctToFriend(regiment, tempArmy)) {
 								regiment.setIndices(regiment.panels[0] - 1);
+							}
+							Regiment opponent = Adjacency.isAdjacentToEnemy(regiment, activeArmy, yourBattleArmy,
+									opponentBattleArmy);
+							if (opponent != null) {
+								regiment.inCombat = true;
+								regiment.combatOpponent = opponent;
+								opponent.inCombat = true;
+								opponent.combatOpponent = regiment;
 							}
 						}
 					}
