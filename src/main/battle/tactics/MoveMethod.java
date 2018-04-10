@@ -39,7 +39,7 @@ public abstract class MoveMethod {
 					if (verticalDistance < 0) {
 						if (roll < (4 + getTerrainBonus(regiment, -48))) {
 							regiment.setIndices(regiment.panels[0] - 48);
-							if (!Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
+							if (Adjacency.isAdjacenctToFriend(regiment, tempArmy)) {
 								regiment.setIndices(regiment.panels[0] + 48);
 							}
 						}
@@ -47,7 +47,7 @@ public abstract class MoveMethod {
 					if (verticalDistance > 0) {
 						if (roll < (4 + getTerrainBonus(regiment, 48))) {
 							regiment.setIndices(regiment.panels[0] + 48);
-							if (!Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
+							if (Adjacency.isAdjacenctToFriend(regiment, tempArmy)) {
 								regiment.setIndices(regiment.panels[0] - 48);
 							}
 						}
@@ -55,7 +55,7 @@ public abstract class MoveMethod {
 					if (horizontalDistance < 0) {
 						if (roll2 < (1 + getTerrainBonus(regiment, -1))) {
 							regiment.setIndices(regiment.panels[0] - 1);
-							if (!Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
+							if (Adjacency.isAdjacenctToFriend(regiment, tempArmy)) {
 								regiment.setIndices(regiment.panels[0] + 1);
 							}
 						}
@@ -63,7 +63,7 @@ public abstract class MoveMethod {
 					if (horizontalDistance > 0) {
 						if (roll2 < (1 + getTerrainBonus(regiment, 1))) {
 							regiment.setIndices(regiment.panels[0] + 1);
-							if (!Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
+							if (Adjacency.isAdjacenctToFriend(regiment, tempArmy)) {
 								regiment.setIndices(regiment.panels[0] - 1);
 							}
 						}
@@ -72,7 +72,7 @@ public abstract class MoveMethod {
 					if (verticalDistance < 0) {
 						if (roll < (1 + getTerrainBonus(regiment, -48))) {
 							regiment.setIndices(regiment.panels[0] - 48);
-							if (!Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
+							if (Adjacency.isAdjacenctToFriend(regiment, tempArmy)) {
 								regiment.setIndices(regiment.panels[0] + 48);
 							}
 						}
@@ -80,7 +80,7 @@ public abstract class MoveMethod {
 					if (verticalDistance > 0) {
 						if (roll < (1 + getTerrainBonus(regiment, 48))) {
 							regiment.setIndices(regiment.panels[0] + 48);
-							if (!Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
+							if (Adjacency.isAdjacenctToFriend(regiment, tempArmy)) {
 								regiment.setIndices(regiment.panels[0] - 48);
 							}
 						}
@@ -88,7 +88,7 @@ public abstract class MoveMethod {
 					if (horizontalDistance < 0) {
 						if (roll2 < (4 + getTerrainBonus(regiment, -1))) {
 							regiment.setIndices(regiment.panels[0] - 1);
-							if (!Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
+							if (Adjacency.isAdjacenctToFriend(regiment, tempArmy)) {
 								regiment.setIndices(regiment.panels[0] + 1);
 							}
 						}
@@ -96,7 +96,7 @@ public abstract class MoveMethod {
 					if (horizontalDistance > 0) {
 						if (roll2 < (4 + getTerrainBonus(regiment, 1))) {
 							regiment.setIndices(regiment.panels[0] + 1);
-							if (!Adjacency.isNotAdjacenctToFriend(regiment, tempArmy)) {
+							if (Adjacency.isAdjacenctToFriend(regiment, tempArmy)) {
 								regiment.setIndices(regiment.panels[0] - 1);
 							}
 						}
