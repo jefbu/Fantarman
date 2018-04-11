@@ -22,6 +22,8 @@ public class SatisfactionPanel extends JPanel {
 	private ContentPanel fanSatisfactionPanel;
 	private LabeledPanel fanSatisfactionAmountPanel;
 	
+	private BoardHistoryPanel boardHistoryPanel;
+	
 	public SatisfactionPanel(int width, int height, Colour colour) {
 		
 		super();
@@ -49,9 +51,8 @@ public class SatisfactionPanel extends JPanel {
 			boardSatisfactionPanel.insidePanel.add(boardSatisfactionAmountPanel);
 		add(boardSatisfactionPanel);
 		
-		JPanel inbetween = new JPanel();
-		inbetween.setPreferredSize(new Dimension(width * 9 / 10, height * 29 / 100));
-		add(inbetween);
+		boardHistoryPanel = new BoardHistoryPanel(width * 9 / 10, height * 29 / 100);
+		add(boardHistoryPanel);
 		
 		fanSatisfactionPanel = new ContentPanel(width * 9 / 10, height / 10, Colour.RED,
 				new FlowLayout(FlowLayout.LEFT, 0, height / 10 / 6));
@@ -76,7 +77,10 @@ public class SatisfactionPanel extends JPanel {
 	
 	public void fillSatisfactionPanel(Army army) {
 		
-		boardSatisfactionAmountPanel.label.setText("20");
+		boardSatisfactionAmountPanel.label.setText(Integer.toString(army.boardSatisfaction));
+		army.boardSatisfaction = 100;
+		
+		boardHistoryPanel.fillBoardHistoryPanel(army);
 		
 	}
 	

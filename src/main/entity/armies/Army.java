@@ -24,6 +24,7 @@ public class Army implements Serializable {
 	public ScoreSheet scoreSheet;
 	
 	public int boardSatisfaction;
+	public int[] previousBoardSatisfaction;
 	public int expectation;
 	public int fanSatisfaction;
 	
@@ -32,6 +33,11 @@ public class Army implements Serializable {
 		roster = new ArrayList<Regiment>();		
 		scoreSheet = new ScoreSheet();
 		
+		previousBoardSatisfaction = new int[4];
+		previousBoardSatisfaction[0] = 10;
+		previousBoardSatisfaction[1] = 44;
+		previousBoardSatisfaction[2] = 81;
+		previousBoardSatisfaction[3] = 62;
 		
 	}
 	
