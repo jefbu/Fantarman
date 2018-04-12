@@ -23,6 +23,7 @@ public class SatisfactionPanel extends JPanel {
 	private LabeledPanel fanSatisfactionAmountPanel;
 	
 	private BoardHistoryPanel boardHistoryPanel;
+	private FanHistoryPanel fanHistoryPanel;
 	
 	public SatisfactionPanel(int width, int height, Colour colour) {
 		
@@ -68,9 +69,8 @@ public class SatisfactionPanel extends JPanel {
 			fanSatisfactionPanel.insidePanel.add(fanSatisfactionAmountPanel);
 		add(fanSatisfactionPanel);
 		
-		JPanel inbetween2 = new JPanel();
-		inbetween2.setPreferredSize(new Dimension(width * 9 / 10, height * 29 / 100));
-		add(inbetween2);
+		fanHistoryPanel = new FanHistoryPanel(width * 9 / 10, height * 29 / 100);
+		add(fanHistoryPanel);
 		
 	}
 	
@@ -78,9 +78,10 @@ public class SatisfactionPanel extends JPanel {
 	public void fillSatisfactionPanel(Army army) {
 		
 		boardSatisfactionAmountPanel.label.setText(Integer.toString(army.boardSatisfaction));
-		army.boardSatisfaction = 100;
-		
+		fanSatisfactionAmountPanel.label.setText(Integer.toString(army.fanSatisfaction));
+
 		boardHistoryPanel.fillBoardHistoryPanel(army);
+		fanHistoryPanel.fillFanHistoryPanel(army);
 		
 	}
 	

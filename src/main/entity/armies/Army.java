@@ -2,6 +2,7 @@ package main.entity.armies;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import main.Main;
 import main.AI.DeploymentStrategy;
@@ -16,6 +17,7 @@ public class Army implements Serializable {
 	public int value;
 	public String name;
 	public int money;
+	public int[] oldMoney;
 	public int upkeep;
 	public int income;
 	public GlobalBattleStrategy battleStrategy;
@@ -25,6 +27,7 @@ public class Army implements Serializable {
 	
 	public int boardSatisfaction;
 	public int[] previousBoardSatisfaction;
+	public int[] previousFanSatisfaction;
 	public int expectation;
 	public int fanSatisfaction;
 	
@@ -34,10 +37,18 @@ public class Army implements Serializable {
 		scoreSheet = new ScoreSheet();
 		
 		previousBoardSatisfaction = new int[4];
-		previousBoardSatisfaction[0] = 10;
-		previousBoardSatisfaction[1] = 44;
-		previousBoardSatisfaction[2] = 81;
-		previousBoardSatisfaction[3] = 62;
+		previousBoardSatisfaction[0] = 60;
+		previousBoardSatisfaction[1] = 60;
+		previousBoardSatisfaction[2] = 60;
+		previousBoardSatisfaction[3] = 60;
+		boardSatisfaction = 60;
+		previousFanSatisfaction = new int[4];
+		previousFanSatisfaction[0] = 60;
+		previousFanSatisfaction[1] = 60;
+		previousFanSatisfaction[2] = 60;
+		previousFanSatisfaction[3] = 60;
+		fanSatisfaction = 60;
+		
 		
 	}
 	
@@ -74,12 +85,59 @@ public class Army implements Serializable {
 		}
 	}
 	
-	public void calculateBoardSatisfaction() {
+	public void calculateBoardSatisfaction(int matchResult) {
+		
+		boardSatisfaction = boardSatisfaction / 2;
+		boardSatisfaction = boardSatisfaction + matchResult;
+		boardSatisfaction = boardSatisfaction + calculateLeagueResult();
+		boardSatisfaction = boardSatisfaction + (3 * calculateFinancialStability());
+		System.out.println("New Board Satisfaction is " + boardSatisfaction);
 		
 	}
 	
-	public void calculateFanSatisfaction() {
+	public void calculateFanSatisfaction(int matchResult) {
+		
+		fanSatisfaction = fanSatisfaction / 2;
+		fanSatisfaction = fanSatisfaction + (2 * matchResult);
+		fanSatisfaction = fanSatisfaction + (2 * calculateLeagueResult());
+		fanSatisfaction = fanSatisfaction + calculateFinancialStability();
 		
 	}
+	
+	private int calculateLeagueResult() {
+		
+		int leaguePosition = 0;
+		
+		for (int i = 0; i < Main.league.armies.size(); i++) {
+			if (Main.league.armies.get(i) == this) {
+				leaguePosition = i;
+			}
+		}
+		
+		switch (leaguePosition) {
+		case 0: return 10;
+		case 1: return 8;
+		case 2: return 7;
+		case 3: return 6;
+		case 4: return 4;
+		case 5: return 3;
+		case 6: return 1;
+		case 7: return 0;
+		}
+		
+		return 2000;
+		
+	}
+	
+	private int calculateFinancialStability() {
+		if (income > upkeep * 15 / 10) { return 10; }
+		else if (income > upkeep * 125 / 100) { return 8; }
+		else if (income > upkeep) { return 6; }
+		else if (income > upkeep * 8 / 10) { return 4; }
+		else if (income > upkeep * 6 / 10) { return 2; }
+		else { return 0; }
+	}
+	
+	
 
 }

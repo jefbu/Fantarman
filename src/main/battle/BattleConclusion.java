@@ -18,6 +18,7 @@ import main.strings.Adjectives;
 public class BattleConclusion extends TextPopup {
 
 	private static final long serialVersionUID = 1L;
+	private int matchResult;
 
 	public BattleConclusion(Colour colour, Army yourBattleArmy, Army opponentBattleArmy) {
 		
@@ -52,6 +53,8 @@ public class BattleConclusion extends TextPopup {
 				else if (matchup.army2 == Main.yourArmy) {	matchup.result = Result.L; }
 			}
 			
+			matchResult = 10;
+			
 		}
 		else if (yourPercentage > enemyPercentage * 12 / 10) { 
 			writeText ("minor victory"); 
@@ -63,6 +66,8 @@ public class BattleConclusion extends TextPopup {
 				if (matchup.army1 == Main.yourArmy) { matchup.result = Result.w; }
 				else if (matchup.army2 == Main.yourArmy) {	matchup.result = Result.l; }
 			}
+			
+			matchResult = 7;
 		}
 		else if (yourPercentage > enemyPercentage * 8 / 10) { 
 			Main.yourArmy.scoreSheet.draws++;
@@ -74,6 +79,8 @@ public class BattleConclusion extends TextPopup {
 				if (matchup.army1 == Main.yourArmy) { matchup.result = Result.D; }
 				else if (matchup.army2 == Main.yourArmy) {	matchup.result = Result.D; }
 			}
+			
+			matchResult = 4;
 		}
 		
 		else if (yourPercentage > enemyPercentage * 6 / 10) { 
@@ -86,7 +93,10 @@ public class BattleConclusion extends TextPopup {
 				if (matchup.army1 == Main.yourArmy) { matchup.result = Result.l; }
 				else if (matchup.army2 == Main.yourArmy) {	matchup.result = Result.w; }
 			}
+			
+			matchResult = 1;
 		}
+		
 		else { 
 			Main.yourArmy.scoreSheet.bigLosses++;
 			Main.yourArmy.scoreSheet.calculatePoints();
@@ -97,6 +107,8 @@ public class BattleConclusion extends TextPopup {
 				if (matchup.army1 == Main.yourArmy) { matchup.result = Result.L; }
 				else if (matchup.army2 == Main.yourArmy) {	matchup.result = Result.W; }
 			}
+			
+			matchResult = 0;
 		}
 
 		calculateOpponentResults();
@@ -116,6 +128,9 @@ public class BattleConclusion extends TextPopup {
 				return p2.scoreSheet.totalPoints - p1.scoreSheet.totalPoints;
 			}
 		});
+		
+		Main.yourArmy.calculateBoardSatisfaction(matchResult);
+		Main.yourArmy.calculateFanSatisfaction(matchResult);
 		
 		Screen.gameScreen.mainPanel.armyView.fillArmyView(Main.yourArmy);
 		Screen.gameScreen.mainPanel.homeView.fillHomeScreen();;
