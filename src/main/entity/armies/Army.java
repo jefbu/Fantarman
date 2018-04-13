@@ -87,6 +87,10 @@ public class Army implements Serializable {
 	
 	public void calculateBoardSatisfaction(int matchResult) {
 		
+		previousBoardSatisfaction[0] = previousBoardSatisfaction[1];
+		previousBoardSatisfaction[1] = previousBoardSatisfaction[2];
+		previousBoardSatisfaction[2] = previousBoardSatisfaction[3];
+		previousBoardSatisfaction[3] = boardSatisfaction;
 		boardSatisfaction = boardSatisfaction / 2;
 		boardSatisfaction = boardSatisfaction + matchResult;
 		boardSatisfaction = boardSatisfaction + calculateLeagueResult();
@@ -97,6 +101,10 @@ public class Army implements Serializable {
 	
 	public void calculateFanSatisfaction(int matchResult) {
 		
+		previousFanSatisfaction[0] = previousFanSatisfaction[1];
+		previousFanSatisfaction[1] = previousFanSatisfaction[2];
+		previousFanSatisfaction[2] = previousFanSatisfaction[3];
+		previousFanSatisfaction[3] = fanSatisfaction;
 		fanSatisfaction = fanSatisfaction / 2;
 		fanSatisfaction = fanSatisfaction + (2 * matchResult);
 		fanSatisfaction = fanSatisfaction + (2 * calculateLeagueResult());
