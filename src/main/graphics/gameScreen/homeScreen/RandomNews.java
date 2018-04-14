@@ -1,31 +1,54 @@
 package main.graphics.gameScreen.homeScreen;
 
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Random;
 
 import main.Main;
-import main.entity.captains.Captain;
-import main.entity.regiments.Regiment;
 
 public class RandomNews {
 
 	public static String[] newsItems;
-	private static int extreme;
+	private static int extremityRules = 1;
+	private static int spaghettiCounter = 1;
 	Random random;
 
 	public RandomNews() {
 		random = new Random();
-		extreme = 1;
 	}
 
 	public String getNews() {
 		
-		int roll = random.nextInt(100);
-			if(roll < 80) { return getCalendarEventNews(); }
-		else {
-		int roll2 = random.nextInt(3);
-		switch (roll2) {
+		int rollGetNews = random.nextInt(1000);
+			if(rollGetNews > 800) { return getCalendarEventNews(); }
+		else if(rollGetNews > 600) { return getRandomArmyNews(); }
+		else if(rollGetNews > 400) { return getYourArmyNews(); }
+		else { return getSnippet(); }
+			
+	}
+	
+	private String getCalendarEventNews() {
+		return (Main.league.armies.get(0).name + " is currently in first spot!");		
+	}
+	
+	private String getRandomArmyNews() {
+		return "News related to " + getRandomArmy();
+	}
+	
+	private String getYourArmyNews() {
+		
+		int rollGetYourArmyNews = random.nextInt(1000);
+		if(rollGetYourArmyNews > 800) { return getFanReaction(); }
+		else if(rollGetYourArmyNews > 600) { return getBoardReaction(); }
+		else if(rollGetYourArmyNews > 400) { return getCaptainReaction(); }
+		
+		else return "Your army is in good shape";
+		//else if(roll > 60) { getBoardReaction(); }
+
+	}
+	
+	private String getSnippet() {	
+	
+		int rollGetSnippet = random.nextInt(3);
+		switch (rollGetSnippet) {
 		case 0:
 			return "<font color = 'rgb(20, 40, 80)'>"
 					+ "After a period of political turmoil, the Board of Direction of the CSA" + "<br>"
@@ -44,78 +67,161 @@ public class RandomNews {
 					+ "would be coming from, " + "<br>"
 					+ "nor how much the investor would want to take an active part in the daily management.";
 		}
-		return "error";
-		}
+		return "error in get News Snippet";
 	}
+	
+
+
+
+
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	private String getFanReaction() {
+		
+		if (Main.yourArmy.fanSatisfaction > 75) {
+			switch(spaghettiCounter) {
+			
+			case 1: spaghettiCounter++;
+				return "A letter arrived on your desk, coming from the " + getFanclubName() + " fanclub. <br>"
+						+ "In it, you are heartily invited to join them in their annual spaghetti afternoon, <br>"
+						+ "the profits of which go to a good cause.";
+				
+			case 2: spaghettiCounter++;
+				return "Another letter arrived from the " + getFanclubName() + " fanclub. <br> "
+						+ "It voices their concern over the fact you haven't confirmed your presence yet to their"
+						+ " annual spaghetti afternoon. <br>"
+						+ "It also mentions the possibility of extending the event with a karaoke evening";
+				
+			case 3: spaghettiCounter++;
+				return "There is another " + getFanclubName() + " fanclub related letter. This one has a list of songs: "
+						+ "<br> <font size = 3>"
+						+ "<ul> <li>" + getRandomSong() + "</li>"
+						+ "<li>" + getRandomSong() + " </li> "
+						+ "<li>" + getRandomSong() + " </li> "
+						+ "<li>" + getRandomSong() + " </li> "
+						+ "</ul> ";			
+			
+			case 4: spaghettiCounter++;
+				return "There is a letter from the Board of Directors. <br>"
+						+ "It contains a warm but undeniably empathetic suggestion to attend the " + getFanclubName()
+						+ "<br> their spaghetti event. Even if it means singing karaoke.";
+			
+			}
+			}
+		
+		else if (Main.yourArmy.fanSatisfaction > 50) {
+			return "In this week's edition of the " + getFanclubName() + " newsletter, <br>"
+					+ "a small article was written about your tactical handling and progress made with the team. <br>"
+					+ "While overall positive, the article does include some subtler jabs, <br>specifically questioning "
+					+ "your decision to " + getCriticism();
+					
+			
+					
+		}
+		
+		return "There is a letter from the fanclub inviting you to another event. <br>"
+				+ "However, after the last time, you decide to politely ignore this one.";
+	}
+	
+	private String getBoardReaction() {
+		
+		return "Board Reaction";
+		
+	}
+	
+	private String getCaptainReaction() {
+		
+		return "Captain Reaction";
+		
+	}
+	
+	private String getCriticism() {
+		int rollCriticism = random.nextInt(5);
+		switch(rollCriticism) {
+		case 0: return "not include the youth so they can get real battle experience.";
+		case 1: return "be too tight with the money.";
+		case 2: return "show a lack of ambition during press conferences.";
+		case 3: return "skip out on going to the annual fanclub Spaghetti event.";
+		case 4: return "be too aggressive during battles, causing too many injuries.";
+		}
+		return "Error in get Criticism";
+	}
+	
+	private String getRandomSong() {
+		int rollGetRandomSong = random.nextInt(10);
+		switch(rollGetRandomSong) {
+		case 0: return "Jessica Luvin: The Pain it does not End";
+		case 1: return "Mike Hartigan: I've got some Beer in the back of my Truck";
+		case 2: return "The Hairy Pots: Rockin' in the Liberated Earth";
+		case 3: return "Jamilla P. featuring Dingbusters: Grab that Wanmen by the uzi";
+		case 4: return "Amanda Lionmane: Grannies to the top";
+		case 5: return "The Cheap Tables: Sharon";
+		case 6: return "The Fingertips: Elaine <font size = 1> (we recommend this one!)";
+		case 7: return "Mumbling Abdomens: Psycho Lover";
+		case 8: return "One-tooth Bubba Bill: The Old Road to Melwarankee";
+		case 9: return "Baseball Bat Massacre: Lord of the Abyss";
+		}
+		return "error in get Random Song";
+	}
+	
+	private String getFanclubName() {
+		switch(Main.yourArmy.name) {
+		case "Piknin Pickles": return "The Vegetable Garden";
+		case "Wanted Wanmen": return "Wanted! Dead or Alive";
+		case "Terrible Terquits": return "Clay and Ceramic";
+		case "Skylords": return "Cloudy Atmposphere";
+		case "Chi Destroyers": return "Ichiban Faito";
+		case "Espequr": return "That One Gallic Town";
+		case "Multicultural Society": return "The Third Way";
+		case "Metropolitans": return "Melting Pot";
+		}
+		return "Error in Fanclub name";
+	}
+
 	
 	private String getRandomArmy() {
-		int roll = random.nextInt(Main.league.armies.size());
-		return (Main.league.armies.get(roll).name);
-	}
-	
-	private String getCalendarEventNews() {
-		int roll = random.nextInt(Main.league.armies.size());
-		return getNewsRelatedToArmy(roll);		
-	}
-	
-	private String getNewsRelatedToArmy(int army) {
-		int roll = random.nextInt(10);
-		if (roll > 6) { return getNewsRelatedToRegiment(army); }
-		else { return getNewsRelatedToWholeArmy(army); }
-	}
-	
-	private String getNewsRelatedToRegiment(int army) {
-		Collections.sort(Main.league.armies.get(army).roster, new Comparator<Regiment>() {
-			@Override
-			public int compare(Regiment p1, Regiment p2) {
-				return p2.captain.prestige - p1.captain.prestige;
-			}			
-		});
-		int roll = random.nextInt(10);
-		if (roll > 3) { return getCaptainNews(Main.league.armies.get(army).roster.get(0).captain); } 
-		else if (roll > 0) { return getCaptainNews(Main.league.armies.get(army).roster.get(1).captain); } 
-		else { return getCaptainNews(Main.league.armies.get(army).roster.get(2).captain); }		
-	}
-	
-	private String getCaptainNews(Captain captain) {
-		int roll = random.nextInt(10);
-		if (roll > 4) {	return captain.name + " complained"; }
-		else { return captain.name + " is thinking of retiring"; }
-	}
-	
-	private String getNewsRelatedToWholeArmy(int army) {
-		return "this army is doing well";
-	}
-
+		int rollGetRandomArmy = random.nextInt(Main.league.armies.size());
+		return (Main.league.armies.get(rollGetRandomArmy).name);
+	}	
+		
 	private String chooseRandomName() {
-		Random random = new Random();
-		int roll = random.nextInt(5);
+		int rollChooseRandomName = random.nextInt(7);
 
-		switch (roll) {
+		switch (rollChooseRandomName) {
 		case 0: return "Alicia Mountbatten";
 		case 1: return "Barry Smith";
 		case 2: return "Ekkryu Kriwsszigh";
 		case 3: return "Lilianne Veaudelin";
 		case 4: return "Hugo Thompson";
+		case 5: return "Mr Joanes";
+		case 6: return "Isabella Veracruz";
 		} 
 		return null;
 	}
 
 	private String newExtremeRule() {
-		Random random = new Random();
 		boolean goUp = random.nextBoolean();
-		switch (extreme) {
+		switch (extremityRules) {
 		case 0:
-			extreme++;
+			extremityRules++;
 			return " minor injuries up to broken bones will now no longer be considered fouls";
 		case 1:
 			if (goUp) {
-				extreme++;
+				extremityRules++;
 				return " medium injuries including brain damage and permanent paralysis" + "<br>"
 						+ "will now no longer be considered fouls";
 			} else {
 				int rename = random.nextInt(100);
-				extreme--;
+				extremityRules--;
 				if (rename > 2) {
 					return " only actions resulting in the smallest of injuries will now be allowed." + "<br>"
 							+ "A notion to rename the Mockbattle League into the Circle of Friends was dismissed though";
@@ -126,18 +232,18 @@ public class RandomNews {
 			}
 		case 2:
 			if (goUp) {
-				extreme++;
+				extremityRules++;
 				return " severe and immediately life-threatening injuries will now be considered fair play";
 			} else {
-				extreme--;
+				extremityRules--;
 				return " injuries beyond broken bones will now be treated as fouls";
 			}
 		case 3:
-			extreme--;
+			extremityRules--;
 			return " Injury tolerance will now be restricted to -at most- permanent brain damage";
 		}
 
-		return "error";
+		return "error on new Extreme Rules";
 	}
 
 }

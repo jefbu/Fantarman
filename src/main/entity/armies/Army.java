@@ -2,7 +2,6 @@ package main.entity.armies;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collections;
 
 import main.Main;
 import main.AI.DeploymentStrategy;
