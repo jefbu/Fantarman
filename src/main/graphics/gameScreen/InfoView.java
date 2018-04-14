@@ -9,6 +9,7 @@ import main.components.Colour;
 import main.entity.armies.Army;
 import main.graphics.gameScreen.infoView.MoneyPanel;
 import main.graphics.gameScreen.infoView.SatisfactionPanel;
+import main.graphics.gameScreen.infoView.TrophyPanel;
 import main.utility.Colors;
 
 public class InfoView extends JPanel {
@@ -17,6 +18,7 @@ public class InfoView extends JPanel {
 	
 	MoneyPanel moneyPanel;
 	SatisfactionPanel satisfactionPanel;
+	TrophyPanel trophyPanel;
 
 	public InfoView(int gameScreenWidth, int gameScreenHeight) {
 
@@ -35,9 +37,12 @@ public class InfoView extends JPanel {
 		
 		satisfactionPanel = new SatisfactionPanel(roundedWidth / 3, unroundedHeight * 3 / 4, Colour.DGREEN); 
 		
+		trophyPanel = new TrophyPanel(roundedWidth, unroundedHeight / 4);
+		
 		
 		add(moneyPanel);
 		add(satisfactionPanel);
+		add(trophyPanel);
 		
 	}
 	
@@ -45,6 +50,7 @@ public class InfoView extends JPanel {
 		
 		moneyPanel.fillMoneyPanel(army);
 		satisfactionPanel.fillSatisfactionPanel(army);
+		trophyPanel.fillTrophyPanel();
 		
 	}
 

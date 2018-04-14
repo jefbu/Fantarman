@@ -3,6 +3,8 @@ package main.graphics.gameScreen.homeScreen;
 import java.util.Random;
 
 import main.Main;
+import main.utility.SaveTrophies;
+import main.utility.Trophies;
 
 public class RandomNews {
 
@@ -87,7 +89,7 @@ public class RandomNews {
 	
 	private String getFanReaction() {
 		
-		if (Main.yourArmy.fanSatisfaction > 75) {
+		if (Main.yourArmy.fanSatisfaction > 50) {
 			switch(spaghettiCounter) {
 			
 			case 1: spaghettiCounter++;
@@ -111,6 +113,8 @@ public class RandomNews {
 						+ "</ul> ";			
 			
 			case 4: spaghettiCounter++;
+					Trophies.spaghetti = true;
+					SaveTrophies.save();
 				return "There is a letter from the Board of Directors. <br>"
 						+ "It contains a warm but undeniably empathetic suggestion to attend the " + getFanclubName()
 						+ "<br> their spaghetti event. Even if it means singing karaoke.";
@@ -118,7 +122,7 @@ public class RandomNews {
 			}
 			}
 		
-		else if (Main.yourArmy.fanSatisfaction > 50) {
+		else if (Main.yourArmy.fanSatisfaction > 30) {
 			return "In this week's edition of the " + getFanclubName() + " newsletter, <br>"
 					+ "a small article was written about your tactical handling and progress made with the team. <br>"
 					+ "While overall positive, the article does include some subtler jabs, <br>specifically questioning "
