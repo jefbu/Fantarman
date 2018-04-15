@@ -4,16 +4,11 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
 import javax.swing.JPanel;
 
-import main.Main;
 import main.components.Colour;
 import main.components.ContentPanel;
-import main.components.LabeledPanel;
-import main.entity.regiments.Regiment;
 import main.utility.Colors;
 
 public class ShortInfo extends JPanel {
