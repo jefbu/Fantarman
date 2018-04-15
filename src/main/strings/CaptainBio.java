@@ -2,6 +2,15 @@ package main.strings;
 
 public abstract class CaptainBio {
 	
+	public static String anitaStrum = "The record holder of growing Ikros' largest pumpkin, "
+			+ "she was chosen to be captain of the Tractors on this merit alone. "
+			+ "While no military genius by a long stretch, she nevertheless performs surprisingly well, "
+			+ "claiming tactics to be a lot like selective vegetable breeding.";
+	
+	public static String backface = "Motorically dyslexic, Backface sometimes mounts his pony with the wrong foot. "
+			+ "Once he gets it right though, he is a skilled and well respected chevalier, "
+			+ "who fights for glory and prestige rather than the more earthly rewards most other captains favour.";
+	
 	public static String claudia = "Levelheaded, quiet, intelligent and witty. "
 			+ "Claudia was born with paralysis and so joins the Mockbattles in a wheelchair. "
 			+ "Nobody minds though and people respect her capacities and skills exactly the same anyhow.";
@@ -20,6 +29,16 @@ public abstract class CaptainBio {
 			+ "Before, too much faith was put into solid blocks of heavy infantry, "
 			+ "making them vulnerable to manoeuverable opponents. "
 			+ "Camilla kept the strong points of reliable infantry, but introduced more tactical flexibility";
+	
+	public static String hansFlogl = "Dreaming of leading a true army in a real battle one day, "
+			+ "Hans bemoans his lot in life every time his auxiliary Mockbattle regiment turns tail. "
+			+ "He has a recurring nightmare of showing up on the battlefield in his undergarments "
+			+ "and awakens from it soaked in fear-sweat.";
+	
+	public static String maitreOiseau = "The Maitre lives for his doves and takes a lot of pride in them. "
+			+ "No homing birds are more feared in Ikros than his infamous Palomas. "
+			+ "He spends an average of two hours per day sharpening their beaks. "
+			+ "One day, he would like to train an apprentice so that he can retire.";
 	
 	public static String markTheCrass = "Although highly successful, his achievements always get overshadowed by 'Pompous' Maggie, "
 			+ "who just naturally seems to get her timing better. "

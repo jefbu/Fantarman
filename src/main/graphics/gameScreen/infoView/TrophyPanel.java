@@ -64,10 +64,10 @@ public class TrophyPanel extends JPanel {
 		add(contentPanel);
 		
 			spaghettiPanel = new JPanel();
-			spaghettiPanel.setPreferredSize(new Dimension (64, 64));
+			spaghettiPanel.setPreferredSize(new Dimension (48, 48));
 			spaghettiPanel.setLayout(new FlowLayout(FlowLayout.LEADING, 0, 0));
 			spaghettiLabel = new JLabel();
-			spaghettiLabel.setIcon(imageLoader.loadImageIcon("/trophies/spaghettiNO.png", 64, 64));
+			spaghettiLabel.setIcon(imageLoader.loadImageIcon("/trophies/notyet.png", 48, 48));
 			spaghettiPanel.add(spaghettiLabel);
 			
 		contentPanel.insidePanel.add(spaghettiPanel);
@@ -80,7 +80,7 @@ public class TrophyPanel extends JPanel {
 		
 		try { LoadTrophies.load(); } catch (Exception e) {}
 		if (Trophies.spaghetti) {
-			spaghettiLabel.setIcon(imageLoader.loadImageIcon("/trophies/spaghetti.png", 64, 64));
+			spaghettiLabel.setIcon(imageLoader.loadImageIcon("/trophies/spaghetti.png", 48, 48));
 		}
 		
 	}

@@ -40,7 +40,7 @@ public class NewsReel extends JPanel {
 		upperLeftVoidPanel.setBackground(Colors.vlblue);
 		add(upperLeftVoidPanel);
 
-		titlePanel = new ContentPanel(width * 30 / 100, height * 25 / 100, Colour.BLUE,
+		titlePanel = new ContentPanel(width * 30 / 100, height * 25 / 100, Colour.DGREY,
 				new FlowLayout(FlowLayout.CENTER, 0, 0));
 		titlePanel.contentLabel.setText("Breaking News");
 		add(titlePanel);
@@ -55,7 +55,7 @@ public class NewsReel extends JPanel {
 		lowerLeftVoidPanel.setBackground(Colors.vlblue);
 		add(lowerLeftVoidPanel);
 
-		contentPanel = new ContentPanel(width * 80 / 100, height * 60 / 100, Colour.LBLUE,
+		contentPanel = new ContentPanel(width * 80 / 100, height * 60 / 100, Colour.GREY,
 				new FlowLayout(FlowLayout.LEFT, 0, 0));
 		
 		textArea = new JTextPane();
@@ -64,7 +64,7 @@ public class NewsReel extends JPanel {
 		textArea.setFont(new Font("garamond",Font.BOLD,20));
 		textArea.setPreferredSize(new Dimension(width, height));
 		textArea.setEditable(false);
-		textArea.setBackground(Colors.lblue);
+		textArea.setBackground(Colors.grey);
 		textArea.setMargin(new Insets(10,10,10,10));
 		contentPanel.insidePanel.add(textArea);
 		add(contentPanel);

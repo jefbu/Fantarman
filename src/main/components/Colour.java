@@ -5,11 +5,14 @@ public enum Colour {
 	RED,
 	GREEN,
 	BLUE,
+	GREY,
 	DBLUE,
 	DRED,
 	DGREEN,
+	DGREY,
 	LRED,
 	LGREEN,
-	LBLUE
+	LBLUE,
+	LGREY
 
 }

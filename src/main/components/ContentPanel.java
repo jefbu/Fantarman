@@ -80,6 +80,18 @@ public class ContentPanel extends JPanel {
 			setBackground(Colors.vdblue);
 			insidePanel.setBackground(Colors.dblue);
 			break;
+		case LGREY:
+			setBackground(Colors.grey);
+			insidePanel.setBackground(Colors.lgrey);
+			break;
+		case GREY:
+			setBackground(Colors.dgrey);
+			insidePanel.setBackground(Colors.grey);
+			break;
+		case DGREY:
+			setBackground(Colors.vdgrey);
+			insidePanel.setBackground(Colors.dgrey);
+			break;
 		default:
 			break;
 

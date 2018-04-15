@@ -50,7 +50,7 @@ public class Lieutenant implements Serializable {
 
 	//Avialay
 	public static Lieutenant scout = new Lieutenant("Scout", "Deployer 1", Skills.Deployer1,
-			"/lieutenants/sergeant.png");
+			"/lieutenants/scout.png");
 	public static Lieutenant ambusher = new Lieutenant("Ambusher", "Deployer 2", Skills.Deployer2,
 			"/lieutenants/sergeant.png");
 	public static Lieutenant peregrine = new Lieutenant("Peregrine Sharpeye", "Deployer 3", Skills.Deployer3,

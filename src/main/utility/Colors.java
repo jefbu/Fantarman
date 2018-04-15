@@ -19,6 +19,11 @@ public abstract class Colors {
 	public static Color blue = new Color(75, 120, 165);
 	public static Color dblue = new Color(45, 90, 135);
 	public static Color vdblue = new Color(20, 40, 80);
+	public static Color vlgrey = new Color(230, 230, 230);
+	public static Color lgrey = new Color(200, 200, 200);
+	public static Color grey = new Color(160, 160, 160);
+	public static Color dgrey = new Color(120, 120, 120);
+	public static Color vdgrey = new Color(90, 90, 90);
 	public static Color textyellow = new Color(235, 235, 180);
 	public static Color white = new Color(170, 210, 255);
 	public static Color emptyPanelColor = new Color(70, 65, 55);

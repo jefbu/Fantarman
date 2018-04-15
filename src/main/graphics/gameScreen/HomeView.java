@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 
 import main.graphics.gameScreen.homeScreen.NewsReel;
 import main.graphics.gameScreen.homeScreen.ShortArmy;
+import main.graphics.gameScreen.homeScreen.ShortInfo;
 import main.graphics.gameScreen.homeScreen.ShortLeague;
 import main.utility.Colors;
 
@@ -17,6 +18,7 @@ public class HomeView extends JPanel {
 	public NewsReel newsReel;
 	public ShortLeague shortLeague;
 	public ShortArmy shortArmy;
+	public ShortInfo shortInfo;
 	
 	public HomeView(int width, int height) {
 		
@@ -31,10 +33,12 @@ public class HomeView extends JPanel {
 		
 		shortLeague = new ShortLeague(roundedWidth / 3, unroundedHeight * 3 / 4);
 		shortArmy = new ShortArmy(roundedWidth / 3, unroundedHeight * 3 / 4);
+		shortInfo = new ShortInfo(roundedWidth / 3, unroundedHeight * 3 / 4);
 		newsReel = new NewsReel(roundedWidth, unroundedHeight / 4);
 		
 		add(shortLeague);
 		add(shortArmy);
+		add(shortInfo);
 		add(newsReel);
 		
 	}

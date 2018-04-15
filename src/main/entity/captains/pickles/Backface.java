@@ -30,7 +30,7 @@ public class Backface extends Captain implements Serializable {
 		skill1 = Skills.Deployer1;
 		skill2 = Skills.Healer1;
 		
-		bio = CaptainBio.ole_racecar;
+		bio = CaptainBio.backface;
 		
 		iconPath = "/portraits/backface.png";
 		

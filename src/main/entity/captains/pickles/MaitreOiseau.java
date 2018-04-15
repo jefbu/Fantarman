@@ -6,33 +6,33 @@ import main.entity.captains.Captain;
 import main.entity.skills.Skills;
 import main.strings.CaptainBio;
 
-public class AnitaStrum extends Captain implements Serializable {
+public class MaitreOiseau extends Captain implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	public AnitaStrum() {
+	public MaitreOiseau() {
 		
 		super();
 		
-		name = "Anita Strum";
-		gender = "female";
+		name = "Maitre Oiseau";
+		gender = "male";
 		
-		attackBonus = 2;
-		defenceBonus = 5;
-		chargeBonus = 1;
-		moraleBonus = 0;
+		attackBonus = 0;
+		defenceBonus = 2;
+		chargeBonus = 5;
+		moraleBonus = 2;
 		missileBonus = 0;
-		speedBonus = 2;
+		speedBonus = 1;
 		
 		orders = 2;
-		prestige = 20;
+		prestige = 30;
 		
 		skill1 = Skills.Deployer1;
 		skill2 = Skills.Healer1;
 		
-		bio = CaptainBio.anitaStrum;
+		bio = CaptainBio.maitreOiseau;
 		
-		iconPath = "/portraits/anita.png";
+		iconPath = "/portraits/maitreOiseau.png";
 		
 	}
 	

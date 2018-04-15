@@ -30,7 +30,7 @@ public class HansFlogl extends Captain implements Serializable {
 		skill1 = Skills.Deployer1;
 		skill2 = Skills.Healer1;
 		
-		bio = CaptainBio.ole_racecar;
+		bio = CaptainBio.hansFlogl;
 		
 		iconPath = "/portraits/HansFlogl2.png";
 		

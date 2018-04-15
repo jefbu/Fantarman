@@ -16,6 +16,7 @@ import javax.swing.JTextPane;
 
 import main.graphics.Screen;
 import main.graphics.battleScreen.BattleScreen;
+import main.utility.Colors;
 import main.utility.ImageLoader;
 
 public class TextPopup extends Popup {
@@ -159,18 +160,24 @@ public class TextPopup extends Popup {
 			return new Color(100 + modifier, 160 + modifier, 60 + modifier / 2);
 		case BLUE:
 			return new Color(60 + modifier / 2, 120 + modifier, 160 + modifier);
+		case GREY:
+			return Colors.grey;
 		case DBLUE:
 			return new Color(20 + modifier / 3, 40 + modifier / 2, 60 + modifier);
 		case DRED:
 			return new Color(20 + modifier, 10 + modifier / 2, modifier / 3);
 		case DGREEN:
 			return new Color(modifier / 3, 20 + modifier, 10 + modifier / 2);
+		case DGREY:
+			return Colors.dgrey;
 		case LRED:
 			return new Color(180 + modifier, 60 + modifier, 40 + modifier / 2);
 		case LGREEN:
 			return new Color(100 + modifier, 180 + modifier, 60 + modifier / 2);
 		case LBLUE:
 			return new Color(60 + modifier / 2, 120 + modifier, 180 + modifier);
+		case LGREY:
+			return Colors.lgrey;
 		}
 		return new Color(0, 0, 0);
 
