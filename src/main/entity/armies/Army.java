@@ -8,6 +8,7 @@ import main.AI.DeploymentStrategy;
 import main.AI.GlobalBattleStrategy;
 import main.entity.leagues.ScoreSheet;
 import main.entity.regiments.Regiment;
+import main.utility.Trophies;
 
 public class Army implements Serializable {
 	
@@ -108,6 +109,14 @@ public class Army implements Serializable {
 		fanSatisfaction = fanSatisfaction + (2 * matchResult);
 		fanSatisfaction = fanSatisfaction + (2 * calculateLeagueResult());
 		fanSatisfaction = fanSatisfaction + calculateFinancialStability();
+		
+		if (Trophies.spaghetti) {
+			fanSatisfaction ++;
+		}
+		
+		if (fanSatisfaction > 100) {
+			fanSatisfaction = 100;
+		}
 		
 	}
 	
