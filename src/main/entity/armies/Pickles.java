@@ -4,6 +4,7 @@ import main.entity.captains.Boris;
 import main.entity.captains.pickles.AnitaStrum;
 import main.entity.captains.pickles.Backface;
 import main.entity.captains.pickles.Claudia;
+import main.entity.captains.pickles.GalaxyChaser;
 import main.entity.captains.pickles.HansFlogl;
 import main.entity.captains.pickles.MaitreOiseau;
 import main.entity.captains.pickles.MmeSauce;
@@ -31,7 +32,7 @@ public class Pickles extends Army {
 		roster.add(new StoutOfHeart("Noble Chums", new MmeSauce(), Lieutenant.sergeant, Lieutenant.musician));
 		roster.add(new FatherlyTurtle("Ole Racecar", new OleRacecar()));
 		roster.add(new DoveMasters("Palomas", new MaitreOiseau(), Lieutenant.medic));
-		roster.add(new DoveMasters("Coocoos", new Boris(), Lieutenant.medic));
+		roster.add(new DoveMasters("Coocoos", new GalaxyChaser(), Lieutenant.medic));
 		roster.add(new Auxiliaries("2nd Line", new HansFlogl(), Lieutenant.surgeon));
 		roster.add(new Harvesters("Pitchforks", new AnitaStrum(), Lieutenant.medic, Lieutenant.musician));
 		roster.add(new Harvesters("Tractors", new Claudia(), Lieutenant.surgeon, Lieutenant.scout));

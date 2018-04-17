@@ -1,6 +1,7 @@
 package main.entity.armies;
 
 import main.entity.captains.Boris;
+import main.entity.captains.qoonfu.Chessmaster;
 import main.entity.lieutenants.Lieutenant;
 import main.entity.regiments.qoonfu.CraneWing;
 import main.entity.regiments.qoonfu.DrunkenMaster;
@@ -22,7 +23,7 @@ public class ChiDestroyers extends Army {
 		
 		roster.add(new SnakeTeeth("Cobras", new Boris(), Lieutenant.monstrosity));
 		roster.add(new MonkeyPaw("Baboons", new Boris(), Lieutenant.monstrosity));
-		roster.add(new TigerFist("Jaguars", new Boris(), Lieutenant.abomination, Lieutenant.corporal));
+		roster.add(new TigerFist("Jaguars", new Chessmaster(), Lieutenant.abomination, Lieutenant.corporal));
 		roster.add(new CraneWing("Herons", new Boris(), Lieutenant.hugo, Lieutenant.medic));
 		roster.add(new DrunkenMaster("Jackie", new Boris()));
 		roster.add(new MantisClaw("Crickets", new Boris(), Lieutenant.abomination));

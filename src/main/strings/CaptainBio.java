@@ -11,9 +11,20 @@ public abstract class CaptainBio {
 			+ "Once he gets it right though, he is a skilled and well respected chevalier, "
 			+ "who fights for glory and prestige rather than the more earthly rewards most other captains favour.";
 	
+	public static String chessmaster = "Everyone always assumes I'm a genius. "
+			+ "That I, somehow, would speak every language. "
+			+ "That I have degrees in mathematics, astrophysics and neuroscience. "
+			+ "That I have a masterplan that sees seven moves ahead. "
+			+ "But damn, I just like to play chess, leave me be already!";
+	
 	public static String claudia = "Levelheaded, quiet, intelligent and witty. "
 			+ "Claudia was born with paralysis and so joins the Mockbattles in a wheelchair. "
 			+ "Nobody minds though and people respect her capacities and skills exactly the same anyhow.";
+	
+	public static String galaxychaser = "Galaxychaser used to be called Starchaser, "
+			+ "but upgraded his name after a copyright infringement can of worms. "
+			+ "He believes that he is mysterious and swooned over, "
+			+ "but most other Piknin just think of him as pompous and blase";
 	
 	public static String julesLittleBoots = "Either a man with a sense of humour, or a nutcase. "
 			+ "Constantly thinking up crackbrained plans like invading a country for its seashells, "
