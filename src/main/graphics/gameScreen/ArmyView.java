@@ -6,6 +6,7 @@ import java.awt.FlowLayout;
 
 import javax.swing.JPanel;
 
+import main.Main;
 import main.components.Colour;
 import main.entity.armies.Army;
 import main.graphics.gameScreen.armyView.ArmyViewViewPanel;
@@ -21,6 +22,7 @@ public class ArmyView extends JPanel {
 	public RoleSelectionPanel roleSelectionPanel;
 	public RegimentListPanel  regimentListPanel;
 	public ArmyViewViewPanel viewPanel;
+	public TitlePanel titlePanel;
 
 	public ArmyView(int gameScreenWidth, int gameScreenHeight) {
 
@@ -64,9 +66,8 @@ public class ArmyView extends JPanel {
 		topEmptyLeftPanel2.setBackground(backgroundColor);
 		add(topEmptyLeftPanel2);
 
-		TitlePanel titlePanel = new TitlePanel(roundedWidth * 60 / 100 - 5, unroundedHeight / 20);
+		titlePanel = new TitlePanel(roundedWidth * 60 / 100 - 5, unroundedHeight / 20);
 		add(titlePanel);
-		titlePanel.applyView(TitlePanel.statview);
 
 		JPanel topEmptyRightPanel2 = new JPanel();
 		topEmptyRightPanel2.setPreferredSize(new Dimension(roundedWidth * 5 / 100 + 5, unroundedHeight / 20));
@@ -104,10 +105,16 @@ public class ArmyView extends JPanel {
 	}
 	
 	public void fillArmyView(Army army) {
-		
 		viewPanel.fillArmyViewViewPanel(army);
 		regimentListPanel.fillRegimentListPanelCombatStats(army);
+		if (army == Main.yourArmy) {
+		titlePanel.fillTitlePanel(0, true);
+		}
+		else {
+		titlePanel.fillTitlePanel(0, false);
+		}
 		roleSelectionPanel.fillRoleSelectionPanel(army);
+
 		
 	}
 

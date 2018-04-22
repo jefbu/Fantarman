@@ -2,6 +2,11 @@ package main.strings;
 
 public abstract class CaptainBio {
 	
+	public static String andysauce = "Son of Mme Sauce, the notorious Business Coach. "
+			+ "Something should be said about him, but people only ever talk about his mother. "
+			+ "He is around nineteen years old? His mother believes that kids can only learn through experience, "
+			+ "which might be why she signed him up.";
+	
 	public static String anitaStrum = "The record holder of growing Ikros' largest pumpkin, "
 			+ "she was chosen to be captain of the Tractors on this merit alone. "
 			+ "While no military genius by a long stretch, she nevertheless performs surprisingly well, "
@@ -21,10 +26,24 @@ public abstract class CaptainBio {
 			+ "Claudia was born with paralysis and so joins the Mockbattles in a wheelchair. "
 			+ "Nobody minds though and people respect her capacities and skills exactly the same anyhow.";
 	
+	public static String essila = "A few years ago, Essila was bitten by a rutting mutant goose. "
+			+ "Now a caped crusader, costumed crimefighter and patroling paladin, he stalks the streets at night, "
+			+ "veiled in his secret identity ...gooseman.";
+	
 	public static String galaxychaser = "Galaxychaser used to be called Starchaser, "
 			+ "but upgraded his name after a copyright infringement can of worms. "
 			+ "He believes that he is mysterious and swooned over, "
 			+ "but most other Piknin just think of him as pompous and blase";
+	
+	public static String internlydia = "Hired as cheap labour, a common practice in Ikros ever since slavery was abolished. "
+			+ "Lydia hopes her temporary status will eventually lead to a fulltime contract, "
+			+ "but does not realise dozens of interns have already come before her "
+			+ "and she will just be another cog in the machine";
+	
+	public static String jeanpauper = "Being forced to participate in the sometimes violent and always unpleasant "
+			+ "Mockbattles to pay off a debt from gambling on the Car-nage races. "
+			+ "The situation only grows worse as Jean immediately wagers away whatever he scrapes together, "
+			+ "only ever accumulating more red ink.";
 	
 	public static String julesLittleBoots = "Either a man with a sense of humour, or a nutcase. "
 			+ "Constantly thinking up crackbrained plans like invading a country for its seashells, "
@@ -36,6 +55,9 @@ public abstract class CaptainBio {
 			+ "Unfortunately, his approach is very unpopular and "
 			+ "he must constantly handle the pressure from the higher-ups to be more aggressive";
 	
+	public static String fionaGossip = "There once was a passerine tit. Who twittered her chirp cheeping bit. "
+			+ "She was playing with fire, got called out a liar. Basically, she was just";
+	
 	public static String furiousCamilla = "Famous for revolutionising Espequr army structure. "
 			+ "Before, too much faith was put into solid blocks of heavy infantry, "
 			+ "making them vulnerable to manoeuverable opponents. "
@@ -45,6 +67,11 @@ public abstract class CaptainBio {
 			+ "Hans bemoans his lot in life every time his auxiliary Mockbattle regiment turns tail. "
 			+ "He has a recurring nightmare of showing up on the battlefield in his undergarments "
 			+ "and awakens from it soaked in fear-sweat.";
+	
+	public static String kree = "Kree was once incarcerated as an arsonist, "
+			+ "until it was discovered that she was just an untrained natural firemage. "
+			+ "The genetic testing process that all Wanmen go through somehow had failed to pick up on her inate talent. "
+			+ "Now, she is a very popular and successful captain.";
 	
 	public static String maitreOiseau = "The Maitre lives for his doves and takes a lot of pride in them. "
 			+ "No homing birds are more feared in Ikros than his infamous Palomas. "
@@ -59,6 +86,11 @@ public abstract class CaptainBio {
 	public static String maxFQuenten = "Wears the Grass Crown, "
 			+ "a rare honourary garland indicative of having singlehandedly saved an entire army. "
 			+ "Proud, but rightly so. Capable without being overconfident.";
+	
+	public static String miarsis = "Myarsis wanted to be the first Wanmen in space, "
+			+ "but failed his astronaut training due to his daltonism. "
+			+ "To him, blue, red and green all appear undistinguishable. "
+			+ "He also has it hard to identify size and distance. And shape. He is in fact, blind as an earthworm.";
 	
 	public static String mmeSauce = "A professional Business Coach, "
 			+ "she participates in Mockbattles as a teamevent with her bemused trainees, "
@@ -77,6 +109,23 @@ public abstract class CaptainBio {
 	public static String nerdo = "Hates his meddling mother, who claims she just wants what's best for him. "
 			+ "Their strangely codependent relationship is built on regularly sending each other assassins. "
 			+ "It's all fun and games until the day it isn't!";
+	
+	public static String nicoleschumi = "Highest in rank on the actual battlefield, "
+			+ "Nicole has become a symbol of leadership and inspiration. "
+			+ "She seems to be fighting Mockbattles for an ulterior motive, but nobody knows what exactly. "
+			+ "She sometimes whispering to herself: 'Your time is coming, you monster'";
+	
+	public static String ofuwari = "Ofuwari strong. Ofuwari win. Very winning. Strong. Ofuwari not so smart.";
+	
+	public static String ojikan = "A gentle giant with an incredible empathy for others. "
+			+ "Great in a negotiating situation, "
+			+ "but universally despised by everyone who has to work with them for a longer time. "
+			+ "They're just so ... agreeable, it gets under your skin, you know?";
+	
+	public static String okarani = "Before launching a career in Mockbattles, Okarani was working as an entertainment act, "
+			+ "going to birthday parties, performing fire-related tricks. "
+			+ "This ended when she performed on Sassaru's daughter fifth anniversary fete, "
+			+ "as the other Firemage noticed her talent";
 
 	public static String ole_racecar = "A thrillseeker by nature, Ole Racecar got her name as a regular participant "
 			+ "in the weekly Car-nage races. <br>"
@@ -107,6 +156,25 @@ public abstract class CaptainBio {
 	public static String ryoushi = "Ryoushi was the primary Terquit to the court of the Alabaster Emperor. "
 			+ "However, they fell out of grace after a supposed romantic scandal "
 			+ "and were demoted to fight mockbattles as a punishment";
+	
+	public static String samMaxwell = "There once was a bird with no gender. At least to old fashioned comprehender. "
+			+ "Biology said A, their heart said No Way. So they turned, convention bender.";
+	
+	public static String sassaru = "When she was twelve, she underwent the compulsory firemage test "
+			+ "and it was discovered she had more talent than any other Wanmen before her. "
+			+ "While her Mockbattle career has been okayish, "
+			+ "it is nevertheless felt that she is not yet living up to the expectations";
+	
+	public static String swashni = "The Stoopvarmints were the leading proponent of the dimensional invasion "
+			+ "by the Wanmen many years ago, and Swashni's regiment was first amongst those. "
+			+ "The invasion successful, she did not want to stop fighting and so started a Mockbattle career.";
+	
+	public static String tenjimoto = "A leading figure in the ongoing Terquit Revolution for the Free Self, "
+			+ "Tenjimoto's charisma and appeal (for a Terquit at least) has done a lot for the cause "
+			+ "by openly declaring himself to identify as a Male person in an otherwise biologically genderless species.";
+	
+	public static String timTeranrovero = "There once was a beautiful bird. Who struggled a lot to be heard. "
+			+ "He fought with the boss, a real total loss. Now he's just a pawn in the herd.";
 	
 	public static String tsumiko = "A Terquit with a fashionista streak. "
 			+ "They adorn their armour with bows and ribbons, favouring soft pastel tones. "
