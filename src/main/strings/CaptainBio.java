@@ -22,6 +22,10 @@ public abstract class CaptainBio {
 			+ "That I have a masterplan that sees seven moves ahead. "
 			+ "But damn, I just like to play chess, leave me be already!";
 	
+	public static String chun = "Sister of Jet, "
+			+ "she uses a special combat style that focuses on a series of hyper fast kicks and punches. "
+			+ "Most amazingly though are her acrobatics, which give the impression she can almost fly.";
+	
 	public static String claudia = "Levelheaded, quiet, intelligent and witty. "
 			+ "Claudia was born with paralysis and so joins the Mockbattles in a wheelchair. "
 			+ "Nobody minds though and people respect her capacities and skills exactly the same anyhow.";

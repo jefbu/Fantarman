@@ -8,6 +8,20 @@ public abstract class Conversations {
 	public static String backface_professor4 = "Someone, go and help him out, please";
 	public static String backface_professor5 = "Wait ...what? Where's the enemy?";
 	
+	public static String fiona_chun1 = "There once ..";
+	public static String fiona_chun2 = "No. Sorry, cut it out. Enough already with the limericks.";
+	public static String fiona_chun3 = "... There ...";
+	public static String fiona_chun4 = "Hold on. Here, let's give this a try together. Repeat after me: 'Good'";
+	public static String fiona_chun5 = "Good";
+	public static String fiona_chun6 = "Mor-";
+	public static String fiona_chun7 = "Mor";
+	public static String fiona_chun8 = "-ning";
+	public static String fiona_chun9 = "ning";
+	public static String fiona_chun10 = "Good morning";
+	public static String fiona_chun11 = "There once w...";
+	public static String fiona_chun12 = "Oh for flying heck's face full of garbage with a cinnamon twist!";
+	public static String fiona_chun13 = "**Looking crestfallen**";
+	
 	public static String jeanpauper_anita1 = "If I do well today and get that MvP bonus, "
 			+ "I can repay my monthly installment and still have some money left!";
 	public static String jeanpauper_anita2 = "Maybe I could use that to get ahead on my next month, "

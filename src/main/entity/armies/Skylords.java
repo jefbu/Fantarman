@@ -1,6 +1,7 @@
 package main.entity.armies;
 
 import main.entity.captains.Boris;
+import main.entity.captains.skylords.FionaGossip;
 import main.entity.lieutenants.Lieutenant;
 import main.entity.regiments.avialay.Corpus;
 import main.entity.regiments.avialay.Gralyas;
@@ -24,7 +25,7 @@ public class Skylords extends Army {
 		roster.add(new Jackdaws("Down Feathers", new Boris(), Lieutenant.ambusher));
 		roster.add(new Rooks("Mighty Talon", new Boris(), Lieutenant.peregrine));
 		roster.add(new Gralyas("Preyers", new Boris()));
-		roster.add(new Jaywings("Cloudshakers", new Boris(), Lieutenant.scout));
+		roster.add(new Jaywings("Cloudshakers", new FionaGossip(), Lieutenant.scout));
 		roster.add(new Jaywings("Skyward Arrows", new Boris(), Lieutenant.scout));
 		roster.add(new Nucifrags("Lost Beaks", new Boris()));
 		roster.add(new Magpies("Swallowtails", new Boris(), Lieutenant.medic));
