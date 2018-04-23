@@ -8,6 +8,25 @@ public abstract class Conversations {
 	public static String backface_professor4 = "Someone, go and help him out, please";
 	public static String backface_professor5 = "Wait ...what? Where's the enemy?";
 	
+	public static String fabian_chessmaster1 = "We meet at last. Today we decide who has the cunningest plan, "
+			+ "who outwits the other. Today we find out who is the real master and who, the apprentice";
+	public static String fabian_chessmaster2 = "...Begging your pardon?";
+	public static String fabian_chessmaster3 = "mmm, feigning indifference. A classic opening move. "
+			+ "Of course I see right through it, but I understand that that is what you want me to think!";
+	public static String fabian_chessmaster4 = "So your feigning indifference could actually be a subtle way "
+			+ "to imply genuine indifference. But then I wonder how I should react to this.";
+	public static String fabian_chessmaster5 = "Ah, the strategist needs to think so many moves ahead!";
+	public static String fabian_chessmaster6 = "... Is this because I play chess?";
+	public static String fabian_chessmaster7 = "**Keeps on eyeing Chessmaster suspiciously**";
+	public static String fabian_chessmaster8 = "It is isn't it? "
+			+ "Oh God, how many times do I have to keep on telling people this. I just play chess. "
+			+ "It's not a metaphor for being some mastermind planner, it's just a game I enjoy!";
+	public static String fabian_chessmaster9 = "In fact, chess isn't even about how many moves you think ahead in the plan. "
+			+ "It doesn't work like that, because plans always change. It's about pattern recognition!!!";
+	public static String fabian_chessmaster10 = "Ah, yes, denying the obvious. I've seen you do this before, "
+			+ "three years ago against the Terquits. You won that battle, too, I recall.";
+	public static String fabian_chessmaster11 = "... whatever you say mate.";
+	
 	public static String fiona_chun1 = "There once ..";
 	public static String fiona_chun2 = "No. Sorry, cut it out. Enough already with the limericks.";
 	public static String fiona_chun3 = "... There ...";
