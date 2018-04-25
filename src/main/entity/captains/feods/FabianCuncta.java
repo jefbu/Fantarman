@@ -52,7 +52,7 @@ public class FabianCuncta extends Captain implements Serializable {
 		strings[9] = Conversations.fabian_chessmaster10;
 		strings[10] = Conversations.fabian_chessmaster11;
 
-		boolean[] ownVoice = new boolean[8];
+		boolean[] ownVoice = new boolean[11];
 		ownVoice[0] = true;
 		ownVoice[1] = false;
 		ownVoice[2] = true;

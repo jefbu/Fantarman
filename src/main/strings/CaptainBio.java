@@ -185,6 +185,10 @@ public abstract class CaptainBio {
 			+ "This has the added effect of being noticeably easier to target by enemy archers, "
 			+ "but Tsumiko is so hardy that they usually just shrug off the enemy projectiles.";
 	
+	public static String vinceLeonidas = "Crackpot inventor who is kept around partly for the entertainment "
+			+ "his ever failing ideas provide; and partly because he does occasionally deliver something truly innovative! "
+			+ "Like when he created a car that refuses to speed up while someone is passing you on the left.";
+	
 	public static String yiss = "Most Wanmen are never truly a hundred percent opaque."
 			+ "Yiss is much more translucent than usual though, at times appearing almost as a vapour figure. "
 			+ "People often bump into her, but she grew used to it and doesn't mind that much anymore.";

@@ -8,6 +8,21 @@ public abstract class Conversations {
 	public static String backface_professor4 = "Someone, go and help him out, please";
 	public static String backface_professor5 = "Wait ...what? Where's the enemy?";
 	
+	public static String camilla_vince1 = "Excuse me, what is that?";
+	public static String camilla_vince2 = "Hmmm? Oh, sorry, I got distracted. "
+			+ "This is, in fact, my latest invention that I'm building a prototype for.";
+	public static String camilla_vince3 = "What's it do? It looks rather bulky and heavy.";
+	public static String camilla_vince4 = "Ah, it is, unfortunately. "
+			+ "You know how in space you can't use a pen because there's no gravity to get the ink down?";
+	public static String camilla_vince5 = "So I'm thinking of something that would work in zero-gravity conditions. "
+			+ "I'm currently hopeful with this pressurized nitrogen ink alternative ...";
+	public static String camilla_vince6 = "... Just use a pencile then. Idiot.";
+	public static String camilla_vince7 = "Actually, it's not that easy. While pencils could write in space, "
+			+ "they're flammable and their tips can break off too easily, "
+			+ "which becomes quite a hazard in zero gravity conditions!";
+	public static String camilla_vince8 = "...";
+	public static String camilla_vince9 = "Idiot.";
+	
 	public static String fabian_chessmaster1 = "We meet at last. Today we decide who has the cunningest plan, "
 			+ "who outwits the other. Today we find out who is the real master and who, the apprentice";
 	public static String fabian_chessmaster2 = "...Begging your pardon?";
@@ -55,6 +70,33 @@ public abstract class Conversations {
 			+ "I can pay him off after today's game and then double my cashflow and invest all of it in the next one.";
 	public static String jeanpauper_anita7 = "... It's like watching a freight train thunder straight into a deep ravine, "
 			+ "unable to change its direction; bound to the tracks of its fate.";
+	
+	public static String max_vince1 = "Hey Vince, "
+			+ "how is your work going on that latest invention you mentioned last time?";
+	public static String max_vince2 = "Oh hi there Max. It's going great, we'll be testing a prototype out next week!";
+	public static String max_vince3 = "What was it about again?";
+	public static String max_vince4 = "It's a urinal that activates an electric current by speech recognition, "
+			+ "basically giving a mild dissuasive shock to whomever starts talking to their neighbour "
+			+ "when their focus should be elsewhere.";
+	public static String max_vince5 = "You're doing God's work mate!";
+	
+	public static String nerdo_vince1 = "Hey. You. You're that Qoonfu inventor right?";
+	public static String nerdo_vince2 = "Why yes I believe I am! Is it an autograph you want dear boy?";
+	public static String nerdo_vince3 = "Of course not. Fool. I just want you to invent something for me. "
+			+ "Something that could make a person disappear, if you catch my drift.";
+	public static String nerdo_vince4 = "Um, I'm not quite sure that I do?";
+	public static String nerdo_vince5 = "I'm talking about my mother. And by disappear I mean in any way possible. "
+			+ "Permanently. Final. So something to give her her last reward. "
+			+ "Something that lets her sing her maiden song";
+	public static String nerdo_vince6 = "It's a swan.";
+	public static String nerdo_vince7 = "What?";
+	public static String nerdo_vince8 = "A swan song, not a maiden song, which doesn't exist and in any case, "
+			+ "would likely not be appropriate here. "
+			+ "You're probably getting mixed up with the group of troubadours who go by that name.";
+	public static String nerdo_vince9 = "Look, can you help me or not?";
+	public static String nerdo_vince10 = "You know, I rather think I can't. Sorry";
+	public static String nerdo_vince11 = "**Walks off, angry about having lost time**";
+	public static String nerdo_vince12 = "... In fact, you might just be beyond all help";
 	
 	public static String petto_zuba1 = "IT IS A DISGRACE, OUR YOUNG REFUSE TO FOLLOW OUR TRADITIONS, "
 			+ "OUR SOCIETY HAS LOST ITS MORAL STANDARDS AND OUR EDUCATIONAL SYSTEM IS ENCOURAGING THIS DEVIANCE";
