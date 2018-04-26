@@ -32,7 +32,7 @@ public class Essila extends Captain implements Serializable {
 		
 		bio = CaptainBio.essila;
 		
-		iconPath = "/portraits/terquit.png";
+		iconPath = "/portraits/essila.png";
 		
 		
 	}
