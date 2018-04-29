@@ -47,6 +47,7 @@ public class Calendar implements Serializable {
 		matchups.add(new Matchup(league.armies.get(3), league.armies.get(6)));
 		
 		
+		for (int i = 0; i < 2; i++) {
 		calendarDays.add(new CalendarDay(matchups.get(0), matchups.get(1), matchups.get(2), matchups.get(3)));
 		calendarDays.add(new CalendarDay(matchups.get(4), matchups.get(5), matchups.get(6), matchups.get(7)));
 		calendarDays.add(new CalendarDay(matchups.get(8), matchups.get(9), matchups.get(10), matchups.get(11)));
@@ -54,7 +55,7 @@ public class Calendar implements Serializable {
 		calendarDays.add(new CalendarDay(matchups.get(16), matchups.get(17), matchups.get(18), matchups.get(19)));
 		calendarDays.add(new CalendarDay(matchups.get(20), matchups.get(21), matchups.get(22), matchups.get(23)));
 		calendarDays.add(new CalendarDay(matchups.get(24), matchups.get(25), matchups.get(26), matchups.get(27)));
-		
+		}
 	}
 		
 }

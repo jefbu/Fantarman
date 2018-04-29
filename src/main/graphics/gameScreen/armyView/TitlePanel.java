@@ -12,7 +12,6 @@ import javax.swing.JPanel;
 
 import main.Main;
 import main.components.ButtonedPanel;
-import main.entity.armies.Army;
 import main.entity.regiments.Regiment;
 import main.graphics.Screen;
 import main.utility.Colors;

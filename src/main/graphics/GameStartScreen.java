@@ -1,6 +1,7 @@
 package main.graphics;
 
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ import main.entity.armies.Skylords;
 import main.entity.armies.TerribleTerquits;
 import main.entity.armies.Wanmen;
 import main.utility.Colors;
+import main.utility.ImageLoader;
 
 public class GameStartScreen extends JPanel {
 
@@ -34,8 +36,15 @@ public class GameStartScreen extends JPanel {
 		JLabel label = new JLabel("Choose your Army");
 		add(label);
 		
+		ImageLoader imageLoader = new ImageLoader();
+		
 		JButton pikninButton = new JButton("Piknin Pickles");
-		pikninButton.setPreferredSize(new Dimension(300, 150));
+		pikninButton.setPreferredSize(new Dimension(width / 6, height / 3));
+		pikninButton.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
+		pikninButton.setOpaque(false);
+		pikninButton.setContentAreaFilled(false);
+		pikninButton.setBorder(null);
+		pikninButton.setIcon(imageLoader.loadImageIcon("/ArmyLogo/PikninPickles.png", width / 6, height / 3));
 			pikninButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					Main.yourArmy = new Pickles();
