@@ -87,6 +87,11 @@ public abstract class CaptainBio {
 			+ "Like, one time he defeated an entire army "
 			+ "but then Maggie took out the last few stragglers, and got all the credit...";
 	
+	public static String marx = "Wrote an important analysis on the way money works and the way "
+			+ "labourers are estranged from their products and society. "
+			+ "Nevertheless, is mostly famous for his wild beard and criminal drinking habits. "
+			+ "Or was that the other way round?";
+	
 	public static String maxFQuenten = "Wears the Grass Crown, "
 			+ "a rare honourary garland indicative of having singlehandedly saved an entire army. "
 			+ "Proud, but rightly so. Capable without being overconfident.";

@@ -3,6 +3,7 @@ package main.entity.armies;
 import main.entity.captains.Boris;
 import main.entity.captains.wanmen.Essila;
 import main.entity.captains.wanmen.Kree;
+import main.entity.captains.wanmen.Marx;
 import main.entity.captains.wanmen.Miarsis;
 import main.entity.captains.wanmen.Okarani;
 import main.entity.captains.wanmen.Sassaru;
@@ -33,7 +34,7 @@ public class Wanmen extends Army {
 		roster.add(new Stoopvarmint("Siszar", new Swashni(), Lieutenant.errant, Lieutenant.surgeon));
 		roster.add(new Stoopvarmint("Siszarni", new Yiss(), Lieutenant.paladin, Lieutenant.scout));
 		roster.add(new Glasscannon("Sek Skra", new Boris(), Lieutenant.errant, Lieutenant.musician));
-		roster.add(new Glasscannon("Sekni Skrani", new Boris(), Lieutenant.paladin, Lieutenant.monstrosity));
+		roster.add(new Glasscannon("Sekni Skrani", new Marx(), Lieutenant.paladin, Lieutenant.monstrosity));
 
 		calculateValue();
 		

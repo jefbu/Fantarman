@@ -3,7 +3,6 @@ package main.graphics.gameScreen.homeScreen;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
-import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
@@ -18,7 +17,6 @@ public class ShortInfo extends JPanel {
 	private ContentPanel titlePanel;
 	private ContentPanel titleBarPanel;
 	private ContentPanel regimentsPanel;
-	private ArrayList<RegimentPanel> regimentPanels;
 
 	public ShortInfo(int width, int height) {
 		
@@ -27,8 +25,6 @@ public class ShortInfo extends JPanel {
 			setBackground(Colors.vlblue);
 			setLayout(new FlowLayout(FlowLayout.CENTER, 0, 5));
 			
-			regimentPanels = new ArrayList<RegimentPanel>();
-
 			titlePanel = new ContentPanel(width / 2, height / 10, Colour.DBLUE,
 					new FlowLayout(FlowLayout.CENTER, 0, height / 50));
 			titlePanel.contentLabel.setForeground(Colors.textyellow);

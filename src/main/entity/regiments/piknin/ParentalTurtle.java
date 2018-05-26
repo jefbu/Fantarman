@@ -11,11 +11,11 @@ import main.entity.races.Race;
 import main.entity.regiments.Regiment;
 import main.entity.regiments.RegimentType;
 
-public class FatherlyTurtle extends Regiment {
+public class ParentalTurtle extends Regiment {
 
 	private static final long serialVersionUID = 1L;
 
-		public FatherlyTurtle(String name, Captain captain) {
+		public ParentalTurtle(String name, Captain captain) {
 			
 			super();
 			for (int i = 0; i < captain.orders; i++) {
@@ -23,7 +23,7 @@ public class FatherlyTurtle extends Regiment {
 			}
 			
 			this.name = name;
-			this.regiment = "Fatherly Turtle";
+			this.regiment = "Parental Turtle";
 			this.race = Race.Piknin;
 			this.lieutenantsSize = 0;
 			this.captain = captain;

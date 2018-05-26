@@ -6,7 +6,7 @@ import main.entity.regiments.feods.Equitae;
 import main.entity.regiments.feods.Legat;
 import main.entity.regiments.feods.Triarae;
 import main.entity.regiments.piknin.DoveMasters;
-import main.entity.regiments.piknin.FatherlyTurtle;
+import main.entity.regiments.piknin.ParentalTurtle;
 import main.entity.regiments.piknin.PonyRiders;
 import main.entity.regiments.qoonfu.CraneWing;
 import main.entity.regiments.qoonfu.DrunkenMaster;
@@ -23,7 +23,7 @@ public class Metropolitans extends Army {
 
 		roster.add(new DoveMasters("Leswasohs", new Boris(), Lieutenant.medic));
 		roster.add(new PonyRiders("Shevau", new Boris(), Lieutenant.surgeon));
-		roster.add(new FatherlyTurtle("Obi", new Boris()));
+		roster.add(new ParentalTurtle("Obi", new Boris()));
 		roster.add(new Legat("St Danny", new Boris()));
 		roster.add(new Equitae("Grass Crowns", new Boris(), Lieutenant.sergeant, Lieutenant.medic,
 				Lieutenant.scout));

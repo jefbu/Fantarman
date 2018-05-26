@@ -96,6 +96,16 @@ public class TitleScreen extends JPanel {
         	}
         });
         middlePanel.add(exitPanel);
+        
+        JPanel bottomPanel = new JPanel();
+        bottomPanel.setPreferredSize(new Dimension( width, height / 50));
+        bottomPanel.setBackground(Colors.blue);
+        bottomPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 0));
+        JLabel gameTitleLabel = new JLabel();
+        gameTitleLabel.setForeground(Colors.textyellow);
+        gameTitleLabel.setText("Hands Off My Army, v0.4.3.3.");
+        bottomPanel.add(gameTitleLabel);
+        backgroundPanel.add(bottomPanel);
 
 		
 	}

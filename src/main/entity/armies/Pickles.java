@@ -16,9 +16,9 @@ import main.entity.captains.pickles.Professor;
 import main.entity.lieutenants.Lieutenant;
 import main.entity.regiments.piknin.Auxiliaries;
 import main.entity.regiments.piknin.DoveMasters;
-import main.entity.regiments.piknin.FatherlyTurtle;
 import main.entity.regiments.piknin.Harvesters;
 import main.entity.regiments.piknin.LightBalloons;
+import main.entity.regiments.piknin.ParentalTurtle;
 import main.entity.regiments.piknin.PonyRiders;
 import main.entity.regiments.piknin.StoutOfHeart;
 
@@ -33,7 +33,7 @@ public class Pickles extends Army {
 
 		roster.add(new StoutOfHeart("Valiant Lads", new NicoleSchumi(), Lieutenant.Tenkai, Lieutenant.corporal));
 		roster.add(new StoutOfHeart("Noble Chums", new MmeSauce(), Lieutenant.sergeant, Lieutenant.musician));
-		roster.add(new FatherlyTurtle("Ole Racecar", new OleRacecar()));
+		roster.add(new ParentalTurtle("Ole Racecar", new OleRacecar()));
 		roster.add(new DoveMasters("Palomas", new MaitreOiseau(), Lieutenant.medic));
 		roster.add(new DoveMasters("Coocoos", new GalaxyChaser(), Lieutenant.medic));
 		roster.add(new Auxiliaries("2nd Line", new HansFlogl(), Lieutenant.surgeon));
