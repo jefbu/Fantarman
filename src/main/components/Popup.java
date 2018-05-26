@@ -18,9 +18,9 @@ import main.utility.Colors;
 import main.utility.ImageLoader;
 
 public class Popup extends JDialog {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	public JPanel bottomPanel;
 	public JPanel middlePanel;
 	public JPanel mainPanel;
@@ -36,18 +36,18 @@ public class Popup extends JDialog {
 	ImageIcon acceptIcon;
 	ImageIcon confirmIcon;
 	ImageIcon cancelIcon;
-	
+
 	public Popup(int width, int height, Colour colour, boolean dichotomy) {
-		
+
 		super(null, Dialog.ModalityType.APPLICATION_MODAL);
-		
+
 		setSize(new Dimension(width, height));
 		setLocationRelativeTo(BattleScreen.battleScene);
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setUndecorated(true);
 
 		imageLoader = new ImageLoader();
-		
+
 		bottomPanel = new JPanel();
 		bottomPanel.setPreferredSize(new Dimension(width, height));
 		bottomPanel.setLayout(new FlowLayout(FlowLayout.LEADING, 3, 3));
@@ -59,7 +59,7 @@ public class Popup extends JDialog {
 		mainPanel = new JPanel();
 		mainPanel.setPreferredSize(new Dimension(width - 12, height - 12));
 		mainPanel.setLayout(new FlowLayout(FlowLayout.LEADING, 0, 0));
-		
+
 		add(bottomPanel);
 		bottomPanel.add(middlePanel);
 		middlePanel.add(mainPanel);
@@ -67,7 +67,7 @@ public class Popup extends JDialog {
 		mainPanelTopPanel = new JPanel();
 		mainPanelTopPanel.setPreferredSize(new Dimension(width - 12, (height - 12) * 3 / 4));
 		mainPanelTopPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 8, 8));
-		
+
 		mainPanel.add(mainPanelTopPanel);
 
 		mainPanelBottomLeftPanel = new JPanel();
@@ -80,15 +80,18 @@ public class Popup extends JDialog {
 		mainPanelBottomRightPanel.setLayout(new FlowLayout(FlowLayout.LEADING, 0, 2));
 
 		mainPanel.add(mainPanelBottomRightPanel);
-		
+
 		if (dichotomy) {
 			confirmButton = new JButton();
 			confirmButton.setPreferredSize(new Dimension((width - 12) / 6, (height - 12) / 4 - 4));
 			confirmButton.setOpaque(false);
 			confirmButton.setBorderPainted(false);
 			confirmButton.setContentAreaFilled(false);
-			if (height > 300) {	confirmIcon = imageLoader.loadImageIcon("/icons/yesButton.png", 48, 48); }
-			else { confirmIcon = imageLoader.loadImageIcon("/icons/yesButton.png", 24, 24); }
+			if (height > 300) {
+				confirmIcon = imageLoader.loadImageIcon("/icons/yesButton.png", 48, 48);
+			} else {
+				confirmIcon = imageLoader.loadImageIcon("/icons/yesButton.png", 24, 24);
+			}
 			confirmButton.setIcon(confirmIcon);
 			confirmButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -103,8 +106,11 @@ public class Popup extends JDialog {
 			cancelButton.setOpaque(false);
 			cancelButton.setBorderPainted(false);
 			cancelButton.setContentAreaFilled(false);
-			if (height > 300) {	cancelIcon = imageLoader.loadImageIcon("/icons/noButton.png", 48, 48); }
-			else { cancelIcon = imageLoader.loadImageIcon("/icons/noButton.png", 24, 24); }
+			if (height > 300) {
+				cancelIcon = imageLoader.loadImageIcon("/icons/noButton.png", 48, 48);
+			} else {
+				cancelIcon = imageLoader.loadImageIcon("/icons/noButton.png", 24, 24);
+			}
 			cancelButton.setIcon(cancelIcon);
 			cancelButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -118,8 +124,11 @@ public class Popup extends JDialog {
 			acceptButton.setOpaque(false);
 			acceptButton.setContentAreaFilled(false);
 			acceptButton.setBorderPainted(false);
-			if (height > 300) {	acceptIcon = imageLoader.loadImageIcon("/icons/okButton.png", 64, 64); }
-			else { acceptIcon = imageLoader.loadImageIcon("/icons/okButton.png", 40, 40); }
+			if (height > 300) {
+				acceptIcon = imageLoader.loadImageIcon("/icons/confirm.png", (width - 12) / 4, (height - 12) / 5);
+			} else {
+				acceptIcon = imageLoader.loadImageIcon("/icons/confirm.png", (width - 12) / 4, (height - 12) / 5);
+			}
 			acceptButton.setIcon(acceptIcon);
 			acceptButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -128,9 +137,9 @@ public class Popup extends JDialog {
 			});
 			mainPanelBottomRightPanel.add(acceptButton);
 		}
-		
+
 		applyColours(colour);
-		
+
 	}
 
 	private Color applyColours(Colour colour) {

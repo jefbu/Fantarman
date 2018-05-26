@@ -1,5 +1,7 @@
 package main.battle;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Random;
@@ -22,7 +24,7 @@ public class BattleConclusion extends TextPopup {
 
 	public BattleConclusion(Colour colour, Army yourBattleArmy, Army opponentBattleArmy) {
 		
-		super(BattleScreen.battleScene.roundedWidth / 2, BattleScreen.battleScene.roundedHeight / 2, colour, true);
+		super(BattleScreen.battleScene.roundedWidth / 2, BattleScreen.battleScene.roundedHeight / 2, colour, false);
 		
 		int yourInitialValue = yourBattleArmy.value;
 		int enemyInitialValue = opponentBattleArmy.value;
@@ -138,6 +140,19 @@ public class BattleConclusion extends TextPopup {
 		Screen.gameScreen.mainPanel.leagueView.fillLeagueView();
 		
 		Main.league.calendarDay++;
+		
+		try {
+		acceptButton.removeActionListener(acceptButton.getActionListeners()[0]);
+		} catch (Exception e) {}
+		acceptButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				Screen.battleScreen.setVisible(false);
+				Screen.gameScreen.setVisible(true);
+				Screen.gameScreen.setScreensInvisible();
+				Screen.gameScreen.mainPanel.homeView.setVisible(true);
+			}
+		});
 		
 	}
 	

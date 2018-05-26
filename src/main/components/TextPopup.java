@@ -39,19 +39,18 @@ public class TextPopup extends Popup {
 	ImageIcon acceptIcon;
 	ImageIcon confirmIcon;
 	ImageIcon cancelIcon;
-	
 
 	public TextPopup(int width, int height, Colour colour, boolean dichotomy) {
 
 		super(width, height, colour, dichotomy);
-		
+
 		setSize(new Dimension(width, height));
 		setLocationRelativeTo(BattleScreen.battleScene);
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setUndecorated(true);
 
 		imageLoader = new ImageLoader();
-		
+
 		bottomPanel = new JPanel();
 		bottomPanel.setPreferredSize(new Dimension(width, height));
 		bottomPanel.setBackground(applyColour(colour, 0));
@@ -108,8 +107,11 @@ public class TextPopup extends Popup {
 			confirmButton.setOpaque(false);
 			confirmButton.setBorderPainted(false);
 			confirmButton.setContentAreaFilled(false);
-			if (height > 300) {	confirmIcon = imageLoader.loadImageIcon("/icons/yesButton.png", 48, 48); }
-			else { confirmIcon = imageLoader.loadImageIcon("/icons/yesButton.png", 24, 24); }
+			if (height > 300) {
+				confirmIcon = imageLoader.loadImageIcon("/icons/yesButton.png", 48, 48);
+			} else {
+				confirmIcon = imageLoader.loadImageIcon("/icons/yesButton.png", 24, 24);
+			}
 			confirmButton.setIcon(confirmIcon);
 			confirmButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -124,8 +126,11 @@ public class TextPopup extends Popup {
 			cancelButton.setOpaque(false);
 			cancelButton.setBorderPainted(false);
 			cancelButton.setContentAreaFilled(false);
-			if (height > 300) {	cancelIcon = imageLoader.loadImageIcon("/icons/noButton.png", 48, 48); }
-			else { cancelIcon = imageLoader.loadImageIcon("/icons/noButton.png", 24, 24); }
+			if (height > 300) {
+				cancelIcon = imageLoader.loadImageIcon("/icons/noButton.png", 48, 48);
+			} else {
+				cancelIcon = imageLoader.loadImageIcon("/icons/noButton.png", 24, 24);
+			}
 			cancelButton.setIcon(cancelIcon);
 			cancelButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -139,8 +144,11 @@ public class TextPopup extends Popup {
 			acceptButton.setOpaque(false);
 			acceptButton.setContentAreaFilled(false);
 			acceptButton.setBorderPainted(false);
-			if (height > 300) {	acceptIcon = imageLoader.loadImageIcon("/icons/okButton.png", 64, 64); }
-			else { acceptIcon = imageLoader.loadImageIcon("/icons/okButton.png", 40, 40); }
+			if (height > 300) {
+				acceptIcon = imageLoader.loadImageIcon("/icons/confirm.png", (width - 12) / 4, (height - 12) / 5);
+			} else {
+				acceptIcon = imageLoader.loadImageIcon("/icons/confirm.png", (width - 12) / 4, (height - 12) / 5);
+			}
 			acceptButton.setIcon(acceptIcon);
 			acceptButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
