@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
+import main.Main;
 import main.components.Colour;
 import main.components.ContentPanel;
 import main.components.LabeledPanel;
@@ -221,6 +222,7 @@ public class EquipPanel extends ContentPanel {
 			weaponsList.get(i).addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					regiment.weapon = regiment.weapons.get(index);
+					Main.yourArmy.money = Main.yourArmy.money - regiment.weapons.get(index).equipCost;
 					regiment.calculateTotalStats();
 					regiment.calculateValue();
 					Screen.gameScreen.mainPanel.regimentView.fillRegimentView(regiment, editable);
@@ -294,6 +296,7 @@ public class EquipPanel extends ContentPanel {
 			armoursList.get(ii).addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					regiment.armour = regiment.armours.get(index);
+					Main.yourArmy.money = Main.yourArmy.money - regiment.armours.get(index).equipCost;
 					regiment.calculateTotalStats();
 					regiment.calculateValue();
 					Screen.gameScreen.mainPanel.regimentView.fillRegimentView(regiment, editable);

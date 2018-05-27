@@ -1,7 +1,7 @@
 package main.graphics.gameScreen;
 
-import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -10,7 +10,10 @@ import javax.swing.JPanel;
 
 import main.Main;
 import main.battle.Battle;
+import main.components.Colour;
+import main.components.IconLabelPanel;
 import main.graphics.Screen;
+import main.utility.Colors;
 
 public class ButtonPanel extends JPanel {
 	
@@ -27,33 +30,21 @@ public class ButtonPanel extends JPanel {
 		int width = roundedWidth;
 		
 		setPreferredSize(new Dimension(width, roundedHeight));
-		setBackground(new Color(40, 50, 40));
+		setBackground(Colors.vlblue);
 		
-		
-		exitButton = new JButton();
-		exitButton.setPreferredSize(new Dimension(100, 50));
-		exitButton.setText("Quit");
-		exitButton.addActionListener(new ActionListener() {
-			
-			public void actionPerformed (ActionEvent e) {
-				Main.screen.dispose();
-			}
-		});
-		
-		battleButton = new JButton();
-		battleButton.setPreferredSize(new Dimension(100, 50));
-		battleButton.setText("Battle");
-		battleButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+       IconLabelPanel battlePanel = new IconLabelPanel(width * 8 / 10, roundedHeight * 2 / 3, Colour.RED);
+        battlePanel.buttonedPanel.label.setForeground(Colors.textyellow);
+        battlePanel.buttonedPanel.label.setFont(new Font("garamond", Font.BOLD, 48));
+        battlePanel.buttonedPanel.label.setText("To Battle");
+        battlePanel.buttonedPanel.button.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
 				Screen.gameScreen.setVisible(false);
 				Screen.battleScreen.setVisible(true);
-				Main.battles.add(new Battle());
-			}
-		});
+				Main.battles.add(new Battle());	        	}
+        });
+        add(battlePanel);
 		
-		add(exitButton);
-		add(battleButton);
-		
+
 	}
 
 }

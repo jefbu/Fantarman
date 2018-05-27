@@ -73,46 +73,6 @@ public class MenuPanel extends JPanel {
 				loadButton.add(loadLabel);
 		add(loadPanel);
 		
-		JPanel creditsPanel = new JPanel();
-		creditsPanel.setPreferredSize(labelDimension);
-		creditsPanel.setBackground(backgroundColor);
-		creditsPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));			
-		JButton creditsButton = new JButton();
-			creditsButton.setPreferredSize(labelDimension);
-			creditsButton.setContentAreaFilled(false);
-			creditsButton.setBorderPainted(false);
-			creditsButton.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					System.out.println("credits");
-				}
-			});
-			creditsPanel.add(creditsButton);
-				JLabel creditsLabel = new JLabel();
-				creditsLabel.setForeground(Colors.textyellow);
-				creditsLabel.setText("credits");
-				creditsButton.add(creditsLabel);
-		add(creditsPanel);
-		
-		JPanel helpPanel = new JPanel();
-		helpPanel.setPreferredSize(labelDimension);
-		helpPanel.setBackground(backgroundColor);
-		helpPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));			
-		JButton helpButton = new JButton();
-			helpButton.setPreferredSize(labelDimension);
-			helpButton.setContentAreaFilled(false);
-			helpButton.setBorderPainted(false);
-			helpButton.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					System.out.println("helpd");
-				}
-			});
-			helpPanel.add(helpButton);
-				JLabel helpLabel = new JLabel();
-				helpLabel.setForeground(Colors.textyellow);
-				helpLabel.setText("help");
-				helpButton.add(helpLabel);
-		add(helpPanel);
-		
 		JPanel exitPanel = new JPanel();
 		exitPanel.setPreferredSize(labelDimension);
 		exitPanel.setBackground(backgroundColor);

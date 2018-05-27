@@ -51,7 +51,7 @@ public class GameStartScreen extends JPanel {
 					createLeague(Main.yourArmy);
 					setVisible(false);
 					Screen.gameScreen.setScreensInvisible();
-					Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
+					Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
 					Screen.gameScreen.mainPanel.homeView.setVisible(true);
 					Screen.gameScreen.setVisible(true);
 				}
@@ -59,14 +59,19 @@ public class GameStartScreen extends JPanel {
 		add(pikninButton);
 		
 		JButton terquitButton = new JButton("Terrible Terquits");
-		terquitButton.setPreferredSize(new Dimension(300, 150));
-			terquitButton.addActionListener(new ActionListener() {
+		terquitButton.setPreferredSize(new Dimension(width / 6, height / 3));
+		terquitButton.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
+		terquitButton.setOpaque(false);
+		terquitButton.setContentAreaFilled(false);
+		terquitButton.setBorder(null);
+		terquitButton.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Terquits.png", width / 6, height / 3));		
+		terquitButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					Main.yourArmy = new TerribleTerquits();
 					createLeague(Main.yourArmy);
 					setVisible(false);
 					Screen.gameScreen.setScreensInvisible();
-					Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
+					Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
 					Screen.gameScreen.mainPanel.homeView.setVisible(true);
 					Screen.gameScreen.setVisible(true);
 				}
@@ -81,7 +86,7 @@ public class GameStartScreen extends JPanel {
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
-				Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
+				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
 				Screen.gameScreen.setVisible(true);
 			}
@@ -89,34 +94,44 @@ public class GameStartScreen extends JPanel {
 		add(wanmenButton);	
 	
 		JButton skylordsButton = new JButton("Skylords");
-		skylordsButton.setPreferredSize(new Dimension(300, 150));
+		skylordsButton.setPreferredSize(new Dimension(width / 6, height / 3));
+		skylordsButton.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
+		skylordsButton.setOpaque(false);
+		skylordsButton.setContentAreaFilled(false);
+		skylordsButton.setBorder(null);
+		skylordsButton.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Skylords.png", width / 6, height / 3));
 		skylordsButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main.yourArmy = new Skylords();
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
-				Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
+				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
 				Screen.gameScreen.setVisible(true);
 			}
 		});
 		add(skylordsButton);
 		
-		JButton sacredCruxButton = new JButton("Espequr");
-		sacredCruxButton.setPreferredSize(new Dimension(300, 150));
-		sacredCruxButton.addActionListener(new ActionListener() {
+		JButton espequrButton = new JButton("Espequr");
+		espequrButton.setPreferredSize(new Dimension(width / 6, height / 3));
+		espequrButton.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
+		espequrButton.setOpaque(false);
+		espequrButton.setContentAreaFilled(false);
+		espequrButton.setBorder(null);
+		espequrButton.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Espequr.png", width / 6, height / 3));			
+		espequrButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main.yourArmy = new Espequr();
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
-				Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
+				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
 				Screen.gameScreen.setVisible(true);
 			}
 		});
-		add(sacredCruxButton);
+		add(espequrButton);
 		
 		
 		JButton chiDestroyersButton = new JButton("Chi Destroyers");
@@ -127,7 +142,7 @@ public class GameStartScreen extends JPanel {
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
-				Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
+				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
 				Screen.gameScreen.setVisible(true);
 			}
@@ -142,7 +157,7 @@ public class GameStartScreen extends JPanel {
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
-				Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
+				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
 				Screen.gameScreen.setVisible(true);
 			}
@@ -157,7 +172,7 @@ public class GameStartScreen extends JPanel {
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
-				Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
+				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
 				Screen.gameScreen.setVisible(true);
 			}

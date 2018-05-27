@@ -91,7 +91,7 @@ public class Army implements Serializable {
 		previousBoardSatisfaction[1] = previousBoardSatisfaction[2];
 		previousBoardSatisfaction[2] = previousBoardSatisfaction[3];
 		previousBoardSatisfaction[3] = boardSatisfaction;
-		boardSatisfaction = boardSatisfaction / 2;
+		boardSatisfaction = boardSatisfaction * 3 / 4;
 		boardSatisfaction = boardSatisfaction + matchResult;
 		boardSatisfaction = boardSatisfaction + calculateLeagueResult();
 		boardSatisfaction = boardSatisfaction + (3 * calculateFinancialStability());
@@ -105,7 +105,7 @@ public class Army implements Serializable {
 		previousFanSatisfaction[1] = previousFanSatisfaction[2];
 		previousFanSatisfaction[2] = previousFanSatisfaction[3];
 		previousFanSatisfaction[3] = fanSatisfaction;
-		fanSatisfaction = fanSatisfaction / 2;
+		fanSatisfaction = fanSatisfaction * 3 / 4;
 		fanSatisfaction = fanSatisfaction + (2 * matchResult);
 		fanSatisfaction = fanSatisfaction + (2 * calculateLeagueResult());
 		fanSatisfaction = fanSatisfaction + calculateFinancialStability();
@@ -131,12 +131,12 @@ public class Army implements Serializable {
 		}
 		
 		switch (leaguePosition) {
-		case 0: return 10;
-		case 1: return 8;
-		case 2: return 7;
-		case 3: return 6;
-		case 4: return 4;
-		case 5: return 3;
+		case 0: return 5;
+		case 1: return 4;
+		case 2: return 3;
+		case 3: return 2;
+		case 4: return 2;
+		case 5: return 1;
 		case 6: return 1;
 		case 7: return 0;
 		}
@@ -146,11 +146,11 @@ public class Army implements Serializable {
 	}
 	
 	private int calculateFinancialStability() {
-		if (income > upkeep * 15 / 10) { return 10; }
-		else if (income > upkeep * 125 / 100) { return 8; }
-		else if (income > upkeep) { return 6; }
-		else if (income > upkeep * 8 / 10) { return 4; }
-		else if (income > upkeep * 6 / 10) { return 2; }
+		if (income > upkeep * 15 / 10) { return 5; }
+		else if (income > upkeep * 125 / 100) { return 4; }
+		else if (income > upkeep) { return 3; }
+		else if (income > upkeep * 8 / 10) { return 2; }
+		else if (income > upkeep * 6 / 10) { return 1; }
 		else { return 0; }
 	}
 	

@@ -55,7 +55,7 @@ public class BattleConclusion extends TextPopup {
 				else if (matchup.army2 == Main.yourArmy) {	matchup.result = Result.L; }
 			}
 			
-			matchResult = 10;
+			matchResult = 5;
 			
 		}
 		else if (yourPercentage > enemyPercentage * 12 / 10) { 
@@ -69,7 +69,7 @@ public class BattleConclusion extends TextPopup {
 				else if (matchup.army2 == Main.yourArmy) {	matchup.result = Result.l; }
 			}
 			
-			matchResult = 7;
+			matchResult = 4;
 		}
 		else if (yourPercentage > enemyPercentage * 8 / 10) { 
 			Main.yourArmy.scoreSheet.draws++;
@@ -82,7 +82,7 @@ public class BattleConclusion extends TextPopup {
 				else if (matchup.army2 == Main.yourArmy) {	matchup.result = Result.D; }
 			}
 			
-			matchResult = 4;
+			matchResult = 2;
 		}
 		
 		else if (yourPercentage > enemyPercentage * 6 / 10) { 
@@ -135,7 +135,7 @@ public class BattleConclusion extends TextPopup {
 		Main.yourArmy.calculateFanSatisfaction(matchResult);
 		
 		Screen.gameScreen.mainPanel.armyView.fillArmyView(Main.yourArmy);
-		Screen.gameScreen.mainPanel.homeView.fillHomeScreen();;
+		Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);;
 		Screen.gameScreen.mainPanel.infoView.fillInfoView(Main.yourArmy);
 		Screen.gameScreen.mainPanel.leagueView.fillLeagueView();
 		

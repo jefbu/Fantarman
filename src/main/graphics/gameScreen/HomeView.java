@@ -43,11 +43,11 @@ public class HomeView extends JPanel {
 		
 	}
 	
-	public void fillHomeScreen() {
+	public void fillHomeScreen(boolean fillNewsReel) {
 		
 		shortLeague.fillShortLeague();
 		shortArmy.fillShortArmy();
-		newsReel.fillNewsReel();
+		if(fillNewsReel) newsReel.fillNewsReel();
 		
 	}
 

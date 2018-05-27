@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import main.Main;
 import main.components.Colour;
 import main.utility.Colors;
+import main.utility.ImageLoader;
 
 public class LeagueFixturesPanel extends JPanel {
 
@@ -19,16 +20,19 @@ public class LeagueFixturesPanel extends JPanel {
 	LeagueFixturesFixturesPanel fixturesPanel;
 	
 	int matchDay;
+	ImageLoader imageLoader;
 
 	public LeagueFixturesPanel(int width, int height) {
 
 		super();
+		imageLoader = new ImageLoader();
 		setPreferredSize(new Dimension(width, height));
-		setLayout(new FlowLayout(FlowLayout.LEFT, width * 5 / 100, height / 10));
+		setLayout(new FlowLayout(FlowLayout.LEFT, width * 3 / 100, height / 10));
 		setBackground(Colors.vlblue);
 		
 		JButton previousButton = new JButton();
-		previousButton.setPreferredSize(new Dimension(width * 5 / 100, height / 10));
+		previousButton.setPreferredSize(new Dimension(width * 9 / 100, height / 5));
+		previousButton.setIcon(imageLoader.loadImageIcon("/icons/previousButton.png", width * 9 / 100, height / 5));
 		previousButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (matchDay > 0) matchDay--;
@@ -43,7 +47,8 @@ public class LeagueFixturesPanel extends JPanel {
 		add(fixturesPanel);
 		
 		JButton nextButton = new JButton();
-		nextButton.setPreferredSize(new Dimension(width * 5 / 100, height / 10));
+		nextButton.setPreferredSize(new Dimension(width * 9 / 100, height / 5));
+		nextButton.setIcon(imageLoader.loadImageIcon("/icons/nextButton.png", width * 9 /100, height / 5));
 		nextButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (matchDay < Main.league.calendar.calendarDays.size() - 1) matchDay++;
