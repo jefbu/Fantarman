@@ -32,7 +32,7 @@ public class RoleSelectionPanel extends ContentPanel {
 		
 		for (int i = 0; i < 15; i++) {
 			
-		roleSelectionPopup = new RoleSelectionPopup(width * 2, height / 2);
+		roleSelectionPopup = new RoleSelectionPopup(width * 75 / 100, height * 3 / 10);
 
 			ButtonedPanel linePanel = new ButtonedPanel(width, height / 15, Color.black);
 			linePanel.setBackground(backgroundColorOpponentArmy);
