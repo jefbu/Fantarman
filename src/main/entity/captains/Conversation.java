@@ -1,7 +1,11 @@
 package main.entity.captains;
 
-public class Conversation {
-	
+import java.io.Serializable;
+
+public class Conversation implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
 	public Captain owner;
 	public Captain partner;
 	public String[] texts;
