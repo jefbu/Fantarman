@@ -103,7 +103,7 @@ public class TitleScreen extends JPanel {
         bottomPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 0));
         JLabel gameTitleLabel = new JLabel();
         gameTitleLabel.setForeground(Colors.textyellow);
-        gameTitleLabel.setText("Hands Off My Army, v0.4.7.0.");
+        gameTitleLabel.setText("Hands Off My Army, v0.4.7.1.");
         bottomPanel.add(gameTitleLabel);
         backgroundPanel.add(bottomPanel);
 
