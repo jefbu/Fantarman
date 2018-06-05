@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 
 import main.components.Colour;
 import main.entity.armies.Army;
+import main.utility.ImageLoader;
 
 public class ArmyViewViewPanel extends JPanel {
 	
@@ -22,12 +23,15 @@ public class ArmyViewViewPanel extends JPanel {
 	public ArmyViewViewPanel(int width, int height) {
 		
 		super();
+		ImageLoader imageLoader = new ImageLoader();
+		
 		setPreferredSize(new Dimension(width, height));
 		setBackground(new Color (150, 170, 255));
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		viewChoicePopup = new ViewChoicePopup(width, height * 4 + 10, Colour.DGREEN, false);
 		sortButton = new JButton();
 		sortButton.setPreferredSize(new Dimension(width, height));
+		sortButton.setIcon(imageLoader.loadImageIcon("/icons/viewButton.png", width, height));
 		sortButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				viewChoicePopup.setLocation(MouseInfo.getPointerInfo().getLocation());

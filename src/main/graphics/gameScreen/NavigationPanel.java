@@ -45,7 +45,7 @@ public class NavigationPanel extends JPanel {
 			});
 			homeViewPanel.buttonedPanel.label.setForeground(Colors.textyellow);
 			homeViewPanel.buttonedPanel.label.setFont(new Font("garamond", Font.BOLD, 42));
-			homeViewPanel.buttonedPanel.label.setText("Home View");
+			homeViewPanel.buttonedPanel.label.setText("Home");
 		add(homeViewPanel);
 		
 		armyViewPanel = new IconLabelPanel(width - 10, height / 6 - 10, Colour.GREEN);
@@ -58,7 +58,7 @@ public class NavigationPanel extends JPanel {
 			});
 			armyViewPanel.buttonedPanel.label.setForeground(Colors.textyellow);
 			armyViewPanel.buttonedPanel.label.setFont(new Font("garamond", Font.BOLD, 42));
-			armyViewPanel.buttonedPanel.label.setText("Army View");
+			armyViewPanel.buttonedPanel.label.setText("Army");
 		add(armyViewPanel);
 		
 		leagueViewPanel = new IconLabelPanel(width - 10, height / 6 - 10, Colour.GREEN);
@@ -71,7 +71,7 @@ public class NavigationPanel extends JPanel {
 		});
 		leagueViewPanel.buttonedPanel.label.setForeground(Colors.textyellow);
 		leagueViewPanel.buttonedPanel.label.setFont(new Font("garamond", Font.BOLD, 42));
-		leagueViewPanel.buttonedPanel.label.setText("League View");
+		leagueViewPanel.buttonedPanel.label.setText("League");
 	add(leagueViewPanel);
 	
 		infoViewPanel = new IconLabelPanel(width - 10, height / 6 - 10, Colour.GREEN);
@@ -84,7 +84,7 @@ public class NavigationPanel extends JPanel {
 		});
 		infoViewPanel.buttonedPanel.label.setForeground(Colors.textyellow);
 		infoViewPanel.buttonedPanel.label.setFont(new Font("garamond", Font.BOLD, 42));
-		infoViewPanel.buttonedPanel.label.setText("Information View");
+		infoViewPanel.buttonedPanel.label.setText("Information");
 	add(infoViewPanel);
 	
 		wikiViewPanel = new IconLabelPanel(width - 10, height / 6 - 10, Colour.GREEN);
@@ -96,7 +96,7 @@ public class NavigationPanel extends JPanel {
 		});
 		wikiViewPanel.buttonedPanel.label.setForeground(Colors.textyellow);
 		wikiViewPanel.buttonedPanel.label.setFont(new Font("garamond", Font.BOLD, 42));
-		wikiViewPanel.buttonedPanel.label.setText("Encyclopedia View");
+		wikiViewPanel.buttonedPanel.label.setText("Encyclopedia");
 	add(wikiViewPanel);
 		
 	}
