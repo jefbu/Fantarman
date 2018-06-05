@@ -22,17 +22,17 @@ public class LeagueFilterPanel extends JPanel {
 		
 		LabeledPanel explanationPanel = new LabeledPanel(width / 4, height * 8 / 10);
 		explanationPanel.setBackground(Colors.blue);
-		explanationPanel.label.setText("Choose your Filter");
+		explanationPanel.label.setText("Not Implemented Yet");
 		
 		ButtonedPanel leaguePanel = new ButtonedPanel(width / 5, height * 8 / 10, Colors.vdblue);
 		leaguePanel.button.setOpaque(true);
 		leaguePanel.button.setBackground(Colors.lblue);
-		leaguePanel.label.setText("League 1");
+		leaguePanel.label.setText("Not Implemented Yet");
 		
 		ButtonedPanel yearPanel = new ButtonedPanel(width / 5, height * 8 / 10, Colors.vdblue);
 		yearPanel.button.setOpaque(true);
 		yearPanel.button.setBackground(Colors.lblue);
-		yearPanel.label.setText("Year 1");
+		yearPanel.label.setText("Not Implemented Yet");
 		
 		
 		add(explanationPanel);
