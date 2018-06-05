@@ -27,7 +27,7 @@ public class TextPopup extends Popup {
 	private JPanel middlePanel;
 	private JPanel mainPanel;
 	public JPanel mainPanelTopPanel;
-	private JTextPane textArea;
+	public JTextPane textArea;
 	private JPanel mainPanelBottomLeftPanel;
 	private JPanel mainPanelBottomRightPanel;
 
@@ -108,9 +108,9 @@ public class TextPopup extends Popup {
 			confirmButton.setBorderPainted(false);
 			confirmButton.setContentAreaFilled(false);
 			if (height > 300) {
-				confirmIcon = imageLoader.loadImageIcon("/icons/yesButton.png", 48, 48);
+				confirmIcon = imageLoader.loadImageIcon("/icons/yesButton.png", (width - 12) / 6, (height - 12) / 4 - 4);
 			} else {
-				confirmIcon = imageLoader.loadImageIcon("/icons/yesButton.png", 24, 24);
+				confirmIcon = imageLoader.loadImageIcon("/icons/yesButton.png", (width - 12) / 6, (height - 12) / 4 - 4);
 			}
 			confirmButton.setIcon(confirmIcon);
 			confirmButton.addActionListener(new ActionListener() {
@@ -127,9 +127,9 @@ public class TextPopup extends Popup {
 			cancelButton.setBorderPainted(false);
 			cancelButton.setContentAreaFilled(false);
 			if (height > 300) {
-				cancelIcon = imageLoader.loadImageIcon("/icons/noButton.png", 48, 48);
+				cancelIcon = imageLoader.loadImageIcon("/icons/noButton.png", (width - 12) / 6, (height - 12) / 4 - 4);
 			} else {
-				cancelIcon = imageLoader.loadImageIcon("/icons/noButton.png", 24, 24);
+				cancelIcon = imageLoader.loadImageIcon("/icons/noButton.png", (width - 12) / 6, (height - 12) / 4 - 4);
 			}
 			cancelButton.setIcon(cancelIcon);
 			cancelButton.addActionListener(new ActionListener() {
@@ -179,11 +179,11 @@ public class TextPopup extends Popup {
 		case DGREY:
 			return Colors.dgrey;
 		case LRED:
-			return new Color(180 + modifier, 60 + modifier, 40 + modifier / 2);
+			return new Color(160 + modifier, 60 + modifier, 40 + modifier / 2);
 		case LGREEN:
-			return new Color(100 + modifier, 180 + modifier, 60 + modifier / 2);
+			return new Color(60 + modifier / 2, 160 + modifier, 120 + modifier);
 		case LBLUE:
-			return new Color(60 + modifier / 2, 120 + modifier, 180 + modifier);
+			return new Color(60 + modifier / 2, 120 + modifier, 160 + modifier);
 		case LGREY:
 			return Colors.lgrey;
 		}

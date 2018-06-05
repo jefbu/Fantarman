@@ -12,6 +12,9 @@ import main.Main;
 import main.battle.Battle;
 import main.components.Colour;
 import main.components.IconLabelPanel;
+import main.components.TextPopup;
+import main.entity.regiments.Regiment;
+import main.entity.regiments.Role;
 import main.graphics.Screen;
 import main.utility.Colors;
 
@@ -38,9 +41,43 @@ public class ButtonPanel extends JPanel {
         battlePanel.buttonedPanel.label.setText("To Battle");
         battlePanel.buttonedPanel.button.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
+        		
+        		int combattants = 0;
+        		for (Regiment regiment: Main.yourArmy.roster) {
+        			if (regiment.role == Role.COMBAT) combattants++;
+        		}
+        		
+        		if (combattants == 8) {
 				Screen.gameScreen.setVisible(false);
 				Screen.battleScreen.setVisible(true);
-				Main.battles.add(new Battle());	        	}
+				Main.battles.add(new Battle());
+        		}
+        		else {
+        			TextPopup popup = new TextPopup(width * 3 / 2, roundedHeight, Colour.LRED, true);
+        			
+        			popup.writeText("You have not selected eight regiments. Do you still want to continue?");
+        			
+        				try { popup.confirmButton.removeActionListener(popup.confirmButton.getActionListeners()[0]); }
+        				catch (Exception e1) {}
+        				try { popup.cancelButton.removeActionListener(popup.cancelButton.getActionListeners()[0]); }
+        				catch (Exception e2) {}
+        				
+        			popup.confirmButton.addActionListener(new ActionListener() {
+        				public void actionPerformed(ActionEvent e) {
+        					Screen.gameScreen.setVisible(false);
+        					Screen.battleScreen.setVisible(true);
+        					Main.battles.add(new Battle());
+        					popup.dispose();
+        				}
+        			});
+        			popup.cancelButton.addActionListener(new ActionListener() {
+        				public void actionPerformed(ActionEvent e) {
+        					popup.dispose();
+        				}
+        			});
+        			popup.setVisible(true);
+        		}
+			}
         });
         add(battlePanel);
 		

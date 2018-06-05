@@ -39,8 +39,8 @@ public class BattleConclusion extends TextPopup {
 			enemyFinalValue = enemyFinalValue + regiment.value;
 		}
 		
-		int yourPercentage = yourFinalValue * 100 / yourInitialValue;
-		int enemyPercentage = enemyFinalValue * 100 / enemyInitialValue;
+		int yourPercentage = yourFinalValue * 100 / yourInitialValue + 1;
+		int enemyPercentage = enemyFinalValue * 100 / enemyInitialValue + 1;
 		
 		if (yourPercentage > enemyPercentage * 15 / 10) {
 			Adjectives adjectives = new Adjectives();
@@ -153,6 +153,51 @@ public class BattleConclusion extends TextPopup {
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
 			}
 		});
+		
+		if (Main.league.calendarDay >= Main.league.calendar.calendarDays.size()) {
+			
+			TextPopup popup = new TextPopup(500, 500, Colour.LGREEN, false);
+				int leaguePosition = 0;
+				String text = "";
+				
+				for (int i = 0; i < Main.league.armies.size(); i++) {
+					if (Main.league.armies.get(i).name == Main.yourArmy.name) {
+						leaguePosition = i + 1;
+					}
+				}
+				switch(leaguePosition) {
+				case 1: text = "Congratulations. You have bested the odds and come out on top of the league. "
+						+ "Your glory will be sung for many years. Or at least until you decide to play again."; break;
+				case 2: text = "Well Done. You almost made it to the top. You just needed that one roll of the dice to "
+						+ "go your way, or that one opponent to lose that one crucial game. Still, second place is not "
+						+ "a bad result!"; break;
+				case 3: text = "You did alright. If this were the olympics, you'd still get a medal. Since it's just a "
+						+ "game, you'll have to make do with these words of encouragement. Keep on trying and soon you'll"
+						+ " make it to the top!"; break;
+				case 4: text = "Well, the season is over, and you didn't do that great. You might not get fired, "
+						+ "but that's about the best we can say. Hooray, I suppose?"; break;
+				case 5: text = "You scored the fifth spot, which is on the right hand column of the table. You'll "
+						+ "probably console yourself by saying it could have been worse. This is technically true, "
+						+ "but it could have gone a whole lot better, also..."; break;
+				case 6: text = "Oh dear. You did quite poorly, finishing in sixth place. Blame the poor game design or "
+						+ "such. Or you know, try harder?"; break;
+				case 7: text = "Were you even trying at all? Did you assign orders or did you just send in the troops "
+						+ "willy nilly? Do you feel a sinking sense of shame in scoring the penultimate result?"; break;
+				case 8: text = "I can only imagine you did this terribly because you thought there might be a trophy or "
+						+ "achievement or something hanging on this abysmal result? Well, there isn't. "
+						+ "Also, you're fired. For next season, we have decided to put a chimpanzee "
+						+ "as general manager, expectations are it'll do a lot better than you did."; break;
+				}
+			
+			popup.writeText(text);
+			popup.acceptButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					dispose();
+					Main.screen.dispose();
+				}
+			});
+			popup.setVisible(true);
+		}
 		
 	}
 	

@@ -87,11 +87,7 @@ public class Popup extends JDialog {
 			confirmButton.setOpaque(false);
 			confirmButton.setBorderPainted(false);
 			confirmButton.setContentAreaFilled(false);
-			if (height > 300) {
-				confirmIcon = imageLoader.loadImageIcon("/icons/yesButton.png", 48, 48);
-			} else {
-				confirmIcon = imageLoader.loadImageIcon("/icons/yesButton.png", 24, 24);
-			}
+			confirmIcon = imageLoader.loadImageIcon("/icons/yesButton.png", (width - 12) / 6, (height - 12) / 4 - 4);
 			confirmButton.setIcon(confirmIcon);
 			confirmButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -106,11 +102,7 @@ public class Popup extends JDialog {
 			cancelButton.setOpaque(false);
 			cancelButton.setBorderPainted(false);
 			cancelButton.setContentAreaFilled(false);
-			if (height > 300) {
-				cancelIcon = imageLoader.loadImageIcon("/icons/noButton.png", 48, 48);
-			} else {
-				cancelIcon = imageLoader.loadImageIcon("/icons/noButton.png", 24, 24);
-			}
+			cancelIcon = imageLoader.loadImageIcon("/icons/noButton.png", (width - 12) / 6, (height - 12) / 4 - 4);
 			cancelButton.setIcon(cancelIcon);
 			cancelButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {

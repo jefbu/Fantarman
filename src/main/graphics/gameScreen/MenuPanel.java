@@ -11,6 +11,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import main.Main;
+import main.components.Colour;
+import main.components.TextPopup;
 import main.utility.Colors;
 import main.utility.LoadGame;
 import main.utility.SaveGame;
@@ -43,7 +45,30 @@ public class MenuPanel extends JPanel {
 			saveButton.setBorderPainted(false);
 			saveButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					SaveGame.save();
+					TextPopup savePopup = new TextPopup (gameScreenWidth / 3, gameScreenHeight / 3, Colour.LBLUE, true);
+					
+					savePopup.writeText("Do you want to save the game (old save will be overwritten)?");
+					
+					try { savePopup.confirmButton.removeActionListener(savePopup.confirmButton.getActionListeners()[0]);
+					} catch (Exception e1) {}
+					try { savePopup.cancelButton.removeActionListener(savePopup.cancelButton.getActionListeners()[0]);
+					} catch (Exception e2) {}
+					
+					savePopup.confirmButton.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							savePopup.dispose();
+							LoadGame.load();
+						}
+					});
+					
+					savePopup.cancelButton.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							savePopup.dispose();
+						}
+					});
+					
+					savePopup.setVisible(true);
+					
 				}
 			});
 			savePanel.add(saveButton);
@@ -63,7 +88,31 @@ public class MenuPanel extends JPanel {
 			loadButton.setBorderPainted(false);
 			loadButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					LoadGame.load();
+					
+					TextPopup loadPopup = new TextPopup (gameScreenWidth / 3, gameScreenHeight / 3, Colour.LBLUE, true);
+					
+					loadPopup.writeText("Do you want to load the saved game?");
+					
+					try { loadPopup.confirmButton.removeActionListener(loadPopup.confirmButton.getActionListeners()[0]);
+					} catch (Exception e1) {}
+					try { loadPopup.cancelButton.removeActionListener(loadPopup.cancelButton.getActionListeners()[0]);
+					} catch (Exception e2) {}
+					
+					loadPopup.confirmButton.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							loadPopup.dispose();
+							LoadGame.load();
+						}
+					});
+					
+					loadPopup.cancelButton.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							loadPopup.dispose();
+						}
+					});
+					
+					loadPopup.setVisible(true);
+					
 				}
 			});
 			loadPanel.add(loadButton);
