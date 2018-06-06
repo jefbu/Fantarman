@@ -24,6 +24,8 @@ public class TrophyPanel extends JPanel {
 	
 	private JPanel spaghettiPanel;
 	private JLabel spaghettiLabel;
+	private JPanel wonLeaguePanel;
+	private JLabel wonLeagueLabel;
 
 	public TrophyPanel(int width, int height) {
 
@@ -71,16 +73,26 @@ public class TrophyPanel extends JPanel {
 			spaghettiPanel.add(spaghettiLabel);
 			
 		contentPanel.insidePanel.add(spaghettiPanel);
-			
-
+		
+			wonLeaguePanel = new JPanel();
+			wonLeaguePanel.setPreferredSize(new Dimension (48, 48));
+			wonLeaguePanel.setLayout(new FlowLayout(FlowLayout.LEADING, 0, 0));
+			wonLeagueLabel = new JLabel();
+			wonLeagueLabel.setIcon(imageLoader.loadImageIcon("/trophies/notyet.png", 48, 48));
+			wonLeaguePanel.add(wonLeagueLabel);			
+	
+		contentPanel.insidePanel.add(wonLeaguePanel);
 	}
 
 	
 	public void fillTrophyPanel() {
 		
-		try { LoadTrophies.load(); } catch (Exception e) {}
+		try { LoadTrophies.load(); } catch (Exception e) {System.out.println("could not load trophies");}
 		if (Trophies.spaghetti) {
 			spaghettiLabel.setIcon(imageLoader.loadImageIcon("/trophies/spaghetti.png", 48, 48));
+		}
+		if (Trophies.wonLeague) {
+			wonLeagueLabel.setIcon(imageLoader.loadImageIcon("/trophies/wonLeague.png", 48, 48));
 		}
 		
 	}

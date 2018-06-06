@@ -16,6 +16,9 @@ public abstract class SaveTrophies {
 			boolean spaghetti = Trophies.spaghetti;
 			save.writeObject(spaghetti);
 			
+			boolean wonLeague = Trophies.wonLeague;
+			save.writeObject(wonLeague);
+			
 			save.close();
 			
 			} catch (IOException e) {

@@ -13,10 +13,13 @@ public abstract class LoadTrophies {
 			ObjectInputStream save = new ObjectInputStream(saveFile);
 			
 			boolean spaghetti;
+			boolean wonLeague;
 			
 			spaghetti = (boolean) save.readObject();
+			wonLeague = (boolean) save.readObject();
 			
 			Trophies.spaghetti = spaghetti;
+			Trophies.wonLeague = wonLeague;
 
 			save.close(); 
 			}
