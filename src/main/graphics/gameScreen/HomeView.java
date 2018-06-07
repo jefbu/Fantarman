@@ -47,6 +47,7 @@ public class HomeView extends JPanel {
 		
 		shortLeague.fillShortLeague();
 		shortArmy.fillShortArmy();
+		shortInfo.fillShortInformation();
 		if(fillNewsReel) newsReel.fillNewsReel();
 		
 	}

@@ -6,9 +6,13 @@ import java.awt.Font;
 
 import javax.swing.JPanel;
 
+import main.Main;
 import main.components.Colour;
 import main.components.ContentPanel;
+import main.components.LabeledPanel;
 import main.utility.Colors;
+import main.utility.LoadTrophies;
+import main.utility.Trophies;
 
 public class ShortInfo extends JPanel {
 
@@ -16,7 +20,17 @@ public class ShortInfo extends JPanel {
 	
 	private ContentPanel titlePanel;
 	private ContentPanel titleBarPanel;
-	private ContentPanel regimentsPanel;
+	private ContentPanel infoPanel;
+	private LabeledPanel balancePanel;
+	private LabeledPanel balanceResultPanel;
+	private LabeledPanel projectionPanel;
+	private LabeledPanel projectionResultPanel;
+	private LabeledPanel boardSatisfactionPanel;
+	private LabeledPanel boardSatisfactionResultPanel;
+	private LabeledPanel fanSatisfactionPanel;
+	private LabeledPanel fanSatisfactionResultPanel;
+	private LabeledPanel trophyPanel;
+	private LabeledPanel trophyResultPanel;
 
 	public ShortInfo(int width, int height) {
 		
@@ -35,16 +49,95 @@ public class ShortInfo extends JPanel {
 			titleBarPanel = new ContentPanel(width * 9 / 10, height / 10, Colour.BLUE,
 					new FlowLayout(FlowLayout.LEADING, 0, 0));
 
+				LabeledPanel namePanel = new LabeledPanel(width * 85 / 100 * 7 / 10, height / 10);
+				namePanel.setBackground(Colors.blue);
+				namePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 20));
+				namePanel.label.setFont(new Font("garamond", Font.BOLD, 16));
+				namePanel.label.setForeground(Colors.textyellow);
+				namePanel.label.setText("NAME");
+				titleBarPanel.insidePanel.add(namePanel);
+				
+				LabeledPanel resultPanel = new LabeledPanel(width * 85 / 100 * 3 / 10, height / 10);
+				resultPanel.label.setText("RESULT");
+				resultPanel.setBackground(Colors.blue);
+				resultPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 20));
+				resultPanel.label.setFont(new Font("garamond", Font.BOLD, 16));
+				resultPanel.label.setForeground(Colors.textyellow);
+				titleBarPanel.insidePanel.add(resultPanel);
+			
 			add(titleBarPanel);
 
-			regimentsPanel = new ContentPanel(width * 9 / 10, height * 7 / 10, Colour.LBLUE,
-					new FlowLayout(FlowLayout.LEFT, 1, 0));
-			add(regimentsPanel);
+			infoPanel = new ContentPanel(width * 9 / 10, height * 7 / 10, Colour.LBLUE,
+					new FlowLayout(FlowLayout.LEFT, 0, 0));
+			add(infoPanel);
+			
+			balancePanel = new LabeledPanel(width * 85 / 100 * 7 / 10, height * 7 / 10 / 10);
+			balancePanel.setBackground(Colors.lblue);
+			balancePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
+			balancePanel.label.setForeground(Colors.vdred);
+			balancePanel.label.setText("Balance");
+			infoPanel.insidePanel.add(balancePanel);
+			
+			balanceResultPanel = new LabeledPanel(width * 85 / 100 * 3 / 10, height * 7 / 10 / 10);
+			balanceResultPanel.setBackground(Colors.lblue);
+			infoPanel.insidePanel.add(balanceResultPanel);
+			
+			projectionPanel = new LabeledPanel(width * 85 / 100 * 7 / 10, height * 7 / 10 / 10);
+			projectionPanel.setBackground(Colors.lblue);
+			projectionPanel.label.setText("Projection");
+			infoPanel.insidePanel.add(projectionPanel);	
+			
+			projectionResultPanel = new LabeledPanel(width * 85 / 100 * 3 / 10, height * 7 / 10 / 10);
+			projectionResultPanel.setBackground(Colors.lblue);
+			infoPanel.insidePanel.add(projectionResultPanel);		
+			
+			boardSatisfactionPanel = new LabeledPanel(width * 85 / 100 * 7 / 10, height * 7 / 10 / 10);
+			boardSatisfactionPanel.setBackground(Colors.lblue);
+			boardSatisfactionPanel.label.setText("Board Satisfaction");
+			infoPanel.insidePanel.add(boardSatisfactionPanel);	
+			
+			boardSatisfactionResultPanel = new LabeledPanel(width * 85 / 100 * 3 / 10, height * 7 / 10 / 10);
+			boardSatisfactionResultPanel.setBackground(Colors.lblue);
+			infoPanel.insidePanel.add(boardSatisfactionResultPanel);			
+			
+			fanSatisfactionPanel = new LabeledPanel(width * 85 / 100 * 7 / 10, height * 7 / 10 / 10);
+			fanSatisfactionPanel.setBackground(Colors.lblue);
+			fanSatisfactionPanel.label.setText("Projection");
+			infoPanel.insidePanel.add(fanSatisfactionPanel);
+			
+			fanSatisfactionResultPanel = new LabeledPanel(width * 85 / 100 * 3 / 10, height * 7 / 10 / 10);
+			fanSatisfactionResultPanel.setBackground(Colors.lblue);
+			infoPanel.insidePanel.add(fanSatisfactionResultPanel);			
+			
+			trophyPanel = new LabeledPanel(width * 85 / 100 * 7 / 10, height * 7 / 10 / 10);
+			trophyPanel.setBackground(Colors.lblue);
+			trophyPanel.label.setText("Tophies");
+			infoPanel.insidePanel.add(trophyPanel);
+			
+			trophyResultPanel = new LabeledPanel(width * 85 / 100 * 3 / 10, height * 7 / 10 / 10);
+			trophyResultPanel.setBackground(Colors.lblue);
+			infoPanel.insidePanel.add(trophyResultPanel);
+			
+			
 
 		}
 	
 	public void fillShortInformation() {
 		
+		Main.yourArmy.calculateIncome();
+		Main.yourArmy.calculateUpkeep();
+		LoadTrophies.load();
+
+		balanceResultPanel.label.setText(Integer.toString(Main.yourArmy.money));
+		projectionResultPanel.label.setText(Integer.toString(Main.yourArmy.income - Main.yourArmy.upkeep));
+		boardSatisfactionResultPanel.label.setText(Integer.toString(Main.yourArmy.boardSatisfaction));
+		fanSatisfactionResultPanel.label.setText(Integer.toString(Main.yourArmy.fanSatisfaction));
+		
+		int trophies = 0;
+		if (Trophies.spaghetti) trophies++;
+		if (Trophies.wonLeague) trophies++;
+		
+		trophyResultPanel.label.setText(trophies + " / 2"); 
 		
 	}
 
