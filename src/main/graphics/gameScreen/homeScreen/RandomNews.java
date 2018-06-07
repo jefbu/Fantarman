@@ -161,7 +161,7 @@ public class RandomNews {
 	}
 	
 	private String getRandomSong() {
-		int rollGetRandomSong = random.nextInt(12);
+		int rollGetRandomSong = random.nextInt(16);
 		switch(rollGetRandomSong) {
 		case 0: return "Jessica Luvin: The Pain it does not End";
 		case 1: return "Mike Hartigan: I've got some Beer in the back of my Truck";
@@ -174,7 +174,11 @@ public class RandomNews {
 		case 8: return "One-tooth Bubba Bill: The Old Road to Melwarankee";
 		case 9: return "Baseball Bat Massacre: Lord of the Abyss";
 		case 10: return "Emily Beau: I love you but I love him more";
-		case 11: return "Dirk Trudeau: Cry me a River of Tears";
+		case 11: return "Emily Beau: I love you but I love her more";
+		case 12: return "Emily Beau: I love you but I love them more";
+		case 13: return "Dirk Trudeau: Cry me a River of Tears";
+		case 14: return "The Gorduras: Sanduiche iche";
+		case 15: return "The Fallen Ovens: Hey Giovana";
 		}
 		return "error in get Random Song";
 	}
