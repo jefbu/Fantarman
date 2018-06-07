@@ -12,7 +12,7 @@ import main.entity.captains.wanmen.Yiss;
 import main.entity.lieutenants.Lieutenant;
 import main.entity.regiments.wanmen.FireMages;
 import main.entity.regiments.wanmen.Glasscannon;
-import main.entity.regiments.wanmen.Metralyadora;
+import main.entity.regiments.wanmen.Miltradora;
 import main.entity.regiments.wanmen.Stiltleg;
 import main.entity.regiments.wanmen.Stoopvarmint;
 
@@ -30,7 +30,7 @@ public class Wanmen extends Army {
 		roster.add(new FireMages("Skari", new Kree(), Lieutenant.errant));
 		roster.add(new FireMages("Skarini", new Okarani(), Lieutenant.errant));
 		roster.add(new FireMages("Skarisin", new Sassaru(), Lieutenant.paladin));
-		roster.add(new Metralyadora("Rushi", new Miarsis(), Lieutenant.errant, Lieutenant.ambusher));
+		roster.add(new Miltradora("Rushi", new Miarsis(), Lieutenant.errant, Lieutenant.ambusher));
 		roster.add(new Stoopvarmint("Siszar", new Swashni(), Lieutenant.errant, Lieutenant.surgeon));
 		roster.add(new Stoopvarmint("Siszarni", new Yiss(), Lieutenant.paladin, Lieutenant.scout));
 		roster.add(new Glasscannon("Sek Skra", new Boris(), Lieutenant.errant, Lieutenant.musician));

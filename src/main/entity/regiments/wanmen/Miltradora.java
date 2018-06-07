@@ -12,11 +12,11 @@ import main.entity.races.Race;
 import main.entity.regiments.Regiment;
 import main.entity.regiments.RegimentType;
 
-public class Metralyadora extends Regiment {
+public class Miltradora extends Regiment {
 
 	private static final long serialVersionUID = 1L;
 
-	public Metralyadora(String name, Captain captain, Lieutenant lt1, Lieutenant lt2) {
+	public Miltradora(String name, Captain captain, Lieutenant lt1, Lieutenant lt2) {
 		
 		super();
 		
