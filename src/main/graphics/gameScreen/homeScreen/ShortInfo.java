@@ -80,42 +80,55 @@ public class ShortInfo extends JPanel {
 			
 			balanceResultPanel = new LabeledPanel(width * 85 / 100 * 3 / 10, height * 7 / 10 / 10);
 			balanceResultPanel.setBackground(Colors.lblue);
+			balanceResultPanel.label.setForeground(Colors.vdred);
 			infoPanel.insidePanel.add(balanceResultPanel);
 			
 			projectionPanel = new LabeledPanel(width * 85 / 100 * 7 / 10, height * 7 / 10 / 10);
 			projectionPanel.setBackground(Colors.lblue);
+			projectionPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
+			projectionPanel.label.setForeground(Colors.vdred);
 			projectionPanel.label.setText("Projection");
 			infoPanel.insidePanel.add(projectionPanel);	
 			
 			projectionResultPanel = new LabeledPanel(width * 85 / 100 * 3 / 10, height * 7 / 10 / 10);
 			projectionResultPanel.setBackground(Colors.lblue);
+			projectionResultPanel.label.setForeground(Colors.vdred);
 			infoPanel.insidePanel.add(projectionResultPanel);		
 			
 			boardSatisfactionPanel = new LabeledPanel(width * 85 / 100 * 7 / 10, height * 7 / 10 / 10);
 			boardSatisfactionPanel.setBackground(Colors.lblue);
+			boardSatisfactionPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
+			boardSatisfactionPanel.label.setForeground(Colors.vdred);
 			boardSatisfactionPanel.label.setText("Board Satisfaction");
 			infoPanel.insidePanel.add(boardSatisfactionPanel);	
 			
 			boardSatisfactionResultPanel = new LabeledPanel(width * 85 / 100 * 3 / 10, height * 7 / 10 / 10);
 			boardSatisfactionResultPanel.setBackground(Colors.lblue);
+			boardSatisfactionResultPanel.label.setForeground(Colors.vdred);
 			infoPanel.insidePanel.add(boardSatisfactionResultPanel);			
 			
 			fanSatisfactionPanel = new LabeledPanel(width * 85 / 100 * 7 / 10, height * 7 / 10 / 10);
 			fanSatisfactionPanel.setBackground(Colors.lblue);
+			fanSatisfactionPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
+			fanSatisfactionPanel.label.setForeground(Colors.vdred);
 			fanSatisfactionPanel.label.setText("Projection");
 			infoPanel.insidePanel.add(fanSatisfactionPanel);
 			
 			fanSatisfactionResultPanel = new LabeledPanel(width * 85 / 100 * 3 / 10, height * 7 / 10 / 10);
 			fanSatisfactionResultPanel.setBackground(Colors.lblue);
+			fanSatisfactionResultPanel.label.setForeground(Colors.vdred);
 			infoPanel.insidePanel.add(fanSatisfactionResultPanel);			
 			
 			trophyPanel = new LabeledPanel(width * 85 / 100 * 7 / 10, height * 7 / 10 / 10);
 			trophyPanel.setBackground(Colors.lblue);
+			trophyPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
+			trophyPanel.label.setForeground(Colors.vdred);
 			trophyPanel.label.setText("Tophies");
 			infoPanel.insidePanel.add(trophyPanel);
 			
 			trophyResultPanel = new LabeledPanel(width * 85 / 100 * 3 / 10, height * 7 / 10 / 10);
 			trophyResultPanel.setBackground(Colors.lblue);
+			trophyResultPanel.label.setForeground(Colors.vdred);
 			infoPanel.insidePanel.add(trophyResultPanel);
 			
 			
