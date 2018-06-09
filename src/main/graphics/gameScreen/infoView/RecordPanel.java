@@ -21,12 +21,7 @@ public class RecordPanel extends JPanel {
 	ContentPanel titleBarPanel;
 	ContentPanel historyPanel;
 
-	DoubleLabeledPanel currentAmount;
-	DoubleLabeledPanel income;
-	DoubleLabeledPanel wages;
-	DoubleLabeledPanel otherExpenses;
-	DoubleLabeledPanel intrest;
-	DoubleLabeledPanel projection;
+	DoubleLabeledPanel highestLeague;
 	
 	public RecordPanel(int width, int height) {
 
@@ -58,6 +53,12 @@ public class RecordPanel extends JPanel {
 
 		historyPanel = new ContentPanel(width * 9 / 10, height * 7 / 10, Colour.LBLUE,
 				new FlowLayout(FlowLayout.LEFT, 1, 0));
+		
+			highestLeague = new DoubleLabeledPanel(width * 85 / 100, height / 10, 75, Colour.LBLUE);
+			highestLeague.titleLabel.setText("Highest League Position");
+			highestLeague.contentLabel.setText("0");
+			historyPanel.insidePanel.add(highestLeague);
+		
 		add(historyPanel);
 		
 	}

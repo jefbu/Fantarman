@@ -2,6 +2,8 @@ package main;
 
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 import main.battle.Battle;
 import main.entity.armies.Army;
 import main.entity.leagues.League;
@@ -20,7 +22,8 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-
+	try {
+		
 		screen = new Screen();
 		battles = new ArrayList<Battle>();
 		TileImages.loadImages(BattleScreen.battleScene.roundedWidth / 48, BattleScreen.battleScene.roundedHeight / 32);
@@ -28,6 +31,12 @@ public class Main {
 		//yourArmy = new TestArmy();
 		
 		league = new League();
+		
+	} catch (Throwable t) {
+		    JOptionPane.showMessageDialog(
+		        null, t.getClass().getSimpleName() + ": " + t.getMessage());
+		    throw t; // don't suppress Throwable
+		  }
 		
 	}
 

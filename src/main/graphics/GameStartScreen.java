@@ -117,7 +117,7 @@ public class GameStartScreen extends JPanel {
 			}
 		});
 		terquitPanel.add(terquitButton);
-		
+
 		JPanel terquitTitlePanel = new JPanel();
 		terquitTitlePanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2 * 2 / 10));
 		terquitTitlePanel.setBackground(Colors.vlblue);
@@ -134,6 +134,12 @@ public class GameStartScreen extends JPanel {
 
 		JButton wanmenButton = new JButton("Wanted Wanmen");
 		wanmenButton.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2 * 8 / 10));
+		wanmenButton.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
+		wanmenButton.setOpaque(false);
+		wanmenButton.setContentAreaFilled(false);
+		wanmenButton.setBorder(null);
+		wanmenButton.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Wanmen.png", width * 8 / 10 / 4,
+				height * 8 / 10 / 2 * 8 / 10));
 		wanmenButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main.yourArmy = new Wanmen();
@@ -146,7 +152,7 @@ public class GameStartScreen extends JPanel {
 			}
 		});
 		wanmenPanel.add(wanmenButton);
-		
+
 		JPanel wanmenTitlePanel = new JPanel();
 		wanmenTitlePanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2 * 2 / 10));
 		wanmenTitlePanel.setBackground(Colors.vlblue);
@@ -181,7 +187,7 @@ public class GameStartScreen extends JPanel {
 			}
 		});
 		skylordsPanel.add(skylordsButton);
-		
+
 		JPanel skylordsTitlePanel = new JPanel();
 		skylordsTitlePanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2 * 2 / 10));
 		skylordsTitlePanel.setBackground(Colors.vlblue);
@@ -216,14 +222,14 @@ public class GameStartScreen extends JPanel {
 			}
 		});
 		espequrPanel.add(espequrButton);
-		
+
 		JPanel espequrTitlePanel = new JPanel();
 		espequrTitlePanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2 * 2 / 10));
 		espequrTitlePanel.setBackground(Colors.vlblue);
 		espequrPanel.add(espequrTitlePanel);
 
 		JLabel espequrTitleLabel = new JLabel();
-		espequrTitleLabel.setText("Piknin Pickles");
+		espequrTitleLabel.setText("Espequr");
 		espequrTitlePanel.add(espequrTitleLabel);
 
 		JPanel chiDestroyersPanel = new JPanel();
@@ -245,7 +251,7 @@ public class GameStartScreen extends JPanel {
 			}
 		});
 		chiDestroyersPanel.add(chiDestroyersButton);
-		
+
 		JPanel chiDestroyersTitlePanel = new JPanel();
 		chiDestroyersTitlePanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2 * 2 / 10));
 		chiDestroyersTitlePanel.setBackground(Colors.vlblue);
@@ -262,6 +268,12 @@ public class GameStartScreen extends JPanel {
 
 		JButton metropolitansButton = new JButton("Metropolitans");
 		metropolitansButton.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2 * 8 / 10));
+		metropolitansButton.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
+		metropolitansButton.setOpaque(false);
+		metropolitansButton.setContentAreaFilled(false);
+		metropolitansButton.setBorder(null);
+		metropolitansButton.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Metropolitans.png", width * 8 / 10 / 4,
+				height * 8 / 10 / 2 * 8 / 10));
 		metropolitansButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main.yourArmy = new Metropolitans();
@@ -274,7 +286,7 @@ public class GameStartScreen extends JPanel {
 			}
 		});
 		metropolitansPanel.add(metropolitansButton);
-		
+
 		JPanel metropolitansTitlePanel = new JPanel();
 		metropolitansTitlePanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2 * 2 / 10));
 		metropolitansTitlePanel.setBackground(Colors.vlblue);
@@ -291,6 +303,12 @@ public class GameStartScreen extends JPanel {
 
 		JButton multiculturalSocietyButton = new JButton("Multicultural Society");
 		multiculturalSocietyButton.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2 * 8 / 10));
+		multiculturalSocietyButton.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
+		multiculturalSocietyButton.setOpaque(false);
+		multiculturalSocietyButton.setContentAreaFilled(false);
+		multiculturalSocietyButton.setBorder(null);
+		multiculturalSocietyButton.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Multicultural.png", width * 8 / 10 / 4,
+				height * 8 / 10 / 2 * 8 / 10));
 		multiculturalSocietyButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main.yourArmy = new MulticulturalSociety();
@@ -303,9 +321,10 @@ public class GameStartScreen extends JPanel {
 			}
 		});
 		multiculturalSocietyPanel.add(multiculturalSocietyButton);
-		
+
 		JPanel multiculturalSocietyTitlePanel = new JPanel();
-		multiculturalSocietyTitlePanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2 * 2 / 10));
+		multiculturalSocietyTitlePanel
+				.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2 * 2 / 10));
 		multiculturalSocietyTitlePanel.setBackground(Colors.vlblue);
 		multiculturalSocietyPanel.add(multiculturalSocietyTitlePanel);
 

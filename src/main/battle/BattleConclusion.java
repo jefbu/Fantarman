@@ -119,10 +119,12 @@ public class BattleConclusion extends TextPopup {
 		yourBattleArmy.roster.clear();
 		opponentBattleArmy.roster.clear();
 		
-		for (Regiment regiment: Main.yourArmy.roster) {
+		for (Army army: Main.league.armies) {
+			for (Regiment regiment: army.roster) {
 			for (int i = 0; i < regiment.panels.length; i++) {
 				regiment.panels[i] = 0;  
 				regiment.inCombat = false;
+			}
 			}
 		}
 		

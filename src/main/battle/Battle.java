@@ -51,6 +51,7 @@ public class Battle {
 				regiment.battlesFought++;
 				}
 		}
+		yourBattleArmy.name = Main.yourArmy.name;
 	}
 
 	private Army chooseOpponentArmy() {
@@ -62,12 +63,14 @@ public class Battle {
 				for (Regiment regiment: matchup.army2.roster) {
 					tempArmy.roster.add(regiment);
 					}
+				tempArmy.name = matchup.army2.name;
 			}
 			
 			else if (matchup.army2 == Main.yourArmy) { 
 				for (Regiment regiment: matchup.army1.roster) {
 					tempArmy.roster.add(regiment);
 					}
+				tempArmy.name = matchup.army1.name;
 			}
 		}
 		
@@ -83,6 +86,8 @@ public class Battle {
 		for (int i = 0; i < 8; i++) {
 			returnArmy.roster.add(tempArmy.roster.get(i));
 		}
+		
+		returnArmy.name = tempArmy.name;
 
 		return returnArmy;
 

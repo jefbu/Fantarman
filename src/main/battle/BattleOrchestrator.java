@@ -32,6 +32,7 @@ public class BattleOrchestrator {
 		activeArmy = yourBattleArmy;
 		this.yourBattleArmy = yourBattleArmy;
 		this.opponentBattleArmy = opponentBattleArmy;
+		
 
 		for (Regiment regiment : yourBattleArmy.roster) {
 			regiment.attributeBattleSpeed();
@@ -44,6 +45,8 @@ public class BattleOrchestrator {
 			regiment.attributeBattleStats();
 		}
 		
+		BattleScreen.informationPanel.yourPanel.fillBattleOverviewInformationPanel(yourBattleArmy);
+		BattleScreen.informationPanel.enemyPanel.fillBattleOverviewInformationPanel(opponentBattleArmy);
 		BattleScreen.informationPanel.yourPanel.update(yourBattleArmy);
 		BattleScreen.informationPanel.enemyPanel.update(opponentBattleArmy);
 

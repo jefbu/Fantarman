@@ -6,6 +6,7 @@ import main.components.Colour;
 import main.components.ContentPanel;
 import main.entity.armies.Army;
 import main.entity.regiments.Regiment;
+import main.utility.ImageLoader;
 
 public class BattleOverviewInformationPanel extends ContentPanel {
 
@@ -23,11 +24,18 @@ public class BattleOverviewInformationPanel extends ContentPanel {
 	ContentPanel totalMoraleTitlePanel;
 	ContentPanel totalMoraleContentPanel;
 
+	private int armyLogoWidth;
+	private int armyLogoHeight;
+
 	public BattleOverviewInformationPanel(int width, int height, Colour colour) {
 
 		super(width, height, colour, new FlowLayout(FlowLayout.LEFT, 2, 2));
 
-		armyLogoPanel = new ContentPanel(width / 3, height - 10, Colour.DBLUE, new FlowLayout(FlowLayout.LEFT, 2, 2));
+		armyLogoWidth = width / 3;
+		armyLogoHeight = height - 10;
+
+		armyLogoPanel = new ContentPanel(armyLogoWidth, armyLogoHeight, Colour.DBLUE,
+				new FlowLayout(FlowLayout.CENTER, 0, 0));
 		insidePanel.add(armyLogoPanel);
 		infoPanel = new ContentPanel(width * 2 / 3, height - 10, Colour.DBLUE, new FlowLayout(FlowLayout.LEFT, 2, 2));
 		insidePanel.add(infoPanel);
@@ -64,25 +72,68 @@ public class BattleOverviewInformationPanel extends ContentPanel {
 		totalMoraleTitlePanel.contentLabel.setText("TOTAL MORALE");
 
 	}
-	
+
 	public void update(Army army) {
-		
+
 		int totalLife = 0;
-		for (Regiment regiment: army.roster) {
-			totalLife = totalLife + regiment.battleLife; }
+		for (Regiment regiment : army.roster) {
+			totalLife = totalLife + regiment.battleLife;
+		}
 		totalLifeContentPanel.contentLabel.setText(Integer.toString(totalLife));
-		
+
 		int totalValue = 0;
-		for (Regiment regiment: army.roster) {
-			totalValue = totalValue + regiment.value; }
+		for (Regiment regiment : army.roster) {
+			totalValue = totalValue + regiment.value;
+		}
 		totalValueContentPanel.contentLabel.setText(Integer.toString(totalValue));
-		
+
 		int totalMorale = 0;
-		for (Regiment regiment: army.roster) {
-			totalMorale = totalMorale + regiment.battleMorale; }
+		for (Regiment regiment : army.roster) {
+			totalMorale = totalMorale + regiment.battleMorale;
+		}
 		totalMoraleContentPanel.contentLabel.setText(Integer.toString(totalMorale));
-		
-		
+
+	}
+
+	public void fillBattleOverviewInformationPanel(Army army) {
+
+		ImageLoader imageLoader = new ImageLoader();
+
+		switch (army.name) {
+		case "Piknin Pickles":
+			armyLogoPanel.contentLabel
+					.setIcon(imageLoader.loadImageIcon("/ArmyLogo/PikninPickles.png", armyLogoWidth, armyLogoHeight));
+			break;
+		case "Wanted Wanmen":
+			armyLogoPanel.contentLabel
+					.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Wanmen.png", armyLogoWidth, armyLogoHeight));
+			break;
+		case "Terrible Terquits":
+			armyLogoPanel.contentLabel
+					.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Terquits.png", armyLogoWidth, armyLogoHeight));
+			break;
+		case "Skylords":
+			armyLogoPanel.contentLabel
+					.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Skylords.png", armyLogoWidth, armyLogoHeight));
+			break;
+		case "Chi Destroyers":
+			armyLogoPanel.contentLabel
+					.setIcon(imageLoader.loadImageIcon("/ArmyLogo/ChiDestroyers.png", armyLogoWidth, armyLogoHeight));
+			break;
+		case "Espequr":
+			armyLogoPanel.contentLabel
+					.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Espequr.png", armyLogoWidth, armyLogoHeight));
+			break;
+		case "Metropolitans":
+			armyLogoPanel.contentLabel
+					.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Metropolitans.png", armyLogoWidth, armyLogoHeight));
+			break;
+		case "Multicultural Society":
+			armyLogoPanel.contentLabel
+					.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Multicultural.png", armyLogoWidth, armyLogoHeight));
+			break;
+		}
+
 	}
 
 }
