@@ -32,7 +32,7 @@ public class Ofuwari extends Captain implements Serializable {
 		
 		bio = CaptainBio.ofuwari;
 		
-		iconPath = "/portraits/terquit.png";
+		iconPath = "/portraits/unknown.png";
 		
 		
 	}

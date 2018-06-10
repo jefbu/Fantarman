@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.Timer;
+import javax.swing.border.LineBorder;
 
 import main.Main;
 import main.entity.armies.Army;
@@ -254,6 +256,12 @@ public class GameStartScreen extends JPanel {
 
 		JPanel chiDestroyersTitlePanel = new JPanel();
 		chiDestroyersTitlePanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2 * 2 / 10));
+		chiDestroyersButton.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
+		chiDestroyersButton.setOpaque(false);
+		chiDestroyersButton.setContentAreaFilled(false);
+		chiDestroyersButton.setBorder(null);
+		chiDestroyersButton.setIcon(imageLoader.loadImageIcon("/ArmyLogo/chiDestroyers.png", width * 8 / 10 / 4,
+				height * 8 / 10 / 2 * 8 / 10));
 		chiDestroyersTitlePanel.setBackground(Colors.vlblue);
 		chiDestroyersPanel.add(chiDestroyersTitlePanel);
 

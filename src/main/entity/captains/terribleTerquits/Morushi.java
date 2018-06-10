@@ -32,7 +32,7 @@ public class Morushi extends Captain implements Serializable {
 		
 		bio = CaptainBio.morushi;
 		
-		iconPath = "/portraits/terquit.png";
+		iconPath = "/portraits/unknown.png";
 		
 		
 	}

@@ -32,7 +32,7 @@ public class TimTeranrovero extends Captain implements Serializable {
 		
 		bio = CaptainBio.timTeranrovero;
 		
-		iconPath = "/portraits/chessmaster.png";
+		iconPath = "/portraits/unknown.png";
 		
 	}
 	

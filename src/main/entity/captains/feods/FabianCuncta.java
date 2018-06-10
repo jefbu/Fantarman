@@ -35,7 +35,7 @@ public class FabianCuncta extends Captain implements Serializable {
 		
 		bio = CaptainBio.fabianCuncta;
 		
-		iconPath = "/portraits/terquit.png";
+		iconPath = "/portraits/unknown.png";
 		
 		
 		Captain chessmaster = new Chessmaster();

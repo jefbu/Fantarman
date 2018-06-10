@@ -32,7 +32,7 @@ public class Chun extends Captain implements Serializable {
 		
 		bio = CaptainBio.chun;
 		
-		iconPath = "/portraits/chessmaster.png";
+		iconPath = "/portraits/unknown.png";
 		
 	}
 	

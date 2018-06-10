@@ -32,7 +32,7 @@ public class Ojikan extends Captain implements Serializable {
 		
 		bio = CaptainBio.ojikan;
 		
-		iconPath = "/portraits/terquit.png";
+		iconPath = "/portraits/unknown.png";
 		
 		
 	}

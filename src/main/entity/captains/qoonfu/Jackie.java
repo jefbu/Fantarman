@@ -1,4 +1,4 @@
-package main.entity.captains.terribleTerquits;
+package main.entity.captains.qoonfu;
 
 import java.io.Serializable;
 
@@ -6,15 +6,15 @@ import main.entity.captains.Captain;
 import main.entity.skills.Skills;
 import main.strings.CaptainBio;
 
-public class Tenjimoto extends Captain implements Serializable {
+public class Jackie extends Captain implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	public Tenjimoto() {
+	public Jackie() {
 		
 		super();
 		
-		name = "Tenjimoto";
+		name = "Jackie";
 		gender = "male";
 		
 		attackBonus = 0;
@@ -30,7 +30,7 @@ public class Tenjimoto extends Captain implements Serializable {
 		skill1 = Skills.Deployer1;
 		skill2 = Skills.Healer1;
 		
-		bio = CaptainBio.tenjimoto;
+		bio = CaptainBio.jackie;
 		
 		iconPath = "/portraits/unknown.png";
 		

@@ -32,7 +32,7 @@ public class SamMaxwell extends Captain implements Serializable {
 		
 		bio = CaptainBio.samMaxwell;
 		
-		iconPath = "/portraits/chessmaster.png";
+		iconPath = "/portraits/unknown.png";
 		
 	}
 	

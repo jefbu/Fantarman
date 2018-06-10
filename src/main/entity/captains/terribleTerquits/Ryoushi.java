@@ -32,7 +32,7 @@ public class Ryoushi extends Captain implements Serializable {
 		
 		bio = CaptainBio.ryoushi;
 		
-		iconPath = "/portraits/terquit.png";
+		iconPath = "/portraits/unknown.png";
 		
 		
 	}

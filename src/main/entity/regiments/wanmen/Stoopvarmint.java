@@ -53,7 +53,8 @@ public class Stoopvarmint extends Regiment {
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/firemages.png", width, height);
+		icon = imageLoader.loadImageIcon("/regiments/Wanmen/stoopvarmint_battle.png", width, height);
+		largeIcon = imageLoader.loadImageIcon("/regiments/Wanmen/stoopvarmint.png", width * 8, height * 8);
 		
 		weapons.add(Weapons.glaives);
 		weapons.add(Weapons.scythes);

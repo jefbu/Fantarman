@@ -1,8 +1,14 @@
 package main.entity.armies;
 
-import main.entity.captains.Boris;
 import main.entity.captains.qoonfu.Chessmaster;
 import main.entity.captains.qoonfu.Chun;
+import main.entity.captains.qoonfu.HuiSun;
+import main.entity.captains.qoonfu.Jackie;
+import main.entity.captains.qoonfu.Jet;
+import main.entity.captains.qoonfu.JiaoSidao;
+import main.entity.captains.qoonfu.Miyouin;
+import main.entity.captains.qoonfu.PiercingGaze;
+import main.entity.captains.qoonfu.VinceLeonidas;
 import main.entity.lieutenants.Lieutenant;
 import main.entity.regiments.qoonfu.CraneWing;
 import main.entity.regiments.qoonfu.DrunkenMaster;
@@ -22,15 +28,15 @@ public class ChiDestroyers extends Army {
 		super();
 		name = "Chi Destroyers";
 		
-		roster.add(new SnakeTeeth("Cobras", new Boris(), Lieutenant.monstrosity));
-		roster.add(new MonkeyPaw("Baboons", new Boris(), Lieutenant.monstrosity));
+		roster.add(new SnakeTeeth("Cobras", new PiercingGaze(), Lieutenant.monstrosity));
+		roster.add(new MonkeyPaw("Baboons", new VinceLeonidas(), Lieutenant.monstrosity));
 		roster.add(new TigerFist("Jaguars", new Chessmaster(), Lieutenant.abomination, Lieutenant.corporal));
-		roster.add(new CraneWing("Herons", new Boris(), Lieutenant.hugo, Lieutenant.medic));
-		roster.add(new DrunkenMaster("Jackie", new Boris()));
-		roster.add(new MantisClaw("Crickets", new Boris(), Lieutenant.abomination));
-		roster.add(new HairpinThrower("Diadems", new Boris(), Lieutenant.monstrosity, Lieutenant.surgeon));
+		roster.add(new CraneWing("Herons", new HuiSun(), Lieutenant.hugo, Lieutenant.medic));
+		roster.add(new DrunkenMaster("Jackie", new Jackie()));
+		roster.add(new MantisClaw("Crickets", new JiaoSidao(), Lieutenant.abomination));
+		roster.add(new HairpinThrower("Diadems", new Miyouin(), Lieutenant.monstrosity, Lieutenant.surgeon));
 		roster.add(new Trainees("Wolf Cubs", new Chun(), Lieutenant.monstrosity, Lieutenant.corporal));
-		roster.add(new Trainees("Tadpoles", new Boris(), Lieutenant.abomination, Lieutenant.monstrosity));
+		roster.add(new Trainees("Tadpoles", new Jet(), Lieutenant.abomination, Lieutenant.monstrosity));
 
 		calculateValue();
 		

@@ -5,12 +5,12 @@ import main.entity.lieutenants.Lieutenant;
 import main.entity.regiments.avialay.Jaywings;
 import main.entity.regiments.avialay.Rooks;
 import main.entity.regiments.feods.Praetoriae;
+import main.entity.regiments.piknin.DoveMasters;
 import main.entity.regiments.piknin.StoutOfHeart;
 import main.entity.regiments.qoonfu.HairpinThrower;
 import main.entity.regiments.qoonfu.Trainees;
 import main.entity.regiments.terquits.Kinshiwang;
 import main.entity.regiments.terquits.PebbleHurlers;
-import main.entity.regiments.wanmen.FireMages;
 import main.entity.regiments.wanmen.Stoopvarmint;
 
 public class MulticulturalSociety extends Army {
@@ -23,7 +23,7 @@ public class MulticulturalSociety extends Army {
 		name = "Multicultural Society";
 
 		roster.add(new StoutOfHeart("Piknin Heavies", new Boris(), Lieutenant.surgeon, Lieutenant.medic));
-		roster.add(new FireMages("Piknin Supports", new Boris(), Lieutenant.errant));
+		roster.add(new DoveMasters("Piknin Supports", new Boris(), Lieutenant.errant));
 		roster.add(new Stoopvarmint("Wanmen Cavalry", new Boris(), Lieutenant.paladin, Lieutenant.monstrosity));
 		roster.add(new Kinshiwang("Terquit Anvils", new Boris(), Lieutenant.flagbearer, Lieutenant.musician));
 		roster.add(new PebbleHurlers("Terquit Archers", new Boris(), Lieutenant.sergeant));

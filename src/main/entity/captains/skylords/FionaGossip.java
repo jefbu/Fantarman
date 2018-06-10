@@ -35,7 +35,7 @@ public class FionaGossip extends Captain implements Serializable {
 		
 		bio = CaptainBio.fionaGossip;
 		
-		iconPath = "/portraits/chessmaster.png";
+		iconPath = "/portraits/unknown.png";
 		
 		
 		Captain chun = new Chun();

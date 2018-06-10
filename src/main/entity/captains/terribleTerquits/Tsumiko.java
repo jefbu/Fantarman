@@ -32,7 +32,7 @@ public class Tsumiko extends Captain implements Serializable {
 		
 		bio = CaptainBio.tsumiko;
 		
-		iconPath = "/portraits/terquit.png";
+		iconPath = "/portraits/unknown.png";
 		
 		
 	}

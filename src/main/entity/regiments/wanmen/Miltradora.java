@@ -25,7 +25,7 @@ public class Miltradora extends Regiment {
 		}
 		
 		this.name = name;
-		this.regiment = "Metralyadora";
+		this.regiment = "Miltradora";
 		this.race = Race.Wanmen;
 		this.lieutenantsSize = 2;
 		this.captain = captain;
@@ -54,7 +54,8 @@ public class Miltradora extends Regiment {
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/firemages.png", width, height);
+		icon = imageLoader.loadImageIcon("/regiments/Wanmen/miltradora_battle.png", width, height);
+		largeIcon = imageLoader.loadImageIcon("/regiments/Wanmen/miltradora.png", width * 8, height * 8);
 		
 		weapons.add(Weapons.slings);
 		weapons.add(Weapons.kestros);

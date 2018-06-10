@@ -32,7 +32,7 @@ public class VinceLeonidas extends Captain implements Serializable {
 		
 		bio = CaptainBio.vinceLeonidas;
 		
-		iconPath = "/portraits/chessmaster.png";
+		iconPath = "/portraits/unknown.png";
 		
 	}
 	
