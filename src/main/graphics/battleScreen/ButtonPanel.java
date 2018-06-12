@@ -12,7 +12,7 @@ import main.battle.BattleConclusion;
 import main.battle.BattleOrchestrator;
 import main.components.Colour;
 import main.entity.armies.Army;
-import main.entity.captains.Boris;
+import main.entity.captains.Generic;
 import main.entity.regiments.wanmen.FireMages;
 import main.utility.Colors;
 import main.utility.ImageLoader;
@@ -46,7 +46,7 @@ public class ButtonPanel extends JPanel {
 				loserArmy.value = 1;
 				Army winnerArmy = new Army();
 				winnerArmy.value = 100;
-				winnerArmy.roster.add(new FireMages("Test", new Boris(), null));
+				winnerArmy.roster.add(new FireMages("Test", new Generic(), null));
 				BattleConclusion battleConclusion = new BattleConclusion(Colour.RED, loserArmy, winnerArmy);
 				battleConclusion.setVisible(true);
 

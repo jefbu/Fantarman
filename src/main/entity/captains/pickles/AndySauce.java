@@ -32,7 +32,7 @@ public class AndySauce extends Captain implements Serializable {
 		
 		bio = CaptainBio.andysauce;
 		
-		iconPath = "/portraits/anita.png";
+		iconPath = "/portraits/unknown.png";
 		
 	}
 	

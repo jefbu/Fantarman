@@ -32,7 +32,7 @@ public class MarkTheCrass extends Captain implements Serializable {
 		
 		bio = CaptainBio.markTheCrass;
 		
-		iconPath = "/portraits/terquit.png";
+		iconPath = "/portraits/unknown.png";
 		
 		
 	}

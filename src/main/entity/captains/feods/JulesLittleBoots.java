@@ -32,7 +32,7 @@ public class JulesLittleBoots extends Captain implements Serializable {
 		
 		bio = CaptainBio.julesLittleBoots;
 		
-		iconPath = "/portraits/terquit.png";
+		iconPath = "/portraits/unknown.png";
 		
 		
 	}

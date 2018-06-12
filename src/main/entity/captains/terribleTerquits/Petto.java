@@ -33,7 +33,7 @@ public class Petto extends Captain implements Serializable {
 		
 		bio = CaptainBio.petto;
 		
-		iconPath = "/portraits/unknown.png";
+		iconPath = "/portraits/terquit.png";
 		
 		Captain zuba = new Zuba();
 		String[] strings = new String[9];

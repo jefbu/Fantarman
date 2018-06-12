@@ -32,7 +32,7 @@ public class Kree extends Captain implements Serializable {
 		
 		bio = CaptainBio.kree;
 		
-		iconPath = "/portraits/terquit.png";
+		iconPath = "/portraits/unknown.png";
 		
 		
 	}

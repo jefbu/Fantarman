@@ -1,6 +1,6 @@
 package main.entity.armies;
 
-import main.entity.captains.Boris;
+import main.entity.captains.Generic;
 import main.entity.lieutenants.Lieutenant;
 import main.entity.regiments.feods.Equitae;
 import main.entity.regiments.feods.Legat;
@@ -21,17 +21,17 @@ public class Metropolitans extends Army {
 		super();
 		name = "Metropolitans";
 
-		roster.add(new DoveMasters("Leswasohs", new Boris(), Lieutenant.medic));
-		roster.add(new PonyRiders("Shevau", new Boris(), Lieutenant.surgeon));
-		roster.add(new ParentalTurtle("Obi", new Boris()));
-		roster.add(new Legat("St Danny", new Boris()));
-		roster.add(new Equitae("Grass Crowns", new Boris(), Lieutenant.sergeant, Lieutenant.medic,
+		roster.add(new DoveMasters("Leswasohs", new Generic(), Lieutenant.medic));
+		roster.add(new PonyRiders("Shevau", new Generic(), Lieutenant.surgeon));
+		roster.add(new ParentalTurtle("Obi", new Generic()));
+		roster.add(new Legat("St Danny", new Generic()));
+		roster.add(new Equitae("Grass Crowns", new Generic(), Lieutenant.sergeant, Lieutenant.medic,
 				Lieutenant.scout));
-		roster.add(new Triarae("Burning Belief", new Boris(), Lieutenant.sergeant, Lieutenant.errant,
+		roster.add(new Triarae("Burning Belief", new Generic(), Lieutenant.sergeant, Lieutenant.errant,
 				Lieutenant.medic));
-		roster.add(new DrunkenMaster("Huiyin", new Boris()));
-		roster.add(new CraneWing("Azure Wings", new Boris(), Lieutenant.abomination, Lieutenant.corporal));
-		roster.add(new TigerFist("Act of Strength", new Boris(), Lieutenant.monstrosity, Lieutenant.medic));
+		roster.add(new DrunkenMaster("Huiyin", new Generic()));
+		roster.add(new CraneWing("Azure Wings", new Generic(), Lieutenant.abomination, Lieutenant.corporal));
+		roster.add(new TigerFist("Act of Strength", new Generic(), Lieutenant.monstrosity, Lieutenant.medic));
 
 		calculateValue();
 		

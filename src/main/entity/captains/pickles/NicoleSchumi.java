@@ -32,7 +32,7 @@ public class NicoleSchumi extends Captain implements Serializable {
 		
 		bio = CaptainBio.nicoleschumi;
 		
-		iconPath = "/portraits/mmeSauce.png";
+		iconPath = "/portraits/unknown.png";
 		
 	}
 	

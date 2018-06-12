@@ -1,7 +1,8 @@
 package main.entity.armies;
 
-import main.entity.captains.Boris;
 import main.entity.captains.terribleTerquits.Morushi;
+import main.entity.captains.terribleTerquits.Ofuwari;
+import main.entity.captains.terribleTerquits.Ojikan;
 import main.entity.captains.terribleTerquits.Petto;
 import main.entity.captains.terribleTerquits.Ryoushi;
 import main.entity.captains.terribleTerquits.Tenjimoto;
@@ -27,8 +28,8 @@ public class TerribleTerquits extends Army {
 		roster.add(new Kinshiwang("Massive Soil", new Tsumiko(), Lieutenant.flagbearer, Lieutenant.abomination));
 		roster.add(new PebbleHurlers("Stone Debris", new Zuba(), Lieutenant.emperor));
 		roster.add(new PebbleHurlers("Diamond Jets", new Tenjimoto(), Lieutenant.flagbearer));
-		roster.add(new Arbalesters("Pearl Arrows", new Boris(), Lieutenant.flagbearer, Lieutenant.musician));
-		roster.add(new Arbalesters("Heaven's Ruby", new Boris(), Lieutenant.flagbearer, Lieutenant.musician));
+		roster.add(new Arbalesters("Pearl Arrows", new Ofuwari(), Lieutenant.flagbearer, Lieutenant.musician));
+		roster.add(new Arbalesters("Heaven's Ruby", new Ojikan(), Lieutenant.flagbearer, Lieutenant.musician));
 		
 		calculateValue();
 		

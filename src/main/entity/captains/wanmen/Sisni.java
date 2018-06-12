@@ -6,15 +6,15 @@ import main.entity.captains.Captain;
 import main.entity.skills.Skills;
 import main.strings.CaptainBio;
 
-public class Yiss extends Captain implements Serializable {
+public class Sisni extends Captain implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	public Yiss() {
+	public Sisni() {
 		
 		super();
 		
-		name = "Yiss";
+		name = "Sisni";
 		gender = "female";
 		
 		attackBonus = 2;
@@ -30,7 +30,7 @@ public class Yiss extends Captain implements Serializable {
 		skill1 = Skills.Healer2;
 		skill2 = Skills.Deployer1;
 		
-		bio = CaptainBio.yiss;
+		bio = CaptainBio.noCaptain;
 		
 		iconPath = "/portraits/unknown.png";
 		

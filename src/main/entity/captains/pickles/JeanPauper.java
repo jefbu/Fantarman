@@ -34,7 +34,7 @@ public class JeanPauper extends Captain implements Serializable {
 		
 		bio = CaptainBio.jeanpauper;
 		
-		iconPath = "/portraits/maitreOiseau.png";
+		iconPath = "/portraits/unknown.png";
 		
 		Captain anita = new AnitaStrum();
 		String[] strings = new String[7];

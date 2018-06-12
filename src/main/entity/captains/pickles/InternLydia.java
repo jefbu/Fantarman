@@ -32,7 +32,7 @@ public class InternLydia extends Captain implements Serializable {
 		
 		bio = CaptainBio.internlydia;
 		
-		iconPath = "/portraits/galaxychaser.png";
+		iconPath = "/portraits/unknown.png";
 		
 	}
 	

@@ -32,7 +32,7 @@ public class OldCatherine extends Captain implements Serializable {
 		
 		bio = CaptainBio.oldCatherine;
 		
-		iconPath = "/portraits/terquit.png";
+		iconPath = "/portraits/unknown.png";
 		
 		
 	}

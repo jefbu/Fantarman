@@ -10,8 +10,6 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.Timer;
-import javax.swing.border.LineBorder;
 
 import main.Main;
 import main.entity.armies.Army;

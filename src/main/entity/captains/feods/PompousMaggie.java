@@ -32,7 +32,7 @@ public class PompousMaggie extends Captain implements Serializable {
 		
 		bio = CaptainBio.pompousMaggie;
 		
-		iconPath = "/portraits/terquit.png";
+		iconPath = "/portraits/unknown.png";
 		
 		
 	}

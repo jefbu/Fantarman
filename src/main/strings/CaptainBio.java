@@ -196,7 +196,7 @@ public abstract class CaptainBio {
 			+ "and were demoted to fight mockbattles as a punishment";
 
 	public static String samMaxwell = "There once was a bird with no gender. At least to old fashioned comprehender. "
-			+ "Biology said A, their heart said No Way. So they turned, convention bender.";
+			+ "Biology said A, their heart said No Way. So they turned into convention bender.";
 
 	public static String sassaru = "When she was twelve, she underwent the compulsory firemage test "
 			+ "and it was discovered she had more talent than any other Wanmen before her. "

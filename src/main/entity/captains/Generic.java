@@ -5,15 +5,15 @@ import java.io.Serializable;
 import main.entity.skills.Skills;
 import main.strings.CaptainBio;
 
-public class Boris extends Captain implements Serializable {
+public class Generic extends Captain implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	public Boris() {
+	public Generic() {
 		
 		super();
 		
-		name = "Boris";
+		name = "Generic";
 		gender = "male";
 		
 		attackBonus = 0;
@@ -29,9 +29,9 @@ public class Boris extends Captain implements Serializable {
 		skill1 = Skills.Deployer1;
 		skill2 = Skills.Healer1;
 		
-		bio = CaptainBio.ole_racecar;
+		bio = CaptainBio.noCaptain;
 		
-		iconPath = "/portraits/terquit.png";
+		iconPath = "/portraits/unknown.png";
 		
 	}
 	

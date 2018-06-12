@@ -35,7 +35,7 @@ public class Nerdo extends Captain implements Serializable {
 		
 		bio = CaptainBio.nerdo;
 		
-		iconPath = "/portraits/terquit.png";
+		iconPath = "/portraits/unknown.png";
 		
 		Captain vinceLeonidas = new VinceLeonidas();
 		String[] strings = new String[12];

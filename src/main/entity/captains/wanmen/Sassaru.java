@@ -32,7 +32,7 @@ public class Sassaru extends Captain implements Serializable {
 		
 		bio = CaptainBio.sassaru;
 		
-		iconPath = "/portraits/terquit.png";
+		iconPath = "/portraits/unknown.png";
 		
 		
 	}

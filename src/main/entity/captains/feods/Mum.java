@@ -32,7 +32,7 @@ public class Mum extends Captain implements Serializable {
 		
 		bio = CaptainBio.mum;
 		
-		iconPath = "/portraits/terquit.png";
+		iconPath = "/portraits/unknown.png";
 		
 		
 	}
