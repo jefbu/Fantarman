@@ -137,6 +137,7 @@ public class BattleConclusion extends TextPopup {
 		
 		Main.yourArmy.calculateBoardSatisfaction(matchResult);
 		Main.yourArmy.calculateFanSatisfaction(matchResult);
+		Main.yourArmy.calculateMoney();
 		
 		Screen.gameScreen.mainPanel.armyView.fillArmyView(Main.yourArmy);
 		Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);;

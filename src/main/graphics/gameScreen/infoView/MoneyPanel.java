@@ -106,7 +106,7 @@ public class MoneyPanel extends JPanel {
 		
 		intrest.contentLabel.setText("0");
 		
-		int newMoney = army.money - army.upkeep;
+		int newMoney = army.money - army.upkeep + army.income;
 		if(newMoney < army.money) {projection.contentLabel.setForeground(Colors.vdred); }
 		else { projection.contentLabel.setForeground(Colors.vlgreen); }
 		projection.contentLabel.setText(Integer.toString(newMoney));

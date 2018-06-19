@@ -17,7 +17,6 @@ public class Army implements Serializable {
 	public int value;
 	public String name;
 	public int money;
-	public int[] oldMoney;
 	public int upkeep;
 	public int income;
 	public GlobalBattleStrategy battleStrategy;
@@ -152,6 +151,11 @@ public class Army implements Serializable {
 		else if (income > upkeep * 8 / 10) { return 2; }
 		else if (income > upkeep * 6 / 10) { return 1; }
 		else { return 0; }
+	}
+
+	
+	public void calculateMoney() {
+		money = money + income - upkeep;
 	}
 	
 	
