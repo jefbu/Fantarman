@@ -16,12 +16,27 @@ public abstract class Conversations {
 			+ "You know how in space you can't use a pen because there's no gravity to get the ink down?";
 	public static String camilla_vince5 = "So I'm thinking of something that would work in zero-gravity conditions. "
 			+ "I'm currently hopeful with this pressurized nitrogen ink alternative ...";
-	public static String camilla_vince6 = "... Just use a pencile then. Idiot.";
+	public static String camilla_vince6 = "... Just use a pencil then. Idiot.";
 	public static String camilla_vince7 = "Actually, it's not that easy. While pencils could write in space, "
 			+ "they're flammable and their tips can break off too easily, "
 			+ "which becomes quite a hazard in zero gravity conditions!";
-	public static String camilla_vince8 = "...";
-	public static String camilla_vince9 = "Idiot.";
+	public static String camilla_vince8 = "... Oh. I did not know that...";
+	public static String camilla_vince9 = "Next time check your facts on Snopes or such. Idiot.";
+	
+	public static String camilla_vinceBIS1 = "So now what?";
+	public static String camilla_vinceBIS2 = "Oh, it's you again. Well, if you must know, "
+			+ "this time I'm inventing a means of faster transportation.";
+	public static String camilla_vinceBIS3 = "It looks frightfully uncomfortable. How's it work?";
+	public static String camilla_vinceBIS4 = "See, you lie down like this on your back, "
+			+ "then rotate this wheel with your arms. The wheel is linked to the other wheel with a chain, "
+			+ "causing both to spin.";
+	public static String camilla_vinceBIS5 = "You hold your legs up in the air and "
+			+ "can use them for signalling if you want to turn.";
+	public static String camilla_vinceBIS6 = "You can see where you're going through this periscope, "
+			+ "which you can adjust so it can always be set to eye-level";
+	public static String camilla_vinceBIS7 = "...";
+	public static String camilla_vinceBIS8 = "You've just invented an upside-down, inside-out, "
+			+ "reversed bicycle you crackpot tinkerer.";
 	
 	public static String fabian_chessmaster1 = "We meet at last. Today we decide who has the cunningest plan, "
 			+ "who outwits the other. Today we find out who is the real master and who, the apprentice";

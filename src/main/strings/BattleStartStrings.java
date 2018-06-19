@@ -41,10 +41,10 @@ public abstract class BattleStartStrings {
 					+ "In a letter to a congressman";
 
 		case 6:
-			return "<font color = 'rgb(20, 20, 30)', size = 4>I dunno, but in the war after the next one; they'll be using spears <br> <i> "
+			return "<font color = 'rgb(20, 20, 30)', size = 4>I dunno, but in the one after that; they'll be using sticks. <br> <i> "
 					+ "<font color = 'rgb(80, 70, 70)', size=3> <p align = 'right'> "
-					+ "Lt Walter Winchell (earliest recording, 1946)<br> "
-					+ "Einstein also used variations on it.";
+					+ "What kind of weapons will they use in the next war?<br> "
+					+ "Question asked after World War II";
 			
 		case 7:
 			return "<font color = 'rgb(20, 20, 30)', size = 4>What's past is prologue. <br> <i> "

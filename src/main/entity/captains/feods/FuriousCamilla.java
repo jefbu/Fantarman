@@ -63,6 +63,29 @@ public class FuriousCamilla extends Captain implements Serializable {
 		
 		conversations.add(new Conversation(this, vinceLeonidas, strings, ownVoice));
 		
+		Captain vinceLeonidas2 = new VinceLeonidas();
+		String[] strings2 = new String[8];
+		strings2[0] = Conversations.camilla_vinceBIS1;
+		strings2[1] = Conversations.camilla_vinceBIS2;
+		strings2[2] = Conversations.camilla_vinceBIS3;
+		strings2[3] = Conversations.camilla_vinceBIS4;
+		strings2[4] = Conversations.camilla_vinceBIS5;
+		strings2[5] = Conversations.camilla_vinceBIS6;
+		strings2[6] = Conversations.camilla_vinceBIS7;
+		strings2[7] = Conversations.camilla_vinceBIS8;
+		
+		boolean[] ownVoice2 = new boolean[8];
+		ownVoice2[0] = true;
+		ownVoice2[1] = false;
+		ownVoice2[2] = true;
+		ownVoice2[3] = false;
+		ownVoice2[4] = false;
+		ownVoice2[5] = false;
+		ownVoice2[6] = true;
+		ownVoice2[7] = true;
+		
+		conversations.add(new Conversation(this, vinceLeonidas2, strings2, ownVoice2));
+		
 		
 	}
 
