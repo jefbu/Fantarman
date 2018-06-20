@@ -34,14 +34,14 @@ public class Velitae extends Regiment {
 		lieutenants.add(lt2);
 		lieutenants.add(lt3);
 				
-		this.baseAttack = 35;
+		this.baseAttack = 30;
 		this.baseCharge = 5;
 		this.baseDefence = 45;
-		this.baseMissile = 40;
+		this.baseMissile = 35;
 		this.baseMorale = 50;
 		this.baseSpeed = 15;
 		this.baseSpeedVariation = 4;
-		this.baseRange = 9;
+		this.baseRange = 14;
 		this.baseMove = 5;
 		this.baseRun = 4;
 		this.baseLife = 25;

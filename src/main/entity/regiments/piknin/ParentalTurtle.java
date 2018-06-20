@@ -29,7 +29,7 @@ public class ParentalTurtle extends Regiment {
 			this.captain = captain;
 			this.type = RegimentType.HERO;
 			
-			this.baseAttack = 45;
+			this.baseAttack = 40;
 			this.baseCharge = 20;
 			this.baseDefence = 75;
 			this.baseMissile = 0;

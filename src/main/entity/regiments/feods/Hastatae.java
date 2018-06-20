@@ -33,7 +33,7 @@ public class Hastatae extends Regiment {
 		lieutenants.add(lt1);
 		lieutenants.add(lt2);
 				
-		this.baseAttack = 40;
+		this.baseAttack = 35;
 		this.baseCharge = 10;
 		this.baseDefence = 40;
 		this.baseMissile = 0;

@@ -34,9 +34,9 @@ public class Glasscannon extends Regiment {
 		lieutenants.add(lt1);
 		lieutenants.add(lt2);
 		
-		this.baseAttack = 50;
-		this.baseCharge = 30;
-		this.baseDefence = 35;
+		this.baseAttack = 40;
+		this.baseCharge = 40;
+		this.baseDefence = 55;
 		this.baseMissile = 0;
 		this.baseMorale = 50;
 		this.baseSpeed = 17;

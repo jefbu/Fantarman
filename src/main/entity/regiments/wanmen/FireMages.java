@@ -35,11 +35,11 @@ public class FireMages extends Regiment {
 		this.baseAttack = 30;
 		this.baseCharge = 10;
 		this.baseDefence = 40;
-		this.baseMissile = 30;
+		this.baseMissile = 45;
 		this.baseMorale = 45;
 		this.baseSpeed = 17;
 		this.baseSpeedVariation = 5;
-		this.baseRange = 10;
+		this.baseRange = 15;
 		this.baseMove = 6;
 		this.baseRun = 4;
 		this.baseLife = 10;

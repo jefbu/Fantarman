@@ -33,14 +33,14 @@ public class HairpinThrower extends Regiment {
 		lieutenants.add(lt1);
 		lieutenants.add(lt2);
 		
-		this.baseAttack = 45;
+		this.baseAttack = 35;
 		this.baseCharge = 10;
-		this.baseDefence = 45;
+		this.baseDefence = 50;
 		this.baseMissile = 40;
 		this.baseMorale = 50;
 		this.baseSpeed = 15;
 		this.baseSpeedVariation = 4;
-		this.baseRange = 6;
+		this.baseRange = 12;
 		this.baseMove = 6;
 		this.baseRun = 3;
 		this.baseLife = 15;

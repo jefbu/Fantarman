@@ -33,7 +33,7 @@ public class Harvesters extends Regiment {
 		lieutenants.add(lt1);
 		lieutenants.add(lt2);
 		
-		this.baseAttack = 35;
+		this.baseAttack = 30;
 		this.baseCharge = 5;
 		this.baseDefence = 40;
 		this.baseMissile = 0;

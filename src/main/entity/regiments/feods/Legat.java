@@ -30,13 +30,13 @@ public class Legat extends Regiment {
 		this.type = RegimentType.HERO;
 				
 		this.baseAttack = 40;
-		this.baseCharge = 5;
-		this.baseDefence = 50;
-		this.baseMissile = 25;
+		this.baseCharge = 10;
+		this.baseDefence = 70;
+		this.baseMissile = 60;
 		this.baseMorale = 65;
 		this.baseSpeed = 14;
 		this.baseSpeedVariation = 4;
-		this.baseRange = 12;
+		this.baseRange = 16;
 		this.baseMove = 6;
 		this.baseRun = 3;
 		this.baseLife = 5;

@@ -32,8 +32,8 @@ public class SnakeTeeth extends Regiment {
 		
 		lieutenants.add(lt1);
 		
-		this.baseAttack = 55;
-		this.baseCharge = 15;
+		this.baseAttack = 45;
+		this.baseCharge = 20;
 		this.baseDefence = 40;
 		this.baseMissile = 0;
 		this.baseMorale = 55;

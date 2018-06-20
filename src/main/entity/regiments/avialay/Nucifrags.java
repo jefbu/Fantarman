@@ -29,14 +29,14 @@ public class Nucifrags extends Regiment {
 		this.captain = captain;
 		this.type = RegimentType.ARCHERS;
 		
-		this.baseAttack = 35;
+		this.baseAttack = 30;
 		this.baseCharge = 5;
-		this.baseDefence = 45;
-		this.baseMissile = 35;
+		this.baseDefence = 40;
+		this.baseMissile = 50;
 		this.baseMorale = 50;
 		this.baseSpeed = 16;
 		this.baseSpeedVariation = 4;
-		this.baseRange = 8;
+		this.baseRange = 12;
 		this.baseMove = 6;
 		this.baseRun = 5;
 		this.baseLife = 10;

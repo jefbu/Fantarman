@@ -33,9 +33,9 @@ public class TigerFist extends Regiment {
 		lieutenants.add(lt1);
 		lieutenants.add(lt2);
 		
-		this.baseAttack = 55;
-		this.baseCharge = 20;
-		this.baseDefence = 55;
+		this.baseAttack = 45;
+		this.baseCharge = 25;
+		this.baseDefence = 60;
 		this.baseMissile = 0;
 		this.baseMorale = 70;
 		this.baseSpeed = 15;

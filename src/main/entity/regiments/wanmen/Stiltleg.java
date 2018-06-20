@@ -34,9 +34,9 @@ public class Stiltleg extends Regiment {
 		lieutenants.add(lt2);
 		lieutenants.add(lt3);
 		
-		this.baseAttack = 45;
-		this.baseCharge = 10;
-		this.baseDefence = 40;
+		this.baseAttack = 35;
+		this.baseCharge = 20;
+		this.baseDefence = 45;
 		this.baseMissile = 0;
 		this.baseMorale = 45;
 		this.baseSpeed = 18;

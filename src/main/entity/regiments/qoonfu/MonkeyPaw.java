@@ -32,7 +32,7 @@ public class MonkeyPaw extends Regiment {
 		
 		lieutenants.add(lt1);
 		
-		this.baseAttack = 50;
+		this.baseAttack = 40;
 		this.baseCharge = 10;
 		this.baseDefence = 50;
 		this.baseMissile = 0;

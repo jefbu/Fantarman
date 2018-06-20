@@ -32,17 +32,17 @@ public class Arbalesters extends Regiment {
 		lieutenants.add(lt2);
 		this.type = RegimentType.COMBINED_ARMS;
 		
-		this.baseAttack = 50;
+		this.baseAttack = 35;
 		this.baseCharge = 5;
-		this.baseDefence = 60;
-		this.baseMissile = 45;
+		this.baseDefence = 50;
+		this.baseMissile = 25;
 		this.baseMorale = 80;
 		this.baseSpeed = 12;
 		this.baseSpeedVariation = 4;
-		this.baseRange = 6;
+		this.baseRange = 10;
 		this.baseMove = 5;
 		this.baseRun = 2;
-		this.baseLife = 30;
+		this.baseLife = 20;
 		
 		this.rows = 4;
 		this.columns = 3;

@@ -35,11 +35,11 @@ public class DoveMasters extends Regiment {
 		this.baseAttack = 35;
 		this.baseCharge = 5;
 		this.baseDefence = 40;
-		this.baseMissile = 45;
+		this.baseMissile = 50;
 		this.baseMorale = 40;
 		this.baseSpeed = 13;
 		this.baseSpeedVariation = 4;
-		this.baseRange = 8;
+		this.baseRange = 13;
 		this.baseMove = 5;
 		this.baseRun = 3;
 		this.baseLife = 10;

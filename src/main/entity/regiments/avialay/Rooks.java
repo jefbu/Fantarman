@@ -32,9 +32,9 @@ public class Rooks extends Regiment {
 		lieutenants.add(lt1);
 		this.type = RegimentType.HEAVY_CAVALRY;
 		
-		this.baseAttack = 50;
-		this.baseCharge = 25;
-		this.baseDefence = 45;
+		this.baseAttack = 40;
+		this.baseCharge = 30;
+		this.baseDefence = 60;
 		this.baseMissile = 0;
 		this.baseMorale = 55;
 		this.baseSpeed = 16;

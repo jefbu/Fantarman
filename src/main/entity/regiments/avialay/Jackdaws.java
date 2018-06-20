@@ -31,9 +31,9 @@ public class Jackdaws extends Regiment {
 		lieutenants.add(lt1);
 		this.type = RegimentType.LIGHT_INFANTRY;
 		
-		this.baseAttack = 50;
+		this.baseAttack = 35;
 		this.baseCharge = 20;
-		this.baseDefence = 45;
+		this.baseDefence = 50;
 		this.baseMissile = 0;
 		this.baseMorale = 55;
 		this.baseSpeed = 16;

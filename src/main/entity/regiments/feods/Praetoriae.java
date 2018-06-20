@@ -34,9 +34,9 @@ public class Praetoriae extends Regiment {
 		lieutenants.add(lt2);
 		lieutenants.add(lt3);
 				
-		this.baseAttack = 45;
+		this.baseAttack = 35;
 		this.baseCharge = 25;
-		this.baseDefence = 55;
+		this.baseDefence = 65;
 		this.baseMissile = 0;
 		this.baseMorale = 55;
 		this.baseSpeed = 14;

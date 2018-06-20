@@ -33,14 +33,14 @@ public class StoutOfHeart extends Regiment {
 		lieutenants.add(lt1);
 		lieutenants.add(lt2);
 		
-		this.baseAttack = 40;
+		this.baseAttack = 35;
 		this.baseCharge = 10;
 		this.baseDefence = 50;
-		this.baseMissile = 40;
+		this.baseMissile = 35;
 		this.baseMorale = 50;
 		this.baseSpeed = 13;
 		this.baseSpeedVariation = 4;
-		this.baseRange = 8;
+		this.baseRange = 11;
 		this.baseMove = 5;
 		this.baseRun = 3;
 		this.baseLife = 20;

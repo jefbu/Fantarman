@@ -33,7 +33,7 @@ public class Trainees extends Regiment {
 		lieutenants.add(lt1);
 		lieutenants.add(lt2);
 		
-		this.baseAttack = 45;
+		this.baseAttack = 35;
 		this.baseCharge = 10;
 		this.baseDefence = 45;
 		this.baseMissile = 0;

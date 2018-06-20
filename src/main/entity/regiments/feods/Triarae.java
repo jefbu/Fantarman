@@ -34,7 +34,7 @@ public class Triarae extends Regiment {
 		lieutenants.add(lt2);
 		lieutenants.add(lt3);
 				
-		this.baseAttack = 55;
+		this.baseAttack = 45;
 		this.baseCharge = 20;
 		this.baseDefence = 60;
 		this.baseMissile = 0;

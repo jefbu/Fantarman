@@ -41,7 +41,7 @@ public class Miltradora extends Regiment {
 		this.baseMorale = 45;
 		this.baseSpeed = 17;
 		this.baseSpeedVariation = 5;
-		this.baseRange = 8;
+		this.baseRange = 13;
 		this.baseMove = 6;
 		this.baseRun = 3;
 		this.baseLife = 20;

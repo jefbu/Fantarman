@@ -29,9 +29,9 @@ public class Gralyas extends Regiment {
 		this.captain = captain;
 		this.type = RegimentType.FLYING;
 		
-		this.baseAttack = 45;
-		this.baseCharge = 15;
-		this.baseDefence = 45;
+		this.baseAttack = 40;
+		this.baseCharge = 40;
+		this.baseDefence = 65;
 		this.baseMissile = 0;
 		this.baseMorale = 65;
 		this.baseSpeed = 18;

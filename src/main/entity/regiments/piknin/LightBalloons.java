@@ -29,14 +29,14 @@ public class LightBalloons extends Regiment {
 		this.captain = captain;
 		this.type = RegimentType.FLYING;
 		
-		this.baseAttack = 25;
-		this.baseCharge = 10;
-		this.baseDefence = 45;
-		this.baseMissile = 30;
+		this.baseAttack = 30;
+		this.baseCharge = 25;
+		this.baseDefence = 65;
+		this.baseMissile = 40;
 		this.baseMorale = 45;
 		this.baseSpeed = 13;
 		this.baseSpeedVariation = 4;
-		this.baseRange = 5;
+		this.baseRange = 9;
 		this.baseMove = 9;
 		this.baseRun = 3;
 		this.baseLife = 10;

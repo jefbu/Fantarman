@@ -34,11 +34,11 @@ public class PebbleHurlers extends Regiment {
 		this.baseAttack = 30;
 		this.baseCharge = 5;
 		this.baseDefence = 45;
-		this.baseMissile = 45;
+		this.baseMissile = 30;
 		this.baseMorale = 75;
 		this.baseSpeed = 12;
 		this.baseSpeedVariation = 4;
-		this.baseRange = 7;
+		this.baseRange = 13;
 		this.baseMove = 5;
 		this.baseRun = 2;
 		this.baseLife = 15;

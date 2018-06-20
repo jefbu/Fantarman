@@ -29,9 +29,9 @@ public class DrunkenMaster extends Regiment {
 		this.captain = captain;
 		this.type = RegimentType.HERO;
 		
-		this.baseAttack = 50;
+		this.baseAttack = 40;
 		this.baseCharge = 20;
-		this.baseDefence = 75;
+		this.baseDefence = 80;
 		this.baseMissile = 0;
 		this.baseMorale = 80;
 		this.baseSpeed = 16;

@@ -32,8 +32,8 @@ public class MantisClaw extends Regiment {
 		
 		lieutenants.add(lt1);
 		
-		this.baseAttack = 55;
-		this.baseCharge = 20;
+		this.baseAttack = 40;
+		this.baseCharge = 30;
 		this.baseDefence = 55;
 		this.baseMissile = 0;
 		this.baseMorale = 55;

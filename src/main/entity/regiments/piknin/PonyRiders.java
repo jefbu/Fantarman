@@ -32,9 +32,9 @@ public class PonyRiders extends Regiment {
 		
 		lieutenants.add(lt1);
 		
-		this.baseAttack = 40;
-		this.baseCharge = 15;
-		this.baseDefence = 40;
+		this.baseAttack = 35;
+		this.baseCharge = 25;
+		this.baseDefence = 50;
 		this.baseMissile = 0;
 		this.baseMorale = 45;
 		this.baseSpeed = 13;

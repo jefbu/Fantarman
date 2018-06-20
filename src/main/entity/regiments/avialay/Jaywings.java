@@ -31,14 +31,14 @@ public class Jaywings extends Regiment {
 		lieutenants.add(lt1);
 		this.type = RegimentType.FLYING;
 		
-		this.baseAttack = 40;
-		this.baseCharge = 10;
-		this.baseDefence = 40;
-		this.baseMissile = 25;
+		this.baseAttack = 35;
+		this.baseCharge = 20;
+		this.baseDefence = 55;
+		this.baseMissile = 40;
 		this.baseMorale = 50;
 		this.baseSpeed = 17;
 		this.baseSpeedVariation = 5;
-		this.baseRange = 6;
+		this.baseRange = 10;
 		this.baseMove = 9;
 		this.baseRun = 3;
 		this.baseLife = 10;

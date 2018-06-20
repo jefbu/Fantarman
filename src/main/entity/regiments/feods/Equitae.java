@@ -34,9 +34,9 @@ public class Equitae extends Regiment {
 		lieutenants.add(lt2);
 		lieutenants.add(lt3);
 				
-		this.baseAttack = 50;
+		this.baseAttack = 40;
 		this.baseCharge = 30;
-		this.baseDefence = 50;
+		this.baseDefence = 60;
 		this.baseMissile = 0;
 		this.baseMorale = 60;
 		this.baseSpeed = 14;

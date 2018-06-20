@@ -33,9 +33,9 @@ public class Kinshiwang extends Regiment {
 		lieutenants.add(lt1);
 		lieutenants.add(lt2);
 		
-		this.baseAttack = 55;
+		this.baseAttack = 40;
 		this.baseCharge = 10;
-		this.baseDefence = 65;
+		this.baseDefence = 55;
 		this.baseMissile = 0;
 		this.baseMorale = 80;
 		this.baseSpeed = 11;
@@ -43,7 +43,7 @@ public class Kinshiwang extends Regiment {
 		this.baseRange = 0;
 		this.baseMove = 5;
 		this.baseRun = 1;
-		this.baseLife = 30;
+		this.baseLife = 25;
 		
 		this.rows = 3;
 		this.columns = 4;

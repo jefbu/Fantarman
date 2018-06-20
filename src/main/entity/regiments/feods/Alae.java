@@ -33,9 +33,9 @@ public class Alae extends Regiment {
 		lieutenants.add(lt1);
 		lieutenants.add(lt2);
 				
-		this.baseAttack = 50;
+		this.baseAttack = 35;
 		this.baseCharge = 25;
-		this.baseDefence = 40;
+		this.baseDefence = 50;
 		this.baseMissile = 0;
 		this.baseMorale = 55;
 		this.baseSpeed = 15;

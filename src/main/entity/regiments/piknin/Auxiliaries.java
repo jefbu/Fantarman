@@ -32,7 +32,7 @@ public class Auxiliaries extends Regiment {
 		
 		lieutenants.add(lt1);
 		
-		this.baseAttack = 40;
+		this.baseAttack = 30;
 		this.baseCharge = 10;
 		this.baseDefence = 45;
 		this.baseMissile = 0;

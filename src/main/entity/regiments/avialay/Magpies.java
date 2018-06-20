@@ -31,14 +31,14 @@ public class Magpies extends Regiment {
 		lieutenants.add(lt1);
 		this.type = RegimentType.COMBINED_ARMS;
 		
-		this.baseAttack = 40;
+		this.baseAttack = 35;
 		this.baseCharge = 10;
 		this.baseDefence = 45;
-		this.baseMissile = 30;
+		this.baseMissile = 40;
 		this.baseMorale = 55;
 		this.baseSpeed = 16;
 		this.baseSpeedVariation = 5;
-		this.baseRange = 8;
+		this.baseRange = 12;
 		this.baseMove = 6;
 		this.baseRun = 6;
 		this.baseLife = 10;

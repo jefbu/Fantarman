@@ -31,9 +31,9 @@ public class Corpus extends Regiment {
 		lieutenants.add(lt1);
 		this.type = RegimentType.HEAVY_INFANTRY;
 		
-		this.baseAttack = 55;
-		this.baseCharge = 25;
-		this.baseDefence = 50;
+		this.baseAttack = 40;
+		this.baseCharge = 20;
+		this.baseDefence = 55;
 		this.baseMissile = 0;
 		this.baseMorale = 60;
 		this.baseSpeed = 14;
