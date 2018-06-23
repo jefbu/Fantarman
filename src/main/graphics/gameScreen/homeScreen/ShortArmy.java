@@ -30,16 +30,16 @@ public class ShortArmy extends JPanel {
 			super();
 			setPreferredSize(new Dimension(width, height));
 			setBackground(Colors.vlblue);
-			setLayout(new FlowLayout(FlowLayout.CENTER, 0, 5));
+			setLayout(new FlowLayout(FlowLayout.CENTER, 0, height / 50));
 			
 			regimentPanels = new ArrayList<RegimentPanel>();
 
-			titlePanel = new ContentPanel(width / 2, height / 10, Colour.DRED,
+			/*titlePanel = new ContentPanel(width / 2, height / 10, Colour.DRED,
 					new FlowLayout(FlowLayout.CENTER, 0, height / 50));
 			titlePanel.contentLabel.setForeground(Colors.textyellow);
 			titlePanel.contentLabel.setFont(new Font("garamond", Font.BOLD, 28));
 			titlePanel.contentLabel.setText("ARMY");
-			add(titlePanel);
+			add(titlePanel);*/
 
 			titleBarPanel = new ContentPanel(width * 9 / 10, height / 10, Colour.RED,
 					new FlowLayout(FlowLayout.LEADING, 0, 0));
@@ -48,8 +48,9 @@ public class ShortArmy extends JPanel {
 					namePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 20));
 					namePanel.label.setFont(new Font("garamond", Font.BOLD, 16));
 					namePanel.label.setForeground(Colors.textyellow);
-					namePanel.label.setText("Regiment");
+					namePanel.label.setText("Army");
 				titleBarPanel.insidePanel.add(namePanel);
+				/*
 				LabeledPanel rolePanel = new LabeledPanel(width * 15 / 100, height / 10);
 					rolePanel.setBackground(Colors.red);
 					rolePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 20));
@@ -70,10 +71,10 @@ public class ShortArmy extends JPanel {
 					captainPanel.label.setFont(new Font("garamond", Font.BOLD, 16));
 					captainPanel.label.setForeground(Colors.textyellow);
 					captainPanel.label.setText("Captain");
-				titleBarPanel.insidePanel.add(captainPanel);
+				titleBarPanel.insidePanel.add(captainPanel);*/
 			add(titleBarPanel);
 
-			regimentsPanel = new ContentPanel(width * 9 / 10, height * 7 / 10, Colour.LRED,
+			regimentsPanel = new ContentPanel(width * 9 / 10, height * 8 / 10, Colour.LRED,
 					new FlowLayout(FlowLayout.LEFT, 1, 0));
 			add(regimentsPanel);
 			

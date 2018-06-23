@@ -30,16 +30,18 @@ public class ShortLeague extends JPanel {
 		super();
 		setPreferredSize(new Dimension(width, height));
 		setBackground(Colors.vlblue);
-		setLayout(new FlowLayout(FlowLayout.CENTER, 0, 5));
+		setLayout(new FlowLayout(FlowLayout.CENTER, 0, height / 50));
 		
 		armyPanels = new ArrayList<ArmyPanel>();
-
+		
+		/*
 		titlePanel = new ContentPanel(width / 2, height / 10, Colour.DGREEN,
 				new FlowLayout(FlowLayout.CENTER, 0, height / 50));
 		titlePanel.contentLabel.setForeground(Colors.textyellow);
 		titlePanel.contentLabel.setFont(new Font("garamond", Font.BOLD, 28));
 		titlePanel.contentLabel.setText("LEAGUE");
 		add(titlePanel);
+		*/
 
 		titleBarPanel = new ContentPanel(width * 9 / 10, height / 10, Colour.GREEN,
 				new FlowLayout(FlowLayout.LEADING, 5, 0));
@@ -48,7 +50,8 @@ public class ShortLeague extends JPanel {
 			namePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 20));
 			namePanel.label.setFont(new Font("garamond", Font.BOLD, 16));
 			namePanel.label.setForeground(Colors.textyellow);
-			namePanel.label.setText("ARMY");
+			namePanel.label.setText("League Results");
+			/*
 			titleBarPanel.insidePanel.add(namePanel);
 			LabeledPanel pointsPanel = new LabeledPanel(width * 2 / 10, height / 10);
 			pointsPanel.setBackground(Colors.green);
@@ -56,7 +59,7 @@ public class ShortLeague extends JPanel {
 			pointsPanel.label.setFont(new Font("garamond", Font.BOLD, 16));
 			pointsPanel.label.setForeground(Colors.textyellow);
 			pointsPanel.label.setText("POINTS");
-			titleBarPanel.insidePanel.add(pointsPanel);
+			titleBarPanel.insidePanel.add(pointsPanel);*/
 		add(titleBarPanel);
 
 		armiesPanel = new ContentPanel(width * 9 / 10, height * 7 / 10, Colour.LGREEN,

@@ -24,6 +24,7 @@ public class Main {
 		
 	try {
 		
+		System.out.println("print print print");
 		screen = new Screen();
 		battles = new ArrayList<Battle>();
 		TileImages.loadImages(BattleScreen.battleScene.roundedWidth / 48, BattleScreen.battleScene.roundedHeight / 32);

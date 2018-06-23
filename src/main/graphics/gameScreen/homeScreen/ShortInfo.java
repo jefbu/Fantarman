@@ -39,12 +39,14 @@ public class ShortInfo extends JPanel {
 			setBackground(Colors.vlblue);
 			setLayout(new FlowLayout(FlowLayout.CENTER, 0, 5));
 			
+			/*
 			titlePanel = new ContentPanel(width / 2, height / 10, Colour.DBLUE,
 					new FlowLayout(FlowLayout.CENTER, 0, height / 50));
 			titlePanel.contentLabel.setForeground(Colors.textyellow);
 			titlePanel.contentLabel.setFont(new Font("garamond", Font.BOLD, 28));
 			titlePanel.contentLabel.setText("INFO");
 			add(titlePanel);
+			*/
 
 			titleBarPanel = new ContentPanel(width * 9 / 10, height / 10, Colour.BLUE,
 					new FlowLayout(FlowLayout.LEADING, 0, 0));
@@ -54,9 +56,9 @@ public class ShortInfo extends JPanel {
 				namePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 20));
 				namePanel.label.setFont(new Font("garamond", Font.BOLD, 16));
 				namePanel.label.setForeground(Colors.textyellow);
-				namePanel.label.setText("NAME");
+				namePanel.label.setText("Information");
 				titleBarPanel.insidePanel.add(namePanel);
-				
+				/*
 				LabeledPanel resultPanel = new LabeledPanel(width * 85 / 100 * 3 / 10, height / 10);
 				resultPanel.label.setText("RESULT");
 				resultPanel.setBackground(Colors.blue);
@@ -64,6 +66,7 @@ public class ShortInfo extends JPanel {
 				resultPanel.label.setFont(new Font("garamond", Font.BOLD, 16));
 				resultPanel.label.setForeground(Colors.textyellow);
 				titleBarPanel.insidePanel.add(resultPanel);
+				*/
 			
 			add(titleBarPanel);
 

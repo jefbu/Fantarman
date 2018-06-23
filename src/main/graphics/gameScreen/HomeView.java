@@ -31,14 +31,22 @@ public class HomeView extends JPanel {
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		setBackground(Colors.vlblue);
 		
-		shortLeague = new ShortLeague(roundedWidth / 3, unroundedHeight * 3 / 4);
-		shortArmy = new ShortArmy(roundedWidth / 3, unroundedHeight * 3 / 4);
-		shortInfo = new ShortInfo(roundedWidth / 3, unroundedHeight * 3 / 4);
-		newsReel = new NewsReel(roundedWidth, unroundedHeight / 4);
-		
-		add(shortLeague);
+		shortArmy = new ShortArmy(roundedWidth * 6 / 10, unroundedHeight * 3 / 4);
 		add(shortArmy);
-		add(shortInfo);
+		
+		JPanel rightSidePanel = new JPanel();
+		rightSidePanel.setPreferredSize(new Dimension(roundedWidth * 4 / 10, unroundedHeight * 3 / 4));
+		rightSidePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, unroundedHeight * 3 / 4 / 50));
+		rightSidePanel.setBackground(Colors.vlblue);
+		add(rightSidePanel);
+		
+		shortLeague = new ShortLeague(roundedWidth * 4 / 10, unroundedHeight * 3 / 8);
+		shortInfo = new ShortInfo(roundedWidth * 4 / 10, unroundedHeight * 3 / 8);
+		
+		rightSidePanel.add(shortLeague);
+		rightSidePanel.add(shortInfo);
+		
+		newsReel = new NewsReel(roundedWidth, unroundedHeight / 4);
 		add(newsReel);
 		
 	}
