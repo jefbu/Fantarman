@@ -29,31 +29,31 @@ public class RegimentPanel extends JPanel {
 		this.width = width;
 		this.height = height;
 		setPreferredSize(new Dimension(width, height));
-		setBackground(Colors.lred);
+		setBackground(Colors.lorange);
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
 		namePanel = new LabeledPanel(width * 33 / 100, height);
-		namePanel.setBackground(Colors.lred);
+		namePanel.setBackground(Colors.lorange);
 		namePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
-		namePanel.label.setForeground(Colors.vdred);
+		namePanel.label.setForeground(Colors.vdorange);
 		add(namePanel);
 
-		rolePanel = new ButtonedPanel(width * 17 / 100, height, Colors.red);
-		rolePanel.setBackground(Colors.lred);
+		rolePanel = new ButtonedPanel(width * 17 / 100, height, Colors.orange);
+		rolePanel.setBackground(Colors.lorange);
 		rolePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-		rolePanel.label.setForeground(Colors.vdred);
+		rolePanel.label.setForeground(Colors.vdorange);
 		add(rolePanel);
 
 		valuePanel = new LabeledPanel(width * 22 / 100, height);
-		valuePanel.setBackground(Colors.lred);
+		valuePanel.setBackground(Colors.lorange);
 		valuePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
-		valuePanel.label.setForeground(Colors.vdred);
+		valuePanel.label.setForeground(Colors.vdorange);
 		add(valuePanel);
 
 		captainPanel = new LabeledPanel(width * 22 / 100, height);
-		captainPanel.setBackground(Colors.lred);
+		captainPanel.setBackground(Colors.lorange);
 		captainPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
-		captainPanel.label.setForeground(Colors.vdred);
+		captainPanel.label.setForeground(Colors.vdorange);
 		add(captainPanel);
 
 	}

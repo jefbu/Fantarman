@@ -34,7 +34,7 @@ public class RoleSelectionPopup extends Popup {
 		
 		JPanel combatPanel = new JPanel();
 		combatPanel.setPreferredSize(new Dimension(width, height * 23 / 100));
-		combatPanel.setBackground(Colors.vlred);
+		combatPanel.setBackground(Colors.vlorange);
 		combatPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 			combatButton = new JButton();
 			combatButton.setPreferredSize(new Dimension(width, height * 23 / 100));

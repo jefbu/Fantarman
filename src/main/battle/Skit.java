@@ -72,7 +72,7 @@ public class Skit extends JDialog {
 
 		JPanel topPortraitPanel = new JPanel();
 		topPortraitPanel.setPreferredSize(new Dimension(width * 2 / 10, height * 3 / 10));
-		topPortraitPanel.setBackground(Colors.lred);
+		topPortraitPanel.setBackground(Colors.lorange);
 		topPortraitPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		yourIconLabel = new JLabel();
 		topPortraitPanel.add(yourIconLabel);
@@ -127,7 +127,7 @@ public class Skit extends JDialog {
 
 		JPanel bottomPortraitPanel = new JPanel();
 		bottomPortraitPanel.setPreferredSize(new Dimension(width * 2 / 10, height * 3 / 10));
-		bottomPortraitPanel.setBackground(Colors.lred);
+		bottomPortraitPanel.setBackground(Colors.lorange);
 		bottomPortraitPanel.setLayout(new FlowLayout(FlowLayout.LEADING, 0, 0));
 		opponentIconLabel = new JLabel();
 		bottomPortraitPanel.add(opponentIconLabel);

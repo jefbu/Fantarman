@@ -32,18 +32,18 @@ public class TrophyPanel extends JPanel {
 		super();
 		setPreferredSize(new Dimension(width, height));
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-		setBackground(Colors.vlblue);
+		setBackground(Colors.backgroundOrange);
 		
 		imageLoader = new ImageLoader();
 
 		JPanel upperVoidPanel = new JPanel();
 		upperVoidPanel.setPreferredSize(new Dimension(width, height * 5 / 100));
-		upperVoidPanel.setBackground(Colors.vlblue);
+		upperVoidPanel.setBackground(Colors.backgroundOrange);
 		add(upperVoidPanel);
 
 		JPanel upperLeftVoidPanel = new JPanel();
 		upperLeftVoidPanel.setPreferredSize(new Dimension(width * 5 / 100, height * 20 / 100));
-		upperLeftVoidPanel.setBackground(Colors.vlblue);
+		upperLeftVoidPanel.setBackground(Colors.backgroundOrange);
 		add(upperLeftVoidPanel);
 
 		titlePanel = new ContentPanel(width * 30 / 100, height * 25 / 100, Colour.DGREY,
@@ -53,12 +53,12 @@ public class TrophyPanel extends JPanel {
 
 		JPanel upperRightVoidPanel = new JPanel();
 		upperRightVoidPanel.setPreferredSize(new Dimension(width * 65 / 100, height * 20 / 100));
-		upperRightVoidPanel.setBackground(Colors.vlblue);
+		upperRightVoidPanel.setBackground(Colors.backgroundOrange);
 		add(upperRightVoidPanel);
 
 		JPanel lowerLeftVoidPanel = new JPanel();
 		lowerLeftVoidPanel.setPreferredSize(new Dimension(width * 6 / 100, height * 65 / 100));
-		lowerLeftVoidPanel.setBackground(Colors.vlblue);
+		lowerLeftVoidPanel.setBackground(Colors.backgroundOrange);
 		add(lowerLeftVoidPanel);
 
 		contentPanel = new ContentPanel(width * 80 / 100, height * 60 / 100, Colour.GREY,

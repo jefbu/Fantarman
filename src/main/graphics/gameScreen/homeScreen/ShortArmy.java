@@ -29,7 +29,7 @@ public class ShortArmy extends JPanel {
 		
 			super();
 			setPreferredSize(new Dimension(width, height));
-			setBackground(Colors.vlblue);
+			setBackground(Colors.backgroundOrange);
 			setLayout(new FlowLayout(FlowLayout.CENTER, 0, height / 50));
 			
 			regimentPanels = new ArrayList<RegimentPanel>();
@@ -44,7 +44,7 @@ public class ShortArmy extends JPanel {
 			titleBarPanel = new ContentPanel(width * 9 / 10, height / 10, Colour.RED,
 					new FlowLayout(FlowLayout.LEADING, 0, 0));
 				LabeledPanel namePanel = new LabeledPanel(width * 3 / 10, height / 10);
-					namePanel.setBackground(Colors.red);
+					namePanel.setBackground(Colors.orange);
 					namePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 20));
 					namePanel.label.setFont(new Font("garamond", Font.BOLD, 16));
 					namePanel.label.setForeground(Colors.textyellow);

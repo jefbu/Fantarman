@@ -18,7 +18,7 @@ public class LeagueRankingPanel extends JPanel {
 
 		super();
 		setPreferredSize(new Dimension(width, height));
-		setBackground(Colors.vlblue);
+		setBackground(Colors.backgroundOrange);
 
 		setLayout(new FlowLayout(FlowLayout.LEADING, width / 10, height / 20));
 

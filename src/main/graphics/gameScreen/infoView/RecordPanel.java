@@ -26,7 +26,7 @@ public class RecordPanel extends JPanel {
 	public RecordPanel(int width, int height) {
 
 		super();
-		setBackground(Colors.vlblue);
+		setBackground(Colors.backgroundOrange);
 		setPreferredSize(new Dimension(width, height));
 		setLayout(new FlowLayout(FlowLayout.CENTER, 0, 5));
 

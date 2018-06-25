@@ -34,38 +34,38 @@ public class ArmourPanel extends JButton {
 		int individualHeight = height - 1;
 		
 		namePanel = new LabeledPanel(individualWidth * 2, individualHeight);
-		namePanel.setBackground(Colors.lred);
-		namePanel.label.setForeground(Colors.dred);
+		namePanel.setBackground(Colors.lorange);
+		namePanel.label.setForeground(Colors.dorange);
 		add(namePanel);
 		
 		defencePanel = new LabeledPanel(individualWidth + 1, individualHeight);
-		defencePanel.setBackground(Colors.lred);
-		defencePanel.label.setForeground(Colors.dred);
+		defencePanel.setBackground(Colors.lorange);
+		defencePanel.label.setForeground(Colors.dorange);
 		add(defencePanel);
 		
 		moralePanel = new LabeledPanel(individualWidth, individualHeight);
-		moralePanel.setBackground(Colors.lred);
-		moralePanel.label.setForeground(Colors.dred);
+		moralePanel.setBackground(Colors.lorange);
+		moralePanel.label.setForeground(Colors.dorange);
 		add(moralePanel);
 		
 		movePanel = new LabeledPanel(individualWidth, individualHeight);
-		movePanel.setBackground(Colors.lred);
-		movePanel.label.setForeground(Colors.dred);
+		movePanel.setBackground(Colors.lorange);
+		movePanel.label.setForeground(Colors.dorange);
 		add(movePanel);
 		
 		speedPanel = new LabeledPanel(individualWidth, individualHeight);
-		speedPanel.setBackground(Colors.lred);
-		speedPanel.label.setForeground(Colors.dred);
+		speedPanel.setBackground(Colors.lorange);
+		speedPanel.label.setForeground(Colors.dorange);
 		add(speedPanel);
 		
 		costPanel = new LabeledPanel(individualWidth, individualHeight);
-		costPanel.setBackground(Colors.lred);
-		costPanel.label.setForeground(Colors.dred);
+		costPanel.setBackground(Colors.lorange);
+		costPanel.label.setForeground(Colors.dorange);
 		add(costPanel);
 		
 		upkeepPanel = new LabeledPanel(individualWidth + 1, individualHeight);
-		upkeepPanel.setBackground(Colors.lred);
-		upkeepPanel.label.setForeground(Colors.dred);
+		upkeepPanel.setBackground(Colors.lorange);
+		upkeepPanel.label.setForeground(Colors.dorange);
 		add(upkeepPanel);		
 		
 	}

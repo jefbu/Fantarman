@@ -42,18 +42,18 @@ public class BoardHistoryPanel extends JPanel {
 		this.width = width;
 		this.height = height;
 		setPreferredSize(new Dimension(width, height));
-		setBackground(Colors.vlred);
+		setBackground(Colors.vlorange);
 		setLayout(new FlowLayout(FlowLayout.LEFT, width / 10, height / 10));
 
 		JPanel graphPanel = new JPanel();
 		graphPanel.setPreferredSize(new Dimension(width * 8 / 10, height * 8 / 10));
-		graphPanel.setBackground(Colors.vlred);
+		graphPanel.setBackground(Colors.vlorange);
 		graphPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		add(graphPanel);
 
 		minusFourTotalPanel = new JPanel();
 		minusFourTotalPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 8 / 10));
-		minusFourTotalPanel.setBackground(Colors.vlred);
+		minusFourTotalPanel.setBackground(Colors.vlorange);
 		minusFourTotalPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		graphPanel.add(minusFourTotalPanel);
 
@@ -63,14 +63,14 @@ public class BoardHistoryPanel extends JPanel {
 
 		minusFourLeftOverPanel = new JPanel();
 		minusFourLeftOverPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 4 / 10));
-		minusFourLeftOverPanel.setBackground(Colors.vlred);
+		minusFourLeftOverPanel.setBackground(Colors.vlorange);
 
 		minusFourTotalPanel.add(minusFourLeftOverPanel);
 		minusFourTotalPanel.add(minusFourSatisfactionPanel);
 		
 		minusThreeTotalPanel = new JPanel();
 		minusThreeTotalPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 8 / 10));
-		minusThreeTotalPanel.setBackground(Colors.vlred);
+		minusThreeTotalPanel.setBackground(Colors.vlorange);
 		minusThreeTotalPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		graphPanel.add(minusThreeTotalPanel);
 
@@ -80,14 +80,14 @@ public class BoardHistoryPanel extends JPanel {
 
 		minusThreeLeftOverPanel = new JPanel();
 		minusThreeLeftOverPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 4 / 10));
-		minusThreeLeftOverPanel.setBackground(Colors.vlred);
+		minusThreeLeftOverPanel.setBackground(Colors.vlorange);
 
 		minusThreeTotalPanel.add(minusThreeLeftOverPanel);
 		minusThreeTotalPanel.add(minusThreeSatisfactionPanel);
 		
 		minusTwoTotalPanel = new JPanel();
 		minusTwoTotalPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 8 / 10));
-		minusTwoTotalPanel.setBackground(Colors.vlred);
+		minusTwoTotalPanel.setBackground(Colors.vlorange);
 		minusTwoTotalPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		graphPanel.add(minusTwoTotalPanel);
 
@@ -97,14 +97,14 @@ public class BoardHistoryPanel extends JPanel {
 
 		minusTwoLeftOverPanel = new JPanel();
 		minusTwoLeftOverPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 4 / 10));
-		minusTwoLeftOverPanel.setBackground(Colors.vlred);
+		minusTwoLeftOverPanel.setBackground(Colors.vlorange);
 
 		minusTwoTotalPanel.add(minusTwoLeftOverPanel);
 		minusTwoTotalPanel.add(minusTwoSatisfactionPanel);
 		
 		minusOneTotalPanel = new JPanel();
 		minusOneTotalPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 8 / 10));
-		minusOneTotalPanel.setBackground(Colors.vlred);
+		minusOneTotalPanel.setBackground(Colors.vlorange);
 		minusOneTotalPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		graphPanel.add(minusOneTotalPanel);
 
@@ -114,14 +114,14 @@ public class BoardHistoryPanel extends JPanel {
 
 		minusOneLeftOverPanel = new JPanel();
 		minusOneLeftOverPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 4 / 10));
-		minusOneLeftOverPanel.setBackground(Colors.vlred);
+		minusOneLeftOverPanel.setBackground(Colors.vlorange);
 
 		minusOneTotalPanel.add(minusOneLeftOverPanel);
 		minusOneTotalPanel.add(minusOneSatisfactionPanel);
 		
 		currentTotalPanel = new JPanel();
 		currentTotalPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 8 / 10));
-		currentTotalPanel.setBackground(Colors.vlred);
+		currentTotalPanel.setBackground(Colors.vlorange);
 		currentTotalPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		graphPanel.add(currentTotalPanel);
 
@@ -131,7 +131,7 @@ public class BoardHistoryPanel extends JPanel {
 
 		currentLeftOverPanel = new JPanel();
 		currentLeftOverPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 4 / 10));
-		currentLeftOverPanel.setBackground(Colors.vlred);
+		currentLeftOverPanel.setBackground(Colors.vlorange);
 
 		currentTotalPanel.add(currentLeftOverPanel);
 		currentTotalPanel.add(currentSatisfactionPanel);

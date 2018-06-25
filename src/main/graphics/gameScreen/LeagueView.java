@@ -29,7 +29,7 @@ public class LeagueView extends JPanel {
 		int unroundedWidth = height * 8 * 15 / 100;
 		int roundedWidth = unroundedWidth - (unroundedWidth % 48);
 		setPreferredSize(new Dimension(roundedWidth, unroundedHeight));
-		setBackground(Colors.vlblue);
+		setBackground(Colors.backgroundOrange);
 		
 		setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 		

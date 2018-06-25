@@ -32,7 +32,7 @@ public class InfoView extends JPanel {
 
 		Dimension gameSceneSize = new Dimension(roundedWidth, unroundedHeight);
 		setPreferredSize(gameSceneSize);
-		setBackground(Colors.vlblue);
+		setBackground(Colors.backgroundOrange);
 		setLayout(new FlowLayout(FlowLayout.LEADING, 0, 0));
 
 		moneyPanel = new MoneyPanel(roundedWidth / 3, unroundedHeight * 3 / 4);

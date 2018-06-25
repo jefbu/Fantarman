@@ -19,27 +19,28 @@ public class NewsReel extends JPanel {
 	private ContentPanel titlePanel;
 	private ContentPanel contentPanel;
 	private RandomNews randomNews;
-	private JTextPane textArea;
+	public JTextPane textArea;
 
 	public NewsReel(int width, int height) {
 
 		super();
 		setPreferredSize(new Dimension(width, height));
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-		setBackground(Colors.vlblue);
+		setBackground(Colors.backgroundOrange);
 		
 		randomNews = new RandomNews();
 
 		JPanel upperVoidPanel = new JPanel();
 		upperVoidPanel.setPreferredSize(new Dimension(width, height * 5 / 100));
-		upperVoidPanel.setBackground(Colors.vlblue);
+		upperVoidPanel.setBackground(Colors.backgroundOrange);
 		add(upperVoidPanel);
-
+		
 		JPanel upperLeftVoidPanel = new JPanel();
-		upperLeftVoidPanel.setPreferredSize(new Dimension(width * 5 / 100, height * 20 / 100));
-		upperLeftVoidPanel.setBackground(Colors.vlblue);
+		upperLeftVoidPanel.setPreferredSize(new Dimension(width * 5 / 100, height * 85 / 100));
+		upperLeftVoidPanel.setBackground(Colors.backgroundOrange);
 		add(upperLeftVoidPanel);
-
+		
+		/*
 		titlePanel = new ContentPanel(width * 30 / 100, height * 25 / 100, Colour.DGREY,
 				new FlowLayout(FlowLayout.CENTER, 0, 0));
 		titlePanel.contentLabel.setText("Breaking News");
@@ -54,8 +55,9 @@ public class NewsReel extends JPanel {
 		lowerLeftVoidPanel.setPreferredSize(new Dimension(width * 6 / 100, height * 65 / 100));
 		lowerLeftVoidPanel.setBackground(Colors.vlblue);
 		add(lowerLeftVoidPanel);
+		*/
 
-		contentPanel = new ContentPanel(width * 80 / 100, height * 60 / 100, Colour.GREY,
+		contentPanel = new ContentPanel(width * 95 / 100, height * 85 / 100, Colour.DGREY,
 				new FlowLayout(FlowLayout.LEFT, 0, 0));
 		
 		textArea = new JTextPane();

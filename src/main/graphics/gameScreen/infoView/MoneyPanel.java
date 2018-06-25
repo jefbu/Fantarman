@@ -31,7 +31,7 @@ public class MoneyPanel extends JPanel {
 	public MoneyPanel(int width, int height) {
 
 		super();
-		setBackground(Colors.vlblue);
+		setBackground(Colors.backgroundOrange);
 		setPreferredSize(new Dimension(width, height));
 		setLayout(new FlowLayout(FlowLayout.CENTER, 0, 5));
 
@@ -92,7 +92,7 @@ public class MoneyPanel extends JPanel {
 
 	public void fillMoneyPanel(Army army) {
 		
-		if(army.money < 0) { currentAmount.contentLabel.setForeground(Colors.vdred); }
+		if(army.money < 0) { currentAmount.contentLabel.setForeground(Colors.vdorange); }
 		else { currentAmount.contentLabel.setForeground(Colors.vlgreen); }
 		currentAmount.contentLabel.setText(Integer.toString(army.money));
 		
@@ -107,7 +107,7 @@ public class MoneyPanel extends JPanel {
 		intrest.contentLabel.setText("0");
 		
 		int newMoney = army.money - army.upkeep + army.income;
-		if(newMoney < army.money) {projection.contentLabel.setForeground(Colors.vdred); }
+		if(newMoney < army.money) {projection.contentLabel.setForeground(Colors.vdorange); }
 		else { projection.contentLabel.setForeground(Colors.vlgreen); }
 		projection.contentLabel.setText(Integer.toString(newMoney));
 

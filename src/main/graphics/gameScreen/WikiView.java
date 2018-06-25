@@ -45,7 +45,7 @@ public class WikiView extends JPanel {
 
 		JPanel topPanel = new JPanel();
 		topPanel.setPreferredSize(new Dimension(roundedWidth, unroundedHeight * 5 / 100));
-		topPanel.setBackground(Colors.vlblue);
+		topPanel.setBackground(Colors.backgroundOrange);
 		add(topPanel);
 
 		combatPanel = new ButtonedPanel(roundedWidth / 5, unroundedHeight * 5 / 100, Colors.vdblue);

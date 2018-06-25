@@ -138,25 +138,25 @@ public class Popup extends JDialog {
 
 		switch (colour) {
 		case LRED:
-			bottomPanel.setBackground(Colors.red);
-			middlePanel.setBackground(Colors.lred);
-			mainPanelTopPanel.setBackground(Colors.vlred);
-			mainPanelBottomLeftPanel.setBackground(Colors.vlred);
-			mainPanelBottomRightPanel.setBackground(Colors.vlred);
+			bottomPanel.setBackground(Colors.orange);
+			middlePanel.setBackground(Colors.lorange);
+			mainPanelTopPanel.setBackground(Colors.vlorange);
+			mainPanelBottomLeftPanel.setBackground(Colors.vlorange);
+			mainPanelBottomRightPanel.setBackground(Colors.vlorange);
 			break;
 		case RED:
-			bottomPanel.setBackground(Colors.dred);
-			middlePanel.setBackground(Colors.red);
-			mainPanelTopPanel.setBackground(Colors.lred);
-			mainPanelBottomLeftPanel.setBackground(Colors.lred);
-			mainPanelBottomRightPanel.setBackground(Colors.lred);
+			bottomPanel.setBackground(Colors.dorange);
+			middlePanel.setBackground(Colors.orange);
+			mainPanelTopPanel.setBackground(Colors.lorange);
+			mainPanelBottomLeftPanel.setBackground(Colors.lorange);
+			mainPanelBottomRightPanel.setBackground(Colors.lorange);
 			break;
 		case DRED:
-			bottomPanel.setBackground(Colors.vdred);
-			middlePanel.setBackground(Colors.dred);
-			mainPanelTopPanel.setBackground(Colors.red);
-			mainPanelBottomLeftPanel.setBackground(Colors.red);
-			mainPanelBottomRightPanel.setBackground(Colors.red);
+			bottomPanel.setBackground(Colors.vdorange);
+			middlePanel.setBackground(Colors.dorange);
+			mainPanelTopPanel.setBackground(Colors.orange);
+			mainPanelBottomLeftPanel.setBackground(Colors.orange);
+			mainPanelBottomRightPanel.setBackground(Colors.orange);
 			break;
 		case LGREEN:
 			bottomPanel.setBackground(Colors.green);
@@ -182,9 +182,9 @@ public class Popup extends JDialog {
 		case LBLUE:
 			bottomPanel.setBackground(Colors.blue);
 			middlePanel.setBackground(Colors.lblue);
-			mainPanelTopPanel.setBackground(Colors.vlblue);
-			mainPanelBottomLeftPanel.setBackground(Colors.vlblue);
-			mainPanelBottomRightPanel.setBackground(Colors.vlblue);
+			mainPanelTopPanel.setBackground(Colors.backgroundOrange);
+			mainPanelBottomLeftPanel.setBackground(Colors.backgroundOrange);
+			mainPanelBottomRightPanel.setBackground(Colors.backgroundOrange);
 			break;
 		case BLUE:
 			bottomPanel.setBackground(Colors.dblue);

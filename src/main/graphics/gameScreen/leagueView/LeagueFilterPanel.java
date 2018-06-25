@@ -17,7 +17,7 @@ public class LeagueFilterPanel extends JPanel {
 		
 		super();
 		setPreferredSize(new Dimension(width, height));
-		setBackground(Colors.vlblue);
+		setBackground(Colors.backgroundOrange);
 		setLayout(new FlowLayout(FlowLayout.LEFT, width / 10, height / 10));
 		
 		LabeledPanel explanationPanel = new LabeledPanel(width / 4, height * 8 / 10);

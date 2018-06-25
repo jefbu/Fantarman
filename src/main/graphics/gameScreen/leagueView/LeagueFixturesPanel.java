@@ -28,7 +28,7 @@ public class LeagueFixturesPanel extends JPanel {
 		imageLoader = new ImageLoader();
 		setPreferredSize(new Dimension(width, height));
 		setLayout(new FlowLayout(FlowLayout.LEFT, width * 3 / 100, height / 10));
-		setBackground(Colors.vlblue);
+		setBackground(Colors.backgroundOrange);
 		
 		JButton previousButton = new JButton();
 		previousButton.setPreferredSize(new Dimension(width * 9 / 100, height / 5));

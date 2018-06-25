@@ -24,22 +24,19 @@ public class NavigationPanel extends JPanel {
 	IconLabelPanel wikiViewPanel;
 
 
-	public NavigationPanel(int roundedWidth, int unroundedHeight) {
+	public NavigationPanel(int width, int height) {
 		
 		super();
 		
-		int width = roundedWidth;
-		int height = unroundedHeight * 75 / 100;
-		
 		setPreferredSize(new Dimension(width, height));
-		setBackground(Colors.vlblue);
-		setLayout(new FlowLayout(FlowLayout.LEFT, 5, 10));
+		setBackground(Colors.backgroundOrange);
+		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		
-		homeViewPanel = new IconLabelPanel(width - 10, height / 6 - 10, Colour.GREEN);
+		homeViewPanel = new IconLabelPanel(width * 2 / 10, height, Colour.GREEN);
 			homeViewPanel.buttonedPanel.button.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e) {
 					Screen.gameScreen.setScreensInvisible();
-					Screen.gameScreen.mainPanel.homeView.fillHomeScreen(false);
+					Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
 					Screen.gameScreen.mainPanel.homeView.setVisible(true);
 				}
 			});
@@ -48,7 +45,7 @@ public class NavigationPanel extends JPanel {
 			homeViewPanel.buttonedPanel.label.setText("Home");
 		add(homeViewPanel);
 		
-		armyViewPanel = new IconLabelPanel(width - 10, height / 6 - 10, Colour.GREEN);
+		armyViewPanel = new IconLabelPanel(width * 2 / 10, height, Colour.GREEN);
 			armyViewPanel.buttonedPanel.button.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e) {
 					Screen.gameScreen.setScreensInvisible();
@@ -61,7 +58,7 @@ public class NavigationPanel extends JPanel {
 			armyViewPanel.buttonedPanel.label.setText("Army");
 		add(armyViewPanel);
 		
-		leagueViewPanel = new IconLabelPanel(width - 10, height / 6 - 10, Colour.GREEN);
+		leagueViewPanel = new IconLabelPanel(width * 2 / 10, height, Colour.GREEN);
 		leagueViewPanel.buttonedPanel.button.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				Screen.gameScreen.setScreensInvisible();
@@ -74,7 +71,7 @@ public class NavigationPanel extends JPanel {
 		leagueViewPanel.buttonedPanel.label.setText("League");
 	add(leagueViewPanel);
 	
-		infoViewPanel = new IconLabelPanel(width - 10, height / 6 - 10, Colour.GREEN);
+		infoViewPanel = new IconLabelPanel(width * 2 / 10, height, Colour.GREEN);
 		infoViewPanel.buttonedPanel.button.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				Screen.gameScreen.setScreensInvisible();
@@ -87,7 +84,7 @@ public class NavigationPanel extends JPanel {
 		infoViewPanel.buttonedPanel.label.setText("Information");
 	add(infoViewPanel);
 	
-		wikiViewPanel = new IconLabelPanel(width - 10, height / 6 - 10, Colour.GREEN);
+		wikiViewPanel = new IconLabelPanel(width * 2 / 10, height, Colour.GREEN);
 		wikiViewPanel.buttonedPanel.button.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				Screen.gameScreen.setScreensInvisible();

@@ -36,48 +36,48 @@ public class WeaponPanel extends JButton {
 		int individualHeight = height - 1;
 		
 		namePanel = new LabeledPanel(individualWidth * 2, individualHeight);
-		namePanel.setBackground(Colors.lred);
-		namePanel.label.setForeground(Colors.dred);
+		namePanel.setBackground(Colors.lorange);
+		namePanel.label.setForeground(Colors.dorange);
 		add(namePanel);
 		
 		attackPanel = new LabeledPanel(individualWidth, individualHeight);
-		attackPanel.setBackground(Colors.lred);
-		attackPanel.label.setForeground(Colors.dred);
+		attackPanel.setBackground(Colors.lorange);
+		attackPanel.label.setForeground(Colors.dorange);
 		add(attackPanel);
 		
 		chargePanel = new LabeledPanel(individualWidth, individualHeight);
-		chargePanel.setBackground(Colors.lred);
-		chargePanel.label.setForeground(Colors.dred);
+		chargePanel.setBackground(Colors.lorange);
+		chargePanel.label.setForeground(Colors.dorange);
 		add(chargePanel);
 		
 		rangePanel = new LabeledPanel(individualWidth, individualHeight);
-		rangePanel.setBackground(Colors.lred);
-		rangePanel.label.setForeground(Colors.dred);
+		rangePanel.setBackground(Colors.lorange);
+		rangePanel.label.setForeground(Colors.dorange);
 		add(rangePanel);
 		
 		missilePanel = new LabeledPanel(individualWidth, individualHeight);
-		missilePanel.setBackground(Colors.lred);
-		missilePanel.label.setForeground(Colors.dred);
+		missilePanel.setBackground(Colors.lorange);
+		missilePanel.label.setForeground(Colors.dorange);
 		add(missilePanel);
 		
 		defencePanel = new LabeledPanel(individualWidth, individualHeight);
-		defencePanel.setBackground(Colors.lred);
-		defencePanel.label.setForeground(Colors.dred);
+		defencePanel.setBackground(Colors.lorange);
+		defencePanel.label.setForeground(Colors.dorange);
 		add(defencePanel);
 		
 		speedPanel = new LabeledPanel(individualWidth, individualHeight);
-		speedPanel.setBackground(Colors.lred);
-		speedPanel.label.setForeground(Colors.dred);
+		speedPanel.setBackground(Colors.lorange);
+		speedPanel.label.setForeground(Colors.dorange);
 		add(speedPanel);
 		
 		costPanel = new LabeledPanel(individualWidth, individualHeight);
-		costPanel.setBackground(Colors.lred);
-		costPanel.label.setForeground(Colors.dred);
+		costPanel.setBackground(Colors.lorange);
+		costPanel.label.setForeground(Colors.dorange);
 		add(costPanel);
 		
 		upkeepPanel = new LabeledPanel(individualWidth + 1, individualHeight);
-		upkeepPanel.setBackground(Colors.lred);
-		upkeepPanel.label.setForeground(Colors.dred);
+		upkeepPanel.setBackground(Colors.lorange);
+		upkeepPanel.label.setForeground(Colors.dorange);
 		add(upkeepPanel);
 		
 	}

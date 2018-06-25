@@ -19,21 +19,21 @@ public class ArmyPanel extends ButtonedPanel {
 
 	public ArmyPanel(int width, int height) {
 		
-		super(width, height, Colors.green);
+		super(width, height, Colors.orange);
 		setPreferredSize(new Dimension(width, height));
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		//setBackground(Colors.green);
 		
 		namePanel = new LabeledPanel(width * 7 / 10, height);
 		namePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
-		namePanel.setBackground(Colors.lgreen);
-		namePanel.label.setForeground(Colors.vdred);
+		namePanel.setBackground(Colors.lorange);
+		namePanel.label.setForeground(Colors.vdorange);
 		button.add(namePanel);
 		
 		pointsPanel = new LabeledPanel(width * 3 / 10, height);
 		pointsPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
-		pointsPanel.setBackground(Colors.lgreen);
-		pointsPanel.label.setForeground(Colors.vdred);
+		pointsPanel.setBackground(Colors.lorange);
+		pointsPanel.label.setForeground(Colors.vdorange);
 		button.add(pointsPanel);
 		
 	}

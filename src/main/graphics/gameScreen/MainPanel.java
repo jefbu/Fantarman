@@ -6,10 +6,11 @@ import java.awt.FlowLayout;
 
 import javax.swing.JPanel;
 
+import main.utility.Colors;
+
 public class MainPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	private Color backgroundColor;
 	
 	public ArmyView armyView;
 	public RegimentView regimentView;
@@ -23,13 +24,11 @@ public class MainPanel extends JPanel {
 
 		super();
 
-		int unroundedHeight = gameScreenHeight * 98 / 100;
-		int unroundedWidth = gameScreenHeight * 8 * 15 / 100;
-		int roundedWidth = unroundedWidth - (unroundedWidth % 48);
+		int unroundedHeight = gameScreenHeight * 70 / 100;
 
-		Dimension gameSceneSize = new Dimension(roundedWidth, unroundedHeight);
+		Dimension gameSceneSize = new Dimension(gameScreenWidth, unroundedHeight);
 		setPreferredSize(gameSceneSize);
-		setBackground(backgroundColor);
+		setBackground(Colors.textyellow);
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		
 		armyView = new ArmyView(gameScreenWidth, gameScreenHeight);

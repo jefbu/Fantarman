@@ -52,10 +52,10 @@ public class DoubleLabeledPanel extends JPanel {
 		switch(colour) {
 
 		case LRED:
-			titlePanel.setBackground(Colors.lred);
-			titleLabel.setForeground(Colors.dred);
-			contentPanel.setBackground(Colors.red);
-			contentLabel.setForeground(Colors.vlred);
+			titlePanel.setBackground(Colors.lorange);
+			titleLabel.setForeground(Colors.dorange);
+			contentPanel.setBackground(Colors.orange);
+			contentLabel.setForeground(Colors.vlorange);
 			break;
 		case RED:
 			break;
@@ -75,15 +75,15 @@ public class DoubleLabeledPanel extends JPanel {
 			break;
 		case DBLUE:
 			titlePanel.setBackground(Colors.dblue);
-			titleLabel.setForeground(Colors.vlblue);
-			contentPanel.setBackground(Colors.vlblue);
+			titleLabel.setForeground(Colors.backgroundOrange);
+			contentPanel.setBackground(Colors.backgroundOrange);
 			contentLabel.setForeground(Colors.blue);
 			break;
 		case LBLUE:
 			titlePanel.setBackground(Colors.lblue);
 			titleLabel.setForeground(Colors.dblue);
 			contentPanel.setBackground(Colors.blue);
-			contentLabel.setForeground(Colors.vlblue);
+			contentLabel.setForeground(Colors.backgroundOrange);
 			break;	
 		case DGREY:
 			break;

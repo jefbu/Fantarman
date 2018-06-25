@@ -32,7 +32,7 @@ public class MatchupRowPanel extends JPanel {
 
 		LabeledPanel versusPanel = new LabeledPanel(width * 1 / 10, height);
 		versusPanel.setBackground(Colors.dblue);
-		versusPanel.label.setForeground(Colors.vlred);
+		versusPanel.label.setForeground(Colors.vlorange);
 		versusPanel.label.setText("Vs");
 		add(versusPanel);
 
@@ -43,7 +43,7 @@ public class MatchupRowPanel extends JPanel {
 
 		resultPanel = new LabeledPanel(width * 1 / 10, height);
 		resultPanel.setBackground(Colors.dblue);
-		resultPanel.label.setForeground(Colors.vlred);
+		resultPanel.label.setForeground(Colors.vlorange);
 		add(resultPanel);
 
 	}

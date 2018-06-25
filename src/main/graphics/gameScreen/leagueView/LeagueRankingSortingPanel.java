@@ -15,32 +15,32 @@ public class LeagueRankingSortingPanel extends ContentPanel {
 		
 		super(width, height, colour, flowLayout);
 		
-		ButtonedPanel namePanel = new ButtonedPanel(width * 4 / 10, height, Colors.vlblue);
-		namePanel.label.setForeground(Colors.vlblue);
+		ButtonedPanel namePanel = new ButtonedPanel(width * 4 / 10, height, Colors.backgroundOrange);
+		namePanel.label.setForeground(Colors.backgroundOrange);
 		namePanel.label.setText("NAME");
 		
-		ButtonedPanel bigWinPanel = new ButtonedPanel(width / 10, height, Colors.vlblue);
-		bigWinPanel.label.setForeground(Colors.vlblue);
+		ButtonedPanel bigWinPanel = new ButtonedPanel(width / 10, height, Colors.backgroundOrange);
+		bigWinPanel.label.setForeground(Colors.backgroundOrange);
 		bigWinPanel.label.setText("W");
 		
-		ButtonedPanel smallWinPanel = new ButtonedPanel(width / 10, height, Colors.vlblue);
-		smallWinPanel.label.setForeground(Colors.vlblue);
+		ButtonedPanel smallWinPanel = new ButtonedPanel(width / 10, height, Colors.backgroundOrange);
+		smallWinPanel.label.setForeground(Colors.backgroundOrange);
 		smallWinPanel.label.setText("w");
 		
-		ButtonedPanel drawPanel = new ButtonedPanel(width / 10, height, Colors.vlblue);
-		drawPanel.label.setForeground(Colors.vlblue);
+		ButtonedPanel drawPanel = new ButtonedPanel(width / 10, height, Colors.backgroundOrange);
+		drawPanel.label.setForeground(Colors.backgroundOrange);
 		drawPanel.label.setText("D");
 		
-		ButtonedPanel smallLossPanel = new ButtonedPanel(width / 10, height, Colors.vlblue);
-		smallLossPanel.label.setForeground(Colors.vlblue);
+		ButtonedPanel smallLossPanel = new ButtonedPanel(width / 10, height, Colors.backgroundOrange);
+		smallLossPanel.label.setForeground(Colors.backgroundOrange);
 		smallLossPanel.label.setText("l");
 		
-		ButtonedPanel bigLossPanel = new ButtonedPanel(width / 10, height, Colors.vlblue);
-		bigLossPanel.label.setForeground(Colors.vlblue);
+		ButtonedPanel bigLossPanel = new ButtonedPanel(width / 10, height, Colors.backgroundOrange);
+		bigLossPanel.label.setForeground(Colors.backgroundOrange);
 		bigLossPanel.label.setText("L");
 		
-		ButtonedPanel totalPointsPanel = new ButtonedPanel(width / 15, height, Colors.vlblue);
-		totalPointsPanel.label.setForeground(Colors.vlblue);
+		ButtonedPanel totalPointsPanel = new ButtonedPanel(width / 15, height, Colors.backgroundOrange);
+		totalPointsPanel.label.setForeground(Colors.backgroundOrange);
 		totalPointsPanel.label.setText("Tot");
 		
 		insidePanel.add(namePanel);

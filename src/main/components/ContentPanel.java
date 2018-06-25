@@ -45,16 +45,16 @@ public class ContentPanel extends JPanel {
 		
 		switch (colour) {
 		case LRED:
-			setBackground(Colors.red);
-			insidePanel.setBackground(Colors.lred);
+			setBackground(Colors.orange);
+			insidePanel.setBackground(Colors.lorange);
 			break;
 		case RED:
-			setBackground(Colors.dred);
-			insidePanel.setBackground(Colors.red);
+			setBackground(Colors.dorange);
+			insidePanel.setBackground(Colors.orange);
 			break;
 		case DRED:
-			setBackground(Colors.vdred);
-			insidePanel.setBackground(Colors.dred);
+			setBackground(Colors.vdorange);
+			insidePanel.setBackground(Colors.dorange);
 			break;
 		case LGREEN:
 			setBackground(Colors.green);

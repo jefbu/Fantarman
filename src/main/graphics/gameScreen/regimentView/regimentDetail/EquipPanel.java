@@ -208,10 +208,10 @@ public class EquipPanel extends ContentPanel {
 			if(i < regiment.weapons.size()) {
 			if(regiment.weapon == regiment.weapons.get(i)) { 
 				bgColor = Colors.dblue;
-				txtColor = Colors.vlblue;
+				txtColor = Colors.backgroundOrange;
 			} else {
-				bgColor = Colors.lred;
-				txtColor = Colors.dred;
+				bgColor = Colors.lorange;
+				txtColor = Colors.dorange;
 			}
 			}
 			int index = i;
@@ -281,10 +281,10 @@ public class EquipPanel extends ContentPanel {
 			if(ii < regiment.armours.size()) {
 			if(regiment.armour == regiment.armours.get(ii)) { 
 				bgColor = Colors.dblue;
-				txtColor = Colors.vlblue;
+				txtColor = Colors.backgroundOrange;
 			} else {
-				bgColor = Colors.lred;
-				txtColor = Colors.dred;
+				bgColor = Colors.lorange;
+				txtColor = Colors.dorange;
 			}
 			}
 				

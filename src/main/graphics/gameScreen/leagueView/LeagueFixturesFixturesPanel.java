@@ -55,7 +55,7 @@ public class LeagueFixturesFixturesPanel extends ContentPanel {
 	public void fillLeagueFixturesFixturesPanel(int calendarDay) {
 		
 		int displayDate = calendarDay + 1;
-		matchDayLabeledPanel.label.setForeground(Colors.vlred);
+		matchDayLabeledPanel.label.setForeground(Colors.vlorange);
 		matchDayLabeledPanel.setBackground(Colors.dblue);
 		matchDayLabeledPanel.label.setText("Match Day: " + displayDate);
 		

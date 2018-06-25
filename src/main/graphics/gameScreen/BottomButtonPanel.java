@@ -1,6 +1,7 @@
 package main.graphics.gameScreen;
 
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,24 +19,22 @@ import main.entity.regiments.Role;
 import main.graphics.Screen;
 import main.utility.Colors;
 
-public class ButtonPanel extends JPanel {
+public class BottomButtonPanel extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
 	
 	JButton exitButton;
 	JButton battleButton;
 
-	public ButtonPanel(int roundedWidth, int unroundedHeight) {
+	public BottomButtonPanel(int width, int height) {
 		
 		super();
 		
-		int roundedHeight = unroundedHeight * 25 / 100 + 1;
-		int width = roundedWidth;
+		setPreferredSize(new Dimension(width, height));
+		setLayout(new FlowLayout(FlowLayout.LEFT, width * 5 / 100, height * 5 / 100));
+		setBackground(Colors.backgroundOrange);
 		
-		setPreferredSize(new Dimension(width, roundedHeight));
-		setBackground(Colors.vlblue);
-		
-       IconLabelPanel battlePanel = new IconLabelPanel(width * 8 / 10, roundedHeight * 2 / 3, Colour.RED);
+       IconLabelPanel battlePanel = new IconLabelPanel(width * 9 / 10, height * 85 / 100, Colour.RED);
         battlePanel.buttonedPanel.label.setForeground(Colors.textyellow);
         battlePanel.buttonedPanel.label.setFont(new Font("garamond", Font.BOLD, 48));
         battlePanel.buttonedPanel.label.setText("To Battle");
@@ -53,7 +52,7 @@ public class ButtonPanel extends JPanel {
 				Main.battles.add(new Battle());
         		}
         		else {
-        			TextPopup popup = new TextPopup(width * 3 / 2, roundedHeight, Colour.LRED, true);
+        			TextPopup popup = new TextPopup(width * 3 / 2, height, Colour.LRED, true);
         			
         			popup.writeText("You have not selected eight regiments. Do you still want to continue?");
         			

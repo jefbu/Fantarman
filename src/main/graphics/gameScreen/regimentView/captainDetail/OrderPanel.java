@@ -71,23 +71,23 @@ public class OrderPanel extends ContentPanel {
 					}
 				});
 				
-					orderPanel.setBackground(Colors.lred);
+					orderPanel.setBackground(Colors.lorange);
 					orderPanel.numberPanel.label.setText(Integer.toString(sequence + 1));
-					orderPanel.numberPanel.setBackground(Colors.lred);
+					orderPanel.numberPanel.setBackground(Colors.lorange);
 					orderPanel.conditionPanel.label.setText(regiment.instructions.get(sequence).condition.name());
-					orderPanel.conditionPanel.setBackground(Colors.lred);
+					orderPanel.conditionPanel.setBackground(Colors.lorange);
 					orderPanel.conditionXPPanel.label.setText("XP");
-					orderPanel.conditionXPPanel.setBackground(Colors.lred);
+					orderPanel.conditionXPPanel.setBackground(Colors.lorange);
 					orderPanel.targetPanel.label.setText(regiment.instructions.get(sequence).target.name());
-					orderPanel.targetPanel.setBackground(Colors.lred);
+					orderPanel.targetPanel.setBackground(Colors.lorange);
 					orderPanel.targetXPPanel.label.setText("XP");
-					orderPanel.targetXPPanel.setBackground(Colors.lred);
+					orderPanel.targetXPPanel.setBackground(Colors.lorange);
 					orderPanel.orderPanel.label.setText(regiment.instructions.get(sequence).order.name());
-					orderPanel.orderPanel.setBackground(Colors.lred);
+					orderPanel.orderPanel.setBackground(Colors.lorange);
 					orderPanel.orderXPPanel.label.setText("XP");
-					orderPanel.orderXPPanel.setBackground(Colors.lred);
+					orderPanel.orderXPPanel.setBackground(Colors.lorange);
 					orderPanel.totalXPPanel.label.setText("XP");
-					orderPanel.totalXPPanel.setBackground(Colors.lred);
+					orderPanel.totalXPPanel.setBackground(Colors.lorange);
 	
 			} else {
 				try {

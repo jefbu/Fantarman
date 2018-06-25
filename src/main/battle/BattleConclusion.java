@@ -28,6 +28,8 @@ public class BattleConclusion extends TextPopup {
 		
 		super(BattleScreen.battleScene.roundedWidth / 2, BattleScreen.battleScene.roundedHeight / 2, colour, false);
 		
+		Main.tutorial = false;
+		
 		int yourInitialValue = yourBattleArmy.value;
 		int enemyInitialValue = opponentBattleArmy.value;
 		
@@ -140,7 +142,7 @@ public class BattleConclusion extends TextPopup {
 		Main.yourArmy.calculateMoney();
 		
 		Screen.gameScreen.mainPanel.armyView.fillArmyView(Main.yourArmy);
-		Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);;
+		Screen.gameScreen.mainPanel.homeView.fillHomeScreen();;
 		Screen.gameScreen.mainPanel.infoView.fillInfoView(Main.yourArmy);
 		Screen.gameScreen.mainPanel.leagueView.fillLeagueView();
 		

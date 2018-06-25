@@ -18,13 +18,13 @@ public class Main {
 	public static ArrayList<Battle> battles;
 	
 	public static League league;
-
+	public static boolean tutorial;
 	
 	public static void main(String[] args) {
 		
-	try {
+	//try {
 		
-		System.out.println("print print print");
+		tutorial = true;
 		screen = new Screen();
 		battles = new ArrayList<Battle>();
 		TileImages.loadImages(BattleScreen.battleScene.roundedWidth / 48, BattleScreen.battleScene.roundedHeight / 32);
@@ -33,11 +33,11 @@ public class Main {
 		
 		league = new League();
 		
-	} catch (Throwable t) {
-		    JOptionPane.showMessageDialog(
-		        null, t.getClass().getSimpleName() + ": " + t.getMessage());
-		    throw t; // don't suppress Throwable
-		  }
+	//} catch (Throwable t) {
+	//	    JOptionPane.showMessageDialog(
+	//	        null, t.getClass().getSimpleName() + ": " + t.getMessage());
+	//	    throw t; // don't suppress Throwable
+	//	  }
 		
 	}
 

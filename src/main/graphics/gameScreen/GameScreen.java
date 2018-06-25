@@ -12,7 +12,7 @@ public class GameScreen extends JPanel {
 	
 	public MenuPanel menuPanel;
 	public MainPanel mainPanel;
-	RightAggregatePanel rightAggregatePanel;
+	BottomPanel bottomPanel;
 	
 	int gameScreenWidth;
 	int gameScreenHeight;
@@ -26,7 +26,7 @@ public class GameScreen extends JPanel {
 		
 		menuPanel = new MenuPanel(gameScreenWidth, gameScreenHeight);
 		mainPanel = new MainPanel(gameScreenWidth, gameScreenHeight);
-		rightAggregatePanel = new RightAggregatePanel(gameScreenWidth, gameScreenHeight);
+		bottomPanel = new BottomPanel(gameScreenWidth, gameScreenHeight);
 		
 		addPanels();
 				
@@ -49,7 +49,7 @@ public class GameScreen extends JPanel {
 		
 		add(menuPanel);
 		add(mainPanel);
-		add(rightAggregatePanel);
+		add(bottomPanel);
 		
 	}
 

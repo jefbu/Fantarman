@@ -41,48 +41,48 @@ public class TitlePanel extends JPanel {
 		setBackground(new Color(45, 90, 135));
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		
-		namePanel = new ButtonedPanel(width / 6, height, Colors.vlblue);
-		namePanel.label.setForeground(Colors.vlblue);
+		namePanel = new ButtonedPanel(width / 6, height, Colors.backgroundOrange);
+		namePanel.label.setForeground(Colors.backgroundOrange);
 		add(namePanel);
 		
-		onePanel = new ButtonedPanel(width / 12, height, Colors.vlblue);
-		onePanel.label.setForeground(Colors.vlblue);
+		onePanel = new ButtonedPanel(width / 12, height, Colors.backgroundOrange);
+		onePanel.label.setForeground(Colors.backgroundOrange);
 		add(onePanel);
 		
-		twoPanel = new ButtonedPanel(width / 12, height, Colors.vlblue);
-		twoPanel.label.setForeground(Colors.vlblue);
+		twoPanel = new ButtonedPanel(width / 12, height, Colors.backgroundOrange);
+		twoPanel.label.setForeground(Colors.backgroundOrange);
 		add(twoPanel);
 		
-		threePanel = new ButtonedPanel(width / 12, height, Colors.vlblue);
-		threePanel.label.setForeground(Colors.vlblue);
+		threePanel = new ButtonedPanel(width / 12, height, Colors.backgroundOrange);
+		threePanel.label.setForeground(Colors.backgroundOrange);
 		add(threePanel);
 		
-		fourPanel = new ButtonedPanel(width / 12, height, Colors.vlblue);
-		fourPanel.label.setForeground(Colors.vlblue);
+		fourPanel = new ButtonedPanel(width / 12, height, Colors.backgroundOrange);
+		fourPanel.label.setForeground(Colors.backgroundOrange);
 		add(fourPanel);
 		
-		fivePanel = new ButtonedPanel(width / 12, height, Colors.vlblue);
-		fivePanel.label.setForeground(Colors.vlblue);
+		fivePanel = new ButtonedPanel(width / 12, height, Colors.backgroundOrange);
+		fivePanel.label.setForeground(Colors.backgroundOrange);
 		add(fivePanel);
 		
-		sixPanel = new ButtonedPanel(width / 12, height, Colors.vlblue);
-		sixPanel.label.setForeground(Colors.vlblue);
+		sixPanel = new ButtonedPanel(width / 12, height, Colors.backgroundOrange);
+		sixPanel.label.setForeground(Colors.backgroundOrange);
 		add(sixPanel);
 		
-		sevenPanel = new ButtonedPanel(width / 12, height, Colors.vlblue);
-		sevenPanel.label.setForeground(Colors.vlblue);
+		sevenPanel = new ButtonedPanel(width / 12, height, Colors.backgroundOrange);
+		sevenPanel.label.setForeground(Colors.backgroundOrange);
 		add(sevenPanel);
 		
-		eightPanel = new ButtonedPanel(width / 12, height, Colors.vlblue);
-		eightPanel.label.setForeground(Colors.vlblue);
+		eightPanel = new ButtonedPanel(width / 12, height, Colors.backgroundOrange);
+		eightPanel.label.setForeground(Colors.backgroundOrange);
 		add(eightPanel);
 		
-		ninePanel = new ButtonedPanel(width / 12, height, Colors.vlblue);
-		ninePanel.label.setForeground(Colors.vlblue);
+		ninePanel = new ButtonedPanel(width / 12, height, Colors.backgroundOrange);
+		ninePanel.label.setForeground(Colors.backgroundOrange);
 		add(ninePanel);
 		
-		tenPanel = new ButtonedPanel(width / 12, height, Colors.vlblue);
-		tenPanel.label.setForeground(Colors.vlblue);
+		tenPanel = new ButtonedPanel(width / 12, height, Colors.backgroundOrange);
+		tenPanel.label.setForeground(Colors.backgroundOrange);
 		add(tenPanel);
 	}
 

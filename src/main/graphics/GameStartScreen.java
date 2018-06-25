@@ -32,12 +32,12 @@ public class GameStartScreen extends JPanel {
 
 		super();
 		setPreferredSize(new Dimension(width, height));
-		setBackground(Colors.vlblue);
+		setBackground(Colors.backgroundOrange);
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
 		JPanel titlePanel = new JPanel();
 		titlePanel.setPreferredSize(new Dimension(width, height / 10));
-		titlePanel.setBackground(Colors.vlblue);
+		titlePanel.setBackground(Colors.backgroundOrange);
 		JLabel label = new JLabel("Choose your Army");
 		label.setForeground(Colors.dblue);
 		label.setFont(new Font("garamond", Font.BOLD, 48));
@@ -46,12 +46,12 @@ public class GameStartScreen extends JPanel {
 
 		JPanel emptyLeftPanel = new JPanel();
 		emptyLeftPanel.setPreferredSize(new Dimension(width / 10, height * 8 / 10));
-		emptyLeftPanel.setBackground(Colors.vlblue);
+		emptyLeftPanel.setBackground(Colors.backgroundOrange);
 		add(emptyLeftPanel);
 
 		JPanel centrePanel = new JPanel();
 		centrePanel.setPreferredSize(new Dimension(width * 8 / 10, height * 8 / 10));
-		centrePanel.setBackground(Colors.vlblue);
+		centrePanel.setBackground(Colors.backgroundOrange);
 		centrePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 		add(centrePanel);
 
@@ -59,7 +59,7 @@ public class GameStartScreen extends JPanel {
 
 		JPanel pikninPanel = new JPanel();
 		pikninPanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2));
-		pikninPanel.setBackground(Colors.vlblue);
+		pikninPanel.setBackground(Colors.backgroundOrange);
 		centrePanel.add(pikninPanel);
 
 		JButton pikninButton = new JButton("Piknin Pickles");
@@ -76,7 +76,7 @@ public class GameStartScreen extends JPanel {
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
-				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
+				Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
 				Screen.gameScreen.setVisible(true);
 			}
@@ -85,7 +85,7 @@ public class GameStartScreen extends JPanel {
 
 		JPanel pikninTitlePanel = new JPanel();
 		pikninTitlePanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2 * 2 / 10));
-		pikninTitlePanel.setBackground(Colors.vlblue);
+		pikninTitlePanel.setBackground(Colors.backgroundOrange);
 		pikninPanel.add(pikninTitlePanel);
 
 		JLabel pikninTitleLabel = new JLabel();
@@ -94,7 +94,7 @@ public class GameStartScreen extends JPanel {
 
 		JPanel terquitPanel = new JPanel();
 		terquitPanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2));
-		terquitPanel.setBackground(Colors.vlblue);
+		terquitPanel.setBackground(Colors.backgroundOrange);
 		centrePanel.add(terquitPanel);
 
 		JButton terquitButton = new JButton("Terrible Terquits");
@@ -111,7 +111,7 @@ public class GameStartScreen extends JPanel {
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
-				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
+				Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
 				Screen.gameScreen.setVisible(true);
 			}
@@ -120,7 +120,7 @@ public class GameStartScreen extends JPanel {
 
 		JPanel terquitTitlePanel = new JPanel();
 		terquitTitlePanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2 * 2 / 10));
-		terquitTitlePanel.setBackground(Colors.vlblue);
+		terquitTitlePanel.setBackground(Colors.backgroundOrange);
 		terquitPanel.add(terquitTitlePanel);
 
 		JLabel terquitTitleLabel = new JLabel();
@@ -129,7 +129,7 @@ public class GameStartScreen extends JPanel {
 
 		JPanel wanmenPanel = new JPanel();
 		wanmenPanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2));
-		wanmenPanel.setBackground(Colors.vlblue);
+		wanmenPanel.setBackground(Colors.backgroundOrange);
 		centrePanel.add(wanmenPanel);
 
 		JButton wanmenButton = new JButton("Wanted Wanmen");
@@ -146,7 +146,7 @@ public class GameStartScreen extends JPanel {
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
-				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
+				Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
 				Screen.gameScreen.setVisible(true);
 			}
@@ -155,7 +155,7 @@ public class GameStartScreen extends JPanel {
 
 		JPanel wanmenTitlePanel = new JPanel();
 		wanmenTitlePanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2 * 2 / 10));
-		wanmenTitlePanel.setBackground(Colors.vlblue);
+		wanmenTitlePanel.setBackground(Colors.backgroundOrange);
 		wanmenPanel.add(wanmenTitlePanel);
 
 		JLabel wanmenTitleLabel = new JLabel();
@@ -164,7 +164,7 @@ public class GameStartScreen extends JPanel {
 
 		JPanel skylordsPanel = new JPanel();
 		skylordsPanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2));
-		skylordsPanel.setBackground(Colors.vlblue);
+		skylordsPanel.setBackground(Colors.backgroundOrange);
 		centrePanel.add(skylordsPanel);
 
 		JButton skylordsButton = new JButton("Skylords");
@@ -181,7 +181,7 @@ public class GameStartScreen extends JPanel {
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
-				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
+				Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
 				Screen.gameScreen.setVisible(true);
 			}
@@ -190,7 +190,7 @@ public class GameStartScreen extends JPanel {
 
 		JPanel skylordsTitlePanel = new JPanel();
 		skylordsTitlePanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2 * 2 / 10));
-		skylordsTitlePanel.setBackground(Colors.vlblue);
+		skylordsTitlePanel.setBackground(Colors.backgroundOrange);
 		skylordsPanel.add(skylordsTitlePanel);
 
 		JLabel skylordsTitleLabel = new JLabel();
@@ -199,7 +199,7 @@ public class GameStartScreen extends JPanel {
 
 		JPanel espequrPanel = new JPanel();
 		espequrPanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2));
-		espequrPanel.setBackground(Colors.vlblue);
+		espequrPanel.setBackground(Colors.backgroundOrange);
 		centrePanel.add(espequrPanel);
 
 		JButton espequrButton = new JButton("Espequr");
@@ -216,7 +216,7 @@ public class GameStartScreen extends JPanel {
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
-				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
+				Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
 				Screen.gameScreen.setVisible(true);
 			}
@@ -225,7 +225,7 @@ public class GameStartScreen extends JPanel {
 
 		JPanel espequrTitlePanel = new JPanel();
 		espequrTitlePanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2 * 2 / 10));
-		espequrTitlePanel.setBackground(Colors.vlblue);
+		espequrTitlePanel.setBackground(Colors.backgroundOrange);
 		espequrPanel.add(espequrTitlePanel);
 
 		JLabel espequrTitleLabel = new JLabel();
@@ -234,7 +234,7 @@ public class GameStartScreen extends JPanel {
 
 		JPanel chiDestroyersPanel = new JPanel();
 		chiDestroyersPanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2));
-		chiDestroyersPanel.setBackground(Colors.vlblue);
+		chiDestroyersPanel.setBackground(Colors.backgroundOrange);
 		centrePanel.add(chiDestroyersPanel);
 
 		JButton chiDestroyersButton = new JButton("Chi Destroyers");
@@ -245,7 +245,7 @@ public class GameStartScreen extends JPanel {
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
-				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
+				Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
 				Screen.gameScreen.setVisible(true);
 			}
@@ -260,7 +260,7 @@ public class GameStartScreen extends JPanel {
 		chiDestroyersButton.setBorder(null);
 		chiDestroyersButton.setIcon(imageLoader.loadImageIcon("/ArmyLogo/chiDestroyers.png", width * 8 / 10 / 4,
 				height * 8 / 10 / 2 * 8 / 10));
-		chiDestroyersTitlePanel.setBackground(Colors.vlblue);
+		chiDestroyersTitlePanel.setBackground(Colors.backgroundOrange);
 		chiDestroyersPanel.add(chiDestroyersTitlePanel);
 
 		JLabel chiDestroyersTitleLabel = new JLabel();
@@ -269,7 +269,7 @@ public class GameStartScreen extends JPanel {
 
 		JPanel metropolitansPanel = new JPanel();
 		metropolitansPanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2));
-		metropolitansPanel.setBackground(Colors.vlblue);
+		metropolitansPanel.setBackground(Colors.backgroundOrange);
 		centrePanel.add(metropolitansPanel);
 
 		JButton metropolitansButton = new JButton("Metropolitans");
@@ -286,7 +286,7 @@ public class GameStartScreen extends JPanel {
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
-				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
+				Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
 				Screen.gameScreen.setVisible(true);
 			}
@@ -295,7 +295,7 @@ public class GameStartScreen extends JPanel {
 
 		JPanel metropolitansTitlePanel = new JPanel();
 		metropolitansTitlePanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2 * 2 / 10));
-		metropolitansTitlePanel.setBackground(Colors.vlblue);
+		metropolitansTitlePanel.setBackground(Colors.backgroundOrange);
 		metropolitansPanel.add(metropolitansTitlePanel);
 
 		JLabel metropolitansTitleLabel = new JLabel();
@@ -304,7 +304,7 @@ public class GameStartScreen extends JPanel {
 
 		JPanel multiculturalSocietyPanel = new JPanel();
 		multiculturalSocietyPanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2));
-		multiculturalSocietyPanel.setBackground(Colors.vlblue);
+		multiculturalSocietyPanel.setBackground(Colors.backgroundOrange);
 		centrePanel.add(multiculturalSocietyPanel);
 
 		JButton multiculturalSocietyButton = new JButton("Multicultural Society");
@@ -321,7 +321,7 @@ public class GameStartScreen extends JPanel {
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
-				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
+				Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
 				Screen.gameScreen.setVisible(true);
 			}
@@ -331,7 +331,7 @@ public class GameStartScreen extends JPanel {
 		JPanel multiculturalSocietyTitlePanel = new JPanel();
 		multiculturalSocietyTitlePanel
 				.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2 * 2 / 10));
-		multiculturalSocietyTitlePanel.setBackground(Colors.vlblue);
+		multiculturalSocietyTitlePanel.setBackground(Colors.backgroundOrange);
 		multiculturalSocietyPanel.add(multiculturalSocietyTitlePanel);
 
 		JLabel multiculturalSocietyTitleLabel = new JLabel();

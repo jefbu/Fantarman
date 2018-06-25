@@ -29,7 +29,7 @@ public class SatisfactionPanel extends JPanel {
 		
 		super();
 		setPreferredSize(new Dimension(width, height));
-		setBackground(Colors.vlblue);
+		setBackground(Colors.backgroundOrange);
 		
 		titlePanel = new ContentPanel(width / 2, height / 10, Colour.DRED,
 				new FlowLayout(FlowLayout.CENTER, 0, height / 50));
@@ -41,12 +41,12 @@ public class SatisfactionPanel extends JPanel {
 		boardSatisfactionPanel = new ContentPanel(width * 9 / 10, height / 10, Colour.RED,
 				new FlowLayout(FlowLayout.LEFT, 0, height / 10 / 6));
 			LabeledPanel boardSatisfactionTitlePanel = new LabeledPanel(width * 6 / 10, height / 20);
-			boardSatisfactionTitlePanel.setBackground(Colors.red);
+			boardSatisfactionTitlePanel.setBackground(Colors.orange);
 			boardSatisfactionTitlePanel.label.setForeground(Colors.textyellow);
 			boardSatisfactionTitlePanel.label.setText("Board Satisfaction");
 			boardSatisfactionPanel.insidePanel.add(boardSatisfactionTitlePanel);
 			boardSatisfactionAmountPanel = new LabeledPanel(width * 25 / 100, height / 20);
-			boardSatisfactionAmountPanel.setBackground(Colors.red);
+			boardSatisfactionAmountPanel.setBackground(Colors.orange);
 			boardSatisfactionAmountPanel.label.setForeground(Colors.textyellow);
 			boardSatisfactionAmountPanel.label.setText("0");
 			boardSatisfactionPanel.insidePanel.add(boardSatisfactionAmountPanel);
@@ -58,12 +58,12 @@ public class SatisfactionPanel extends JPanel {
 		fanSatisfactionPanel = new ContentPanel(width * 9 / 10, height / 10, Colour.RED,
 				new FlowLayout(FlowLayout.LEFT, 0, height / 10 / 6));
 			LabeledPanel fanSatisfactionTitlePanel = new LabeledPanel(width * 6 / 10, height / 20);
-			fanSatisfactionTitlePanel.setBackground(Colors.red);
+			fanSatisfactionTitlePanel.setBackground(Colors.orange);
 			fanSatisfactionTitlePanel.label.setForeground(Colors.textyellow);
 			fanSatisfactionTitlePanel.label.setText("Fan Satisfaction");
 			fanSatisfactionPanel.insidePanel.add(fanSatisfactionTitlePanel);
 			fanSatisfactionAmountPanel = new LabeledPanel(width * 25 / 100, height / 20);
-			fanSatisfactionAmountPanel.setBackground(Colors.red);
+			fanSatisfactionAmountPanel.setBackground(Colors.orange);
 			fanSatisfactionAmountPanel.label.setForeground(Colors.textyellow);
 			fanSatisfactionAmountPanel.label.setText("0");
 			fanSatisfactionPanel.insidePanel.add(fanSatisfactionAmountPanel);

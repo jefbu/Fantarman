@@ -45,7 +45,7 @@ public class RegimentDetailPanel extends JPanel {
 		regimentIconLabel = new JLabel();
 		regimentIconPanel.insidePanel.add(regimentIconLabel);
 		regimentIconNameLabel = new JLabel();
-		regimentIconNameLabel.setForeground(Colors.vlblue);
+		regimentIconNameLabel.setForeground(Colors.backgroundOrange);
 		regimentIconPanel.insidePanel.add(regimentIconNameLabel);
 		add(regimentIconPanel);
 
