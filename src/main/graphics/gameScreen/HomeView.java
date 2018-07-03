@@ -28,17 +28,17 @@ public class HomeView extends JPanel {
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		setBackground(Colors.backgroundOrange);
 		
-		shortArmy = new ShortArmy(width * 75 / 100, height * 3 / 4);
+		shortArmy = new ShortArmy(width * 80 / 100, height * 3 / 4);
 		add(shortArmy);
 		
 		JPanel rightSidePanel = new JPanel();
-		rightSidePanel.setPreferredSize(new Dimension(width * 25 / 100, height * 3 / 4));
+		rightSidePanel.setPreferredSize(new Dimension(width * 20 / 100, height * 3 / 4));
 		rightSidePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, height * 3 / 4 / 50));
 		rightSidePanel.setBackground(Colors.backgroundOrange);
 		add(rightSidePanel);
 		
-		shortLeague = new ShortLeague(width * 25 / 100, height * 3 / 8);
-		shortInfo = new ShortInfo(width * 25 / 100, height * 3 / 8);
+		shortLeague = new ShortLeague(width * 20 / 100, height * 3 / 8);
+		shortInfo = new ShortInfo(width * 20 / 100, height * 3 / 8);
 		
 		rightSidePanel.add(shortLeague);
 		rightSidePanel.add(shortInfo);
