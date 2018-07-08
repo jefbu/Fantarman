@@ -43,16 +43,16 @@ public class ShortLeague extends JPanel {
 		add(titlePanel);
 		*/
 
-		titleBarPanel = new ContentPanel(width * 9 / 10, height / 10, Colour.RED,
+		titleBarPanel = new ContentPanel(width * 9 / 10, height * 165 / 1000, Colour.RED,
 				new FlowLayout(FlowLayout.LEADING, 5, 0));
 			LabeledPanel namePanel = new LabeledPanel(width * 6 / 10, height / 10);
 			namePanel.setBackground(Colors.orange);
-			namePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 20));
+			namePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, height * 4 / 100));
 			namePanel.label.setFont(new Font("garamond", Font.BOLD, 16));
 			namePanel.label.setForeground(Colors.textyellow);
-			namePanel.label.setText("League Results");
-			/*
+			namePanel.label.setText("League");
 			titleBarPanel.insidePanel.add(namePanel);
+			/*
 			LabeledPanel pointsPanel = new LabeledPanel(width * 2 / 10, height / 10);
 			pointsPanel.setBackground(Colors.green);
 			pointsPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 20));
@@ -67,7 +67,7 @@ public class ShortLeague extends JPanel {
 		add(armiesPanel);
 		
 		for (int i = 0; i < 8; i++) {
-			armyPanels.add(new ArmyPanel(width * 9 / 10, height / 14));
+			armyPanels.add(new ArmyPanel(width * 9 / 10, height / 12));
 		}
 		
 		for (ArmyPanel armyPanel: armyPanels) {

@@ -1,9 +1,12 @@
 package main.graphics.gameScreen.homeScreen;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.border.LineBorder;
 
 import main.Main;
 import main.components.ButtonedPanel;
@@ -25,13 +28,13 @@ public class ArmyPanel extends ButtonedPanel {
 		//setBackground(Colors.green);
 		
 		namePanel = new LabeledPanel(width * 7 / 10, height);
-		namePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
+		namePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, height / 10));
 		namePanel.setBackground(Colors.lorange);
 		namePanel.label.setForeground(Colors.vdorange);
 		button.add(namePanel);
 		
 		pointsPanel = new LabeledPanel(width * 3 / 10, height);
-		pointsPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
+		pointsPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, height / 10));
 		pointsPanel.setBackground(Colors.lorange);
 		pointsPanel.label.setForeground(Colors.vdorange);
 		button.add(pointsPanel);

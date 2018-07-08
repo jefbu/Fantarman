@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import main.Main;
 import main.components.Colour;
 import main.components.TextPopup;
+import main.graphics.Screen;
 import main.utility.Colors;
 import main.utility.LoadGame;
 
@@ -33,6 +34,27 @@ public class MenuPanel extends JPanel {
 		setPreferredSize(new Dimension(gameScreenWidth, gameScreenHeight / 50));
 		setBackground(backgroundColor);
 		setLayout(new FlowLayout(FlowLayout.RIGHT, 0, 0));
+		
+		JPanel wikiPanel = new JPanel();
+		wikiPanel.setPreferredSize(labelDimension);
+		wikiPanel.setBackground(backgroundColor);
+		wikiPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));			
+		JButton wikiButton = new JButton();
+			wikiButton.setPreferredSize(labelDimension);
+			wikiButton.setContentAreaFilled(false);
+			wikiButton.setBorderPainted(false);
+			wikiButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					Screen.gameScreen.setScreensInvisible();
+					Screen.gameScreen.mainPanel.wikiView.setVisible(true);
+				}
+			});
+			wikiPanel.add(wikiButton);
+				JLabel wikiLabel = new JLabel();
+				wikiLabel.setForeground(Colors.textyellow);
+				wikiLabel.setText("wiki");
+				wikiButton.add(wikiLabel);
+		add(wikiPanel);
 		
 		JPanel savePanel = new JPanel();
 		savePanel.setPreferredSize(labelDimension);
@@ -140,7 +162,6 @@ public class MenuPanel extends JPanel {
 				exitLabel.setText("exit");
 				exitButton.add(exitLabel);
 		add(exitPanel);
-		
 		
 	}
 

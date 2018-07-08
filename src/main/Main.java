@@ -1,8 +1,7 @@
 package main;
 
+import java.awt.GraphicsEnvironment;
 import java.util.ArrayList;
-
-import javax.swing.JOptionPane;
 
 import main.battle.Battle;
 import main.entity.armies.Army;
@@ -23,6 +22,12 @@ public class Main {
 	public static void main(String[] args) {
 		
 	//try {
+		
+	    String fonts[] = 
+	    	      GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
+	    for (int i = 0; i < fonts.length; i++) {
+	    	System.out.println(fonts[i]);
+	    }
 		
 		tutorial = true;
 		screen = new Screen();
