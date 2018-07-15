@@ -46,7 +46,7 @@ public class TrophyPanel extends JPanel {
 		upperLeftVoidPanel.setBackground(Colors.backgroundOrange);
 		add(upperLeftVoidPanel);
 
-		titlePanel = new ContentPanel(width * 30 / 100, height * 25 / 100, Colour.DGREY,
+		titlePanel = new ContentPanel(width * 30 / 100, height * 25 / 100, Colors.dgrey,
 				new FlowLayout(FlowLayout.CENTER, 0, 0));
 		titlePanel.contentLabel.setText("Trophies");
 		add(titlePanel);
@@ -61,7 +61,7 @@ public class TrophyPanel extends JPanel {
 		lowerLeftVoidPanel.setBackground(Colors.backgroundOrange);
 		add(lowerLeftVoidPanel);
 
-		contentPanel = new ContentPanel(width * 80 / 100, height * 60 / 100, Colour.GREY,
+		contentPanel = new ContentPanel(width * 80 / 100, height * 60 / 100, Colors.grey,
 				new FlowLayout(FlowLayout.LEFT, 10, 2));
 		add(contentPanel);
 		

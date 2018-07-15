@@ -80,7 +80,7 @@ public class ArmyView extends JPanel {
 		add(leftEmptyPanel);
 
 		roleSelectionPanel = new RoleSelectionPanel(roundedWidth * 2 / 10 + 10,
-				unroundedHeight * 75 / 100 + 10, Colour.BLUE, new FlowLayout(FlowLayout.LEADING, 0, 0));
+				unroundedHeight * 75 / 100 + 10, Colors.blue, new FlowLayout(FlowLayout.LEADING, 0, 0));
 		add(roleSelectionPanel);
 
 		JPanel centreEmptyPanel = new JPanel();
@@ -89,7 +89,7 @@ public class ArmyView extends JPanel {
 		add(centreEmptyPanel);
 
 		regimentListPanel = new RegimentListPanel(roundedWidth * 6 / 10 + 10, unroundedHeight * 75 / 100 + 10,
-				Colour.BLUE, new FlowLayout(FlowLayout.LEADING, 0, 0));
+				Colors.blue, new FlowLayout(FlowLayout.LEADING, 0, 0));
 		add(regimentListPanel);
 
 		JPanel rightEmptyPanel = new JPanel();

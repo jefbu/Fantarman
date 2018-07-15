@@ -26,7 +26,7 @@ public class ChiDestroyers extends Army {
 	public ChiDestroyers() {
 		
 		super();
-		name = "Chi Destroyers";
+		name = "Chi";
 		
 		roster.add(new SnakeTeeth("Cobras", new PiercingGaze(), Lieutenant.monstrosity));
 		roster.add(new MonkeyPaw("Baboons", new VinceLeonidas(), Lieutenant.monstrosity));

@@ -20,7 +20,7 @@ public class BottomTextPanel extends JPanel {
 		super();
 		setPreferredSize(new Dimension (width, height));
 		setBackground(Colors.dgrey);
-		setLayout(new FlowLayout(FlowLayout.LEADING, 0, 0));
+		setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 		
 		newsReel = new NewsReel(width, height);
 		add(newsReel);

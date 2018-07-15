@@ -29,8 +29,8 @@ public class ShortLeague extends JPanel {
 
 		super();
 		setPreferredSize(new Dimension(width, height));
-		setBackground(Colors.backgroundOrange);
-		setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
+		setBackground(Colors.dgrey);
+		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		
 		armyPanels = new ArrayList<ArmyPanel>();
 		
@@ -43,13 +43,13 @@ public class ShortLeague extends JPanel {
 		add(titlePanel);
 		*/
 
-		titleBarPanel = new ContentPanel(width * 9 / 10, height * 165 / 1000, Colour.RED,
+		titleBarPanel = new ContentPanel(width * 95 / 100, height * 165 / 1000, Colors.grey,
 				new FlowLayout(FlowLayout.LEADING, 5, 0));
 			LabeledPanel namePanel = new LabeledPanel(width * 6 / 10, height / 10);
-			namePanel.setBackground(Colors.orange);
+			namePanel.setBackground(Colors.grey);
 			namePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, height * 4 / 100));
 			namePanel.label.setFont(new Font("garamond", Font.BOLD, 16));
-			namePanel.label.setForeground(Colors.textyellow);
+			namePanel.label.setForeground(Colors.vlgrey);
 			namePanel.label.setText("League");
 			titleBarPanel.insidePanel.add(namePanel);
 			/*
@@ -62,7 +62,7 @@ public class ShortLeague extends JPanel {
 			titleBarPanel.insidePanel.add(pointsPanel);*/
 		add(titleBarPanel);
 
-		armiesPanel = new ContentPanel(width * 9 / 10, height * 9 / 10, Colour.LRED,
+		armiesPanel = new ContentPanel(width * 95 / 100, height * 835 / 1000, Colors.lgrey,
 				new FlowLayout(FlowLayout.LEFT, 0, 0));
 		add(armiesPanel);
 		

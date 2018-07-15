@@ -17,7 +17,7 @@ public class ContentPanel extends JPanel {
 	public JPanel insidePanel;
 	public JLabel contentLabel;
 
-	public ContentPanel(int width, int height, Colour colour, FlowLayout flowLayout) {
+	public ContentPanel(int width, int height, Color colour, FlowLayout flowLayout) {
 		
 		super();
 		setPreferredSize (new Dimension(width - 10, height - 10));
@@ -41,8 +41,12 @@ public class ContentPanel extends JPanel {
 		
 	}
 	
-	private void applyColours(Colour colour) {
+	private void applyColours(Color colour) {
 		
+		setBackground(Colors.vdgrey);
+		insidePanel.setBackground(colour);
+		
+		/*
 		switch (colour) {
 		case LRED:
 			setBackground(Colors.orange);
@@ -96,6 +100,7 @@ public class ContentPanel extends JPanel {
 			break;
 
 		}
+*/
 	}
 
 }

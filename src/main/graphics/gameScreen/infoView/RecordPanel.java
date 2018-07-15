@@ -30,14 +30,14 @@ public class RecordPanel extends JPanel {
 		setPreferredSize(new Dimension(width, height));
 		setLayout(new FlowLayout(FlowLayout.CENTER, 0, 5));
 
-		titlePanel = new ContentPanel(width / 2, height / 10, Colour.DBLUE,
+		titlePanel = new ContentPanel(width / 2, height / 10, Colors.dblue,
 				new FlowLayout(FlowLayout.CENTER, 0, height / 50));
 		titlePanel.contentLabel.setForeground(Colors.textyellow);
 		titlePanel.contentLabel.setFont(new Font("garamond", Font.BOLD, 28));
 		titlePanel.contentLabel.setText("HISTORY");
 		add(titlePanel);
 
-		titleBarPanel = new ContentPanel(width * 9 / 10, height / 10, Colour.BLUE,
+		titleBarPanel = new ContentPanel(width * 9 / 10, height / 10, Colors.blue,
 				new FlowLayout(FlowLayout.LEFT, 0, height / 10 / 6));
 			LabeledPanel titleBarNamePanel = new LabeledPanel(width * 6 / 10, height / 20);
 			titleBarNamePanel.setBackground(Colors.blue);
@@ -51,7 +51,7 @@ public class RecordPanel extends JPanel {
 			titleBarPanel.insidePanel.add(titleBarAmountPanel);
 		add(titleBarPanel);
 
-		historyPanel = new ContentPanel(width * 9 / 10, height * 7 / 10, Colour.LBLUE,
+		historyPanel = new ContentPanel(width * 9 / 10, height * 7 / 10, Colors.lblue,
 				new FlowLayout(FlowLayout.LEFT, 1, 0));
 		
 			highestLeague = new DoubleLabeledPanel(width * 85 / 100, height / 10, 75, Colour.LBLUE);

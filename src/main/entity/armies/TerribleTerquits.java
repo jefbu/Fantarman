@@ -20,7 +20,7 @@ public class TerribleTerquits extends Army {
 	public TerribleTerquits() {
 		
 		super();
-		name = "Terrible Terquits";
+		name = "Terquits";
 		
 		roster.add(new Kinshiwang("Lacquered Doom", new Petto(), Lieutenant.flagbearer, Lieutenant.monstrosity));
 		roster.add(new Kinshiwang("Clay Guards", new Morushi(), Lieutenant.musician, Lieutenant.errant));

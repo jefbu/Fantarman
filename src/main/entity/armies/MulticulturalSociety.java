@@ -20,7 +20,7 @@ public class MulticulturalSociety extends Army {
 	public MulticulturalSociety() {
 
 		super();
-		name = "Multicultural Society";
+		name = "Society";
 
 		roster.add(new StoutOfHeart("Piknin Heavies", new Generic(), Lieutenant.surgeon, Lieutenant.medic));
 		roster.add(new DoveMasters("Piknin Supports", new Generic(), Lieutenant.errant));

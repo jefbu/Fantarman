@@ -1,5 +1,6 @@
 package main.graphics.gameScreen.regimentView.captainDetail;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 
@@ -19,7 +20,7 @@ public class StatsBonusPanel extends ContentPanel {
 	DoubleLabeledPanel defencePanel;
 	DoubleLabeledPanel missilePanel;
 
-	public StatsBonusPanel(int width, int height, Colour colour, FlowLayout flowLayout) {
+	public StatsBonusPanel(int width, int height, Color colour, FlowLayout flowLayout) {
 		
 		super(width, height, colour, flowLayout);
 		

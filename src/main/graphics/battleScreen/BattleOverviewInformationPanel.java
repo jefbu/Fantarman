@@ -1,11 +1,12 @@
 package main.graphics.battleScreen;
 
+import java.awt.Color;
 import java.awt.FlowLayout;
 
-import main.components.Colour;
 import main.components.ContentPanel;
 import main.entity.armies.Army;
 import main.entity.regiments.Regiment;
+import main.utility.Colors;
 import main.utility.ImageLoader;
 
 public class BattleOverviewInformationPanel extends ContentPanel {
@@ -27,35 +28,35 @@ public class BattleOverviewInformationPanel extends ContentPanel {
 	private int armyLogoWidth;
 	private int armyLogoHeight;
 
-	public BattleOverviewInformationPanel(int width, int height, Colour colour) {
+	public BattleOverviewInformationPanel(int width, int height, Color colour) {
 
 		super(width, height, colour, new FlowLayout(FlowLayout.LEFT, 2, 2));
 
 		armyLogoWidth = width / 3;
 		armyLogoHeight = height - 10;
 
-		armyLogoPanel = new ContentPanel(armyLogoWidth, armyLogoHeight, Colour.DBLUE,
+		armyLogoPanel = new ContentPanel(armyLogoWidth, armyLogoHeight, Colors.dblue,
 				new FlowLayout(FlowLayout.CENTER, 0, 0));
 		insidePanel.add(armyLogoPanel);
-		infoPanel = new ContentPanel(width * 2 / 3, height - 10, Colour.DBLUE, new FlowLayout(FlowLayout.LEFT, 2, 2));
+		infoPanel = new ContentPanel(width * 2 / 3, height - 10, Colors.dblue, new FlowLayout(FlowLayout.LEFT, 2, 2));
 		insidePanel.add(infoPanel);
 		totalLifePanel = new ContentPanel(width * 2 / 3 - 10, height / 3 - 1, colour,
 				new FlowLayout(FlowLayout.LEFT, 2, 2));
-		totalLifeTitlePanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colour.DBLUE,
+		totalLifeTitlePanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colors.dblue,
 				new FlowLayout(FlowLayout.CENTER, 0, 15));
-		totalLifeContentPanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colour.DBLUE,
+		totalLifeContentPanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colors.dblue,
 				new FlowLayout(FlowLayout.CENTER, 0, 15));
 		totalValuePanel = new ContentPanel(width * 2 / 3 - 10, height / 3 - 1, colour,
 				new FlowLayout(FlowLayout.LEFT, 2, 2));
-		totalValueTitlePanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colour.DBLUE,
+		totalValueTitlePanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colors.dblue,
 				new FlowLayout(FlowLayout.CENTER, 0, 15));
-		totalValueContentPanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colour.DBLUE,
+		totalValueContentPanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colors.dblue,
 				new FlowLayout(FlowLayout.CENTER, 0, 15));
 		totalMoralePanel = new ContentPanel(width * 2 / 3 - 10, height / 3 - 1, colour,
 				new FlowLayout(FlowLayout.LEFT, 2, 2));
-		totalMoraleTitlePanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colour.DBLUE,
+		totalMoraleTitlePanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colors.dblue,
 				new FlowLayout(FlowLayout.CENTER, 0, 15));
-		totalMoraleContentPanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colour.DBLUE,
+		totalMoraleContentPanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colors.dblue,
 				new FlowLayout(FlowLayout.CENTER, 0, 15));
 		infoPanel.insidePanel.add(totalLifePanel);
 		totalLifePanel.insidePanel.add(totalLifeTitlePanel);

@@ -30,18 +30,18 @@ public class RegimentView extends JPanel {
 		int unroundedWidth = gameScreenHeight * 8 * 15 / 100;
 		int roundedWidth = unroundedWidth - (unroundedWidth % 48);
 
-		Dimension gameSceneSize = new Dimension(roundedWidth, unroundedHeight);
+		Dimension gameSceneSize = new Dimension(gameScreenWidth, gameScreenHeight);
 		setPreferredSize(gameSceneSize);
 
 		setLayout(new FlowLayout(FlowLayout.LEADING, 0, 0));
 		
-		regimentDetailPanel = new RegimentDetailPanel(roundedWidth, unroundedHeight * 45 / 100);
+		regimentDetailPanel = new RegimentDetailPanel(gameScreenWidth, gameScreenHeight * 45 / 100);
 		add(regimentDetailPanel);
 		
-		captainDetailPanel = new CaptainDetailPanel(roundedWidth, unroundedHeight * 45 / 100);
+		captainDetailPanel = new CaptainDetailPanel(gameScreenWidth, gameScreenHeight * 45 / 100);
 		add(captainDetailPanel);
 		
-		lieutenantsDetailPanel = new LieutenantsDetailPanel(roundedWidth, unroundedHeight / 10);
+		lieutenantsDetailPanel = new LieutenantsDetailPanel(gameScreenWidth, gameScreenHeight / 10);
 		add(lieutenantsDetailPanel);
 
 	}

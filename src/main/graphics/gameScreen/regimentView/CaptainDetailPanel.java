@@ -37,29 +37,29 @@ public class CaptainDetailPanel extends JPanel {
 		this.height = height;
 		imageLoader = new ImageLoader();
 		setPreferredSize(new Dimension(width, height));
-		setBackground(Colors.white);
+		setBackground(Colors.dgrey);
 		setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
 
-		ContentPanel captainIconPanel = new ContentPanel(width / 7, height / 2 - 20, Colour.BLUE,
+		ContentPanel captainIconPanel = new ContentPanel(width / 7, height / 2 - 20, Colors.blue,
 				new FlowLayout(FlowLayout.CENTER, 0, 15));
 		regimentIconLabel = new JLabel();
 		regimentIconLabel.setIcon(imageLoader.loadImageIcon("/portraits/unknown.png", width / 8, height / 3));
 		captainIconPanel.insidePanel.add(regimentIconLabel);
 		add(captainIconPanel);
 
-		captainBaseInfoPanel = new CaptainBaseInfoPanel(width / 6, height / 2 - 20, Colour.DBLUE,
+		captainBaseInfoPanel = new CaptainBaseInfoPanel(width / 6, height / 2 - 20, Colors.dblue,
 				new FlowLayout(FlowLayout.LEFT, 0, 1));
 		add(captainBaseInfoPanel);
 
 		captainBiographyPanel = new CaptainBiographyPanel(width / 2, height / 2 - 20,
-				Colour.LBLUE, new FlowLayout(FlowLayout.CENTER, 0, 0));
+				Colors.lblue, new FlowLayout(FlowLayout.CENTER, 0, 0));
 		add(captainBiographyPanel);
 
-		orderPanel = new OrderPanel(width / 2, height / 2 + 10, Colour.DGREEN,
+		orderPanel = new OrderPanel(width / 2, height / 2 + 10, Colors.dgreen,
 				new FlowLayout(FlowLayout.LEFT, 1, 2));
 		add(orderPanel);
 
-		statsBonusPanel = new StatsBonusPanel(width / 3, height / 2 + 10, Colour.BLUE,
+		statsBonusPanel = new StatsBonusPanel(width / 3, height / 2 + 10, Colors.blue,
 				new FlowLayout(FlowLayout.LEFT, 0, 1));
 		add(statsBonusPanel);
 

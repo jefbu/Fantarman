@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 
 import main.Main;
-import main.components.Colour;
 import main.components.ContentPanel;
 import main.components.LabeledPanel;
 import main.entity.regiments.Regiment;
@@ -27,7 +26,7 @@ public class EquipPanel extends ContentPanel {
 	JPanel armourPanel;
 		ArrayList<ArmourPanel> armoursList;
 
-	public EquipPanel(int width, int height, Colour colour, FlowLayout flowLayout) {
+	public EquipPanel(int width, int height, Color colour, FlowLayout flowLayout) {
 		
 		super(width, height, colour, flowLayout);
 		

@@ -29,7 +29,7 @@ public class Pickles extends Army {
 	public Pickles() {
 		
 		super();
-		name = "Piknin Pickles";
+		name = "Piknin";
 
 		roster.add(new StoutOfHeart("Valiant Lads", new NicoleSchumi(), Lieutenant.Tenkai, Lieutenant.corporal));
 		roster.add(new StoutOfHeart("Noble Chums", new MmeSauce(), Lieutenant.sergeant, Lieutenant.musician));

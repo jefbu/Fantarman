@@ -35,14 +35,14 @@ public class MoneyPanel extends JPanel {
 		setPreferredSize(new Dimension(width, height));
 		setLayout(new FlowLayout(FlowLayout.CENTER, 0, 5));
 
-		titlePanel = new ContentPanel(width / 2, height / 10, Colour.DGREEN,
+		titlePanel = new ContentPanel(width / 2, height / 10, Colors.dgreen,
 				new FlowLayout(FlowLayout.CENTER, 0, height / 50));
 		titlePanel.contentLabel.setForeground(Colors.textyellow);
 		titlePanel.contentLabel.setFont(new Font("garamond", Font.BOLD, 28));
 		titlePanel.contentLabel.setText("MONEY");
 		add(titlePanel);
 
-		titleBarPanel = new ContentPanel(width * 9 / 10, height / 10, Colour.GREEN,
+		titleBarPanel = new ContentPanel(width * 9 / 10, height / 10, Colors.green,
 				new FlowLayout(FlowLayout.LEFT, 0, height / 10 / 6));
 			LabeledPanel titleBarNamePanel = new LabeledPanel(width * 6 / 10, height / 20);
 			titleBarNamePanel.setBackground(Colors.green);
@@ -56,7 +56,7 @@ public class MoneyPanel extends JPanel {
 			titleBarPanel.insidePanel.add(titleBarAmountPanel);
 		add(titleBarPanel);
 
-		moneyPanel = new ContentPanel(width * 9 / 10, height * 7 / 10, Colour.LGREEN,
+		moneyPanel = new ContentPanel(width * 9 / 10, height * 7 / 10, Colors.lgreen,
 				new FlowLayout(FlowLayout.LEFT, 1, 0));
 		add(moneyPanel);
 		

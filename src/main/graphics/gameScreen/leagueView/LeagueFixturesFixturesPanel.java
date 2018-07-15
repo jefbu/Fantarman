@@ -5,7 +5,6 @@ import java.awt.FlowLayout;
 import java.util.ArrayList;
 import java.util.Random;
 
-import main.components.Colour;
 import main.components.ContentPanel;
 import main.components.LabeledPanel;
 import main.utility.Colors;
@@ -20,21 +19,14 @@ public class LeagueFixturesFixturesPanel extends ContentPanel {
 	
 	ArrayList<MatchupRowPanel> matchupRowPanels;
 	
-	public LeagueFixturesFixturesPanel(int width, int height, Colour colour, FlowLayout flowLayout) {
+	public LeagueFixturesFixturesPanel(int width, int height, Color colour, FlowLayout flowLayout) {
 
 		super(width, height, colour, flowLayout);
 		
 		matchupRowPanels = new ArrayList<MatchupRowPanel>(); 
 
-		matchDayPanel = new ContentPanel(width / 4, height / 4, Colour.DBLUE,
-				new FlowLayout(FlowLayout.CENTER, 0, height / 30));
-		
-		matchDayLabeledPanel = new LabeledPanel(width / 10, height / 10);
-		matchDayPanel.insidePanel.add(matchDayLabeledPanel);
-		
-		insidePanel.add(matchDayPanel);
 
-		matchupsPanel = new ContentPanel(width * 4 / 5, height * 2 / 3, Colour.DBLUE,
+		matchupsPanel = new ContentPanel(width * 4 / 5, height * 2 / 3, Colors.dblue,
 				new FlowLayout(FlowLayout.LEFT, 0, 0));
 		
 		for (int i = 0; i < 4; i++) {
@@ -54,6 +46,7 @@ public class LeagueFixturesFixturesPanel extends ContentPanel {
 	
 	public void fillLeagueFixturesFixturesPanel(int calendarDay) {
 		
+		/*
 		int displayDate = calendarDay + 1;
 		matchDayLabeledPanel.label.setForeground(Colors.vlorange);
 		matchDayLabeledPanel.setBackground(Colors.dblue);
@@ -62,6 +55,8 @@ public class LeagueFixturesFixturesPanel extends ContentPanel {
 		for (MatchupRowPanel panel: matchupRowPanels) {
 			panel.fillMatchupRowPanel(calendarDay);
 		}
+			*/
+		
 		
 		
 		

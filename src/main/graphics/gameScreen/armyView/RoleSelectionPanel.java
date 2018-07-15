@@ -9,7 +9,6 @@ import java.util.ArrayList;
 
 import main.Main;
 import main.components.ButtonedPanel;
-import main.components.Colour;
 import main.components.ContentPanel;
 import main.entity.armies.Army;
 import main.utility.Colors;
@@ -23,7 +22,7 @@ public class RoleSelectionPanel extends ContentPanel {
 	ArrayList<ButtonedPanel> linePanels;
 	RoleSelectionPopup roleSelectionPopup;
 
-	public RoleSelectionPanel(int width, int height, Colour colour, FlowLayout flowLayout) {
+	public RoleSelectionPanel(int width, int height, Color colour, FlowLayout flowLayout) {
 		
 		super(width, height, colour, flowLayout);
 		backgroundColorOwnArmy = Colors.blue;

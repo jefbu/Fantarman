@@ -30,33 +30,11 @@ public class LeagueFixturesPanel extends JPanel {
 		setLayout(new FlowLayout(FlowLayout.LEFT, width * 3 / 100, height / 10));
 		setBackground(Colors.backgroundOrange);
 		
-		JButton previousButton = new JButton();
-		previousButton.setPreferredSize(new Dimension(width * 9 / 100, height / 5));
-		previousButton.setIcon(imageLoader.loadImageIcon("/icons/previousButton.png", width * 9 / 100, height / 5));
-		previousButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (matchDay > 0) matchDay--;
-				fixturesPanel.fillLeagueFixturesFixturesPanel(matchDay);
-			}
-		});
-		add(previousButton);
 
-		fixturesPanel = new LeagueFixturesFixturesPanel(width * 70 / 100, height * 8 / 10, Colour.LBLUE,
+		fixturesPanel = new LeagueFixturesFixturesPanel(width * 70 / 100, height * 8 / 10, Colors.lorange,
 				new FlowLayout(FlowLayout.LEFT, width / 20, height / 30));
 		
 		add(fixturesPanel);
-		
-		JButton nextButton = new JButton();
-		nextButton.setPreferredSize(new Dimension(width * 9 / 100, height / 5));
-		nextButton.setIcon(imageLoader.loadImageIcon("/icons/nextButton.png", width * 9 /100, height / 5));
-		nextButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (matchDay < Main.league.calendar.calendarDays.size() - 1) matchDay++;
-				fixturesPanel.fillLeagueFixturesFixturesPanel(matchDay);
-			}
-		});
-		add(nextButton);
-		
 
 	}
 

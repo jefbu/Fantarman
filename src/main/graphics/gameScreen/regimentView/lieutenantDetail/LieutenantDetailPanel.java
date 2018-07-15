@@ -1,12 +1,12 @@
 package main.graphics.gameScreen.regimentView.lieutenantDetail;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import main.components.Colour;
 import main.components.ContentPanel;
 import main.components.LabeledPanel;
 import main.entity.regiments.Regiment;
@@ -24,7 +24,7 @@ public class LieutenantDetailPanel extends ContentPanel {
 	private LabeledPanel namePanel;
 	private LabeledPanel bonusPanel;
 
-	public LieutenantDetailPanel(int width, int height, Colour colour, FlowLayout flowLayout) {
+	public LieutenantDetailPanel(int width, int height, Color colour, FlowLayout flowLayout) {
 		
 		super(width, height, colour, flowLayout);
 		imageLoader = new ImageLoader();

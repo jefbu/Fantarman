@@ -24,14 +24,14 @@ public class MenuPanel extends JPanel {
 	Color backgroundColor;
 	Dimension labelDimension;
 	
-	public MenuPanel(int gameScreenWidth, int gameScreenHeight) {
+	public MenuPanel(int width, int height) {
 		
 		super();
 		
-		backgroundColor = Colors.dblue;
-		labelDimension = new Dimension(gameScreenWidth / 20, gameScreenHeight / 50);
+		backgroundColor = Colors.vdgrey;
+		labelDimension = new Dimension(width / 20, height);
 		
-		setPreferredSize(new Dimension(gameScreenWidth, gameScreenHeight / 50));
+		setPreferredSize(new Dimension(width, height));
 		setBackground(backgroundColor);
 		setLayout(new FlowLayout(FlowLayout.RIGHT, 0, 0));
 		
@@ -51,7 +51,7 @@ public class MenuPanel extends JPanel {
 			});
 			wikiPanel.add(wikiButton);
 				JLabel wikiLabel = new JLabel();
-				wikiLabel.setForeground(Colors.textyellow);
+				wikiLabel.setForeground(Colors.vlgrey);
 				wikiLabel.setText("wiki");
 				wikiButton.add(wikiLabel);
 		add(wikiPanel);
@@ -66,7 +66,7 @@ public class MenuPanel extends JPanel {
 			saveButton.setBorderPainted(false);
 			saveButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					TextPopup savePopup = new TextPopup (gameScreenWidth / 3, gameScreenHeight / 3, Colour.LBLUE, true);
+					TextPopup savePopup = new TextPopup (width / 3, height/ 3, Colour.LBLUE, true);
 					
 					savePopup.writeText("Do you want to save the game (old save will be overwritten)?");
 					
@@ -94,7 +94,7 @@ public class MenuPanel extends JPanel {
 			});
 			savePanel.add(saveButton);
 				JLabel saveLabel = new JLabel();
-				saveLabel.setForeground(Colors.textyellow);
+				saveLabel.setForeground(Colors.vlgrey);
 				saveLabel.setText("save");
 				saveButton.add(saveLabel);
 		add(savePanel);
@@ -110,7 +110,7 @@ public class MenuPanel extends JPanel {
 			loadButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					
-					TextPopup loadPopup = new TextPopup (gameScreenWidth / 3, gameScreenHeight / 3, Colour.LBLUE, true);
+					TextPopup loadPopup = new TextPopup (width / 3, height / 3, Colour.LBLUE, true);
 					
 					loadPopup.writeText("Do you want to load the saved game?");
 					
@@ -138,7 +138,7 @@ public class MenuPanel extends JPanel {
 			});
 			loadPanel.add(loadButton);
 				JLabel loadLabel = new JLabel();
-				loadLabel.setForeground(Colors.textyellow);
+				loadLabel.setForeground(Colors.vlgrey);
 				loadLabel.setText("load");
 				loadButton.add(loadLabel);
 		add(loadPanel);
@@ -158,7 +158,7 @@ public class MenuPanel extends JPanel {
 			});
 			exitPanel.add(exitButton);
 				JLabel exitLabel = new JLabel();
-				exitLabel.setForeground(Colors.textyellow);
+				exitLabel.setForeground(Colors.vlgrey);
 				exitLabel.setText("exit");
 				exitButton.add(exitLabel);
 		add(exitPanel);

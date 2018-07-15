@@ -1,9 +1,9 @@
 package main.graphics.gameScreen.armyView;
 
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.util.ArrayList;
 
-import main.components.Colour;
 import main.components.ContentPanel;
 import main.entity.armies.Army;
 
@@ -12,7 +12,7 @@ public class RegimentListPanel extends ContentPanel {
 	private static final long serialVersionUID = 1L;
 	ArrayList<IndividualRegimentPanel> panelList;
 
-	public RegimentListPanel(int width, int height, Colour colour, FlowLayout flowLayout) {
+	public RegimentListPanel(int width, int height, Color colour, FlowLayout flowLayout) {
 		
 		super(width, height, colour, flowLayout);
 		

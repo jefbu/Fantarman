@@ -23,12 +23,6 @@ public class Main {
 		
 	//try {
 		
-	    String fonts[] = 
-	    	      GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
-	    for (int i = 0; i < fonts.length; i++) {
-	    	System.out.println(fonts[i]);
-	    }
-		
 		tutorial = true;
 		screen = new Screen();
 		battles = new ArrayList<Battle>();

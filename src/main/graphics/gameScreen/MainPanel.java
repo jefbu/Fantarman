@@ -20,33 +20,31 @@ public class MainPanel extends JPanel {
 	public WikiView wikiView;
 
 
-	public MainPanel(int gameScreenWidth, int gameScreenHeight) {
+	public MainPanel(int width, int height) {
 
 		super();
 
-		int unroundedHeight = gameScreenHeight * 70 / 100;
-
-		Dimension gameSceneSize = new Dimension(gameScreenWidth, unroundedHeight);
+		Dimension gameSceneSize = new Dimension(width, height);
 		setPreferredSize(gameSceneSize);
-		setBackground(Colors.textyellow);
+		setBackground(Colors.dgrey);
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		
-		armyView = new ArmyView(gameScreenWidth, gameScreenHeight);
+		armyView = new ArmyView(width, height);
 		add(armyView);
 		
-		regimentView = new RegimentView(gameScreenWidth, gameScreenHeight);
+		regimentView = new RegimentView(width, height);
 		add(regimentView);
 		
-		homeView = new HomeView(gameScreenWidth, gameScreenHeight);
+		homeView = new HomeView(width, height);
 		add(homeView);
 		
-		leagueView = new LeagueView(gameScreenWidth, gameScreenHeight);
+		leagueView = new LeagueView(width, height);
 		add(leagueView);
 		
-		infoView = new InfoView(gameScreenWidth, gameScreenHeight);
+		infoView = new InfoView(width, height);
 		add(infoView);
 		
-		wikiView = new WikiView(gameScreenWidth, gameScreenHeight);
+		wikiView = new WikiView(width, height);
 		add(wikiView);
 		
 

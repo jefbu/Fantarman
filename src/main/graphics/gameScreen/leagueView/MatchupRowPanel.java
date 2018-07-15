@@ -26,24 +26,24 @@ public class MatchupRowPanel extends JPanel {
 		setLayout(new FlowLayout(FlowLayout.LEADING, 0, 0));
 
 		firstArmyPanel = new LabeledPanel(width * 4 / 10, height);
-		firstArmyPanel.setBackground(Colors.dblue);
-		firstArmyPanel.label.setForeground(Colors.vlgreen);
+		firstArmyPanel.setBackground(Colors.lgrey);
+		firstArmyPanel.label.setForeground(Colors.vdgrey);
 		add(firstArmyPanel);
 
 		LabeledPanel versusPanel = new LabeledPanel(width * 1 / 10, height);
-		versusPanel.setBackground(Colors.dblue);
-		versusPanel.label.setForeground(Colors.vlorange);
+		versusPanel.setBackground(Colors.lgrey);
+		versusPanel.label.setForeground(Colors.vdgrey);
 		versusPanel.label.setText("Vs");
 		add(versusPanel);
 
 		secondArmyPanel = new LabeledPanel(width * 4 / 10, height);
-		secondArmyPanel.setBackground(Colors.dblue);
-		secondArmyPanel.label.setForeground(Colors.vlgreen);
+		secondArmyPanel.setBackground(Colors.lgrey);
+		secondArmyPanel.label.setForeground(Colors.vdgrey);
 		add(secondArmyPanel);
 
 		resultPanel = new LabeledPanel(width * 1 / 10, height);
-		resultPanel.setBackground(Colors.dblue);
-		resultPanel.label.setForeground(Colors.vlorange);
+		resultPanel.setBackground(Colors.lgrey);
+		resultPanel.label.setForeground(Colors.vdgrey);
 		add(resultPanel);
 
 	}

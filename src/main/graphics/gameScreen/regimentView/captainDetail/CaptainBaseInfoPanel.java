@@ -1,5 +1,6 @@
 package main.graphics.gameScreen.regimentView.captainDetail;
 
+import java.awt.Color;
 import java.awt.FlowLayout;
 
 import main.components.Colour;
@@ -18,7 +19,7 @@ public class CaptainBaseInfoPanel extends ContentPanel {
 		public DoubleLabeledPanel skill1Panel;
 		public DoubleLabeledPanel skill2Panel;
 		
-		public CaptainBaseInfoPanel(int width, int height, Colour colour, FlowLayout flowLayout) {
+		public CaptainBaseInfoPanel(int width, int height, Color colour, FlowLayout flowLayout) {
 			
 			super(width, height, colour, flowLayout);
 			

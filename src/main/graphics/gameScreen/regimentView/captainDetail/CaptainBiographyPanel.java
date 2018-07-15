@@ -1,11 +1,11 @@
 package main.graphics.gameScreen.regimentView.captainDetail;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 
 import javax.swing.JTextPane;
 
-import main.components.Colour;
 import main.components.ContentPanel;
 import main.entity.captains.Captain;
 import main.utility.Colors;
@@ -16,7 +16,7 @@ public class CaptainBiographyPanel extends ContentPanel {
 	
 	JTextPane biographyTextPane;
 
-	public CaptainBiographyPanel(int width, int height, Colour colour, FlowLayout flowLayout) {
+	public CaptainBiographyPanel(int width, int height, Color colour, FlowLayout flowLayout) {
 		
 		super(width, height, colour, flowLayout);
 		biographyTextPane = new JTextPane();

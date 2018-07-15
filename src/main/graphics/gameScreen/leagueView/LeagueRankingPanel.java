@@ -22,7 +22,7 @@ public class LeagueRankingPanel extends JPanel {
 
 		setLayout(new FlowLayout(FlowLayout.LEADING, width / 10, height / 20));
 
-		leagueRankingSortingPanel = new LeagueRankingSortingPanel(width * 8 / 10, height / 10, Colour.DBLUE,
+		leagueRankingSortingPanel = new LeagueRankingSortingPanel(width * 8 / 10, height / 10, Colors.dblue,
 				new FlowLayout(FlowLayout.LEADING, 0, 0));
 		add(leagueRankingSortingPanel);
 

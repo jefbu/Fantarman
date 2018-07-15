@@ -5,11 +5,12 @@ import java.awt.FlowLayout;
 
 import javax.swing.JPanel;
 
+import main.Main;
 import main.graphics.Screen;
 import main.graphics.gameScreen.homeScreen.ShortArmy;
+import main.graphics.gameScreen.homeScreen.ShortFixtures;
 import main.graphics.gameScreen.homeScreen.ShortInfo;
 import main.graphics.gameScreen.homeScreen.ShortLeague;
-import main.graphics.gameScreen.leagueView.LeagueFixturesPanel;
 import main.utility.Colors;
 
 public class HomeView extends JPanel {
@@ -19,6 +20,7 @@ public class HomeView extends JPanel {
 	public ShortLeague shortLeague;
 	public ShortArmy shortArmy;
 	public ShortInfo shortInfo;
+	public ShortFixtures calendarPanel;
 	
 	public HomeView(int width, int height) {
 		
@@ -26,24 +28,46 @@ public class HomeView extends JPanel {
 
 		setPreferredSize(new Dimension(width, height));
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-		setBackground(Colors.backgroundOrange);
+		setBackground(Colors.dgrey);
 		
-		shortArmy = new ShortArmy(width * 70 / 100, height * 3 / 4);
+		shortArmy = new ShortArmy(width * 70 / 100, height);
 		add(shortArmy);
 		
 		JPanel rightSidePanel = new JPanel();
-		rightSidePanel.setPreferredSize(new Dimension(width * 30 / 100, height * 3 / 4));
-		rightSidePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, height * 3 / 4 / 50));
-		rightSidePanel.setBackground(Colors.backgroundOrange);
+		rightSidePanel.setPreferredSize(new Dimension(width * 30 / 100, height));
+		rightSidePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+		rightSidePanel.setBackground(Colors.dgrey);
 		add(rightSidePanel);
 		
-		shortLeague = new ShortLeague(width * 15 / 100, height * 3 / 8);
-		LeagueFixturesPanel leagueFixturesPanel = new LeagueFixturesPanel(width * 15 / 100, height * 2 / 8);
-		shortInfo = new ShortInfo(width * 15 / 100, height * 3 / 8);
+		JPanel rightSideTopPanel = new JPanel();
+		rightSideTopPanel.setPreferredSize(new Dimension(width * 30 / 100, height / 2));
+		rightSideTopPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+		rightSideTopPanel.setBackground(Colors.dgrey);
+		rightSidePanel.add(rightSideTopPanel);
 		
-		rightSidePanel.add(shortLeague);
-		rightSidePanel.add(shortInfo);
-		rightSidePanel.add(leagueFixturesPanel);
+		JPanel rightSideBottomPanel = new JPanel();
+		rightSideBottomPanel.setPreferredSize(new Dimension(width * 30 / 100, height / 2));
+		rightSideBottomPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+		rightSideBottomPanel.setBackground(Colors.dgrey);
+		rightSidePanel.add(rightSideBottomPanel);
+		
+		JPanel rightSideTopEmptyPanel = new JPanel();
+		rightSideTopEmptyPanel.setPreferredSize(new Dimension(width * 30 / 100, height / 2 * 4 / 100));
+		rightSideTopEmptyPanel.setBackground(Colors.dgrey);
+		rightSideTopPanel.add(rightSideTopEmptyPanel);	
+		
+		JPanel rightSideBottomEmptyPanel = new JPanel();
+		rightSideBottomEmptyPanel.setPreferredSize(new Dimension(width * 30 / 100, height / 2 * 4 / 100));
+		rightSideBottomEmptyPanel.setBackground(Colors.dgrey);
+		rightSideBottomPanel.add(rightSideBottomEmptyPanel);		
+		
+		shortLeague = new ShortLeague(width * 15 / 100, height / 2 * 96 / 100);
+		calendarPanel = new ShortFixtures(width * 15 / 100, height / 2 * 96 / 100);
+		shortInfo = new ShortInfo(width * 30 / 100, height /2 * 96 / 100);
+		
+		rightSideTopPanel.add(shortLeague);
+		rightSideTopPanel.add(calendarPanel);
+		rightSideBottomPanel.add(shortInfo);
 		
 
 		
@@ -54,6 +78,7 @@ public class HomeView extends JPanel {
 		shortLeague.fillShortLeague();
 		shortArmy.fillShortArmy();
 		shortInfo.fillShortInformation();
+		calendarPanel.fillShortFixtures(Main.league.calendarDay);
 		Screen.gameScreen.bottomPanel.bottomTextPanel.fillBottomTextPanel(true);
 
 		

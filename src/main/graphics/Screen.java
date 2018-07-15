@@ -86,7 +86,7 @@ public class Screen extends JFrame {
 				
 		JPanel contentPane = new JPanel();
 		contentPane.setPreferredSize(new Dimension (screenWidth, screenHeight));
-		contentPane.setBackground(new Color(20, 20, 20));
+		contentPane.setBackground(new Color(0, 0, 0));
 		add(contentPane);
 		setContentPane(contentPane);
 		
@@ -96,8 +96,8 @@ public class Screen extends JFrame {
 		
 		mainPanel = new JPanel();
 		mainPanel.setPreferredSize(mainPanelSize);
-		mainPanel.setBackground(new Color(100, 100, 100));
-		mainPanel.setBorder(new LineBorder(new Color(120, 70, 200), 1, false));
+		mainPanel.setBackground(new Color(0, 0, 0));
+		mainPanel.setBorder(new LineBorder(new Color(0, 0, 0), 1, false));
 		mainPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
 		getContentPane().add(mainPanel);
 		

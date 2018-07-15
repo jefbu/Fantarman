@@ -1,5 +1,6 @@
 package main.graphics.gameScreen.regimentView.captainDetail;
 
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.MouseInfo;
 import java.awt.event.ActionEvent;
@@ -27,7 +28,7 @@ public class OrderPanel extends ContentPanel {
 	int height;
 	OrderChoicePopup orderChoicePopup;
 
-	public OrderPanel(int width, int height, Colour colour, FlowLayout flowLayout) {
+	public OrderPanel(int width, int height, Color colour, FlowLayout flowLayout) {
 
 		super(width - 1, height - 1, colour, flowLayout);
 		this.width = width - 1;

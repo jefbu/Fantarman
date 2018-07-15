@@ -6,7 +6,7 @@ import java.awt.FlowLayout;
 
 import javax.swing.JPanel;
 
-import main.components.Colour;
+import main.utility.Colors;
 
 public class InformationPanel extends JPanel {
 
@@ -25,10 +25,10 @@ public class InformationPanel extends JPanel {
 		setBackground(new Color(80, 70, 60));
 		setLayout (new FlowLayout(FlowLayout.LEFT, 5, 5));
 		
-		yourPanel = new BattleOverviewInformationPanel(roundedWidth / 2, roundedHeight, Colour.DGREEN);
+		yourPanel = new BattleOverviewInformationPanel(roundedWidth / 2, roundedHeight, Colors.dgreen);
 		add(yourPanel);
 		
-		enemyPanel = new BattleOverviewInformationPanel(roundedWidth / 2, roundedHeight, Colour.DRED);
+		enemyPanel = new BattleOverviewInformationPanel(roundedWidth / 2, roundedHeight, Colors.dorange);
 		add(enemyPanel);
 		
 		

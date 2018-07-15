@@ -37,10 +37,10 @@ public class RegimentDetailPanel extends JPanel {
 		imageLoader = new ImageLoader();
 
 		setPreferredSize(new Dimension(width, height));
-		setBackground(Colors.white);
+		setBackground(Colors.dgrey);
 		setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
 
-		regimentIconPanel = new ContentPanel(width / 7, height / 2 - 20, Colour.BLUE,
+		regimentIconPanel = new ContentPanel(width * 15 / 100, height / 2 - 20, Colors.blue,
 				new FlowLayout(FlowLayout.CENTER, 0, 15));
 		regimentIconLabel = new JLabel();
 		regimentIconPanel.insidePanel.add(regimentIconLabel);
@@ -49,19 +49,19 @@ public class RegimentDetailPanel extends JPanel {
 		regimentIconPanel.insidePanel.add(regimentIconNameLabel);
 		add(regimentIconPanel);
 
-		regimentBaseInfoPanel = new RegimentBaseInfoPanel(width / 6, height / 2 - 20,
-				Colour.DBLUE, new FlowLayout(FlowLayout.LEFT, 0, 1));
+		regimentBaseInfoPanel = new RegimentBaseInfoPanel(width * 25 / 100, height / 2 - 20,
+				Colors.dblue, new FlowLayout(FlowLayout.LEFT, 0, 1));
 		add(regimentBaseInfoPanel);
 
-		battleStatsPanel = new BattleStatsPanel(width / 3, height / 2 - 20, Colour.BLUE,
+		battleStatsPanel = new BattleStatsPanel(width * 30 / 100, height / 2 - 20, Colors.blue,
 				new FlowLayout(FlowLayout.LEFT, 0, 1));
 		add(battleStatsPanel);
 
-		historyStatsPanel = new HistoryStatsPanel(width / 3, height / 2 - 20, Colour.BLUE,
+		historyStatsPanel = new HistoryStatsPanel(width * 30 / 100, height / 2 - 20, Colors.blue,
 				new FlowLayout(FlowLayout.LEFT, 0, 1));
 		add(historyStatsPanel);
 
-		equipPanel = new EquipPanel(width / 4 * 3, height / 2 + 10, Colour.GREEN,
+		equipPanel = new EquipPanel(width / 4 * 3, height / 2 + 10, Colors.green,
 				new FlowLayout(FlowLayout.LEFT, 0, 1));
 		add(equipPanel);
 		

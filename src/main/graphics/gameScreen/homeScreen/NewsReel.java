@@ -8,7 +8,6 @@ import java.awt.Insets;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
-import main.components.Colour;
 import main.components.ContentPanel;
 import main.utility.Colors;
 
@@ -16,8 +15,6 @@ public class NewsReel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
-	private ContentPanel titlePanel;
-	private ContentPanel contentPanel;
 	private RandomNews randomNews;
 	public JTextPane textArea;
 
@@ -25,20 +22,10 @@ public class NewsReel extends JPanel {
 
 		super();
 		setPreferredSize(new Dimension(width, height));
-		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-		setBackground(Colors.backgroundOrange);
+		setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
+		setBackground(Colors.dgrey);
 		
 		randomNews = new RandomNews();
-
-		JPanel upperVoidPanel = new JPanel();
-		upperVoidPanel.setPreferredSize(new Dimension(width, height * 5 / 100));
-		upperVoidPanel.setBackground(Colors.backgroundOrange);
-		add(upperVoidPanel);
-		
-		JPanel upperLeftVoidPanel = new JPanel();
-		upperLeftVoidPanel.setPreferredSize(new Dimension(width * 5 / 100, height * 85 / 100));
-		upperLeftVoidPanel.setBackground(Colors.backgroundOrange);
-		add(upperLeftVoidPanel);
 		
 		/*
 		titlePanel = new ContentPanel(width * 30 / 100, height * 25 / 100, Colour.DGREY,
@@ -57,19 +44,18 @@ public class NewsReel extends JPanel {
 		add(lowerLeftVoidPanel);
 		*/
 
-		contentPanel = new ContentPanel(width * 95 / 100, height * 85 / 100, Colour.DGREY,
-				new FlowLayout(FlowLayout.LEFT, 0, 0));
+		
 		
 		textArea = new JTextPane();
 		textArea.setContentType("text/html");
 		textArea.putClientProperty(JTextPane.HONOR_DISPLAY_PROPERTIES, Boolean.TRUE);
 		textArea.setFont(new Font("garamond",Font.BOLD,20));
-		textArea.setPreferredSize(new Dimension(width, height));
+		textArea.setPreferredSize(new Dimension(width, height * 9 / 10));
 		textArea.setEditable(false);
-		textArea.setBackground(Colors.grey);
+		textArea.setBackground(Colors.vlgrey);
 		textArea.setMargin(new Insets(10,10,10,10));
-		contentPanel.insidePanel.add(textArea);
-		add(contentPanel);
+
+		add(textArea);
 
 	}
 

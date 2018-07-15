@@ -18,29 +18,41 @@ import main.entity.regiments.Regiment;
 import main.entity.regiments.Role;
 import main.graphics.Screen;
 import main.utility.Colors;
+import main.utility.ImageLoader;
 
-public class BottomButtonPanel extends JPanel {
+public class BottomBattlePanel extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
 	
 	JButton exitButton;
 	JButton battleButton;
 
-	public BottomButtonPanel(int width, int height) {
+	public BottomBattlePanel(int width, int height) {
 		
 		super();
 		
 		setPreferredSize(new Dimension(width, height));
-		setLayout(new FlowLayout(FlowLayout.LEFT, width * 5 / 100, height * 5 / 100));
-		setBackground(Colors.backgroundOrange);
+		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+		setBackground(Colors.dgrey);
 		
-       IconLabelPanel battlePanel = new IconLabelPanel(width * 9 / 10, height * 85 / 100, Colour.RED);
-        battlePanel.buttonedPanel.label.setForeground(Colors.textyellow);
-        battlePanel.buttonedPanel.label.setFont(new Font("garamond", Font.BOLD, 48));
-        battlePanel.buttonedPanel.label.setText("To Battle");
-        battlePanel.buttonedPanel.button.addActionListener(new ActionListener() {
-        	public void actionPerformed(ActionEvent e) {
-        		
+		JPanel vdgreyPanel = new JPanel();
+		vdgreyPanel.setPreferredSize(new Dimension(width * 90 / 100, height * 9 / 10));
+		vdgreyPanel.setBackground(Colors.vdgrey);
+		vdgreyPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+		add(vdgreyPanel);
+		
+		JButton click = new JButton();
+		click.setPreferredSize(new Dimension(width * 90 / 100, height * 9 / 10));
+		click.setContentAreaFilled(false);
+		click.setOpaque(false);
+		click.setBorderPainted(false);
+		ImageLoader imageLoader = new ImageLoader();
+		click.setIcon(imageLoader.loadImageIcon("/icons/battle.png", width * 90 / 100, height * 9 / 10));
+		vdgreyPanel.add(click);
+		
+		click.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+	       		
         		int combattants = 0;
         		for (Regiment regiment: Main.yourArmy.roster) {
         			if (regiment.role == Role.COMBAT) combattants++;
@@ -75,10 +87,9 @@ public class BottomButtonPanel extends JPanel {
         				}
         			});
         			popup.setVisible(true);
-        		}
 			}
-        });
-        add(battlePanel);
+			}
+		});
 		
 
 	}

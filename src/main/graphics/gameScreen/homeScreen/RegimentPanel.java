@@ -5,36 +5,36 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
-import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 import main.Main;
 import main.components.ButtonedPanel;
-import main.components.LabeledPanel;
+import main.graphics.Screen;
 import main.utility.Colors;
 import main.utility.ImageLoader;
 
 public class RegimentPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	private LabeledPanel namePanel;
-	private LabeledPanel captainPanel;
-	private LabeledPanel regimentNamePanel;
-	private LabeledPanel regimentTypePanel;
 
-	private LabeledPanel meleeOffensePanel;
-	private LabeledPanel defencePanel;
-	private LabeledPanel mobilityPanel;
-	private LabeledPanel rangedOffensePanel;
-	private LabeledPanel attackPanel;
-	private LabeledPanel chargePanel;
-	private LabeledPanel rangePanel;
-	private LabeledPanel missilePanel;
-	private LabeledPanel moralePanel;
+	private ButtonedPanel captainPanel;
+	private ButtonedPanel regimentNamePanel;
+	private ButtonedPanel regimentTypePanel;
 
-	private LabeledPanel upkeepPanel;
-	private LabeledPanel valuePanel;
+	private ButtonedPanel meleeOffensePanel;
+	private ButtonedPanel defencePanel;
+	private ButtonedPanel mobilityPanel;
+	private ButtonedPanel rangedOffensePanel;
+	private ButtonedPanel attackPanel;
+	private ButtonedPanel chargePanel;
+	private ButtonedPanel rangePanel;
+	private ButtonedPanel missilePanel;
+	private ButtonedPanel moralePanel;
+
+	private ButtonedPanel upkeepPanel;
+	private ButtonedPanel valuePanel;
 
 	private ButtonedPanel combatRolePanel;
 	private ButtonedPanel trainingRolePanel;
@@ -44,6 +44,8 @@ public class RegimentPanel extends JPanel {
 	private int height;
 	
 	private ImageLoader imageLoader;
+	
+	private ArrayList<ButtonedPanel> list;
 
 	public RegimentPanel(int width, int height) {
 
@@ -51,7 +53,7 @@ public class RegimentPanel extends JPanel {
 		this.width = width;
 		this.height = height;
 		setPreferredSize(new Dimension(width, height));
-		setBackground(Colors.lorange);
+		setBackground(Colors.lgrey);
 		// setBorder(new LineBorder(Color.BLACK, 1, false));
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
@@ -64,57 +66,60 @@ public class RegimentPanel extends JPanel {
 		 * namePanel.label.setForeground(Colors.vdorange); add(namePanel);
 		 */
 
-		captainPanel = new LabeledPanel(width * 12 / 100, height);
+		captainPanel = new ButtonedPanel(width * 20 / 100, height, Colors.vdgrey);
 		captainPanel.setBackground(Colors.lorange);
-		captainPanel.setLayout(new FlowLayout(FlowLayout.LEFT, width / 100, height * 25 / 100));
-		captainPanel.label.setForeground(Colors.vdorange);
+		captainPanel.setLayout(new FlowLayout(FlowLayout.LEFT, width / 200, height * 25 / 100));
+		captainPanel.button.setLayout(new FlowLayout(FlowLayout.LEFT, width / 250, height * 25 / 100));
+		captainPanel.label.setForeground(Colors.vdgrey);
 		add(captainPanel);
-
-		regimentNamePanel = new LabeledPanel(width * 12 / 100, height);
+		
+		/*
+		regimentNamePanel = new ButtonedPanel(width * 15 / 100, height, Colors.vdorange);
 		regimentNamePanel.setBackground(Colors.lorange);
-		regimentNamePanel.setLayout(new FlowLayout(FlowLayout.LEFT, width / 100, height * 25 / 100));
+		regimentNamePanel.setLayout(new FlowLayout(FlowLayout.LEFT, width / 250, height * 25 / 100));
+		regimentNamePanel.button.setLayout(new FlowLayout(FlowLayout.LEFT, width / 100, height * 25 / 100));
 		regimentNamePanel.label.setForeground(Colors.vdorange);
-		add(regimentNamePanel);
+		add(regimentNamePanel);*/
 
-		regimentTypePanel = new LabeledPanel(width * 12 / 100, height);
+		regimentTypePanel = new ButtonedPanel(width * 20 / 100, height, Colors.vdgrey);
 		regimentTypePanel.setBackground(Colors.lorange);
 		regimentTypePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, height * 25 / 100));
-		regimentTypePanel.label.setForeground(Colors.vdorange);
+		regimentTypePanel.label.setForeground(Colors.vdgrey);
 		add(regimentTypePanel);
 
-		meleeOffensePanel = new LabeledPanel(width * 8 / 100, height);
+		meleeOffensePanel = new ButtonedPanel(width * 10 / 100, height, Colors.vdgrey);
 		meleeOffensePanel.setBackground(Colors.lorange);
 		meleeOffensePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, height * 25 / 100));
 		meleeOffensePanel.label.setFont(new Font("garamond", Font.BOLD, 18));
-		meleeOffensePanel.label.setForeground(Colors.vdorange);
+		meleeOffensePanel.label.setForeground(Colors.vdgrey);
 		add(meleeOffensePanel);
 
-		defencePanel = new LabeledPanel(width * 8 / 100, height);
+		defencePanel = new ButtonedPanel(width * 10 / 100, height, Colors.vdgrey);
 		defencePanel.setBackground(Colors.lorange);
 		defencePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, height * 25 / 100));
 		defencePanel.label.setFont(new Font("garamond", Font.BOLD, 18));
-		defencePanel.label.setForeground(Colors.vdorange);
+		defencePanel.label.setForeground(Colors.vdgrey);
 		add(defencePanel);
 
-		mobilityPanel = new LabeledPanel(width * 8 / 100, height);
+		mobilityPanel = new ButtonedPanel(width * 10 / 100, height, Colors.vdgrey);
 		mobilityPanel.setBackground(Colors.lorange);
 		mobilityPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, height * 25 / 100));
 		mobilityPanel.label.setFont(new Font("garamond", Font.BOLD, 18));
-		mobilityPanel.label.setForeground(Colors.vdorange);
+		mobilityPanel.label.setForeground(Colors.vdgrey);
 		add(mobilityPanel);
 
-		rangedOffensePanel = new LabeledPanel(width * 8 / 100, height);
+		rangedOffensePanel = new ButtonedPanel(width * 10 / 100, height, Colors.vdgrey);
 		rangedOffensePanel.setBackground(Colors.lorange);
 		rangedOffensePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, height * 25 / 100));
 		rangedOffensePanel.label.setFont(new Font("garamond", Font.BOLD, 18));
-		rangedOffensePanel.label.setForeground(Colors.vdorange);
+		rangedOffensePanel.label.setForeground(Colors.vdgrey);
 		add(rangedOffensePanel);
 
-		combatRolePanel = new ButtonedPanel(width * 10 / 100, height, Colors.lorange);
+		combatRolePanel = new ButtonedPanel(width * 6 / 100, height, Colors.vdgrey);
 		combatRolePanel.setBackground(Colors.lorange);
 		combatRolePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 		combatRolePanel.button.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
-		combatRolePanel.label.setForeground(Colors.vdorange);
+		combatRolePanel.label.setForeground(Colors.vdgrey);
 		add(combatRolePanel);
 
 		combatRolePanel.button.addActionListener(new ActionListener() {
@@ -128,11 +133,11 @@ public class RegimentPanel extends JPanel {
 			}
 		});
 
-		trainingRolePanel = new ButtonedPanel(width * 10 / 100, height, Colors.lorange);
+		trainingRolePanel = new ButtonedPanel(width * 6 / 100, height, Colors.vdgrey);
 		trainingRolePanel.setBackground(Colors.lorange);
 		trainingRolePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 		trainingRolePanel.button.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
-		trainingRolePanel.label.setForeground(Colors.vdorange);
+		trainingRolePanel.label.setForeground(Colors.vdgrey);
 		add(trainingRolePanel);
 		
 		trainingRolePanel.button.addActionListener(new ActionListener() {
@@ -147,11 +152,11 @@ public class RegimentPanel extends JPanel {
 		});
 
 
-		marketingRolePanel = new ButtonedPanel(width * 10 / 100, height, Colors.lorange);
+		marketingRolePanel = new ButtonedPanel(width * 6 / 100, height, Colors.vdgrey);
 		marketingRolePanel.setBackground(Colors.lorange);
 		marketingRolePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 		marketingRolePanel.button.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
-		marketingRolePanel.label.setForeground(Colors.vdorange);
+		marketingRolePanel.label.setForeground(Colors.vdgrey);
 		add(marketingRolePanel);
 		
 		marketingRolePanel.button.addActionListener(new ActionListener() {
@@ -164,13 +169,37 @@ public class RegimentPanel extends JPanel {
 						.setIcon(imageLoader.loadImageIcon("/icons/checkboxChecked.png", width * 3 / 100, height));
 			}
 		});
-
+		
+		list = new ArrayList<ButtonedPanel>();
+		list.add(captainPanel);
+		//list.add(regimentNamePanel);
+		list.add(regimentTypePanel);
+		list.add(meleeOffensePanel);
+		list.add(rangedOffensePanel);
+		list.add(defencePanel);
+		list.add(mobilityPanel);
 
 	}
 
 	public void fillRegimentPanel(int i) {
+		
+			for (ButtonedPanel panel: list) {
+				try{
+					panel.button.removeActionListener(panel.button.getActionListeners()[0]);
+					} catch (Exception e) {}				
+			}	
+		
+			for (int ii = 0; ii < list.size(); ii++) {
+				list.get(ii).button.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						Screen.gameScreen.mainPanel.armyView.setVisible(false);
+						Screen.gameScreen.mainPanel.regimentView.fillRegimentView(Main.yourArmy.roster.get(i), true);
+						Screen.gameScreen.mainPanel.regimentView.setVisible(true);
+					}
+				});
 
 		captainPanel.label.setText(Main.yourArmy.roster.get(i).captain.name);
+		//regimentNamePanel.label.setText(Main.yourArmy.roster.get(i).regiment);
 		regimentTypePanel.label.setText(Main.yourArmy.roster.get(i).type.toString());
 
 		String meleeOffense;
@@ -239,6 +268,8 @@ public class RegimentPanel extends JPanel {
 
 		}
 
+	}
+		
 	}
 
 }

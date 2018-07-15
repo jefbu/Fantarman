@@ -1,9 +1,9 @@
 package main.graphics.gameScreen.leagueView;
 
+import java.awt.Color;
 import java.awt.FlowLayout;
 
 import main.components.ButtonedPanel;
-import main.components.Colour;
 import main.components.ContentPanel;
 import main.utility.Colors;
 
@@ -11,7 +11,7 @@ public class LeagueRankingSortingPanel extends ContentPanel {
 
 	private static final long serialVersionUID = 1L;
 
-	public LeagueRankingSortingPanel(int width, int height, Colour colour, FlowLayout flowLayout) {
+	public LeagueRankingSortingPanel(int width, int height, Color colour, FlowLayout flowLayout) {
 		
 		super(width, height, colour, flowLayout);
 		

@@ -1,5 +1,6 @@
 package main.graphics.gameScreen.regimentView.regimentDetail;
 
+import java.awt.Color;
 import java.awt.FlowLayout;
 
 import main.components.Colour;
@@ -15,7 +16,7 @@ public class HistoryStatsPanel extends ContentPanel {
 	DoubleLabeledPanel foughtPanel;
 	DoubleLabeledPanel mvpPanel;
 
-	public HistoryStatsPanel(int width, int height, Colour colour, FlowLayout flowLayout) {
+	public HistoryStatsPanel(int width, int height, Color colour, FlowLayout flowLayout) {
 		
 		super(width, height, colour, flowLayout);
 		

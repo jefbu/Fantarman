@@ -21,7 +21,7 @@ public class LeagueRankingTable extends ContentPanel {
 
 	public LeagueRankingTable(int width, int height) {
 		
-		super(width, height, Colour.BLUE, new FlowLayout(FlowLayout.LEFT, 0, 0));
+		super(width, height, Colors.blue, new FlowLayout(FlowLayout.LEFT, 0, 0));
 		army0Panel = new RowPanel(width, height / 8 + 3, Colors.lblue);
 		army1Panel = new RowPanel(width, height / 8 + 3, Colors.blue);
 		army2Panel = new RowPanel(width, height / 8 + 3, Colors.lblue);

@@ -29,7 +29,7 @@ public class ShortArmy extends JPanel {
 		
 			super();
 			setPreferredSize(new Dimension(width, height));
-			setBackground(Colors.backgroundOrange);
+			setBackground(Colors.dgrey);
 			setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 			
 			regimentPanels = new ArrayList<RegimentPanel>();
@@ -43,10 +43,10 @@ public class ShortArmy extends JPanel {
 			
 			JPanel emptyTopPanel = new JPanel();
 			emptyTopPanel.setPreferredSize(new Dimension(width * 9 / 10, height * 2 / 100));
-			emptyTopPanel.setBackground(Colors.backgroundOrange);
+			emptyTopPanel.setBackground(Colors.dgrey);
 			add(emptyTopPanel);
 
-			titleBarPanel = new ContentPanel(width * 9 / 10, height * 8 / 100, Colour.RED,
+			titleBarPanel = new ContentPanel(width * 9 / 10, height * 8 / 100, Colors.grey,
 					new FlowLayout(FlowLayout.LEADING, 0, 0));
 			
 				/*
@@ -58,84 +58,84 @@ public class ShortArmy extends JPanel {
 					namePanel.label.setText("Regiment Name");
 				titleBarPanel.insidePanel.add(namePanel);*/
 				
-				LabeledPanel captainPanel = new LabeledPanel(width * 9 * 12 / 1000, height / 10);
-					captainPanel.setBackground(Colors.orange);
+				LabeledPanel captainPanel = new LabeledPanel(width * 9 * 20 / 1000, height / 10);
+					captainPanel.setBackground(Colors.grey);
 					captainPanel.setLayout(new FlowLayout(FlowLayout.LEFT, width / 100, height * 2 / 100));
 					captainPanel.label.setFont(new Font("garamond", Font.BOLD, 16));
-					captainPanel.label.setForeground(Colors.textyellow);
+					captainPanel.label.setForeground(Colors.vlgrey);
 					captainPanel.label.setText("Captain");
 				titleBarPanel.insidePanel.add(captainPanel);
 				
-				LabeledPanel regimentNamePanel = new LabeledPanel(width * 9 * 12 / 1000, height / 10);
+				/*LabeledPanel regimentNamePanel = new LabeledPanel(width * 9 * 15 / 1000, height / 10);
 					regimentNamePanel.setBackground(Colors.orange);
 					regimentNamePanel.setLayout(new FlowLayout(FlowLayout.LEFT, width / 100, height * 2 / 100));
 					regimentNamePanel.label.setFont(new Font("garamond", Font.BOLD, 16));
 					regimentNamePanel.label.setForeground(Colors.textyellow);
 					regimentNamePanel.label.setText("Regiment");
-				titleBarPanel.insidePanel.add(regimentNamePanel);
+				titleBarPanel.insidePanel.add(regimentNamePanel);*/
 				
-				LabeledPanel regimentTypePanel = new LabeledPanel(width * 9 * 12 / 1000, height / 10);
-					regimentTypePanel.setBackground(Colors.orange);
+				LabeledPanel regimentTypePanel = new LabeledPanel(width * 9 * 20 / 1000, height / 10);
+					regimentTypePanel.setBackground(Colors.grey);
 					regimentTypePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, height * 2 / 100));
 					regimentTypePanel.label.setFont(new Font("garamond", Font.BOLD, 16));
-					regimentTypePanel.label.setForeground(Colors.textyellow);
+					regimentTypePanel.label.setForeground(Colors.vlgrey);
 					regimentTypePanel.label.setText("Type");
 				titleBarPanel.insidePanel.add(regimentTypePanel);
 				
-				LabeledPanel meleeOffensePanel = new LabeledPanel(width * 9 * 8 / 1000, height / 10);
-					meleeOffensePanel.setBackground(Colors.orange);
+				LabeledPanel meleeOffensePanel = new LabeledPanel(width * 9 * 10 / 1000, height / 10);
+					meleeOffensePanel.setBackground(Colors.grey);
 					meleeOffensePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, height * 2 / 100));
 					meleeOffensePanel.label.setFont(new Font("garamond", Font.BOLD, 16));
-					meleeOffensePanel.label.setForeground(Colors.textyellow);
+					meleeOffensePanel.label.setForeground(Colors.vlgrey);
 					meleeOffensePanel.label.setText("Melee");
 				titleBarPanel.insidePanel.add(meleeOffensePanel);
 				
-				LabeledPanel rangedOffensePanel = new LabeledPanel(width * 9 * 8 / 1000, height / 10);
-					rangedOffensePanel.setBackground(Colors.orange);
+				LabeledPanel rangedOffensePanel = new LabeledPanel(width * 9 * 10 / 1000, height / 10);
+					rangedOffensePanel.setBackground(Colors.grey);
 					rangedOffensePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, height * 2 / 100));
 					rangedOffensePanel.label.setFont(new Font("garamond", Font.BOLD, 16));
-					rangedOffensePanel.label.setForeground(Colors.textyellow);
+					rangedOffensePanel.label.setForeground(Colors.vlgrey);
 					rangedOffensePanel.label.setText("Ranged");
 				titleBarPanel.insidePanel.add(rangedOffensePanel);
 				
-				LabeledPanel defencePanel = new LabeledPanel(width * 9 * 8 / 1000, height / 10);
-					defencePanel.setBackground(Colors.orange);
+				LabeledPanel defencePanel = new LabeledPanel(width * 9 * 10 / 1000, height / 10);
+					defencePanel.setBackground(Colors.grey);
 					defencePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, height * 2 / 100));
 					defencePanel.label.setFont(new Font("garamond", Font.BOLD, 16));
-					defencePanel.label.setForeground(Colors.textyellow);
+					defencePanel.label.setForeground(Colors.vlgrey);
 					defencePanel.label.setText("Defence");
 				titleBarPanel.insidePanel.add(defencePanel);
 				
-				LabeledPanel mobilityPanel = new LabeledPanel(width * 9 * 8 / 1000, height / 10);
-					mobilityPanel.setBackground(Colors.orange);
+				LabeledPanel mobilityPanel = new LabeledPanel(width * 9 * 10 / 1000, height / 10);
+					mobilityPanel.setBackground(Colors.grey);
 					mobilityPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, height * 2 / 100));
 					mobilityPanel.label.setFont(new Font("garamond", Font.BOLD, 16));
-					mobilityPanel.label.setForeground(Colors.textyellow);
+					mobilityPanel.label.setForeground(Colors.vlgrey);
 					mobilityPanel.label.setText("Mobility");
 				titleBarPanel.insidePanel.add(mobilityPanel);
 				
-				LabeledPanel combatRolePanel = new LabeledPanel(width * 9 * 10 / 1000, height / 10);
-					combatRolePanel.setBackground(Colors.orange);
+				LabeledPanel combatRolePanel = new LabeledPanel(width * 9 * 6 / 1000, height / 10);
+					combatRolePanel.setBackground(Colors.grey);
 					combatRolePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, height * 2 / 100));
 					combatRolePanel.label.setFont(new Font("garamond", Font.BOLD, 16));
-					combatRolePanel.label.setForeground(Colors.textyellow);
+					combatRolePanel.label.setForeground(Colors.vlgrey);
 					combatRolePanel.label.setText("Battle");
 				titleBarPanel.insidePanel.add(combatRolePanel);
 				
-				LabeledPanel trainigRolePanel = new LabeledPanel(width * 9 * 10 / 1000, height / 10);
-					trainigRolePanel.setBackground(Colors.orange);
+				LabeledPanel trainigRolePanel = new LabeledPanel(width * 9 * 6 / 1000, height / 10);
+					trainigRolePanel.setBackground(Colors.grey);
 					trainigRolePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, height * 2 / 100));
 					trainigRolePanel.label.setFont(new Font("garamond", Font.BOLD, 16));
-					trainigRolePanel.label.setForeground(Colors.textyellow);
-					trainigRolePanel.label.setText("Training");
+					trainigRolePanel.label.setForeground(Colors.vlgrey);
+					trainigRolePanel.label.setText("Practice");
 				titleBarPanel.insidePanel.add(trainigRolePanel);
 			
-				LabeledPanel marketingRolePanel = new LabeledPanel(width * 9 * 10 / 1000, height / 10);
-					marketingRolePanel.setBackground(Colors.orange);
+				LabeledPanel marketingRolePanel = new LabeledPanel(width * 9 * 6 / 1000, height / 10);
+					marketingRolePanel.setBackground(Colors.grey);
 					marketingRolePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, height * 2 / 100));
 					marketingRolePanel.label.setFont(new Font("garamond", Font.BOLD, 16));
-					marketingRolePanel.label.setForeground(Colors.textyellow);
-					marketingRolePanel.label.setText("Marketing");
+					marketingRolePanel.label.setForeground(Colors.vlgrey);
+					marketingRolePanel.label.setText("Fundraise");
 				titleBarPanel.insidePanel.add(marketingRolePanel);
 				
 				
@@ -163,7 +163,7 @@ public class ShortArmy extends JPanel {
 				titleBarPanel.insidePanel.add(captainPanel);*/
 			add(titleBarPanel);
 
-			regimentsPanel = new ContentPanel(width * 9 / 10, height * 84 / 100, Colour.LRED,
+			regimentsPanel = new ContentPanel(width * 9 / 10, height * 84 / 100, Colors.lgrey,
 					new FlowLayout(FlowLayout.LEFT, 0, 0));
 			add(regimentsPanel);
 			

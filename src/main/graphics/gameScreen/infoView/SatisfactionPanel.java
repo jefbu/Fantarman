@@ -31,14 +31,14 @@ public class SatisfactionPanel extends JPanel {
 		setPreferredSize(new Dimension(width, height));
 		setBackground(Colors.backgroundOrange);
 		
-		titlePanel = new ContentPanel(width / 2, height / 10, Colour.DRED,
+		titlePanel = new ContentPanel(width / 2, height / 10, Colors.dorange,
 				new FlowLayout(FlowLayout.CENTER, 0, height / 50));
 		titlePanel.contentLabel.setForeground(Colors.textyellow);
 		titlePanel.contentLabel.setFont(new Font("garamond", Font.BOLD, 28));
 		titlePanel.contentLabel.setText("HAPPINESS");
 		add(titlePanel);
 		
-		boardSatisfactionPanel = new ContentPanel(width * 9 / 10, height / 10, Colour.RED,
+		boardSatisfactionPanel = new ContentPanel(width * 9 / 10, height / 10, Colors.orange,
 				new FlowLayout(FlowLayout.LEFT, 0, height / 10 / 6));
 			LabeledPanel boardSatisfactionTitlePanel = new LabeledPanel(width * 6 / 10, height / 20);
 			boardSatisfactionTitlePanel.setBackground(Colors.orange);
@@ -55,7 +55,7 @@ public class SatisfactionPanel extends JPanel {
 		boardHistoryPanel = new BoardHistoryPanel(width * 9 / 10, height * 29 / 100);
 		add(boardHistoryPanel);
 		
-		fanSatisfactionPanel = new ContentPanel(width * 9 / 10, height / 10, Colour.RED,
+		fanSatisfactionPanel = new ContentPanel(width * 9 / 10, height / 10, Colors.orange,
 				new FlowLayout(FlowLayout.LEFT, 0, height / 10 / 6));
 			LabeledPanel fanSatisfactionTitlePanel = new LabeledPanel(width * 6 / 10, height / 20);
 			fanSatisfactionTitlePanel.setBackground(Colors.orange);

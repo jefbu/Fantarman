@@ -24,9 +24,9 @@ public class GameScreen extends JPanel {
 		
 		createGameScreen(mainPanelWidth, mainPanelHeight);
 		
-		menuPanel = new MenuPanel(gameScreenWidth, gameScreenHeight);
-		mainPanel = new MainPanel(gameScreenWidth, gameScreenHeight);
-		bottomPanel = new BottomPanel(gameScreenWidth, gameScreenHeight);
+		menuPanel = new MenuPanel(gameScreenWidth, gameScreenHeight * 2 / 100);
+		mainPanel = new MainPanel(gameScreenWidth, gameScreenHeight * 75 / 100);
+		bottomPanel = new BottomPanel(gameScreenWidth, gameScreenHeight * 23 / 100);
 		
 		addPanels();
 				
@@ -39,7 +39,7 @@ public class GameScreen extends JPanel {
 		gameScreenHeight = mainPanelHeight - 11;
 		
 		setPreferredSize (new Dimension(gameScreenWidth, gameScreenHeight));
-		setBackground (new Color (41, 40, 39));
+		setBackground (new Color (0, 0, 0));
 				
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		
