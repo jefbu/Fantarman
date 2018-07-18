@@ -11,6 +11,8 @@ import javax.swing.JPanel;
 
 import main.Main;
 import main.components.ButtonedPanel;
+import main.entity.regiments.Regiment;
+import main.entity.regiments.Role;
 import main.graphics.Screen;
 import main.utility.Colors;
 import main.utility.ImageLoader;
@@ -83,57 +85,47 @@ public class RegimentPanel extends JPanel {
 
 		regimentTypePanel = new ButtonedPanel(width * 20 / 100, height, Colors.vdgrey);
 		regimentTypePanel.setBackground(Colors.lorange);
-		regimentTypePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, height * 25 / 100));
+		regimentTypePanel.setLayout(new FlowLayout(FlowLayout.LEFT, width / 200, height * 25 / 100));
+		regimentTypePanel.button.setLayout(new FlowLayout(FlowLayout.LEFT, width / 250, height * 25 / 100));
 		regimentTypePanel.label.setForeground(Colors.vdgrey);
 		add(regimentTypePanel);
 
-		meleeOffensePanel = new ButtonedPanel(width * 10 / 100, height, Colors.vdgrey);
+		meleeOffensePanel = new ButtonedPanel(width * 9 / 100, height, Colors.vdgrey);
 		meleeOffensePanel.setBackground(Colors.lorange);
 		meleeOffensePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, height * 25 / 100));
 		meleeOffensePanel.label.setFont(new Font("garamond", Font.BOLD, 18));
 		meleeOffensePanel.label.setForeground(Colors.vdgrey);
 		add(meleeOffensePanel);
 
-		defencePanel = new ButtonedPanel(width * 10 / 100, height, Colors.vdgrey);
+		defencePanel = new ButtonedPanel(width * 9 / 100, height, Colors.vdgrey);
 		defencePanel.setBackground(Colors.lorange);
 		defencePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, height * 25 / 100));
 		defencePanel.label.setFont(new Font("garamond", Font.BOLD, 18));
 		defencePanel.label.setForeground(Colors.vdgrey);
 		add(defencePanel);
 
-		mobilityPanel = new ButtonedPanel(width * 10 / 100, height, Colors.vdgrey);
+		mobilityPanel = new ButtonedPanel(width * 9 / 100, height, Colors.vdgrey);
 		mobilityPanel.setBackground(Colors.lorange);
 		mobilityPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, height * 25 / 100));
 		mobilityPanel.label.setFont(new Font("garamond", Font.BOLD, 18));
 		mobilityPanel.label.setForeground(Colors.vdgrey);
 		add(mobilityPanel);
 
-		rangedOffensePanel = new ButtonedPanel(width * 10 / 100, height, Colors.vdgrey);
+		rangedOffensePanel = new ButtonedPanel(width * 9 / 100, height, Colors.vdgrey);
 		rangedOffensePanel.setBackground(Colors.lorange);
 		rangedOffensePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, height * 25 / 100));
 		rangedOffensePanel.label.setFont(new Font("garamond", Font.BOLD, 18));
 		rangedOffensePanel.label.setForeground(Colors.vdgrey);
 		add(rangedOffensePanel);
 
-		combatRolePanel = new ButtonedPanel(width * 6 / 100, height, Colors.vdgrey);
+		combatRolePanel = new ButtonedPanel(width * 7 / 100, height, Colors.vdgrey);
 		combatRolePanel.setBackground(Colors.lorange);
 		combatRolePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 		combatRolePanel.button.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 		combatRolePanel.label.setForeground(Colors.vdgrey);
 		add(combatRolePanel);
 
-		combatRolePanel.button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				combatRolePanel.label
-						.setIcon(imageLoader.loadImageIcon("/icons/checkboxChecked.png", width * 3 / 100, height));
-				trainingRolePanel.label
-						.setIcon(imageLoader.loadImageIcon("/icons/checkbox.png", width * 3 / 100, height));
-				marketingRolePanel.label
-						.setIcon(imageLoader.loadImageIcon("/icons/checkbox.png", width * 3 / 100, height));
-			}
-		});
-
-		trainingRolePanel = new ButtonedPanel(width * 6 / 100, height, Colors.vdgrey);
+		trainingRolePanel = new ButtonedPanel(width * 7 / 100, height, Colors.vdgrey);
 		trainingRolePanel.setBackground(Colors.lorange);
 		trainingRolePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 		trainingRolePanel.button.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
@@ -152,7 +144,7 @@ public class RegimentPanel extends JPanel {
 		});
 
 
-		marketingRolePanel = new ButtonedPanel(width * 6 / 100, height, Colors.vdgrey);
+		marketingRolePanel = new ButtonedPanel(width * 7 / 100, height, Colors.vdgrey);
 		marketingRolePanel.setBackground(Colors.lorange);
 		marketingRolePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 		marketingRolePanel.button.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
@@ -199,8 +191,19 @@ public class RegimentPanel extends JPanel {
 				});
 
 		captainPanel.label.setText(Main.yourArmy.roster.get(i).captain.name);
-		//regimentNamePanel.label.setText(Main.yourArmy.roster.get(i).regiment);
-		regimentTypePanel.label.setText(Main.yourArmy.roster.get(i).type.toString());
+
+		switch (Main.yourArmy.roster.get(i).type) {
+		case ARCHERS: regimentTypePanel.label.setText("Archers"); break;
+		case ARTILLERY: regimentTypePanel.label.setText("Artillery"); break;
+		case COMBINED_ARMS: regimentTypePanel.label.setText("Combined Arms"); break;
+		case FLYING: regimentTypePanel.label.setText("Flying"); break;
+		case HEAVY_CAVALRY: regimentTypePanel.label.setText("Heavy Cavalry"); break;
+		case HEAVY_INFANTRY: regimentTypePanel.label.setText("Heavy Infantry"); break;
+		case HERO: regimentTypePanel.label.setText("Hero"); break;
+		case LIGHT_CAVALRY: regimentTypePanel.label.setText("Light Cavalry"); break;
+		case LIGHT_INFANTRY: regimentTypePanel.label.setText("Light Infantry"); break;
+		default: break;		
+		}
 
 		String meleeOffense;
 		int meleeCalc = 2 * Main.yourArmy.roster.get(i).totalAttack + Main.yourArmy.roster.get(i).totalCharge;
@@ -267,7 +270,61 @@ public class RegimentPanel extends JPanel {
 			break;
 
 		}
+		
+		for (ActionListener listener: combatRolePanel.button.getActionListeners()) {
+			combatRolePanel.button.removeActionListener(listener);;
+		}
+		for (ActionListener listener: trainingRolePanel.button.getActionListeners()) {
+			trainingRolePanel.button.removeActionListener(listener);;
+		}
+		for (ActionListener listener: marketingRolePanel.button.getActionListeners()) {
+			marketingRolePanel.button.removeActionListener(listener);;
+		}
 
+		
+		combatRolePanel.button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int counter = 0;
+				for (Regiment regiment: Main.yourArmy.roster) {
+					if (regiment.role == Role.COMBAT) counter++;
+				}
+				
+				if (counter < 8) {
+				Main.yourArmy.roster.get(i).role = Role.COMBAT;
+				combatRolePanel.label
+						.setIcon(imageLoader.loadImageIcon("/icons/checkboxChecked.png", width * 3 / 100, height));
+				trainingRolePanel.label
+						.setIcon(imageLoader.loadImageIcon("/icons/checkbox.png", width * 3 / 100, height));
+				marketingRolePanel.label
+						.setIcon(imageLoader.loadImageIcon("/icons/checkbox.png", width * 3 / 100, height));
+				}
+			}
+		});
+		
+		trainingRolePanel.button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Main.yourArmy.roster.get(i).role = Role.TRAINING;
+				combatRolePanel.label
+						.setIcon(imageLoader.loadImageIcon("/icons/checkbox.png", width * 3 / 100, height));
+				trainingRolePanel.label
+						.setIcon(imageLoader.loadImageIcon("/icons/checkboxChecked.png", width * 3 / 100, height));
+				marketingRolePanel.label
+						.setIcon(imageLoader.loadImageIcon("/icons/checkbox.png", width * 3 / 100, height));
+			}
+		});
+		
+		marketingRolePanel.button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Main.yourArmy.roster.get(i).role = Role.MARKETING;
+				combatRolePanel.label
+						.setIcon(imageLoader.loadImageIcon("/icons/checkbox.png", width * 3 / 100, height));
+				trainingRolePanel.label
+						.setIcon(imageLoader.loadImageIcon("/icons/checkbox.png", width * 3 / 100, height));
+				marketingRolePanel.label
+						.setIcon(imageLoader.loadImageIcon("/icons/checkboxChecked.png", width * 3 / 100, height));
+			}
+		});
+		
 	}
 		
 	}

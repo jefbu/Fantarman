@@ -101,13 +101,13 @@ public abstract class FanReaction {
 	
 	private static String getFanclubName() {
 		switch(Main.yourArmy.name) {
-		case "Piknin Pickles": return "The Vegetable Garden";
-		case "Wanted Wanmen": return "Wanted! Dead or Alive";
-		case "Terrible Terquits": return "Clay and Ceramic";
+		case "Piknin": return "The Vegetable Garden";
+		case "Wanmen": return "Wanted! Dead or Alive";
+		case "Terquits": return "Clay and Ceramic";
 		case "Skylords": return "Cloudy Atmposphere";
-		case "Chi Destroyers": return "Ichiban Faito";
+		case "Chi": return "Ichiban Faito";
 		case "Espequr": return "That One Gallic Town";
-		case "Multicultural Society": return "The Third Way";
+		case "Society": return "The Third Way";
 		case "Metropolitans": return "Melting Pot";
 		}
 		return "Error in Fanclub name";

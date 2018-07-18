@@ -47,7 +47,7 @@ public class BottomBattlePanel extends JPanel {
 		click.setOpaque(false);
 		click.setBorderPainted(false);
 		ImageLoader imageLoader = new ImageLoader();
-		click.setIcon(imageLoader.loadImageIcon("/icons/battle.png", width * 90 / 100, height * 9 / 10));
+		click.setIcon(imageLoader.loadImageIcon("/icons/battleButton.png", width * 90 / 100, height * 9 / 10));
 		vdgreyPanel.add(click);
 		
 		click.addActionListener(new ActionListener() {

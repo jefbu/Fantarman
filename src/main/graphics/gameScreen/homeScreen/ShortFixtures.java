@@ -52,10 +52,16 @@ public class ShortFixtures extends JPanel {
 			ImageLoader imageLoader = new ImageLoader();
 			
 			ButtonedPanel previous = new ButtonedPanel(width  / 20, height / 5, Colors.vdgrey);
-			//previous.setBorder(null);
-			//previous.setOpaque(false);
-			//previous.setContentAreaFilled(false);
+
 			previous.label.setIcon(imageLoader.loadImageIcon("/icons/previousIcon.png", width / 30, height / 25));
+				previous.button.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						globalCalendarCounter--;
+						if(globalCalendarCounter < 0) globalCalendarCounter = 0;
+						fillShortFixtures(Main.league.calendarDay + globalCalendarCounter);
+					}
+				});
+			
 			titleBarPanel.insidePanel.add(previous);
 			
 			ButtonedPanel next = new ButtonedPanel(width / 20, height / 5, Colors.vdgrey);
@@ -64,6 +70,7 @@ public class ShortFixtures extends JPanel {
 				next.button.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						globalCalendarCounter++;
+						if(globalCalendarCounter > 13) globalCalendarCounter = 13;
 						fillShortFixtures(Main.league.calendarDay + globalCalendarCounter);
 					}
 				});
@@ -79,7 +86,7 @@ public class ShortFixtures extends JPanel {
 				new FlowLayout(FlowLayout.LEFT, 0, 0));
 		
 		for (int i = 0; i < 4; i++) {
-			MatchupRowPanel matchupRowPanel = new MatchupRowPanel(width * 9 / 10, height / 7, i);
+			MatchupRowPanel matchupRowPanel = new MatchupRowPanel(width * 9 / 10, height / 12, i);
 			matchupRowPanel.setBackground(Colors.lgrey);
 			matchupRowPanels.add(matchupRowPanel);
 		}
@@ -94,6 +101,7 @@ public class ShortFixtures extends JPanel {
 
 	public void fillShortFixtures(int calendarDay) {
 		
+		globalCalendarCounter = 0;
 		for (MatchupRowPanel panel: matchupRowPanels) {
 			panel.fillMatchupRowPanel(calendarDay);
 			

@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import main.Main;
@@ -12,6 +13,7 @@ import main.components.LabeledPanel;
 import main.graphics.gameScreen.infoView.BoardHistoryPanel;
 import main.graphics.gameScreen.infoView.FanHistoryPanel;
 import main.utility.Colors;
+import main.utility.ImageLoader;
 import main.utility.LoadTrophies;
 import main.utility.Trophies;
 
@@ -34,6 +36,12 @@ public class ShortInfo extends JPanel {
 	private LabeledPanel trophyResultPanel;
 	private FanHistoryPanel fanHistoryPanel;
 	private BoardHistoryPanel boardHistoryPanel;
+	private JPanel spaghettiPanel;
+	private JLabel spaghettiLabel;
+	private JPanel wonLeaguePanel;
+	private JLabel wonLeagueLabel;
+	
+	private ImageLoader imageLoader;
 
 	public ShortInfo(int width, int height) {
 		
@@ -41,6 +49,8 @@ public class ShortInfo extends JPanel {
 			setPreferredSize(new Dimension(width, height));
 			setBackground(Colors.dgrey);
 			setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+			
+			imageLoader = new ImageLoader();
 			
 			/*
 			titlePanel = new ContentPanel(width / 2, height / 10, Colour.DBLUE,
@@ -81,15 +91,20 @@ public class ShortInfo extends JPanel {
 			
 			JPanel leftPanel = new JPanel();
 			leftPanel.setPreferredSize(new Dimension(halfWidth, height * 71 / 100));
-			leftPanel.setBackground(Colors.vdgrey);
+			leftPanel.setBackground(Colors.lgrey);
 			leftPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 			infoPanel.insidePanel.add(leftPanel);
 			
 			JPanel rightPanel = new JPanel();
 			rightPanel.setPreferredSize(new Dimension(halfWidth, height * 71 / 100));
-			rightPanel.setBackground(Colors.vdgrey);
-			rightPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+			rightPanel.setBackground(Colors.lgrey);
+			rightPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 1, 0));
 			infoPanel.insidePanel.add(rightPanel);
+			
+			JPanel rightEmptyPanel = new JPanel();
+			rightEmptyPanel.setPreferredSize(new Dimension(halfWidth / 10, 48));
+			rightEmptyPanel.setBackground(Colors.lgrey);
+			rightPanel.add(rightEmptyPanel);
 						
 			balancePanel = new LabeledPanel(halfWidth * 7 / 10, height / 10);
 			balancePanel.setBackground(Colors.lgrey);
@@ -127,7 +142,7 @@ public class ShortInfo extends JPanel {
 			boardSatisfactionResultPanel.label.setForeground(Colors.vdgrey);
 			leftPanel.add(boardSatisfactionResultPanel);	
 			
-			boardHistoryPanel = new BoardHistoryPanel(halfWidth / 2, height / 7);
+			boardHistoryPanel = new BoardHistoryPanel(halfWidth / 3, height / 10);
 			leftPanel.add(boardHistoryPanel);
 			
 			fanSatisfactionPanel = new LabeledPanel(halfWidth * 7 / 10, height / 10);
@@ -142,21 +157,26 @@ public class ShortInfo extends JPanel {
 			fanSatisfactionResultPanel.label.setForeground(Colors.vdgrey);
 			leftPanel.add(fanSatisfactionResultPanel);	
 			
-			fanHistoryPanel = new FanHistoryPanel(halfWidth, height / 7);
+			fanHistoryPanel = new FanHistoryPanel(halfWidth / 3, height / 10);
 			leftPanel.add(fanHistoryPanel);
 			
-			trophyPanel = new LabeledPanel(width * 3 / 10, height / 10);
-			trophyPanel.setBackground(Colors.lgrey);
-			trophyPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
-			trophyPanel.label.setForeground(Colors.vdgrey);
-			trophyPanel.label.setText("Tophies");
-			infoPanel.insidePanel.add(trophyPanel);
+			spaghettiPanel = new JPanel();
+			spaghettiPanel.setPreferredSize(new Dimension (48, 48));
+			spaghettiPanel.setOpaque(false);
+			spaghettiPanel.setLayout(new FlowLayout(FlowLayout.LEADING, 0, 0));
+			spaghettiLabel = new JLabel();
+			spaghettiLabel.setIcon(imageLoader.loadImageIcon("/trophies/notyet.png", 48, 48));
+			spaghettiPanel.add(spaghettiLabel);
+			rightPanel.add(spaghettiPanel);
 			
-			trophyResultPanel = new LabeledPanel(width / 10, height * 7 / 10 / 10);
-			trophyResultPanel.setBackground(Colors.lgrey);
-			trophyResultPanel.label.setForeground(Colors.vdgrey);
-			infoPanel.insidePanel.add(trophyResultPanel);
-			
+			wonLeaguePanel = new JPanel();
+			wonLeaguePanel.setPreferredSize(new Dimension (48, 48));
+			wonLeaguePanel.setOpaque(false);
+			wonLeaguePanel.setLayout(new FlowLayout(FlowLayout.LEADING, 0, 0));
+			wonLeagueLabel = new JLabel();
+			wonLeagueLabel.setIcon(imageLoader.loadImageIcon("/trophies/notyet.png", 48, 48));
+			wonLeaguePanel.add(wonLeagueLabel);	
+			rightPanel.add(wonLeaguePanel);
 			
 
 		}
@@ -172,11 +192,9 @@ public class ShortInfo extends JPanel {
 		boardSatisfactionResultPanel.label.setText(Integer.toString(Main.yourArmy.boardSatisfaction));
 		fanSatisfactionResultPanel.label.setText(Integer.toString(Main.yourArmy.fanSatisfaction));
 		
-		int trophies = 0;
-		if (Trophies.spaghetti) trophies++;
-		if (Trophies.wonLeague) trophies++;
 		
-		trophyResultPanel.label.setText(trophies + " / 2"); 
+		fanHistoryPanel.fillFanHistoryPanel(Main.yourArmy);
+		boardHistoryPanel.fillBoardHistoryPanel(Main.yourArmy);
 		
 	}
 

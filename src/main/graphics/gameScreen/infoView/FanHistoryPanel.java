@@ -42,96 +42,90 @@ public class FanHistoryPanel extends JPanel {
 		this.width = width;
 		this.height = height;
 		setPreferredSize(new Dimension(width, height));
-		setBackground(Colors.vlorange);
-		setLayout(new FlowLayout(FlowLayout.LEFT, width / 10, height / 10));
-
-		JPanel graphPanel = new JPanel();
-		graphPanel.setPreferredSize(new Dimension(width * 8 / 10, height * 8 / 10));
-		graphPanel.setBackground(Colors.vlorange);
-		graphPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-		add(graphPanel);
+		setBackground(Colors.lgrey);
+		setLayout(new FlowLayout(FlowLayout.LEFT, 2, 0));
 
 		minusFourTotalPanel = new JPanel();
-		minusFourTotalPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 8 / 10));
-		minusFourTotalPanel.setBackground(Colors.vlorange);
+		minusFourTotalPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 2 / 3));
+		minusFourTotalPanel.setBackground(Colors.lgrey);
 		minusFourTotalPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-		graphPanel.add(minusFourTotalPanel);
+		add(minusFourTotalPanel);
 
 		minusFourSatisfactionPanel = new JPanel();
-		minusFourSatisfactionPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 4 / 10));
-		minusFourSatisfactionPanel.setBackground(Colors.green);
+		minusFourSatisfactionPanel.setPreferredSize(new Dimension(width * 16 / 100, height / 3));
+		minusFourSatisfactionPanel.setBackground(Colors.vlgrey);
 
 		minusFourLeftOverPanel = new JPanel();
-		minusFourLeftOverPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 4 / 10));
-		minusFourLeftOverPanel.setBackground(Colors.vlorange);
+		minusFourLeftOverPanel.setPreferredSize(new Dimension(width * 16 / 100, height / 3));
+		minusFourLeftOverPanel.setBackground(Colors.lgrey);
 
 		minusFourTotalPanel.add(minusFourLeftOverPanel);
 		minusFourTotalPanel.add(minusFourSatisfactionPanel);
 		
 		minusThreeTotalPanel = new JPanel();
-		minusThreeTotalPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 8 / 10));
-		minusThreeTotalPanel.setBackground(Colors.vlorange);
+		minusThreeTotalPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 2 / 3));
+		minusThreeTotalPanel.setBackground(Colors.lgrey);
 		minusThreeTotalPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-		graphPanel.add(minusThreeTotalPanel);
+		add(minusThreeTotalPanel);
 
 		minusThreeSatisfactionPanel = new JPanel();
-		minusThreeSatisfactionPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 4 / 10));
-		minusThreeSatisfactionPanel.setBackground(Colors.green);
+		minusThreeSatisfactionPanel.setPreferredSize(new Dimension(width * 16 / 100, height / 3));
+		minusThreeSatisfactionPanel.setBackground(Colors.vlgrey);
 
 		minusThreeLeftOverPanel = new JPanel();
-		minusThreeLeftOverPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 4 / 10));
-		minusThreeLeftOverPanel.setBackground(Colors.vlorange);
+		minusThreeLeftOverPanel.setPreferredSize(new Dimension(width * 16 / 100, height / 3));
+		minusThreeLeftOverPanel.setBackground(Colors.lgrey);
 
 		minusThreeTotalPanel.add(minusThreeLeftOverPanel);
 		minusThreeTotalPanel.add(minusThreeSatisfactionPanel);
 		
 		minusTwoTotalPanel = new JPanel();
-		minusTwoTotalPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 8 / 10));
-		minusTwoTotalPanel.setBackground(Colors.vlorange);
+		minusTwoTotalPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 2 / 3));
+		minusTwoTotalPanel.setBackground(Colors.lgrey);
 		minusTwoTotalPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-		graphPanel.add(minusTwoTotalPanel);
+		add(minusTwoTotalPanel);
 
 		minusTwoSatisfactionPanel = new JPanel();
-		minusTwoSatisfactionPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 4 / 10));
-		minusTwoSatisfactionPanel.setBackground(Colors.green);
+		minusTwoSatisfactionPanel.setPreferredSize(new Dimension(width * 16 / 100, height / 3));
+		minusTwoSatisfactionPanel.setBackground(Colors.vlgrey);
 
 		minusTwoLeftOverPanel = new JPanel();
-		minusTwoLeftOverPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 4 / 10));
-		minusTwoLeftOverPanel.setBackground(Colors.vlorange);
+		minusTwoLeftOverPanel.setPreferredSize(new Dimension(width * 16 / 100, height / 3));
+		minusTwoLeftOverPanel.setBackground(Colors.lgrey);
 
 		minusTwoTotalPanel.add(minusTwoLeftOverPanel);
 		minusTwoTotalPanel.add(minusTwoSatisfactionPanel);
 		
 		minusOneTotalPanel = new JPanel();
-		minusOneTotalPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 8 / 10));
-		minusOneTotalPanel.setBackground(Colors.vlorange);
+		minusOneTotalPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 2 / 3));
+		minusOneTotalPanel.setBackground(Colors.lgrey);
 		minusOneTotalPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-		graphPanel.add(minusOneTotalPanel);
+		add(minusOneTotalPanel);
 
 		minusOneSatisfactionPanel = new JPanel();
-		minusOneSatisfactionPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 4 / 10));
-		minusOneSatisfactionPanel.setBackground(Colors.green);
+		minusOneSatisfactionPanel.setPreferredSize(new Dimension(width * 16 / 100, height / 3));
+		minusOneSatisfactionPanel.setBackground(Colors.vlgrey);
 
 		minusOneLeftOverPanel = new JPanel();
-		minusOneLeftOverPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 4 / 10));
-		minusOneLeftOverPanel.setBackground(Colors.vlorange);
+		minusOneLeftOverPanel.setPreferredSize(new Dimension(width * 16 / 100, height / 3));
+		minusOneLeftOverPanel.setBackground(Colors.lgrey);
 
 		minusOneTotalPanel.add(minusOneLeftOverPanel);
 		minusOneTotalPanel.add(minusOneSatisfactionPanel);
 		
 		currentTotalPanel = new JPanel();
-		currentTotalPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 8 / 10));
-		currentTotalPanel.setBackground(Colors.vlorange);
+		currentTotalPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 2 / 3));
+		currentTotalPanel.setBackground(Colors.lgrey);
 		currentTotalPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-		graphPanel.add(currentTotalPanel);
+		add(currentTotalPanel);
 
 		currentSatisfactionPanel = new JPanel();
-		currentSatisfactionPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 4 / 10));
-		currentSatisfactionPanel.setBackground(Colors.green);
+		currentSatisfactionPanel.setPreferredSize(new Dimension(width * 16 / 100, height / 3));
+		currentSatisfactionPanel.setBackground(Colors.vlgrey);
 
 		currentLeftOverPanel = new JPanel();
-		currentLeftOverPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 4 / 10));
-		currentLeftOverPanel.setBackground(Colors.vlorange);
+		currentLeftOverPanel.setPreferredSize(new Dimension(width * 16 / 100, height / 3));
+		currentLeftOverPanel.setBackground(Colors.lgrey);
 
 		currentTotalPanel.add(currentLeftOverPanel);
 		currentTotalPanel.add(currentSatisfactionPanel);

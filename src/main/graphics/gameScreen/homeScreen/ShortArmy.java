@@ -76,13 +76,13 @@ public class ShortArmy extends JPanel {
 				
 				LabeledPanel regimentTypePanel = new LabeledPanel(width * 9 * 20 / 1000, height / 10);
 					regimentTypePanel.setBackground(Colors.grey);
-					regimentTypePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, height * 2 / 100));
+					regimentTypePanel.setLayout(new FlowLayout(FlowLayout.LEFT, width / 100, height * 2 / 100));
 					regimentTypePanel.label.setFont(new Font("garamond", Font.BOLD, 16));
 					regimentTypePanel.label.setForeground(Colors.vlgrey);
 					regimentTypePanel.label.setText("Type");
 				titleBarPanel.insidePanel.add(regimentTypePanel);
 				
-				LabeledPanel meleeOffensePanel = new LabeledPanel(width * 9 * 10 / 1000, height / 10);
+				LabeledPanel meleeOffensePanel = new LabeledPanel(width * 9 * 9 / 1000, height / 10);
 					meleeOffensePanel.setBackground(Colors.grey);
 					meleeOffensePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, height * 2 / 100));
 					meleeOffensePanel.label.setFont(new Font("garamond", Font.BOLD, 16));
@@ -90,7 +90,7 @@ public class ShortArmy extends JPanel {
 					meleeOffensePanel.label.setText("Melee");
 				titleBarPanel.insidePanel.add(meleeOffensePanel);
 				
-				LabeledPanel rangedOffensePanel = new LabeledPanel(width * 9 * 10 / 1000, height / 10);
+				LabeledPanel rangedOffensePanel = new LabeledPanel(width * 9 * 9 / 1000, height / 10);
 					rangedOffensePanel.setBackground(Colors.grey);
 					rangedOffensePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, height * 2 / 100));
 					rangedOffensePanel.label.setFont(new Font("garamond", Font.BOLD, 16));
@@ -98,7 +98,7 @@ public class ShortArmy extends JPanel {
 					rangedOffensePanel.label.setText("Ranged");
 				titleBarPanel.insidePanel.add(rangedOffensePanel);
 				
-				LabeledPanel defencePanel = new LabeledPanel(width * 9 * 10 / 1000, height / 10);
+				LabeledPanel defencePanel = new LabeledPanel(width * 9 * 9 / 1000, height / 10);
 					defencePanel.setBackground(Colors.grey);
 					defencePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, height * 2 / 100));
 					defencePanel.label.setFont(new Font("garamond", Font.BOLD, 16));
@@ -106,7 +106,7 @@ public class ShortArmy extends JPanel {
 					defencePanel.label.setText("Defence");
 				titleBarPanel.insidePanel.add(defencePanel);
 				
-				LabeledPanel mobilityPanel = new LabeledPanel(width * 9 * 10 / 1000, height / 10);
+				LabeledPanel mobilityPanel = new LabeledPanel(width * 9 * 9 / 1000, height / 10);
 					mobilityPanel.setBackground(Colors.grey);
 					mobilityPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, height * 2 / 100));
 					mobilityPanel.label.setFont(new Font("garamond", Font.BOLD, 16));
@@ -114,7 +114,7 @@ public class ShortArmy extends JPanel {
 					mobilityPanel.label.setText("Mobility");
 				titleBarPanel.insidePanel.add(mobilityPanel);
 				
-				LabeledPanel combatRolePanel = new LabeledPanel(width * 9 * 6 / 1000, height / 10);
+				LabeledPanel combatRolePanel = new LabeledPanel(width * 9 * 7 / 1000, height / 10);
 					combatRolePanel.setBackground(Colors.grey);
 					combatRolePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, height * 2 / 100));
 					combatRolePanel.label.setFont(new Font("garamond", Font.BOLD, 16));
@@ -122,7 +122,7 @@ public class ShortArmy extends JPanel {
 					combatRolePanel.label.setText("Battle");
 				titleBarPanel.insidePanel.add(combatRolePanel);
 				
-				LabeledPanel trainigRolePanel = new LabeledPanel(width * 9 * 6 / 1000, height / 10);
+				LabeledPanel trainigRolePanel = new LabeledPanel(width * 9 * 7 / 1000, height / 10);
 					trainigRolePanel.setBackground(Colors.grey);
 					trainigRolePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, height * 2 / 100));
 					trainigRolePanel.label.setFont(new Font("garamond", Font.BOLD, 16));
@@ -130,7 +130,7 @@ public class ShortArmy extends JPanel {
 					trainigRolePanel.label.setText("Practice");
 				titleBarPanel.insidePanel.add(trainigRolePanel);
 			
-				LabeledPanel marketingRolePanel = new LabeledPanel(width * 9 * 6 / 1000, height / 10);
+				LabeledPanel marketingRolePanel = new LabeledPanel(width * 9 * 7 / 1000, height / 10);
 					marketingRolePanel.setBackground(Colors.grey);
 					marketingRolePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, height * 2 / 100));
 					marketingRolePanel.label.setFont(new Font("garamond", Font.BOLD, 16));

@@ -46,6 +46,7 @@ public class ArmyPanel extends ButtonedPanel {
 		namePanel.label.setText(Main.league.armies.get(i).name);
 		pointsPanel.label.setText(Integer.toString(Main.league.armies.get(i).scoreSheet.totalPoints));
 		
+		/*
 		try {
 			button.removeActionListener(button.getActionListeners()[0]);
 		} catch(Exception e) {}
@@ -56,6 +57,7 @@ public class ArmyPanel extends ButtonedPanel {
 				Screen.gameScreen.mainPanel.armyView.setVisible(true);
 			}
 		});
+		*/
 		
 	}
 

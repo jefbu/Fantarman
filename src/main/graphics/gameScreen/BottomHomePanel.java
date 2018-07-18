@@ -35,7 +35,7 @@ public class BottomHomePanel extends JPanel {
 		click.setOpaque(false);
 		click.setBorderPainted(false);
 		ImageLoader imageLoader = new ImageLoader();
-		click.setIcon(imageLoader.loadImageIcon("/icons/house.png", width * 75 / 100, height * 9 / 10));
+		click.setIcon(imageLoader.loadImageIcon("/icons/homeButton.png", width * 75 / 100, height * 9 / 10));
 		vdgreyPanel.add(click);
 		
 		click.addActionListener(new ActionListener() {

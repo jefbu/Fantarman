@@ -346,21 +346,21 @@ public class GameStartScreen extends JPanel {
 
 		armies.add(Main.yourArmy);
 
-		if (Main.yourArmy.name != "Chi Destroyers")
+		if (Main.yourArmy.name != "Chi")
 			armies.add(new ChiDestroyers());
 		if (Main.yourArmy.name != "Metropolitans")
 			armies.add(new Metropolitans());
-		if (Main.yourArmy.name != "Multicultural Society")
+		if (Main.yourArmy.name != "Society")
 			armies.add(new MulticulturalSociety());
-		if (Main.yourArmy.name != "Piknin Pickles")
+		if (Main.yourArmy.name != "Piknin")
 			armies.add(new Pickles());
 		if (Main.yourArmy.name != "Espequr")
 			armies.add(new Espequr());
 		if (Main.yourArmy.name != "Skylords")
 			armies.add(new Skylords());
-		if (Main.yourArmy.name != "Terrible Terquits")
+		if (Main.yourArmy.name != "Terquits")
 			armies.add(new TerribleTerquits());
-		if (Main.yourArmy.name != "Wanted Wanmen")
+		if (Main.yourArmy.name != "Wanmen")
 			armies.add(new Wanmen());
 
 		Main.league.populateLeague(armies);

@@ -53,11 +53,11 @@ public class BoardHistoryPanel extends JPanel {
 
 		minusFourSatisfactionPanel = new JPanel();
 		minusFourSatisfactionPanel.setPreferredSize(new Dimension(width * 16 / 100, height / 3));
-		minusFourSatisfactionPanel.setBackground(Colors.green);
+		minusFourSatisfactionPanel.setBackground(Colors.vlgrey);
 
 		minusFourLeftOverPanel = new JPanel();
 		minusFourLeftOverPanel.setPreferredSize(new Dimension(width * 16 / 100, height / 3));
-		minusFourLeftOverPanel.setBackground(Colors.blue);
+		minusFourLeftOverPanel.setBackground(Colors.lgrey);
 
 		minusFourTotalPanel.add(minusFourLeftOverPanel);
 		minusFourTotalPanel.add(minusFourSatisfactionPanel);
@@ -70,11 +70,11 @@ public class BoardHistoryPanel extends JPanel {
 
 		minusThreeSatisfactionPanel = new JPanel();
 		minusThreeSatisfactionPanel.setPreferredSize(new Dimension(width * 16 / 100, height / 3));
-		minusThreeSatisfactionPanel.setBackground(Colors.green);
+		minusThreeSatisfactionPanel.setBackground(Colors.vlgrey);
 
 		minusThreeLeftOverPanel = new JPanel();
 		minusThreeLeftOverPanel.setPreferredSize(new Dimension(width * 16 / 100, height / 3));
-		minusThreeLeftOverPanel.setBackground(Colors.vlorange);
+		minusThreeLeftOverPanel.setBackground(Colors.lgrey);
 
 		minusThreeTotalPanel.add(minusThreeLeftOverPanel);
 		minusThreeTotalPanel.add(minusThreeSatisfactionPanel);
@@ -87,11 +87,11 @@ public class BoardHistoryPanel extends JPanel {
 
 		minusTwoSatisfactionPanel = new JPanel();
 		minusTwoSatisfactionPanel.setPreferredSize(new Dimension(width * 16 / 100, height / 3));
-		minusTwoSatisfactionPanel.setBackground(Colors.green);
+		minusTwoSatisfactionPanel.setBackground(Colors.vlgrey);
 
 		minusTwoLeftOverPanel = new JPanel();
 		minusTwoLeftOverPanel.setPreferredSize(new Dimension(width * 16 / 100, height / 3));
-		minusTwoLeftOverPanel.setBackground(Colors.vlorange);
+		minusTwoLeftOverPanel.setBackground(Colors.lgrey);
 
 		minusTwoTotalPanel.add(minusTwoLeftOverPanel);
 		minusTwoTotalPanel.add(minusTwoSatisfactionPanel);
@@ -104,11 +104,11 @@ public class BoardHistoryPanel extends JPanel {
 
 		minusOneSatisfactionPanel = new JPanel();
 		minusOneSatisfactionPanel.setPreferredSize(new Dimension(width * 16 / 100, height / 3));
-		minusOneSatisfactionPanel.setBackground(Colors.green);
+		minusOneSatisfactionPanel.setBackground(Colors.vlgrey);
 
 		minusOneLeftOverPanel = new JPanel();
 		minusOneLeftOverPanel.setPreferredSize(new Dimension(width * 16 / 100, height / 3));
-		minusOneLeftOverPanel.setBackground(Colors.vlorange);
+		minusOneLeftOverPanel.setBackground(Colors.lgrey);
 
 		minusOneTotalPanel.add(minusOneLeftOverPanel);
 		minusOneTotalPanel.add(minusOneSatisfactionPanel);
@@ -121,7 +121,7 @@ public class BoardHistoryPanel extends JPanel {
 
 		currentSatisfactionPanel = new JPanel();
 		currentSatisfactionPanel.setPreferredSize(new Dimension(width * 16 / 100, height / 3));
-		currentSatisfactionPanel.setBackground(Colors.green);
+		currentSatisfactionPanel.setBackground(Colors.vlgrey);
 
 		currentLeftOverPanel = new JPanel();
 		currentLeftOverPanel.setPreferredSize(new Dimension(width * 16 / 100, height / 3));
