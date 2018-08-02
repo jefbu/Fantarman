@@ -20,13 +20,13 @@ public class HistoryStatsPanel extends ContentPanel {
 		
 		super(width, height, colour, flowLayout);
 		
-		foughtPanel = new DoubleLabeledPanel((width - 12) / 2, (height - 10) / 6, 70, Colour.LBLUE);
+		foughtPanel = new DoubleLabeledPanel((width - 12), (height - 10) / 4, 70, Colour.GREY);
 			foughtPanel.titleLabel.setText("Battles Fought");
-		mvpPanel = new DoubleLabeledPanel((width - 12) / 2, (height - 10) / 6, 70, Colour.LBLUE);
+		mvpPanel = new DoubleLabeledPanel((width - 12), (height - 10) / 4, 70, Colour.GREY);
 			mvpPanel.titleLabel.setText("MVP Awards");
-		killsPanel = new DoubleLabeledPanel((width - 12) / 2, (height - 10) / 6, 70, Colour.LGREEN);
+		killsPanel = new DoubleLabeledPanel((width - 12), (height - 10) / 4, 70, Colour.GREY);
 			killsPanel.titleLabel.setText("Regiments Defeated");
-		deathsPanel = new DoubleLabeledPanel((width - 12) / 2, (height - 10) / 6, 70, Colour.LRED);
+		deathsPanel = new DoubleLabeledPanel((width - 12), (height - 10) / 4, 70, Colour.GREY);
 			deathsPanel.titleLabel.setText("Times Defeated");
 		
 		insidePanel.add(foughtPanel);

@@ -23,27 +23,27 @@ public class CaptainBaseInfoPanel extends ContentPanel {
 			
 			super(width, height, colour, flowLayout);
 			
-			namePanel = new DoubleLabeledPanel(width - 10, (height - 18) / 6, 40, Colour.LBLUE);
+			namePanel = new DoubleLabeledPanel(width - 10, (height - 18) / 6, 40, Colour.DGREY);
 			namePanel.titleLabel.setText("Name");
 			insidePanel.add(namePanel);
 			
-			genderPanel = new DoubleLabeledPanel(width - 10, (height - 18) / 6, 60, Colour.LBLUE);
+			genderPanel = new DoubleLabeledPanel(width - 10, (height - 18) / 6, 40, Colour.DGREY);
 			genderPanel.titleLabel.setText("Gender");
 			insidePanel.add(genderPanel);
 			
-			prestigePanel = new DoubleLabeledPanel(width - 10, (height - 18) / 6, 60, Colour.LBLUE);
+			prestigePanel = new DoubleLabeledPanel(width - 10, (height - 18) / 6, 40, Colour.DGREY);
 			prestigePanel.titleLabel.setText("Prestige");
 			insidePanel.add(prestigePanel);
 			
-			ordersPanel = new DoubleLabeledPanel(width - 10, (height - 18) / 6, 70, Colour.LBLUE);
+			ordersPanel = new DoubleLabeledPanel(width - 10, (height - 18) / 6, 40, Colour.DGREY);
 			ordersPanel.titleLabel.setText("Orders");
 			insidePanel.add(ordersPanel);
 			
-			skill1Panel = new DoubleLabeledPanel(width - 10, (height - 18) / 6, 30, Colour.LBLUE);
+			skill1Panel = new DoubleLabeledPanel(width - 10, (height - 18) / 6, 40, Colour.DGREY);
 			skill1Panel.titleLabel.setText("Skill 1");
 			insidePanel.add(skill1Panel);
 			
-			skill2Panel = new DoubleLabeledPanel(width - 10, (height - 18) / 6, 30, Colour.LBLUE);
+			skill2Panel = new DoubleLabeledPanel(width - 10, (height - 18) / 6, 40, Colour.DGREY);
 			skill2Panel.titleLabel.setText("Skill 2");
 			insidePanel.add(skill2Panel);
 			

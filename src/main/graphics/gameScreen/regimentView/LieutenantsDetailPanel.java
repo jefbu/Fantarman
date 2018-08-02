@@ -22,14 +22,14 @@ public class LieutenantsDetailPanel extends JPanel {
 
 		super();
 		setPreferredSize(new Dimension(width, height));
-		setBackground(Colors.dgrey);
-		setLayout(new FlowLayout(FlowLayout.LEFT, 10, 5));
+		setBackground(Colors.lgrey);
+		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 5));
 
-		lieutenantDetailPanel1 = new LieutenantDetailPanel(width / 4 - 5, height - 10, Colors.lblue,
+		lieutenantDetailPanel1 = new LieutenantDetailPanel(width * 34 / 100, height - 10, Colors.dgrey,
 				new FlowLayout(FlowLayout.LEFT, 5, 5));
-		lieutenantDetailPanel2 = new LieutenantDetailPanel(width / 4 - 5, height - 10, Colors.lblue,
+		lieutenantDetailPanel2 = new LieutenantDetailPanel(width * 34 / 100, height - 10, Colors.dgrey,
 				new FlowLayout(FlowLayout.LEFT, 5, 5));
-		lieutenantDetailPanel3 = new LieutenantDetailPanel(width / 4 - 5, height - 10, Colors.lblue,
+		lieutenantDetailPanel3 = new LieutenantDetailPanel(width * 35 / 100, height - 10, Colors.dgrey,
 				new FlowLayout(FlowLayout.LEFT, 5, 5));
 
 		add(lieutenantDetailPanel1);

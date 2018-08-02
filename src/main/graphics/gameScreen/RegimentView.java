@@ -11,6 +11,7 @@ import main.graphics.gameScreen.armyView.RoleSelectionPanel;
 import main.graphics.gameScreen.regimentView.CaptainDetailPanel;
 import main.graphics.gameScreen.regimentView.LieutenantsDetailPanel;
 import main.graphics.gameScreen.regimentView.RegimentDetailPanel;
+import main.utility.Colors;
 
 public class RegimentView extends JPanel {
 	
@@ -20,7 +21,6 @@ public class RegimentView extends JPanel {
 	
 	RegimentDetailPanel regimentDetailPanel;
 	CaptainDetailPanel captainDetailPanel;
-	LieutenantsDetailPanel lieutenantsDetailPanel;
 
 	public RegimentView(int gameScreenWidth, int gameScreenHeight) {
 
@@ -35,14 +35,24 @@ public class RegimentView extends JPanel {
 
 		setLayout(new FlowLayout(FlowLayout.LEADING, 0, 0));
 		
-		regimentDetailPanel = new RegimentDetailPanel(gameScreenWidth, gameScreenHeight * 45 / 100);
-		add(regimentDetailPanel);
 		
-		captainDetailPanel = new CaptainDetailPanel(gameScreenWidth, gameScreenHeight * 45 / 100);
-		add(captainDetailPanel);
+		JPanel leftPanel = new JPanel();
+		leftPanel.setPreferredSize(new Dimension(gameScreenWidth / 2, gameScreenHeight));
+		leftPanel.setBackground(Colors.dgrey);
+		leftPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, gameScreenHeight * 5 / 100));
+		add(leftPanel);
 		
-		lieutenantsDetailPanel = new LieutenantsDetailPanel(gameScreenWidth, gameScreenHeight / 10);
-		add(lieutenantsDetailPanel);
+		JPanel rightPanel = new JPanel();
+		rightPanel.setPreferredSize(new Dimension(gameScreenWidth / 2, gameScreenHeight));
+		rightPanel.setBackground(Colors.dgrey);
+		rightPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, gameScreenHeight * 5 / 100));
+		add(rightPanel);
+		
+		regimentDetailPanel = new RegimentDetailPanel(gameScreenWidth * 45 / 100, gameScreenHeight * 9 / 10);
+		leftPanel.add(regimentDetailPanel);
+		
+		captainDetailPanel = new CaptainDetailPanel(gameScreenWidth * 45 / 100, gameScreenHeight * 9 / 10);
+		rightPanel.add(captainDetailPanel);
 
 	}
 	
@@ -50,7 +60,6 @@ public class RegimentView extends JPanel {
 		
 		regimentDetailPanel.fillRegimentDetailPanel(regiment, editable);
 		captainDetailPanel.fillCaptainDetailPanel(regiment, editable);
-		lieutenantsDetailPanel.fillLieutenantsDetailPanel(regiment, editable);		
 		
 	}
 	

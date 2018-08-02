@@ -32,26 +32,26 @@ public class GameStartScreen extends JPanel {
 
 		super();
 		setPreferredSize(new Dimension(width, height));
-		setBackground(Colors.backgroundOrange);
+		setBackground(Colors.dgrey);
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
 		JPanel titlePanel = new JPanel();
 		titlePanel.setPreferredSize(new Dimension(width, height / 10));
-		titlePanel.setBackground(Colors.backgroundOrange);
+		titlePanel.setBackground(Colors.dgrey);
 		JLabel label = new JLabel("Choose your Army");
-		label.setForeground(Colors.dblue);
+		label.setForeground(Colors.vlgrey);
 		label.setFont(new Font("garamond", Font.BOLD, 48));
 		titlePanel.add(label);
 		add(titlePanel);
 
 		JPanel emptyLeftPanel = new JPanel();
 		emptyLeftPanel.setPreferredSize(new Dimension(width / 10, height * 8 / 10));
-		emptyLeftPanel.setBackground(Colors.backgroundOrange);
+		emptyLeftPanel.setBackground(Colors.dgrey);
 		add(emptyLeftPanel);
 
 		JPanel centrePanel = new JPanel();
 		centrePanel.setPreferredSize(new Dimension(width * 8 / 10, height * 8 / 10));
-		centrePanel.setBackground(Colors.backgroundOrange);
+		centrePanel.setBackground(Colors.dgrey);
 		centrePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 		add(centrePanel);
 
@@ -59,7 +59,7 @@ public class GameStartScreen extends JPanel {
 
 		JPanel pikninPanel = new JPanel();
 		pikninPanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2));
-		pikninPanel.setBackground(Colors.backgroundOrange);
+		pikninPanel.setBackground(Colors.dgrey);
 		centrePanel.add(pikninPanel);
 
 		JButton pikninButton = new JButton("Piknin Pickles");
@@ -68,7 +68,7 @@ public class GameStartScreen extends JPanel {
 		pikninButton.setOpaque(false);
 		pikninButton.setContentAreaFilled(false);
 		pikninButton.setBorder(null);
-		pikninButton.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Piknin.jpg", width * 8 / 10 / 4,
+		pikninButton.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Piknin.png", width * 8 / 10 / 4,
 				height * 8 / 10 / 2 * 8 / 10));
 		pikninButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -85,16 +85,17 @@ public class GameStartScreen extends JPanel {
 
 		JPanel pikninTitlePanel = new JPanel();
 		pikninTitlePanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2 * 2 / 10));
-		pikninTitlePanel.setBackground(Colors.backgroundOrange);
+		pikninTitlePanel.setBackground(Colors.dgrey);
 		pikninPanel.add(pikninTitlePanel);
 
 		JLabel pikninTitleLabel = new JLabel();
+		pikninTitleLabel.setForeground(Colors.lgrey);
 		pikninTitleLabel.setText("Piknin");
 		pikninTitlePanel.add(pikninTitleLabel);
 
 		JPanel terquitPanel = new JPanel();
 		terquitPanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2));
-		terquitPanel.setBackground(Colors.backgroundOrange);
+		terquitPanel.setBackground(Colors.dgrey);
 		centrePanel.add(terquitPanel);
 
 		JButton terquitButton = new JButton("Terrible Terquits");
@@ -104,7 +105,7 @@ public class GameStartScreen extends JPanel {
 		terquitButton.setContentAreaFilled(false);
 		terquitButton.setBorder(null);
 		terquitButton.setIcon(
-				imageLoader.loadImageIcon("/ArmyLogo/Terquits.jpg", width * 8 / 10 / 4, height * 8 / 10 / 2 * 8 / 10));
+				imageLoader.loadImageIcon("/ArmyLogo/Terquits.png", width * 8 / 10 / 4, height * 8 / 10 / 2 * 8 / 10));
 		terquitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main.yourArmy = new TerribleTerquits();
@@ -120,16 +121,17 @@ public class GameStartScreen extends JPanel {
 
 		JPanel terquitTitlePanel = new JPanel();
 		terquitTitlePanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2 * 2 / 10));
-		terquitTitlePanel.setBackground(Colors.backgroundOrange);
+		terquitTitlePanel.setBackground(Colors.dgrey);
 		terquitPanel.add(terquitTitlePanel);
 
 		JLabel terquitTitleLabel = new JLabel();
+		terquitTitleLabel.setForeground(Colors.lgrey);
 		terquitTitleLabel.setText("Terquits");
 		terquitTitlePanel.add(terquitTitleLabel);
 
 		JPanel wanmenPanel = new JPanel();
 		wanmenPanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2));
-		wanmenPanel.setBackground(Colors.backgroundOrange);
+		wanmenPanel.setBackground(Colors.dgrey);
 		centrePanel.add(wanmenPanel);
 
 		JButton wanmenButton = new JButton("Wanmen");
@@ -138,7 +140,7 @@ public class GameStartScreen extends JPanel {
 		wanmenButton.setOpaque(false);
 		wanmenButton.setContentAreaFilled(false);
 		wanmenButton.setBorder(null);
-		wanmenButton.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Wanmen.jpg", width * 8 / 10 / 4,
+		wanmenButton.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Wanmen.png", width * 8 / 10 / 4,
 				height * 8 / 10 / 2 * 8 / 10));
 		wanmenButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -155,7 +157,7 @@ public class GameStartScreen extends JPanel {
 
 		JPanel wanmenTitlePanel = new JPanel();
 		wanmenTitlePanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2 * 2 / 10));
-		wanmenTitlePanel.setBackground(Colors.backgroundOrange);
+		wanmenTitlePanel.setBackground(Colors.dgrey);
 		wanmenPanel.add(wanmenTitlePanel);
 
 		JLabel wanmenTitleLabel = new JLabel();
@@ -164,7 +166,7 @@ public class GameStartScreen extends JPanel {
 
 		JPanel skylordsPanel = new JPanel();
 		skylordsPanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2));
-		skylordsPanel.setBackground(Colors.backgroundOrange);
+		skylordsPanel.setBackground(Colors.dgrey);
 		centrePanel.add(skylordsPanel);
 
 		JButton skylordsButton = new JButton("Skylords");
@@ -174,7 +176,7 @@ public class GameStartScreen extends JPanel {
 		skylordsButton.setContentAreaFilled(false);
 		skylordsButton.setBorder(null);
 		skylordsButton.setIcon(
-				imageLoader.loadImageIcon("/ArmyLogo/Skylords.jpg", width * 8 / 10 / 4, height * 8 / 10 / 2 * 8 / 10));
+				imageLoader.loadImageIcon("/ArmyLogo/Skylords.png", width * 8 / 10 / 4, height * 8 / 10 / 2 * 8 / 10));
 		skylordsButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main.yourArmy = new Skylords();
@@ -190,7 +192,7 @@ public class GameStartScreen extends JPanel {
 
 		JPanel skylordsTitlePanel = new JPanel();
 		skylordsTitlePanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2 * 2 / 10));
-		skylordsTitlePanel.setBackground(Colors.backgroundOrange);
+		skylordsTitlePanel.setBackground(Colors.dgrey);
 		skylordsPanel.add(skylordsTitlePanel);
 
 		JLabel skylordsTitleLabel = new JLabel();
@@ -199,7 +201,7 @@ public class GameStartScreen extends JPanel {
 
 		JPanel espequrPanel = new JPanel();
 		espequrPanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2));
-		espequrPanel.setBackground(Colors.backgroundOrange);
+		espequrPanel.setBackground(Colors.dgrey);
 		centrePanel.add(espequrPanel);
 
 		JButton espequrButton = new JButton("Espequr");
@@ -209,7 +211,7 @@ public class GameStartScreen extends JPanel {
 		espequrButton.setContentAreaFilled(false);
 		espequrButton.setBorder(null);
 		espequrButton.setIcon(
-				imageLoader.loadImageIcon("/ArmyLogo/Espequr.jpg", width * 8 / 10 / 4, height * 8 / 10 / 2 * 8 / 10));
+				imageLoader.loadImageIcon("/ArmyLogo/Espequr.png", width * 8 / 10 / 4, height * 8 / 10 / 2 * 8 / 10));
 		espequrButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Main.yourArmy = new Espequr();
@@ -225,7 +227,7 @@ public class GameStartScreen extends JPanel {
 
 		JPanel espequrTitlePanel = new JPanel();
 		espequrTitlePanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2 * 2 / 10));
-		espequrTitlePanel.setBackground(Colors.backgroundOrange);
+		espequrTitlePanel.setBackground(Colors.dgrey);
 		espequrPanel.add(espequrTitlePanel);
 
 		JLabel espequrTitleLabel = new JLabel();
@@ -234,7 +236,7 @@ public class GameStartScreen extends JPanel {
 
 		JPanel chiDestroyersPanel = new JPanel();
 		chiDestroyersPanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2));
-		chiDestroyersPanel.setBackground(Colors.backgroundOrange);
+		chiDestroyersPanel.setBackground(Colors.dgrey);
 		centrePanel.add(chiDestroyersPanel);
 
 		JButton chiDestroyersButton = new JButton("Chi");
@@ -258,9 +260,9 @@ public class GameStartScreen extends JPanel {
 		chiDestroyersButton.setOpaque(false);
 		chiDestroyersButton.setContentAreaFilled(false);
 		chiDestroyersButton.setBorder(null);
-		chiDestroyersButton.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Chi.jpg", width * 8 / 10 / 4,
+		chiDestroyersButton.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Chi.png", width * 8 / 10 / 4,
 				height * 8 / 10 / 2 * 8 / 10));
-		chiDestroyersTitlePanel.setBackground(Colors.backgroundOrange);
+		chiDestroyersTitlePanel.setBackground(Colors.dgrey);
 		chiDestroyersPanel.add(chiDestroyersTitlePanel);
 
 		JLabel chiDestroyersTitleLabel = new JLabel();
@@ -269,7 +271,7 @@ public class GameStartScreen extends JPanel {
 
 		JPanel metropolitansPanel = new JPanel();
 		metropolitansPanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2));
-		metropolitansPanel.setBackground(Colors.backgroundOrange);
+		metropolitansPanel.setBackground(Colors.dgrey);
 		centrePanel.add(metropolitansPanel);
 
 		JButton metropolitansButton = new JButton("Metropolitans");
@@ -278,7 +280,7 @@ public class GameStartScreen extends JPanel {
 		metropolitansButton.setOpaque(false);
 		metropolitansButton.setContentAreaFilled(false);
 		metropolitansButton.setBorder(null);
-		metropolitansButton.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Metropolitans.jpg", width * 8 / 10 / 4,
+		metropolitansButton.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Metropolitans.png", width * 8 / 10 / 4,
 				height * 8 / 10 / 2 * 8 / 10));
 		metropolitansButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -295,7 +297,7 @@ public class GameStartScreen extends JPanel {
 
 		JPanel metropolitansTitlePanel = new JPanel();
 		metropolitansTitlePanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2 * 2 / 10));
-		metropolitansTitlePanel.setBackground(Colors.backgroundOrange);
+		metropolitansTitlePanel.setBackground(Colors.dgrey);
 		metropolitansPanel.add(metropolitansTitlePanel);
 
 		JLabel metropolitansTitleLabel = new JLabel();
@@ -304,7 +306,7 @@ public class GameStartScreen extends JPanel {
 
 		JPanel multiculturalSocietyPanel = new JPanel();
 		multiculturalSocietyPanel.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2));
-		multiculturalSocietyPanel.setBackground(Colors.backgroundOrange);
+		multiculturalSocietyPanel.setBackground(Colors.dgrey);
 		centrePanel.add(multiculturalSocietyPanel);
 
 		JButton multiculturalSocietyButton = new JButton("Society");
@@ -313,7 +315,7 @@ public class GameStartScreen extends JPanel {
 		multiculturalSocietyButton.setOpaque(false);
 		multiculturalSocietyButton.setContentAreaFilled(false);
 		multiculturalSocietyButton.setBorder(null);
-		multiculturalSocietyButton.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Society.jpg", width * 8 / 10 / 4,
+		multiculturalSocietyButton.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Society.png", width * 8 / 10 / 4,
 				height * 8 / 10 / 2 * 8 / 10));
 		multiculturalSocietyButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -331,11 +333,11 @@ public class GameStartScreen extends JPanel {
 		JPanel multiculturalSocietyTitlePanel = new JPanel();
 		multiculturalSocietyTitlePanel
 				.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2 * 2 / 10));
-		multiculturalSocietyTitlePanel.setBackground(Colors.backgroundOrange);
+		multiculturalSocietyTitlePanel.setBackground(Colors.dgrey);
 		multiculturalSocietyPanel.add(multiculturalSocietyTitlePanel);
 
 		JLabel multiculturalSocietyTitleLabel = new JLabel();
-		multiculturalSocietyTitleLabel.setText("Multicultural Society");
+		multiculturalSocietyTitleLabel.setText("Society");
 		multiculturalSocietyTitlePanel.add(multiculturalSocietyTitleLabel);
 
 	}

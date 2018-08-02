@@ -30,33 +30,33 @@ public class BattleOverviewInformationPanel extends ContentPanel {
 
 	public BattleOverviewInformationPanel(int width, int height, Color colour) {
 
-		super(width, height, colour, new FlowLayout(FlowLayout.LEFT, 2, 2));
+		super(width, height, Colors.grey, new FlowLayout(FlowLayout.LEFT, 2, 2));
 
 		armyLogoWidth = width / 3;
 		armyLogoHeight = height - 10;
 
-		armyLogoPanel = new ContentPanel(armyLogoWidth, armyLogoHeight, Colors.dblue,
+		armyLogoPanel = new ContentPanel(armyLogoWidth, armyLogoHeight, Colors.dgrey,
 				new FlowLayout(FlowLayout.CENTER, 0, 0));
 		insidePanel.add(armyLogoPanel);
-		infoPanel = new ContentPanel(width * 2 / 3, height - 10, Colors.dblue, new FlowLayout(FlowLayout.LEFT, 2, 2));
+		infoPanel = new ContentPanel(width * 2 / 3, height - 10, Colors.grey, new FlowLayout(FlowLayout.LEFT, 0, 2));
 		insidePanel.add(infoPanel);
-		totalLifePanel = new ContentPanel(width * 2 / 3 - 10, height / 3 - 1, colour,
+		totalLifePanel = new ContentPanel(width * 2 / 3 - 10, height / 3 - 1, Colors.lgrey,
 				new FlowLayout(FlowLayout.LEFT, 2, 2));
-		totalLifeTitlePanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colors.dblue,
+		totalLifeTitlePanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colors.dgrey,
 				new FlowLayout(FlowLayout.CENTER, 0, 15));
-		totalLifeContentPanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colors.dblue,
+		totalLifeContentPanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colors.dgrey,
 				new FlowLayout(FlowLayout.CENTER, 0, 15));
-		totalValuePanel = new ContentPanel(width * 2 / 3 - 10, height / 3 - 1, colour,
+		totalValuePanel = new ContentPanel(width * 2 / 3 - 10, height / 3 - 1, Colors.lgrey,
 				new FlowLayout(FlowLayout.LEFT, 2, 2));
-		totalValueTitlePanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colors.dblue,
+		totalValueTitlePanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colors.dgrey,
 				new FlowLayout(FlowLayout.CENTER, 0, 15));
-		totalValueContentPanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colors.dblue,
+		totalValueContentPanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colors.dgrey,
 				new FlowLayout(FlowLayout.CENTER, 0, 15));
-		totalMoralePanel = new ContentPanel(width * 2 / 3 - 10, height / 3 - 1, colour,
+		totalMoralePanel = new ContentPanel(width * 2 / 3 - 10, height / 3 - 1, Colors.lgrey,
 				new FlowLayout(FlowLayout.LEFT, 2, 2));
-		totalMoraleTitlePanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colors.dblue,
+		totalMoraleTitlePanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colors.dgrey,
 				new FlowLayout(FlowLayout.CENTER, 0, 15));
-		totalMoraleContentPanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colors.dblue,
+		totalMoraleContentPanel = new ContentPanel(width * 2 / 6 - 5, height / 3 - 10, Colors.dgrey,
 				new FlowLayout(FlowLayout.CENTER, 0, 15));
 		infoPanel.insidePanel.add(totalLifePanel);
 		totalLifePanel.insidePanel.add(totalLifeTitlePanel);
@@ -101,15 +101,15 @@ public class BattleOverviewInformationPanel extends ContentPanel {
 		ImageLoader imageLoader = new ImageLoader();
 
 		switch (army.name) {
-		case "Piknin Pickles":
+		case "Piknin":
 			armyLogoPanel.contentLabel
-					.setIcon(imageLoader.loadImageIcon("/ArmyLogo/PikninPickles.png", armyLogoWidth, armyLogoHeight));
+					.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Piknin.png", armyLogoWidth, armyLogoHeight));
 			break;
-		case "Wanted Wanmen":
+		case "Wanmen":
 			armyLogoPanel.contentLabel
 					.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Wanmen.png", armyLogoWidth, armyLogoHeight));
 			break;
-		case "Terrible Terquits":
+		case "Terquits":
 			armyLogoPanel.contentLabel
 					.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Terquits.png", armyLogoWidth, armyLogoHeight));
 			break;
@@ -117,9 +117,9 @@ public class BattleOverviewInformationPanel extends ContentPanel {
 			armyLogoPanel.contentLabel
 					.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Skylords.png", armyLogoWidth, armyLogoHeight));
 			break;
-		case "Chi Destroyers":
+		case "Chi":
 			armyLogoPanel.contentLabel
-					.setIcon(imageLoader.loadImageIcon("/ArmyLogo/ChiDestroyers.png", armyLogoWidth, armyLogoHeight));
+					.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Chi.png", armyLogoWidth, armyLogoHeight));
 			break;
 		case "Espequr":
 			armyLogoPanel.contentLabel
@@ -129,9 +129,9 @@ public class BattleOverviewInformationPanel extends ContentPanel {
 			armyLogoPanel.contentLabel
 					.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Metropolitans.png", armyLogoWidth, armyLogoHeight));
 			break;
-		case "Multicultural Society":
+		case "Society":
 			armyLogoPanel.contentLabel
-					.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Multicultural.png", armyLogoWidth, armyLogoHeight));
+					.setIcon(imageLoader.loadImageIcon("/ArmyLogo/Society.png", armyLogoWidth, armyLogoHeight));
 			break;
 		}
 

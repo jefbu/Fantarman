@@ -16,54 +16,54 @@ public class OrderTitlePanel extends JPanel {
 		
 		super();
 		setPreferredSize(new Dimension(width, height));
-		setBackground(Colors.lgreen);
+		setBackground(Colors.lgrey);
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 1));
 		
 		LabeledPanel numberPanel = new LabeledPanel(width * 8 / 100, height - 2);
-		numberPanel.setBackground(Colors.lgreen);
-		numberPanel.label.setForeground(Colors.dgreen);
+		numberPanel.setBackground(Colors.lgrey);
+		numberPanel.label.setForeground(Colors.vdgrey);
 		numberPanel.label.setText("Nr");
 		add(numberPanel);
 		
 		LabeledPanel conditionPanel = new LabeledPanel(width * 2 / 10, height - 2);
-		conditionPanel.setBackground(Colors.lgreen);
-		conditionPanel.label.setForeground(Colors.dgreen);
+		conditionPanel.setBackground(Colors.lgrey);
+		conditionPanel.label.setForeground(Colors.vdgrey);
 		conditionPanel.label.setText("Condition");
 		add(conditionPanel);
 		
 		LabeledPanel conditionXPPanel = new LabeledPanel(width * 8 / 100, height - 2);
-		conditionXPPanel.setBackground(Colors.lgreen);
-		conditionXPPanel.label.setForeground(Colors.dgreen);
+		conditionXPPanel.setBackground(Colors.lgrey);
+		conditionXPPanel.label.setForeground(Colors.vdgrey);
 		conditionXPPanel.label.setText("XP");
 		add(conditionXPPanel);
 		
 		LabeledPanel targetPanel = new LabeledPanel(width * 2 / 10, height - 2);
-		targetPanel.setBackground(Colors.lgreen);
-		targetPanel.label.setForeground(Colors.dgreen);
+		targetPanel.setBackground(Colors.lgrey);
+		targetPanel.label.setForeground(Colors.vdgrey);
 		targetPanel.label.setText("Target");
 		add(targetPanel);
 		
 		LabeledPanel targetXPPanel = new LabeledPanel(width * 8 / 100, height - 2);
-		targetXPPanel.setBackground(Colors.lgreen);
-		targetXPPanel.label.setForeground(Colors.dgreen);
+		targetXPPanel.setBackground(Colors.lgrey);
+		targetXPPanel.label.setForeground(Colors.vdgrey);
 		targetXPPanel.label.setText("XP");
 		add(targetXPPanel);
 		
 		LabeledPanel orderPanel = new LabeledPanel(width * 2 / 10, height - 2);
-		orderPanel.setBackground(Colors.lgreen);
-		orderPanel.label.setForeground(Colors.dgreen);
+		orderPanel.setBackground(Colors.lgrey);
+		orderPanel.label.setForeground(Colors.vdgrey);
 		orderPanel.label.setText("Order");
 		add(orderPanel);
 		
 		LabeledPanel orderXPPanel = new LabeledPanel(width * 8 / 100, height - 2);
-		orderXPPanel.setBackground(Colors.lgreen);
-		orderXPPanel.label.setForeground(Colors.dgreen);
+		orderXPPanel.setBackground(Colors.lgrey);
+		orderXPPanel.label.setForeground(Colors.vdgrey);
 		orderXPPanel.label.setText("XP");
 		add(orderXPPanel);
 		
 		LabeledPanel totalXPPanel = new LabeledPanel(width * 8 / 100, height - 2);
-		totalXPPanel.setBackground(Colors.lgreen);
-		totalXPPanel.label.setForeground(Colors.dgreen);
+		totalXPPanel.setBackground(Colors.lgrey);
+		totalXPPanel.label.setForeground(Colors.vdgrey);
 		totalXPPanel.label.setText("TotXP");
 		add(totalXPPanel);
 		

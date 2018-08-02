@@ -25,6 +25,7 @@ public class ShortFixtures extends JPanel {
 	private ContentPanel titleBarPanel;
 	private ContentPanel fixturesPanel;
 	private ContentPanel matchupsPanel;
+	private LabeledPanel namePanel;
 	private ArrayList<MatchupRowPanel> matchupRowPanels;
 	
 	public int globalCalendarCounter;
@@ -41,7 +42,7 @@ public class ShortFixtures extends JPanel {
 
 		titleBarPanel = new ContentPanel(width * 95 / 100, height * 165 / 1000, Colors.grey,
 				new FlowLayout(FlowLayout.LEADING, 5, 0));
-			LabeledPanel namePanel = new LabeledPanel(width * 67 / 100, height * 20 / 100);
+			namePanel = new LabeledPanel(width * 67 / 100, height * 20 / 100);
 			namePanel.setBackground(Colors.grey);
 			namePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, height * 4 / 100));
 			namePanel.label.setFont(new Font("garamond", Font.BOLD, 16));
@@ -101,11 +102,13 @@ public class ShortFixtures extends JPanel {
 
 	public void fillShortFixtures(int calendarDay) {
 		
-		globalCalendarCounter = 0;
 		for (MatchupRowPanel panel: matchupRowPanels) {
 			panel.fillMatchupRowPanel(calendarDay);
 			
 		}
+		
+		namePanel.label.setText("");
+		namePanel.label.setText("Calendar: Day " + (calendarDay + 1));
 	}
 
 }

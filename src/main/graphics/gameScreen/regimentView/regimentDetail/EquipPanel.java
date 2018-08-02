@@ -30,130 +30,130 @@ public class EquipPanel extends ContentPanel {
 		
 		super(width, height, colour, flowLayout);
 		
-		int weaponWidth = ((width - 15) * 6 / 10);
+		int weaponWidth = ((width - 14) * 6 / 10);
 		int weaponHeight = height - 16;
-		int armourWidth = ((width - 15) * 4 / 10);
+		int armourWidth = ((width - 14) * 4 / 10);
 		int armourHeight = height - 16;
 		weaponsList = new ArrayList<WeaponPanel>();
 		armoursList = new ArrayList<ArmourPanel>();
 
 		weaponsPanel = new JPanel();
 		weaponsPanel.setPreferredSize(new Dimension(weaponWidth, weaponHeight));
-		weaponsPanel.setBackground(Colors.green);
-		weaponsPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 2, 1));
+		weaponsPanel.setBackground(Colors.dgrey);
+		weaponsPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		insidePanel.add(weaponsPanel);
 		
 			JPanel weaponTotalPanel = new JPanel();
-			weaponTotalPanel.setPreferredSize(new Dimension(weaponWidth - 2, (weaponHeight - 4) / 5));
-			weaponTotalPanel.setBackground(Colors.lgreen);
+			weaponTotalPanel.setPreferredSize(new Dimension(weaponWidth, weaponHeight / 5));
+			weaponTotalPanel.setBackground(Colors.vdgrey);
 			weaponTotalPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 			weaponsPanel.add(weaponTotalPanel);
 			
-				LabeledPanel weaponTitlePanel = new LabeledPanel((weaponWidth - 4) / 5, (weaponHeight - 4) / 5);
-				weaponTitlePanel.setBackground(Colors.lgreen);
-				weaponTitlePanel.label.setForeground(Colors.dgreen);
+				LabeledPanel weaponTitlePanel = new LabeledPanel(weaponWidth / 5, weaponHeight / 5);
+				weaponTitlePanel.setBackground(Colors.lgrey);
+				weaponTitlePanel.label.setForeground(Colors.vdgrey);
 				weaponTitlePanel.label.setText("Weapon");
 				weaponTotalPanel.add(weaponTitlePanel);
 				
-				LabeledPanel weaponAttackPanel = new LabeledPanel((weaponWidth - 4) / 10, (weaponHeight - 4) / 5);
-				weaponAttackPanel.setBackground(Colors.lgreen);
-				weaponAttackPanel.label.setForeground(Colors.dgreen);
+				LabeledPanel weaponAttackPanel = new LabeledPanel(weaponWidth / 10, weaponHeight / 5);
+				weaponAttackPanel.setBackground(Colors.lgrey);
+				weaponAttackPanel.label.setForeground(Colors.vdgrey);
 				weaponAttackPanel.label.setText("ATT");
 				weaponTotalPanel.add(weaponAttackPanel);
 				
-				LabeledPanel weaponChargePanel = new LabeledPanel((weaponWidth - 4) / 10, (weaponHeight - 4) / 5);
-				weaponChargePanel.setBackground(Colors.lgreen);
-				weaponChargePanel.label.setForeground(Colors.dgreen);
+				LabeledPanel weaponChargePanel = new LabeledPanel(weaponWidth / 10, weaponHeight / 5);
+				weaponChargePanel.setBackground(Colors.lgrey);
+				weaponChargePanel.label.setForeground(Colors.vdgrey);
 				weaponChargePanel.label.setText("CRG");
 				weaponTotalPanel.add(weaponChargePanel);
 				
-				LabeledPanel weaponRangePanel = new LabeledPanel((weaponWidth - 4) / 10, (weaponHeight - 4) / 5);
-				weaponRangePanel.setBackground(Colors.lgreen);
-				weaponRangePanel.label.setForeground(Colors.dgreen);
+				LabeledPanel weaponRangePanel = new LabeledPanel(weaponWidth / 10, weaponHeight / 5);
+				weaponRangePanel.setBackground(Colors.lgrey);
+				weaponRangePanel.label.setForeground(Colors.vdgrey);
 				weaponRangePanel.label.setText("RNG");
 				weaponTotalPanel.add(weaponRangePanel);
 				
-				LabeledPanel weaponMissilePanel = new LabeledPanel((weaponWidth - 4) / 10, (weaponHeight - 4) / 5);
-				weaponMissilePanel.setBackground(Colors.lgreen);
-				weaponMissilePanel.label.setForeground(Colors.dgreen);
+				LabeledPanel weaponMissilePanel = new LabeledPanel(weaponWidth / 10, weaponHeight / 5);
+				weaponMissilePanel.setBackground(Colors.lgrey);
+				weaponMissilePanel.label.setForeground(Colors.vdgrey);
 				weaponMissilePanel.label.setText("MIS");
 				weaponTotalPanel.add(weaponMissilePanel);
 				
-				LabeledPanel weaponDefencePanel = new LabeledPanel((weaponWidth - 4) / 10, (weaponHeight - 4) / 5);
-				weaponDefencePanel.setBackground(Colors.lgreen);
-				weaponDefencePanel.label.setForeground(Colors.dgreen);
+				LabeledPanel weaponDefencePanel = new LabeledPanel(weaponWidth / 10, weaponHeight / 5);
+				weaponDefencePanel.setBackground(Colors.lgrey);
+				weaponDefencePanel.label.setForeground(Colors.vdgrey);
 				weaponDefencePanel.label.setText("DEF");
 				weaponTotalPanel.add(weaponDefencePanel);
 				
-				LabeledPanel weaponSpeedPanel = new LabeledPanel((weaponWidth - 4) / 10, (weaponHeight - 4) / 5);
-				weaponSpeedPanel.setBackground(Colors.lgreen);
-				weaponSpeedPanel.label.setForeground(Colors.dgreen);
+				LabeledPanel weaponSpeedPanel = new LabeledPanel(weaponWidth / 10, weaponHeight / 5);
+				weaponSpeedPanel.setBackground(Colors.lgrey);
+				weaponSpeedPanel.label.setForeground(Colors.vdgrey);
 				weaponSpeedPanel.label.setText("SPD");
 				weaponTotalPanel.add(weaponSpeedPanel);
 				
-				LabeledPanel weaponCostPanel = new LabeledPanel((weaponWidth - 4) / 10, (weaponHeight - 4) / 5);
-				weaponCostPanel.setBackground(Colors.lgreen);
-				weaponCostPanel.label.setForeground(Colors.dgreen);
+				LabeledPanel weaponCostPanel = new LabeledPanel(weaponWidth / 10, weaponHeight / 5);
+				weaponCostPanel.setBackground(Colors.lgrey);
+				weaponCostPanel.label.setForeground(Colors.vdgrey);
 				weaponCostPanel.label.setText("Cost");
 				weaponTotalPanel.add(weaponCostPanel);
 				
-				LabeledPanel weaponUpkeepPanel = new LabeledPanel((weaponWidth - 4) / 10, (weaponHeight - 4) / 5);
-				weaponUpkeepPanel.setBackground(Colors.lgreen);
-				weaponUpkeepPanel.label.setForeground(Colors.dgreen);
+				LabeledPanel weaponUpkeepPanel = new LabeledPanel(weaponWidth / 10, weaponHeight / 5);
+				weaponUpkeepPanel.setBackground(Colors.lgrey);
+				weaponUpkeepPanel.label.setForeground(Colors.vdgrey);
 				weaponUpkeepPanel.label.setText("Upkp");
 				weaponTotalPanel.add(weaponUpkeepPanel);
 				
 		armourPanel = new JPanel();
 		armourPanel.setPreferredSize(new Dimension(armourWidth, armourHeight));
-		armourPanel.setBackground(Colors.green);
-		armourPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 2, 1));
+		armourPanel.setBackground(Colors.dgrey);
+		armourPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		insidePanel.add(armourPanel);
 		
 		JPanel armourTotalPanel = new JPanel();
-		armourTotalPanel.setPreferredSize(new Dimension(armourWidth, (armourHeight - 4) / 5));
-		armourTotalPanel.setBackground(Colors.lgreen);
+		armourTotalPanel.setPreferredSize(new Dimension(armourWidth, armourHeight / 5));
+		armourTotalPanel.setBackground(Colors.vdgrey);
 		armourTotalPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		armourPanel.add(armourTotalPanel);
 		
-			LabeledPanel armourTitlePanel = new LabeledPanel((armourWidth) / 4, (armourHeight - 4) / 5);
-			armourTitlePanel.setBackground(Colors.lgreen);
-			armourTitlePanel.label.setForeground(Colors.dgreen);
+			LabeledPanel armourTitlePanel = new LabeledPanel((armourWidth) / 4, armourHeight / 5);
+			armourTitlePanel.setBackground(Colors.lgrey);
+			armourTitlePanel.label.setForeground(Colors.vdgrey);
 			armourTitlePanel.label.setText("Armour");
 			armourTotalPanel.add(armourTitlePanel);
 			
-			LabeledPanel armourDefencePanel = new LabeledPanel((armourWidth) / 8, (armourHeight - 4) / 5);
-			armourDefencePanel.setBackground(Colors.lgreen);
-			armourDefencePanel.label.setForeground(Colors.dgreen);
+			LabeledPanel armourDefencePanel = new LabeledPanel((armourWidth) / 8, armourHeight / 5);
+			armourDefencePanel.setBackground(Colors.lgrey);
+			armourDefencePanel.label.setForeground(Colors.vdgrey);
 			armourDefencePanel.label.setText("DEF");
 			armourTotalPanel.add(armourDefencePanel);
 			
-			LabeledPanel armourMoralePanel = new LabeledPanel((armourWidth) / 8, (armourHeight - 4) / 5);
-			armourMoralePanel.setBackground(Colors.lgreen);
-			armourMoralePanel.label.setForeground(Colors.dgreen);
+			LabeledPanel armourMoralePanel = new LabeledPanel((armourWidth) / 8, armourHeight / 5);
+			armourMoralePanel.setBackground(Colors.lgrey);
+			armourMoralePanel.label.setForeground(Colors.vdgrey);
 			armourMoralePanel.label.setText("MOR");
 			armourTotalPanel.add(armourMoralePanel);
 			
-			LabeledPanel armourMovePanel = new LabeledPanel((armourWidth) / 8, (armourHeight - 4) / 5);
-			armourMovePanel.setBackground(Colors.lgreen);
-			armourMovePanel.label.setForeground(Colors.dgreen);
+			LabeledPanel armourMovePanel = new LabeledPanel((armourWidth) / 8, armourHeight / 5);
+			armourMovePanel.setBackground(Colors.lgrey);
+			armourMovePanel.label.setForeground(Colors.vdgrey);
 			armourMovePanel.label.setText("MOV");
 			armourTotalPanel.add(armourMovePanel);
 			
-			LabeledPanel armourSpeedPanel = new LabeledPanel((armourWidth) / 8, (armourHeight - 4) / 5);
-			armourSpeedPanel.setBackground(Colors.lgreen);
-			armourSpeedPanel.label.setForeground(Colors.dgreen);
+			LabeledPanel armourSpeedPanel = new LabeledPanel((armourWidth) / 8, armourHeight / 5);
+			armourSpeedPanel.setBackground(Colors.lgrey);
+			armourSpeedPanel.label.setForeground(Colors.vdgrey);
 			armourSpeedPanel.label.setText("SPD");
 			armourTotalPanel.add(armourSpeedPanel);
 			
-			LabeledPanel armourCostPanel = new LabeledPanel((armourWidth) / 8, (armourHeight - 4) / 5);
-			armourCostPanel.setBackground(Colors.lgreen);
-			armourCostPanel.label.setForeground(Colors.dgreen);
+			LabeledPanel armourCostPanel = new LabeledPanel((armourWidth) / 8, armourHeight / 5);
+			armourCostPanel.setBackground(Colors.lgrey);
+			armourCostPanel.label.setForeground(Colors.vdgrey);
 			armourCostPanel.label.setText("Cost");
 			armourTotalPanel.add(armourCostPanel);
 			
-			LabeledPanel armourUpkeepPanel = new LabeledPanel((armourWidth) / 8, (armourHeight - 4) / 5);
-			armourUpkeepPanel.setBackground(Colors.lgreen);
-			armourUpkeepPanel.label.setForeground(Colors.dgreen);
+			LabeledPanel armourUpkeepPanel = new LabeledPanel((armourWidth) / 8 + 6, armourHeight / 5);
+			armourUpkeepPanel.setBackground(Colors.lgrey);
+			armourUpkeepPanel.label.setForeground(Colors.vdgrey);
 			armourUpkeepPanel.label.setText("Upkp");
 			armourTotalPanel.add(armourUpkeepPanel);
 
@@ -206,11 +206,11 @@ public class EquipPanel extends ContentPanel {
 			
 			if(i < regiment.weapons.size()) {
 			if(regiment.weapon == regiment.weapons.get(i)) { 
-				bgColor = Colors.dblue;
-				txtColor = Colors.backgroundOrange;
+				bgColor = Colors.vdgrey;
+				txtColor = Colors.vlgrey;
 			} else {
-				bgColor = Colors.lorange;
-				txtColor = Colors.dorange;
+				bgColor = Colors.vlgrey;
+				txtColor = Colors.dgrey;
 			}
 			}
 			int index = i;
@@ -253,7 +253,7 @@ public class EquipPanel extends ContentPanel {
 		
 		for (int ii = 0; ii < armoursList.size(); ii++) {
 			
-			Color bgColor = new Color(70, 65, 55);
+			Color bgColor = Colors.emptyPanelColor;
 			Color txtColor = new Color(0, 0, 0);
 			
 			try {
@@ -279,11 +279,11 @@ public class EquipPanel extends ContentPanel {
 			
 			if(ii < regiment.armours.size()) {
 			if(regiment.armour == regiment.armours.get(ii)) { 
-				bgColor = Colors.dblue;
-				txtColor = Colors.backgroundOrange;
+				bgColor = Colors.vdgrey;
+				txtColor = Colors.vlgrey;
 			} else {
-				bgColor = Colors.lorange;
-				txtColor = Colors.dorange;
+				bgColor = Colors.vlgrey;
+				txtColor = Colors.dgrey;
 			}
 			}
 				

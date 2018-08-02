@@ -19,16 +19,16 @@ public class InformationPanel extends JPanel {
 		super();
 		
 		int roundedHeight = battleScreenHeight * 2 / 10 + ((battleScreenHeight * 8 / 10)%48);
-		int roundedWidth = battleScreenWidth * 9 / 10;
+		int roundedWidth = battleScreenWidth * 90/ 100;
 		
 		setPreferredSize(new Dimension(roundedWidth, roundedHeight));
 		setBackground(new Color(80, 70, 60));
-		setLayout (new FlowLayout(FlowLayout.LEFT, 5, 5));
+		setLayout (new FlowLayout(FlowLayout.LEFT, 10, 5));
 		
-		yourPanel = new BattleOverviewInformationPanel(roundedWidth / 2, roundedHeight, Colors.dgreen);
+		yourPanel = new BattleOverviewInformationPanel(roundedWidth / 2, roundedHeight, Colors.vlgrey);
 		add(yourPanel);
 		
-		enemyPanel = new BattleOverviewInformationPanel(roundedWidth / 2, roundedHeight, Colors.dorange);
+		enemyPanel = new BattleOverviewInformationPanel(roundedWidth / 2, roundedHeight, Colors.vlgrey);
 		add(enemyPanel);
 		
 		

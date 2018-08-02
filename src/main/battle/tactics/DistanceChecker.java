@@ -23,7 +23,7 @@ public abstract class DistanceChecker {
 			distanceUp = (target.panels[0] / 48) - (regiment.panels[0] / 48) ;
 		}
 
-		if (distanceUp != 0) distanceUp = distanceUp + target.rows;
+		if (distanceUp != 0) distanceUp = distanceUp - (target.rows - 1);
 		return distanceUp;
 	}
 
@@ -32,7 +32,7 @@ public abstract class DistanceChecker {
 		if (regiment.panels[0] / 48 < target.panels[0] / 48) {
 			distanceDown = (target.panels[0] / 48) - (regiment.panels[0] / 48);
 		}
-		if (distanceDown != 0) distanceDown = distanceDown - regiment.rows;
+		if (distanceDown != 0) distanceDown = distanceDown - (regiment.rows - 1);
 		return distanceDown;
 	}
 

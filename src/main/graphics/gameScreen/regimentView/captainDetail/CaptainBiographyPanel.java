@@ -23,7 +23,7 @@ public class CaptainBiographyPanel extends ContentPanel {
 		biographyTextPane.setPreferredSize(new Dimension(width - 30, height - 30));
 		biographyTextPane.setEditable(false);
 		biographyTextPane.setBorder(null);
-		biographyTextPane.setBackground(Colors.lblue);
+		biographyTextPane.setBackground(Colors.vlgrey);
 		biographyTextPane.setContentType("text/html");
 		biographyTextPane.setText("<font color = 'rgb(20, 40, 80)' size = 5>" + "How does this work? <br>");
 		insidePanel.add(biographyTextPane);

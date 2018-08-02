@@ -20,13 +20,14 @@ public class CaptainDetailPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	ImageLoader imageLoader;
-	
+
 	public CaptainBaseInfoPanel captainBaseInfoPanel;
 	public OrderPanel orderPanel;
 	public StatsBonusPanel statsBonusPanel;
 	public CaptainBiographyPanel captainBiographyPanel;
-	public JLabel regimentIconLabel;
-	
+	public JLabel captainIconLabel;
+	public LieutenantsDetailPanel lieutenantsDetailPanel;
+
 	private int width;
 	private int height;
 
@@ -37,43 +38,58 @@ public class CaptainDetailPanel extends JPanel {
 		this.height = height;
 		imageLoader = new ImageLoader();
 		setPreferredSize(new Dimension(width, height));
-		setBackground(Colors.dgrey);
-		setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
+		setBackground(Colors.lgrey);
+		setLayout(new FlowLayout(FlowLayout.LEFT, width * 2 / 100, height * 2 / 100));
+		
+		ContentPanel bigTitlePanel = new ContentPanel(width * 40 / 100, height * 7 / 100, Colors.dgrey,
+				new FlowLayout(FlowLayout.LEFT, 5, 5));
+		add(bigTitlePanel);
+		
+		bigTitlePanel.contentLabel.setForeground(Colors.vlgrey);
+		bigTitlePanel.contentLabel.setText("Captain & Lieutenants");
+		
+		JPanel emptyTitlePanel = new JPanel();
+		emptyTitlePanel.setPreferredSize(new Dimension(width * 45 / 100, height * 7 / 100));
+		emptyTitlePanel.setBackground(Colors.lgrey);
+		add(emptyTitlePanel);
 
-		ContentPanel captainIconPanel = new ContentPanel(width / 7, height / 2 - 20, Colors.blue,
+		ContentPanel captainIconPanel = new ContentPanel(width * 25 / 100, height * 25 / 100, Colors.grey,
 				new FlowLayout(FlowLayout.CENTER, 0, 15));
-		regimentIconLabel = new JLabel();
-		regimentIconLabel.setIcon(imageLoader.loadImageIcon("/portraits/unknown.png", width / 8, height / 3));
-		captainIconPanel.insidePanel.add(regimentIconLabel);
+		captainIconLabel = new JLabel();
+		captainIconLabel.setIcon(imageLoader.loadImageIcon("/portraits/unknown.png", width / 8, height / 3));
+		captainIconPanel.insidePanel.add(captainIconLabel);
 		add(captainIconPanel);
 
-		captainBaseInfoPanel = new CaptainBaseInfoPanel(width / 6, height / 2 - 20, Colors.dblue,
+		captainBaseInfoPanel = new CaptainBaseInfoPanel(width * 33 / 100, height * 25 / 100, Colors.grey,
 				new FlowLayout(FlowLayout.LEFT, 0, 1));
 		add(captainBaseInfoPanel);
 
-		captainBiographyPanel = new CaptainBiographyPanel(width / 2, height / 2 - 20,
-				Colors.lblue, new FlowLayout(FlowLayout.CENTER, 0, 0));
-		add(captainBiographyPanel);
-
-		orderPanel = new OrderPanel(width / 2, height / 2 + 10, Colors.dgreen,
-				new FlowLayout(FlowLayout.LEFT, 1, 2));
-		add(orderPanel);
-
-		statsBonusPanel = new StatsBonusPanel(width / 3, height / 2 + 10, Colors.blue,
+		statsBonusPanel = new StatsBonusPanel(width * 36 / 100, height * 25 / 100, Colors.grey,
 				new FlowLayout(FlowLayout.LEFT, 0, 1));
 		add(statsBonusPanel);
+
+		captainBiographyPanel = new CaptainBiographyPanel(width * 95 / 100, height * 25 / 100, Colors.vlgrey,
+				new FlowLayout(FlowLayout.CENTER, 0, 0));
+		add(captainBiographyPanel);
+
+		orderPanel = new OrderPanel(width * 95 / 100, height * 28 / 100, Colors.grey, new FlowLayout(FlowLayout.LEFT, 1, 2));
+		add(orderPanel);
+		
+		lieutenantsDetailPanel = new LieutenantsDetailPanel(width * 95 / 100, height * 11 / 100);
+		add(lieutenantsDetailPanel);
 
 	}
 
 	public void fillCaptainDetailPanel(Regiment regiment, boolean editable) {
 
-		regimentIconLabel.setIcon(imageLoader.loadImageIcon(regiment.captain.iconPath, width / 8, height / 3));
+		captainIconLabel
+				.setIcon(imageLoader.loadImageIcon(regiment.captain.iconPath, width * 21 / 100, height * 18 / 100));
 		captainBaseInfoPanel.fillCaptainBaseInfoPanel(regiment);
 		captainBiographyPanel.fillCaptainBiography(regiment.captain);
 		orderPanel.fillOrderPanel(regiment, editable);
 		statsBonusPanel.fillStatsBonusPanel(regiment);
-		
-		
+		lieutenantsDetailPanel.fillLieutenantsDetailPanel(regiment, true);
+
 	}
 
 }

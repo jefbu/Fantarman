@@ -20,16 +20,14 @@ public class RegimentDetailPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	ImageLoader imageLoader;
-	
+
 	ContentPanel regimentIconPanel;
 	JLabel regimentIconLabel;
 	JPanel regimentIconNamePanel;
-	JLabel regimentIconNameLabel;
 	RegimentBaseInfoPanel regimentBaseInfoPanel;
 	BattleStatsPanel battleStatsPanel;
 	HistoryStatsPanel historyStatsPanel;
 	EquipPanel equipPanel;
-	
 
 	public RegimentDetailPanel(int width, int height) {
 
@@ -37,40 +35,48 @@ public class RegimentDetailPanel extends JPanel {
 		imageLoader = new ImageLoader();
 
 		setPreferredSize(new Dimension(width, height));
-		setBackground(Colors.dgrey);
-		setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
+		setBackground(Colors.lgrey);
+		setLayout(new FlowLayout(FlowLayout.LEFT, width * 2 / 100, height * 2 / 100));
 
-		regimentIconPanel = new ContentPanel(width * 15 / 100, height / 2 - 20, Colors.blue,
+		ContentPanel bigTitlePanel = new ContentPanel(width * 25 / 100, height * 7 / 100, Colors.dgrey,
+				new FlowLayout(FlowLayout.LEFT, 5, 5));
+		add(bigTitlePanel);
+		
+		bigTitlePanel.contentLabel.setForeground(Colors.vlgrey);
+		bigTitlePanel.contentLabel.setText("Regiment");
+		
+		JPanel emptyTitlePanel = new JPanel();
+		emptyTitlePanel.setPreferredSize(new Dimension(width * 60 / 100, height * 7 / 100));
+		emptyTitlePanel.setBackground(Colors.lgrey);
+		add(emptyTitlePanel);
+
+		regimentIconPanel = new ContentPanel(width * 25 / 100, height / 4, Colors.grey,
 				new FlowLayout(FlowLayout.CENTER, 0, 15));
 		regimentIconLabel = new JLabel();
 		regimentIconPanel.insidePanel.add(regimentIconLabel);
-		regimentIconNameLabel = new JLabel();
-		regimentIconNameLabel.setForeground(Colors.backgroundOrange);
-		regimentIconPanel.insidePanel.add(regimentIconNameLabel);
 		add(regimentIconPanel);
 
-		regimentBaseInfoPanel = new RegimentBaseInfoPanel(width * 25 / 100, height / 2 - 20,
-				Colors.dblue, new FlowLayout(FlowLayout.LEFT, 0, 1));
+		regimentBaseInfoPanel = new RegimentBaseInfoPanel(width * 69 / 100, height / 4, Colors.grey,
+				new FlowLayout(FlowLayout.LEFT, 0, 1));
 		add(regimentBaseInfoPanel);
 
-		battleStatsPanel = new BattleStatsPanel(width * 30 / 100, height / 2 - 20, Colors.blue,
+		battleStatsPanel = new BattleStatsPanel(width * 63 / 100, height / 4, Colors.grey,
 				new FlowLayout(FlowLayout.LEFT, 0, 1));
 		add(battleStatsPanel);
 
-		historyStatsPanel = new HistoryStatsPanel(width * 30 / 100, height / 2 - 20, Colors.blue,
+		historyStatsPanel = new HistoryStatsPanel(width * 31 / 100, height / 4, Colors.grey,
 				new FlowLayout(FlowLayout.LEFT, 0, 1));
 		add(historyStatsPanel);
 
-		equipPanel = new EquipPanel(width / 4 * 3, height / 2 + 10, Colors.green,
+		equipPanel = new EquipPanel(width * 95 / 100, height * 39 / 100, Colors.vlgrey,
 				new FlowLayout(FlowLayout.LEFT, 0, 1));
 		add(equipPanel);
-		
+
 	}
 
 	public void fillRegimentDetailPanel(Regiment regiment, boolean editable) {
-		
+
 		regimentIconLabel.setIcon(regiment.largeIcon);
-		regimentIconNameLabel.setText(regiment.regiment);
 		regimentBaseInfoPanel.fillRegimentBaseInfoPanel(regiment);
 		battleStatsPanel.fillBattleStatsPanel(regiment);
 		historyStatsPanel.fillHistoryStatsPanel(regiment);

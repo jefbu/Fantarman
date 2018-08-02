@@ -14,6 +14,7 @@ import main.components.ButtonedPanel;
 import main.entity.regiments.Regiment;
 import main.entity.regiments.Role;
 import main.graphics.Screen;
+import main.graphics.gameScreen.MainPanel;
 import main.utility.Colors;
 import main.utility.ImageLoader;
 
@@ -131,18 +132,6 @@ public class RegimentPanel extends JPanel {
 		trainingRolePanel.button.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 		trainingRolePanel.label.setForeground(Colors.vdgrey);
 		add(trainingRolePanel);
-		
-		trainingRolePanel.button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				combatRolePanel.label
-						.setIcon(imageLoader.loadImageIcon("/icons/checkbox.png", width * 3 / 100, height));
-				trainingRolePanel.label
-						.setIcon(imageLoader.loadImageIcon("/icons/checkboxChecked.png", width * 3 / 100, height));
-				marketingRolePanel.label
-						.setIcon(imageLoader.loadImageIcon("/icons/checkbox.png", width * 3 / 100, height));
-			}
-		});
-
 
 		marketingRolePanel = new ButtonedPanel(width * 7 / 100, height, Colors.vdgrey);
 		marketingRolePanel.setBackground(Colors.lorange);
@@ -150,17 +139,6 @@ public class RegimentPanel extends JPanel {
 		marketingRolePanel.button.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 		marketingRolePanel.label.setForeground(Colors.vdgrey);
 		add(marketingRolePanel);
-		
-		marketingRolePanel.button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				combatRolePanel.label
-						.setIcon(imageLoader.loadImageIcon("/icons/checkbox.png", width * 3 / 100, height));
-				trainingRolePanel.label
-						.setIcon(imageLoader.loadImageIcon("/icons/checkbox.png", width * 3 / 100, height));
-				marketingRolePanel.label
-						.setIcon(imageLoader.loadImageIcon("/icons/checkboxChecked.png", width * 3 / 100, height));
-			}
-		});
 		
 		list = new ArrayList<ButtonedPanel>();
 		list.add(captainPanel);
@@ -297,6 +275,7 @@ public class RegimentPanel extends JPanel {
 						.setIcon(imageLoader.loadImageIcon("/icons/checkbox.png", width * 3 / 100, height));
 				marketingRolePanel.label
 						.setIcon(imageLoader.loadImageIcon("/icons/checkbox.png", width * 3 / 100, height));
+				Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
 				}
 			}
 		});
@@ -310,6 +289,7 @@ public class RegimentPanel extends JPanel {
 						.setIcon(imageLoader.loadImageIcon("/icons/checkboxChecked.png", width * 3 / 100, height));
 				marketingRolePanel.label
 						.setIcon(imageLoader.loadImageIcon("/icons/checkbox.png", width * 3 / 100, height));
+				Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
 			}
 		});
 		
@@ -322,6 +302,7 @@ public class RegimentPanel extends JPanel {
 						.setIcon(imageLoader.loadImageIcon("/icons/checkbox.png", width * 3 / 100, height));
 				marketingRolePanel.label
 						.setIcon(imageLoader.loadImageIcon("/icons/checkboxChecked.png", width * 3 / 100, height));
+				Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
 			}
 		});
 		

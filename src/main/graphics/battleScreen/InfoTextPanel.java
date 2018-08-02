@@ -8,6 +8,8 @@ import java.awt.Insets;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
+import main.utility.Colors;
+
 public class InfoTextPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
@@ -21,7 +23,7 @@ public class InfoTextPanel extends JPanel {
 		int height = ((int) dimension.getHeight() - 4) * 85 / 100;
 		
 		setPreferredSize(new Dimension(width, height));
-		setBackground(new Color(10, 10, 10));
+		setBackground(Colors.vlgrey);
 		
 		textArea = new JTextPane();
 		textArea.setContentType("text/html");
@@ -29,7 +31,7 @@ public class InfoTextPanel extends JPanel {
 		textArea.setFont(new Font("garamond",Font.BOLD,20));
 		textArea.setPreferredSize(new Dimension(width - 10, height - 10));
 		textArea.setEditable(false);
-		textArea.setBackground(new Color(40,70,50));
+		textArea.setBackground(Colors.dgrey);
 		textArea.setMargin(new Insets(10,10,10,10));
 		add(textArea);
 		

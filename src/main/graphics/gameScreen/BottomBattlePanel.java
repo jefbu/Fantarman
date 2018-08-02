@@ -37,7 +37,7 @@ public class BottomBattlePanel extends JPanel {
 		
 		JPanel vdgreyPanel = new JPanel();
 		vdgreyPanel.setPreferredSize(new Dimension(width * 90 / 100, height * 9 / 10));
-		vdgreyPanel.setBackground(Colors.vdgrey);
+		vdgreyPanel.setBackground(Colors.dgrey);
 		vdgreyPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		add(vdgreyPanel);
 		

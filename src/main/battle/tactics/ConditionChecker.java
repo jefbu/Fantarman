@@ -1,5 +1,8 @@
 package main.battle.tactics;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 import main.entity.armies.Army;
 import main.entity.regiments.Regiment;
 
@@ -103,19 +106,14 @@ public class ConditionChecker {
 				}
 
 			case Target_in_Range:
-				Target checkedTarget = null;
-				for (Tactic targetTactic : regiment.instructions) {
-					if (targetTactic.condition == Condition.Target_in_Range) {
-						checkedTarget = targetTactic.target;
-					}
-				}
+				Target checkedTarget = tactic.target;
 				Regiment targetRegiment = TargetChecker.checkTarget(regiment, checkedTarget, activeArmy, yourBattleArmy,
 						opponentBattleArmy);
 
 				int horizontalTargetInRAnceDistance = DistanceChecker.checkHorizontalDistance(regiment, targetRegiment);
-				if (Math.abs(horizontalTargetInRAnceDistance) <= regiment.baseRange) {
+				if (Math.abs(horizontalTargetInRAnceDistance) <= regiment.battleRange) {
 					int verticalTargetInRangeDistance = DistanceChecker.checkVerticalDistance(regiment, targetRegiment);
-					if (Math.abs(verticalTargetInRangeDistance) <= regiment.baseRange) {
+					if (Math.abs(verticalTargetInRangeDistance) <= regiment.battleRange) {
 						return tactic;
 					}
 				}
@@ -128,6 +126,7 @@ public class ConditionChecker {
 						if (Math.abs(horizontalDistance) <= regiment.battleRange) {
 							int verticalDistance = DistanceChecker.checkVerticalDistance(regiment, opponentRegiment);
 							if (Math.abs(verticalDistance) <= regiment.battleRange) {
+								tactic.target = Target.FROM_LIST;
 								return tactic;
 							}
 						}
@@ -139,6 +138,7 @@ public class ConditionChecker {
 						if (Math.abs(horizontalDistance) <= regiment.battleRange) {
 							int verticalDistance = DistanceChecker.checkVerticalDistance(regiment, opponentRegiment);
 							if (Math.abs(verticalDistance) <= regiment.battleRange) {
+								tactic.target = Target.FROM_LIST;
 								return tactic;
 							}
 						}

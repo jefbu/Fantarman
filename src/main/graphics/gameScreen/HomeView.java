@@ -78,6 +78,7 @@ public class HomeView extends JPanel {
 		shortLeague.fillShortLeague();
 		shortArmy.fillShortArmy();
 		shortInfo.fillShortInformation();
+		calendarPanel.globalCalendarCounter = 0;
 		calendarPanel.fillShortFixtures(Main.league.calendarDay);
 		Screen.gameScreen.bottomPanel.bottomTextPanel.fillBottomTextPanel(true);
 

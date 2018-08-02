@@ -128,16 +128,21 @@ public class ShortInfo extends JPanel {
 			projectionResultPanel = new LabeledPanel(halfWidth * 3 / 10, height / 10);
 			projectionResultPanel.setBackground(Colors.lgrey);
 			projectionResultPanel.label.setForeground(Colors.vdgrey);
-			leftPanel.add(projectionResultPanel);		
+			leftPanel.add(projectionResultPanel);
+
+			JPanel emptyDivision1Panel = new JPanel();
+			emptyDivision1Panel.setPreferredSize(new Dimension(halfWidth * 7 / 10, height / 30));
+			emptyDivision1Panel.setBackground(Colors.lgrey);
+			leftPanel.add(emptyDivision1Panel);
 			
-			boardSatisfactionPanel = new LabeledPanel(halfWidth * 7 / 10, height / 10);
+			boardSatisfactionPanel = new LabeledPanel(halfWidth * 7 / 10, height / 18);
 			boardSatisfactionPanel.setBackground(Colors.lgrey);
 			boardSatisfactionPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 			boardSatisfactionPanel.label.setForeground(Colors.vdgrey);
 			boardSatisfactionPanel.label.setText("Board Satisfaction");
 			leftPanel.add(boardSatisfactionPanel);	
 			
-			boardSatisfactionResultPanel = new LabeledPanel(halfWidth * 3 / 10, height / 10);
+			boardSatisfactionResultPanel = new LabeledPanel(halfWidth * 3 / 10, height / 18);
 			boardSatisfactionResultPanel.setBackground(Colors.lgrey);
 			boardSatisfactionResultPanel.label.setForeground(Colors.vdgrey);
 			leftPanel.add(boardSatisfactionResultPanel);	
@@ -145,14 +150,19 @@ public class ShortInfo extends JPanel {
 			boardHistoryPanel = new BoardHistoryPanel(halfWidth / 3, height / 10);
 			leftPanel.add(boardHistoryPanel);
 			
-			fanSatisfactionPanel = new LabeledPanel(halfWidth * 7 / 10, height / 10);
+			JPanel emptyDivision2Panel = new JPanel();
+			emptyDivision2Panel.setPreferredSize(new Dimension(halfWidth * 7 / 10, height / 30));
+			emptyDivision2Panel.setBackground(Colors.lgrey);
+			leftPanel.add(emptyDivision2Panel);
+			
+			fanSatisfactionPanel = new LabeledPanel(halfWidth * 7 / 10, height / 18);
 			fanSatisfactionPanel.setBackground(Colors.lgrey);
 			fanSatisfactionPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 			fanSatisfactionPanel.label.setForeground(Colors.vdgrey);
 			fanSatisfactionPanel.label.setText("Fan Satisfaction");
 			leftPanel.add(fanSatisfactionPanel);
 			
-			fanSatisfactionResultPanel = new LabeledPanel(halfWidth * 3 / 10, height / 10);
+			fanSatisfactionResultPanel = new LabeledPanel(halfWidth * 3 / 10, height / 18);
 			fanSatisfactionResultPanel.setBackground(Colors.lgrey);
 			fanSatisfactionResultPanel.label.setForeground(Colors.vdgrey);
 			leftPanel.add(fanSatisfactionResultPanel);	

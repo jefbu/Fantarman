@@ -26,44 +26,41 @@ public class ArmourPanel extends JButton {
 		super();
 		
 		setPreferredSize(new Dimension(width, height));
-		setBackground(Colors.green);
+		setBackground(Colors.grey);
 		setBorder(null);
-		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 1));
+		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		
-		int individualWidth = (width / 8);
-		int individualHeight = height - 1;
-		
-		namePanel = new LabeledPanel(individualWidth * 2, individualHeight);
+		namePanel = new LabeledPanel(width / 4, height);
 		namePanel.setBackground(Colors.lorange);
 		namePanel.label.setForeground(Colors.dorange);
 		add(namePanel);
 		
-		defencePanel = new LabeledPanel(individualWidth + 1, individualHeight);
+		defencePanel = new LabeledPanel(width / 8, height);
 		defencePanel.setBackground(Colors.lorange);
 		defencePanel.label.setForeground(Colors.dorange);
 		add(defencePanel);
 		
-		moralePanel = new LabeledPanel(individualWidth, individualHeight);
+		moralePanel = new LabeledPanel(width / 8, height);
 		moralePanel.setBackground(Colors.lorange);
 		moralePanel.label.setForeground(Colors.dorange);
 		add(moralePanel);
 		
-		movePanel = new LabeledPanel(individualWidth, individualHeight);
+		movePanel = new LabeledPanel(width / 8, height);
 		movePanel.setBackground(Colors.lorange);
 		movePanel.label.setForeground(Colors.dorange);
 		add(movePanel);
 		
-		speedPanel = new LabeledPanel(individualWidth, individualHeight);
+		speedPanel = new LabeledPanel(width / 8, height);
 		speedPanel.setBackground(Colors.lorange);
 		speedPanel.label.setForeground(Colors.dorange);
 		add(speedPanel);
 		
-		costPanel = new LabeledPanel(individualWidth, individualHeight);
+		costPanel = new LabeledPanel(width / 8, height);
 		costPanel.setBackground(Colors.lorange);
 		costPanel.label.setForeground(Colors.dorange);
 		add(costPanel);
 		
-		upkeepPanel = new LabeledPanel(individualWidth + 1, individualHeight);
+		upkeepPanel = new LabeledPanel(width / 8 + 6, height);
 		upkeepPanel.setBackground(Colors.lorange);
 		upkeepPanel.label.setForeground(Colors.dorange);
 		add(upkeepPanel);		

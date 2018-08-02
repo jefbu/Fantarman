@@ -1,10 +1,11 @@
 package main.graphics.battleScreen;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 
 import javax.swing.JPanel;
+
+import main.utility.Colors;
 
 public class RightAggregatePanel extends JPanel {
 	
@@ -19,7 +20,7 @@ public class RightAggregatePanel extends JPanel {
 		super();
 		
 		adjustDimensions(battleScreenWidth, battleScreenHeight);		
-		setBackground(new Color(240, 50, 60));
+		setBackground(Colors.vdgrey);
 		setLayout(new FlowLayout(FlowLayout.LEADING, 2, 2));
 		
 		infoTextPanel = new InfoTextPanel(dimension);

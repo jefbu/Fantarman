@@ -8,6 +8,7 @@ import main.AI.DeploymentStrategy;
 import main.AI.GlobalBattleStrategy;
 import main.entity.leagues.ScoreSheet;
 import main.entity.regiments.Regiment;
+import main.entity.regiments.Role;
 import main.utility.Trophies;
 
 public class Army implements Serializable {
@@ -74,6 +75,11 @@ public class Army implements Serializable {
 		income = income + regiment.captain.prestige * 2;
 		income = income + (regiment.enemiesDefeated * 10) - (regiment.timesDefeated * 5);
 		}
+		for(Regiment regiment: roster) {
+		if(regiment.role == Role.MARKETING) {
+			income = income + regiment.captain.prestige * 3;
+		}
+		}
 		switch (Main.league.armies.indexOf(this)) {
 		case 0: income = income * 15 / 10; break;
 		case 1: income = income * 12 / 10; break;
@@ -94,7 +100,6 @@ public class Army implements Serializable {
 		boardSatisfaction = boardSatisfaction + matchResult;
 		boardSatisfaction = boardSatisfaction + calculateLeagueResult();
 		boardSatisfaction = boardSatisfaction + (3 * calculateFinancialStability());
-		System.out.println("New Board Satisfaction is " + boardSatisfaction);
 		
 	}
 	

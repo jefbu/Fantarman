@@ -29,14 +29,17 @@ public class ButtonPanel extends JPanel {
 		ImageLoader imageLoader = new ImageLoader();
 		
 		int roundedHeight = battleScreenHeight * 2 / 10 + ((battleScreenHeight * 8 / 10) % 48);
-		int roundedWidth = battleScreenWidth * 1 / 10;
+		int roundedWidth = battleScreenWidth * 10 / 100;
 
 		setPreferredSize(new Dimension(roundedWidth, roundedHeight));
-		setBackground(Colors.dblue);
+		setBackground(Colors.dgrey);
 		setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 
 		exitButton = new JButton();
 		exitButton.setPreferredSize(new Dimension(roundedWidth, roundedHeight));
+		exitButton.setOpaque(false);
+		exitButton.setBorderPainted(false);
+		exitButton.setContentAreaFilled(false);
 		exitButton.setIcon(imageLoader.loadImageIcon("/icons/giveUpButton.png", roundedWidth, roundedHeight));
 		exitButton.addActionListener(new ActionListener() {
 

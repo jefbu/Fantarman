@@ -44,6 +44,11 @@ public class FanHistoryPanel extends JPanel {
 		setPreferredSize(new Dimension(width, height));
 		setBackground(Colors.lgrey);
 		setLayout(new FlowLayout(FlowLayout.LEFT, 2, 0));
+		
+		JPanel emptyLeftPanel = new JPanel();
+		emptyLeftPanel.setPreferredSize(new Dimension(width * 16 / 100, height));
+		emptyLeftPanel.setBackground(Colors.lgrey);
+		add(emptyLeftPanel);
 
 		minusFourTotalPanel = new JPanel();
 		minusFourTotalPanel.setPreferredSize(new Dimension(width * 16 / 100, height * 2 / 3));

@@ -32,7 +32,6 @@ public class BattleOrchestrator {
 		activeArmy = yourBattleArmy;
 		this.yourBattleArmy = yourBattleArmy;
 		this.opponentBattleArmy = opponentBattleArmy;
-		
 
 		for (Regiment regiment : yourBattleArmy.roster) {
 			regiment.attributeBattleSpeed();
@@ -44,7 +43,7 @@ public class BattleOrchestrator {
 			regiment.attributeBattleLife();
 			regiment.attributeBattleStats();
 		}
-		
+
 		BattleScreen.informationPanel.yourPanel.fillBattleOverviewInformationPanel(yourBattleArmy);
 		BattleScreen.informationPanel.enemyPanel.fillBattleOverviewInformationPanel(opponentBattleArmy);
 		BattleScreen.informationPanel.yourPanel.update(yourBattleArmy);
@@ -96,6 +95,15 @@ public class BattleOrchestrator {
 	}
 
 	public void orchestrateBattle() {
+		for (Regiment regiment : opponentBattleArmy.roster) {
+			System.out.println("regiment " + regiment.captain.name + " has " + regiment.captain.orders + " orders");
+			for (int i = 0; i < regiment.instructions.size(); i++) {
+				System.out.println("order: " + regiment.instructions.get(i).target.toString()
+						+ regiment.instructions.get(i).condition.toString()
+						+ regiment.instructions.get(i).order.toString());
+			}
+		}
+
 		totalTurns = decideTotalTurns();
 		timer.start();
 	}

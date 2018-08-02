@@ -30,7 +30,7 @@ public abstract class Colors {
 	
 	public static Color textyellow = new Color(235, 235, 180);
 	public static Color white = new Color(170, 210, 255);
-	public static Color emptyPanelColor = new Color(70, 65, 55);
+	public static Color emptyPanelColor = new Color(77, 77, 77);
 	
 
 	}
