@@ -14,7 +14,9 @@ import javax.swing.JPanel;
 
 import main.Main;
 import main.components.Colour;
+import main.components.ContentPanel;
 import main.components.IconLabelPanel;
+import main.components.LabeledPanel;
 import main.graphics.Screen;
 import main.utility.Colors;
 import main.utility.ImageLoader;
@@ -31,6 +33,7 @@ public class TitleScreen extends JPanel {
 		
 		super();
 		setPreferredSize(new Dimension(width, height));
+		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		
 		ImageLoader imageLoader = new ImageLoader();
 		try {
@@ -48,21 +51,36 @@ public class TitleScreen extends JPanel {
             }
         };
         backgroundPanel.setPreferredSize(new Dimension(width, height));
-        backgroundPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
+        backgroundPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
         add(backgroundPanel);
         
         JPanel topPanel = new JPanel();
-        topPanel.setPreferredSize(new Dimension(width, height / 10));
+        topPanel.setPreferredSize(new Dimension(width, height * 2 / 3));
         topPanel.setOpaque(false);
         backgroundPanel.add(topPanel);
         
         JPanel middlePanel = new JPanel();
-        middlePanel.setPreferredSize(new Dimension (width, height / 10 * 8));
+        middlePanel.setPreferredSize(new Dimension (width / 3, height / 3));
         middlePanel.setOpaque(false);
-        middlePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 20));
+        middlePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
         backgroundPanel.add(middlePanel);
         
-        IconLabelPanel startPanel = new IconLabelPanel(width / 2, height / 5, Colour.BLUE);
+		ContentPanel titleBarPanel = new ContentPanel(width / 4, height / 20, Colors.grey,
+				new FlowLayout(FlowLayout.LEADING, 5, 0));
+			LabeledPanel namePanel = new LabeledPanel(width / 5, height / 20);
+			namePanel.setBackground(Colors.grey);
+			namePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, height / 100));
+			namePanel.label.setFont(new Font("garamond", Font.BOLD, 16));
+			namePanel.label.setForeground(Colors.vlgrey);
+			namePanel.label.setText("Fantarm");
+			titleBarPanel.insidePanel.add(namePanel);
+		middlePanel.add(titleBarPanel);
+		
+		ContentPanel infoPanel = new ContentPanel(width / 4, height / 4, Colors.dgrey,
+				new FlowLayout(FlowLayout.LEFT, 0, 0));
+		middlePanel.add(infoPanel);
+        
+        IconLabelPanel startPanel = new IconLabelPanel(width / 5, height / 15, Colour.BLUE);
         startPanel.buttonedPanel.label.setForeground(Colors.textyellow);
         startPanel.buttonedPanel.label.setFont(new Font("garamond", Font.BOLD, 48));
         startPanel.buttonedPanel.label.setText("Start");
@@ -72,9 +90,9 @@ public class TitleScreen extends JPanel {
         		Screen.gameStartScreen.setVisible(true);
         	}
         });
-        middlePanel.add(startPanel);
+        infoPanel.insidePanel.add(startPanel);
         
-        IconLabelPanel loadPanel = new IconLabelPanel(width / 2, height / 5, Colour.GREEN);
+        IconLabelPanel loadPanel = new IconLabelPanel(width / 5, height / 15, Colour.GREEN);
         loadPanel.buttonedPanel.label.setForeground(Colors.textyellow);
         loadPanel.buttonedPanel.label.setFont(new Font("garamond", Font.BOLD, 48));
         loadPanel.buttonedPanel.label.setText("Load");
@@ -84,9 +102,9 @@ public class TitleScreen extends JPanel {
         		LoadGame.load();
         	}
         });
-        middlePanel.add(loadPanel);
+        infoPanel.insidePanel.add(loadPanel);
         
-        IconLabelPanel exitPanel = new IconLabelPanel(width / 2, height / 5, Colour.RED);
+        IconLabelPanel exitPanel = new IconLabelPanel(width / 5, height / 15, Colour.RED);
         exitPanel.buttonedPanel.label.setForeground(Colors.textyellow);
         exitPanel.buttonedPanel.label.setFont(new Font("garamond", Font.BOLD, 48));
         exitPanel.buttonedPanel.label.setText("Quit");
@@ -95,10 +113,11 @@ public class TitleScreen extends JPanel {
         		Main.screen.dispose();
         	}
         });
-        middlePanel.add(exitPanel);
+        infoPanel.insidePanel.add(exitPanel);
         
+        /*
         JPanel bottomPanel = new JPanel();
-        bottomPanel.setPreferredSize(new Dimension( width, height / 50));
+        bottomPanel.setPreferredSize(new Dimension(width * 3 / 4, height / 2));
         bottomPanel.setBackground(Colors.blue);
         bottomPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 0));
         JLabel gameTitleLabel = new JLabel();
@@ -106,6 +125,7 @@ public class TitleScreen extends JPanel {
         gameTitleLabel.setText("Hands Off My Army, v0.5.6.1.");
         bottomPanel.add(gameTitleLabel);
         backgroundPanel.add(bottomPanel);
+        */
 
 		
 	}
