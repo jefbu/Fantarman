@@ -94,7 +94,7 @@ public class Deployment {
 
 			}
 			TextPopup popup = new TextPopup(BattleScreen.battleScene.roundedWidth / 3,
-					BattleScreen.battleScene.roundedHeight / 4, Colour.GREEN, false);
+					BattleScreen.battleScene.roundedHeight / 4, Colour.DGREY, false);
 			popup.writeText(BattleStartStrings.rollQuote());
 			popup.setVisible(true);
 			battleOrchestrator.orchestrateBattle();

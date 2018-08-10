@@ -64,9 +64,9 @@ public class BottomBattlePanel extends JPanel {
 				Main.battles.add(new Battle());
         		}
         		else {
-        			TextPopup popup = new TextPopup(width * 3 / 2, height, Colour.LRED, true);
+        			TextPopup popup = new TextPopup(width * 3 / 2, height, Colour.DGREY, true);
         			
-        			popup.writeText("You have not selected eight regiments. Do you still want to continue?");
+        			popup.writeText("<font color = 'rgb(180, 180, 180)'>" + "You have not selected eight regiments. Do you still want to continue?");
         			
         				try { popup.confirmButton.removeActionListener(popup.confirmButton.getActionListeners()[0]); }
         				catch (Exception e1) {}

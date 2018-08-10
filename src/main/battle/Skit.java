@@ -16,6 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
+import main.components.ContentPanel;
 import main.entity.armies.Army;
 import main.entity.captains.Conversation;
 import main.entity.regiments.Regiment;
@@ -54,100 +55,108 @@ public class Skit extends JDialog {
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setUndecorated(true);
 
-		JPanel panel = new JPanel();
-		panel.setPreferredSize(new Dimension(100, 100));
-		panel.setBackground(Colors.lblue);
-		panel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+		ContentPanel panel = new ContentPanel(width, height, Colors.lgrey, new FlowLayout(FlowLayout.LEFT, 0, 0));
+		// panel.setPreferredSize(new Dimension(100, 100));
+		// panel.setBackground(Colors.lblue);
+		// panel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		add(panel);
 
 		JPanel topEmptyPanel = new JPanel();
 		topEmptyPanel.setPreferredSize(new Dimension(width, height / 10));
-		topEmptyPanel.setBackground(Colors.lblue);
-		panel.add(topEmptyPanel);
+		topEmptyPanel.setBackground(Colors.lgrey);
+		panel.insidePanel.add(topEmptyPanel);
 
 		JPanel topLeftEmptyPanel = new JPanel();
 		topLeftEmptyPanel.setPreferredSize(new Dimension(width / 10, height * 3 / 10));
-		topLeftEmptyPanel.setBackground(Colors.lblue);
-		panel.add(topLeftEmptyPanel);
+		topLeftEmptyPanel.setBackground(Colors.lgrey);
+		panel.insidePanel.add(topLeftEmptyPanel);
 
 		JPanel topPortraitPanel = new JPanel();
 		topPortraitPanel.setPreferredSize(new Dimension(width * 2 / 10, height * 3 / 10));
-		topPortraitPanel.setBackground(Colors.lorange);
+		topPortraitPanel.setBackground(Colors.grey);
 		topPortraitPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		yourIconLabel = new JLabel();
 		topPortraitPanel.add(yourIconLabel);
-		panel.add(topPortraitPanel);
+		panel.insidePanel.add(topPortraitPanel);
 
-		JPanel topTextPanel = new JPanel();
-		topTextPanel.setPreferredSize(new Dimension(width * 5 / 10, height * 3 / 10));
-		topTextPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-		topTextPanel.setBackground(Colors.blue);
-		yourTextLabel = new JTextPane();
-		yourTextLabel.setPreferredSize(new Dimension(width * 5 / 10, height * 3 / 10));
-		// yourTextLabel.setLineWrap(true);
-		// yourTextLabel.setWrapStyleWord(true);
-		yourTextLabel.setOpaque(false);
-		yourTextLabel.setBorder(BorderFactory.createEmptyBorder(10, 10, 0, 0));
-		yourTextLabel.setContentType("text/html");
-		yourTextLabel.putClientProperty(JTextPane.HONOR_DISPLAY_PROPERTIES, Boolean.TRUE);
-		yourTextLabel.setFont(new Font("garamond", Font.BOLD, 18));
-		topTextPanel.add(yourTextLabel);
-		panel.add(topTextPanel);
+		ContentPanel topTextContentPanel = new ContentPanel(width / 2 + 10, height * 3 / 10 + 10, Colors.vlgrey,
+				new FlowLayout(FlowLayout.LEFT, width / 200, height / 200));
+		panel.insidePanel.add(topTextContentPanel);
+
+			JPanel topTextPanel = new JPanel();
+			topTextPanel.setPreferredSize(new Dimension(width * 48 / 100, height * 28 / 100));
+			topTextPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+			topTextPanel.setBackground(Colors.vdgrey);
+			yourTextLabel = new JTextPane();
+			yourTextLabel.setPreferredSize(new Dimension(width * 48 / 100, height * 28 / 100));
+			// yourTextLabel.setLineWrap(true);
+			// yourTextLabel.setWrapStyleWord(true);
+			yourTextLabel.setOpaque(false);
+			yourTextLabel.setBorder(BorderFactory.createEmptyBorder(10, 10, 0, 0));
+			yourTextLabel.setContentType("text/html");
+			yourTextLabel.putClientProperty(JTextPane.HONOR_DISPLAY_PROPERTIES, Boolean.TRUE);
+			yourTextLabel.setFont(new Font("garamond", Font.BOLD, 18));
+			topTextPanel.add(yourTextLabel);
+			topTextContentPanel.insidePanel.add(topTextPanel);
 
 		JPanel topRightEmptyPanel = new JPanel();
-		topRightEmptyPanel.setPreferredSize(new Dimension(width * 15 / 100, height * 3 / 10));
-		topRightEmptyPanel.setBackground(Colors.lblue);
-		panel.add(topRightEmptyPanel);
+		topRightEmptyPanel.setPreferredSize(new Dimension(width * 18 / 100, height * 3 / 10));
+		topRightEmptyPanel.setBackground(Colors.lgrey);
+		panel.insidePanel.add(topRightEmptyPanel);
 
 		JPanel middlePanel = new JPanel();
 		middlePanel.setPreferredSize(new Dimension(width, height / 10));
-		middlePanel.setBackground(Colors.lblue);
-		panel.add(middlePanel);
+		middlePanel.setBackground(Colors.lgrey);
+		panel.insidePanel.add(middlePanel);
 
 		JPanel bottomLeftEmptyPanel = new JPanel();
 		bottomLeftEmptyPanel.setPreferredSize(new Dimension(width * 15 / 100, height * 3 / 10));
-		bottomLeftEmptyPanel.setBackground(Colors.lblue);
-		panel.add(bottomLeftEmptyPanel);
+		bottomLeftEmptyPanel.setBackground(Colors.lgrey);
+		panel.insidePanel.add(bottomLeftEmptyPanel);
+		
+		ContentPanel bottomTextContentPanel = new ContentPanel(width / 2 + 10, height * 3 / 10 + 10, Colors.vlgrey,
+				new FlowLayout(FlowLayout.LEFT, width / 200, height / 200));
+		panel.insidePanel.add(bottomTextContentPanel);
 
-		JPanel bottomTextPanel = new JPanel();
-		bottomTextPanel.setPreferredSize(new Dimension(width * 5 / 10, height * 3 / 10));
-		bottomTextPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-		bottomTextPanel.setBackground(Colors.blue);
-		opponentTextLabel = new JTextPane();
-		opponentTextLabel.setPreferredSize(new Dimension(width * 5 / 10, height * 3 / 10));
-		// opponentTextLabel.setLineWrap(true);
-		// opponentTextLabel.setWrapStyleWord(true);
-		opponentTextLabel.setOpaque(false);
-		opponentTextLabel.setBorder(BorderFactory.createEmptyBorder(10, 10, 0, 0));
-		opponentTextLabel.setContentType("text/html");
-		opponentTextLabel.putClientProperty(JTextPane.HONOR_DISPLAY_PROPERTIES, Boolean.TRUE);
-		opponentTextLabel.setFont(new Font("garamond", Font.BOLD, 18));
-		bottomTextPanel.add(opponentTextLabel);
-		panel.add(bottomTextPanel);
+			JPanel bottomTextPanel = new JPanel();
+			bottomTextPanel.setPreferredSize(new Dimension(width * 48 / 100, height * 28 / 100));
+			bottomTextPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+			bottomTextPanel.setBackground(Colors.vdgrey);
+			opponentTextLabel = new JTextPane();
+			opponentTextLabel.setPreferredSize(new Dimension(width * 48 / 100, height * 28 / 100));
+			// opponentTextLabel.setLineWrap(true);
+			// opponentTextLabel.setWrapStyleWord(true);
+			opponentTextLabel.setOpaque(false);
+			opponentTextLabel.setBorder(BorderFactory.createEmptyBorder(5, 0, 0, 30));
+			opponentTextLabel.setContentType("text/html");
+			opponentTextLabel.putClientProperty(JTextPane.HONOR_DISPLAY_PROPERTIES, Boolean.TRUE);
+			opponentTextLabel.setFont(new Font("garamond", Font.BOLD, 18));
+			bottomTextPanel.add(opponentTextLabel);
+			bottomTextContentPanel.insidePanel.add(bottomTextPanel);
 
 		JPanel bottomPortraitPanel = new JPanel();
 		bottomPortraitPanel.setPreferredSize(new Dimension(width * 2 / 10, height * 3 / 10));
-		bottomPortraitPanel.setBackground(Colors.lorange);
+		bottomPortraitPanel.setBackground(Colors.grey);
 		bottomPortraitPanel.setLayout(new FlowLayout(FlowLayout.LEADING, 0, 0));
 		opponentIconLabel = new JLabel();
 		bottomPortraitPanel.add(opponentIconLabel);
-		panel.add(bottomPortraitPanel);
+		panel.insidePanel.add(bottomPortraitPanel);
 
 		JPanel bottomRightEmptyPanel = new JPanel();
 		bottomRightEmptyPanel.setPreferredSize(new Dimension(width / 10, height * 3 / 10));
-		bottomRightEmptyPanel.setBackground(Colors.lblue);
-		panel.add(bottomRightEmptyPanel);
+		bottomRightEmptyPanel.setBackground(Colors.lgrey);
+		panel.insidePanel.add(bottomRightEmptyPanel);
 
 		JPanel bottomEmptyPanel = new JPanel();
 		bottomEmptyPanel.setPreferredSize(new Dimension(width, height * 15 / 100));
-		bottomEmptyPanel.setBackground(Colors.lblue);
-		bottomEmptyPanel.setLayout(new FlowLayout(FlowLayout.RIGHT, 5, 5));
+		bottomEmptyPanel.setBackground(Colors.lgrey);
+		bottomEmptyPanel.setLayout(new FlowLayout(FlowLayout.RIGHT, width / 20, height / 30));
 
 		button = new JButton();
 		button.setPreferredSize(new Dimension(width / 15, height / 10));
 		bottomEmptyPanel.add(button);
 
-		panel.add(bottomEmptyPanel);
+		panel.insidePanel.add(bottomEmptyPanel);
 
 	}
 

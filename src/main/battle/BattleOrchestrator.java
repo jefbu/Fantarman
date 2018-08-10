@@ -53,14 +53,13 @@ public class BattleOrchestrator {
 			public void actionPerformed(ActionEvent e) {
 
 				if (yourBattleArmy.roster.size() == 0 || opponentBattleArmy.roster.size() == 0) {
-					BattleConclusion battleConclusion = new BattleConclusion(Colour.RED, yourBattleArmy,
+					BattleConclusion battleConclusion = new BattleConclusion(Colour.DGREY, yourBattleArmy,
 							opponentBattleArmy);
 					battleConclusion.setVisible(true);
 					timer.stop();
 					refreshMap();
 				} else if (counter == totalTurns) {
-					System.out.println("Total turns in this battle: " + counter);
-					BattleConclusion battleConclusion = new BattleConclusion(Colour.RED, yourBattleArmy,
+					BattleConclusion battleConclusion = new BattleConclusion(Colour.DGREY, yourBattleArmy,
 							opponentBattleArmy);
 					battleConclusion.setVisible(true);
 					timer.stop();

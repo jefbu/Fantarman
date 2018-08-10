@@ -50,7 +50,7 @@ public class ButtonPanel extends JPanel {
 				Army winnerArmy = new Army();
 				winnerArmy.value = 100;
 				winnerArmy.roster.add(new FireMages("Test", new Generic(), null));
-				BattleConclusion battleConclusion = new BattleConclusion(Colour.RED, loserArmy, winnerArmy);
+				BattleConclusion battleConclusion = new BattleConclusion(Colour.DGREY, loserArmy, winnerArmy);
 				battleConclusion.setVisible(true);
 
 			}

@@ -33,7 +33,7 @@ public class IconLabelPanel extends JPanel {
 		decideIcon(colour);	
 		add(iconLabel);
 		
-		buttonedPanel = new ButtonedPanel(width, height, Colors.textyellow);
+		buttonedPanel = new ButtonedPanel(width, height, Colors.vdgrey);
 		buttonedPanel.setOpaque(false);
 		buttonedPanel.button.setBorder(null);
 		buttonedPanel.button.setContentAreaFilled(false);
@@ -45,23 +45,23 @@ public class IconLabelPanel extends JPanel {
 	
 	private void decideIcon(Colour colour) {
 		switch(colour) {
-		case BLUE: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelBlue2.png", width, height));
+		case BLUE: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanel.png", width, height));
 			break;
-		case DBLUE: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelBlue2.png", width, height));
+		case DBLUE: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanel.png", width, height));
 			break;
-		case DGREEN: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelGreen2.png", width, height));
+		case DGREEN: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanel.png", width, height));
 			break;
-		case DRED: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelRed2.png", width, height));
+		case DRED: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanel.png", width, height));
 			break;
-		case GREEN: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelGreen2.png", width, height));
+		case GREEN: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanel.png", width, height));
 			break;
-		case LBLUE: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelBlue2.png", width, height));
+		case LBLUE: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanel.png", width, height));
 			break;
-		case LGREEN: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelGreen2.png", width, height));
+		case LGREEN: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanel.png", width, height));
 			break;
-		case LRED: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelRed2.png", width, height));
+		case LRED: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanel.png", width, height));
 			break;
-		case RED: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanelRed2.png", width, height));
+		case RED: iconLabel.setIcon(imageLoader.loadImageIcon("/components/IconLabelPanel.png", width, height));
 			break;
 		default:
 			break;	

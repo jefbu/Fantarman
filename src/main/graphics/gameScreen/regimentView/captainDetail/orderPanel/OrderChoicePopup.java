@@ -24,13 +24,13 @@ public class OrderChoicePopup extends Popup {
 		state = 0;
 
 		orderChoicePopupOrderPanel = new OrderChoicePopupOrderPanel(width - 10, height - 10, orderChoicePopup);
-		orderChoicePopupOrderPanel.setBackground(Colors.orange);
+		orderChoicePopupOrderPanel.setBackground(Colors.grey);
 
 		orderChoicePopupTargetPanel = new OrderChoicePopupTargetPanel(width - 10, height - 10, orderChoicePopupOrderPanel);
-		orderChoicePopupTargetPanel.setBackground(Colors.orange);
+		orderChoicePopupTargetPanel.setBackground(Colors.grey);
 
 		orderChoicePopupConditionPanel = new OrderChoicePopupConditionPanel(width - 10, height - 10, orderChoicePopupTargetPanel);
-		orderChoicePopupConditionPanel.setBackground(Colors.orange);
+		orderChoicePopupConditionPanel.setBackground(Colors.grey);
 
 		mainPanelTopPanel.add(orderChoicePopupConditionPanel);
 		mainPanelTopPanel.add(orderChoicePopupTargetPanel);

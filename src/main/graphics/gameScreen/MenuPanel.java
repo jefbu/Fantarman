@@ -16,6 +16,7 @@ import main.components.TextPopup;
 import main.graphics.Screen;
 import main.utility.Colors;
 import main.utility.LoadGame;
+import main.utility.SaveGame;
 
 public class MenuPanel extends JPanel {
 	
@@ -66,9 +67,10 @@ public class MenuPanel extends JPanel {
 			saveButton.setBorderPainted(false);
 			saveButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					TextPopup savePopup = new TextPopup (width / 3, height/ 3, Colour.LBLUE, true);
+					TextPopup savePopup = new TextPopup (width / 2, height * 20, Colour.DGREY, true);
 					
-					savePopup.writeText("Do you want to save the game (old save will be overwritten)?");
+					savePopup.writeText("<font color = 'rgb(180, 180, 180)'>" 
+					+ "Do you want to save the game (old save will be overwritten)?");
 					
 					try { savePopup.confirmButton.removeActionListener(savePopup.confirmButton.getActionListeners()[0]);
 					} catch (Exception e1) {}
@@ -78,7 +80,7 @@ public class MenuPanel extends JPanel {
 					savePopup.confirmButton.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
 							savePopup.dispose();
-							LoadGame.load();
+							SaveGame.save();
 						}
 					});
 					
@@ -110,9 +112,10 @@ public class MenuPanel extends JPanel {
 			loadButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					
-					TextPopup loadPopup = new TextPopup (width / 3, height / 3, Colour.LBLUE, true);
+					TextPopup loadPopup = new TextPopup (width / 2, height * 20, Colour.DGREY, true);
 					
-					loadPopup.writeText("Do you want to load the saved game?");
+					loadPopup.writeText("<font color = 'rgb(180, 180, 180)'>" + 
+					"Do you want to load the saved game?");
 					
 					try { loadPopup.confirmButton.removeActionListener(loadPopup.confirmButton.getActionListeners()[0]);
 					} catch (Exception e1) {}

@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import main.components.Colour;
 import main.components.ContentPanel;
 import main.entity.regiments.Regiment;
+import main.graphics.Screen;
 import main.graphics.gameScreen.regimentView.captainDetail.orderPanel.IndividualOrderPanel;
 import main.graphics.gameScreen.regimentView.captainDetail.orderPanel.OrderChoicePopup;
 import main.graphics.gameScreen.regimentView.captainDetail.orderPanel.OrderTitlePanel;
@@ -38,7 +39,7 @@ public class OrderPanel extends ContentPanel {
 		orderTitlePanel = new OrderTitlePanel(width - 11, height / 6 - 4);
 		insidePanel.add(orderTitlePanel);
 		
-		orderChoicePopup = new OrderChoicePopup(width * 2, height * 2, Colour.DRED, false);
+		orderChoicePopup = new OrderChoicePopup(width, height * 2, Colour.DGREY, false);
 
 		for (int i = 0; i < 5; i++) {
 			orderList.add(new IndividualOrderPanel(width - 11, height / 6 - 3));
@@ -64,10 +65,7 @@ public class OrderPanel extends ContentPanel {
 				orderPanel.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						orderChoicePopup.fillPopup(index, regiment);
-						orderChoicePopup.setLocation(MouseInfo.getPointerInfo().getLocation());
-						int x = orderChoicePopup.getX();
-						int y = orderChoicePopup.getY() - height * 2;
-						orderChoicePopup.setLocation(x, y);
+						orderChoicePopup.setLocationRelativeTo(Screen.gameScreen.mainPanel.regimentView);
 						orderChoicePopup.setVisible(true);
 					}
 				});

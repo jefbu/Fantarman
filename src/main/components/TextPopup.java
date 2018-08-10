@@ -53,17 +53,16 @@ public class TextPopup extends Popup {
 
 		bottomPanel = new JPanel();
 		bottomPanel.setPreferredSize(new Dimension(width, height));
-		bottomPanel.setBackground(applyColour(colour, 0));
 		bottomPanel.setLayout(new FlowLayout(FlowLayout.LEADING, 3, 3));
 
 		middlePanel = new JPanel();
 		middlePanel.setPreferredSize(new Dimension(width - 6, height - 6));
-		middlePanel.setBackground(applyColour(colour, 40));
 		middlePanel.setLayout(new FlowLayout(FlowLayout.LEADING, 3, 3));
 
 		mainPanel = new JPanel();
-		mainPanel.setPreferredSize(new Dimension(width - 12, height - 12));
-		mainPanel.setBackground(applyColour(colour, 80));
+		int mainPanelWidth = width - 12;
+		int mainPanelHeight = height - 12;
+		mainPanel.setPreferredSize(new Dimension(mainPanelWidth, mainPanelHeight));
 		mainPanel.setLayout(new FlowLayout(FlowLayout.LEADING, 0, 0));
 
 		add(bottomPanel);
@@ -71,8 +70,7 @@ public class TextPopup extends Popup {
 		middlePanel.add(mainPanel);
 
 		mainPanelTopPanel = new JPanel();
-		mainPanelTopPanel.setPreferredSize(new Dimension(width - 12, (height - 12) * 3 / 4));
-		mainPanelTopPanel.setBackground(applyColour(colour, 80));
+		mainPanelTopPanel.setPreferredSize(new Dimension(mainPanelWidth, mainPanelHeight * 3 / 4));
 		mainPanelTopPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 8, 8));
 
 		textArea = new JTextPane();
@@ -81,7 +79,6 @@ public class TextPopup extends Popup {
 		textArea.setFont(new Font("garamond", Font.BOLD, 20));
 		textArea.setPreferredSize(new Dimension((width - 12) - 16, ((height - 12) * 3 / 4) - 16));
 		textArea.setEditable(false);
-		textArea.setBackground(applyColour(colour, 80));
 		textArea.setMargin(new Insets(10, 10, 10, 10));
 
 		mainPanelTopPanel.add(textArea);
@@ -89,28 +86,29 @@ public class TextPopup extends Popup {
 		mainPanel.add(mainPanelTopPanel);
 
 		mainPanelBottomLeftPanel = new JPanel();
-		mainPanelBottomLeftPanel.setPreferredSize(new Dimension((width - 12) * 2 / 3, (height - 12) / 4));
-		mainPanelBottomLeftPanel.setBackground(applyColour(colour, 80));
+		mainPanelBottomLeftPanel.setPreferredSize(new Dimension(mainPanelWidth * 2 / 3, mainPanelHeight / 4));
 
 		mainPanel.add(mainPanelBottomLeftPanel);
 
 		mainPanelBottomRightPanel = new JPanel();
-		mainPanelBottomRightPanel.setPreferredSize(new Dimension((width - 12) / 3, (height - 12) / 4));
-		mainPanelBottomRightPanel.setBackground(applyColour(colour, 80));
-		mainPanelBottomRightPanel.setLayout(new FlowLayout(FlowLayout.LEADING, 0, 2));
+		mainPanelBottomRightPanel.setPreferredSize(new Dimension(mainPanelWidth / 3, mainPanelHeight / 4));
+		mainPanelBottomRightPanel
+				.setLayout(new FlowLayout(FlowLayout.LEADING, mainPanelWidth / 100, mainPanelHeight / 10));
 
 		mainPanel.add(mainPanelBottomRightPanel);
 
 		if (dichotomy) {
 			confirmButton = new JButton();
-			confirmButton.setPreferredSize(new Dimension((width - 12) / 6, (height - 12) / 4 - 4));
+			confirmButton.setPreferredSize(new Dimension(mainPanelWidth / 7, mainPanelHeight / 6));
 			confirmButton.setOpaque(false);
 			confirmButton.setBorderPainted(false);
 			confirmButton.setContentAreaFilled(false);
 			if (height > 300) {
-				confirmIcon = imageLoader.loadImageIcon("/icons/yesButton.png", (width - 12) / 6, (height - 12) / 4 - 4);
+				confirmIcon = imageLoader.loadImageIcon("/icons/yesButton.png", mainPanelWidth / 7,
+						mainPanelHeight / 10);
 			} else {
-				confirmIcon = imageLoader.loadImageIcon("/icons/yesButton.png", (width - 12) / 6, (height - 12) / 4 - 4);
+				confirmIcon = imageLoader.loadImageIcon("/icons/yesButton.png", mainPanelWidth / 7,
+						mainPanelHeight / 10);
 			}
 			confirmButton.setIcon(confirmIcon);
 			confirmButton.addActionListener(new ActionListener() {
@@ -122,14 +120,14 @@ public class TextPopup extends Popup {
 			});
 			mainPanelBottomRightPanel.add(confirmButton);
 			cancelButton = new JButton();
-			cancelButton.setPreferredSize(new Dimension((width - 12) / 6, (height - 12) / 4 - 4));
+			cancelButton.setPreferredSize(new Dimension(mainPanelWidth / 7, mainPanelHeight / 6));
 			cancelButton.setOpaque(false);
 			cancelButton.setBorderPainted(false);
 			cancelButton.setContentAreaFilled(false);
 			if (height > 300) {
-				cancelIcon = imageLoader.loadImageIcon("/icons/noButton.png", (width - 12) / 6, (height - 12) / 4 - 4);
+				cancelIcon = imageLoader.loadImageIcon("/icons/noButton.png", mainPanelWidth / 7, mainPanelHeight / 10);
 			} else {
-				cancelIcon = imageLoader.loadImageIcon("/icons/noButton.png", (width - 12) / 6, (height - 12) / 4 - 4);
+				cancelIcon = imageLoader.loadImageIcon("/icons/noButton.png", mainPanelWidth / 7, mainPanelHeight / 10);
 			}
 			cancelButton.setIcon(cancelIcon);
 			cancelButton.addActionListener(new ActionListener() {
@@ -140,14 +138,14 @@ public class TextPopup extends Popup {
 			mainPanelBottomRightPanel.add(cancelButton);
 		} else {
 			acceptButton = new JButton();
-			acceptButton.setPreferredSize(new Dimension((width - 12) / 3, ((height - 12) / 4) - 4));
+			acceptButton.setPreferredSize(new Dimension(mainPanelWidth / 4, mainPanelHeight / 10));
 			acceptButton.setOpaque(false);
 			acceptButton.setContentAreaFilled(false);
 			acceptButton.setBorderPainted(false);
 			if (height > 300) {
-				acceptIcon = imageLoader.loadImageIcon("/icons/confirm.png", (width - 12) / 4, (height - 12) / 5);
+				acceptIcon = imageLoader.loadImageIcon("/icons/confirm.png", mainPanelWidth / 4, mainPanelHeight / 10);
 			} else {
-				acceptIcon = imageLoader.loadImageIcon("/icons/confirm.png", (width - 12) / 4, (height - 12) / 5);
+				acceptIcon = imageLoader.loadImageIcon("/icons/confirm.png", mainPanelWidth / 4, mainPanelHeight / 10);
 			}
 			acceptButton.setIcon(acceptIcon);
 			acceptButton.addActionListener(new ActionListener() {
@@ -157,43 +155,48 @@ public class TextPopup extends Popup {
 			});
 			mainPanelBottomRightPanel.add(acceptButton);
 		}
+		
+		applyColour(colour);
+		
 	}
 
-	private Color applyColour(Colour colour, int modifier) {
+	private void applyColour(Colour colour) {
 
 		switch (colour) {
-		case RED:
-			return new Color(160 + modifier, 60 + modifier, 40 + modifier / 2);
-		case GREEN:
-			return new Color(100 + modifier, 160 + modifier, 60 + modifier / 2);
-		case BLUE:
-			return new Color(60 + modifier / 2, 120 + modifier, 160 + modifier);
+
 		case GREY:
-			return Colors.grey;
-		case DBLUE:
-			return new Color(20 + modifier / 3, 40 + modifier / 2, 60 + modifier);
-		case DRED:
-			return new Color(20 + modifier, 10 + modifier / 2, modifier / 3);
-		case DGREEN:
-			return new Color(modifier / 3, 20 + modifier, 10 + modifier / 2);
+			bottomPanel.setBackground(Colors.dgrey);
+			middlePanel.setBackground(Colors.lgrey);
+			mainPanel.setBackground(Colors.vdgrey);
+			mainPanelTopPanel.setBackground(Colors.vdgrey);
+			mainPanelBottomLeftPanel.setBackground(Colors.vdgrey);
+			mainPanelBottomRightPanel.setBackground(Colors.vdgrey);
+			textArea.setBackground(Colors.vdgrey);
 		case DGREY:
-			return Colors.dgrey;
-		case LRED:
-			return new Color(160 + modifier, 60 + modifier, 40 + modifier / 2);
-		case LGREEN:
-			return new Color(60 + modifier / 2, 160 + modifier, 120 + modifier);
-		case LBLUE:
-			return new Color(60 + modifier / 2, 120 + modifier, 160 + modifier);
+			bottomPanel.setBackground(Colors.dgrey);
+			middlePanel.setBackground(Colors.lgrey);
+			mainPanel.setBackground(Colors.vdgrey);
+			mainPanelTopPanel.setBackground(Colors.vdgrey);
+			mainPanelBottomLeftPanel.setBackground(Colors.vdgrey);
+			mainPanelBottomRightPanel.setBackground(Colors.vdgrey);
+			textArea.setBackground(Colors.vdgrey);
 		case LGREY:
-			return Colors.lgrey;
+			bottomPanel.setBackground(Colors.dgrey);
+			middlePanel.setBackground(Colors.lgrey);
+			mainPanel.setBackground(Colors.vdgrey);
+			mainPanelTopPanel.setBackground(Colors.vdgrey);
+			mainPanelBottomLeftPanel.setBackground(Colors.vdgrey);
+			mainPanelBottomRightPanel.setBackground(Colors.vdgrey);
+			textArea.setBackground(Colors.vdgrey);
+		default:
+			break;
 		}
-		return new Color(0, 0, 0);
 
 	}
 
 	public void writeText(String input) {
 
-		textArea.setText(input);
+		textArea.setText("<font color = 'rgb(180, 180, 180)'>" + input);
 
 	}
 

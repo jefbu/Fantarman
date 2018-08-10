@@ -59,7 +59,7 @@ public class ShortFixtures extends JPanel {
 					public void actionPerformed(ActionEvent e) {
 						globalCalendarCounter--;
 						if(globalCalendarCounter < 0) globalCalendarCounter = 0;
-						fillShortFixtures(Main.league.calendarDay + globalCalendarCounter);
+						fillShortFixtures(globalCalendarCounter);
 					}
 				});
 			
@@ -72,7 +72,7 @@ public class ShortFixtures extends JPanel {
 					public void actionPerformed(ActionEvent e) {
 						globalCalendarCounter++;
 						if(globalCalendarCounter > 13) globalCalendarCounter = 13;
-						fillShortFixtures(Main.league.calendarDay + globalCalendarCounter);
+						fillShortFixtures(globalCalendarCounter);
 					}
 				});
 			
@@ -101,6 +101,8 @@ public class ShortFixtures extends JPanel {
 	}
 
 	public void fillShortFixtures(int calendarDay) {
+		
+		globalCalendarCounter = calendarDay;
 		
 		for (MatchupRowPanel panel: matchupRowPanels) {
 			panel.fillMatchupRowPanel(calendarDay);
