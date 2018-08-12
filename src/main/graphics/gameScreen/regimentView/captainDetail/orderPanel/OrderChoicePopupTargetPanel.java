@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import main.battle.tactics.Target;
+import main.battle.tactics.TargetType;
 import main.entity.regiments.Regiment;
 
 public class OrderChoicePopupTargetPanel extends JPanel {
@@ -22,6 +23,9 @@ public class OrderChoicePopupTargetPanel extends JPanel {
 	ConditionButton nearestButton;
 	ConditionButton weakestButton;
 	ConditionButton selfButton;
+	ConditionButton noneButton;
+	
+	TargetType targetType;
 	
 	public OrderChoicePopupTargetPanel(int width, int height, OrderChoicePopupOrderPanel orderChoicePopupOrderPanel) {
 
@@ -43,13 +47,17 @@ public class OrderChoicePopupTargetPanel extends JPanel {
 		selfButton = new ConditionButton(width / 6, height / 6, "Self"); 
 		add(selfButton);
 		
+		noneButton = new ConditionButton(width / 6, height / 6, "None");
+		add(noneButton);
+		
 
 	}
 	
 	private void attributeTarget(Regiment regiment, Target target) {
 		targetPanel.setVisible(false);
-		orderPanel.setVisible(true);
 		regiment.instructions.get(index).target = target;
+		orderPanel.fillOrderPanel(index, regiment, targetType);
+		orderPanel.setVisible(true);
 	}
 
 	private class ConditionButton extends JButton {
@@ -72,6 +80,7 @@ public class OrderChoicePopupTargetPanel extends JPanel {
 		} catch (Exception e) {}
 		strongestButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				targetType = TargetType.Others;
 				attributeTarget(regiment, Target.ENEMY_STRONGEST);
 				strongestButton.removeActionListener(strongestButton.getActionListeners()[0]);
 			}
@@ -82,6 +91,7 @@ public class OrderChoicePopupTargetPanel extends JPanel {
 		} catch (Exception e) {}
 		nearestButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				targetType = TargetType.Others;
 				attributeTarget(regiment, Target.ENEMY_NEAREST);
 				nearestButton.removeActionListener(nearestButton.getActionListeners()[0]);
 			}
@@ -92,6 +102,7 @@ public class OrderChoicePopupTargetPanel extends JPanel {
 		} catch (Exception e) {}
 		weakestButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				targetType = TargetType.Others;
 				attributeTarget(regiment, Target.ENEMY_WEAKEST);
 				weakestButton.removeActionListener(weakestButton.getActionListeners()[0]);
 			}
@@ -102,8 +113,20 @@ public class OrderChoicePopupTargetPanel extends JPanel {
 		} catch (Exception e) {}
 		selfButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				targetType = TargetType.Self;
 				attributeTarget(regiment, Target.SELF);
 				selfButton.removeActionListener(selfButton.getActionListeners()[0]);
+			}
+		});	
+		
+		try {
+			noneButton.removeActionListener(noneButton.getActionListeners()[0]);
+		} catch (Exception e) {}
+		noneButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				targetType = TargetType.None;
+				attributeTarget(regiment, Target.NONE);
+				noneButton.removeActionListener(selfButton.getActionListeners()[0]);
 			}
 		});	
 		

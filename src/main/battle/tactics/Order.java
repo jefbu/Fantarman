@@ -6,6 +6,7 @@ public enum Order {
 	Move_to,
 	RECOVER,
 	FIRE,
+	Move_Forward
 	
 
 }

@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import main.battle.tactics.Order;
+import main.battle.tactics.TargetType;
 import main.entity.regiments.Regiment;
 import main.graphics.Screen;
 
@@ -18,6 +19,7 @@ public class OrderChoicePopupOrderPanel extends JPanel {
 	int index;
 	ConditionButton chargeButton;
 	ConditionButton moveToButton;
+	ConditionButton moveForwardButton;
 	ConditionButton missileButton;
 	ConditionButton recoverButton;
 	
@@ -36,6 +38,9 @@ public class OrderChoicePopupOrderPanel extends JPanel {
 		
 		moveToButton = new ConditionButton(width / 6, height / 6, "Move Towards");
 		add(moveToButton);
+		
+		moveForwardButton = new ConditionButton(width / 6, height / 6, "Move Forwards");
+		add(moveForwardButton);
 		
 		missileButton = new ConditionButton(width / 6, height / 6, "Fire At");
 		add(missileButton);
@@ -66,8 +71,35 @@ public class OrderChoicePopupOrderPanel extends JPanel {
 	}
 
 
-	public void fillOrderPanel(int index, Regiment regiment) {
+	public void fillOrderPanel(int index, Regiment regiment, TargetType targetType) {
 		this.index = index;
+		
+		switch (targetType) {
+		case None:
+			moveForwardButton.setVisible(true);
+			moveToButton.setVisible(false);
+			chargeButton.setVisible(false);
+			missileButton.setVisible(false);
+			recoverButton.setVisible(false);
+			break;
+		case Others:
+			moveToButton.setVisible(true);
+			chargeButton.setVisible(true);
+			missileButton.setVisible(true);
+			moveForwardButton.setVisible(false);
+			recoverButton.setVisible(false);
+			break;
+		case Self:
+			recoverButton.setVisible(true);
+			moveToButton.setVisible(false);
+			chargeButton.setVisible(false);
+			missileButton.setVisible(false);
+			moveForwardButton.setVisible(false);
+			break;
+		default:
+			break;
+		
+		}
 		
 		try {
 			chargeButton.removeActionListener(chargeButton.getActionListeners()[0]);
@@ -86,6 +118,16 @@ public class OrderChoicePopupOrderPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				attributeOrder(regiment, Order.Move_to, orderChoicePopup);
 				moveToButton.removeActionListener(moveToButton.getActionListeners()[0]);
+			}
+		});
+		
+		try {
+			moveForwardButton.removeActionListener(moveForwardButton.getActionListeners()[0]);
+		} catch (Exception e) {}
+		moveForwardButton.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				attributeOrder(regiment, Order.Move_Forward, orderChoicePopup);
+				moveForwardButton.removeActionListener(moveForwardButton.getActionListeners()[0]);
 			}
 		});	
 		
@@ -107,9 +149,7 @@ public class OrderChoicePopupOrderPanel extends JPanel {
 				attributeOrder(regiment, Order.RECOVER, orderChoicePopup);
 				recoverButton.removeActionListener(recoverButton.getActionListeners()[0]);
 			}
-		});	
-		
-		
+		});
 		
 	}
 

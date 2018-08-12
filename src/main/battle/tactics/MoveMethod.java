@@ -8,6 +8,70 @@ import main.graphics.battleScreen.BattleScreen;
 
 public abstract class MoveMethod {
 
+	public static void moveForward(Regiment regiment, int movement, Army activeArmy, int activeRegimentIndex,
+			Army yourBattleArmy, Army opponentBattleArmy) {
+		
+		Random random = new Random();
+		int roll;
+		Army tempArmy = new Army();
+		for (Regiment tempRegiment : activeArmy.roster) {
+			tempArmy.roster.add(tempRegiment);
+		}
+		tempArmy.roster.remove(activeRegimentIndex);
+		
+		if (regiment.panels[0] > 767) {
+			
+			for (int i = 0; i < movement; i++) {
+				roll = random.nextInt(10);
+				
+				if (roll < (4 + getTerrainBonus(regiment, -48))) {
+					regiment.setIndices(regiment.panels[0] - 48);
+				
+					if (Adjacency.isAdjacenctToFriend(regiment, tempArmy)) {
+						regiment.setIndices(regiment.panels[0] + 48);
+					}
+				}
+				Regiment opponent = Adjacency.isAdjacentToEnemy(regiment, activeArmy, yourBattleArmy,
+						opponentBattleArmy);
+				if (opponent != null) {
+					regiment.inCombat = true;
+					regiment.combatOpponent = opponent;
+					opponent.inCombat = true;
+					opponent.combatOpponent = regiment;
+				}
+			}	
+		}
+		
+		else {
+			
+			for (int i = 0; i < movement; i++) {
+				roll = random.nextInt(10);
+				
+				if (roll < (4 + getTerrainBonus(regiment, 48))) {
+					regiment.setIndices(regiment.panels[0] + 48);
+				
+					if (Adjacency.isAdjacenctToFriend(regiment, tempArmy)) {
+						regiment.setIndices(regiment.panels[0] - 48);
+					}
+				}
+				Regiment opponent = Adjacency.isAdjacentToEnemy(regiment, activeArmy, yourBattleArmy,
+						opponentBattleArmy);
+				if (opponent != null) {
+					regiment.inCombat = true;
+					regiment.combatOpponent = opponent;
+					opponent.inCombat = true;
+					opponent.combatOpponent = regiment;
+				}
+			}
+			
+			
+		}
+		
+		
+		
+		
+	}
+
 	public static void move(Regiment regiment, int movement, Regiment target, Army activeArmy, int activeRegimentIndex,
 			Army yourBattleArmy, Army opponentBattleArmy) {
 
@@ -26,7 +90,7 @@ public abstract class MoveMethod {
 			int verticalDistance = DistanceChecker.checkVerticalDistance(regiment, target);
 			int horizontalDistance = DistanceChecker.checkHorizontalDistance(regiment, target);
 
-			if (verticalDistance == 0 && horizontalDistance == 0) {
+			if (verticalDistance < 2 && horizontalDistance < 2) {
 				i = movement;
 				regiment.inCombat = true;
 				regiment.combatOpponent = target;

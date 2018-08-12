@@ -4,6 +4,10 @@ import main.entity.regiments.Regiment;
 
 public abstract class DistanceChecker {
 	
+	public static int checkTotalDistance(Regiment regiment, Regiment target) {
+		return checkVerticalDistance(regiment, target) + checkHorizontalDistance(regiment, target);
+	}
+	
 	
 	public static int checkVerticalDistance(Regiment regiment, Regiment target) {
 		int distanceUp = checkDistanceUp(regiment, target);

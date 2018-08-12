@@ -230,6 +230,12 @@ public abstract class Regiment implements Serializable {
 		case FIRE:
 			OrderMethods.fire(this, target, activeArmy, yourBattleArmy, opponentBattleArmy);
 			break;
+		case Move_Forward:
+			OrderMethods.moveForward(this, activeArmy, activeRegimentIndex, yourBattleArmy, opponentBattleArmy);
+			break;
+		default:
+			System.out.println("Error at executeOrder method in regiment.haveturn");
+			break;
 		}
 	}
 

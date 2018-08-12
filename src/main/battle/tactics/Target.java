@@ -6,6 +6,7 @@ public enum Target {
 	ENEMY_STRONGEST,
 	ENEMY_NEAREST,
 	SELF,
-	FROM_LIST
+	FROM_LIST,
+	NONE
 
 }

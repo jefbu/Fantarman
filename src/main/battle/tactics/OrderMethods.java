@@ -25,6 +25,13 @@ public abstract class OrderMethods {
 		writeBasicOrderText(Order.Move_to, regiment, target);
 	}
 
+	public static void moveForward(Regiment regiment, Army activeArmy, int activeRegimentIndex, Army yourBattleArmy,
+			Army opponentBattleArmy) {
+		MoveMethod.moveForward(regiment, regiment.battleMove, activeArmy, activeRegimentIndex, yourBattleArmy,
+				opponentBattleArmy);
+		writeMoveForwardText(regiment);
+	}
+
 	public static void combat(Regiment regiment, Regiment target, int chargeBonus, Army activeArmy, Army yourBattleArmy,
 			Army opponentBattleArmy) {
 
@@ -62,7 +69,7 @@ public abstract class OrderMethods {
 	}
 
 	public static void recover(Regiment regiment) {
-		
+
 		int healers = countSkill(regiment, "Healer");
 
 		Random random = new Random();
@@ -79,46 +86,50 @@ public abstract class OrderMethods {
 
 	public static void fire(Regiment regiment, Regiment target, Army activeArmy, Army yourBattleArmy,
 			Army opponentBattleArmy) {
-		
+
 		int horizontalDistance = DistanceChecker.checkHorizontalDistance(regiment, target);
 		if (Math.abs(horizontalDistance) <= regiment.battleRange) {
-		int verticalDistance = DistanceChecker.checkVerticalDistance(regiment, target);
-		if (Math.abs(verticalDistance) <= regiment.battleRange) {
-						
-			Random random = new Random();
-			int hits = 0;
-			int casualties = 0;
-			int roll;
-			int roll2;
-			for (int i = 0; i < regiment.battleLife; i++) {
-				roll = random.nextInt(100);
-				if (roll < regiment.battleMissile)
-					hits++;
-			}
-			for (int ii = 0; ii < hits; ii++) {
-				roll2 = random.nextInt(100);
-				if (roll2 < target.battleDefence) {
-					target.battleLife--;
-					casualties++;
-				}
-			}
+			int verticalDistance = DistanceChecker.checkVerticalDistance(regiment, target);
+			if (Math.abs(verticalDistance) <= regiment.battleRange) {
 
-			if (target.battleLife <= 0) {
-				target.defeated = true;
-				target.timesDefeated++;
-				regiment.enemiesDefeated++;
-				regiment.inCombat = false;
-				if (activeArmy == yourBattleArmy) {
-					opponentBattleArmy.roster.remove(target);
-				} else {
-					yourBattleArmy.roster.remove(target);
+				Random random = new Random();
+				int hits = 0;
+				int casualties = 0;
+				int roll;
+				int roll2;
+				for (int i = 0; i < regiment.battleLife; i++) {
+					roll = random.nextInt(100);
+					if (roll < regiment.battleMissile)
+						hits++;
 				}
-			}
+				for (int ii = 0; ii < hits; ii++) {
+					roll2 = random.nextInt(100);
+					if (roll2 < target.battleDefence) {
+						target.battleLife--;
+						casualties++;
+					}
+				}
 
-			writeMissileText(Order.FIRE, regiment, target, casualties);
-				
-		} else { writeFailedMissileText(Order.FIRE, regiment, target); }
-		} else { writeFailedMissileText(Order.FIRE, regiment, target); }
+				if (target.battleLife <= 0) {
+					target.defeated = true;
+					target.timesDefeated++;
+					regiment.enemiesDefeated++;
+					regiment.inCombat = false;
+					if (activeArmy == yourBattleArmy) {
+						opponentBattleArmy.roster.remove(target);
+					} else {
+						yourBattleArmy.roster.remove(target);
+					}
+				}
+
+				writeMissileText(Order.FIRE, regiment, target, casualties);
+
+			} else {
+				writeFailedMissileText(Order.FIRE, regiment, target);
+			}
+		} else {
+			writeFailedMissileText(Order.FIRE, regiment, target);
+		}
 	}
 
 	private static void writeCombatText(Regiment regiment, Regiment target, int casualties) {
@@ -136,9 +147,9 @@ public abstract class OrderMethods {
 				+ "They manage to inflict " + decideColour(casualties, true) + casualties
 				+ "<font color = 'rgb(220, 220, 220)'>" + " casualties.");
 	}
-	
+
 	private static void writeFailedMissileText(Order order, Regiment regiment, Regiment target) {
-		
+
 		RightAggregatePanel.infoTextPanel.textArea.setText("<font color = 'rgb(220, 220, 220)'>" + regiment.name
 				+ " is having their turn and chooses to " + order.toString() + " " + target.name + ".<br>" + ""
 				+ "However, the distance is too large and the projectiles fall short, like a disappointing dud.");
@@ -148,6 +159,13 @@ public abstract class OrderMethods {
 
 		RightAggregatePanel.infoTextPanel.textArea.setText("<font color = 'rgb(220, 220, 220)'>" + regiment.name
 				+ " is having their turn and chooses to " + order.toString() + " " + target.name + ".");
+	}
+	
+	private static void writeMoveForwardText(Regiment regiment) {
+		
+		RightAggregatePanel.infoTextPanel.textArea
+		.setText("<font color = 'rgb(220, 220, 220)'>" + regiment.name + " is having their turn and chooses to " +
+				"move forwards! ");
 	}
 
 	private static void writeHealText(Order order, Regiment regiment, int recoveries) {
@@ -170,26 +188,39 @@ public abstract class OrderMethods {
 			return "<font color = 'rgb(60, " + colour + ", 80)'>";
 		}
 	}
-	
+
 	private static int countSkill(Regiment regiment, String skill) {
-		
+
 		int skillAmount = 0;
-		switch(skill) {
-		case "Healer": for (Lieutenant lieutenant: regiment.lieutenants) {
-			if (lieutenant.bonusSkill == Skills.Healer1) { skillAmount++;}
-			else if (lieutenant.bonusSkill == Skills.Healer2) { skillAmount = skillAmount + 2; }
-			else if (lieutenant.bonusSkill == Skills.Healer3) { skillAmount = skillAmount + 3; }
+		switch (skill) {
+		case "Healer":
+			for (Lieutenant lieutenant : regiment.lieutenants) {
+				if (lieutenant.bonusSkill == Skills.Healer1) {
+					skillAmount++;
+				} else if (lieutenant.bonusSkill == Skills.Healer2) {
+					skillAmount = skillAmount + 2;
+				} else if (lieutenant.bonusSkill == Skills.Healer3) {
+					skillAmount = skillAmount + 3;
+				}
 			}
-			if (regiment.captain.skill1 == Skills.Healer1) { skillAmount++; }
-			else if (regiment.captain.skill1 == Skills.Healer2) { skillAmount = skillAmount + 2; }
-			else if (regiment.captain.skill1 == Skills.Healer3) { skillAmount = skillAmount + 3; }
-			if (regiment.captain.skill2 == Skills.Healer1) { skillAmount++; }
-			else if (regiment.captain.skill2 == Skills.Healer2) { skillAmount = skillAmount + 2; }
-			else if (regiment.captain.skill2 == Skills.Healer3) { skillAmount = skillAmount + 3; }
+			if (regiment.captain.skill1 == Skills.Healer1) {
+				skillAmount++;
+			} else if (regiment.captain.skill1 == Skills.Healer2) {
+				skillAmount = skillAmount + 2;
+			} else if (regiment.captain.skill1 == Skills.Healer3) {
+				skillAmount = skillAmount + 3;
+			}
+			if (regiment.captain.skill2 == Skills.Healer1) {
+				skillAmount++;
+			} else if (regiment.captain.skill2 == Skills.Healer2) {
+				skillAmount = skillAmount + 2;
+			} else if (regiment.captain.skill2 == Skills.Healer3) {
+				skillAmount = skillAmount + 3;
+			}
 			break;
 		}
 		return skillAmount;
-		
+
 	}
 
 }

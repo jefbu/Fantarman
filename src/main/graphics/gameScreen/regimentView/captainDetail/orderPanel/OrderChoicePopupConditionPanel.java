@@ -99,8 +99,9 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 	
 	private void attributeCondition(Regiment regiment, Condition condition) {
 		conditionPanel.setVisible(false);
-		targetPanel.setVisible(true);
 		regiment.instructions.get(index).condition = condition;
+		targetPanel.fillTargetPanel(index, regiment);
+		targetPanel.setVisible(true);
 	}
 	
 
