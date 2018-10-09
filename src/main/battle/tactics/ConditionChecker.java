@@ -1,8 +1,5 @@
 package main.battle.tactics;
 
-import java.util.ArrayList;
-import java.util.Random;
-
 import main.entity.armies.Army;
 import main.entity.regiments.Regiment;
 

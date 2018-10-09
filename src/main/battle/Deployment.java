@@ -252,7 +252,8 @@ public class Deployment {
 		applyStatColours();
 
 		String intro = "<font color = 'rgb(220, 220, 220)'>" + "Please deploy the following regiment: <br>";
-		String name = "<font color = #EEE000>" + yourBattleArmy.roster.get(playerCounter).name + "<br>";
+		String name = "<font color = #EEE000>" + yourBattleArmy.roster.get(playerCounter).captain.name + 
+				"'s " + yourBattleArmy.roster.get(playerCounter).regiment + "<br>" + "<br>";
 
 		String life = "<font color = 'rgb(220, 220, 220)'> Life: ";
 		String lifeStat = "<font color = rgb(" + lifeRed + "," + lifeGreen + ", 30)>"

@@ -6,7 +6,6 @@ import java.awt.FlowLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import main.components.Colour;
 import main.components.ContentPanel;
 import main.utility.Colors;
 import main.utility.ImageLoader;

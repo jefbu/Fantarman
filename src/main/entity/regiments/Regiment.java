@@ -165,7 +165,7 @@ public abstract class Regiment implements Serializable {
 		this.battleRange = totalRange;
 		this.battleRun = totalRun;
 		this.defeated = false;
-
+		
 	}
 
 	public void calculateValue() {
@@ -206,8 +206,8 @@ public abstract class Regiment implements Serializable {
 			executeOrder(tactic.order, target, activeArmy, activeRegimentIndex, yourBattleArmy, opponentBattleArmy);
 
 			for (IndexedPanel indexedPanel : BattleScreen.battleScene.indexedPanels) {
-				indexedPanel.setBorder(null);
-				indexedPanel.button.setBorder(null);
+				//indexedPanel.setBorder(null);
+				//indexedPanel.button.setBorder(null);
 			}
 		}
 

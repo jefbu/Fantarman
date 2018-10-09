@@ -54,12 +54,15 @@ public class Skit extends JDialog {
 		setLocationRelativeTo(BattleScreen.battleScene);
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setUndecorated(true);
-
+		
 		ContentPanel panel = new ContentPanel(width, height, Colors.lgrey, new FlowLayout(FlowLayout.LEFT, 0, 0));
 		// panel.setPreferredSize(new Dimension(100, 100));
 		// panel.setBackground(Colors.lblue);
 		// panel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		add(panel);
+		
+		panel.setBackground(Colors.vdgrey);
+		panel.insidePanel.setPreferredSize(new Dimension (width - 10, height - 10));
 
 		JPanel topEmptyPanel = new JPanel();
 		topEmptyPanel.setPreferredSize(new Dimension(width, height / 10));

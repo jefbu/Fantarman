@@ -6,6 +6,7 @@ import java.awt.FlowLayout;
 import javax.swing.JPanel;
 
 import main.Main;
+import main.graphics.Screen;
 import main.graphics.gameScreen.homeScreen.NewsReel;
 import main.utility.Colors;
 
@@ -29,7 +30,10 @@ public class BottomTextPanel extends JPanel {
 	
 	public void fillBottomTextPanel(boolean fillNewsReel) {
 		
-		if(Main.tutorial) {
+	if(Main.tutorial) {
+
+		switch(Main.bottomTextTutorial) {
+		case Homeview:
 			newsReel.textArea.setText("Hello and welcome to Hands Off My Army. <br> "
 					+ "This is your homescreen, from here you can see important information at a glance. <br> "
 					+ "You can also prepare for the next battle by selecting which regiments will partake in the fun. <br>"
@@ -38,7 +42,14 @@ public class BottomTextPanel extends JPanel {
 					+ "Training and marketing are currently not yet implemented, "
 					+ "a maximum of eight regiments can be given 'combat' role. <br>"
 					+ "Finally, you can also click on the regiment to go to its detail page.");
-		} 
+			break;
+		case RegimentView:
+			newsReel.textArea.setText("ee");
+			break;
+		default:
+			break;
+		}
+	}		
 		else if(fillNewsReel) newsReel.fillNewsReel();
 	}
 

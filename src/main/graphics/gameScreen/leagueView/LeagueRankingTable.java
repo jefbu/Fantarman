@@ -2,7 +2,6 @@ package main.graphics.gameScreen.leagueView;
 
 import java.awt.FlowLayout;
 
-import main.components.Colour;
 import main.components.ContentPanel;
 import main.utility.Colors;
 

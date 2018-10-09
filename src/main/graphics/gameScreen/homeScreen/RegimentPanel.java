@@ -14,7 +14,7 @@ import main.components.ButtonedPanel;
 import main.entity.regiments.Regiment;
 import main.entity.regiments.Role;
 import main.graphics.Screen;
-import main.graphics.gameScreen.MainPanel;
+import main.utility.BottomTextTutorial;
 import main.utility.Colors;
 import main.utility.ImageLoader;
 
@@ -49,6 +49,7 @@ public class RegimentPanel extends JPanel {
 	private ImageLoader imageLoader;
 	
 	private ArrayList<ButtonedPanel> list;
+	
 
 	public RegimentPanel(int width, int height) {
 
@@ -153,6 +154,8 @@ public class RegimentPanel extends JPanel {
 
 	public void fillRegimentPanel(int i) {
 		
+		//Main.bottomTextTutorial = BottomTextTutorial.RegimentView;
+		
 			for (ButtonedPanel panel: list) {
 				try{
 					panel.button.removeActionListener(panel.button.getActionListeners()[0]);
@@ -162,8 +165,10 @@ public class RegimentPanel extends JPanel {
 			for (int ii = 0; ii < list.size(); ii++) {
 				list.get(ii).button.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						Main.bottomTextTutorial = BottomTextTutorial.RegimentView;
 						Screen.gameScreen.mainPanel.armyView.setVisible(false);
 						Screen.gameScreen.mainPanel.regimentView.fillRegimentView(Main.yourArmy.roster.get(i), true);
+						Screen.gameScreen.bottomPanel.bottomTextPanel.fillBottomTextPanel(true);
 						Screen.gameScreen.mainPanel.regimentView.setVisible(true);
 					}
 				});

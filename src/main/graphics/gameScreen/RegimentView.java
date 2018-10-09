@@ -9,7 +9,6 @@ import main.entity.regiments.Regiment;
 import main.graphics.gameScreen.armyView.RegimentListPanel;
 import main.graphics.gameScreen.armyView.RoleSelectionPanel;
 import main.graphics.gameScreen.regimentView.CaptainDetailPanel;
-import main.graphics.gameScreen.regimentView.LieutenantsDetailPanel;
 import main.graphics.gameScreen.regimentView.RegimentDetailPanel;
 import main.utility.Colors;
 

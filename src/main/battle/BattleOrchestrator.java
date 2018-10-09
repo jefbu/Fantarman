@@ -25,6 +25,7 @@ public class BattleOrchestrator {
 	private Army yourBattleArmy;
 	private Army opponentBattleArmy;
 	private int activeRegimentIndex;
+	Regiment activeRegiment;
 
 	public BattleOrchestrator(Army yourBattleArmy, Army opponentBattleArmy) {
 
@@ -65,7 +66,7 @@ public class BattleOrchestrator {
 					timer.stop();
 					refreshMap();
 				} else {
-					Regiment activeRegiment = decideActiveRegiment();
+					activeRegiment = decideActiveRegiment();
 					if (activeRegiment.battleSpeed <= 0) {
 						counter++;
 						for (Regiment regiment : yourBattleArmy.roster) {
@@ -94,15 +95,6 @@ public class BattleOrchestrator {
 	}
 
 	public void orchestrateBattle() {
-		for (Regiment regiment : opponentBattleArmy.roster) {
-			System.out.println("regiment " + regiment.captain.name + " has " + regiment.captain.orders + " orders");
-			for (int i = 0; i < regiment.instructions.size(); i++) {
-				System.out.println("order: " + regiment.instructions.get(i).target.toString()
-						+ regiment.instructions.get(i).condition.toString()
-						+ regiment.instructions.get(i).order.toString());
-			}
-		}
-
 		totalTurns = decideTotalTurns();
 		timer.start();
 	}
@@ -176,6 +168,12 @@ public class BattleOrchestrator {
 				BattleScreen.battleScene.indexedPanels.get(enemyRegiment.panels[i]).button.setIcon(enemyRegiment.icon);
 				BattleScreen.battleScene.indexedPanels.get(enemyRegiment.panels[i]).setBackground(new Color(red, 0, 0));
 			}
+		}
+		
+		if(activeRegiment != null) {
+		for (int i = 0; i < activeRegiment.panels.length; i++) {
+			BattleScreen.battleScene.indexedPanels.get(activeRegiment.panels[i]).setBackground(new Color(170, 190, 140));			
+		}
 		}
 	}
 

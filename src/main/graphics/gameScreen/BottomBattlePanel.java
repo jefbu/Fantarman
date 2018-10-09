@@ -2,7 +2,6 @@ package main.graphics.gameScreen;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -12,7 +11,6 @@ import javax.swing.JPanel;
 import main.Main;
 import main.battle.Battle;
 import main.components.Colour;
-import main.components.IconLabelPanel;
 import main.components.TextPopup;
 import main.entity.regiments.Regiment;
 import main.entity.regiments.Role;

@@ -15,7 +15,6 @@ import main.graphics.gameScreen.infoView.FanHistoryPanel;
 import main.utility.Colors;
 import main.utility.ImageLoader;
 import main.utility.LoadTrophies;
-import main.utility.Trophies;
 
 public class ShortInfo extends JPanel {
 

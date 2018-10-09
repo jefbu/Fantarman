@@ -7,7 +7,6 @@ import java.awt.FlowLayout;
 import javax.swing.JPanel;
 
 import main.Main;
-import main.components.Colour;
 import main.entity.armies.Army;
 import main.graphics.gameScreen.armyView.ArmyViewViewPanel;
 import main.graphics.gameScreen.armyView.RegimentListPanel;

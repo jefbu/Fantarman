@@ -126,6 +126,7 @@ public class BattleConclusion extends TextPopup {
 			for (int i = 0; i < regiment.panels.length; i++) {
 				regiment.panels[i] = 0;  
 				regiment.inCombat = false;
+				regiment.combatOpponent = null;
 			}
 			}
 		}

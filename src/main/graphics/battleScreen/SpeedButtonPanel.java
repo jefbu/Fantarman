@@ -48,7 +48,7 @@ public class SpeedButtonPanel extends JPanel {
 
 		slowestSpeedButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				BattleOrchestrator.timer.setDelay(10000);
+				BattleOrchestrator.timer.setDelay(5000);
 			}
 		});
 
@@ -62,7 +62,7 @@ public class SpeedButtonPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				int currentDelay = BattleOrchestrator.timer.getDelay();
 				if (currentDelay < 9701)
-					BattleOrchestrator.timer.setDelay(currentDelay + 300);
+					BattleOrchestrator.timer.setDelay(3000);
 			}
 		});
 
@@ -94,7 +94,7 @@ public class SpeedButtonPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				int currentDelay = BattleOrchestrator.timer.getDelay();
 				if (currentDelay > 399)
-					BattleOrchestrator.timer.setDelay(currentDelay - 300);
+					BattleOrchestrator.timer.setDelay(1000);
 			}
 		});
 

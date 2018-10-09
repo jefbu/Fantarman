@@ -11,6 +11,7 @@ import main.graphics.gameScreen.homeScreen.ShortArmy;
 import main.graphics.gameScreen.homeScreen.ShortFixtures;
 import main.graphics.gameScreen.homeScreen.ShortInfo;
 import main.graphics.gameScreen.homeScreen.ShortLeague;
+import main.utility.BottomTextTutorial;
 import main.utility.Colors;
 
 public class HomeView extends JPanel {
@@ -75,6 +76,7 @@ public class HomeView extends JPanel {
 	
 	public void fillHomeScreen() {
 		
+		Main.bottomTextTutorial = BottomTextTutorial.Homeview;
 		shortLeague.fillShortLeague();
 		shortArmy.fillShortArmy();
 		shortInfo.fillShortInformation();

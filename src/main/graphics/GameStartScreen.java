@@ -161,6 +161,7 @@ public class GameStartScreen extends JPanel {
 		wanmenPanel.add(wanmenTitlePanel);
 
 		JLabel wanmenTitleLabel = new JLabel();
+		wanmenTitleLabel.setForeground(Colors.lgrey);
 		wanmenTitleLabel.setText("Wanmen");
 		wanmenTitlePanel.add(wanmenTitleLabel);
 
@@ -196,6 +197,7 @@ public class GameStartScreen extends JPanel {
 		skylordsPanel.add(skylordsTitlePanel);
 
 		JLabel skylordsTitleLabel = new JLabel();
+		skylordsTitleLabel.setForeground(Colors.lgrey);
 		skylordsTitleLabel.setText("Skylords");
 		skylordsTitlePanel.add(skylordsTitleLabel);
 
@@ -231,6 +233,7 @@ public class GameStartScreen extends JPanel {
 		espequrPanel.add(espequrTitlePanel);
 
 		JLabel espequrTitleLabel = new JLabel();
+		espequrTitleLabel.setForeground(Colors.lgrey);
 		espequrTitleLabel.setText("Espequr");
 		espequrTitlePanel.add(espequrTitleLabel);
 
@@ -266,6 +269,7 @@ public class GameStartScreen extends JPanel {
 		chiDestroyersPanel.add(chiDestroyersTitlePanel);
 
 		JLabel chiDestroyersTitleLabel = new JLabel();
+		chiDestroyersTitleLabel.setForeground(Colors.lgrey);
 		chiDestroyersTitleLabel.setText("Chi");
 		chiDestroyersTitlePanel.add(chiDestroyersTitleLabel);
 
@@ -301,6 +305,7 @@ public class GameStartScreen extends JPanel {
 		metropolitansPanel.add(metropolitansTitlePanel);
 
 		JLabel metropolitansTitleLabel = new JLabel();
+		metropolitansTitleLabel.setForeground(Colors.lgrey);
 		metropolitansTitleLabel.setText("Metropolitans");
 		metropolitansTitlePanel.add(metropolitansTitleLabel);
 
@@ -337,6 +342,7 @@ public class GameStartScreen extends JPanel {
 		multiculturalSocietyPanel.add(multiculturalSocietyTitlePanel);
 
 		JLabel multiculturalSocietyTitleLabel = new JLabel();
+		multiculturalSocietyTitleLabel.setForeground(Colors.lgrey);
 		multiculturalSocietyTitleLabel.setText("Society");
 		multiculturalSocietyTitlePanel.add(multiculturalSocietyTitleLabel);
 

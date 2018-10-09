@@ -11,7 +11,7 @@ public class BottomPanel extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
 	NavigationPanel navigationPanel;
-	BottomTextPanel bottomTextPanel;
+	public BottomTextPanel bottomTextPanel;
 	BottomBattlePanel bottomBattlePanel;
 	BottomHomePanel bottomHomePanel;
 

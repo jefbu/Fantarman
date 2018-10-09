@@ -1,7 +1,6 @@
 package main.graphics.gameScreen.regimentView.captainDetail;
 
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.FlowLayout;
 
 import main.components.Colour;

@@ -2,14 +2,10 @@ package main.graphics.gameScreen.leagueView;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import main.Main;
-import main.components.Colour;
 import main.utility.Colors;
 import main.utility.ImageLoader;
 

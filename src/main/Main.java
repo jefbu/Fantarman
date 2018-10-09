@@ -1,6 +1,5 @@
 package main;
 
-import java.awt.GraphicsEnvironment;
 import java.util.ArrayList;
 
 import main.battle.Battle;
@@ -9,6 +8,7 @@ import main.entity.leagues.League;
 import main.graphics.Screen;
 import main.graphics.TileImages;
 import main.graphics.battleScreen.BattleScreen;
+import main.utility.BottomTextTutorial;
 
 public class Main {
 
@@ -17,13 +17,16 @@ public class Main {
 	public static ArrayList<Battle> battles;
 	
 	public static League league;
+
 	public static boolean tutorial;
+	public static BottomTextTutorial bottomTextTutorial;
 	
 	public static void main(String[] args) {
 		
 	//try {
 		
 		tutorial = true;
+		bottomTextTutorial = BottomTextTutorial.Homeview;
 		screen = new Screen();
 		battles = new ArrayList<Battle>();
 		TileImages.loadImages(BattleScreen.battleScene.roundedWidth / 48, BattleScreen.battleScene.roundedHeight / 32);

@@ -34,6 +34,8 @@ public abstract class MoveMethod {
 				Regiment opponent = Adjacency.isAdjacentToEnemy(regiment, activeArmy, yourBattleArmy,
 						opponentBattleArmy);
 				if (opponent != null) {
+					System.out.println(regiment.name + regiment.panels[0]);
+					System.out.println(opponent.name + opponent.panels[0]);
 					regiment.inCombat = true;
 					regiment.combatOpponent = opponent;
 					opponent.inCombat = true;
@@ -90,7 +92,7 @@ public abstract class MoveMethod {
 			int verticalDistance = DistanceChecker.checkVerticalDistance(regiment, target);
 			int horizontalDistance = DistanceChecker.checkHorizontalDistance(regiment, target);
 
-			if (verticalDistance < 2 && horizontalDistance < 2) {
+			if (Math.abs(verticalDistance) < 2 && Math.abs(horizontalDistance) < 2) {
 				i = movement;
 				regiment.inCombat = true;
 				regiment.combatOpponent = target;
@@ -106,6 +108,7 @@ public abstract class MoveMethod {
 							if (Adjacency.isAdjacenctToFriend(regiment, tempArmy)) {
 								regiment.setIndices(regiment.panels[0] + 48);
 							}
+
 							Regiment opponent = Adjacency.isAdjacentToEnemy(regiment, activeArmy, yourBattleArmy,
 									opponentBattleArmy);
 							if (opponent != null) {

@@ -12,7 +12,7 @@ public class GameScreen extends JPanel {
 	
 	public MenuPanel menuPanel;
 	public MainPanel mainPanel;
-	BottomPanel bottomPanel;
+	public BottomPanel bottomPanel;
 	
 	int gameScreenWidth;
 	int gameScreenHeight;

@@ -5,7 +5,6 @@ import java.awt.FlowLayout;
 
 import javax.swing.JPanel;
 
-import main.components.Colour;
 import main.utility.Colors;
 
 public class LeagueRankingPanel extends JPanel {

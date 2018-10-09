@@ -12,6 +12,7 @@ import main.battle.tactics.Order;
 import main.battle.tactics.TargetType;
 import main.entity.regiments.Regiment;
 import main.graphics.Screen;
+import main.utility.ImageLoader;
 
 public class OrderChoicePopupOrderPanel extends JPanel {
 
@@ -31,21 +32,28 @@ public class OrderChoicePopupOrderPanel extends JPanel {
 		setLayout(new FlowLayout(FlowLayout.LEFT, 7, 7));
 		setPreferredSize(new Dimension(width - 10, height - 10));
 		
+		ImageLoader imageLoader = new ImageLoader();
+		
 		this.orderChoicePopup = orderChoicePopup;
 		
 		chargeButton = new ConditionButton(width / 6, height / 6, "Charge");
+		chargeButton.setIcon(imageLoader.loadImageIcon("/icons/orderButtonCharge.png", width / 6, height / 6));
 		add(chargeButton);
 		
 		moveToButton = new ConditionButton(width / 6, height / 6, "Move Towards");
+		moveToButton.setIcon(imageLoader.loadImageIcon("/icons/orderButtonMoveTo.png", width / 6, height / 6));
 		add(moveToButton);
 		
 		moveForwardButton = new ConditionButton(width / 6, height / 6, "Move Forwards");
+		moveForwardButton.setIcon(imageLoader.loadImageIcon("/icons/orderButtonMoveForward.png", width / 6, height / 6));
 		add(moveForwardButton);
 		
 		missileButton = new ConditionButton(width / 6, height / 6, "Fire At");
+		missileButton.setIcon(imageLoader.loadImageIcon("/icons/orderButtonMissile.png", width / 6, height / 6));
 		add(missileButton);
 		
 		recoverButton = new ConditionButton(width / 6, height / 6, "Recover");
+		recoverButton.setIcon(imageLoader.loadImageIcon("/icons/orderButtonRecover.png", width / 6, height / 6));
 		add(recoverButton);
 
 		
@@ -64,10 +72,12 @@ public class OrderChoicePopupOrderPanel extends JPanel {
 
 		private ConditionButton(int width, int height, String title) {
 			super();
+			setContentAreaFilled(false);
+			setBorderPainted(false);
 			setPreferredSize(new Dimension(width, height));
 			setText(title);
 		}
-		
+
 	}
 
 

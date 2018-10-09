@@ -1,17 +1,11 @@
 package main.graphics.gameScreen.homeScreen;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.border.LineBorder;
 
 import main.Main;
 import main.components.ButtonedPanel;
 import main.components.LabeledPanel;
-import main.graphics.Screen;
 import main.utility.Colors;
 
 public class ArmyPanel extends ButtonedPanel {

@@ -5,7 +5,6 @@ import java.awt.FlowLayout;
 
 import javax.swing.JPanel;
 
-import main.components.Colour;
 import main.entity.regiments.Regiment;
 import main.graphics.gameScreen.regimentView.lieutenantDetail.LieutenantDetailPanel;
 import main.utility.Colors;

@@ -7,10 +7,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import main.Main;
 import main.components.ButtonedPanel;
 import main.components.ContentPanel;
 import main.components.LabeledPanel;

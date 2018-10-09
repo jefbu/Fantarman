@@ -10,7 +10,6 @@ import java.util.Comparator;
 import javax.swing.JPanel;
 
 import main.Main;
-import main.components.Colour;
 import main.components.ContentPanel;
 import main.components.LabeledPanel;
 import main.entity.armies.Army;

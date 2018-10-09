@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 
 import main.battle.tactics.Condition;
 import main.entity.regiments.Regiment;
+import main.utility.ImageLoader;
 
 public class OrderChoicePopupConditionPanel extends JPanel {
 
@@ -39,6 +40,7 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 	public OrderChoicePopupConditionPanel(int width, int height, OrderChoicePopupTargetPanel orderChoicePopupTargetPanel) {
 
 		super();
+		ImageLoader imageLoader = new ImageLoader();
 
 		setLayout(new FlowLayout(FlowLayout.LEFT, 7, 7));
 		setPreferredSize(new Dimension(width - 10, height - 10));
@@ -46,52 +48,68 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 		targetPanel = orderChoicePopupTargetPanel;
 
 		lifeUnder100Button = new ConditionButton(width / 6, height / 6, "Life < 100%");
+		lifeUnder100Button.setIcon(imageLoader.loadImageIcon("/icons/orderButtonLifeUnder100.png", width / 6, height / 6));
 		add(lifeUnder100Button);
 		
-		lifeUnder75Button = new ConditionButton(width / 6, height / 6, "Life < 75%"); 
+		lifeUnder75Button = new ConditionButton(width / 6, height / 6, "Life < 75%");
+		lifeUnder75Button.setIcon(imageLoader.loadImageIcon("/icons/orderButtonLifeUnder75.png", width / 6, height / 6));
 		add(lifeUnder75Button);
 		
-		lifeUnder50Button = new ConditionButton(width / 6, height / 6, "Life < 50%"); 
+		lifeUnder50Button = new ConditionButton(width / 6, height / 6, "Life < 50%");
+		lifeUnder50Button.setIcon(imageLoader.loadImageIcon("/icons/orderButtonLifeUnder50.png", width / 6, height / 6));
 		add(lifeUnder50Button);
 		 
 		lifeUnder25Button = new ConditionButton(width / 6, height / 6, "Life < 25%"); 
+		lifeUnder25Button.setIcon(imageLoader.loadImageIcon("/icons/orderButtonLifeUnder25.png", width / 6, height / 6));
 		add(lifeUnder25Button);
 		
 		lifeOver25Button = new ConditionButton(width / 6, height / 6, "Life > 25%");
+		lifeOver25Button.setIcon(imageLoader.loadImageIcon("/icons/orderButtonLifeOver25.png", width / 6, height / 6));
 		add(lifeOver25Button);
 		
 		lifeOver50Button = new ConditionButton(width / 6, height / 6, "Life > 50%");
+		lifeOver50Button.setIcon(imageLoader.loadImageIcon("/icons/orderButtonLifeOver50.png", width / 6, height / 6));
 		add(lifeOver50Button);
 		
 		lifeOver75Button = new ConditionButton(width / 6, height / 6, "Life > 75%");
+		lifeOver75Button.setIcon(imageLoader.loadImageIcon("/icons/orderButtonLifeOver75.png", width / 6, height / 6));
 		add(lifeOver75Button);
 		
 		life100Button = new ConditionButton(width / 6, height / 6, "Life = 100%");
+		life100Button.setIcon(imageLoader.loadImageIcon("/icons/orderButtonLifeIs100.png", width / 6, height / 6));
 		add(life100Button);
 		
 		after1TurnButton = new ConditionButton(width / 6, height / 6, "After 1 Turn");
+		after1TurnButton.setIcon(imageLoader.loadImageIcon("/icons/orderButton1Turn.png", width / 6, height / 6));
 		add(after1TurnButton);
 		
 		after2TurnButton = new ConditionButton(width / 6, height / 6, "After 2 Turns");
+		after2TurnButton.setIcon(imageLoader.loadImageIcon("/icons/orderButton2Turn.png", width / 6, height / 6));
 		add(after2TurnButton);
 		
 		after3TurnButton = new ConditionButton(width / 6, height / 6, "After 3 Turns");
+		after3TurnButton.setIcon(imageLoader.loadImageIcon("/icons/orderButton3Turn.png", width / 6, height / 6));
 		add(after3TurnButton);
 		
 		after4TurnButton = new ConditionButton(width / 6, height / 6, "After 4 Turns");
+		after4TurnButton.setIcon(imageLoader.loadImageIcon("/icons/orderButton4Turn.png", width / 6, height / 6));
 		add(after4TurnButton);
 		
 		after5TurnButton = new ConditionButton(width / 6, height / 6, "After 5 Turns");
+		after5TurnButton.setIcon(imageLoader.loadImageIcon("/icons/orderButton5Turn.png", width / 6, height / 6));
 		add(after5TurnButton);
 		
 		anyInRangeButton = new ConditionButton(width / 6, height / 6, "Any In Range");
+		anyInRangeButton.setIcon(imageLoader.loadImageIcon("/icons/orderButtonAnyInRange.png", width / 6, height / 6));
 		add(anyInRangeButton);
 		
 		targetInRangeButton = new ConditionButton(width / 6, height / 6, "Target In Range");
+		targetInRangeButton.setIcon(imageLoader.loadImageIcon("/icons/orderButtonTargetInRange.png", width / 6, height / 6));
 		add(targetInRangeButton);		
 		 	 
 		
 		alwaysButton = new ConditionButton(width / 6, height / 6, "Always"); 
+		alwaysButton.setIcon(imageLoader.loadImageIcon("/icons/orderButtonAlways.png", width / 6, height / 6));
 		add(alwaysButton);
 		
 
@@ -111,6 +129,8 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 
 		private ConditionButton(int width, int height, String title) {
 			super();
+			setContentAreaFilled(false);
+			setBorderPainted(false);
 			setPreferredSize(new Dimension(width, height));
 			setText(title);
 		}

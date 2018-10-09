@@ -14,9 +14,7 @@ import javax.swing.JPanel;
 
 import main.Main;
 import main.components.Colour;
-import main.components.ContentPanel;
 import main.components.IconLabelPanel;
-import main.components.LabeledPanel;
 import main.graphics.Screen;
 import main.utility.Colors;
 import main.utility.ImageLoader;

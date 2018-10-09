@@ -62,7 +62,7 @@ public abstract class OrderMethods {
 			}
 		}
 
-		if (regiment.defeated || target.defeated) {
+		if (target.defeated) {
 		}
 
 		writeCombatText(regiment, target, casualties);

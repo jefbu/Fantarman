@@ -8,7 +8,6 @@ import java.awt.Insets;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
-import main.components.ContentPanel;
 import main.utility.Colors;
 
 public class NewsReel extends JPanel {
