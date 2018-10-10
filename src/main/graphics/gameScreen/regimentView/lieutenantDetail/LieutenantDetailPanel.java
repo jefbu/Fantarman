@@ -20,58 +20,60 @@ public class LieutenantDetailPanel extends ContentPanel {
 	public JLabel portrait;
 	private int width;
 	private int height;
-	private JPanel infoPanel;
+	private JPanel iconPanel;
+	private JPanel textPanel;
 	private LabeledPanel namePanel;
-	private LabeledPanel bonusPanel;
+	private LabeledPanel skillPanel;
 
 	public LieutenantDetailPanel(int width, int height, Color colour, FlowLayout flowLayout) {
-		
+
 		super(width, height, colour, flowLayout);
 		imageLoader = new ImageLoader();
-		
+
 		this.width = width;
 		this.height = height;
-		
-		portrait = new JLabel();
-		insidePanel.add(portrait);
-		
-		infoPanel = new JPanel();
-		infoPanel.setPreferredSize(new Dimension(width / 100 * 90, height / 4 * 3));
-		infoPanel.setBackground(Colors.vlgreen);
-		infoPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-		insidePanel.add(infoPanel);
-				
-		namePanel = new LabeledPanel(width / 100 * 80, height / 4);
-		namePanel.setBackground(Colors.dblue);
-		namePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 1, 1));
-		namePanel.label.setForeground(Colors.textyellow);
-		infoPanel.add(namePanel);
-		
-		bonusPanel = new LabeledPanel(width / 100 * 80, height / 3);
-		bonusPanel.setBackground(Colors.dblue);
-		bonusPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 1, 3));
-		bonusPanel.label.setForeground(Colors.textyellow);
-		infoPanel.add(bonusPanel);
 
+		iconPanel = new JPanel();
+		iconPanel.setPreferredSize(new Dimension(width * 3 / 10, height * 65 / 100));
+		iconPanel.setBackground(Colors.dgrey);
+		iconPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
+		insidePanel.add(iconPanel);
+
+		portrait = new JLabel();
+		iconPanel.add(portrait);
 		
+		textPanel = new JPanel();
+		textPanel.setPreferredSize(new Dimension(width * 6 / 10, height * 65 / 100));
+		textPanel.setBackground(Colors.dgrey);
+		textPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
+		insidePanel.add(textPanel);	
+		
+		namePanel = new LabeledPanel(width * 6 / 10, height * 30 / 100);
+		namePanel.setBackground(Colors.dgrey);
+		namePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+		namePanel.label.setForeground(Colors.vlgrey);
+		textPanel.add(namePanel);
+
+		skillPanel = new LabeledPanel(width * 6 / 10, height * 35 / 100);
+		skillPanel.setBackground(Colors.dgrey);
+		skillPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+		skillPanel.label.setForeground(Colors.vlgrey);
+		textPanel.add(skillPanel);
+
 	}
-	
+
 	public void fillLieutenantDetailPanel(int order, Regiment regiment) {
-		
+
 		setVisible(false);
-		
-		if (order > regiment.lieutenantsSize) {
-		portrait.setIcon(imageLoader.loadImageIcon("/lieutenants/none.png", width / 4, height - 25));
-		namePanel.label.setText("");
-		bonusPanel.label.setText("");
+
+		if (order <= regiment.lieutenantsSize) {
+			portrait.setIcon(imageLoader.loadImageIcon(regiment.lieutenants.get(order - 1).imagePath, width * 3 / 10,
+					height * 65 / 100));
+			namePanel.label.setText(regiment.lieutenants.get(order - 1).name);
+			skillPanel.label.setText(regiment.lieutenants.get(order - 1).bonus);
+			setVisible(true);
 		}
-		else {
-		portrait.setIcon(imageLoader.loadImageIcon(regiment.lieutenants.get(order - 1).imagePath, width / 4, height - 25));	
-		namePanel.label.setText(regiment.lieutenants.get(order - 1).name);
-		bonusPanel.label.setText(regiment.lieutenants.get(order - 1).bonus);
-		setVisible(true);
-		}
-		
+
 	}
-	
+
 }
