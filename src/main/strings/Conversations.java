@@ -86,6 +86,25 @@ public abstract class Conversations {
 	public static String jeanpauper_anita7 = "... It's like watching a freight train thunder straight into a deep ravine, "
 			+ "unable to change its direction; bound to the tracks of its fate.";
 	
+	public static String jiaosidao_miyouin1 = "I've got some beeeeeeeer in the back of my truuuuck!";
+	public static String jiaosidao_miyouin2 = "... You've been singing that same song for hours, "
+			+ "can't you think of something else?";
+	public static String jiaosidao_miyouin3 = "Oh, sorry sister, I've got it stuck in my head and it won't come out.";
+	public static String jiaosidao_miyouin4 = "I get it, it's an earworm for certain. I've read somewhere that "
+			+ "humming the theme song from the A-Team can apparently clear your mind of it.";
+	public static String jiaosidao_miyouin5 = "Huh, really? Well I guess it's worth a shot ...";
+	public static String jiaosidao_miyouin6 = "Dundudaduun da da duun. Dadadeedadoodaa, daa de dada dun";
+	public static String jiaosidao_miyouin7 = "...";
+	public static String jiaosidao_miyouin8 = ".....";
+	public static String jiaosidao_miyouin9 = "........";
+	public static String jiaosidao_miyouin10 = "What do you know, it worked! Thanks a dozen!";
+	public static String jiaosidao_miyouin11 = "**Walks off**";
+	public static String jiaosidao_miyouin12 = "Phew, glad we got that sorted out!";
+	public static String jiaosidao_miyouin13 = "...";
+	public static String jiaosidao_miyouin14 = "Oh no...";
+	public static String jiaosidao_miyouin15 = "I've got some beeeeeeeer in the back of my truuuuck!";
+	
+	
 	public static String max_vince1 = "Hey Vince, "
 			+ "how is your work going on that latest invention you mentioned last time?";
 	public static String max_vince2 = "Oh hi there Max. It's going great, we'll be testing a prototype out next week!";

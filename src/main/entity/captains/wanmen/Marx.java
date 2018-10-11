@@ -12,7 +12,7 @@ static final long serialVersionUID = 1L;
 	
 	super();
 	
-	name = "Essila";
+	name = "Smarkx";
 	gender = "male";
 	
 	attackBonus = 2;

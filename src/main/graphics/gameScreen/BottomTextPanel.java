@@ -34,17 +34,27 @@ public class BottomTextPanel extends JPanel {
 
 		switch(Main.bottomTextTutorial) {
 		case Homeview:
-			newsReel.textArea.setText("Hello and welcome to Hands Off My Army. <br> "
-					+ "This is your homescreen, from here you can see important information at a glance. <br> "
-					+ "You can also prepare for the next battle by selecting which regiments will partake in the fun. <br>"
-					+ "Do this by clicking on the role text and then choose between "
-					+ "'combat', 'training' or 'marketing'. <br> "
-					+ "Training and marketing are currently not yet implemented, "
-					+ "a maximum of eight regiments can be given 'combat' role. <br>"
-					+ "Finally, you can also click on the regiment to go to its detail page.");
+			newsReel.textArea.setText("Hello and welcome to Fantasy Army Manager. This is your home screen. <br> <br> "
+					+ "The most important thing to do here is to choose what your regiments will be doing this week."
+					+ "You can select up to eight regiments to go to battle, the leftovers can be sent to "
+					+ " practice their skills, or to cajole, coax, and manhandle "
+					+ "fans and sponsors into giving you money! <br> <br>"
+					+ "You can also see the current league ranking, previous results and who you'll be fighting next, "
+					+ "and some generic information and trophies. <br> <br>"
+					+ "Click on one of your regiments to go to a more detailed overview.");
 			break;
 		case RegimentView:
-			newsReel.textArea.setText("ee");
+			newsReel.textArea.setText("The left hand side of this screen gives you information about the regiment. "
+					+ "You can also change equipment options here. <br>"
+					+ "Meanwhile, over at the right hand side, you'll find information on the regiment's captain, "
+					+ "such as their riveting and tragic life stories. <br> <br>"
+					+ "More interesting, if not more important, are the battle orders you can give the captain. "
+					+ "These orders will be executed without fail from top to bottom. Meaning, when a regiment has its "
+					+ "turn, it will try to carry out its first order. If this is impossible, it will try its second "
+					+ "and so on until the last. If no orders meet the chosen condition, the regiment will do nothing, "
+					+ "so it's usually a good idea to choose your orders in decreasing narrowness of scope. A simple "
+					+ "example would be to choose your first order's condition as 'life smaller than 25%', and the "
+					+ "second order as 'always'. If you invert these, the second order would never be executed! ");
 			break;
 		default:
 			break;
