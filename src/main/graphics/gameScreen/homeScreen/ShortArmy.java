@@ -19,7 +19,6 @@ public class ShortArmy extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	
-	private ContentPanel titlePanel;
 	private ContentPanel titleBarPanel;
 	private ContentPanel regimentsPanel;
 	private ArrayList<RegimentPanel> regimentPanels;

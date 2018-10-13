@@ -25,9 +25,6 @@ public class RegimentView extends JPanel {
 
 		super();
 
-		int unroundedHeight = gameScreenHeight * 98 / 100;
-		int unroundedWidth = gameScreenHeight * 8 * 15 / 100;
-		int roundedWidth = unroundedWidth - (unroundedWidth % 48);
 
 		Dimension gameSceneSize = new Dimension(gameScreenWidth, gameScreenHeight);
 		setPreferredSize(gameSceneSize);

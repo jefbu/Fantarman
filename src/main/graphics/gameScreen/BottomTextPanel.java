@@ -6,7 +6,6 @@ import java.awt.FlowLayout;
 import javax.swing.JPanel;
 
 import main.Main;
-import main.graphics.Screen;
 import main.graphics.gameScreen.homeScreen.NewsReel;
 import main.utility.Colors;
 

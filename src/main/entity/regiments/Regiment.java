@@ -11,7 +11,6 @@ import main.battle.tactics.Order;
 import main.battle.tactics.OrderMethods;
 import main.battle.tactics.Tactic;
 import main.battle.tactics.TargetChecker;
-import main.components.IndexedPanel;
 import main.entity.armies.Army;
 import main.entity.captains.Captain;
 import main.entity.equipment.Armour;
@@ -205,10 +204,6 @@ public abstract class Regiment implements Serializable {
 					opponentBattleArmy);
 			executeOrder(tactic.order, target, activeArmy, activeRegimentIndex, yourBattleArmy, opponentBattleArmy);
 
-			for (IndexedPanel indexedPanel : BattleScreen.battleScene.indexedPanels) {
-				//indexedPanel.setBorder(null);
-				//indexedPanel.button.setBorder(null);
-			}
 		}
 
 	}

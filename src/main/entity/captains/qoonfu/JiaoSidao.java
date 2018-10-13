@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 import main.entity.captains.Captain;
 import main.entity.captains.Conversation;
-import main.entity.captains.terribleTerquits.Zuba;
 import main.entity.skills.Skills;
 import main.strings.CaptainBio;
 import main.strings.Conversations;

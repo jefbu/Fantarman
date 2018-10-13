@@ -23,21 +23,12 @@ public class RegimentPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	private ButtonedPanel captainPanel;
-	private ButtonedPanel regimentNamePanel;
 	private ButtonedPanel regimentTypePanel;
 
 	private ButtonedPanel meleeOffensePanel;
 	private ButtonedPanel defencePanel;
 	private ButtonedPanel mobilityPanel;
 	private ButtonedPanel rangedOffensePanel;
-	private ButtonedPanel attackPanel;
-	private ButtonedPanel chargePanel;
-	private ButtonedPanel rangePanel;
-	private ButtonedPanel missilePanel;
-	private ButtonedPanel moralePanel;
-
-	private ButtonedPanel upkeepPanel;
-	private ButtonedPanel valuePanel;
 
 	private ButtonedPanel combatRolePanel;
 	private ButtonedPanel trainingRolePanel;

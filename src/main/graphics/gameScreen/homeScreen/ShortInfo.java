@@ -20,7 +20,6 @@ public class ShortInfo extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	
-	private ContentPanel titlePanel;
 	private ContentPanel titleBarPanel;
 	private ContentPanel infoPanel;
 	private LabeledPanel balancePanel;
@@ -31,8 +30,6 @@ public class ShortInfo extends JPanel {
 	private LabeledPanel boardSatisfactionResultPanel;
 	private LabeledPanel fanSatisfactionPanel;
 	private LabeledPanel fanSatisfactionResultPanel;
-	private LabeledPanel trophyPanel;
-	private LabeledPanel trophyResultPanel;
 	private FanHistoryPanel fanHistoryPanel;
 	private BoardHistoryPanel boardHistoryPanel;
 	private JPanel spaghettiPanel;

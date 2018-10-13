@@ -76,7 +76,7 @@ public abstract class CaptainBio {
 			+ "he must constantly handle the pressure from the higher-ups to be more aggressive";
 
 	public static String fionaGossip = "There once was a passerine tit. Who twittered her chirp cheeping bit. "
-			+ "She was playing with fire, got called out a liar. Basically, she was just";
+			+ "She was the brand of the fire, provoking big ire. Basically, she was just full of it.";
 
 	public static String furiousCamilla = "Famous for revolutionising Espequr army structure. "
 			+ "Before, too much faith was put into solid blocks of heavy infantry, "
@@ -195,8 +195,8 @@ public abstract class CaptainBio {
 			+ "However, they fell out of grace after a supposed romantic scandal "
 			+ "and were demoted to fight mockbattles as a punishment";
 
-	public static String samMaxwell = "There once was a bird with no gender. At least to old fashioned comprehender. "
-			+ "Biology said A, their heart said No Way. So they turned into convention bender.";
+	public static String samMaxwell = "There once was a bird with no gender. To old fashioned malcomprehender. "
+			+ "Forget about genes and go follow your dreams. Be a magnificent convention bender.";
 
 	public static String sassaru = "When she was twelve, she underwent the compulsory firemage test "
 			+ "and it was discovered she had more talent than any other Wanmen before her. "

@@ -21,7 +21,6 @@ public class ShortFixtures extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	private ContentPanel titleBarPanel;
-	private ContentPanel fixturesPanel;
 	private ContentPanel matchupsPanel;
 	private LabeledPanel namePanel;
 	private ArrayList<MatchupRowPanel> matchupRowPanels;
