@@ -53,8 +53,8 @@ public class Alae extends Regiment {
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/feods/light_battle.png", width, height);
-		largeIcon = imageLoader.loadImageIcon("/regiments/feods/light.png", width * 8, height * 8);
+		icon = imageLoader.loadImageIcon("/regiments/Feods/light_battle.png", width, height);
+		largeIcon = imageLoader.loadImageIcon("/regiments/Feods/light.png", width * 8, height * 8);
 		
 		weapons.add(Weapons.lances);
 		weapons.add(Weapons.twohanders);

@@ -3,8 +3,11 @@ package main.entity.captains.feods;
 import java.io.Serializable;
 
 import main.entity.captains.Captain;
+import main.entity.captains.Conversation;
+import main.entity.captains.pickles.Professor;
 import main.entity.skills.Skills;
 import main.strings.CaptainBio;
+import main.strings.Conversations;
 
 public class JulesLittleBoots extends Captain implements Serializable {
 
@@ -33,6 +36,26 @@ public class JulesLittleBoots extends Captain implements Serializable {
 		bio = CaptainBio.julesLittleBoots;
 		
 		iconPath = "/portraits/unknown.png";
+		
+		OldCatherine oldCatherine = new OldCatherine();
+		String[] strings = new String[7];
+		strings[0] = Conversations.julesLittleBoots1;
+		strings[1] = Conversations.julesLittleBoots2;
+		strings[2] = Conversations.julesLittleBoots3;
+		strings[3] = Conversations.julesLittleBoots4;
+		strings[4] = Conversations.julesLittleBoots5;
+		strings[5] = Conversations.julesLittleBoots6;
+		strings[6] = Conversations.julesLittleBoots7;
+		boolean[] ownVoice = new boolean[7];
+		ownVoice[0] = true;
+		ownVoice[1] = true;
+		ownVoice[2] = true;
+		ownVoice[3] = true;
+		ownVoice[4] = true;
+		ownVoice[5] = true;
+		ownVoice[6] = false;
+		
+		conversations.add(new Conversation(this, oldCatherine, strings, ownVoice));
 		
 		
 	}

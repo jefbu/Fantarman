@@ -28,6 +28,8 @@ public class Screen extends JFrame {
 	public static BattleScreen battleScreen;
 	public static GameScreen gameScreen;
 	public static GameStartScreen gameStartScreen;
+	
+	public static int FONTSIZE;
 
 	
 	public Screen() {
@@ -38,6 +40,9 @@ public class Screen extends JFrame {
 		adjustScreenSize();
 		createContentPane();
 		createMainPanel();
+		
+		FONTSIZE = decideFontSize();
+		System.out.println(FONTSIZE);
 		
 		titleScreen = new TitleScreen(mainPanelWidth, mainPanelHeight);
 		titleScreen.setVisible(true);
@@ -71,7 +76,7 @@ public class Screen extends JFrame {
 		
 	}
 	
-	public void adjustScreenSize() {
+	private void adjustScreenSize() {
 		
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		screenWidth = (int) screenSize.getWidth();
@@ -82,13 +87,24 @@ public class Screen extends JFrame {
 		
 	}
 	
-	public void createContentPane() {
+	private void createContentPane() {
 				
 		JPanel contentPane = new JPanel();
 		contentPane.setPreferredSize(new Dimension (screenWidth, screenHeight));
 		contentPane.setBackground(new Color(0, 0, 0));
 		add(contentPane);
 		setContentPane(contentPane);
+		
+	}
+	
+	private int decideFontSize() {
+		
+		if (screenHeight > 3000) { return 24; }
+		else if (screenHeight > 2000) { return 20; }
+		else if (screenHeight > 1500) { return 18; }
+		else if (screenHeight > 1000) { return 16; }
+		else return 14;
+
 		
 	}
 	

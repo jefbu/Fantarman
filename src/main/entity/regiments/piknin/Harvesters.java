@@ -53,8 +53,8 @@ public class Harvesters extends Regiment {
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/piknin/harvesters_battle.png", width, height);
-		largeIcon = imageLoader.loadImageIcon("/regiments/piknin/harvesters.png", width * 8, height * 8);
+		icon = imageLoader.loadImageIcon("/regiments/Piknin/harvesters_battle.png", width, height);
+		largeIcon = imageLoader.loadImageIcon("/regiments/Piknin/harvesters.png", width * 8, height * 8);
 		
 		weapons.add(Weapons.sickles);
 		weapons.add(Weapons.scythes);

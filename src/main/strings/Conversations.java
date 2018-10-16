@@ -86,6 +86,16 @@ public abstract class Conversations {
 	public static String jeanpauper_anita7 = "... It's like watching a freight train thunder straight into a deep ravine, "
 			+ "unable to change its direction; bound to the tracks of its fate.";
 	
+	public static String jet_jackie1 = "**Nervously shifting balance from one foot to the other**";
+	public static String jet_jackie2 = "...Argh, every bloody time right before a battle.";
+	public static String jet_jackie3 = "**Looking very pleased (and somewhat drunk)**";
+	public static String jet_jackie4 = "My brother. Boiler? Buh ... Bro, You, me, the School!";
+	public static String jet_jackie5 = "Huh? What??";
+	public static String jet_jackie6 = "I a see it, issa, erm, puhractis!! Issa drunken fighting school!!";
+	public static String jet_jackie7 = "You good stoodun, good good!";
+	public static String jet_jackie8 = "**Staggers Off, exeunt inebriated.**";
+	public static String jet_jackie9 = "What? No! I just always get nervous before a battle, I just need to pass water!";
+	
 	public static String jiaosidao_miyouin1 = "I've got some beeeeeeeer in the back of my truuuuck!";
 	public static String jiaosidao_miyouin2 = "... You've been singing that same song for hours, "
 			+ "can't you think of something else?";
@@ -103,6 +113,17 @@ public abstract class Conversations {
 	public static String jiaosidao_miyouin13 = "...";
 	public static String jiaosidao_miyouin14 = "Oh no...";
 	public static String jiaosidao_miyouin15 = "I've got some beeeeeeeer in the back of my truuuuck!";
+	
+	public static String julesLittleBoots1 = "Mwahaha hoohoohahaha. Hoohoohoohihaha.";
+	public static String julesLittleBoots2 = "Man. I can't believe they actually thought I meant it.";
+	public static String julesLittleBoots3 = "I said my stoopvarmint would make a better consul than them, "
+			+ "and I must have been so eloquent, grave and tonely authoritarian "
+			+ "that the suckers actually think I'd consider it.";
+	public static String julesLittleBoots4 = "In a thousand years, they'll still consider this the height of comedy.";
+	public static String julesLittleBoots5 = "...";
+	public static String julesLittleBoots6 = "Maybe they'll teach about me in schools!";
+	public static String julesLittleBoots7 = "If they teach anything about you at all, it'll be that you're an utter "
+			+ "nutcase. Pah.";
 	
 	
 	public static String max_vince1 = "Hey Vince, "

@@ -13,6 +13,7 @@ import main.Main;
 import main.components.ContentPanel;
 import main.components.LabeledPanel;
 import main.entity.regiments.Regiment;
+import main.graphics.Screen;
 import main.utility.Colors;
 
 public class ShortArmy extends JPanel {
@@ -59,7 +60,7 @@ public class ShortArmy extends JPanel {
 				LabeledPanel captainPanel = new LabeledPanel(width * 9 * 20 / 1000, height / 10);
 					captainPanel.setBackground(Colors.grey);
 					captainPanel.setLayout(new FlowLayout(FlowLayout.LEFT, width / 100, height * 2 / 100));
-					captainPanel.label.setFont(new Font("garamond", Font.BOLD, 16));
+					captainPanel.label.setFont(new Font("garamond", Font.BOLD, Screen.FONTSIZE));
 					captainPanel.label.setForeground(Colors.vlgrey);
 					captainPanel.label.setText("Captain");
 				titleBarPanel.insidePanel.add(captainPanel);

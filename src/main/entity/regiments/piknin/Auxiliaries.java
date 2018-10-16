@@ -52,8 +52,8 @@ public class Auxiliaries extends Regiment {
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/piknin/auxiliaries_battle.png", width, height);
-		largeIcon = imageLoader.loadImageIcon("/regiments/piknin/auxiliaries.png", width * 8, height * 8);
+		icon = imageLoader.loadImageIcon("/regiments/Piknin/auxiliaries_battle.png", width, height);
+		largeIcon = imageLoader.loadImageIcon("/regiments/Piknin/auxiliaries.png", width * 8, height * 8);
 		
 		weapons.add(Weapons.spears);
 		weapons.add(Weapons.shields);

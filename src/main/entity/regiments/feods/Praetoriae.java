@@ -54,8 +54,8 @@ public class Praetoriae extends Regiment {
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/feods/shield_battle.png", width, height);
-		largeIcon = imageLoader.loadImageIcon("/regiments/feods/shield.png", width * 8, height * 8);
+		icon = imageLoader.loadImageIcon("/regiments/Feods/shield_battle.png", width, height);
+		largeIcon = imageLoader.loadImageIcon("/regiments/Feods/shield.png", width * 8, height * 8);
 		
 		weapons.add(Weapons.swords);
 		

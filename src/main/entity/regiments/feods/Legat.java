@@ -49,8 +49,8 @@ public class Legat extends Regiment {
 		this.x = 0;
 		this.y = 0;
 		
-		icon = imageLoader.loadImageIcon("/regiments/feods/cardinal_battle.png", width, height);
-		largeIcon = imageLoader.loadImageIcon("/regiments/feods/cardinal.png", width * 8, height * 8);
+		icon = imageLoader.loadImageIcon("/regiments/Feods/cardinal_battle.png", width, height);
+		largeIcon = imageLoader.loadImageIcon("/regiments/Feods/cardinal.png", width * 8, height * 8);
 		
 		weapons.add(Weapons.wands);
 		weapons.add(Weapons.staves);
