@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import main.Main;
 import main.components.ContentPanel;
 import main.components.LabeledPanel;
+import main.graphics.Screen;
 import main.graphics.gameScreen.infoView.BoardHistoryPanel;
 import main.graphics.gameScreen.infoView.FanHistoryPanel;
 import main.utility.Colors;
@@ -63,7 +64,7 @@ public class ShortInfo extends JPanel {
 				LabeledPanel namePanel = new LabeledPanel(width * 85 / 100 * 9 / 10, height / 10);
 				namePanel.setBackground(Colors.grey);
 				namePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, height * 4 / 100));
-				namePanel.label.setFont(new Font("garamond", Font.BOLD, 16));
+				namePanel.label.setFont(new Font("garamond", Font.BOLD, Screen.FONTSIZE));
 				namePanel.label.setForeground(Colors.vlgrey);
 				namePanel.label.setText("Information");
 				titleBarPanel.insidePanel.add(namePanel);
@@ -72,7 +73,7 @@ public class ShortInfo extends JPanel {
 				resultPanel.label.setText("RESULT");
 				resultPanel.setBackground(Colors.blue);
 				resultPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 20));
-				resultPanel.label.setFont(new Font("garamond", Font.BOLD, 16));
+				resultPanel.label.setFont(new Font("garamond", Font.BOLD, Screen.FONTSIZE));
 				resultPanel.label.setForeground(Colors.textyellow);
 				titleBarPanel.insidePanel.add(resultPanel);
 				*/

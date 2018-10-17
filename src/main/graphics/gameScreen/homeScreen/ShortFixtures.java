@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import main.components.ButtonedPanel;
 import main.components.ContentPanel;
 import main.components.LabeledPanel;
+import main.graphics.Screen;
 import main.graphics.gameScreen.leagueView.MatchupRowPanel;
 import main.utility.Colors;
 import main.utility.ImageLoader;
@@ -42,7 +43,7 @@ public class ShortFixtures extends JPanel {
 			namePanel = new LabeledPanel(width * 67 / 100, height * 20 / 100);
 			namePanel.setBackground(Colors.grey);
 			namePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, height * 4 / 100));
-			namePanel.label.setFont(new Font("garamond", Font.BOLD, 16));
+			namePanel.label.setFont(new Font("garamond", Font.BOLD, Screen.FONTSIZE));
 			namePanel.label.setForeground(Colors.vlgrey);
 			namePanel.label.setText("Calendar");
 			titleBarPanel.insidePanel.add(namePanel);

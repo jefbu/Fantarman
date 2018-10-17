@@ -13,6 +13,7 @@ import main.Main;
 import main.components.ContentPanel;
 import main.components.LabeledPanel;
 import main.entity.armies.Army;
+import main.graphics.Screen;
 import main.utility.Colors;
 
 public class ShortLeague extends JPanel {
@@ -46,7 +47,7 @@ public class ShortLeague extends JPanel {
 			LabeledPanel namePanel = new LabeledPanel(width * 6 / 10, height / 10);
 			namePanel.setBackground(Colors.grey);
 			namePanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, height * 4 / 100));
-			namePanel.label.setFont(new Font("garamond", Font.BOLD, 16));
+			namePanel.label.setFont(new Font("garamond", Font.BOLD, Screen.FONTSIZE));
 			namePanel.label.setForeground(Colors.vlgrey);
 			namePanel.label.setText("League");
 			titleBarPanel.insidePanel.add(namePanel);
@@ -54,7 +55,7 @@ public class ShortLeague extends JPanel {
 			LabeledPanel pointsPanel = new LabeledPanel(width * 2 / 10, height / 10);
 			pointsPanel.setBackground(Colors.green);
 			pointsPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 20));
-			pointsPanel.label.setFont(new Font("garamond", Font.BOLD, 16));
+			pointsPanel.label.setFont(new Font("garamond", Font.BOLD, Screen.FONTSIZE));
 			pointsPanel.label.setForeground(Colors.textyellow);
 			pointsPanel.label.setText("POINTS");
 			titleBarPanel.insidePanel.add(pointsPanel);*/

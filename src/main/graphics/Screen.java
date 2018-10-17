@@ -42,6 +42,7 @@ public class Screen extends JFrame {
 		createMainPanel();
 		
 		FONTSIZE = decideFontSize();
+		System.out.println(screenHeight);
 		System.out.println(FONTSIZE);
 		
 		titleScreen = new TitleScreen(mainPanelWidth, mainPanelHeight);
@@ -99,9 +100,9 @@ public class Screen extends JFrame {
 	
 	private int decideFontSize() {
 		
-		if (screenHeight > 3000) { return 24; }
-		else if (screenHeight > 2000) { return 20; }
-		else if (screenHeight > 1500) { return 18; }
+		if (screenHeight > 2500) { return 32; }
+		else if (screenHeight > 2000) { return 28; }
+		else if (screenHeight > 1400) { return 24; }
 		else if (screenHeight > 1000) { return 16; }
 		else return 14;
 
