@@ -35,12 +35,12 @@ public abstract class CaptainBio {
 
 	public static String essila = "A few years ago, Essila was bitten by a rutting mutant goose. "
 			+ "Now a caped crusader, costumed crimefighter and patroling paladin, he stalks the streets at night, "
-			+ "veiled in his secret identity ...gooseman.";
+			+ "veiled in his secret identity... Ganderman.";
 
 	public static String galaxychaser = "Galaxychaser used to be called Starchaser, "
 			+ "but upgraded his name after a copyright infringement can of worms. "
 			+ "He believes that he is mysterious and swooned over, "
-			+ "but most other Piknin just think of him as pompous and blase";
+			+ "but most other Piknin just think of him as pompous and blasé";
 	
 	public static String huiSun = "A former professional modern Jazz dancer, "
 			+ "she found that hand to hand combat can be remarkably similar in grace and elegance. "

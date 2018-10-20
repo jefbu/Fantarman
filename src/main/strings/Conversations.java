@@ -2,6 +2,25 @@ package main.strings;
 
 public abstract class Conversations {
 	
+	public static String anita_markthecrass1 = "Oh, hi Mark, how've you been?";
+	public static String anita_markthecrass2 = "Why excellent Anita, thanks, you know I really liked that "
+			+ "coq au vin recipe you gave me!";
+	public static String anita_markthecrass3 = "That's great to hear, when did you make it?";
+	public static String anita_markthecrass4 = "Only last week, I had Fabian over for dinner.";
+	public static String anita_markthecrass5 = "Cuncta? Wow, he's usually a very tough to please gourmand.";
+	public static String anita_markthecrass6 = "Isn't he? But it went down a treat, he even took seconds!";
+	public static String anita_markthecrass7 = "Well I'm delighted. Which reminds me, you were going to enlighten me "
+			+ "to your caramelised onions trick.";
+	public static String anita_markthecrass8 = "Hmm, well, ok. You want to keep the fire medium so they don't burn, "
+			+ "then don't be shy on the salt and especially the pepper.";
+	public static String anita_markthecrass9 = "After about ten minutes, add a handful of sugar, then give it another "
+			+ "few minutes and then flambé the whole thing.";
+	public static String anita_markthecrass10 = "Mind you, the alcohol you use should be flavourful. I find cachaça "
+			+ "or calvados to work really well, or port if you want somehting sweeter.";
+	public static String anita_markthecrass11 = "Gotcha! Well, I guess I'll see you on the battlefield right?";
+	public static String anita_markthecrass12 = "Certainly, but let's have drinks after!";
+	public static String anita_markthecrass13 = "All right, but don't invite Cuncta. **winks**";
+	
 	public static String backface_professor1 = "Chaarge!!!";
 	public static String backface_professor2 = "**Looks over**";
 	public static String backface_professor3 = "Gollygosh. Looks like Backface mounted his pony the wrong way round again";
@@ -123,8 +142,7 @@ public abstract class Conversations {
 	public static String julesLittleBoots5 = "...";
 	public static String julesLittleBoots6 = "Maybe they'll teach about me in schools!";
 	public static String julesLittleBoots7 = "If they teach anything about you at all, it'll be that you're an utter "
-			+ "nutcase. Pah.";
-	
+			+ "nutcase. Pah.";	
 	
 	public static String max_vince1 = "Hey Vince, "
 			+ "how is your work going on that latest invention you mentioned last time?";

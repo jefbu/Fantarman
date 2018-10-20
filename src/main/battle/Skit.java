@@ -10,12 +10,12 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import javax.swing.BorderFactory;
-import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
+import main.components.ButtonedPanel;
 import main.components.ContentPanel;
 import main.entity.armies.Army;
 import main.entity.captains.Conversation;
@@ -32,7 +32,7 @@ public class Skit extends JDialog {
 	JTextPane yourTextLabel;
 	JLabel opponentIconLabel;
 	JTextPane opponentTextLabel;
-	JButton button;
+	ButtonedPanel button;
 
 	int counter;
 
@@ -155,8 +155,8 @@ public class Skit extends JDialog {
 		bottomEmptyPanel.setBackground(Colors.lgrey);
 		bottomEmptyPanel.setLayout(new FlowLayout(FlowLayout.RIGHT, width / 20, height / 30));
 
-		button = new JButton();
-		button.setPreferredSize(new Dimension(width / 15, height / 10));
+		button = new ButtonedPanel(width / 5, height / 10, Colors.lgrey);
+		button.label.setIcon(imageLoader.loadImageIcon("/icons/orderButton.png", width / 6, height / 12));
 		bottomEmptyPanel.add(button);
 
 		panel.insidePanel.add(bottomEmptyPanel);
@@ -197,10 +197,10 @@ public class Skit extends JDialog {
 
 			setText(conversation, counter);
 
-			button.addActionListener(new ActionListener() {
+			button.button.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					if (counter + 1 == conversation.texts.length) {
-						button.removeActionListener(button.getActionListeners()[0]);
+						button.button.removeActionListener(button.button.getActionListeners()[0]);
 						conversation.alreadyDone = true;
 						dispose();
 					} else {
