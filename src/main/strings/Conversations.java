@@ -144,6 +144,13 @@ public abstract class Conversations {
 	public static String julesLittleBoots7 = "If they teach anything about you at all, it'll be that you're an utter "
 			+ "nutcase. Pah.";	
 	
+	public static String jules_hans1 = "**Intense Gazing**";
+	public static String jules_hans2 = "... We will invade your land.";
+	public static String jules_hans3 = "... And take from your possession all your seashells.";
+	public static String jules_hans4 = "Beg your pardon?";
+	public static String jules_hans5 = "**Intense Gazing**";
+	
+	
 	public static String max_vince1 = "Hey Vince, "
 			+ "how is your work going on that latest invention you mentioned last time?";
 	public static String max_vince2 = "Oh hi there Max. It's going great, we'll be testing a prototype out next week!";

@@ -53,6 +53,7 @@ public abstract class OrderMethods {
 			target.defeated = true;
 			target.inCombat = false;
 			target.timesDefeated++;
+			target.injuries = target.totalMaxLife;
 			regiment.inCombat = false;
 			regiment.enemiesDefeated++;
 			if (activeArmy == yourBattleArmy) {
@@ -113,6 +114,7 @@ public abstract class OrderMethods {
 				if (target.battleLife <= 0) {
 					target.defeated = true;
 					target.timesDefeated++;
+					target.injuries = target.totalMaxLife;
 					regiment.enemiesDefeated++;
 					regiment.inCombat = false;
 					if (activeArmy == yourBattleArmy) {

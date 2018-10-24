@@ -63,6 +63,9 @@ public abstract class Regiment implements Serializable {
 	public int totalSpeed;
 	public int totalSpeedVariation;
 	public int totalLife;
+	
+	public int totalMaxLife;
+	public int injuries;
 
 	public int battleAttack;
 	public int battleDefence;
@@ -122,6 +125,7 @@ public abstract class Regiment implements Serializable {
 		enemiesDefeated = 0;
 		timesDefeated = 0;
 		timesMVP = 0;
+		injuries = 0;
 
 	}
 
@@ -186,7 +190,8 @@ public abstract class Regiment implements Serializable {
 		totalMorale = baseMorale + captain.moraleBonus + armour.moraleBonus;
 		totalSpeed = baseSpeed + captain.speedBonus - weapon.spdPenalty - armour.spdPenalty;
 		totalSpeedVariation = baseSpeedVariation;
-		totalLife = baseLife;
+		totalMaxLife = baseLife;
+		totalLife = totalMaxLife - injuries;
 
 	}
 

@@ -156,7 +156,7 @@ public class Skit extends JDialog {
 		bottomEmptyPanel.setLayout(new FlowLayout(FlowLayout.RIGHT, width / 20, height / 30));
 
 		button = new ButtonedPanel(width / 5, height / 10, Colors.lgrey);
-		button.label.setIcon(imageLoader.loadImageIcon("/icons/orderButton.png", width / 6, height / 12));
+		button.label.setIcon(imageLoader.loadImageIcon("/icons/okayButton.png", width / 6, height / 12));
 		bottomEmptyPanel.add(button);
 
 		panel.insidePanel.add(bottomEmptyPanel);

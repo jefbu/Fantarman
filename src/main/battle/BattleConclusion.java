@@ -116,6 +116,14 @@ public class BattleConclusion extends TextPopup {
 			
 			matchResult = 0;
 		}
+		
+			for (Regiment regiment: yourBattleArmy.roster) {
+				regiment.injuries = regiment.totalMaxLife - regiment.battleLife;
+			}
+			for (Regiment regiment: opponentBattleArmy.roster) {
+				regiment.injuries = regiment.totalMaxLife - regiment.battleLife;
+			}
+		
 
 		calculateOpponentResults();
 		yourBattleArmy.roster.clear();
@@ -123,11 +131,20 @@ public class BattleConclusion extends TextPopup {
 		
 		for (Army army: Main.league.armies) {
 			for (Regiment regiment: army.roster) {
-			for (int i = 0; i < regiment.panels.length; i++) {
-				regiment.panels[i] = 0;  
-				regiment.inCombat = false;
-				regiment.combatOpponent = null;
-			}
+				for (int i = 0; i < regiment.panels.length; i++) {
+					regiment.panels[i] = 0;  
+					}
+				int recoveries = 0;
+				for (int ii = 0; ii < regiment.injuries; ii++) {
+					Random random = new Random();
+					if(random.nextInt(4) < 3) { recoveries++; }
+				}
+				regiment.injuries = regiment.injuries - recoveries;
+			regiment.inCombat = false;
+			regiment.combatOpponent = null;
+			regiment.calculateTotalStats();
+			regiment.calculateValue();
+			
 			}
 		}
 		
@@ -258,6 +275,28 @@ public class BattleConclusion extends TextPopup {
 					matchup.army2.scoreSheet.bigWins++;
 					matchup.army2.scoreSheet.calculatePoints();
 					matchup.result = Result.L;
+				}
+				
+				
+				Collections.sort(matchup.army1.roster, new Comparator<Regiment>() {
+					@Override
+					public int compare(Regiment p1, Regiment p2) {
+						return p2.value - p1.value;
+					}
+				});
+				
+				Collections.sort(matchup.army2.roster, new Comparator<Regiment>() {
+					@Override
+					public int compare(Regiment p1, Regiment p2) {
+						return p2.value - p1.value;
+					}
+				});
+				
+				for (int i = 0; i < 8; i++) {
+					matchup.army1.roster.get(i).injuries = random.nextInt(matchup.army1.roster.get(i).totalMaxLife / 2);
+				}
+				for (int i = 0; i < 8; i++) {
+					matchup.army2.roster.get(i).injuries = random.nextInt(matchup.army2.roster.get(i).totalMaxLife / 2);
 				}
 			}
 			

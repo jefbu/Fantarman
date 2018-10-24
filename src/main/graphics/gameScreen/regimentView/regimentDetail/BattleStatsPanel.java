@@ -52,15 +52,16 @@ public class BattleStatsPanel extends ContentPanel {
 	}
 
 	public void fillBattleStatsPanel(Regiment regiment) {
-		
+
 		regiment.calculateTotalStats();
 
 		lifePanel.titleLabel.setText("Life");
-		lifePanel.contentLabel.setText(Integer.toString(regiment.totalLife));
+		lifePanel.contentLabel
+				.setText(Integer.toString(regiment.totalLife) + " (" + Integer.toString(regiment.totalMaxLife) + ")");
 
 		moralePanel.titleLabel.setText("Morale");
 		moralePanel.contentLabel.setText(Integer.toString(regiment.totalMorale));
-		
+
 		movePanel.titleLabel.setText("Move");
 		movePanel.contentLabel.setText(Integer.toString(regiment.totalMove));
 
@@ -75,7 +76,7 @@ public class BattleStatsPanel extends ContentPanel {
 
 		chargePanel.titleLabel.setText("Charge");
 		chargePanel.contentLabel.setText(Integer.toString(regiment.totalCharge));
-		
+
 		speedPanel.titleLabel.setText("Speed");
 		speedPanel.contentLabel.setText(Integer.toString(regiment.totalSpeed));
 
@@ -83,7 +84,7 @@ public class BattleStatsPanel extends ContentPanel {
 		rangePanel.contentLabel.setText(Integer.toString(regiment.totalRange));
 
 		missilePanel.titleLabel.setText("Missile");
-		missilePanel.contentLabel.setText(Integer.toString(regiment.totalMissile));		
+		missilePanel.contentLabel.setText(Integer.toString(regiment.totalMissile));
 
 	}
 

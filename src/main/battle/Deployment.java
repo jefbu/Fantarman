@@ -252,8 +252,8 @@ public class Deployment {
 		applyStatColours();
 
 		String intro = "<font color = 'rgb(220, 220, 220)'>" + "Please deploy the following regiment: <br>";
-		String name = "<font color = #EEE000>" + yourBattleArmy.roster.get(playerCounter).captain.name + 
-				"'s " + yourBattleArmy.roster.get(playerCounter).regiment + "<br>" + "<br>";
+		String name = "<font color = #EEE000>" + yourBattleArmy.roster.get(playerCounter).captain.name + "'s "
+				+ yourBattleArmy.roster.get(playerCounter).regiment + "<br>";
 
 		String life = "<font color = 'rgb(220, 220, 220)'> Life: ";
 		String lifeStat = "<font color = rgb(" + lifeRed + "," + lifeGreen + ", 30)>"
@@ -293,11 +293,60 @@ public class Deployment {
 
 		String morale = "<font color = 'rgb(220, 220, 220)'> Morale: ";
 		String moraleStat = "<font color = rgb(" + moraleRed + "," + moraleGreen + ", 30)>"
-				+ Integer.toString(yourBattleArmy.roster.get(playerCounter).totalMorale) + "<br>";
+				+ Integer.toString(yourBattleArmy.roster.get(playerCounter).totalMorale) + "<br> <br>";
 
-		RightAggregatePanel.infoTextPanel.textArea.setText(intro + name + life + lifeStat + move + moveStat + run
-				+ runStat + speed + speedStat + attack + attackStat + charge + chargeStat + defence + defenceStat
-				+ range + rangeStat + ballistic + ballisticStat + morale + moraleStat);
+		String dimensionText = name + "<font color = 'rgb(220, 220, 220)'>" + " is a" + getAdjective()
+				+ "<font color = 'rgb(220, 220, 220)'>"
+				+ " regiment with the following dimensions: <br>" + yourBattleArmy.roster.get(playerCounter).rows
+				+ " row(s) by " + yourBattleArmy.roster.get(playerCounter).columns + " columns";
+
+		RightAggregatePanel.infoTextPanel.textArea.setText(intro + name + "<br>" + life + lifeStat + move
+				+ moveStat + run + runStat + speed + speedStat + attack + attackStat + charge + chargeStat + defence
+				+ defenceStat + range + rangeStat + ballistic + ballisticStat + morale + moraleStat + dimensionText);
+	}
+
+	private String getAdjective() {
+		int size = yourBattleArmy.roster.get(playerCounter).rows * yourBattleArmy.roster.get(playerCounter).columns;
+		Random random = new Random();
+		int adjectiveNumber = random.nextInt(3);
+		String adjective;
+		if (size == 3) {
+			if (adjectiveNumber == 0) { adjective = " petite"; }
+			else if (adjectiveNumber == 1) { adjective = " mousy"; }
+			else { adjective = " mini"; }
+			return "<font color = 'rgb(200, 100, 170)'>" + adjective;
+		} else if (size == 4) {
+			if (adjectiveNumber == 0) { adjective = " bantam"; }
+			else if (adjectiveNumber == 1) { adjective = " meager"; }
+			else { adjective = " wee"; }
+			return "<font color = 'rgb(190, 160, 175)'>" + adjective;
+		} else if (size == 6) {
+			if (adjectiveNumber == 0) { adjective = " funsize"; }
+			else if (adjectiveNumber == 1) { adjective = " modest"; }
+			else { adjective = "n unpretentious"; }
+			return "<font color = 'rgb(160, 160, 120)'>" + adjective;
+		} else if (size == 8) {
+			if (adjectiveNumber == 0) { adjective = " run of the mill"; }
+			else if (adjectiveNumber == 1) { adjective = "n on par"; }
+			else { adjective = " passable"; }
+			return "<font color = 'rgb(140, 140, 200)'>" + adjective;
+		} else if (size == 9) {
+			if (adjectiveNumber == 0) { adjective = " lavish"; }
+			else if (adjectiveNumber == 1) { adjective = " plush"; }
+			else { adjective = " big boned"; }
+			return "<font color = 'rgb(120, 120, 220)'>" + adjective;
+		} else if (size == 12) {
+			if (adjectiveNumber == 0) { adjective = " burlesque"; }
+			else if (adjectiveNumber == 1) { adjective = " stout"; }
+			else { adjective = " beefy"; }
+			return "<font color = 'rgb(180, 100, 110)'>" + adjective;
+		} else if (size == 16) {
+			if (adjectiveNumber == 0) { adjective = " jumbo"; }
+			else if (adjectiveNumber == 1) { adjective = "n elephantine"; }
+			else { adjective = " whale of a"; }
+			return "<font color = 'rgb(190, 40, 110)'>" + adjective;
+		} else
+			return "error";
 	}
 
 	private void applyStatColours() {
