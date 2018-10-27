@@ -65,14 +65,6 @@ public class ShortArmy extends JPanel {
 					captainPanel.label.setText("Captain");
 				titleBarPanel.insidePanel.add(captainPanel);
 				
-				/*LabeledPanel regimentNamePanel = new LabeledPanel(width * 9 * 15 / 1000, height / 10);
-					regimentNamePanel.setBackground(Colors.orange);
-					regimentNamePanel.setLayout(new FlowLayout(FlowLayout.LEFT, width / 100, height * 2 / 100));
-					regimentNamePanel.label.setFont(new Font("garamond", Font.BOLD, 16));
-					regimentNamePanel.label.setForeground(Colors.textyellow);
-					regimentNamePanel.label.setText("Regiment");
-				titleBarPanel.insidePanel.add(regimentNamePanel);*/
-				
 				LabeledPanel lifePanel = new LabeledPanel(width * 9 * 7 / 1000, height / 10);
 					lifePanel.setBackground(Colors.grey);
 					lifePanel.setLayout(new FlowLayout(FlowLayout.LEFT, width / 100, height * 2 / 100));
