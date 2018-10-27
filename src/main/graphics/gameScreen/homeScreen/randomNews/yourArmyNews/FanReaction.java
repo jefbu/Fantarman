@@ -9,7 +9,7 @@ import main.utility.Trophies;
 public abstract class FanReaction {
 	
 	static Random random = new Random();
-	private static int spaghettiCounter = 1;
+	public static int spaghettiCounter = 1;
 	
 	public static String getFanReaction() {
 		

@@ -57,7 +57,7 @@ public class ShortArmy extends JPanel {
 					namePanel.label.setText("Regiment Name");
 				titleBarPanel.insidePanel.add(namePanel);*/
 				
-				LabeledPanel captainPanel = new LabeledPanel(width * 9 * 20 / 1000, height / 10);
+				LabeledPanel captainPanel = new LabeledPanel(width * 9 * 18 / 1000, height / 10);
 					captainPanel.setBackground(Colors.grey);
 					captainPanel.setLayout(new FlowLayout(FlowLayout.LEFT, width / 100, height * 2 / 100));
 					captainPanel.label.setFont(new Font("garamond", Font.BOLD, Screen.FONTSIZE));
@@ -73,7 +73,15 @@ public class ShortArmy extends JPanel {
 					regimentNamePanel.label.setText("Regiment");
 				titleBarPanel.insidePanel.add(regimentNamePanel);*/
 				
-				LabeledPanel regimentTypePanel = new LabeledPanel(width * 9 * 20 / 1000, height / 10);
+				LabeledPanel lifePanel = new LabeledPanel(width * 9 * 7 / 1000, height / 10);
+					lifePanel.setBackground(Colors.grey);
+					lifePanel.setLayout(new FlowLayout(FlowLayout.LEFT, width / 100, height * 2 / 100));
+					lifePanel.label.setFont(new Font("garamond", Font.BOLD, Screen.FONTSIZE));
+					lifePanel.label.setForeground(Colors.vlgrey);
+					lifePanel.label.setText("Life");
+				titleBarPanel.insidePanel.add(lifePanel);
+				
+				LabeledPanel regimentTypePanel = new LabeledPanel(width * 9 * 15 / 1000, height / 10);
 					regimentTypePanel.setBackground(Colors.grey);
 					regimentTypePanel.setLayout(new FlowLayout(FlowLayout.LEFT, width / 100, height * 2 / 100));
 					regimentTypePanel.label.setFont(new Font("garamond", Font.BOLD, Screen.FONTSIZE));
