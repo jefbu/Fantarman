@@ -19,6 +19,7 @@ import main.entity.lieutenants.Lieutenant;
 import main.entity.races.Race;
 import main.graphics.battleScreen.BattleScreen;
 import main.utility.ImageLoader;
+import main.utility.Trophies;
 
 public abstract class Regiment implements Serializable {
 
@@ -182,16 +183,20 @@ public abstract class Regiment implements Serializable {
 
 		totalAttack = baseAttack + captain.attackBonus + weapon.attackBonus;
 		totalDefence = baseDefence + captain.defenceBonus + armour.defenceBonus;
+		if (Trophies.calcium) { totalDefence++; }
 		totalMove = baseMove - armour.movPenalty;
 		totalCharge = baseCharge + captain.chargeBonus + weapon.chargeBonus;
+		if (Trophies.stag) { totalCharge++; }
 		totalRun = baseRun;
 		totalRange = baseRange + weapon.rangeBonus;
 		totalMissile = baseMissile + captain.missileBonus + weapon.missileBonus;
 		totalMorale = baseMorale + captain.moraleBonus + armour.moraleBonus;
+		if (Trophies.wonLeague) { totalMorale++; }
 		totalSpeed = baseSpeed + captain.speedBonus - weapon.spdPenalty - armour.spdPenalty;
 		totalSpeedVariation = baseSpeedVariation;
 		totalMaxLife = baseLife;
 		totalLife = totalMaxLife - injuries;
+		
 
 	}
 

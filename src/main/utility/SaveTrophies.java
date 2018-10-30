@@ -19,6 +19,12 @@ public abstract class SaveTrophies {
 			boolean wonLeague = Trophies.wonLeague;
 			save.writeObject(wonLeague);
 			
+			boolean calcium = Trophies.calcium;
+			save.writeObject(calcium);
+			
+			boolean stag = Trophies.stag;
+			save.writeObject(stag);
+			
 			save.close();
 			
 			} catch (IOException e) {

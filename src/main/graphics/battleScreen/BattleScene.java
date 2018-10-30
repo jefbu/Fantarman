@@ -3,6 +3,8 @@ package main.graphics.battleScreen;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -12,7 +14,9 @@ import main.components.IndexedPanel;
 import main.graphics.TileImages;
 import main.utility.Border;
 import main.utility.Direction;
+import main.utility.SaveTrophies;
 import main.utility.TerrainType;
+import main.utility.Trophies;
 
 public class BattleScene extends JPanel {
 
@@ -69,8 +73,15 @@ public class BattleScene extends JPanel {
 			case GRASS:
 				panel.terrain = TerrainType.GRASS;
 				roll = random.nextInt(10000) + 1;
-				if (roll <= 5) {
+				if (roll <= 50) {
 					panel.icon = TileImages.grass4Icon;
+					panel.button.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							System.out.println("clicked calcium");
+							Trophies.calcium = true;
+							SaveTrophies.save();
+						}
+					});
 				} else if (roll <= 10) {
 					panel.icon = TileImages.grass3Icon;
 				} else if (roll <= 20) {
@@ -631,8 +642,15 @@ public class BattleScene extends JPanel {
 				try {
 					int roll = random.nextInt(100);
 					indexedPanels.get(location).terrain = TerrainType.FOREST;
-					if (roll < 3) {
+					if (roll < 30) {
 						indexedPanels.get(location).icon = TileImages.forest3Icon;
+						indexedPanels.get(location).button.addActionListener(new ActionListener() {
+							public void actionPerformed (ActionEvent e) {
+								System.out.println("clicked stag");
+								Trophies.stag = true;
+								SaveTrophies.save();
+							}
+						});
 					} else if (roll < 10) {
 						indexedPanels.get(location).icon = TileImages.forest2Icon;
 					} else {

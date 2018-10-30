@@ -10,6 +10,7 @@ import main.components.Colour;
 import main.components.TextPopup;
 import main.entity.armies.Army;
 import main.entity.regiments.Regiment;
+import main.graphics.battleScreen.BattleScene;
 import main.graphics.battleScreen.BattleScreen;
 import main.graphics.battleScreen.RightAggregatePanel;
 import main.strings.BattleStartStrings;
@@ -85,11 +86,17 @@ public class Deployment {
 			playerDeploymentZone.removeDeploymentZone();
 			enemyDeploymentZone.removeDeploymentZone();
 			for (int i = 0; i < BattleScreen.battleScene.indexedPanels.size(); i++) {
+				/*
+				 * try { BattleScreen.battleScene.indexedPanels.get(i).button.
+				 * removeActionListener(
+				 * BattleScreen.battleScene.indexedPanels.get(i).button.
+				 * getActionListeners()[0]); } catch (Exception e) { }
+				 */
 
-				try {
+				for (int ii = 0; ii < BattleScreen.battleScene.indexedPanels.get(i).button
+						.getActionListeners().length; ii++) {
 					BattleScreen.battleScene.indexedPanels.get(i).button.removeActionListener(
-							BattleScreen.battleScene.indexedPanels.get(i).button.getActionListeners()[0]);
-				} catch (Exception e) {
+							BattleScreen.battleScene.indexedPanels.get(i).button.getActionListeners()[ii]);
 				}
 
 			}
@@ -113,12 +120,6 @@ public class Deployment {
 
 			int index = i;
 
-			try {
-				BattleScreen.battleScene.indexedPanels.get(i).button.removeActionListener(
-						BattleScreen.battleScene.indexedPanels.get(i).button.getActionListeners()[0]);
-			} catch (Exception e1) {
-			}
-
 			BattleScreen.battleScene.indexedPanels.get(i).button.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					if (checkLegalDeployment(index, playerDeploymentZone, yourBattleArmy, playerCounter) == true) {
@@ -129,10 +130,19 @@ public class Deployment {
 						playerCounter++;
 						BattleScreen.battleScene.indexedPanels.get(0).applyColor();
 						deployOrder.remove(0);
+
+						for (int ii = 0; ii < BattleScreen.battleScene.indexedPanels.size(); ii++) {
+							BattleScreen.battleScene.indexedPanels.get(ii).button
+									.removeActionListener(BattleScreen.battleScene.indexedPanels.get(ii).button
+											.getActionListeners()[BattleScreen.battleScene.indexedPanels.get(ii).button
+													.getActionListeners().length - 1]);
+						}
+
 						deploy();
 					}
 				}
 			});
+
 		}
 	}
 
@@ -296,13 +306,13 @@ public class Deployment {
 				+ Integer.toString(yourBattleArmy.roster.get(playerCounter).totalMorale) + "<br> <br>";
 
 		String dimensionText = name + "<font color = 'rgb(220, 220, 220)'>" + " is a" + getAdjective()
-				+ "<font color = 'rgb(220, 220, 220)'>"
-				+ " regiment with the following dimensions: <br>" + yourBattleArmy.roster.get(playerCounter).rows
-				+ " row(s) by " + yourBattleArmy.roster.get(playerCounter).columns + " columns";
+				+ "<font color = 'rgb(220, 220, 220)'>" + " regiment with the following dimensions: <br>"
+				+ yourBattleArmy.roster.get(playerCounter).rows + " row(s) by "
+				+ yourBattleArmy.roster.get(playerCounter).columns + " columns";
 
-		RightAggregatePanel.infoTextPanel.textArea.setText(intro + name + "<br>" + life + lifeStat + move
-				+ moveStat + run + runStat + speed + speedStat + attack + attackStat + charge + chargeStat + defence
-				+ defenceStat + range + rangeStat + ballistic + ballisticStat + morale + moraleStat + dimensionText);
+		RightAggregatePanel.infoTextPanel.textArea.setText(intro + name + "<br>" + life + lifeStat + move + moveStat
+				+ run + runStat + speed + speedStat + attack + attackStat + charge + chargeStat + defence + defenceStat
+				+ range + rangeStat + ballistic + ballisticStat + morale + moraleStat + dimensionText);
 	}
 
 	private String getAdjective() {
@@ -311,39 +321,67 @@ public class Deployment {
 		int adjectiveNumber = random.nextInt(3);
 		String adjective;
 		if (size == 3) {
-			if (adjectiveNumber == 0) { adjective = " petite"; }
-			else if (adjectiveNumber == 1) { adjective = " mousy"; }
-			else { adjective = " mini"; }
+			if (adjectiveNumber == 0) {
+				adjective = " petite";
+			} else if (adjectiveNumber == 1) {
+				adjective = " mousy";
+			} else {
+				adjective = " mini";
+			}
 			return "<font color = 'rgb(200, 100, 170)'>" + adjective;
 		} else if (size == 4) {
-			if (adjectiveNumber == 0) { adjective = " bantam"; }
-			else if (adjectiveNumber == 1) { adjective = " meager"; }
-			else { adjective = " wee"; }
+			if (adjectiveNumber == 0) {
+				adjective = " bantam";
+			} else if (adjectiveNumber == 1) {
+				adjective = " meager";
+			} else {
+				adjective = " wee";
+			}
 			return "<font color = 'rgb(190, 160, 175)'>" + adjective;
 		} else if (size == 6) {
-			if (adjectiveNumber == 0) { adjective = " funsize"; }
-			else if (adjectiveNumber == 1) { adjective = " modest"; }
-			else { adjective = "n unpretentious"; }
+			if (adjectiveNumber == 0) {
+				adjective = " funsize";
+			} else if (adjectiveNumber == 1) {
+				adjective = " modest";
+			} else {
+				adjective = "n unpretentious";
+			}
 			return "<font color = 'rgb(160, 160, 120)'>" + adjective;
 		} else if (size == 8) {
-			if (adjectiveNumber == 0) { adjective = " run of the mill"; }
-			else if (adjectiveNumber == 1) { adjective = "n on par"; }
-			else { adjective = " passable"; }
+			if (adjectiveNumber == 0) {
+				adjective = " run of the mill";
+			} else if (adjectiveNumber == 1) {
+				adjective = "n on par";
+			} else {
+				adjective = " passable";
+			}
 			return "<font color = 'rgb(140, 140, 200)'>" + adjective;
 		} else if (size == 9) {
-			if (adjectiveNumber == 0) { adjective = " lavish"; }
-			else if (adjectiveNumber == 1) { adjective = " plush"; }
-			else { adjective = " big boned"; }
+			if (adjectiveNumber == 0) {
+				adjective = " lavish";
+			} else if (adjectiveNumber == 1) {
+				adjective = " plush";
+			} else {
+				adjective = " big boned";
+			}
 			return "<font color = 'rgb(120, 120, 220)'>" + adjective;
 		} else if (size == 12) {
-			if (adjectiveNumber == 0) { adjective = " burlesque"; }
-			else if (adjectiveNumber == 1) { adjective = " stout"; }
-			else { adjective = " beefy"; }
+			if (adjectiveNumber == 0) {
+				adjective = " burlesque";
+			} else if (adjectiveNumber == 1) {
+				adjective = " stout";
+			} else {
+				adjective = " beefy";
+			}
 			return "<font color = 'rgb(180, 100, 110)'>" + adjective;
 		} else if (size == 16) {
-			if (adjectiveNumber == 0) { adjective = " jumbo"; }
-			else if (adjectiveNumber == 1) { adjective = "n elephantine"; }
-			else { adjective = " whale of a"; }
+			if (adjectiveNumber == 0) {
+				adjective = " jumbo";
+			} else if (adjectiveNumber == 1) {
+				adjective = "n elephantine";
+			} else {
+				adjective = " whale of a";
+			}
 			return "<font color = 'rgb(190, 40, 110)'>" + adjective;
 		} else
 			return "error";
