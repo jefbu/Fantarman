@@ -7,6 +7,7 @@ import java.util.Random;
 import javax.swing.ImageIcon;
 
 import main.battle.tactics.ConditionChecker;
+import main.battle.tactics.MoraleChecker;
 import main.battle.tactics.Order;
 import main.battle.tactics.OrderMethods;
 import main.battle.tactics.Tactic;
@@ -202,8 +203,25 @@ public abstract class Regiment implements Serializable {
 
 	public void haveTurn(Army activeArmy, int activeRegimentIndex, Army yourBattleArmy, Army opponentBattleArmy,
 			int turn) {
-
-		if (inCombat) {
+		
+		if(MoraleChecker.breaks(this)) {
+			
+			this.defeated = true;
+			this.timesDefeated++;
+			this.injuries = this.battleLife;
+			
+			if(this.inCombat) {
+				combatOpponent.inCombat = false;
+				this.inCombat = false;
+			}
+			
+			if (activeArmy == yourBattleArmy) {
+				yourBattleArmy.roster.remove(this);
+			} else {
+				opponentBattleArmy.roster.remove(this);
+			}
+			
+		} else if (inCombat) {
 
 			OrderMethods.combat(this, combatOpponent, 0, activeArmy, yourBattleArmy, opponentBattleArmy);
 
