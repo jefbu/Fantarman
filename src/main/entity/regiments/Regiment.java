@@ -204,6 +204,8 @@ public abstract class Regiment implements Serializable {
 	public void haveTurn(Army activeArmy, int activeRegimentIndex, Army yourBattleArmy, Army opponentBattleArmy,
 			int turn) {
 		
+		if (this.name == "Ole Racecar") { System.out.println(this.battleMorale); }
+		
 		if(MoraleChecker.breaks(this)) {
 			
 			this.defeated = true;

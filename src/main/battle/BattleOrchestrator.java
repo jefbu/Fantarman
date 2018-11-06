@@ -71,11 +71,13 @@ public class BattleOrchestrator {
 						counter++;
 						for (Regiment regiment : yourBattleArmy.roster) {
 							regiment.attributeBattleSpeed();
-							regiment.attributeBattleStats();
+							//regiment.attributeBattleStats();
+							regiment.battleMorale = regiment.battleMorale -5;
 						}
 						for (Regiment regiment : opponentBattleArmy.roster) {
 							regiment.attributeBattleSpeed();
-							regiment.attributeBattleStats();
+							//regiment.attributeBattleStats();
+							regiment.battleMorale = regiment.battleMorale - 5;
 						}
 					} else {
 						activeRegiment.haveTurn(activeArmy, activeRegimentIndex, yourBattleArmy, opponentBattleArmy,

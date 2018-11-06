@@ -12,7 +12,7 @@ public abstract class OrderMethods {
 
 	public static void chargeTarget(Regiment regiment, Regiment target, Army activeArmy, int activeRegimentIndex,
 			Army yourBattleArmy, Army opponentBattleArmy) {
-		regiment.battleDefence -= 5;
+		regiment.battleDefence -= 2;
 		MoveMethod.move(regiment, regiment.battleMove + regiment.battleRun, target, activeArmy, activeRegimentIndex,
 				yourBattleArmy, opponentBattleArmy);
 		writeBasicOrderText(Order.CHARGE, regiment, target);
@@ -46,6 +46,8 @@ public abstract class OrderMethods {
 			if (random.nextInt(100) + 1 > target.battleDefence) {
 				target.battleLife--;
 				casualties++;
+				regiment.battleMorale++;
+				target.battleMorale--;
 			}
 		}
 
@@ -56,6 +58,7 @@ public abstract class OrderMethods {
 			target.injuries = target.totalMaxLife;
 			regiment.inCombat = false;
 			regiment.enemiesDefeated++;
+			regiment.battleMorale += 5;
 			if (activeArmy == yourBattleArmy) {
 				opponentBattleArmy.roster.remove(target);
 			} else {
@@ -79,6 +82,7 @@ public abstract class OrderMethods {
 		for (int i = 0; i < lostLife; i++) {
 			if (random.nextInt(100) < (10 + healers * 10)) {
 				regiment.battleLife++;
+				regiment.battleMorale++;
 				recoveries++;
 			}
 		}
@@ -106,6 +110,8 @@ public abstract class OrderMethods {
 				for (int ii = 0; ii < hits; ii++) {
 					roll2 = random.nextInt(100);
 					if (roll2 < target.battleDefence) {
+						target.battleMorale--;
+						regiment.battleMorale++;
 						target.battleLife--;
 						casualties++;
 					}
@@ -117,6 +123,7 @@ public abstract class OrderMethods {
 					target.injuries = target.totalMaxLife;
 					regiment.enemiesDefeated++;
 					regiment.inCombat = false;
+					regiment.battleMorale += 5;
 					if (activeArmy == yourBattleArmy) {
 						opponentBattleArmy.roster.remove(target);
 					} else {
