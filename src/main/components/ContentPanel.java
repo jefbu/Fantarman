@@ -16,6 +16,9 @@ public class ContentPanel extends JPanel {
 	
 	public JPanel insidePanel;
 	public JLabel contentLabel;
+	
+	public int insidePanelWidth;
+	public int insidePanelHeight;
 
 	public ContentPanel(int width, int height, Color colour, FlowLayout flowLayout) {
 		
@@ -25,7 +28,9 @@ public class ContentPanel extends JPanel {
 		setLayout (new FlowLayout(FlowLayout.LEADING, 0, 0));
 		
 		insidePanel = new JPanel();
-		insidePanel.setPreferredSize(new Dimension (width - 15, height - 15));
+			insidePanelWidth = width - 15;
+			insidePanelHeight = height - 15;
+		insidePanel.setPreferredSize(new Dimension (insidePanelWidth, insidePanelHeight));
 		insidePanel.setBorder(null);
 		insidePanel.setLayout(flowLayout);
 		

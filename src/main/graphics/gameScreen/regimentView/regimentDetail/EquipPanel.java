@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.ImageObserver;
 import java.util.ArrayList;
 
 import javax.swing.JPanel;
@@ -30,10 +31,10 @@ public class EquipPanel extends ContentPanel {
 		
 		super(width, height, colour, flowLayout);
 		
-		int weaponWidth = ((width - 14) * 6 / 10);
-		int weaponHeight = height - 16;
-		int armourWidth = ((width - 14) * 4 / 10);
-		int armourHeight = height - 16;
+		int weaponWidth = insidePanelWidth * 6 / 10;
+		int weaponHeight = insidePanelHeight;
+		int armourWidth = insidePanelWidth * 4 / 10;
+		int armourHeight = insidePanelHeight;
 		weaponsList = new ArrayList<WeaponPanel>();
 		armoursList = new ArrayList<ArmourPanel>();
 
