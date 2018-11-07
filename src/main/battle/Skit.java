@@ -54,15 +54,15 @@ public class Skit extends JDialog {
 		setLocationRelativeTo(BattleScreen.battleScene);
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setUndecorated(true);
-		
+
 		ContentPanel panel = new ContentPanel(width, height, Colors.lgrey, new FlowLayout(FlowLayout.LEFT, 0, 0));
 		// panel.setPreferredSize(new Dimension(100, 100));
 		// panel.setBackground(Colors.lblue);
 		// panel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		add(panel);
-		
+
 		panel.setBackground(Colors.vdgrey);
-		panel.insidePanel.setPreferredSize(new Dimension (width - 10, height - 10));
+		panel.insidePanel.setPreferredSize(new Dimension(width - 10, height - 10));
 
 		JPanel topEmptyPanel = new JPanel();
 		topEmptyPanel.setPreferredSize(new Dimension(width, height / 10));
@@ -86,21 +86,21 @@ public class Skit extends JDialog {
 				new FlowLayout(FlowLayout.LEFT, width / 200, height / 200));
 		panel.insidePanel.add(topTextContentPanel);
 
-			JPanel topTextPanel = new JPanel();
-			topTextPanel.setPreferredSize(new Dimension(width * 48 / 100, height * 28 / 100));
-			topTextPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-			topTextPanel.setBackground(Colors.vdgrey);
-			yourTextLabel = new JTextPane();
-			yourTextLabel.setPreferredSize(new Dimension(width * 48 / 100, height * 28 / 100));
-			// yourTextLabel.setLineWrap(true);
-			// yourTextLabel.setWrapStyleWord(true);
-			yourTextLabel.setOpaque(false);
-			yourTextLabel.setBorder(BorderFactory.createEmptyBorder(10, 10, 0, 0));
-			yourTextLabel.setContentType("text/html");
-			yourTextLabel.putClientProperty(JTextPane.HONOR_DISPLAY_PROPERTIES, Boolean.TRUE);
-			yourTextLabel.setFont(new Font("garamond", Font.BOLD, 18));
-			topTextPanel.add(yourTextLabel);
-			topTextContentPanel.insidePanel.add(topTextPanel);
+		JPanel topTextPanel = new JPanel();
+		topTextPanel.setPreferredSize(new Dimension(width * 48 / 100, height * 28 / 100));
+		topTextPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+		topTextPanel.setBackground(Colors.vdgrey);
+		yourTextLabel = new JTextPane();
+		yourTextLabel.setPreferredSize(new Dimension(width * 48 / 100, height * 28 / 100));
+		// yourTextLabel.setLineWrap(true);
+		// yourTextLabel.setWrapStyleWord(true);
+		yourTextLabel.setOpaque(false);
+		yourTextLabel.setBorder(BorderFactory.createEmptyBorder(10, 10, 0, 0));
+		yourTextLabel.setContentType("text/html");
+		yourTextLabel.putClientProperty(JTextPane.HONOR_DISPLAY_PROPERTIES, Boolean.TRUE);
+		yourTextLabel.setFont(new Font("garamond", Font.BOLD, 18));
+		topTextPanel.add(yourTextLabel);
+		topTextContentPanel.insidePanel.add(topTextPanel);
 
 		JPanel topRightEmptyPanel = new JPanel();
 		topRightEmptyPanel.setPreferredSize(new Dimension(width * 18 / 100, height * 3 / 10));
@@ -116,26 +116,26 @@ public class Skit extends JDialog {
 		bottomLeftEmptyPanel.setPreferredSize(new Dimension(width * 15 / 100, height * 3 / 10));
 		bottomLeftEmptyPanel.setBackground(Colors.lgrey);
 		panel.insidePanel.add(bottomLeftEmptyPanel);
-		
+
 		ContentPanel bottomTextContentPanel = new ContentPanel(width / 2 + 10, height * 3 / 10 + 10, Colors.vlgrey,
 				new FlowLayout(FlowLayout.LEFT, width / 200, height / 200));
 		panel.insidePanel.add(bottomTextContentPanel);
 
-			JPanel bottomTextPanel = new JPanel();
-			bottomTextPanel.setPreferredSize(new Dimension(width * 48 / 100, height * 28 / 100));
-			bottomTextPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-			bottomTextPanel.setBackground(Colors.vdgrey);
-			opponentTextLabel = new JTextPane();
-			opponentTextLabel.setPreferredSize(new Dimension(width * 48 / 100, height * 28 / 100));
-			// opponentTextLabel.setLineWrap(true);
-			// opponentTextLabel.setWrapStyleWord(true);
-			opponentTextLabel.setOpaque(false);
-			opponentTextLabel.setBorder(BorderFactory.createEmptyBorder(5, 0, 0, 30));
-			opponentTextLabel.setContentType("text/html");
-			opponentTextLabel.putClientProperty(JTextPane.HONOR_DISPLAY_PROPERTIES, Boolean.TRUE);
-			opponentTextLabel.setFont(new Font("garamond", Font.BOLD, 18));
-			bottomTextPanel.add(opponentTextLabel);
-			bottomTextContentPanel.insidePanel.add(bottomTextPanel);
+		JPanel bottomTextPanel = new JPanel();
+		bottomTextPanel.setPreferredSize(new Dimension(width * 48 / 100, height * 28 / 100));
+		bottomTextPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+		bottomTextPanel.setBackground(Colors.vdgrey);
+		opponentTextLabel = new JTextPane();
+		opponentTextLabel.setPreferredSize(new Dimension(width * 48 / 100, height * 28 / 100));
+		// opponentTextLabel.setLineWrap(true);
+		// opponentTextLabel.setWrapStyleWord(true);
+		opponentTextLabel.setOpaque(false);
+		opponentTextLabel.setBorder(BorderFactory.createEmptyBorder(5, 0, 0, 30));
+		opponentTextLabel.setContentType("text/html");
+		opponentTextLabel.putClientProperty(JTextPane.HONOR_DISPLAY_PROPERTIES, Boolean.TRUE);
+		opponentTextLabel.setFont(new Font("garamond", Font.BOLD, 18));
+		bottomTextPanel.add(opponentTextLabel);
+		bottomTextContentPanel.insidePanel.add(bottomTextPanel);
 
 		JPanel bottomPortraitPanel = new JPanel();
 		bottomPortraitPanel.setPreferredSize(new Dimension(width * 2 / 10, height * 3 / 10));
@@ -156,7 +156,7 @@ public class Skit extends JDialog {
 		bottomEmptyPanel.setLayout(new FlowLayout(FlowLayout.RIGHT, width / 20, height / 30));
 
 		button = new ButtonedPanel(width / 5, height / 10, Colors.lgrey);
-		button.label.setIcon(imageLoader.loadImageIcon("/icons/okayButton.png", width / 6, height / 12));
+		button.label.setIcon(imageLoader.loadImageIcon("/icons/nextButton.png", width / 6, height / 12));
 		bottomEmptyPanel.add(button);
 
 		panel.insidePanel.add(bottomEmptyPanel);
@@ -199,6 +199,13 @@ public class Skit extends JDialog {
 
 			button.button.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
+
+					if (counter + 2 == conversation.texts.length) {
+						button.label.setIcon(
+								imageLoader.loadImageIcon("/icons/endConversationButton.png", width / 6, height / 12));
+					} else { button.label.setIcon(
+								imageLoader.loadImageIcon("/icons/nextButton.png", width / 6, height / 12)); }
+					
 					if (counter + 1 == conversation.texts.length) {
 						button.button.removeActionListener(button.button.getActionListeners()[0]);
 						conversation.alreadyDone = true;

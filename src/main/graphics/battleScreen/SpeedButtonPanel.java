@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import main.battle.BattleOrchestrator;
+import main.components.Colour;
+import main.graphics.Screen;
 import main.utility.ImageLoader;
 
 public class SpeedButtonPanel extends JPanel {
@@ -20,7 +22,10 @@ public class SpeedButtonPanel extends JPanel {
 	public JButton startStopButton;
 	public JButton fasterSpeedButton;
 	public JButton fastestSpeedButton;
+	public JButton interveneButton;
 
+	public InterventionPopup interventionPopup;
+	
 	private ImageLoader imageLoader;
 
 	private boolean paused;
@@ -55,7 +60,7 @@ public class SpeedButtonPanel extends JPanel {
 		slowerSpeedButton = new JButton();
 		slowerSpeedButton.setPreferredSize(new Dimension(width * 20 / 100, height * 50 / 100));
 		slowerSpeedButton
-		.setIcon(imageLoader.loadImageIcon("/icons/slowerButton.png", width * 20 / 100, height * 50 / 100));
+				.setIcon(imageLoader.loadImageIcon("/icons/slowerButton.png", width * 20 / 100, height * 50 / 100));
 		add(slowerSpeedButton);
 
 		slowerSpeedButton.addActionListener(new ActionListener() {
@@ -69,7 +74,7 @@ public class SpeedButtonPanel extends JPanel {
 		startStopButton = new JButton();
 		startStopButton.setPreferredSize(new Dimension(width * 20 / 100, height * 50 / 100));
 		startStopButton
-		.setIcon(imageLoader.loadImageIcon("/icons/playButton.png", width * 20 / 100, height * 50 / 100));
+				.setIcon(imageLoader.loadImageIcon("/icons/playButton.png", width * 20 / 100, height * 50 / 100));
 		add(startStopButton);
 
 		startStopButton.addActionListener(new ActionListener() {
@@ -87,7 +92,7 @@ public class SpeedButtonPanel extends JPanel {
 		fasterSpeedButton = new JButton();
 		fasterSpeedButton.setPreferredSize(new Dimension(width * 20 / 100, height * 50 / 100));
 		fasterSpeedButton
-		.setIcon(imageLoader.loadImageIcon("/icons/fasterButton.png", width * 20 / 100, height * 50 / 100));
+				.setIcon(imageLoader.loadImageIcon("/icons/fasterButton.png", width * 20 / 100, height * 50 / 100));
 		add(fasterSpeedButton);
 
 		fasterSpeedButton.addActionListener(new ActionListener() {
@@ -101,7 +106,7 @@ public class SpeedButtonPanel extends JPanel {
 		fastestSpeedButton = new JButton();
 		fastestSpeedButton.setPreferredSize(new Dimension(width * 20 / 100, height * 50 / 100));
 		fastestSpeedButton
-		.setIcon(imageLoader.loadImageIcon("/icons/fastestButton.png", width * 20 / 100, height * 50 / 100));
+				.setIcon(imageLoader.loadImageIcon("/icons/fastestButton.png", width * 20 / 100, height * 50 / 100));
 		add(fastestSpeedButton);
 
 		fastestSpeedButton.addActionListener(new ActionListener() {
@@ -109,10 +114,21 @@ public class SpeedButtonPanel extends JPanel {
 				BattleOrchestrator.timer.setDelay(100);
 			}
 		});
-		
-		JButton interveneButton = new JButton("Intervene (Not Implemented Yet)");
+
+		interveneButton = new JButton("Intervene (Not Implemented Yet)");
 		interveneButton.setPreferredSize(new Dimension(width, height / 2));
 		add(interveneButton);
+
+		interveneButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("on click" + BattleOrchestrator.timer.getDelay());
+				BattleOrchestrator.timer.stop();
+				interventionPopup = new InterventionPopup(
+						BattleScreen.battleScene.roundedWidth * 2 / 3,
+						BattleScreen.battleScene.roundedHeight * 2 / 3);
+				interventionPopup.setVisible(true);
+			}
+		});
 
 	}
 
