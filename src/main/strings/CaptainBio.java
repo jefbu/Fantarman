@@ -76,7 +76,7 @@ public abstract class CaptainBio {
 			+ "he must constantly handle the pressure from the higher-ups to be more aggressive";
 
 	public static String fionaGossip = "There once was a passerine tit. Who twittered her chirp cheeping bit. "
-			+ "She was the brand of the fire, provoking big ire. Basically, she was just full of it.";
+			+ "Brand of the fire, provoking big ire. In short, she was just full of it.";
 
 	public static String furiousCamilla = "Famous for revolutionising Espequr army structure. "
 			+ "Before, too much faith was put into solid blocks of heavy infantry, "
@@ -190,6 +190,12 @@ public abstract class CaptainBio {
 			+ "they keep their true feelings and personality well hidden. "
 			+ "<br> They are very vocal about their opinion of Mockbattles and will defend these "
 			+ "to the point of violence though.";
+	
+	public static String ravel = "'The Stars never lie. You will meet a tall, dark stranger. "
+			+ "When your moon ascends to the third house, love will find you. It is good to rekindle old friendships, "
+			+ "but be wary to open your heart too much. You are stubborn, but intelligent. "
+			+ "Your charm and humour can be enchanting to everyone, but do not forget your own needs, "
+			+ "for you are prone to bouts of melancholy. That will be two hundred dollars, please.";
 
 	public static String ryoushi = "Ryoushi was the primary Terquit to the court of the Alabaster Emperor. "
 			+ "However, they fell out of grace after a supposed romantic scandal "

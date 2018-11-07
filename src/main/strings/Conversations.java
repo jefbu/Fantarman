@@ -199,6 +199,20 @@ public abstract class Conversations {
 	public static String oleRacecar_sassaru5 = "... Let's just get this over with. "
 			+ "God how I regret my life choices sometimes.";
 	
+	public static String ravel_galaxyChaser1 = "...Please, just once more.";
+	public static String ravel_galaxyChaser2 = "I'm sorry, but there's just no way. "
+			+ "You already owe me well over three thousand dollars!";
+	public static String ravel_galaxyChaser3 = "...Come on, be a pal! I'll get you your money, promise.";
+	public static String ravel_galaxyChaser4 = "**Sigh**";
+	public static String ravel_galaxyChaser5 = "How much have you got on you right now?";
+	public static String ravel_galaxyChaser6 = "I've got about thirty dollars here...";
+	public static String ravel_galaxyChaser7 = "Well all right then, but I'm taking it as installment to your debt, "
+			+ "so this one will add you another 150 dollars behind.";
+	public static String ravel_galaxyChaser8 = "Yes yes, that's fine. Like I said, I'll get you your money!"
+			+ " Now tell me, please, what are my signs? When will I finally find true love?";
+	public static String ravel_galaxyChaser9 = "Very well then. Pick a card, any card...";
+	
+	
 
 
 }
