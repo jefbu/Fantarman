@@ -10,7 +10,6 @@ import main.components.Colour;
 import main.components.TextPopup;
 import main.entity.armies.Army;
 import main.entity.regiments.Regiment;
-import main.graphics.battleScreen.BattleScene;
 import main.graphics.battleScreen.BattleScreen;
 import main.graphics.battleScreen.RightAggregatePanel;
 import main.strings.BattleStartStrings;

@@ -10,8 +10,6 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import main.battle.BattleOrchestrator;
-import main.components.Colour;
-import main.graphics.Screen;
 import main.utility.ImageLoader;
 
 public class SpeedButtonPanel extends JPanel {

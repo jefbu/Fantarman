@@ -42,8 +42,6 @@ public class Screen extends JFrame {
 		createMainPanel();
 		
 		FONTSIZE = decideFontSize();
-		System.out.println(screenHeight);
-		System.out.println(FONTSIZE);
 		
 		titleScreen = new TitleScreen(mainPanelWidth, mainPanelHeight);
 		titleScreen.setVisible(true);
