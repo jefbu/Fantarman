@@ -1,7 +1,8 @@
-package main.entity.captains.pickles;
+package main.entity.captains.metropolitans;
 
 import main.entity.captains.Captain;
 import main.entity.captains.Conversation;
+import main.entity.captains.pickles.GalaxyChaser;
 import main.entity.skills.Skills;
 import main.strings.CaptainBio;
 import main.strings.Conversations;

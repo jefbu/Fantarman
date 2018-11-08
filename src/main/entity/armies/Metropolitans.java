@@ -1,7 +1,8 @@
 package main.entity.armies;
 
 import main.entity.captains.Generic;
-import main.entity.captains.pickles.Ravel;
+import main.entity.captains.metropolitans.Hispther;
+import main.entity.captains.metropolitans.Ravel;
 import main.entity.lieutenants.Lieutenant;
 import main.entity.regiments.feods.Equitae;
 import main.entity.regiments.feods.Legat;
@@ -28,7 +29,7 @@ public class Metropolitans extends Army {
 		roster.add(new Legat("St Danny", new Generic()));
 		roster.add(new Equitae("Grass Crowns", new Generic(), Lieutenant.sergeant, Lieutenant.medic,
 				Lieutenant.scout));
-		roster.add(new Triarae("Burning Belief", new Generic(), Lieutenant.sergeant, Lieutenant.errant,
+		roster.add(new Triarae("Hispther", new Hispther(), Lieutenant.sergeant, Lieutenant.errant,
 				Lieutenant.medic));
 		roster.add(new DrunkenMaster("Huiyin", new Generic()));
 		roster.add(new CraneWing("Azure Wings", new Generic(), Lieutenant.abomination, Lieutenant.corporal));

@@ -88,6 +88,11 @@ public abstract class CaptainBio {
 			+ "He has a recurring nightmare of showing up on the battlefield in his undergarments "
 			+ "and awakens from it soaked in fear-sweat.";
 	
+	public static String hispther = "Hispther drinks a lot of tea. Not the standard, bag in a box kind, either. "
+			+ "He prefers blends from organically grown plantations, doused with water that is an exact 80 degrees celcius. "
+			+ "He will under no conditions tolerate putting milk or sugar in the sacred beverage, "
+			+ "but will condone a single drop of sustainable honey.";
+	
 	public static String jackie = "Like the water that bends to the wind but does not break. "
 			+ "Like the powerless wheat in the winter sun. "
 			+ "Like the rock that patiently wears down the willow through the ages, "
