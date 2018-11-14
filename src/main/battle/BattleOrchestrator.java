@@ -31,7 +31,7 @@ public class BattleOrchestrator {
 
 		counter = 0;
 		activeArmy = yourBattleArmy;
-		this.yourBattleArmy = yourBattleArmy;
+		BattleOrchestrator.yourBattleArmy = yourBattleArmy;
 		this.opponentBattleArmy = opponentBattleArmy;
 
 		for (Regiment regiment : yourBattleArmy.roster) {

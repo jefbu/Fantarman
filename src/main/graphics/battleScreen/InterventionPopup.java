@@ -16,10 +16,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
-import main.Main;
 import main.battle.BattleOrchestrator;
 import main.components.ButtonedPanel;
-import main.entity.armies.Army;
 import main.utility.Colors;
 import main.utility.ImageLoader;
 
@@ -48,7 +46,7 @@ public class InterventionPopup extends JDialog {
 		super(null, Dialog.ModalityType.APPLICATION_MODAL);
 
 		setSize(new Dimension(width, height));
-		setLocationRelativeTo(BattleScreen.rightAggregatePanel.infoTextPanel);
+		setLocationRelativeTo(RightAggregatePanel.infoTextPanel);
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setUndecorated(true);
 
