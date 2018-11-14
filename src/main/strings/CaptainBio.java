@@ -207,7 +207,10 @@ public abstract class CaptainBio {
 			+ "and were demoted to fight mockbattles as a punishment";
 
 	public static String samMaxwell = "There once was a bird with no gender. To old fashioned malcomprehender. "
-			+ "Forget about genes and go follow your dreams. Be a magnificent convention bender.";
+			+ "Forget about genes and go follow your dreams. Be a marvelous convention bender!";
+	
+	public static String sammie = "A little bit of pain can be a good thing you know? "
+			+ "To heighten the senses and open the mind. A little bit of pain can herald a lot of pleasure.";
 
 	public static String sassaru = "When she was twelve, she underwent the compulsory firemage test "
 			+ "and it was discovered she had more talent than any other Wanmen before her. "

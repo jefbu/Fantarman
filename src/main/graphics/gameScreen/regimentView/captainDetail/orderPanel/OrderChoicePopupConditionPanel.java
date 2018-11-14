@@ -115,10 +115,10 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 
 	}
 	
-	private void attributeCondition(Regiment regiment, Condition condition) {
+	private void attributeCondition(Regiment regiment, Condition condition, int regimentNumber) {
 		conditionPanel.setVisible(false);
 		regiment.instructions.get(index).condition = condition;
-		targetPanel.fillTargetPanel(index, regiment);
+		targetPanel.fillTargetPanel(index, regiment, regimentNumber);
 		targetPanel.setVisible(true);
 	}
 	
@@ -138,7 +138,7 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 	}
 
 
-	public void fillConditionPanel(int index, Regiment regiment) {
+	public void fillConditionPanel(int index, Regiment regiment, int regimentNumber) {
 		this.index = index;
 		
 		try {
@@ -146,7 +146,7 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 		} catch (Exception e) {}
 		lifeUnder100Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				attributeCondition(regiment, Condition.Life_under_100);
+				attributeCondition(regiment, Condition.Life_under_100, regimentNumber);
 				lifeUnder100Button.removeActionListener(lifeUnder100Button.getActionListeners()[0]);
 			}
 		});		
@@ -156,7 +156,7 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 		} catch (Exception e) {}
 		lifeUnder75Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				attributeCondition(regiment, Condition.Life_under_75);
+				attributeCondition(regiment, Condition.Life_under_75, regimentNumber);
 				lifeUnder75Button.removeActionListener(lifeUnder75Button.getActionListeners()[0]);
 			}
 		});	
@@ -166,7 +166,7 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 		} catch (Exception e) {}
 		lifeUnder50Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				attributeCondition(regiment, Condition.Life_under_50);
+				attributeCondition(regiment, Condition.Life_under_50, regimentNumber);
 				lifeUnder50Button.removeActionListener(lifeUnder50Button.getActionListeners()[0]);
 			}
 		});	
@@ -176,7 +176,7 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 		} catch (Exception e) {}
 		lifeUnder25Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				attributeCondition(regiment, Condition.Life_under_25);
+				attributeCondition(regiment, Condition.Life_under_25, regimentNumber);
 				lifeUnder25Button.removeActionListener(lifeUnder25Button.getActionListeners()[0]);
 			}
 		});	
@@ -186,7 +186,7 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 		} catch (Exception e) {}
 		lifeOver25Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				attributeCondition(regiment, Condition.Life_above_25);
+				attributeCondition(regiment, Condition.Life_above_25, regimentNumber);
 				lifeOver25Button.removeActionListener(lifeOver25Button.getActionListeners()[0]);
 			}
 		});	
@@ -196,7 +196,7 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 		} catch (Exception e) {}
 		lifeOver50Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				attributeCondition(regiment, Condition.Life_above_50);
+				attributeCondition(regiment, Condition.Life_above_50, regimentNumber);
 				lifeOver50Button.removeActionListener(lifeOver50Button.getActionListeners()[0]);
 			}
 		});	
@@ -206,7 +206,7 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 		} catch (Exception e) {}
 		lifeOver75Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				attributeCondition(regiment, Condition.Life_above_75);
+				attributeCondition(regiment, Condition.Life_above_75, regimentNumber);
 				lifeOver75Button.removeActionListener(lifeOver75Button.getActionListeners()[0]);
 			}
 		});	
@@ -216,7 +216,7 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 		} catch (Exception e) {}
 		life100Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				attributeCondition(regiment, Condition.Life_full);
+				attributeCondition(regiment, Condition.Life_full, regimentNumber);
 				life100Button.removeActionListener(life100Button.getActionListeners()[0]);
 			}
 		});	
@@ -226,7 +226,7 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 		} catch (Exception e) {}
 		after1TurnButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				attributeCondition(regiment, Condition.After_1_Turn);
+				attributeCondition(regiment, Condition.After_1_Turn, regimentNumber);
 				after1TurnButton.removeActionListener(after1TurnButton.getActionListeners()[0]);
 			}
 		});	
@@ -236,7 +236,7 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 		} catch (Exception e) {}
 		after2TurnButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				attributeCondition(regiment, Condition.After_2_Turns);
+				attributeCondition(regiment, Condition.After_2_Turns, regimentNumber);
 				after2TurnButton.removeActionListener(after2TurnButton.getActionListeners()[0]);
 			}
 		});	
@@ -246,7 +246,7 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 		} catch (Exception e) {}
 		after3TurnButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				attributeCondition(regiment, Condition.After_3_Turns);
+				attributeCondition(regiment, Condition.After_3_Turns, regimentNumber);
 				after3TurnButton.removeActionListener(after3TurnButton.getActionListeners()[0]);
 			}
 		});	
@@ -256,7 +256,7 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 		} catch (Exception e) {}
 		after4TurnButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				attributeCondition(regiment, Condition.After_4_Turns);
+				attributeCondition(regiment, Condition.After_4_Turns, regimentNumber);
 				after4TurnButton.removeActionListener(after4TurnButton.getActionListeners()[0]);
 			}
 		});	
@@ -266,7 +266,7 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 		} catch (Exception e) {}
 		after5TurnButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				attributeCondition(regiment, Condition.After_5_Turns);
+				attributeCondition(regiment, Condition.After_5_Turns, regimentNumber);
 				after5TurnButton.removeActionListener(after5TurnButton.getActionListeners()[0]);
 			}
 		});	
@@ -276,7 +276,7 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 		} catch (Exception e) {}
 		anyInRangeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				attributeCondition(regiment, Condition.Any_in_Range);
+				attributeCondition(regiment, Condition.Any_in_Range, regimentNumber);
 				anyInRangeButton.removeActionListener(anyInRangeButton.getActionListeners()[0]);
 			}
 		});	
@@ -286,7 +286,7 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 		} catch (Exception e) {}
 		targetInRangeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				attributeCondition(regiment, Condition.Target_in_Range);
+				attributeCondition(regiment, Condition.Target_in_Range, regimentNumber);
 				targetInRangeButton.removeActionListener(targetInRangeButton.getActionListeners()[0]);
 			}
 		});	
@@ -299,7 +299,7 @@ public class OrderChoicePopupConditionPanel extends JPanel {
 		} catch (Exception e) {}
 		alwaysButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				attributeCondition(regiment, Condition.ALWAYS);
+				attributeCondition(regiment, Condition.ALWAYS, regimentNumber);
 				alwaysButton.removeActionListener(alwaysButton.getActionListeners()[0]);
 			}
 		});	

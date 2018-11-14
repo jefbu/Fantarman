@@ -168,7 +168,7 @@ public class RegimentPanel extends JPanel {
 				public void actionPerformed(ActionEvent e) {
 					Main.bottomTextTutorial = BottomTextTutorial.RegimentView;
 					Screen.gameScreen.mainPanel.armyView.setVisible(false);
-					Screen.gameScreen.mainPanel.regimentView.fillRegimentView(Main.yourArmy.roster.get(i), true);
+					Screen.gameScreen.mainPanel.regimentView.fillRegimentView(Main.yourArmy.roster.get(i), true, i);
 					Screen.gameScreen.bottomPanel.bottomTextPanel.fillBottomTextPanel(true);
 					Screen.gameScreen.mainPanel.regimentView.setVisible(true);
 				}

@@ -15,7 +15,7 @@ public class RegimentBaseInfoPanel extends ContentPanel {
 
 	private static final long serialVersionUID = 1L;
 	ArrayList<JPanel> panelList;
-	DoubleLabeledPanel namePanel;
+	public DoubleLabeledPanel namePanel;
 	DoubleLabeledPanel typePanel;
 	DoubleLabeledPanel levelPanel;
 	DoubleLabeledPanel valuePanel;

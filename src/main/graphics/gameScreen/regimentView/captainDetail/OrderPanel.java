@@ -47,7 +47,7 @@ public class OrderPanel extends ContentPanel {
 
 	}
 
-	public void fillOrderPanel(Regiment regiment, boolean editable) {
+	public void fillOrderPanel(Regiment regiment, boolean editable, int regimentNumber) {
 		
 		if (editable) {
 		
@@ -63,7 +63,7 @@ public class OrderPanel extends ContentPanel {
 				
 				orderPanel.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						orderChoicePopup.fillPopup(index, regiment);
+						orderChoicePopup.fillPopup(index, regiment, regimentNumber);
 						orderChoicePopup.setLocationRelativeTo(Screen.gameScreen.mainPanel.regimentView);
 						orderChoicePopup.setVisible(true);
 					}

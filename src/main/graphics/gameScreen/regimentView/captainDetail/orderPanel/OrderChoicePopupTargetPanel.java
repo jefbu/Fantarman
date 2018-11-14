@@ -61,10 +61,10 @@ public class OrderChoicePopupTargetPanel extends JPanel {
 
 	}
 	
-	private void attributeTarget(Regiment regiment, Target target) {
+	private void attributeTarget(Regiment regiment, Target target, int regimentNumber) {
 		targetPanel.setVisible(false);
 		regiment.instructions.get(index).target = target;
-		orderPanel.fillOrderPanel(index, regiment, targetType);
+		orderPanel.fillOrderPanel(index, regiment, targetType, regimentNumber);
 		orderPanel.setVisible(true);
 	}
 
@@ -82,7 +82,7 @@ public class OrderChoicePopupTargetPanel extends JPanel {
 
 	}
 
-	public void fillTargetPanel(int index, Regiment regiment) {
+	public void fillTargetPanel(int index, Regiment regiment, int regimentNumber) {
 		this.index = index;
 		
 		try {
@@ -91,7 +91,7 @@ public class OrderChoicePopupTargetPanel extends JPanel {
 		strongestButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				targetType = TargetType.Others;
-				attributeTarget(regiment, Target.ENEMY_STRONGEST);
+				attributeTarget(regiment, Target.ENEMY_STRONGEST, regimentNumber);
 				strongestButton.removeActionListener(strongestButton.getActionListeners()[0]);
 			}
 		});
@@ -102,7 +102,7 @@ public class OrderChoicePopupTargetPanel extends JPanel {
 		nearestButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				targetType = TargetType.Others;
-				attributeTarget(regiment, Target.ENEMY_NEAREST);
+				attributeTarget(regiment, Target.ENEMY_NEAREST, regimentNumber);
 				nearestButton.removeActionListener(nearestButton.getActionListeners()[0]);
 			}
 		});	
@@ -113,7 +113,7 @@ public class OrderChoicePopupTargetPanel extends JPanel {
 		weakestButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				targetType = TargetType.Others;
-				attributeTarget(regiment, Target.ENEMY_WEAKEST);
+				attributeTarget(regiment, Target.ENEMY_WEAKEST, regimentNumber);
 				weakestButton.removeActionListener(weakestButton.getActionListeners()[0]);
 			}
 		});	
@@ -124,7 +124,7 @@ public class OrderChoicePopupTargetPanel extends JPanel {
 		selfButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				targetType = TargetType.Self;
-				attributeTarget(regiment, Target.SELF);
+				attributeTarget(regiment, Target.SELF, regimentNumber);
 				selfButton.removeActionListener(selfButton.getActionListeners()[0]);
 			}
 		});	
@@ -135,7 +135,7 @@ public class OrderChoicePopupTargetPanel extends JPanel {
 		noneButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				targetType = TargetType.None;
-				attributeTarget(regiment, Target.NONE);
+				attributeTarget(regiment, Target.NONE, regimentNumber);
 				noneButton.removeActionListener(selfButton.getActionListeners()[0]);
 			}
 		});	

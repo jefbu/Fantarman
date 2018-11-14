@@ -119,11 +119,11 @@ public class SpeedButtonPanel extends JPanel {
 
 		interveneButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("on click" + BattleOrchestrator.timer.getDelay());
 				BattleOrchestrator.timer.stop();
 				interventionPopup = new InterventionPopup(
 						BattleScreen.battleScene.roundedWidth * 2 / 3,
 						BattleScreen.battleScene.roundedHeight * 2 / 3);
+				interventionPopup.fillInterventionPopup();
 				interventionPopup.setVisible(true);
 			}
 		});

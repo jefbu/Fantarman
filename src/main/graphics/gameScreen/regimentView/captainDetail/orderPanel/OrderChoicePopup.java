@@ -42,8 +42,8 @@ public class OrderChoicePopup extends Popup {
 
 	}
 	
-	public void fillPopup(int index, Regiment regiment) {
-		orderChoicePopupConditionPanel.fillConditionPanel(index, regiment);
+	public void fillPopup(int index, Regiment regiment, int regimentNumber) {
+		orderChoicePopupConditionPanel.fillConditionPanel(index, regiment, regimentNumber);
 		
 		orderChoicePopupTargetPanel.setVisible(false);
 		orderChoicePopupOrderPanel.setVisible(false);

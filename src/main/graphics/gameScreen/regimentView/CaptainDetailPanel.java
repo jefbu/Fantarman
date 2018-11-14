@@ -79,13 +79,13 @@ public class CaptainDetailPanel extends JPanel {
 
 	}
 
-	public void fillCaptainDetailPanel(Regiment regiment, boolean editable) {
+	public void fillCaptainDetailPanel(Regiment regiment, boolean editable, int regimentNumber) {
 
 		captainIconLabel
 				.setIcon(imageLoader.loadImageIcon(regiment.captain.iconPath, width * 21 / 100, height * 18 / 100));
 		captainBaseInfoPanel.fillCaptainBaseInfoPanel(regiment);
 		captainBiographyPanel.fillCaptainBiography(regiment.captain);
-		orderPanel.fillOrderPanel(regiment, editable);
+		orderPanel.fillOrderPanel(regiment, editable, regimentNumber);
 		statsBonusPanel.fillStatsBonusPanel(regiment);
 		lieutenantsDetailPanel.fillLieutenantsDetailPanel(regiment, true);
 

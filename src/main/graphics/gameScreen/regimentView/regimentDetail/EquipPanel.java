@@ -172,7 +172,7 @@ public class EquipPanel extends ContentPanel {
 	
 
 
-	public void fillEquipPanel(Regiment regiment, boolean editable) {
+	public void fillEquipPanel(Regiment regiment, boolean editable, int regimentNumber) {
 		
 		for (int i = 0; i < weaponsList.size(); i++) {
 			
@@ -224,7 +224,7 @@ public class EquipPanel extends ContentPanel {
 					Main.yourArmy.money = Main.yourArmy.money - regiment.weapons.get(index).equipCost;
 					regiment.calculateTotalStats();
 					regiment.calculateValue();
-					Screen.gameScreen.mainPanel.regimentView.fillRegimentView(regiment, editable);
+					Screen.gameScreen.mainPanel.regimentView.fillRegimentView(regiment, editable, regimentNumber);
 				}
 			});
 			}
@@ -298,7 +298,7 @@ public class EquipPanel extends ContentPanel {
 					Main.yourArmy.money = Main.yourArmy.money - regiment.armours.get(index).equipCost;
 					regiment.calculateTotalStats();
 					regiment.calculateValue();
-					Screen.gameScreen.mainPanel.regimentView.fillRegimentView(regiment, editable);
+					Screen.gameScreen.mainPanel.regimentView.fillRegimentView(regiment, editable, regimentNumber);
 				}
 			});
 			}

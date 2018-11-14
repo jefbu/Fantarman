@@ -22,7 +22,7 @@ public class BattleOrchestrator {
 	private int totalTurns;
 	private int counter;
 	private Army activeArmy;
-	private Army yourBattleArmy;
+	public static Army yourBattleArmy;
 	private Army opponentBattleArmy;
 	private int activeRegimentIndex;
 	Regiment activeRegiment;

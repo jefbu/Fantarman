@@ -48,6 +48,8 @@ public class IndividualRegimentPanel extends JPanel {
 	
 	public void fillIndividualRegimentPanel(Army army, int index) {
 		
+		System.out.println("Do we even use this still?");
+		
 		for (ButtonedPanel panel: panelList) {
 			try{
 			panel.button.removeActionListener(panel.button.getActionListeners()[0]);
@@ -59,7 +61,7 @@ public class IndividualRegimentPanel extends JPanel {
 				panelList.get(i).button.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						Screen.gameScreen.mainPanel.armyView.setVisible(false);
-						Screen.gameScreen.mainPanel.regimentView.fillRegimentView(army.roster.get(index), true);
+						//Screen.gameScreen.mainPanel.regimentView.fillRegimentView(army.roster.get(index), true);
 						Screen.gameScreen.mainPanel.regimentView.setVisible(true);
 					}
 				});
@@ -70,7 +72,7 @@ public class IndividualRegimentPanel extends JPanel {
 				panelList.get(i).button.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						Screen.gameScreen.mainPanel.armyView.setVisible(false);
-						Screen.gameScreen.mainPanel.regimentView.fillRegimentView(army.roster.get(index), false);
+						//Screen.gameScreen.mainPanel.regimentView.fillRegimentView(army.roster.get(index), false);
 						Screen.gameScreen.mainPanel.regimentView.setVisible(true);
 					}
 				});

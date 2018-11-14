@@ -59,9 +59,9 @@ public class OrderChoicePopupOrderPanel extends JPanel {
 		
 	}
 	
-	private void attributeOrder(Regiment regiment, Order order, OrderChoicePopup orderChoicePopup) {
+	private void attributeOrder(Regiment regiment, Order order, OrderChoicePopup orderChoicePopup, int regimentNumber) {
 		regiment.instructions.get(index).order = order;
-		Screen.gameScreen.mainPanel.regimentView.fillRegimentView(regiment, true);
+		Screen.gameScreen.mainPanel.regimentView.fillRegimentView(regiment, true, regimentNumber);
 		orderChoicePopup.setVisible(false);
 	}
 	
@@ -81,7 +81,7 @@ public class OrderChoicePopupOrderPanel extends JPanel {
 	}
 
 
-	public void fillOrderPanel(int index, Regiment regiment, TargetType targetType) {
+	public void fillOrderPanel(int index, Regiment regiment, TargetType targetType, int regimentNumber) {
 		this.index = index;
 		
 		switch (targetType) {
@@ -116,7 +116,7 @@ public class OrderChoicePopupOrderPanel extends JPanel {
 		} catch (Exception e) {}
 		chargeButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				attributeOrder(regiment, Order.CHARGE, orderChoicePopup);
+				attributeOrder(regiment, Order.CHARGE, orderChoicePopup, regimentNumber);
 				chargeButton.removeActionListener(chargeButton.getActionListeners()[0]);
 			}
 		});
@@ -126,7 +126,7 @@ public class OrderChoicePopupOrderPanel extends JPanel {
 		} catch (Exception e) {}
 		moveToButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				attributeOrder(regiment, Order.Move_to, orderChoicePopup);
+				attributeOrder(regiment, Order.Move_to, orderChoicePopup, regimentNumber);
 				moveToButton.removeActionListener(moveToButton.getActionListeners()[0]);
 			}
 		});
@@ -136,7 +136,7 @@ public class OrderChoicePopupOrderPanel extends JPanel {
 		} catch (Exception e) {}
 		moveForwardButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				attributeOrder(regiment, Order.Move_Forward, orderChoicePopup);
+				attributeOrder(regiment, Order.Move_Forward, orderChoicePopup, regimentNumber);
 				moveForwardButton.removeActionListener(moveForwardButton.getActionListeners()[0]);
 			}
 		});	
@@ -146,7 +146,7 @@ public class OrderChoicePopupOrderPanel extends JPanel {
 		} catch (Exception e) {}
 		missileButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				attributeOrder(regiment, Order.FIRE, orderChoicePopup);
+				attributeOrder(regiment, Order.FIRE, orderChoicePopup, regimentNumber);
 				missileButton.removeActionListener(missileButton.getActionListeners()[0]);
 			}
 		});	
@@ -156,7 +156,7 @@ public class OrderChoicePopupOrderPanel extends JPanel {
 		} catch (Exception e) {}
 		recoverButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				attributeOrder(regiment, Order.RECOVER, orderChoicePopup);
+				attributeOrder(regiment, Order.RECOVER, orderChoicePopup, regimentNumber);
 				recoverButton.removeActionListener(recoverButton.getActionListeners()[0]);
 			}
 		});
