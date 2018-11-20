@@ -27,6 +27,16 @@ public abstract class Conversations {
 	public static String backface_professor4 = "Someone, go and help him out, please";
 	public static String backface_professor5 = "Wait ...what? Where's the enemy?";
 	
+	public static String bakvits_marx1 = "(Kiddies): 'Daddy, how much farther is it? I need to go to the bathroom.'";
+	public static String bakvits_marx2 = "(Bakvits): **puff** **wheeze** 'just a ... little ... longer.'";
+	public static String bakvits_marx3 = "Hey, that looks like a beautiful way to commute in community!";
+	public static String bakvits_marx4 = "... You'd think ... wouldn' you? **huff** **puff**.";
+	public static String bakvits_marx5 = "But don't ... let them fool you ... "
+			+ "it takes a ... lot of effort ... to pedal with passengers.";
+	public static String bakvits_marx6 = "Oh, I see. Well, some ideas look great on paper, eh!";
+	public static String bakvits_marx7 = "...Tell me about it. **wheeze** **hackle**.";
+	public static String bakvits_marx8 = "(Kiddies): Daddy, how much farther is it? I'm hungry!";
+	
 	public static String camilla_vince1 = "Excuse me, what is that?";
 	public static String camilla_vince2 = "Hmmm? Oh, sorry, I got distracted. "
 			+ "This is, in fact, my latest invention that I'm building a prototype for.";

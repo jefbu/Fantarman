@@ -7,6 +7,7 @@ import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 import javax.swing.JLabel;
@@ -26,6 +27,8 @@ public class TitleScreen extends JPanel {
 	JLabel background;
 	JPanel panel;
 	BufferedImage image;
+	FileInputStream saveFile;
+
 
 	public TitleScreen(int width, int height) {
 		
@@ -85,10 +88,17 @@ public class TitleScreen extends JPanel {
         loadPanel.buttonedPanel.label.setForeground(Colors.vdgrey);
         loadPanel.buttonedPanel.label.setFont(new Font("garamond", Font.BOLD, 32));
         loadPanel.buttonedPanel.label.setText("Load");
+        
+        try {
+        saveFile = new FileInputStream("saveTest.sav");
+        } catch (Exception e) {}
+        
         loadPanel.buttonedPanel.button.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
+        		if (saveFile!=null) {
         		Screen.titleScreen.setVisible(false);
         		LoadGame.load();
+        		}
         	}
         });
         middlePanel.add(loadPanel);

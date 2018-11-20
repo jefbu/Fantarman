@@ -5,6 +5,8 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -24,6 +26,7 @@ public class MenuPanel extends JPanel {
 
 	Color backgroundColor;
 	Dimension labelDimension;
+	FileInputStream saveFile;
 	
 	public MenuPanel(int width, int height) {
 		
@@ -111,6 +114,12 @@ public class MenuPanel extends JPanel {
 			loadButton.setBorderPainted(false);
 			loadButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
+									
+					try {
+						saveFile = new FileInputStream("saveTest.sav");
+					} catch (FileNotFoundException e3) {}
+					
+					if (saveFile != null) {
 					
 					TextPopup loadPopup = new TextPopup (width / 2, height * 20, Colour.DGREY, true);
 					
@@ -136,6 +145,25 @@ public class MenuPanel extends JPanel {
 					});
 					
 					loadPopup.setVisible(true);
+				}
+					else { 
+
+					TextPopup couldNotLoadPopup = new TextPopup(width / 2, height * 25, Colour.DGREY, false);
+					couldNotLoadPopup.writeText("You ponder your choices of the past... <br> <br>"
+							+ "Too many mistakes, too much pain caused. Frankly, you don't see a way out any more. "
+							+ "And so, you decide to invoke the power you were born with, "
+							+ "to go back in time and set things right. <br> <br>"
+							+ "You close your eyes, concentrate. You call upon all your mental energy. "
+							+ "You channel your chakra, murmur the mantra and spill the spell. "
+							+ "The rays of power flow through your body. But nothing happens? "
+							+ "You frown, concentrate harder and start once more. Sweaty drops form on your brow. "
+							+ "A headache is heralding itself. And still nothing happens. "
+							+ "Faintly, far off in the distance in the astral plane, you suddenly see a few words appear in "
+							+ "the aether. <br> <br> They shimmer ... 'save file could not be found'.");
+					couldNotLoadPopup.setVisible(true);
+					
+					
+					}
 					
 				}
 			});

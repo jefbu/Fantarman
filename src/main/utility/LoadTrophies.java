@@ -31,7 +31,6 @@ public abstract class LoadTrophies {
 			}
 		
 			catch(Exception exc){
-			exc.printStackTrace();
 			}	
 	}	
 }

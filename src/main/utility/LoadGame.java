@@ -34,7 +34,6 @@ public abstract class LoadGame {
 			}
 		
 			catch(Exception exc){
-			exc.printStackTrace();
 			}
 		
 	}

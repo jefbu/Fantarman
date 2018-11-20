@@ -137,7 +137,7 @@ public class BattleConclusion extends TextPopup {
 				int recoveries = 0;
 				for (int ii = 0; ii < regiment.injuries; ii++) {
 					Random random = new Random();
-					if(random.nextInt(4) < 3) { recoveries++; }
+					if(random.nextInt(3) < 2) { recoveries++; }
 				}
 				regiment.injuries = regiment.injuries - recoveries;
 			regiment.inCombat = false;

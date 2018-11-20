@@ -12,6 +12,7 @@ import main.components.Colour;
 import main.components.ContentPanel;
 import main.entity.regiments.Regiment;
 import main.graphics.Screen;
+import main.graphics.gameScreen.regimentView.captainDetail.bigOrderPanel.BigOrderPanel;
 import main.graphics.gameScreen.regimentView.captainDetail.orderPanel.IndividualOrderPanel;
 import main.graphics.gameScreen.regimentView.captainDetail.orderPanel.OrderChoicePopup;
 import main.graphics.gameScreen.regimentView.captainDetail.orderPanel.OrderTitlePanel;
@@ -27,6 +28,7 @@ public class OrderPanel extends ContentPanel {
 	int width;
 	int height;
 	OrderChoicePopup orderChoicePopup;
+	BigOrderPanel bigOrderPanel;
 
 	public OrderPanel(int width, int height, Color colour, FlowLayout flowLayout) {
 
@@ -39,6 +41,7 @@ public class OrderPanel extends ContentPanel {
 		insidePanel.add(orderTitlePanel);
 		
 		orderChoicePopup = new OrderChoicePopup(width, height * 2, Colour.DGREY, false);
+		bigOrderPanel = new BigOrderPanel(width, height * 4, Colour.DGREY, true);
 
 		for (int i = 0; i < 5; i++) {
 			orderList.add(new IndividualOrderPanel(width - 11, height / 6 - 3));
@@ -63,6 +66,7 @@ public class OrderPanel extends ContentPanel {
 				
 				orderPanel.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						//bigOrderPanel.setVisible(true);
 						orderChoicePopup.fillPopup(index, regiment, regimentNumber);
 						orderChoicePopup.setLocationRelativeTo(Screen.gameScreen.mainPanel.regimentView);
 						orderChoicePopup.setVisible(true);

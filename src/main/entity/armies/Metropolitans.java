@@ -1,6 +1,7 @@
 package main.entity.armies;
 
 import main.entity.captains.Generic;
+import main.entity.captains.metropolitans.Bakvits;
 import main.entity.captains.metropolitans.Hispther;
 import main.entity.captains.metropolitans.Ravel;
 import main.entity.captains.metropolitans.Sammie;
@@ -28,7 +29,7 @@ public class Metropolitans extends Army {
 		roster.add(new PonyRiders("Shevau", new Sammie(), Lieutenant.surgeon));
 		roster.add(new ParentalTurtle("Obi", new Generic()));
 		roster.add(new Legat("St Danny", new Generic()));
-		roster.add(new Equitae("Grass Crowns", new Generic(), Lieutenant.sergeant, Lieutenant.medic,
+		roster.add(new Equitae("Grass Crowns", new Bakvits(), Lieutenant.sergeant, Lieutenant.medic,
 				Lieutenant.scout));
 		roster.add(new Triarae("Hispther", new Hispther(), Lieutenant.sergeant, Lieutenant.errant,
 				Lieutenant.medic));

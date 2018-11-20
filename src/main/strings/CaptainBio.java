@@ -15,6 +15,12 @@ public abstract class CaptainBio {
 	public static String backface = "Motorically dyslexic, Backface sometimes mounts his pony with the wrong foot. "
 			+ "Once he gets it right though, he is a skilled and well respected chevalier, "
 			+ "who fights for glory and prestige rather than the more earthly rewards most other captains favour.";
+	
+	public static String bakvits = "His bicycle is a way of life. Bakvits refuses to own a car, "
+			+ "saying that in an urban environment, it's a waste of space and expensive as hell to park. "
+			+ "In all honesty though, driving his kids around in his bike is completely calory inefficient. "
+			+ "As he huffs and puffs uphill, suicidal flies keep divebombing into his wheezing open mouth. "
+			+ "Meanwhile, the kids just won't stop nagging, too.";			
 
 	public static String chessmaster = "Everyone always assumes I'm a genius. "
 			+ "That I, somehow, would speak every language. "
