@@ -47,6 +47,21 @@ public class BigOrderPanel extends JDialog {
 		titleLabel.setText("Choose your tactic by picking a condition, a target and an order.");
 		topPanel.add(titleLabel);
 		
+		bigConditionPanel = new BigConditionPanel(width, height * 35 / 100);
+		bigTargetPanel = new BigTargetPanel(width, height * 25 / 100);
+		bigTacticPanel = new BigTacticPanel(width, height * 25 / 100);
+		
+		add(bigConditionPanel);
+		add(bigTargetPanel);
+		add(bigTacticPanel);
+		
+		JPanel bottomPanel = new JPanel();
+		bottomPanel.setPreferredSize(new Dimension (width, height * 10 / 100));
+		bottomPanel.setBackground(decideColour(colour));
+		bottomPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, height / 100));
+		add(bottomPanel);
+		
+		
 		
 		
 	}
@@ -59,6 +74,7 @@ public class BigOrderPanel extends JDialog {
 		
 		switch(colour) {
 		case DGREY: return Colors.dgrey;
+		case VDGREY: return Colors.vdgrey;
 		default: return Colors.lblue;
 		}
 		

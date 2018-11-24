@@ -76,7 +76,7 @@ public class GameStartScreen extends JPanel {
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
-				Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
+				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
 				Screen.gameScreen.setVisible(true);
 			}
@@ -112,7 +112,7 @@ public class GameStartScreen extends JPanel {
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
-				Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
+				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
 				Screen.gameScreen.setVisible(true);
 			}
@@ -148,7 +148,7 @@ public class GameStartScreen extends JPanel {
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
-				Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
+				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
 				Screen.gameScreen.setVisible(true);
 			}
@@ -184,7 +184,7 @@ public class GameStartScreen extends JPanel {
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
-				Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
+				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
 				Screen.gameScreen.setVisible(true);
 			}
@@ -220,7 +220,7 @@ public class GameStartScreen extends JPanel {
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
-				Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
+				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
 				Screen.gameScreen.setVisible(true);
 			}
@@ -250,7 +250,7 @@ public class GameStartScreen extends JPanel {
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
-				Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
+				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
 				Screen.gameScreen.setVisible(true);
 			}
@@ -292,7 +292,7 @@ public class GameStartScreen extends JPanel {
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
-				Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
+				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
 				Screen.gameScreen.setVisible(true);
 			}
@@ -328,7 +328,7 @@ public class GameStartScreen extends JPanel {
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
-				Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
+				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
 				Screen.gameScreen.setVisible(true);
 			}

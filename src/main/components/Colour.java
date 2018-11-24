@@ -13,6 +13,7 @@ public enum Colour {
 	LRED,
 	LGREEN,
 	LBLUE,
-	LGREY
+	LGREY, 
+	VDGREY
 
 }

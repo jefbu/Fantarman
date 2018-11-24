@@ -41,7 +41,7 @@ public class BottomHomePanel extends JPanel {
 		click.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Screen.gameScreen.setScreensInvisible();
-				Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
+				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
 			}
 		});

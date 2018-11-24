@@ -41,7 +41,7 @@ public class OrderPanel extends ContentPanel {
 		insidePanel.add(orderTitlePanel);
 		
 		orderChoicePopup = new OrderChoicePopup(width, height * 2, Colour.DGREY, false);
-		bigOrderPanel = new BigOrderPanel(width, height * 4, Colour.DGREY, true);
+		bigOrderPanel = new BigOrderPanel(width, height * 4, Colour.VDGREY, true);
 
 		for (int i = 0; i < 5; i++) {
 			orderList.add(new IndividualOrderPanel(width - 11, height / 6 - 3));
@@ -66,10 +66,10 @@ public class OrderPanel extends ContentPanel {
 				
 				orderPanel.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						//bigOrderPanel.setVisible(true);
-						orderChoicePopup.fillPopup(index, regiment, regimentNumber);
-						orderChoicePopup.setLocationRelativeTo(Screen.gameScreen.mainPanel.regimentView);
-						orderChoicePopup.setVisible(true);
+						bigOrderPanel.setVisible(true);
+						//orderChoicePopup.fillPopup(index, regiment, regimentNumber);
+						//orderChoicePopup.setLocationRelativeTo(Screen.gameScreen.mainPanel.regimentView);
+						//orderChoicePopup.setVisible(true);
 					}
 				});
 				

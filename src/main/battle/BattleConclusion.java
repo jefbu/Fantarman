@@ -160,7 +160,7 @@ public class BattleConclusion extends TextPopup {
 		Main.yourArmy.calculateMoney();
 		
 		Screen.gameScreen.mainPanel.armyView.fillArmyView(Main.yourArmy);
-		Screen.gameScreen.mainPanel.homeView.fillHomeScreen();;
+		Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);;
 		Screen.gameScreen.mainPanel.infoView.fillInfoView(Main.yourArmy);
 		Screen.gameScreen.mainPanel.leagueView.fillLeagueView();
 		

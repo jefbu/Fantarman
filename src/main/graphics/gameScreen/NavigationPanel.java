@@ -25,7 +25,7 @@ public class NavigationPanel extends JPanel {
 
 
 	public NavigationPanel(int width, int height) {
-		
+		/*
 		super();
 		
 		setPreferredSize(new Dimension(width, height));
@@ -95,7 +95,7 @@ public class NavigationPanel extends JPanel {
 		wikiViewPanel.buttonedPanel.label.setFont(new Font("garamond", Font.BOLD, 42));
 		wikiViewPanel.buttonedPanel.label.setText("Encyclopedia");
 	add(wikiViewPanel);
-		
+		*/
 	}
 	
 

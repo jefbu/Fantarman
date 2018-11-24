@@ -48,7 +48,6 @@ public class IndividualRegimentPanel extends JPanel {
 	
 	public void fillIndividualRegimentPanel(Army army, int index) {
 		
-		System.out.println("Do we even use this still?");
 		
 		for (ButtonedPanel panel: panelList) {
 			try{

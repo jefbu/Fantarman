@@ -312,7 +312,7 @@ public class RegimentPanel extends JPanel {
 								.setIcon(imageLoader.loadImageIcon("/icons/checkbox.png", width * 3 / 100, height));
 						marketingRolePanel.label
 								.setIcon(imageLoader.loadImageIcon("/icons/checkbox.png", width * 3 / 100, height));
-						Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
+						Screen.gameScreen.mainPanel.homeView.fillHomeScreen(false);
 					}
 				}
 			});
@@ -326,7 +326,7 @@ public class RegimentPanel extends JPanel {
 							.setIcon(imageLoader.loadImageIcon("/icons/checkboxChecked.png", width * 3 / 100, height));
 					marketingRolePanel.label
 							.setIcon(imageLoader.loadImageIcon("/icons/checkbox.png", width * 3 / 100, height));
-					Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
+					Screen.gameScreen.mainPanel.homeView.fillHomeScreen(false);
 				}
 			});
 
@@ -339,7 +339,7 @@ public class RegimentPanel extends JPanel {
 							.setIcon(imageLoader.loadImageIcon("/icons/checkbox.png", width * 3 / 100, height));
 					marketingRolePanel.label
 							.setIcon(imageLoader.loadImageIcon("/icons/checkboxChecked.png", width * 3 / 100, height));
-					Screen.gameScreen.mainPanel.homeView.fillHomeScreen();
+					Screen.gameScreen.mainPanel.homeView.fillHomeScreen(false);
 				}
 			});
 

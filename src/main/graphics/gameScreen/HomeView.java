@@ -74,7 +74,7 @@ public class HomeView extends JPanel {
 		
 	}
 	
-	public void fillHomeScreen() {
+	public void fillHomeScreen(boolean refreshRandomNews) {
 		
 		Main.bottomTextTutorial = BottomTextTutorial.Homeview;
 		shortLeague.fillShortLeague();
@@ -82,7 +82,7 @@ public class HomeView extends JPanel {
 		shortInfo.fillShortInformation();
 		calendarPanel.globalCalendarCounter = 0;
 		calendarPanel.fillShortFixtures(Main.league.calendarDay);
-		Screen.gameScreen.bottomPanel.bottomTextPanel.fillBottomTextPanel(true);
+		Screen.gameScreen.bottomPanel.bottomTextPanel.fillBottomTextPanel(refreshRandomNews);
 
 		
 	}
