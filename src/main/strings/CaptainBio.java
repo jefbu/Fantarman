@@ -99,6 +99,11 @@ public abstract class CaptainBio {
 			+ "He will under no conditions tolerate putting milk or sugar in the sacred beverage, "
 			+ "but will condone a single drop of sustainable honey.";
 	
+	public static String influencra = "Sure I'll go to your party. I expect free entrance, a VIP seat "
+			+ "and three bottles of cava. That'll get you one picture which will reach 6,200 followers. "
+			+ "If you want, I can also endorse your club and actually write something like that I had a great time. "
+			+ "That'll cost extra though.";
+	
 	public static String jackie = "Like the water that bends to the wind but does not break. "
 			+ "Like the powerless wheat in the winter sun. "
 			+ "Like the rock that patiently wears down the willow through the ages, "

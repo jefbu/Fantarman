@@ -3,6 +3,7 @@ package main.entity.armies;
 import main.entity.captains.Generic;
 import main.entity.captains.metropolitans.Bakvits;
 import main.entity.captains.metropolitans.Hispther;
+import main.entity.captains.metropolitans.Influencra;
 import main.entity.captains.metropolitans.Ravel;
 import main.entity.captains.metropolitans.Sammie;
 import main.entity.lieutenants.Lieutenant;
@@ -34,7 +35,7 @@ public class Metropolitans extends Army {
 		roster.add(new Triarae("Hispther", new Hispther(), Lieutenant.sergeant, Lieutenant.errant,
 				Lieutenant.medic));
 		roster.add(new DrunkenMaster("Huiyin", new Generic()));
-		roster.add(new CraneWing("Azure Wings", new Generic(), Lieutenant.abomination, Lieutenant.corporal));
+		roster.add(new CraneWing("Azure Wings", new Influencra(), Lieutenant.abomination, Lieutenant.corporal));
 		roster.add(new TigerFist("Act of Strength", new Generic(), Lieutenant.monstrosity, Lieutenant.medic));
 
 		calculateValue();

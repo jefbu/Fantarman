@@ -3,19 +3,19 @@ package main.components;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import main.utility.Colors;
 import main.utility.ImageLoader;
 
 public class CheckboxPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	JButton iconButton;
-	JLabel textLabel;
+	public JButton iconButton;
+	public JLabel textLabel;
 	ImageLoader imageLoader;
 
 	public CheckboxPanel(int width, int height, Color colour) {
@@ -27,38 +27,42 @@ public class CheckboxPanel extends JPanel {
 		
 		JPanel emptyTopPanel = new JPanel();
 		emptyTopPanel.setPreferredSize(new Dimension(width, height / 10));
-		emptyTopPanel.setBackground(Colors.orange);
+		emptyTopPanel.setBackground(colour);
 		add(emptyTopPanel);
 		
 		JPanel emptyLeftPanel = new JPanel();
 		emptyLeftPanel.setPreferredSize(new Dimension(width * 5 / 100, height * 8 / 10));
-		emptyLeftPanel.setBackground(Colors.lorange);
+		emptyLeftPanel.setBackground(colour);
 		add(emptyLeftPanel);
 		
 		JPanel centrePanel = new JPanel();
 		centrePanel.setPreferredSize(new Dimension(width * 9 / 10, height * 8 / 10));
 		centrePanel.setLayout(new FlowLayout(FlowLayout.LEADING, 0, 0));
-		centrePanel.setBackground(Colors.textyellow);
+		centrePanel.setBackground(colour);
 		add(centrePanel);	
 		
 		JPanel checkboxPanel = new JPanel();
-		checkboxPanel.setPreferredSize(new Dimension(width * 3 / 10, height * 8 / 10));
+		checkboxPanel.setPreferredSize(new Dimension(width * 25 / 100, height * 8 / 10));
 		checkboxPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
-		checkboxPanel.setBackground(Colors.lblue);
+		checkboxPanel.setBackground(colour);
 		centrePanel.add(checkboxPanel);
 		
 		imageLoader = new ImageLoader();
 		
 		iconButton = new JButton();
 		iconButton.setBorderPainted(false);
+		iconButton.setBorder(null);
 		iconButton.setOpaque(false);
 		iconButton.setContentAreaFilled(false);
-		iconButton.setIcon(imageLoader.loadImageIcon("/icons/checkbox.png", width * 3 / 10, height * 8 / 10));
+		iconButton.setLayout(new FlowLayout(FlowLayout.LEADING, 0, 0));
+		iconButton.setIcon(imageLoader.loadImageIcon("/icons/checkbox.png", width * 2 / 10, height * 6 / 10));
 		checkboxPanel.add(iconButton);
 		
 		JPanel textPanel = new JPanel();
-		textPanel.setPreferredSize(new Dimension(width * 6 / 10, height * 8 / 10));
-		textPanel.setBackground(Colors.dblue);
+		textPanel.setPreferredSize(new Dimension(width * 65 / 100, height * 8 / 10));
+		textPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, height / 20));
+		Random random = new Random();
+		textPanel.setBackground(new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255)));
 		centrePanel.add(textPanel);
 		
 		textLabel = new JLabel("click");
@@ -66,12 +70,12 @@ public class CheckboxPanel extends JPanel {
 		
 		JPanel emptyRightPanel = new JPanel();
 		emptyRightPanel.setPreferredSize(new Dimension(width *5 / 100, height * 8 / 10));
-		emptyRightPanel.setBackground(Colors.dorange);
+		emptyRightPanel.setBackground(colour);
 		add(emptyRightPanel);
 		
 		JPanel emptyBottomPanel = new JPanel();
 		emptyBottomPanel.setPreferredSize(new Dimension(width, height / 10));
-		emptyBottomPanel.setBackground(Colors.vlorange);
+		emptyBottomPanel.setBackground(colour);
 		add(emptyBottomPanel);
 		
 	}
