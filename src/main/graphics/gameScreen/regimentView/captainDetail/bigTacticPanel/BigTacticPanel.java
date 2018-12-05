@@ -15,7 +15,6 @@ import javax.swing.JPanel;
 import main.Main;
 import main.battle.tactics.Condition;
 import main.battle.tactics.Order;
-import main.battle.tactics.Tactic;
 import main.battle.tactics.Target;
 import main.components.Colour;
 import main.entity.regiments.Regiment;

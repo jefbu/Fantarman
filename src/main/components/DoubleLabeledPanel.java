@@ -103,6 +103,13 @@ public class DoubleLabeledPanel extends JPanel {
 			contentPanel.setBackground(Colors.vdgrey);
 			contentLabel.setForeground(Colors.grey);
 			break;
+		case VDGREY:
+			titlePanel.setBackground(Colors.lgrey);
+			titleLabel.setForeground(Colors.dgrey);
+			contentPanel.setBackground(Colors.vdgrey);
+			contentLabel.setForeground(Colors.grey);
+			break;
+			
 		
 		}
 		

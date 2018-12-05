@@ -11,7 +11,6 @@ import javax.swing.JPanel;
 import main.components.Colour;
 import main.components.ContentPanel;
 import main.entity.regiments.Regiment;
-import main.graphics.gameScreen.regimentView.captainDetail.bigTacticPanel.BigOrderPanel;
 import main.graphics.gameScreen.regimentView.captainDetail.bigTacticPanel.BigTacticPanel;
 import main.graphics.gameScreen.regimentView.captainDetail.orderPanel.IndividualOrderPanel;
 import main.graphics.gameScreen.regimentView.captainDetail.orderPanel.OrderChoicePopup;
