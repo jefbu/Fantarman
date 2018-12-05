@@ -66,7 +66,7 @@ public class OrderPanel extends ContentPanel {
 				
 				orderPanel.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						bigTacticPanel.fillBigTacticPanelComplete(regiment, 0);
+						bigTacticPanel.fillBigTacticPanelComplete(regiment, index);
 						bigTacticPanel.setVisible(true);
 						//orderChoicePopup.fillPopup(index, regiment, regimentNumber);
 						//orderChoicePopup.setLocationRelativeTo(Screen.gameScreen.mainPanel.regimentView);

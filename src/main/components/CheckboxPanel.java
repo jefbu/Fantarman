@@ -61,8 +61,7 @@ public class CheckboxPanel extends JPanel {
 		JPanel textPanel = new JPanel();
 		textPanel.setPreferredSize(new Dimension(width * 65 / 100, height * 8 / 10));
 		textPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, height / 20));
-		Random random = new Random();
-		textPanel.setBackground(new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255)));
+		textPanel.setBackground(colour);
 		centrePanel.add(textPanel);
 		
 		textLabel = new JLabel("click");

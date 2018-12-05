@@ -36,7 +36,7 @@ public class BigOrderPanel extends JPanel {
 		recoverPanel = new CheckboxPanel(width * 19 / 100, checkboxPanelHeight, Colors.vlgrey);
 		recoverPanel.textLabel.setText("Recover");
 		missilePanel = new CheckboxPanel(width * 19 / 100, checkboxPanelHeight, Colors.vlgrey);
-		missilePanel.textLabel.setText("Fire Missiles At");
+		missilePanel.textLabel.setText("Fire At");
 		
 		add(moveToPanel);
 		add(chargePanel);

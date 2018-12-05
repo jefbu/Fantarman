@@ -97,7 +97,7 @@ public class ShortInfo extends JPanel {
 		infoPanel.insidePanel.add(leftPanel);
 
 		JPanel rightPanel = new JPanel();
-		rightPanel.setPreferredSize(new Dimension(halfWidth, height * 71 / 100));
+		rightPanel.setPreferredSize(new Dimension(halfWidth - 10, height * 71 / 100));
 		rightPanel.setBackground(Colors.lgrey);
 		rightPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 1, 0));
 		infoPanel.insidePanel.add(rightPanel);

@@ -28,13 +28,13 @@ public class BigTargetPanel extends JPanel {
 		setBackground(Colors.vlgrey);
 		
 		strongestPanel = new CheckboxPanel(width * 19 / 100, checkboxPanelHeight, Colors.vlgrey);
-		strongestPanel.textLabel.setText("Strongest Enemy");
+		strongestPanel.textLabel.setText("Strongest");
 		nearestPanel = new CheckboxPanel(width * 19 / 100, checkboxPanelHeight, Colors.vlgrey);
-		nearestPanel.textLabel.setText("Nearest Enemy");
+		nearestPanel.textLabel.setText("Nearest");
 		weakestPanel = new CheckboxPanel(width * 19 / 100, checkboxPanelHeight, Colors.vlgrey);
-		weakestPanel.textLabel.setText("Weakest Enemy");
+		weakestPanel.textLabel.setText("Weakest");
 		selfPanel = new CheckboxPanel(width * 19 / 100, checkboxPanelHeight, Colors.vlgrey);
-		selfPanel.textLabel.setText("Ourselves");
+		selfPanel.textLabel.setText("Self");
 		nonePanel = new CheckboxPanel(width * 19 / 100, checkboxPanelHeight, Colors.vlgrey);
 		nonePanel.textLabel.setText("No Target");
 

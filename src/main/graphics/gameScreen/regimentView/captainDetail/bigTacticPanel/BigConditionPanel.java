@@ -66,9 +66,9 @@ public class BigConditionPanel extends JPanel {
 		after5TurnPanel = new CheckboxPanel(width * 19 / 100, checkboxPanelHeight, Colors.vlgrey);
 		after5TurnPanel.textLabel.setText("After 5 Turns");
 		anyInRangePanel = new CheckboxPanel(width * 19 / 100, checkboxPanelHeight, Colors.vlgrey);
-		anyInRangePanel.textLabel.setText("Any Target In Range");
+		anyInRangePanel.textLabel.setText("Any In Range");
 		targetInRangePanel = new CheckboxPanel(width * 19 / 100, checkboxPanelHeight, Colors.vlgrey);
-		targetInRangePanel.textLabel.setText("Chosen Target In Range");
+		targetInRangePanel.textLabel.setText("Chosen In Range");
 		
 		alwaysPanel = new CheckboxPanel(width * 19 / 100, checkboxPanelHeight, Colors.vlgrey);
 		alwaysPanel.textLabel.setText("Always");
