@@ -27,7 +27,7 @@ public class OrderPanel extends ContentPanel {
 	int width;
 	int height;
 	OrderChoicePopup orderChoicePopup;
-	BigTacticPanel bigTacticPanel;
+	public static BigTacticPanel bigTacticPanel;
 
 	public OrderPanel(int width, int height, Color colour, FlowLayout flowLayout) {
 

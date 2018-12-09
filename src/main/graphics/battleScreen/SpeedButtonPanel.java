@@ -22,7 +22,7 @@ public class SpeedButtonPanel extends JPanel {
 	public JButton fastestSpeedButton;
 	public JButton interveneButton;
 
-	public InterventionPopup interventionPopup;
+	public static InterventionPopup interventionPopup;
 	
 	private ImageLoader imageLoader;
 
@@ -116,13 +116,14 @@ public class SpeedButtonPanel extends JPanel {
 		interveneButton = new JButton("Intervene (Not Implemented Yet)");
 		interveneButton.setPreferredSize(new Dimension(width, height / 2));
 		add(interveneButton);
+		
+		interventionPopup = new InterventionPopup(
+				BattleScreen.battleScene.roundedWidth * 2 / 3,
+				BattleScreen.battleScene.roundedHeight * 2 / 3);
 
 		interveneButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				BattleOrchestrator.timer.stop();
-				interventionPopup = new InterventionPopup(
-						BattleScreen.battleScene.roundedWidth * 2 / 3,
-						BattleScreen.battleScene.roundedHeight * 2 / 3);
 				interventionPopup.fillInterventionPopup();
 				interventionPopup.setVisible(true);
 			}

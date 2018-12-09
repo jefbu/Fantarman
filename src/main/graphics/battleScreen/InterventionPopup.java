@@ -18,6 +18,8 @@ import javax.swing.border.LineBorder;
 
 import main.battle.BattleOrchestrator;
 import main.components.ButtonedPanel;
+import main.graphics.Screen;
+import main.graphics.gameScreen.regimentView.captainDetail.OrderPanel;
 import main.utility.Colors;
 import main.utility.ImageLoader;
 
@@ -163,6 +165,7 @@ public class InterventionPopup extends JDialog {
 	public void fillInterventionPopup() {
 
 		interventionLabel.setText("Interventions left: " + interventions);
+		interventions--;
 
 		for (int i = 0; i < panels.size(); i++) {
 			panels.get(i).label.setText("");
@@ -172,7 +175,23 @@ public class InterventionPopup extends JDialog {
 			panels.get(i).label.setText(BattleOrchestrator.yourBattleArmy.roster.get(i).captain.name + "'s "
 					+ BattleOrchestrator.yourBattleArmy.roster.get(i).regiment);
 		}
+		
+		for (int i = 0; i < BattleOrchestrator.yourBattleArmy.roster.size(); i++) {
+			int index = i;
+			try { panels.get(i).button.removeActionListener(panels.get(i).button.getActionListeners()[0]);
+		} catch (Exception e) {}
+			panels.get(i).button.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					if (interventions >= 0) {
+					dispose();
+					OrderPanel.bigTacticPanel.fillBigTacticPanelComplete(BattleOrchestrator.yourBattleArmy.roster.get(index), 0);
+					OrderPanel.bigTacticPanel.setVisible(true);
+					}
+				}
+			});
 
+	}
+		
 	}
 
 }

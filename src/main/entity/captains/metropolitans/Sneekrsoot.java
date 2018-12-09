@@ -4,16 +4,16 @@ import main.entity.captains.Captain;
 import main.entity.skills.Skills;
 import main.strings.CaptainBio;
 
-public class Sammie extends Captain {
+public class Sneekrsoot extends Captain {
 
 	private static final long serialVersionUID = 1L;
 
-	public Sammie () {
+	public Sneekrsoot() {
 		
 		super();
 		
-		name = "Sammie";
-		gender = "N.B.";
+		name = "Sneekrsoot";
+		gender = "male";
 		
 		attackBonus = 1;
 		defenceBonus = 2;
@@ -28,9 +28,9 @@ public class Sammie extends Captain {
 		skill1 = Skills.Deployer1;
 		skill2 = Skills.Healer1;
 		
-		bio = CaptainBio.sammie;
+		bio = CaptainBio.sneekrsoot;
 		
-		iconPath = "/portraits/sammie.png";
+		iconPath = "/portraits/sneekrsoot.png";
 		
 	}
 

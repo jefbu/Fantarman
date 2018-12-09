@@ -227,6 +227,10 @@ public abstract class CaptainBio {
 			+ "and it was discovered she had more talent than any other Wanmen before her. "
 			+ "While her Mockbattle career has been okayish, "
 			+ "it is nevertheless felt that she is not yet living up to the expectations";
+	
+	public static String sneekrsoot = "Well you have got to admit, his toned body tight in a designer suit "
+			+ "in combination with those pristine and dazzling bright white sneakers... It works!"
+			+ " It <i> shouldn't </i> work, but it does.";
 
 	public static String swashni = "The Stoopvarmints were the leading proponent of the dimensional invasion "
 			+ "by the Wanmen many years ago, and Swashni's regiment was first amongst those. "

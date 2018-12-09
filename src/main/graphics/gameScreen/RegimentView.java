@@ -19,7 +19,7 @@ public class RegimentView extends JPanel {
 	public RegimentListPanel  regimentListPanel;
 	
 	RegimentDetailPanel regimentDetailPanel;
-	CaptainDetailPanel captainDetailPanel;
+	public CaptainDetailPanel captainDetailPanel;
 
 	public RegimentView(int gameScreenWidth, int gameScreenHeight) {
 

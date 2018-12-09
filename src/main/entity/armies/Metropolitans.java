@@ -6,6 +6,7 @@ import main.entity.captains.metropolitans.Hispther;
 import main.entity.captains.metropolitans.Influencra;
 import main.entity.captains.metropolitans.Ravel;
 import main.entity.captains.metropolitans.Sammie;
+import main.entity.captains.metropolitans.Sneekrsoot;
 import main.entity.lieutenants.Lieutenant;
 import main.entity.regiments.feods.Equitae;
 import main.entity.regiments.feods.Legat;
@@ -29,7 +30,7 @@ public class Metropolitans extends Army {
 		roster.add(new DoveMasters("Ravel", new Ravel(), Lieutenant.medic));
 		roster.add(new PonyRiders("Shevau", new Sammie(), Lieutenant.surgeon));
 		roster.add(new ParentalTurtle("Obi", new Generic()));
-		roster.add(new Legat("St Danny", new Generic()));
+		roster.add(new Legat("Sneekrsoot", new Sneekrsoot()));
 		roster.add(new Equitae("Grass Crowns", new Bakvits(), Lieutenant.sergeant, Lieutenant.medic,
 				Lieutenant.scout));
 		roster.add(new Triarae("Hispther", new Hispther(), Lieutenant.sergeant, Lieutenant.errant,
