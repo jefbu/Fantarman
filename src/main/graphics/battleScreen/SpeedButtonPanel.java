@@ -123,7 +123,6 @@ public class SpeedButtonPanel extends JPanel {
 
 		interveneButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				BattleOrchestrator.timer.stop();
 				interventionPopup.fillInterventionPopup();
 				interventionPopup.setVisible(true);
 			}

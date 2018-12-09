@@ -155,7 +155,6 @@ public class InterventionPopup extends JDialog {
 
 		acceptButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				BattleOrchestrator.timer.restart();
 				dispose();
 			}
 		});
@@ -163,7 +162,7 @@ public class InterventionPopup extends JDialog {
 	}
 
 	public void fillInterventionPopup() {
-
+		
 		interventionLabel.setText("Interventions left: " + interventions);
 		interventions--;
 

@@ -15,6 +15,7 @@ import main.entity.leagues.Result;
 import main.entity.regiments.Regiment;
 import main.graphics.Screen;
 import main.graphics.battleScreen.BattleScreen;
+import main.graphics.battleScreen.InterventionPopup;
 import main.strings.Adjectives;
 import main.utility.SaveTrophies;
 import main.utility.Trophies;
@@ -165,6 +166,7 @@ public class BattleConclusion extends TextPopup {
 		Screen.gameScreen.mainPanel.leagueView.fillLeagueView();
 		
 		Main.league.calendarDay++;
+		InterventionPopup.interventions = 2;
 		
 		try {
 		acceptButton.removeActionListener(acceptButton.getActionListeners()[0]);
