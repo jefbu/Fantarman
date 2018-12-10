@@ -18,7 +18,6 @@ import javax.swing.border.LineBorder;
 
 import main.battle.BattleOrchestrator;
 import main.components.ButtonedPanel;
-import main.graphics.Screen;
 import main.graphics.gameScreen.regimentView.captainDetail.OrderPanel;
 import main.utility.Colors;
 import main.utility.ImageLoader;
