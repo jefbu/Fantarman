@@ -84,6 +84,14 @@ public class GameStartScreen extends JPanel {
 		pikninButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				chosenArmy = 1;
+				armySelectPopup.writeText("&bull More regiments than any other army <br>"
+						+ "&bull Can easily field healthy combat units <br>"
+						+ "&bull Spare units can train or fundraise to make money <br>"
+						+ "&bull Good variety of equipment options <br>"
+						+ "&bull Captains tend to have a good amount of orders <br> <br>"
+						+ "&bull Lacking in heavy infantry and cavalry <br>"
+						+ "&bull Regiments are below average in combat prowess <br>"
+						+ "&bull Archers are decent, but somewhat short range <br>");
 				armySelectPopup.setVisible(true);
 				/*
 				Main.yourArmy = new Pickles();
@@ -123,6 +131,14 @@ public class GameStartScreen extends JPanel {
 		terquitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				chosenArmy = 2;
+				armySelectPopup.writeText("&bull Very tough regiments <br>"
+						+ "&bull Very good morale <br>"
+						+ "&bull Good choice for beginners <br> <br>"
+						+ "&bull Very few regiments <br>"
+						+ "&bull As the season goes on, hard to field healthy units <br>"
+						+ "&bull Lacking in equipment options <br>"
+						+ "&bull Captains have few order slots <br>"
+						+ "&bull Very slow, no cavalry at all");
 				armySelectPopup.setVisible(true);
 				/*
 				Main.yourArmy = new TerribleTerquits();
@@ -162,6 +178,11 @@ public class GameStartScreen extends JPanel {
 		wanmenButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				chosenArmy = 3;
+				armySelectPopup.writeText("&bull High Speed and Movement <br>"
+						+ "&bull Decent amount of regiments in the army <br>"
+						+ "&bull Average to good equipment options <br>"
+						+ "&bull Captains have a decent amount of order slots <br> <br>"
+						+ "&bull Somewhat frail units <br>");
 				armySelectPopup.setVisible(true);
 				/*
 				Main.yourArmy = new Wanmen();
@@ -201,6 +222,11 @@ public class GameStartScreen extends JPanel {
 		skylordsButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				chosenArmy = 4;
+				armySelectPopup.writeText("&bull Fastest army in the game <br>"
+						+ "&bull Decent amount of army regiments <br>"
+						+ "&bull Captains have consistently decent order slots <br> <br>"
+						+ "&bull Really vulnerable to archers and counterattacks <br>"
+						+ "&bull Relies heavily on charges");
 				armySelectPopup.setVisible(true);
 				/*
 				Main.yourArmy = new Skylords();
@@ -240,6 +266,11 @@ public class GameStartScreen extends JPanel {
 		espequrButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				chosenArmy = 5;
+				armySelectPopup.writeText("&bull Good mix of unit types <br>"
+						+ "&bull Quite strong regiments <br>"
+						+ "&bull Good equipment options <br> <br>"
+						+ "&bull Fewer regiments, hard to have everyone in top health <br>"
+						+ "&bull Captains have few order slots <br>");
 				armySelectPopup.setVisible(true);
 				/*
 				Main.yourArmy = new Espequr();
@@ -273,6 +304,12 @@ public class GameStartScreen extends JPanel {
 		chiDestroyersButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				chosenArmy = 6;
+				armySelectPopup.writeText("&bull Regiments have good speed <br>"
+						+ "&bull Captains have a good set of order slots <br> <br>"
+						+ "&bull Few spare regiments, little time to rest the injured <br>"
+						+ "&bull Regiments are quite frail <br>"
+						+ "&bull Good speed, but no cavalry so only mediocre movement <br>"
+						+ "&bull Not the easiest army!");
 				armySelectPopup.setVisible(true);
 				/*
 				Main.yourArmy = new ChiDestroyers();
@@ -318,6 +355,8 @@ public class GameStartScreen extends JPanel {
 		metropolitansButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				chosenArmy = 7;
+				armySelectPopup.writeText("The Metropolitans are a mix of regiments from other armies. <br>"
+						+ "As such, they're quite balanced to play, but a little lacking in style.");
 				armySelectPopup.setVisible(true);
 				/*
 				Main.yourArmy = new Metropolitans();
@@ -357,6 +396,8 @@ public class GameStartScreen extends JPanel {
 		multiculturalSocietyButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				chosenArmy = 8;
+				armySelectPopup.writeText("The Society is a mix of regiments from other armies. <br>"
+						+ "As such, they're quite balanced to play, but a little lacking in style.");
 				armySelectPopup.setVisible(true);
 				/*
 				Main.yourArmy = new MulticulturalSociety();
