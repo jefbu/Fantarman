@@ -12,6 +12,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import main.Main;
+import main.components.Colour;
+import main.components.TextPopup;
 import main.entity.armies.Army;
 import main.entity.armies.ChiDestroyers;
 import main.entity.armies.Espequr;
@@ -27,6 +29,8 @@ import main.utility.ImageLoader;
 public class GameStartScreen extends JPanel {
 
 	private static final long serialVersionUID = 1L;
+	private int chosenArmy;
+	private TextPopup armySelectPopup;
 
 	public GameStartScreen(int width, int height) {
 
@@ -34,6 +38,13 @@ public class GameStartScreen extends JPanel {
 		setPreferredSize(new Dimension(width, height));
 		setBackground(Colors.dgrey);
 		setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+		
+		armySelectPopup = new TextPopup(width / 3, height / 3, Colour.DGREY, true);
+		armySelectPopup.confirmButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				fillArmySelectPopup(chosenArmy);
+			}
+		});
 
 		JPanel titlePanel = new JPanel();
 		titlePanel.setPreferredSize(new Dimension(width, height / 10));
@@ -72,13 +83,16 @@ public class GameStartScreen extends JPanel {
 				height * 8 / 10 / 2 * 8 / 10));
 		pikninButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				chosenArmy = 1;
+				armySelectPopup.setVisible(true);
+				/*
 				Main.yourArmy = new Pickles();
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
 				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
-				Screen.gameScreen.setVisible(true);
+				Screen.gameScreen.setVisible(true);*/
 			}
 		});
 		pikninPanel.add(pikninButton);
@@ -108,13 +122,16 @@ public class GameStartScreen extends JPanel {
 				imageLoader.loadImageIcon("/ArmyLogo/Terquits.png", width * 8 / 10 / 4, height * 8 / 10 / 2 * 8 / 10));
 		terquitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				chosenArmy = 2;
+				armySelectPopup.setVisible(true);
+				/*
 				Main.yourArmy = new TerribleTerquits();
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
 				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
-				Screen.gameScreen.setVisible(true);
+				Screen.gameScreen.setVisible(true);*/
 			}
 		});
 		terquitPanel.add(terquitButton);
@@ -144,13 +161,16 @@ public class GameStartScreen extends JPanel {
 				height * 8 / 10 / 2 * 8 / 10));
 		wanmenButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				chosenArmy = 3;
+				armySelectPopup.setVisible(true);
+				/*
 				Main.yourArmy = new Wanmen();
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
 				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
-				Screen.gameScreen.setVisible(true);
+				Screen.gameScreen.setVisible(true);*/
 			}
 		});
 		wanmenPanel.add(wanmenButton);
@@ -180,13 +200,16 @@ public class GameStartScreen extends JPanel {
 				imageLoader.loadImageIcon("/ArmyLogo/Skylords.png", width * 8 / 10 / 4, height * 8 / 10 / 2 * 8 / 10));
 		skylordsButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				chosenArmy = 4;
+				armySelectPopup.setVisible(true);
+				/*
 				Main.yourArmy = new Skylords();
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
 				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
-				Screen.gameScreen.setVisible(true);
+				Screen.gameScreen.setVisible(true);*/
 			}
 		});
 		skylordsPanel.add(skylordsButton);
@@ -216,13 +239,16 @@ public class GameStartScreen extends JPanel {
 				imageLoader.loadImageIcon("/ArmyLogo/Espequr.png", width * 8 / 10 / 4, height * 8 / 10 / 2 * 8 / 10));
 		espequrButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				chosenArmy = 5;
+				armySelectPopup.setVisible(true);
+				/*
 				Main.yourArmy = new Espequr();
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
 				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
-				Screen.gameScreen.setVisible(true);
+				Screen.gameScreen.setVisible(true);*/
 			}
 		});
 		espequrPanel.add(espequrButton);
@@ -246,13 +272,16 @@ public class GameStartScreen extends JPanel {
 		chiDestroyersButton.setPreferredSize(new Dimension(width * 8 / 10 / 4, height * 8 / 10 / 2 * 8 / 10));
 		chiDestroyersButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				chosenArmy = 6;
+				armySelectPopup.setVisible(true);
+				/*
 				Main.yourArmy = new ChiDestroyers();
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
 				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
-				Screen.gameScreen.setVisible(true);
+				Screen.gameScreen.setVisible(true);*/
 			}
 		});
 		chiDestroyersPanel.add(chiDestroyersButton);
@@ -288,13 +317,16 @@ public class GameStartScreen extends JPanel {
 				height * 8 / 10 / 2 * 8 / 10));
 		metropolitansButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				chosenArmy = 7;
+				armySelectPopup.setVisible(true);
+				/*
 				Main.yourArmy = new Metropolitans();
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
 				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
-				Screen.gameScreen.setVisible(true);
+				Screen.gameScreen.setVisible(true);*/
 			}
 		});
 		metropolitansPanel.add(metropolitansButton);
@@ -324,13 +356,16 @@ public class GameStartScreen extends JPanel {
 				height * 8 / 10 / 2 * 8 / 10));
 		multiculturalSocietyButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				chosenArmy = 8;
+				armySelectPopup.setVisible(true);
+				/*
 				Main.yourArmy = new MulticulturalSociety();
 				createLeague(Main.yourArmy);
 				setVisible(false);
 				Screen.gameScreen.setScreensInvisible();
 				Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
 				Screen.gameScreen.mainPanel.homeView.setVisible(true);
-				Screen.gameScreen.setVisible(true);
+				Screen.gameScreen.setVisible(true);*/
 			}
 		});
 		multiculturalSocietyPanel.add(multiculturalSocietyButton);
@@ -346,6 +381,48 @@ public class GameStartScreen extends JPanel {
 		multiculturalSocietyTitleLabel.setText("Society");
 		multiculturalSocietyTitlePanel.add(multiculturalSocietyTitleLabel);
 
+	}
+	
+	public void fillArmySelectPopup(int chosenArmy) {
+		
+		switch(chosenArmy) {
+		
+		case 1: 
+			Main.yourArmy = new Pickles();
+			break;
+		case 2:
+			Main.yourArmy = new TerribleTerquits();
+			break;
+		case 3: 
+			Main.yourArmy = new Wanmen();
+			break;
+		case 4: 
+			Main.yourArmy = new Skylords();
+			break;
+		case 5: 
+			Main.yourArmy = new Espequr();
+			break;
+		case 6: 
+			Main.yourArmy = new ChiDestroyers();
+			break;
+		case 7: 
+			Main.yourArmy = new Metropolitans();
+			break;
+		case 8: 
+			Main.yourArmy = new MulticulturalSociety();
+			break;
+			
+
+		}
+		
+		armySelectPopup.dispose();
+		createLeague(Main.yourArmy);
+		setVisible(false);
+		Screen.gameScreen.setScreensInvisible();
+		Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);
+		Screen.gameScreen.mainPanel.homeView.setVisible(true);
+		Screen.gameScreen.setVisible(true);
+		
 	}
 
 	public void createLeague(Army army) {

@@ -30,7 +30,7 @@ public class StanManely extends Captain implements Serializable {
 		skill1 = Skills.Healer2;
 		skill2 = Skills.Deployer1;
 		
-		bio = CaptainBio.noCaptain;
+		bio = CaptainBio.stanManely;
 		
 		iconPath = "/portraits/unknown.png";
 		

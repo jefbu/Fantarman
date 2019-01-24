@@ -217,8 +217,8 @@ public abstract class CaptainBio {
 			+ "However, they fell out of grace after a supposed romantic scandal "
 			+ "and were demoted to fight mockbattles as a punishment";
 
-	public static String samMaxwell = "There once was a bird with no gender. To old fashioned malcomprehender. "
-			+ "Forget about genes and go follow your dreams. Be a marvelous convention bender!";
+	public static String samMaxwell = "To old fashioned malcomprehender. There once was a bird with queer gender. "
+			+ "Forget about genes, go follow your dreams. Be a splendourful convention bender!";
 	
 	public static String sammie = "A little bit of pain can be a good thing you know? "
 			+ "To heighten the senses and open the mind. A little bit of pain can herald a lot of pleasure.";
@@ -231,6 +231,10 @@ public abstract class CaptainBio {
 	public static String sneekrsoot = "Well you have got to admit, his toned body tight in a designer suit "
 			+ "in combination with those pristine and dazzling bright white sneakers... It works!"
 			+ " It <i> shouldn't </i> work, but it does.";
+	
+	public static String stanManely = "There once was a raptor called Stan. The manliest manly of man."
+			+ "Best leave him alone, his testosteron."
+			+ "Makes him one mean ruffian.";
 
 	public static String swashni = "The Stoopvarmints were the leading proponent of the dimensional invasion "
 			+ "by the Wanmen many years ago, and Swashni's regiment was first amongst those. "
