@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 
 import main.battle.BattleConclusion;
 import main.battle.BattleOrchestrator;
+import main.components.ButtonedIconPanel;
 import main.components.Colour;
 import main.entity.armies.Army;
 import main.entity.captains.Generic;
@@ -34,14 +35,12 @@ public class ButtonPanel extends JPanel {
 		setPreferredSize(new Dimension(roundedWidth, roundedHeight));
 		setBackground(Colors.dgrey);
 		setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
-
-		exitButton = new JButton();
-		exitButton.setPreferredSize(new Dimension(roundedWidth, roundedHeight));
-		exitButton.setOpaque(false);
-		exitButton.setBorderPainted(false);
-		exitButton.setContentAreaFilled(false);
-		exitButton.setIcon(imageLoader.loadImageIcon("/icons/giveUpButton.png", roundedWidth, roundedHeight));
-		exitButton.addActionListener(new ActionListener() {
+		
+		ButtonedIconPanel click = new ButtonedIconPanel(roundedWidth, roundedHeight, "/icons/giveUpButton.png",
+				"/icons/giveUpHoveredButton.png");
+		add(click);
+		
+		click.button.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 				BattleOrchestrator.timer.stop();
@@ -56,8 +55,6 @@ public class ButtonPanel extends JPanel {
 			}
 
 		});
-
-		add(exitButton);
 
 	}
 

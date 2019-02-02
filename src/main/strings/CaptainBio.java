@@ -164,6 +164,8 @@ public abstract class CaptainBio {
 			+ "Nicole has become a symbol of leadership and inspiration. "
 			+ "She seems to be fighting Mockbattles for an ulterior motive, but nobody knows what exactly. "
 			+ "She sometimes whispering to herself: 'Your time is coming, you monster'";
+	
+	public static String nolegdei = "Wanna see how many pushups I can do?";
 
 	public static String ofuwari = "Ofuwari strong. Ofuwari win. Very winning. Strong. Ofuwari not so smart.";
 

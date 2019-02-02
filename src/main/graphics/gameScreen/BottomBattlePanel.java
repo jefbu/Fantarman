@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 
 import main.Main;
 import main.battle.Battle;
+import main.components.ButtonedIconPanel;
 import main.components.Colour;
 import main.components.TextPopup;
 import main.entity.regiments.Regiment;
@@ -39,16 +40,11 @@ public class BottomBattlePanel extends JPanel {
 		vdgreyPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 		add(vdgreyPanel);
 		
-		JButton click = new JButton();
-		click.setPreferredSize(new Dimension(width * 90 / 100, height * 9 / 10));
-		click.setContentAreaFilled(false);
-		click.setOpaque(false);
-		click.setBorderPainted(false);
-		ImageLoader imageLoader = new ImageLoader();
-		click.setIcon(imageLoader.loadImageIcon("/icons/battleButton.png", width * 90 / 100, height * 9 / 10));
+		ButtonedIconPanel click = new ButtonedIconPanel(width * 75 / 100, height * 9 / 10, "/icons/battleButton.png",
+				"/icons/battleHoveredButton.png");
 		vdgreyPanel.add(click);
 		
-		click.addActionListener(new ActionListener() {
+		click.button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 	       		
         		int combattants = 0;
