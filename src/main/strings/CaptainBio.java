@@ -2,24 +2,22 @@ package main.strings;
 
 public abstract class CaptainBio {
 
-	public static String andysauce = "Son of Mme Sauce, the notorious Business Coach. "
-			+ "Something should be said about him, but people only ever talk about his mother. "
-			+ "He is around nineteen years old? His mother believes that kids can only learn through experience, "
-			+ "which might be why she signed him up.";
+	public static String andysauce = "Disenchanted son of Mme Sauce, the celebrity Business Coach. "
+			+ "Frustrated of her siren singing the spotlights, Andy believes his life is just as riveting. "
+			+ "He is around nineteen years old? His mother believes in the school of hard knocks, "
+			+ "which is why she registered him as a Pickle.";
 
-	public static String anitaStrum = "The record holder of growing Ikros' largest pumpkin, "
-			+ "she was chosen to be captain of the Tractors on this merit alone. "
-			+ "While no military genius by a long stretch, she nevertheless performs surprisingly well, "
-			+ "claiming tactics to be a lot like selective vegetable breeding.";
+	public static String anitaStrum = "Regional champion of largest pumpkin grown, "
+			+ "she was chosen as captain on this merit alone. "
+			+ "No military genius by any stretch, she nevertheless performs admirably, "
+			+ "claiming battlefield tactics to be a lot like selective vegetable breeding.";
 
-	public static String backface = "Motorically dyslexic, Backface sometimes mounts his pony with the wrong foot. "
-			+ "Once he gets it right though, he is a skilled and well respected chevalier, "
-			+ "who fights for glory and prestige rather than the more earthly rewards most other captains favour.";
+	public static String backface = "Legly dyslexic, this clever chevalier is so disastrously clumsy he could be said to have"
+			+ " three left feet. An accident waiting to happen, a crash test dummy with a heart of gold.";
 	
-	public static String bakvits = "His bicycle is a way of life. Bakvits refuses to own a car, "
-			+ "saying that in an urban environment, it's a waste of space and expensive as hell to park. "
-			+ "In all honesty though, driving his kids around in his bike is completely calory inefficient. "
-			+ "As he huffs and puffs uphill, suicidal flies keep divebombing into his wheezing open mouth. "
+	public static String bakvits = "My bicycle is my way of life. Automobiles are a pox on the environment and money wasted. "
+			+ "... But in all honesty, driving the kids around is markedly calory inefficient. "
+			+ "As I huff and puff uphill, the flies fly into my wheezing mouth. "
 			+ "Meanwhile, the kids just won't stop nagging, too.";			
 
 	public static String chessmaster = "Everyone always assumes I'm a genius. "

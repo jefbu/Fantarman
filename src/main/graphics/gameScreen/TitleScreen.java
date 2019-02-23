@@ -103,7 +103,19 @@ public class TitleScreen extends JPanel {
         });
         middlePanel.add(loadPanel);
         
-        IconLabelPanel exitPanel = new IconLabelPanel(width / 3, height / 15, Colour.RED);
+        IconLabelPanel tutorialPanel = new IconLabelPanel(width / 5, height / 15, Colour.RED);
+        tutorialPanel.buttonedPanel.label.setForeground(Colors.vdgrey);
+        tutorialPanel.buttonedPanel.label.setFont(new Font("garamond", Font.BOLD, 32));
+        tutorialPanel.buttonedPanel.label.setText("Tutorial");
+        tutorialPanel.buttonedPanel.button.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		Screen.titleScreen.setVisible(false);
+        		Screen.tutorial.changeImage();
+        		Screen.tutorial.setVisible(true);        	}
+        });
+        middlePanel.add(tutorialPanel);
+        
+        IconLabelPanel exitPanel = new IconLabelPanel(width / 5, height / 15, Colour.RED);
         exitPanel.buttonedPanel.label.setForeground(Colors.vdgrey);
         exitPanel.buttonedPanel.label.setFont(new Font("garamond", Font.BOLD, 32));
         exitPanel.buttonedPanel.label.setText("Quit");
@@ -113,6 +125,7 @@ public class TitleScreen extends JPanel {
         	}
         });
         middlePanel.add(exitPanel);
+        
         
         /*
         JPanel bottomPanel = new JPanel();
