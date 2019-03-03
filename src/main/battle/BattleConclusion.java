@@ -138,7 +138,7 @@ public class BattleConclusion extends TextPopup {
 				int recoveries = 0;
 				for (int ii = 0; ii < regiment.injuries; ii++) {
 					Random random = new Random();
-					if(random.nextInt(3) < 2) { recoveries++; }
+					if(random.nextInt(100) < 50) { recoveries++; }
 				}
 				regiment.injuries = regiment.injuries - recoveries;
 			regiment.inCombat = false;
@@ -159,6 +159,7 @@ public class BattleConclusion extends TextPopup {
 		Main.yourArmy.calculateBoardSatisfaction(matchResult);
 		Main.yourArmy.calculateFanSatisfaction(matchResult);
 		Main.yourArmy.calculateMoney();
+		PissedOffChecker.checkPissedOffedCaptains();
 		
 		Screen.gameScreen.mainPanel.armyView.fillArmyView(Main.yourArmy);
 		Screen.gameScreen.mainPanel.homeView.fillHomeScreen(true);;
@@ -181,7 +182,7 @@ public class BattleConclusion extends TextPopup {
 				
 				if (Main.league.calendarDay >= Main.league.calendar.calendarDays.size()) {
 					
-					TextPopup popup = new TextPopup(500, 500, Colour.LRED, false);
+					TextPopup popup = new TextPopup(500, 500, Colour.DGREY, false);
 						int leaguePosition = 0;
 						String text = "";
 						

@@ -30,10 +30,15 @@ public class Captain implements Serializable {
 	public String iconPath;
 	
 	public ArrayList<Conversation> conversations;
+	
+	public PissedOffReason pissedOffReason;
+	public boolean reallyPissedOff;
 
 	public Captain() { 
 		
 		conversations = new ArrayList<Conversation>();
+		pissedOffReason = PissedOffReason.notPissedOff;
+		reallyPissedOff = false;
 		
 	}
 
