@@ -71,12 +71,12 @@ public class BattleOrchestrator {
 						counter++;
 						for (Regiment regiment : yourBattleArmy.roster) {
 							regiment.attributeBattleSpeed();
-							//regiment.attributeBattleStats();
-							regiment.battleMorale = regiment.battleMorale -5;
+							// regiment.attributeBattleStats();
+							regiment.battleMorale = regiment.battleMorale - 5;
 						}
 						for (Regiment regiment : opponentBattleArmy.roster) {
 							regiment.attributeBattleSpeed();
-							//regiment.attributeBattleStats();
+							// regiment.attributeBattleStats();
 							regiment.battleMorale = regiment.battleMorale - 5;
 						}
 					} else {
@@ -141,6 +141,10 @@ public class BattleOrchestrator {
 
 	public void refreshRegimentColours() {
 
+		for (IndexedPanel panel : BattleScreen.battleScene.indexedPanels) {
+			panel.button.setToolTipText("");
+		}
+
 		for (Regiment yourRegiment : yourBattleArmy.roster) {
 			double dred = (yourRegiment.battleLife * 10 / yourRegiment.totalLife);
 			dred = dred / 10;
@@ -154,6 +158,9 @@ public class BattleOrchestrator {
 				BattleScreen.battleScene.indexedPanels.get(yourRegiment.panels[i]).button.setIcon(yourRegiment.icon);
 				BattleScreen.battleScene.indexedPanels.get(yourRegiment.panels[i])
 						.setBackground(new Color(130, 130 - red / 2, 130 - red / 2));
+				BattleScreen.battleScene.indexedPanels.get(yourRegiment.panels[i]).button
+						.setToolTipText(yourRegiment.captain.name + "'s " + yourRegiment.regiment + ", " 
+										+ yourRegiment.type + ", " + "total value: " + yourRegiment.value);
 			}
 		}
 
@@ -169,13 +176,17 @@ public class BattleOrchestrator {
 			for (int i = 0; i < enemyRegiment.panels.length; i++) {
 				BattleScreen.battleScene.indexedPanels.get(enemyRegiment.panels[i]).button.setIcon(enemyRegiment.icon);
 				BattleScreen.battleScene.indexedPanels.get(enemyRegiment.panels[i]).setBackground(new Color(red, 0, 0));
+				BattleScreen.battleScene.indexedPanels.get(enemyRegiment.panels[i]).button
+				.setToolTipText(enemyRegiment.captain.name + "'s " + enemyRegiment.regiment + ", " 
+						+ enemyRegiment.type + ", " + "total value: " + enemyRegiment.value);
 			}
 		}
-		
-		if(activeRegiment != null) {
-		for (int i = 0; i < activeRegiment.panels.length; i++) {
-			BattleScreen.battleScene.indexedPanels.get(activeRegiment.panels[i]).setBackground(new Color(170, 190, 140));			
-		}
+
+		if (activeRegiment != null) {
+			for (int i = 0; i < activeRegiment.panels.length; i++) {
+				BattleScreen.battleScene.indexedPanels.get(activeRegiment.panels[i])
+						.setBackground(new Color(170, 190, 140));
+			}
 		}
 	}
 

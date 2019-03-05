@@ -15,6 +15,7 @@ public abstract class MoraleChecker {
 		if (roll < 50 + regiment.battleMorale) {
 			return false;
 		} else {
+			System.out.println("rolled: " + roll + " vs battleMorale: " + regiment.battleMorale);
 			RightAggregatePanel.infoTextPanel.textArea.setText("<font color = 'rgb(220, 220, 220)'>" 
 				+ regiment.captain.name + "'s " + regiment.regiment
 				+ " has decided that discretion is the better part of valour. In other words, "

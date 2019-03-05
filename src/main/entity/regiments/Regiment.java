@@ -164,6 +164,7 @@ public abstract class Regiment implements Serializable {
 		this.battleDefence = totalDefence;
 		this.battleMissile = totalMissile;
 		this.battleMorale = totalMorale;
+			if(this.captain.reallyPissedOff) { battleMorale = battleMorale / 2; }
 		this.battleSpeed = totalSpeed;
 		this.battleSpeedVariation = totalSpeedVariation;
 		this.battleMove = totalMove;
@@ -203,9 +204,7 @@ public abstract class Regiment implements Serializable {
 
 	public void haveTurn(Army activeArmy, int activeRegimentIndex, Army yourBattleArmy, Army opponentBattleArmy,
 			int turn) {
-		
-		if (this.name == "Ole Racecar") { System.out.println(this.battleMorale); }
-		
+				
 		if(MoraleChecker.breaks(this)) {
 			
 			this.defeated = true;
