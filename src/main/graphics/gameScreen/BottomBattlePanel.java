@@ -17,7 +17,6 @@ import main.entity.regiments.Regiment;
 import main.entity.regiments.Role;
 import main.graphics.Screen;
 import main.utility.Colors;
-import main.utility.ImageLoader;
 
 public class BottomBattlePanel extends JPanel {
 	

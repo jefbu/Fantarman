@@ -16,7 +16,6 @@ import main.entity.armies.Army;
 import main.entity.captains.Generic;
 import main.entity.regiments.wanmen.FireMages;
 import main.utility.Colors;
-import main.utility.ImageLoader;
 
 public class ButtonPanel extends JPanel {
 
@@ -26,8 +25,6 @@ public class ButtonPanel extends JPanel {
 	public ButtonPanel(int battleScreenWidth, int battleScreenHeight) {
 
 		super();
-
-		ImageLoader imageLoader = new ImageLoader();
 		
 		int roundedHeight = battleScreenHeight * 2 / 10 + ((battleScreenHeight * 8 / 10) % 48);
 		int roundedWidth = battleScreenWidth * 10 / 100;

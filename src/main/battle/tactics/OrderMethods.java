@@ -42,8 +42,12 @@ public abstract class OrderMethods {
 			if (random.nextInt(100) < regiment.battleAttack + chargeBonus)
 				hits++;
 		}
+		
+		int defenceTerrainBonus = 0;
+		if(target.defender) { defenceTerrainBonus = TerrainBonus.addTerrainBonus(target); }
+		
 		for (int ii = 0; ii < hits; ii++) {
-			if (random.nextInt(100) + 1 > target.battleDefence) {
+			if (random.nextInt(100) + 1 > target.battleDefence + defenceTerrainBonus) {
 				target.battleLife--;
 				casualties++;
 				regiment.battleMorale++;
@@ -56,9 +60,11 @@ public abstract class OrderMethods {
 			target.inCombat = false;
 			target.timesDefeated++;
 			target.injuries = target.totalMaxLife;
+			target.defender = false;
 			regiment.inCombat = false;
 			regiment.enemiesDefeated++;
 			regiment.battleMorale += 5;
+			regiment.defender = false;
 			if (activeArmy == yourBattleArmy) {
 				opponentBattleArmy.roster.remove(target);
 			} else {

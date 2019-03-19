@@ -102,6 +102,7 @@ public abstract class Regiment implements Serializable {
 
 	public boolean inCombat;
 	public boolean defeated;
+	public boolean defender;
 	public Regiment combatOpponent;
 
 	public int hiddenIndex;
@@ -121,6 +122,7 @@ public abstract class Regiment implements Serializable {
 		level = 1;
 		inCombat = false;
 		defeated = false;
+		defender = false;
 		role = Role.TRAINING;
 		
 		battlesFought = 0;
