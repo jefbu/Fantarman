@@ -125,6 +125,11 @@ public abstract class CaptainBio {
 			+ "labourers are estranged from their products and society. "
 			+ "Nevertheless, is mostly famous for his wild beard and criminal drinking habits. "
 			+ "Or was that the other way round?";
+	
+	public static String mattressa = "Mattressa started out in a sleepware store chain. "
+			+ "She won a prize for coming up with the idea of giving away a dog mattress "
+			+ "for each king- or queensize (human) mattress purchase."
+			+ "She eventually opened her own emporium, but finally decided that it just didn't feel right.";
 
 	public static String maxFQuenten = "Wears the Grass Crown, "
 			+ "a rare honourary garland indicative of having singlehandedly saved an entire army. "
@@ -251,6 +256,8 @@ public abstract class CaptainBio {
 			+ "They adorn their armour with bows and ribbons, favouring soft pastel tones. "
 			+ "This has the added effect of being noticeably easier to target by enemy archers, "
 			+ "but Tsumiko is so hardy that they usually just shrug off the enemy projectiles.";
+	
+	public static String vacumus = "More than anything else, Vacumus wants to break free. ";
 
 	public static String vinceLeonidas = "Crackpot inventor who is kept around partly for the entertainment "
 			+ "his ever failing ideas provide; and partly because he does occasionally deliver something truly innovative! "

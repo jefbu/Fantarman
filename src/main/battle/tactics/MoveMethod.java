@@ -40,6 +40,9 @@ public abstract class MoveMethod {
 					opponent.inCombat = true;
 					opponent.combatOpponent = regiment;
 					opponent.defender = true;
+					i = movement;
+					OrderMethods.combat(regiment, opponent, regiment.battleCharge, activeArmy, yourBattleArmy,
+							opponentBattleArmy);
 				}
 			}	
 		}
@@ -64,6 +67,9 @@ public abstract class MoveMethod {
 					opponent.inCombat = true;
 					opponent.combatOpponent = regiment;
 					opponent.defender = true;
+					i = movement;
+					OrderMethods.combat(regiment, opponent, regiment.battleCharge, activeArmy, yourBattleArmy,
+							opponentBattleArmy);
 				}
 			}
 			
@@ -119,6 +125,9 @@ public abstract class MoveMethod {
 								opponent.inCombat = true;
 								opponent.combatOpponent = regiment;
 								opponent.defender = true;
+								i = movement;
+								OrderMethods.combat(regiment, opponent, regiment.battleCharge, activeArmy, yourBattleArmy,
+										opponentBattleArmy);
 							}
 						}
 					}
@@ -136,6 +145,9 @@ public abstract class MoveMethod {
 								opponent.inCombat = true;
 								opponent.combatOpponent = regiment;
 								opponent.defender = true;
+								i = movement;
+								OrderMethods.combat(regiment, opponent, regiment.battleCharge, activeArmy, yourBattleArmy,
+										opponentBattleArmy);
 							}
 						}
 					}
@@ -153,6 +165,9 @@ public abstract class MoveMethod {
 								opponent.inCombat = true;
 								opponent.combatOpponent = regiment;
 								opponent.defender = true;
+								i = movement;
+								OrderMethods.combat(regiment, opponent, regiment.battleCharge, activeArmy, yourBattleArmy,
+										opponentBattleArmy);
 							}
 						}
 					}
@@ -170,6 +185,9 @@ public abstract class MoveMethod {
 								opponent.inCombat = true;
 								opponent.combatOpponent = regiment;
 								opponent.defender = true;
+								i = movement;
+								OrderMethods.combat(regiment, opponent, regiment.battleCharge, activeArmy, yourBattleArmy,
+										opponentBattleArmy);
 							}
 						}
 					}
@@ -188,6 +206,9 @@ public abstract class MoveMethod {
 								opponent.inCombat = true;
 								opponent.combatOpponent = regiment;
 								opponent.defender = true;
+								i = movement;
+								OrderMethods.combat(regiment, opponent, regiment.battleCharge, activeArmy, yourBattleArmy,
+										opponentBattleArmy);
 							}
 						}
 					}
@@ -205,6 +226,9 @@ public abstract class MoveMethod {
 								opponent.inCombat = true;
 								opponent.combatOpponent = regiment;
 								opponent.defender = true;
+								i = movement;
+								OrderMethods.combat(regiment, opponent, regiment.battleCharge, activeArmy, yourBattleArmy,
+										opponentBattleArmy);
 							}
 						}
 					}
@@ -222,6 +246,9 @@ public abstract class MoveMethod {
 								opponent.inCombat = true;
 								opponent.combatOpponent = regiment;
 								opponent.defender = true;
+								i = movement;
+								OrderMethods.combat(regiment, opponent, regiment.battleCharge, activeArmy, yourBattleArmy,
+										opponentBattleArmy);
 							}
 						}
 					}
@@ -239,6 +266,9 @@ public abstract class MoveMethod {
 								opponent.inCombat = true;
 								opponent.combatOpponent = regiment;
 								opponent.defender = true;
+								i = movement;
+								OrderMethods.combat(regiment, opponent, regiment.battleCharge, activeArmy, yourBattleArmy,
+										opponentBattleArmy);
 							}
 						}
 					}
